@@ -244,6 +244,9 @@
   .madeby{font-size:.66rem;font-weight:500;color:var(--muted);letter-spacing:.04em;text-transform:lowercase}
   .sebbymark{font-size:1.02rem;font-weight:700;letter-spacing:.24em;color:var(--ink)}
   .credit .lockup-inline strong{letter-spacing:.02em}
+
+  .portrait{padding:0}
+  .portrait img{width:100%;height:100%;object-fit:cover;object-position:top center}
 </style>
 </head>
 <body>
@@ -281,10 +284,7 @@
       <p class="hero-note rise d3">Free 20-minute call. No pressure, plain answers.</p>
     </div>
     <div class="portrait rise d2">
-      <svg viewBox="0 0 48 48" aria-hidden="true">
-        <path d="M36.5 10.5 H19.5 C14.5 10.5 11.5 13.3 11.5 17.5 C11.5 21.7 14.5 24.3 19.5 24.3 H28.5 C33.5 24.3 36.5 26.9 36.5 31 C36.5 35.2 33.5 37.8 28.5 37.8 H11.5" fill="none" stroke="#6C3CE9" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span class="swap">Swap in a real photo of Sebby here</span>
+      <img src="assets/sebby.jpg" alt="Sebby, web designer and developer, smiling at his workstation">
       <div class="chip">
         <span class="dot" aria-hidden="true"></span>
         <span>Sebby is taking new projects &nbsp;<em>· Typically replies within a day</em></span>
@@ -386,18 +386,10 @@
       <h2>Recent work.</h2>
       <p>Real businesses, real results. Every one of these owners can tell you what working with me is like.</p>
     </div>
-    <div class="work-grid">
+    <div class="work-grid" style="grid-template-columns:minmax(280px,420px)">
       <a class="tile" href="work.html">
         <div class="shot"><span>rieralaw.com screenshot</span></div>
         <div class="meta"><h3>Riera Law Firm</h3><p>Securities law · Full bilingual build, 70+ pages, ongoing care</p></div>
-      </a>
-      <a class="tile" href="#">
-        <div class="shot"><span>Project screenshot</span></div>
-        <div class="meta"><h3>[Client name]</h3><p>[Industry] · [One-line result]</p></div>
-      </a>
-      <a class="tile" href="#">
-        <div class="shot"><span>Project screenshot</span></div>
-        <div class="meta"><h3>[Client name]</h3><p>[Industry] · [One-line result]</p></div>
       </a>
     </div>
   </div>
@@ -409,21 +401,13 @@
     <div class="sec-head">
       <h2>What clients say.</h2>
     </div>
-    <div class="quotes">
+    <div class="quotes" style="grid-template-columns:1fr;max-width:780px">
       <div class="quote">
         <div class="mark" aria-hidden="true">"</div>
         <p class="body">Sebby rebuilt my law firm's entire web presence and untangled infrastructure problems that had my domain, my email, and two competing websites at odds. He treats my site like it's his own. I trust him with the online face of my practice.</p>
         <div class="who">
           <div class="avatar">JR</div>
           <div><strong>Jorge L. Riera</strong><span>Founding Principal, Riera Law Firm</span></div>
-        </div>
-      </div>
-      <div class="quote">
-        <div class="mark" aria-hidden="true">"</div>
-        <p class="body">[Second real client quote. A testimonial from an established professional, an attorney or business owner, is worth ten anonymous stars.]</p>
-        <div class="who">
-          <div class="avatar">[B]</div>
-          <div><strong>[Client name]</strong><span>[Title, Business name]</span></div>
         </div>
       </div>
     </div>
