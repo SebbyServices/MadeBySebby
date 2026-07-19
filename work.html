@@ -7,7 +7,7 @@
 <meta name="description" content="Websites built by Sebby for real businesses, with real results and clients who can vouch for the work.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#1A1D29;
@@ -296,6 +296,19 @@
   .madeby{font-size:.66rem;font-weight:500;color:var(--muted);letter-spacing:.04em;text-transform:lowercase}
   .sebbymark{font-size:1.02rem;font-weight:700;letter-spacing:.24em;color:var(--ink)}
   .credit .lockup-inline strong{letter-spacing:.02em}
+
+  /* Riera Law site preview card */
+  .sitecard{display:block;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(26,29,41,.10);transition:transform .18s, box-shadow .18s;background:#0B1D33}
+  a.sitecard:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(26,29,41,.16)}
+  .sitecard .bar{background:#EDEDF2;padding:9px 14px;display:flex;align-items:center;gap:8px}
+  .sitecard .dot{width:9px;height:9px;border-radius:50%}
+  .sitecard .url{margin-left:8px;background:#fff;border-radius:999px;padding:3px 14px;font-size:.72rem;color:#5a5e6b;font-weight:500}
+  .sitecard .rl-hero{background:#0B1D33;padding:30px 28px 28px;color:#fff}
+  .sitecard .rl-eyebrow{font-size:.6rem;letter-spacing:.16em;color:#C8A15A;text-transform:uppercase;font-weight:600;margin-bottom:12px}
+  .sitecard .rl-h1{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:1.28rem;line-height:1.32;color:#fff;margin-bottom:16px}
+  .sitecard .rl-btn{display:inline-block;background:#C8A15A;color:#0B1D33;font-size:.72rem;font-weight:700;padding:8px 16px;border-radius:4px;margin-bottom:12px}
+  .sitecard .rl-sub{font-size:.68rem;color:#B8C8D8}
+  .sitecard .visit{background:#fff;padding:13px 18px;font-size:.88rem;font-weight:700;color:var(--purple);display:flex;justify-content:space-between;align-items:center}
 </style>
 </head>
 <body>
@@ -329,7 +342,7 @@
       <div>
         <span class="tag">Featured project</span>
         <h2>Riera Law Firm</h2>
-        <p class="body" style="margin-bottom:6px"><a href="https://rieralaw.com" style="color:var(--purple);font-weight:600">rieralaw.com</a> · Securities arbitration law firm, Coral Gables, FL</p>
+        <p class="body" style="margin-bottom:6px"><a href="https://rieralaw.com" target="_blank" rel="noopener" style="color:var(--purple);font-weight:600">rieralaw.com</a> · Securities arbitration law firm, Coral Gables, FL</p>
         <p class="body">A complete WordPress and Elementor build for a nationwide securities arbitration practice led by a former SEC enforcement attorney. Seventy-plus pages in English and Spanish, a full design system, and the infrastructure work most visitors never see.</p>
         <ul class="checklist">
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Built the full bilingual site in WordPress and Elementor, 70+ pages</li>
@@ -339,7 +352,19 @@
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Provides ongoing Website Care for a site clients depend on</li>
         </ul>
       </div>
-      <a class="svc-visual" href="https://rieralaw.com" style="text-decoration:none;flex-direction:column;gap:16px;display:flex"><svg viewBox="0 0 48 48" style="width:110px;height:110px" aria-hidden="true"><path d="M36.5 10.5 H19.5 C14.5 10.5 11.5 13.3 11.5 17.5 C11.5 21.7 14.5 24.3 19.5 24.3 H28.5 C33.5 24.3 36.5 26.9 36.5 31 C36.5 35.2 33.5 37.8 28.5 37.8 H11.5" fill="none" stroke="#6C3CE9" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Visit rieralaw.com&nbsp;→</span></a>
+      <a class="sitecard" href="https://rieralaw.com" target="_blank" rel="noopener">
+        <div class="bar" aria-hidden="true">
+          <span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span>
+          <span class="url">rieralaw.com</span>
+        </div>
+        <div class="rl-hero">
+          <div class="rl-eyebrow">Former SEC Senior Enforcement Counsel · FINRA NAMC Public Member</div>
+          <div class="rl-h1">I Spent a Decade at the SEC Investigating Securities Fraud. Today, I Represent the Investors It Harmed.</div>
+          <span class="rl-btn">Schedule a Free Consultation</span>
+          <div class="rl-sub">(305) 204-9779 · Representing Investors Nationwide · Contingency Fee</div>
+        </div>
+        <div class="visit"><span>Visit the live site</span><span>rieralaw.com&nbsp;→</span></div>
+      </a>
     </div>
   </div>
 </section>
