@@ -7,6 +7,7 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Sebby — Made by Sebby">
 <meta name="description" content="Meet Sebby — freelance web designer and developer who builds custom websites for small businesses. Personal attention, plain English, and websites treated like his own.">
+<link rel="preload" as="image" href="assets/logo/sebby-nav.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -237,7 +238,6 @@
     .care{grid-template-columns:1fr;padding:52px 36px}
   }
   @media (max-width:640px){
-    .nav-links{display:none}
     .cards,.steps,.work-grid,.quotes{grid-template-columns:1fr}
     section{padding:68px 0}
     .hero{padding:56px 0 48px}
@@ -308,6 +308,51 @@
 
 
 
+
+  /* ---------- Hamburger Menu ---------- */
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;z-index:51}
+  .menu-btn svg{width:26px;height:26px;stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round}
+  .menu-btn .close{display:none}
+  .nav-open .menu-btn .open{display:none}
+  .nav-open .menu-btn .close{display:block}
+  @media (max-width:640px){
+    .menu-btn{display:block}
+    .nav-links{
+      display:none;position:fixed;top:76px;left:0;right:0;bottom:0;
+      background:var(--white);flex-direction:column;gap:0;padding:20px 28px;
+      border-top:1px solid var(--line);z-index:49;
+      overflow-y:auto;
+    }
+    .nav-open .nav-links{display:flex}
+    .nav-links a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
+    .nav-links a:last-child{border-bottom:none}
+    .nav-links a.btn{margin-top:12px;justify-content:center;border-bottom:none}
+    .nav-links .lang-toggle{margin-top:8px;align-self:flex-start}
+    .nav-links .theme-toggle{margin-top:4px;align-self:flex-start}
+  }
+
+
+  /* ---------- Scroll Animations ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+
+  /* ---------- Sticky CTA ---------- */
+  .sticky-cta{
+    position:fixed;bottom:0;left:0;right:0;z-index:40;
+    background:var(--purple);color:#fff;
+    padding:14px 28px;text-align:center;
+    transform:translateY(100%);transition:transform .35s ease;
+    font-weight:600;font-size:.95rem;
+  }
+  .sticky-cta.show{transform:translateY(0)}
+  .sticky-cta a{color:#fff;text-decoration:none}
+  .sticky-cta a:hover{text-decoration:underline}
+  @media (max-width:640px){
+    .sticky-cta{font-size:.88rem;padding:12px 20px}
+  }
   /* ---------- Language Toggle ---------- */
   :root:not([data-lang="es"]) [lang="es"]{display:none}
   [data-lang="es"] [lang="en"]{display:none}
@@ -492,7 +537,11 @@
 <nav>
   <div class="wrap nav-inner">
     <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
-    <div class="nav-links">
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('nav-open')">
+          <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      <div class="nav-links">
       <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
       <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
       <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
@@ -520,8 +569,8 @@
 
 <section style="padding-top:24px">
   <div class="wrap about-grid">
-    <div class="portrait"><img src="assets/sebby.jpg" alt="Sebby, web designer and developer"></div>
-    <div class="prose">
+    <div class="portrait"><picture><source srcset="assets/sebby.webp" type="image/webp"><img src="assets/sebby.jpg" alt="Sebby, web designer and developer"></picture></div>
+    <div class="prose reveal">
       <p><span lang="en"><strong>I build websites for a simple reason.</strong> Every business owner I've ever met is better at what they do than their website makes them look. A contractor with twenty years of craftsmanship gets judged by a page that loads slowly on a phone. That gap bothers me, and closing it is the job.</span><span lang="es"><strong>Construyo sitios web por una razón simple.</strong> Cada dueño de negocio que he conocido es mejor en lo que hace de lo que su sitio web refleja. Un contratista con veinte años de experiencia es juzgado por una página que carga lento en el teléfono. Esa brecha me molesta, y cerrarla es el trabajo.</span></p>
       <p><span lang="en">My work has grown the way I think the best work does, one referral at a time. Someone trusts me with their website, I take care of it like it's my own, and they pass my name along. That's the whole business model, and it only works if every single client would recommend me.</span><span lang="es">Mi trabajo ha crecido de la manera que creo que crece el mejor trabajo: una recomendación a la vez. Alguien me confía su sitio web, lo cuido como si fuera mío, y pasan mi nombre. Ese es todo el modelo de negocio, y solo funciona si cada cliente me recomendaría.</span></p>
       <p><span lang="en">I'm not an agency. When you work with me, you talk to the person doing the work, from the first call to the day your site launches and every month after. I explain things in plain English, I tell you when you don't need something, and I build every site the way I'd build my own.</span><span lang="es">No soy una agencia. Cuando trabajas conmigo, hablas con la persona que hace el trabajo, desde la primera llamada hasta el día que tu sitio se lanza y cada mes después. Explico las cosas en términos claros, te digo cuando no necesitas algo, y construyo cada sitio como si fuera el mío.</span></p>
@@ -547,5 +596,7 @@
   </div>
 </footer>
 <script>!function(){var l=document.documentElement.getAttribute('data-lang');if(l==='es'){var b=document.querySelectorAll('.lang-toggle button');if(b.length===2){b[0].classList.remove('active');b[1].classList.add('active')}}}()</script>
+<script>!function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})}()</script>
+<script>!function(){var cta=document.getElementById('stickyCta');if(!cta)return;var footer=document.querySelector('footer');var shown=false;window.addEventListener('scroll',function(){var y=window.scrollY;var fTop=footer?footer.getBoundingClientRect().top+y-window.innerHeight:Infinity;if(y>400&&y<fTop){if(!shown){cta.classList.add('show');shown=true}}else{if(shown){cta.classList.remove('show');shown=false}}},{passive:true})}()</script>
 </body>
 </html>

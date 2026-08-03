@@ -7,6 +7,7 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Sebby — Made by Sebby">
 <meta name="description" content="Professional web design, development, and monthly website care for small businesses. Custom websites that build trust, convert visitors, and grow with your business. Free consultation.">
+<link rel="preload" as="image" href="assets/logo/sebby-nav.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
@@ -238,7 +239,6 @@
     .care{grid-template-columns:1fr;padding:52px 36px}
   }
   @media (max-width:640px){
-    .nav-links{display:none}
     .cards,.steps,.work-grid,.quotes{grid-template-columns:1fr}
     section{padding:68px 0}
     .hero{padding:56px 0 48px}
@@ -257,6 +257,69 @@
 
 
 
+
+
+  /* ---------- Hamburger Menu ---------- */
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;z-index:51}
+  .menu-btn svg{width:26px;height:26px;stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round}
+  .menu-btn .close{display:none}
+  .nav-open .menu-btn .open{display:none}
+  .nav-open .menu-btn .close{display:block}
+  @media (max-width:640px){
+    .menu-btn{display:block}
+    .nav-links{
+      display:none;position:fixed;top:76px;left:0;right:0;bottom:0;
+      background:var(--white);flex-direction:column;gap:0;padding:20px 28px;
+      border-top:1px solid var(--line);z-index:49;
+      overflow-y:auto;
+    }
+    .nav-open .nav-links{display:flex}
+    .nav-links a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
+    .nav-links a:last-child{border-bottom:none}
+    .nav-links a.btn{margin-top:12px;justify-content:center;border-bottom:none}
+    .nav-links .lang-toggle{margin-top:8px;align-self:flex-start}
+    .nav-links .theme-toggle{margin-top:4px;align-self:flex-start}
+  }
+
+
+  /* ---------- Scroll Animations ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+
+  /* ---------- Sticky CTA ---------- */
+  .sticky-cta{
+    position:fixed;bottom:0;left:0;right:0;z-index:40;
+    background:var(--purple);color:#fff;
+    padding:14px 28px;text-align:center;
+    transform:translateY(100%);transition:transform .35s ease;
+    font-weight:600;font-size:.95rem;
+  }
+  .sticky-cta.show{transform:translateY(0)}
+  .sticky-cta a{color:#fff;text-decoration:none}
+  .sticky-cta a:hover{text-decoration:underline}
+  @media (max-width:640px){
+    .sticky-cta{font-size:.88rem;padding:12px 20px}
+  }
+
+  /* FAQ */
+  .faq{display:grid;gap:14px;max-width:44em}
+  .faq details{border:1px solid var(--line);border-radius:var(--radius-sm);padding:20px 24px;background:#fff;transition:border-color .15s}
+  .faq details[open]{border-color:var(--purple)}
+  .faq summary{font-weight:700;cursor:pointer;font-size:1rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq summary::after{content:"+";color:var(--purple);font-size:1.4rem;font-weight:600;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{margin-top:12px;color:var(--ink-soft);font-size:.97rem}
+
+
+  /* Client logos */
+  .client-logos{display:flex;align-items:center;gap:40px;flex-wrap:wrap;justify-content:center;opacity:.55;transition:opacity .3s}
+  .client-logos:hover{opacity:.8}
+  .client-logos img{height:32px;width:auto;filter:grayscale(1);transition:filter .3s}
+  .client-logos img:hover{filter:grayscale(0)}
+  .client-logos-label{font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 
   /* ---------- Language Toggle ---------- */
   :root:not([data-lang="es"]) [lang="es"]{display:none}
@@ -494,6 +557,54 @@
   "reviewBody": "Sebby rebuilt my law firm's entire web presence and untangled infrastructure problems that had my domain, my email, and two competing websites at odds. He treats my site like it's his own. I trust him with the online face of my practice."
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does a website cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every project is different, but most small business websites fall between $2,000 and $8,000. You get an exact number after the first conversation — no surprises, no hourly billing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to build a website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most projects take 3 to 6 weeks from kickoff to launch. You see the design within the first week and get updates throughout."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I own my website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, 100%. Your domain, your hosting account, your content, your code — it's all yours. If you ever want to part ways, everything is handed over cleanly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I already have a website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It can be redesigned, rebuilt on better technology, or its care can be taken over. The first step is a conversation about what's working and what isn't."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with businesses outside the US?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Based in the Dominican Republic, working with clients in the US, Latin America, and anywhere English or Spanish is spoken. Everything is done remotely."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -501,7 +612,11 @@
 <nav>
   <div class="wrap nav-inner">
     <a class="logo" href="#top" aria-label="Made by Sebby home"><img class="logo-light" src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
-    <div class="nav-links">
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('nav-open')">
+          <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      <div class="nav-links">
       <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
       <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
       <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
@@ -533,7 +648,7 @@
       <p class="hero-note rise d3"><span lang="en">Free 20-minute call. No pressure, plain answers.</span><span lang="es">Llamada gratuita de 20 minutos. Sin presión, respuestas claras.</span></p>
     </div>
     <div class="portrait rise d2">
-      <img src="assets/sebby.jpg" alt="Sebby, web designer and developer, smiling at his workstation">
+      <picture><source srcset="assets/sebby.webp" type="image/webp"><img src="assets/sebby.jpg" alt="Sebby, web designer and developer, smiling at his workstation"></picture>
       <div class="chip">
         <span class="dot" aria-hidden="true"></span>
         <span><span lang="en">Sebby is taking new projects &nbsp;<em>· Typically replies within a day</em></span><span lang="es">Sebby está aceptando nuevos proyectos &nbsp;<em>· Responde en menos de un día</em></span></span>
@@ -567,12 +682,12 @@
 <!-- ============ SERVICES ============ -->
 <section id="services">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head reveal">
       <h2><span lang="en">You run your business. I'll take care of your website.</span><span lang="es">Tú manejas tu negocio. Yo me encargo de tu sitio web.</span></h2>
       <p><span lang="en">Three ways I help, all in plain English. Every project starts with a conversation about what you actually need, not a package I'm trying to sell.</span><span lang="es">Tres formas en que ayudo, todo en términos claros. Cada proyecto comienza con una conversación sobre lo que realmente necesitas, no un paquete que intento vender.</span></p>
     </div>
     <div class="cards">
-      <div class="card">
+      <div class="card reveal">
         <span class="tag"><span lang="en">Made to convert</span><span lang="es">Hecho para convertir</span></span>
         <div class="glyph">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8M12 18v3"/></svg>
@@ -580,7 +695,7 @@
         <h3><span lang="en">Web Design &amp; Build</span><span lang="es">Diseño y desarrollo web</span></h3>
         <p><span lang="en">I design and build a website you're proud to share, one that makes strangers trust you enough to call, book, or buy.</span><span lang="es">Diseño y construyo un sitio web del que estarás orgulloso, uno que hace que desconocidos confíen en ti lo suficiente para llamar, reservar o comprar.</span></p>
       </div>
-      <div class="card">
+      <div class="card reveal">
         <span class="tag"><span lang="en">Made to last</span><span lang="es">Hecho para durar</span></span>
         <div class="glyph">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg>
@@ -588,7 +703,7 @@
         <h3><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></h3>
         <p><span lang="en">I keep your site fast, secure, and updated month after month, so you never have to think about it again.</span><span lang="es">Mantengo tu sitio rápido, seguro y actualizado mes tras mes, para que nunca tengas que preocuparte por él.</span></p>
       </div>
-      <div class="card">
+      <div class="card reveal">
         <span class="tag"><span lang="en">Made to be found</span><span lang="es">Hecho para ser encontrado</span></span>
         <div class="glyph">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
@@ -605,20 +720,20 @@
   <div class="wrap">
     <div class="process">
       <div class="wrap">
-        <div class="sec-head">
+        <div class="sec-head reveal">
           <h2><span lang="en">Simple from start to finish.</span><span lang="es">Simple de principio a fin.</span></h2>
           <p><span lang="en">You always know what's happening, what it costs, and what comes next.</span><span lang="es">Siempre sabes qué está pasando, cuánto cuesta y qué sigue.</span></p>
         </div>
         <div class="steps">
-          <div class="step">
+          <div class="step reveal">
             <h3><span lang="en">We talk</span><span lang="es">Hablamos</span></h3>
             <p><span lang="en">A free 20-minute call about your business and what your website needs to do. If I'm not the right fit, I'll tell you.</span><span lang="es">Una llamada gratuita de 20 minutos sobre tu negocio y lo que necesita tu sitio web. Si no soy la persona indicada, te lo digo.</span></p>
           </div>
-          <div class="step">
+          <div class="step reveal">
             <h3><span lang="en">I design and build</span><span lang="es">Diseño y construyo</span></h3>
             <p><span lang="en">You see the design before anything is built, and you get updates in plain English while I put it together.</span><span lang="es">Ves el diseño antes de que se construya nada, y recibes actualizaciones claras mientras lo armo.</span></p>
           </div>
-          <div class="step">
+          <div class="step reveal">
             <h3><span lang="en">You launch, I stay on</span><span lang="es">Lanzas, yo me quedo</span></h3>
             <p><span lang="en">Your site goes live, and I keep it fast, secure, and current. When you need a change, you text me.</span><span lang="es">Tu sitio sale al aire, y yo lo mantengo rápido, seguro y actualizado. Cuando necesites un cambio, me escribes.</span></p>
           </div>
@@ -631,17 +746,17 @@
 <!-- ============ WORK ============ -->
 <section id="work" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head reveal">
       <h2><span lang="en">Recent work.</span><span lang="es">Trabajo reciente.</span></h2>
       <p><span lang="en">Real businesses, real results. Every one of these owners can tell you what working with me is like.</span><span lang="es">Negocios reales, resultados reales. Cada uno de estos dueños puede contarte cómo es trabajar conmigo.</span></p>
     </div>
     <div class="work-grid" style="grid-template-columns:repeat(2,minmax(280px,420px))">
-      <a class="tile" href="work.html">
-        <div class="shot"><img src="assets/hero-rieralaw.jpg" alt="Riera Law Firm homepage — securities arbitration attorney with courthouse background" loading="lazy"></div>
+      <a class="tile reveal" href="work.html">
+        <div class="shot"><picture><source srcset="assets/hero-rieralaw.webp" type="image/webp"><img src="assets/hero-rieralaw.jpg" alt="Riera Law Firm homepage — securities arbitration attorney with courthouse background" loading="lazy"></picture></div>
         <div class="meta"><h3>Riera Law Firm</h3><p><span lang="en">Securities law · Full bilingual build, 70+ pages, ongoing care</span><span lang="es">Derecho de valores · Sitio bilingüe completo, 70+ páginas, cuidado continuo</span></p></div>
       </a>
-      <a class="tile" href="work.html">
-        <div class="shot"><img src="assets/hero-elitecare.jpg" alt="Elite Care Recovery homepage — premium cold and compression therapy for post-operative patients" loading="lazy"></div>
+      <a class="tile reveal" href="work.html">
+        <div class="shot"><picture><source srcset="assets/hero-elitecare.webp" type="image/webp"><img src="assets/hero-elitecare.jpg" alt="Elite Care Recovery homepage — premium cold and compression therapy for post-operative patients" loading="lazy"></picture></div>
         <div class="meta"><h3>Elite Care Recovery</h3><p><span lang="en">Medical equipment · Full site build, GitHub Pages</span><span lang="es">Equipo médico · Sitio completo, GitHub Pages</span></p></div>
       </a>
     </div>
@@ -651,11 +766,11 @@
 <!-- ============ TESTIMONIALS ============ -->
 <section style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head reveal">
       <h2><span lang="en">What clients say.</span><span lang="es">Lo que dicen mis clientes.</span></h2>
     </div>
     <div class="quotes" style="grid-template-columns:1fr;max-width:780px">
-      <div class="quote">
+      <div class="quote reveal">
         <div class="mark" aria-hidden="true">"</div>
         <p class="body"><span lang="en">Sebby rebuilt my law firm's entire web presence and untangled infrastructure problems that had my domain, my email, and two competing websites at odds. He treats my site like it's his own. I trust him with the online face of my practice.</span><span lang="es">Sebby reconstruyó toda la presencia web de mi bufete y resolvió problemas de infraestructura que tenían mi dominio, mi correo y dos sitios web compitiendo entre sí. Trata mi sitio como si fuera suyo. Le confío la cara digital de mi práctica.</span></p>
         <div class="who">
@@ -670,7 +785,7 @@
 <!-- ============ CARE CALLOUT ============ -->
 <section id="care" style="padding-top:0">
   <div class="wrap">
-    <div class="care">
+    <div class="care reveal">
       <div>
         <h2><span lang="en">Your website shouldn't be another job on your list.</span><span lang="es">Tu sitio web no debería ser otro trabajo en tu lista.</span></h2>
         <p><span lang="en">Most websites break slowly. Plugins go stale, pages slow down, security holes open, and nobody notices until a customer does. With Website Care, I notice first.</span><span lang="es">La mayoría de los sitios web se deterioran lentamente. Los plugins se desactualizan, las páginas se vuelven lentas, se abren brechas de seguridad, y nadie se da cuenta hasta que un cliente lo nota. Con Cuidado Web, yo lo noto primero.</span></p>
@@ -686,6 +801,38 @@
   </div>
 </section>
 
+
+<!-- ============ FAQ ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">Common questions.</span><span lang="es">Preguntas frecuentes.</span></h2>
+    </div>
+    <div class="faq">
+      <details class="reveal">
+        <summary><span lang="en">How much does a website cost?</span><span lang="es">¿Cuánto cuesta un sitio web?</span></summary>
+        <p><span lang="en">Every project is different, but most small business websites fall between $2,000 and $8,000. I'll give you an exact number after our first conversation — no surprises, no hourly billing that creeps up.</span><span lang="es">Cada proyecto es diferente, pero la mayoría de los sitios web para pequeños negocios están entre $2,000 y $8,000. Te daré un número exacto después de nuestra primera conversación — sin sorpresas, sin cobros por hora que se acumulan.</span></p>
+      </details>
+      <details class="reveal">
+        <summary><span lang="en">How long does it take to build a website?</span><span lang="es">¿Cuánto tarda construir un sitio web?</span></summary>
+        <p><span lang="en">Most projects take 3 to 6 weeks from kickoff to launch. You'll see the design within the first week and get updates throughout. I won't disappear for a month and come back with something you didn't ask for.</span><span lang="es">La mayoría de los proyectos tardan de 3 a 6 semanas desde el inicio hasta el lanzamiento. Verás el diseño en la primera semana y recibirás actualizaciones durante todo el proceso. No desapareceré por un mes para volver con algo que no pediste.</span></p>
+      </details>
+      <details class="reveal">
+        <summary><span lang="en">Do I own my website?</span><span lang="es">¿Soy dueño de mi sitio web?</span></summary>
+        <p><span lang="en">Yes, 100%. Your domain, your hosting account, your content, your code — it's all yours. If you ever want to part ways, I hand everything over cleanly. No hostage situations.</span><span lang="es">Sí, 100%. Tu dominio, tu cuenta de hosting, tu contenido, tu código — todo es tuyo. Si algún día quieres seguir por otro lado, te entrego todo limpiamente. Sin situaciones de rehén.</span></p>
+      </details>
+      <details class="reveal">
+        <summary><span lang="en">What if I already have a website?</span><span lang="es">¿Y si ya tengo un sitio web?</span></summary>
+        <p><span lang="en">I can redesign it, rebuild it on better technology, or just take over its care. We'll talk about what's working, what isn't, and whether a refresh or a full rebuild makes more sense for your business.</span><span lang="es">Puedo rediseñarlo, reconstruirlo con mejor tecnología, o simplemente hacerme cargo de su cuidado. Hablaremos sobre qué funciona, qué no, y si una renovación o una reconstrucción completa tiene más sentido para tu negocio.</span></p>
+      </details>
+      <details class="reveal">
+        <summary><span lang="en">Do you work with businesses outside the US?</span><span lang="es">¿Trabajas con negocios fuera de EE.UU.?</span></summary>
+        <p><span lang="en">Yes. I'm based in the Dominican Republic and work with clients in the US, Latin America, and anywhere English or Spanish is spoken. Everything is done remotely — timezone differences have never been a problem.</span><span lang="es">Sí. Estoy basado en República Dominicana y trabajo con clientes en EE.UU., Latinoamérica y cualquier lugar donde se hable inglés o español. Todo se hace remotamente — las diferencias de zona horaria nunca han sido un problema.</span></p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FINAL CTA ============ -->
 <section class="final" id="contact" style="padding-top:20px">
   <div class="wrap">
@@ -694,6 +841,10 @@
     <a class="btn" href="mailto:hello@madebysebby.com"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span>&nbsp;→</a>
   </div>
 </section>
+
+<div class="sticky-cta" id="stickyCta">
+  <a href="contact.html"><span lang="en">Ready to talk? Book a free call</span><span lang="es">¿Listo para hablar? Agenda una llamada gratis</span>&nbsp;→</a>
+</div>
 
 <!-- ============ FOOTER ============ -->
 <footer>
@@ -710,5 +861,7 @@
 </footer>
 
 <script>!function(){var l=document.documentElement.getAttribute('data-lang');if(l==='es'){var b=document.querySelectorAll('.lang-toggle button');if(b.length===2){b[0].classList.remove('active');b[1].classList.add('active')}}}()</script>
+<script>!function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})}()</script>
+<script>!function(){var cta=document.getElementById('stickyCta');if(!cta)return;var footer=document.querySelector('footer');var shown=false;window.addEventListener('scroll',function(){var y=window.scrollY;var fTop=footer?footer.getBoundingClientRect().top+y-window.innerHeight:Infinity;if(y>400&&y<fTop){if(!shown){cta.classList.add('show');shown=true}}else{if(shown){cta.classList.remove('show');shown=false}}},{passive:true})}()</script>
 </body>
 </html>

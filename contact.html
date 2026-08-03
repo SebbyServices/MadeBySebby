@@ -7,6 +7,7 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Sebby — Made by Sebby">
 <meta name="description" content="Book a free 20-minute web design consultation. Get honest answers about what your business website needs, what it costs, and how long it takes. No pressure, no jargon.">
+<link rel="preload" as="image" href="assets/logo/sebby-nav.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -237,7 +238,6 @@
     .care{grid-template-columns:1fr;padding:52px 36px}
   }
   @media (max-width:640px){
-    .nav-links{display:none}
     .cards,.steps,.work-grid,.quotes{grid-template-columns:1fr}
     section{padding:68px 0}
     .hero{padding:56px 0 48px}
@@ -305,6 +305,52 @@
 
 
 
+
+  /* ---------- Hamburger Menu ---------- */
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;z-index:51}
+  .menu-btn svg{width:26px;height:26px;stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round}
+  .menu-btn .close{display:none}
+  .nav-open .menu-btn .open{display:none}
+  .nav-open .menu-btn .close{display:block}
+  @media (max-width:640px){
+    .menu-btn{display:block}
+    .nav-links{
+      display:none;position:fixed;top:76px;left:0;right:0;bottom:0;
+      background:var(--white);flex-direction:column;gap:0;padding:20px 28px;
+      border-top:1px solid var(--line);z-index:49;
+      overflow-y:auto;
+    }
+    .nav-open .nav-links{display:flex}
+    .nav-links a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
+    .nav-links a:last-child{border-bottom:none}
+    .nav-links a.btn{margin-top:12px;justify-content:center;border-bottom:none}
+    .nav-links .lang-toggle{margin-top:8px;align-self:flex-start}
+    .nav-links .theme-toggle{margin-top:4px;align-self:flex-start}
+  }
+
+
+  /* ---------- Scroll Animations ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+
+  /* ---------- Contact Form ---------- */
+  .contact-form{display:flex;flex-direction:column;gap:18px}
+  .contact-form label{font-weight:700;font-size:.9rem;display:block;margin-bottom:6px}
+  .contact-form input,.contact-form textarea,.contact-form select{
+    width:100%;padding:14px 16px;border:1.5px solid var(--line);border-radius:var(--radius-sm);
+    font-family:inherit;font-size:.97rem;color:var(--ink);background:var(--white);
+    transition:border-color .15s;
+  }
+  .contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{
+    outline:none;border-color:var(--purple);
+  }
+  .contact-form textarea{min-height:120px;resize:vertical}
+  .contact-form .btn{align-self:flex-start;border:none;cursor:pointer;font-family:inherit}
+  .form-note{font-size:.82rem;color:var(--muted);margin-top:-8px}
+
   /* ---------- Language Toggle ---------- */
   :root:not([data-lang="es"]) [lang="es"]{display:none}
   [data-lang="es"] [lang="en"]{display:none}
@@ -357,6 +403,7 @@
     :root:not([data-theme="light"]) .btn-ghost{border-color:var(--line)}
     :root:not([data-theme="light"]) .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
     :root:not([data-theme="light"]) .contact-line{border-bottom-color:#2A2838}
+    :root:not([data-theme="light"]) .contact-form input,:root:not([data-theme="light"]) .contact-form textarea,:root:not([data-theme="light"]) .contact-form select{background:#1A1C25;border-color:#2A2838;color:#E4E5EA}
     :root:not([data-theme="light"]) .logo-light{display:none !important}
     :root:not([data-theme="light"]) .logo-dark{display:block !important}
     :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
@@ -386,6 +433,7 @@
   [data-theme="dark"] .btn-ghost{border-color:var(--line)}
   [data-theme="dark"] .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
   [data-theme="dark"] .contact-line{border-bottom-color:#2A2838}
+  [data-theme="dark"] .contact-form input,[data-theme="dark"] .contact-form textarea,[data-theme="dark"] .contact-form select{background:#1A1C25;border-color:#2A2838;color:#E4E5EA}
   [data-theme="dark"] .logo-light{display:none !important}
   [data-theme="dark"] .logo-dark{display:block !important}
   [data-theme="dark"] .foot-logo-light{display:none !important}
@@ -483,7 +531,11 @@
 <nav>
   <div class="wrap nav-inner">
     <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
-    <div class="nav-links">
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('nav-open')">
+          <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      <div class="nav-links">
       <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
       <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
       <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
@@ -514,32 +566,42 @@
     <div>
       <h2 style="margin-bottom:20px"><span lang="en">What happens next</span><span lang="es">Qué pasa después</span></h2>
       <div class="steps" style="grid-template-columns:1fr;gap:16px">
-        <div class="step">
+        <div class="step reveal">
           <h3><span lang="en">You reach out</span><span lang="es">Tú me contactas</span></h3>
           <p><span lang="en">Email or call, whichever you prefer. Tell me your business name and what you're hoping the website will do.</span><span lang="es">Correo o llamada, lo que prefieras. Dime el nombre de tu negocio y qué esperas que haga tu sitio web.</span></p>
         </div>
-        <div class="step">
+        <div class="step reveal">
           <h3><span lang="en">We talk for 20 minutes</span><span lang="es">Hablamos 20 minutos</span></h3>
           <p><span lang="en">I'll ask about your customers and your goals, then tell you plainly what I'd build, what it costs, and how long it takes.</span><span lang="es">Te preguntaré sobre tus clientes y tus metas, y luego te diré claramente qué construiría, cuánto cuesta y cuánto tarda.</span></p>
         </div>
-        <div class="step">
+        <div class="step reveal">
           <h3><span lang="en">You decide</span><span lang="es">Tú decides</span></h3>
           <p><span lang="en">No follow-up pressure. If it's a fit, we start. If not, you'll still walk away knowing exactly what your website needs.</span><span lang="es">Sin presión de seguimiento. Si encajamos, empezamos. Si no, te irás sabiendo exactamente lo que necesita tu sitio web.</span></p>
         </div>
       </div>
     </div>
-    <div class="contact-card">
-      <h3><span lang="en">Reach Sebby directly</span><span lang="es">Contacta a Sebby directamente</span></h3>
-      <div class="contact-line">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-        <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
-      </div>
-      <div class="contact-line">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-        <span><span lang="en">Replies within one business day</span><span lang="es">Responde en un día hábil</span></span>
-      </div>
-      <p style="margin-top:24px;font-size:.9rem;color:var(--muted)"><span lang="en">Helpful to include in your email: your business name, your current website if you have one, and the one thing you most want your site to do.</span><span lang="es">Es útil incluir en tu correo: el nombre de tu negocio, tu sitio web actual si tienes uno, y lo que más quieres que haga tu sitio.</span></p>
-      <p style="margin-top:24px"><a class="btn" style="width:100%;justify-content:center" href="mailto:hello@madebysebby.com?subject=Website%20project"><span lang="en">Email Sebby</span><span lang="es">Escríbele a Sebby</span>&nbsp;→</a></p>
+    <div class="contact-card reveal">
+      <h3><span lang="en">Send a message</span><span lang="es">Envía un mensaje</span></h3>
+      <form class="contact-form" onsubmit="return(function(f){var n=f.name.value,e=f.email.value,b=f.business.value,m=f.message.value;var s='Website project'+(b?' — '+b:'');var body='Name: '+n+'%0D%0AEmail: '+e+(b?'%0D%0ABusiness: '+b:'')+'%0D%0A%0D%0A'+encodeURIComponent(m);window.location.href='mailto:hello@madebysebby.com?subject='+encodeURIComponent(s)+'&body='+body;setTimeout(function(){window.location.href='/thank-you.html'},500);return false})(this)">
+        <div>
+          <label for="name"><span lang="en">Your name</span><span lang="es">Tu nombre</span></label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email"><span lang="en">Email address</span><span lang="es">Correo electrónico</span></label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="business"><span lang="en">Business name</span><span lang="es">Nombre del negocio</span></label>
+          <input type="text" id="business" name="business">
+        </div>
+        <div>
+          <label for="message"><span lang="en">Tell me about your project</span><span lang="es">Cuéntame sobre tu proyecto</span></label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <p class="form-note"><span lang="en">Opens your email app with the message ready to send.</span><span lang="es">Abre tu app de correo con el mensaje listo para enviar.</span></p>
+        <button type="submit" class="btn"><span lang="en">Send message</span><span lang="es">Enviar mensaje</span>&nbsp;→</button>
+      </form>
     </div>
   </div>
 </section>
@@ -557,5 +619,6 @@
   </div>
 </footer>
 <script>!function(){var l=document.documentElement.getAttribute('data-lang');if(l==='es'){var b=document.querySelectorAll('.lang-toggle button');if(b.length===2){b[0].classList.remove('active');b[1].classList.add('active')}}}()</script>
+<script>!function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})}()</script>
 </body>
 </html>
