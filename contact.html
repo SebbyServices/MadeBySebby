@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
+<script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
 <style>
   :root{
     --ink:#1A1D29;
@@ -44,6 +46,8 @@
   .logo .sebby{color:var(--ink)}
   .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
   .nav-links a{color:var(--ink-soft);transition:color .15s}
+  .nav-links a.btn{color:#fff}
+  .nav-links a.btn:hover{color:#fff}
   .nav-links a:hover{color:var(--purple)}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
@@ -296,6 +300,117 @@
   .madeby{font-size:.66rem;font-weight:500;color:var(--muted);letter-spacing:.04em;text-transform:lowercase}
   .sebbymark{font-size:1.02rem;font-weight:700;letter-spacing:.24em;color:var(--ink)}
   .credit .lockup-inline strong{letter-spacing:.02em}
+
+
+
+  /* ---------- Language Toggle ---------- */
+  :root:not([data-lang="es"]) [lang="es"]{display:none}
+  [data-lang="es"] [lang="en"]{display:none}
+  .lang-toggle{
+    display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;
+    font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0;
+  }
+  .lang-toggle button{
+    background:none;border:none;padding:7px 12px;cursor:pointer;
+    color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em;
+  }
+  .lang-toggle button:hover{color:var(--purple)}
+  .lang-toggle button.active{background:var(--purple);color:#fff}
+
+  /* ---------- Dark Mode ---------- */
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#717580;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#717580;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) nav{background:rgba(15,17,23,.92)}
+    :root:not([data-theme="light"]) .chip{background:rgba(30,32,42,.95);border-color:var(--line)}
+    :root:not([data-theme="light"]) .card,:root:not([data-theme="light"]) .step,:root:not([data-theme="light"]) .tile,:root:not([data-theme="light"]) .quote,:root:not([data-theme="light"]) .plan,:root:not([data-theme="light"]) .contact-card,:root:not([data-theme="light"]) .faq details{background:#1A1C25}
+    :root:not([data-theme="light"]) .card:hover{border-color:#3D3A4E}
+    :root:not([data-theme="light"]) .portrait{background:linear-gradient(160deg,#1D192D 0%,#1A1530 100%)}
+    :root:not([data-theme="light"]) .process{background:#1A1C25}
+    :root:not([data-theme="light"]) .tile .shot{background:linear-gradient(150deg,#1D192D,#1A1530)}
+    :root:not([data-theme="light"]) .svc-visual{background:linear-gradient(150deg,#1D192D,#1A1530)}
+    :root:not([data-theme="light"]) .care{background:#1A1C25}
+    :root:not([data-theme="light"]) .care h2{color:#E4E5EA}
+    :root:not([data-theme="light"]) .care p{color:#A0A3AD}
+    :root:not([data-theme="light"]) .care li{color:#C8CAD0}
+    :root:not([data-theme="light"]) .care li svg{stroke:#8B6CEF}
+    :root:not([data-theme="light"]) .care .btn{background:var(--purple);color:#fff}
+    :root:not([data-theme="light"]) .care .btn:hover{background:var(--purple-deep)}
+    :root:not([data-theme="light"]) .sitecard{background:#1A1C25}
+    :root:not([data-theme="light"]) .sitecard .bar{background:#222430}
+    :root:not([data-theme="light"]) .sitecard .url{background:#1A1C25;color:#717580}
+    :root:not([data-theme="light"]) .sitecard .visit{background:#1A1C25}
+    :root:not([data-theme="light"]) .promise{background:#1D192D}
+    :root:not([data-theme="light"]) .btn-ghost{border-color:var(--line)}
+    :root:not([data-theme="light"]) .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+    :root:not([data-theme="light"]) .contact-line{border-bottom-color:#2A2838}
+    :root:not([data-theme="light"]) .logo-light{display:none !important}
+    :root:not([data-theme="light"]) .logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
+    :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
+  }
+  [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
+  [data-theme="dark"] .chip{background:rgba(30,32,42,.95);border-color:var(--line)}
+  [data-theme="dark"] .card,[data-theme="dark"] .step,[data-theme="dark"] .tile,[data-theme="dark"] .quote,[data-theme="dark"] .plan,[data-theme="dark"] .contact-card,[data-theme="dark"] .faq details{background:#1A1C25}
+  [data-theme="dark"] .card:hover{border-color:#3D3A4E}
+  [data-theme="dark"] .portrait{background:linear-gradient(160deg,#1D192D 0%,#1A1530 100%)}
+  [data-theme="dark"] .process{background:#1A1C25}
+  [data-theme="dark"] .tile .shot{background:linear-gradient(150deg,#1D192D,#1A1530)}
+  [data-theme="dark"] .svc-visual{background:linear-gradient(150deg,#1D192D,#1A1530)}
+  [data-theme="dark"] .care{background:#1A1C25}
+  [data-theme="dark"] .care h2{color:#E4E5EA}
+  [data-theme="dark"] .care p{color:#A0A3AD}
+  [data-theme="dark"] .care li{color:#C8CAD0}
+  [data-theme="dark"] .care li svg{stroke:#8B6CEF}
+  [data-theme="dark"] .care .btn{background:var(--purple);color:#fff}
+  [data-theme="dark"] .care .btn:hover{background:var(--purple-deep)}
+  [data-theme="dark"] .sitecard{background:#1A1C25}
+  [data-theme="dark"] .sitecard .bar{background:#222430}
+  [data-theme="dark"] .sitecard .url{background:#1A1C25;color:#717580}
+  [data-theme="dark"] .sitecard .visit{background:#1A1C25}
+  [data-theme="dark"] .promise{background:#1D192D}
+  [data-theme="dark"] .btn-ghost{border-color:var(--line)}
+  [data-theme="dark"] .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+  [data-theme="dark"] .contact-line{border-bottom-color:#2A2838}
+  [data-theme="dark"] .logo-light{display:none !important}
+  [data-theme="dark"] .logo-dark{display:block !important}
+  [data-theme="dark"] .foot-logo-light{display:none !important}
+  [data-theme="dark"] .foot-logo-dark{display:block !important}
+
+
+  /* Theme transition (only applied during toggle, not page load) */
+  .theme-trans,.theme-trans *,.theme-trans *::before,.theme-trans *::after{
+    transition:background .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease,fill .35s ease,stroke .35s ease !important;
+  }
+  /* Theme toggle button */
+  .theme-toggle{
+    background:none;border:1.5px solid var(--line);border-radius:50%;
+    width:38px;height:38px;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;transition:border-color .15s,background .15s;flex-shrink:0;
+  }
+  .theme-toggle:hover{border-color:var(--purple);background:var(--tint)}
+  .theme-toggle svg{width:18px;height:18px;stroke:var(--muted);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .theme-toggle:hover svg{stroke:var(--purple)}
+  .theme-toggle .icon-sun{display:none}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon{display:none}
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun{display:block}
+  }
+  [data-theme="dark"] .theme-toggle .icon-moon{display:none}
+  [data-theme="dark"] .theme-toggle .icon-sun{display:block !important}
+  [data-theme="light"] .theme-toggle .icon-sun{display:none !important}
+  [data-theme="light"] .theme-toggle .icon-moon{display:block}
+
 </style>
 
 <!-- seo:start -->
@@ -324,71 +439,80 @@
 <body>
 <nav>
   <div class="wrap nav-inner">
-    <a class="logo" href="/" aria-label="Made by Sebby home"><img src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"></a>
+    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
     <div class="nav-links">
-      <a href="services.html">What I do</a>
-      <a href="work.html">Work</a>
-      <a href="website-care.html">Website Care</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="btn btn-nav">Work with Sebby</a>
+      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
+      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
+      <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <div class="lang-toggle">
+          <button onclick="document.documentElement.removeAttribute('data-lang');localStorage.setItem('lang','en');this.classList.add('active');this.nextElementSibling.classList.remove('active')" class="active">EN</button>
+          <button onclick="document.documentElement.setAttribute('data-lang','es');localStorage.setItem('lang','es');this.classList.add('active');this.previousElementSibling.classList.remove('active')">ES</button>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
+          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="contact.html" class="btn btn-nav"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span></a>
     </div>
   </div>
 </nav>
 
 <header class="page-hero">
   <div class="wrap">
-    <div class="eyebrow">Contact</div>
-    <h1>Let's talk about <span class="accent">your business.</span></h1>
-    <p class="lede">A free 20-minute call, no pressure and no jargon. You tell me what you do, I tell you exactly what I'd build and what it costs. If I'm not the right fit, I'll say so and point you somewhere good.</p>
+    <div class="eyebrow"><span lang="en">Contact</span><span lang="es">Contacto</span></div>
+    <h1><span lang="en">Let's talk about <span class="accent">your business.</span></span><span lang="es">Hablemos de <span class="accent">tu negocio.</span></span></h1>
+    <p class="lede"><span lang="en">A free 20-minute call, no pressure and no jargon. You tell me what you do, I tell you exactly what I'd build and what it costs. If I'm not the right fit, I'll say so and point you somewhere good.</span><span lang="es">Una llamada gratuita de 20 minutos, sin presión y sin jerga. Me cuentas a qué te dedicas, te digo exactamente qué construiría y cuánto cuesta. Si no soy la persona indicada, te lo digo y te recomiendo a alguien bueno.</span></p>
   </div>
 </header>
 
 <section style="padding-top:24px">
   <div class="wrap contact-grid">
     <div>
-      <h2 style="margin-bottom:20px">What happens next</h2>
+      <h2 style="margin-bottom:20px"><span lang="en">What happens next</span><span lang="es">Qué pasa después</span></h2>
       <div class="steps" style="grid-template-columns:1fr;gap:16px">
         <div class="step">
-          <h3>You reach out</h3>
-          <p>Email or call, whichever you prefer. Tell me your business name and what you're hoping the website will do.</p>
+          <h3><span lang="en">You reach out</span><span lang="es">Tú me contactas</span></h3>
+          <p><span lang="en">Email or call, whichever you prefer. Tell me your business name and what you're hoping the website will do.</span><span lang="es">Correo o llamada, lo que prefieras. Dime el nombre de tu negocio y qué esperas que haga tu sitio web.</span></p>
         </div>
         <div class="step">
-          <h3>We talk for 20 minutes</h3>
-          <p>I'll ask about your customers and your goals, then tell you plainly what I'd build, what it costs, and how long it takes.</p>
+          <h3><span lang="en">We talk for 20 minutes</span><span lang="es">Hablamos 20 minutos</span></h3>
+          <p><span lang="en">I'll ask about your customers and your goals, then tell you plainly what I'd build, what it costs, and how long it takes.</span><span lang="es">Te preguntaré sobre tus clientes y tus metas, y luego te diré claramente qué construiría, cuánto cuesta y cuánto tarda.</span></p>
         </div>
         <div class="step">
-          <h3>You decide</h3>
-          <p>No follow-up pressure. If it's a fit, we start. If not, you'll still walk away knowing exactly what your website needs.</p>
+          <h3><span lang="en">You decide</span><span lang="es">Tú decides</span></h3>
+          <p><span lang="en">No follow-up pressure. If it's a fit, we start. If not, you'll still walk away knowing exactly what your website needs.</span><span lang="es">Sin presión de seguimiento. Si encajamos, empezamos. Si no, te irás sabiendo exactamente lo que necesita tu sitio web.</span></p>
         </div>
       </div>
     </div>
     <div class="contact-card">
-      <h3>Reach Sebby directly</h3>
+      <h3><span lang="en">Reach Sebby directly</span><span lang="es">Contacta a Sebby directamente</span></h3>
       <div class="contact-line">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
         <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
       </div>
       <div class="contact-line">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-        <span>Replies within one business day</span>
+        <span><span lang="en">Replies within one business day</span><span lang="es">Responde en un día hábil</span></span>
       </div>
-      <p style="margin-top:24px;font-size:.9rem;color:var(--muted)">Helpful to include in your email: your business name, your current website if you have one, and the one thing you most want your site to do.</p>
-      <p style="margin-top:24px"><a class="btn" style="width:100%;justify-content:center" href="mailto:hello@madebysebby.com?subject=Website%20project">Email Sebby&nbsp;→</a></p>
+      <p style="margin-top:24px;font-size:.9rem;color:var(--muted)"><span lang="en">Helpful to include in your email: your business name, your current website if you have one, and the one thing you most want your site to do.</span><span lang="es">Es útil incluir en tu correo: el nombre de tu negocio, tu sitio web actual si tienes uno, y lo que más quieres que haga tu sitio.</span></p>
+      <p style="margin-top:24px"><a class="btn" style="width:100%;justify-content:center" href="mailto:hello@madebysebby.com?subject=Website%20project"><span lang="en">Email Sebby</span><span lang="es">Escríbele a Sebby</span>&nbsp;→</a></p>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap foot-inner">
-    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img src="assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><span>This site was <strong>Made by Sebby</strong>. Yours can be too.</span></div>
+    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span><span lang="en">This site was <strong>Made by Sebby</strong>. Yours can be too.</span><span lang="es">Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</span></span></div>
     <div class="foot-links">
-      <a href="services.html">What I do</a>
-      <a href="work.html">Work</a>
-      <a href="website-care.html">Website Care</a>
-      <a href="about.html">About</a>
+      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
+      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
+      <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
       <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
     </div>
   </div>
 </footer>
+<script>!function(){var l=document.documentElement.getAttribute('data-lang');if(l==='es'){var b=document.querySelectorAll('.lang-toggle button');if(b.length===2){b[0].classList.remove('active');b[1].classList.add('active')}}}()</script>
 </body>
 </html>

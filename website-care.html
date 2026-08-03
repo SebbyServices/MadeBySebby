@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
+<script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
 <style>
   :root{
     --ink:#1A1D29;
@@ -44,6 +46,8 @@
   .logo .sebby{color:var(--ink)}
   .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
   .nav-links a{color:var(--ink-soft);transition:color .15s}
+  .nav-links a.btn{color:#fff}
+  .nav-links a.btn:hover{color:#fff}
   .nav-links a:hover{color:var(--purple)}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
@@ -296,6 +300,117 @@
   .madeby{font-size:.66rem;font-weight:500;color:var(--muted);letter-spacing:.04em;text-transform:lowercase}
   .sebbymark{font-size:1.02rem;font-weight:700;letter-spacing:.24em;color:var(--ink)}
   .credit .lockup-inline strong{letter-spacing:.02em}
+
+
+
+  /* ---------- Language Toggle ---------- */
+  :root:not([data-lang="es"]) [lang="es"]{display:none}
+  [data-lang="es"] [lang="en"]{display:none}
+  .lang-toggle{
+    display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;
+    font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0;
+  }
+  .lang-toggle button{
+    background:none;border:none;padding:7px 12px;cursor:pointer;
+    color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em;
+  }
+  .lang-toggle button:hover{color:var(--purple)}
+  .lang-toggle button.active{background:var(--purple);color:#fff}
+
+  /* ---------- Dark Mode ---------- */
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#717580;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#717580;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) nav{background:rgba(15,17,23,.92)}
+    :root:not([data-theme="light"]) .chip{background:rgba(30,32,42,.95);border-color:var(--line)}
+    :root:not([data-theme="light"]) .card,:root:not([data-theme="light"]) .step,:root:not([data-theme="light"]) .tile,:root:not([data-theme="light"]) .quote,:root:not([data-theme="light"]) .plan,:root:not([data-theme="light"]) .contact-card,:root:not([data-theme="light"]) .faq details{background:#1A1C25}
+    :root:not([data-theme="light"]) .card:hover{border-color:#3D3A4E}
+    :root:not([data-theme="light"]) .portrait{background:linear-gradient(160deg,#1D192D 0%,#1A1530 100%)}
+    :root:not([data-theme="light"]) .process{background:#1A1C25}
+    :root:not([data-theme="light"]) .tile .shot{background:linear-gradient(150deg,#1D192D,#1A1530)}
+    :root:not([data-theme="light"]) .svc-visual{background:linear-gradient(150deg,#1D192D,#1A1530)}
+    :root:not([data-theme="light"]) .care{background:#1A1C25}
+    :root:not([data-theme="light"]) .care h2{color:#E4E5EA}
+    :root:not([data-theme="light"]) .care p{color:#A0A3AD}
+    :root:not([data-theme="light"]) .care li{color:#C8CAD0}
+    :root:not([data-theme="light"]) .care li svg{stroke:#8B6CEF}
+    :root:not([data-theme="light"]) .care .btn{background:var(--purple);color:#fff}
+    :root:not([data-theme="light"]) .care .btn:hover{background:var(--purple-deep)}
+    :root:not([data-theme="light"]) .sitecard{background:#1A1C25}
+    :root:not([data-theme="light"]) .sitecard .bar{background:#222430}
+    :root:not([data-theme="light"]) .sitecard .url{background:#1A1C25;color:#717580}
+    :root:not([data-theme="light"]) .sitecard .visit{background:#1A1C25}
+    :root:not([data-theme="light"]) .promise{background:#1D192D}
+    :root:not([data-theme="light"]) .btn-ghost{border-color:var(--line)}
+    :root:not([data-theme="light"]) .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+    :root:not([data-theme="light"]) .contact-line{border-bottom-color:#2A2838}
+    :root:not([data-theme="light"]) .logo-light{display:none !important}
+    :root:not([data-theme="light"]) .logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
+    :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
+  }
+  [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
+  [data-theme="dark"] .chip{background:rgba(30,32,42,.95);border-color:var(--line)}
+  [data-theme="dark"] .card,[data-theme="dark"] .step,[data-theme="dark"] .tile,[data-theme="dark"] .quote,[data-theme="dark"] .plan,[data-theme="dark"] .contact-card,[data-theme="dark"] .faq details{background:#1A1C25}
+  [data-theme="dark"] .card:hover{border-color:#3D3A4E}
+  [data-theme="dark"] .portrait{background:linear-gradient(160deg,#1D192D 0%,#1A1530 100%)}
+  [data-theme="dark"] .process{background:#1A1C25}
+  [data-theme="dark"] .tile .shot{background:linear-gradient(150deg,#1D192D,#1A1530)}
+  [data-theme="dark"] .svc-visual{background:linear-gradient(150deg,#1D192D,#1A1530)}
+  [data-theme="dark"] .care{background:#1A1C25}
+  [data-theme="dark"] .care h2{color:#E4E5EA}
+  [data-theme="dark"] .care p{color:#A0A3AD}
+  [data-theme="dark"] .care li{color:#C8CAD0}
+  [data-theme="dark"] .care li svg{stroke:#8B6CEF}
+  [data-theme="dark"] .care .btn{background:var(--purple);color:#fff}
+  [data-theme="dark"] .care .btn:hover{background:var(--purple-deep)}
+  [data-theme="dark"] .sitecard{background:#1A1C25}
+  [data-theme="dark"] .sitecard .bar{background:#222430}
+  [data-theme="dark"] .sitecard .url{background:#1A1C25;color:#717580}
+  [data-theme="dark"] .sitecard .visit{background:#1A1C25}
+  [data-theme="dark"] .promise{background:#1D192D}
+  [data-theme="dark"] .btn-ghost{border-color:var(--line)}
+  [data-theme="dark"] .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+  [data-theme="dark"] .contact-line{border-bottom-color:#2A2838}
+  [data-theme="dark"] .logo-light{display:none !important}
+  [data-theme="dark"] .logo-dark{display:block !important}
+  [data-theme="dark"] .foot-logo-light{display:none !important}
+  [data-theme="dark"] .foot-logo-dark{display:block !important}
+
+
+  /* Theme transition (only applied during toggle, not page load) */
+  .theme-trans,.theme-trans *,.theme-trans *::before,.theme-trans *::after{
+    transition:background .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease,fill .35s ease,stroke .35s ease !important;
+  }
+  /* Theme toggle button */
+  .theme-toggle{
+    background:none;border:1.5px solid var(--line);border-radius:50%;
+    width:38px;height:38px;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;transition:border-color .15s,background .15s;flex-shrink:0;
+  }
+  .theme-toggle:hover{border-color:var(--purple);background:var(--tint)}
+  .theme-toggle svg{width:18px;height:18px;stroke:var(--muted);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .theme-toggle:hover svg{stroke:var(--purple)}
+  .theme-toggle .icon-sun{display:none}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon{display:none}
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun{display:block}
+  }
+  [data-theme="dark"] .theme-toggle .icon-moon{display:none}
+  [data-theme="dark"] .theme-toggle .icon-sun{display:block !important}
+  [data-theme="light"] .theme-toggle .icon-sun{display:none !important}
+  [data-theme="light"] .theme-toggle .icon-moon{display:block}
+
 </style>
 
 <!-- seo:start -->
@@ -324,67 +439,75 @@
 <body>
 <nav>
   <div class="wrap nav-inner">
-    <a class="logo" href="/" aria-label="Made by Sebby home"><img src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"></a>
+    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
     <div class="nav-links">
-      <a href="services.html">What I do</a>
-      <a href="work.html">Work</a>
-      <a href="website-care.html" style="color:var(--purple)">Website Care</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="btn btn-nav">Work with Sebby</a>
+      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
+      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
+      <a href="website-care.html" style="color:var(--purple)"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <div class="lang-toggle">
+          <button onclick="document.documentElement.removeAttribute('data-lang');localStorage.setItem('lang','en');this.classList.add('active');this.nextElementSibling.classList.remove('active')" class="active">EN</button>
+          <button onclick="document.documentElement.setAttribute('data-lang','es');localStorage.setItem('lang','es');this.classList.add('active');this.previousElementSibling.classList.remove('active')">ES</button>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
+          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="contact.html" class="btn btn-nav"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span></a>
     </div>
   </div>
 </nav>
 
 <header class="page-hero">
   <div class="wrap">
-    <div class="eyebrow">Website Care</div>
-    <h1>You run your business. <span class="accent">I'll take care of your website.</span></h1>
-    <p class="lede">Most websites break slowly. Plugins go stale, pages slow down, security holes open, and nobody notices until a customer does. With Website Care, I notice first.</p>
+    <div class="eyebrow"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></div>
+    <h1><span lang="en">You run your business. <span class="accent">I'll take care of your website.</span></span><span lang="es">Tú manejas tu negocio. <span class="accent">Yo me encargo de tu sitio web.</span></span></h1>
+    <p class="lede"><span lang="en">Most websites break slowly. Plugins go stale, pages slow down, security holes open, and nobody notices until a customer does. With Website Care, I notice first.</span><span lang="es">La mayoría de los sitios web se deterioran lentamente. Los plugins se desactualizan, las páginas se vuelven lentas, se abren brechas de seguridad, y nadie se da cuenta hasta que un cliente lo nota. Con Cuidado Web, yo lo noto primero.</span></p>
   </div>
 </header>
 
 <section style="padding-top:24px">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Pick the level of care that fits.</h2>
-      <p>Every plan is month to month. No contracts, no lock-in, and plain pricing on our first call. If I'm not earning it, cancel any time.</p>
+      <h2><span lang="en">Pick the level of care that fits.</span><span lang="es">Elige el nivel de cuidado que te convenga.</span></h2>
+      <p><span lang="en">Every plan is month to month. No contracts, no lock-in, and plain pricing on our first call. If I'm not earning it, cancel any time.</span><span lang="es">Cada plan es mes a mes. Sin contratos, sin ataduras, y precios claros en nuestra primera llamada. Si no lo merezco, cancela cuando quieras.</span></p>
     </div>
     <div class="plans">
       <div class="plan">
-        <h3>Essentials</h3>
-        <p class="for">For simple sites that need to stay healthy</p>
-        <div class="price" style="font-size:1.12rem;color:var(--ink-soft)">Month to month<em> · no contracts</em></div>
+        <h3><span lang="en">Essentials</span><span lang="es">Esencial</span></h3>
+        <p class="for"><span lang="en">For simple sites that need to stay healthy</span><span lang="es">Para sitios simples que necesitan mantenerse saludables</span></p>
+        <div class="price" style="font-size:1.12rem;color:var(--ink-soft)"><span lang="en"><span lang="en">Month to month<em> · no contracts</em></span><span lang="es">Mes a mes<em> · sin contratos</em></span></span><span lang="es">Mes a mes<em> · sin contratos</em></span></div>
         <ul class="checklist">
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Weekly software and security updates</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Daily off-site backups</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Uptime monitoring around the clock</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Monthly health report in plain English</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Weekly software and security updates</span><span lang="es">Actualizaciones semanales de software y seguridad</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Daily off-site backups</span><span lang="es">Respaldos diarios fuera del sitio</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Uptime monitoring around the clock</span><span lang="es">Monitoreo de disponibilidad las 24 horas</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Monthly health report in plain English</span><span lang="es">Informe mensual de salud en términos claros</span></li>
         </ul>
-        <a class="btn btn-ghost" href="contact.html">Choose Essentials</a>
+        <a class="btn btn-ghost" href="contact.html"><span lang="en">Choose Essentials</span><span lang="es">Elegir Esencial</span></a>
       </div>
       <div class="plan featured">
-        <h3>Standard</h3>
-        <p class="for">For businesses whose website brings in customers</p>
+        <h3><span lang="en">Standard</span><span lang="es">Estándar</span></h3>
+        <p class="for"><span lang="en">For businesses whose website brings in customers</span><span lang="es">Para negocios cuyo sitio web atrae clientes</span></p>
         <div class="price" style="font-size:1.12rem;color:var(--ink-soft)">Month to month<em> · no contracts</em></div>
         <ul class="checklist">
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Everything in Essentials</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>A set block of edits and updates every month</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Speed checks and performance tuning</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Priority response, typically same day</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Everything in Essentials</span><span lang="es">Todo lo del plan Esencial</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">A set block of edits and updates every month</span><span lang="es">Un bloque fijo de ediciones y actualizaciones cada mes</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Speed checks and performance tuning</span><span lang="es">Revisiones de velocidad y optimización de rendimiento</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Priority response, typically same day</span><span lang="es">Respuesta prioritaria, generalmente el mismo día</span></li>
         </ul>
-        <a class="btn" href="contact.html">Choose Standard</a>
+        <a class="btn" href="contact.html"><span lang="en">Choose Standard</span><span lang="es">Elegir Estándar</span></a>
       </div>
       <div class="plan">
-        <h3>Growth</h3>
-        <p class="for">For businesses actively growing online</p>
+        <h3><span lang="en">Growth</span><span lang="es">Crecimiento</span></h3>
+        <p class="for"><span lang="en">For businesses actively growing online</span><span lang="es">Para negocios que están creciendo activamente en línea</span></p>
         <div class="price" style="font-size:1.12rem;color:var(--ink-soft)">Month to month<em> · no contracts</em></div>
         <ul class="checklist">
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Everything in Standard</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Ongoing SEO work and content updates</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Quarterly strategy call about what's next</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>New pages and features as you need them</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Everything in Standard</span><span lang="es">Todo lo del plan Estándar</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Ongoing SEO work and content updates</span><span lang="es">Trabajo continuo de SEO y actualizaciones de contenido</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Quarterly strategy call about what's next</span><span lang="es">Llamada trimestral de estrategia sobre los próximos pasos</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">New pages and features as you need them</span><span lang="es">Nuevas páginas y funciones cuando las necesites</span></li>
         </ul>
-        <a class="btn btn-ghost" href="contact.html">Choose Growth</a>
+        <a class="btn btn-ghost" href="contact.html"><span lang="en">Choose Growth</span><span lang="es">Elegir Crecimiento</span></a>
       </div>
     </div>
   </div>
@@ -393,24 +516,24 @@
 <section style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Fair questions.</h2>
+      <h2><span lang="en">Fair questions.</span><span lang="es">Preguntas justas.</span></h2>
     </div>
     <div class="faq">
       <details>
-        <summary>What if you didn't build my website?</summary>
-        <p>That's fine. I'll do a health check first so we both know what shape it's in, then take it from there. Most sites I care for were built by someone else.</p>
+        <summary><span lang="en">What if you didn't build my website?</span><span lang="es">¿Y si tú no construiste mi sitio web?</span></summary>
+        <p><span lang="en">That's fine. I'll do a health check first so we both know what shape it's in, then take it from there. Most sites I care for were built by someone else.</span><span lang="es">No hay problema. Primero haré una revisión de salud para que ambos sepamos en qué estado está, y avanzamos desde ahí. La mayoría de los sitios que cuido fueron construidos por otra persona.</span></p>
       </details>
       <details>
-        <summary>What counts as a "small edit"?</summary>
-        <p>Swapping photos, updating hours or prices, adding a testimonial, tweaking text. If something is bigger, I'll tell you before I start and quote it plainly. No surprise invoices, ever.</p>
+        <summary><span lang="en">What counts as a "small edit"?</span><span lang="es">¿Qué cuenta como una "edición pequeña"?</span></summary>
+        <p><span lang="en">Swapping photos, updating hours or prices, adding a testimonial, tweaking text. If something is bigger, I'll tell you before I start and quote it plainly. No surprise invoices, ever.</span><span lang="es">Cambiar fotos, actualizar horarios o precios, agregar un testimonio, ajustar texto. Si algo es más grande, te lo digo antes de empezar y te doy un precio claro. Sin facturas sorpresa, nunca.</span></p>
       </details>
       <details>
-        <summary>What happens if my site goes down?</summary>
-        <p>I usually know before you do. Monitoring alerts me the moment something's wrong, and getting you back online becomes my first priority.</p>
+        <summary><span lang="en">What happens if my site goes down?</span><span lang="es">¿Qué pasa si mi sitio se cae?</span></summary>
+        <p><span lang="en">I usually know before you do. Monitoring alerts me the moment something's wrong, and getting you back online becomes my first priority.</span><span lang="es">Generalmente lo sé antes que tú. El monitoreo me alerta en cuanto algo anda mal, y ponerte de nuevo en línea se convierte en mi primera prioridad.</span></p>
       </details>
       <details>
-        <summary>Can I cancel?</summary>
-        <p>Any time, no penalty. Your site, your backups, and your accounts are yours. I'll hand everything over cleanly if you ever move on.</p>
+        <summary><span lang="en">Can I cancel?</span><span lang="es">¿Puedo cancelar?</span></summary>
+        <p><span lang="en">Any time, no penalty. Your site, your backups, and your accounts are yours. I'll hand everything over cleanly if you ever move on.</span><span lang="es">En cualquier momento, sin penalización. Tu sitio, tus respaldos y tus cuentas son tuyos. Te entregaré todo limpiamente si decides seguir adelante.</span></p>
       </details>
     </div>
   </div>
@@ -418,23 +541,24 @@
 
 <section class="final" style="padding-top:10px">
   <div class="wrap">
-    <h2>Never think about your website again.</h2>
-    <p>In the best possible way.</p>
-    <a class="btn" href="contact.html">Ask about Website Care&nbsp;→</a>
+    <h2><span lang="en">Never think about your website again.</span><span lang="es">No pienses más en tu sitio web.</span></h2>
+    <p><span lang="en">In the best possible way.</span><span lang="es">De la mejor manera posible.</span></p>
+    <a class="btn" href="contact.html"><span lang="en">Ask about Website Care</span><span lang="es">Pregunta por Cuidado Web</span>&nbsp;→</a>
   </div>
 </section>
 
 <footer>
   <div class="wrap foot-inner">
-    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img src="assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><span>This site was <strong>Made by Sebby</strong>. Yours can be too.</span></div>
+    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span><span lang="en">This site was <strong>Made by Sebby</strong>. Yours can be too.</span><span lang="es">Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</span></span></div>
     <div class="foot-links">
-      <a href="services.html">What I do</a>
-      <a href="work.html">Work</a>
-      <a href="website-care.html">Website Care</a>
-      <a href="about.html">About</a>
+      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
+      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
+      <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
       <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
     </div>
   </div>
 </footer>
+<script>!function(){var l=document.documentElement.getAttribute('data-lang');if(l==='es'){var b=document.querySelectorAll('.lang-toggle button');if(b.length===2){b[0].classList.remove('active');b[1].classList.add('active')}}}()</script>
 </body>
 </html>

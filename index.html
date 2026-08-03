@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
+<script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
 <style>
   :root{
     --ink:#1A1D29;
@@ -45,6 +47,8 @@
   .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
   .nav-links a{color:var(--ink-soft);transition:color .15s}
   .nav-links a:hover{color:var(--purple)}
+  .nav-links a.btn{color:#fff}
+  .nav-links a.btn:hover{color:#fff}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
     background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;
@@ -249,6 +253,117 @@
   .portrait{padding:0}
   .portrait img{width:100%;height:100%;object-fit:cover;object-position:top center}
 
+
+
+
+  /* ---------- Language Toggle ---------- */
+  :root:not([data-lang="es"]) [lang="es"]{display:none}
+  [data-lang="es"] [lang="en"]{display:none}
+  .lang-toggle{
+    display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;
+    font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0;
+  }
+  .lang-toggle button{
+    background:none;border:none;padding:7px 12px;cursor:pointer;
+    color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em;
+  }
+  .lang-toggle button:hover{color:var(--purple)}
+  .lang-toggle button.active{background:var(--purple);color:#fff}
+
+  /* ---------- Dark Mode ---------- */
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#717580;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#717580;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) nav{background:rgba(15,17,23,.92)}
+    :root:not([data-theme="light"]) .chip{background:rgba(30,32,42,.95);border-color:var(--line)}
+    :root:not([data-theme="light"]) .card,:root:not([data-theme="light"]) .step,:root:not([data-theme="light"]) .tile,:root:not([data-theme="light"]) .quote,:root:not([data-theme="light"]) .plan,:root:not([data-theme="light"]) .contact-card,:root:not([data-theme="light"]) .faq details{background:#1A1C25}
+    :root:not([data-theme="light"]) .card:hover{border-color:#3D3A4E}
+    :root:not([data-theme="light"]) .portrait{background:linear-gradient(160deg,#1D192D 0%,#1A1530 100%)}
+    :root:not([data-theme="light"]) .process{background:#1A1C25}
+    :root:not([data-theme="light"]) .tile .shot{background:linear-gradient(150deg,#1D192D,#1A1530)}
+    :root:not([data-theme="light"]) .svc-visual{background:linear-gradient(150deg,#1D192D,#1A1530)}
+    :root:not([data-theme="light"]) .care{background:#1A1C25}
+    :root:not([data-theme="light"]) .care h2{color:#E4E5EA}
+    :root:not([data-theme="light"]) .care p{color:#A0A3AD}
+    :root:not([data-theme="light"]) .care li{color:#C8CAD0}
+    :root:not([data-theme="light"]) .care li svg{stroke:#8B6CEF}
+    :root:not([data-theme="light"]) .care .btn{background:var(--purple);color:#fff}
+    :root:not([data-theme="light"]) .care .btn:hover{background:var(--purple-deep)}
+    :root:not([data-theme="light"]) .sitecard{background:#1A1C25}
+    :root:not([data-theme="light"]) .sitecard .bar{background:#222430}
+    :root:not([data-theme="light"]) .sitecard .url{background:#1A1C25;color:#717580}
+    :root:not([data-theme="light"]) .sitecard .visit{background:#1A1C25}
+    :root:not([data-theme="light"]) .promise{background:#1D192D}
+    :root:not([data-theme="light"]) .btn-ghost{border-color:var(--line)}
+    :root:not([data-theme="light"]) .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+    :root:not([data-theme="light"]) .contact-line{border-bottom-color:#2A2838}
+    :root:not([data-theme="light"]) .logo-light{display:none !important}
+    :root:not([data-theme="light"]) .logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
+    :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
+  }
+  [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
+  [data-theme="dark"] .chip{background:rgba(30,32,42,.95);border-color:var(--line)}
+  [data-theme="dark"] .card,[data-theme="dark"] .step,[data-theme="dark"] .tile,[data-theme="dark"] .quote,[data-theme="dark"] .plan,[data-theme="dark"] .contact-card,[data-theme="dark"] .faq details{background:#1A1C25}
+  [data-theme="dark"] .card:hover{border-color:#3D3A4E}
+  [data-theme="dark"] .portrait{background:linear-gradient(160deg,#1D192D 0%,#1A1530 100%)}
+  [data-theme="dark"] .process{background:#1A1C25}
+  [data-theme="dark"] .tile .shot{background:linear-gradient(150deg,#1D192D,#1A1530)}
+  [data-theme="dark"] .svc-visual{background:linear-gradient(150deg,#1D192D,#1A1530)}
+  [data-theme="dark"] .care{background:#1A1C25}
+  [data-theme="dark"] .care h2{color:#E4E5EA}
+  [data-theme="dark"] .care p{color:#A0A3AD}
+  [data-theme="dark"] .care li{color:#C8CAD0}
+  [data-theme="dark"] .care li svg{stroke:#8B6CEF}
+  [data-theme="dark"] .care .btn{background:var(--purple);color:#fff}
+  [data-theme="dark"] .care .btn:hover{background:var(--purple-deep)}
+  [data-theme="dark"] .sitecard{background:#1A1C25}
+  [data-theme="dark"] .sitecard .bar{background:#222430}
+  [data-theme="dark"] .sitecard .url{background:#1A1C25;color:#717580}
+  [data-theme="dark"] .sitecard .visit{background:#1A1C25}
+  [data-theme="dark"] .promise{background:#1D192D}
+  [data-theme="dark"] .btn-ghost{border-color:var(--line)}
+  [data-theme="dark"] .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+  [data-theme="dark"] .contact-line{border-bottom-color:#2A2838}
+  [data-theme="dark"] .logo-light{display:none !important}
+  [data-theme="dark"] .logo-dark{display:block !important}
+  [data-theme="dark"] .foot-logo-light{display:none !important}
+  [data-theme="dark"] .foot-logo-dark{display:block !important}
+
+
+  /* Theme transition (only applied during toggle, not page load) */
+  .theme-trans,.theme-trans *,.theme-trans *::before,.theme-trans *::after{
+    transition:background .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease,fill .35s ease,stroke .35s ease !important;
+  }
+  /* Theme toggle button */
+  .theme-toggle{
+    background:none;border:1.5px solid var(--line);border-radius:50%;
+    width:38px;height:38px;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;transition:border-color .15s,background .15s;flex-shrink:0;
+  }
+  .theme-toggle:hover{border-color:var(--purple);background:var(--tint)}
+  .theme-toggle svg{width:18px;height:18px;stroke:var(--muted);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .theme-toggle:hover svg{stroke:var(--purple)}
+  .theme-toggle .icon-sun{display:none}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon{display:none}
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun{display:block}
+  }
+  [data-theme="dark"] .theme-toggle .icon-moon{display:none}
+  [data-theme="dark"] .theme-toggle .icon-sun{display:block !important}
+  [data-theme="light"] .theme-toggle .icon-sun{display:none !important}
+  [data-theme="light"] .theme-toggle .icon-moon{display:block}
+
 </style>
 
 <!-- seo:start -->
@@ -294,13 +409,21 @@
 <!-- ============ NAV ============ -->
 <nav>
   <div class="wrap nav-inner">
-    <a class="logo" href="#top" aria-label="Made by Sebby home"><img src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"></a>
+    <a class="logo" href="#top" aria-label="Made by Sebby home"><img class="logo-light" src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
     <div class="nav-links">
-      <a href="services.html">What I do</a>
-      <a href="work.html">Work</a>
-      <a href="website-care.html">Website Care</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="btn btn-nav">Work with Sebby</a>
+      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
+      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
+      <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <div class="lang-toggle">
+          <button onclick="document.documentElement.removeAttribute('data-lang');localStorage.setItem('lang','en');this.classList.add('active');this.nextElementSibling.classList.remove('active')" class="active">EN</button>
+          <button onclick="document.documentElement.setAttribute('data-lang','es');localStorage.setItem('lang','es');this.classList.add('active');this.previousElementSibling.classList.remove('active')">ES</button>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
+          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="contact.html" class="btn btn-nav"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span></a>
     </div>
   </div>
 </nav>
@@ -309,20 +432,20 @@
 <header class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow rise">Web design · Development · Website care</div>
-      <h1 class="rise d1">Websites that <span class="accent">build trust.</span></h1>
-      <p class="lede rise d2">I design, build, and care for websites that help your business look professional, earn trust, and grow with confidence. No agency runaround, no jargon. You talk to me, and I build it like it's my own.</p>
+      <div class="eyebrow rise"><span lang="en">Web design · Development · Website care</span><span lang="es">Diseño web · Desarrollo · Cuidado web</span></div>
+      <h1 class="rise d1"><span lang="en">Websites that <span class="accent">build trust.</span></span><span lang="es">Sitios web que <span class="accent">generan confianza.</span></span></h1>
+      <p class="lede rise d2"><span lang="en">I design, build, and care for websites that help your business look professional, earn trust, and grow with confidence. No agency runaround, no jargon. You talk to me, and I build it like it's my own.</span><span lang="es">Diseño, construyo y cuido sitios web que ayudan a tu negocio a verse profesional, generar confianza y crecer con seguridad. Sin rodeos, sin jerga. Hablas conmigo, y lo construyo como si fuera mío.</span></p>
       <div class="hero-ctas rise d3">
-        <a class="btn" href="#contact">Work with Sebby&nbsp;→</a>
-        <a class="btn btn-ghost" href="#work">See my work</a>
+        <a class="btn" href="#contact"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span>&nbsp;→</a>
+        <a class="btn btn-ghost" href="#work"><span lang="en">See my work</span><span lang="es">Ver mi trabajo</span></a>
       </div>
-      <p class="hero-note rise d3">Free 20-minute call. No pressure, plain answers.</p>
+      <p class="hero-note rise d3"><span lang="en">Free 20-minute call. No pressure, plain answers.</span><span lang="es">Llamada gratuita de 20 minutos. Sin presión, respuestas claras.</span></p>
     </div>
     <div class="portrait rise d2">
       <img src="assets/sebby.jpg" alt="Sebby, web designer and developer, smiling at his workstation">
       <div class="chip">
         <span class="dot" aria-hidden="true"></span>
-        <span>Sebby is taking new projects &nbsp;<em>· Typically replies within a day</em></span>
+        <span><span lang="en">Sebby is taking new projects &nbsp;<em>· Typically replies within a day</em></span><span lang="es">Sebby está aceptando nuevos proyectos &nbsp;<em>· Responde en menos de un día</em></span></span>
       </div>
     </div>
   </div>
@@ -333,19 +456,19 @@
   <div class="wrap trust-inner">
     <div class="trust-item">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M5 21c1-4 3.5-6 7-6s6 2 7 6"/></svg>
-      Personal attention
+      <span lang="en">Personal attention</span><span lang="es">Atención personal</span>
     </div>
     <div class="trust-item">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 12L2 9l4-6z"/><path d="M2 9h20M12 21 8 9l4-6 4 6-4 12"/></svg>
-      Quality craftsmanship
+      <span lang="en">Quality craftsmanship</span><span lang="es">Calidad artesanal</span>
     </div>
     <div class="trust-item">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg>
-      Reliable support
+      <span lang="en">Reliable support</span><span lang="es">Soporte confiable</span>
     </div>
     <div class="trust-item">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16M6 16l4-4 3 3 5-6"/><path d="M14 9h4v4"/></svg>
-      Built for growth
+      <span lang="en">Built for growth</span><span lang="es">Diseñado para crecer</span>
     </div>
   </div>
 </div>
@@ -354,33 +477,33 @@
 <section id="services">
   <div class="wrap">
     <div class="sec-head">
-      <h2>You run your business. I'll take care of your website.</h2>
-      <p>Three ways I help, all in plain English. Every project starts with a conversation about what you actually need, not a package I'm trying to sell.</p>
+      <h2><span lang="en">You run your business. I'll take care of your website.</span><span lang="es">Tú manejas tu negocio. Yo me encargo de tu sitio web.</span></h2>
+      <p><span lang="en">Three ways I help, all in plain English. Every project starts with a conversation about what you actually need, not a package I'm trying to sell.</span><span lang="es">Tres formas en que ayudo, todo en términos claros. Cada proyecto comienza con una conversación sobre lo que realmente necesitas, no un paquete que intento vender.</span></p>
     </div>
     <div class="cards">
       <div class="card">
-        <span class="tag">Made to convert</span>
+        <span class="tag"><span lang="en">Made to convert</span><span lang="es">Hecho para convertir</span></span>
         <div class="glyph">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8M12 18v3"/></svg>
         </div>
-        <h3>Web Design &amp; Build</h3>
-        <p>I design and build a website you're proud to share, one that makes strangers trust you enough to call, book, or buy.</p>
+        <h3><span lang="en">Web Design &amp; Build</span><span lang="es">Diseño y desarrollo web</span></h3>
+        <p><span lang="en">I design and build a website you're proud to share, one that makes strangers trust you enough to call, book, or buy.</span><span lang="es">Diseño y construyo un sitio web del que estarás orgulloso, uno que hace que desconocidos confíen en ti lo suficiente para llamar, reservar o comprar.</span></p>
       </div>
       <div class="card">
-        <span class="tag">Made to last</span>
+        <span class="tag"><span lang="en">Made to last</span><span lang="es">Hecho para durar</span></span>
         <div class="glyph">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg>
         </div>
-        <h3>Website Care</h3>
-        <p>I keep your site fast, secure, and updated month after month, so you never have to think about it again.</p>
+        <h3><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></h3>
+        <p><span lang="en">I keep your site fast, secure, and updated month after month, so you never have to think about it again.</span><span lang="es">Mantengo tu sitio rápido, seguro y actualizado mes tras mes, para que nunca tengas que preocuparte por él.</span></p>
       </div>
       <div class="card">
-        <span class="tag">Made to be found</span>
+        <span class="tag"><span lang="en">Made to be found</span><span lang="es">Hecho para ser encontrado</span></span>
         <div class="glyph">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
         </div>
-        <h3>Get Found on Google</h3>
-        <p>I'll help people actually find your business when they search, with honest SEO that compounds over time.</p>
+        <h3><span lang="en">Get Found on Google</span><span lang="es">Aparece en Google</span></h3>
+        <p><span lang="en">I'll help people actually find your business when they search, with honest SEO that compounds over time.</span><span lang="es">Ayudo a que la gente encuentre tu negocio cuando busca, con SEO honesto que crece con el tiempo.</span></p>
       </div>
     </div>
   </div>
@@ -392,21 +515,21 @@
     <div class="process">
       <div class="wrap">
         <div class="sec-head">
-          <h2>Simple from start to finish.</h2>
-          <p>You always know what's happening, what it costs, and what comes next.</p>
+          <h2><span lang="en">Simple from start to finish.</span><span lang="es">Simple de principio a fin.</span></h2>
+          <p><span lang="en">You always know what's happening, what it costs, and what comes next.</span><span lang="es">Siempre sabes qué está pasando, cuánto cuesta y qué sigue.</span></p>
         </div>
         <div class="steps">
           <div class="step">
-            <h3>We talk</h3>
-            <p>A free 20-minute call about your business and what your website needs to do. If I'm not the right fit, I'll tell you.</p>
+            <h3><span lang="en">We talk</span><span lang="es">Hablamos</span></h3>
+            <p><span lang="en">A free 20-minute call about your business and what your website needs to do. If I'm not the right fit, I'll tell you.</span><span lang="es">Una llamada gratuita de 20 minutos sobre tu negocio y lo que necesita tu sitio web. Si no soy la persona indicada, te lo digo.</span></p>
           </div>
           <div class="step">
-            <h3>I design and build</h3>
-            <p>You see the design before anything is built, and you get updates in plain English while I put it together.</p>
+            <h3><span lang="en">I design and build</span><span lang="es">Diseño y construyo</span></h3>
+            <p><span lang="en">You see the design before anything is built, and you get updates in plain English while I put it together.</span><span lang="es">Ves el diseño antes de que se construya nada, y recibes actualizaciones claras mientras lo armo.</span></p>
           </div>
           <div class="step">
-            <h3>You launch, I stay on</h3>
-            <p>Your site goes live, and I keep it fast, secure, and current. When you need a change, you text me.</p>
+            <h3><span lang="en">You launch, I stay on</span><span lang="es">Lanzas, yo me quedo</span></h3>
+            <p><span lang="en">Your site goes live, and I keep it fast, secure, and current. When you need a change, you text me.</span><span lang="es">Tu sitio sale al aire, y yo lo mantengo rápido, seguro y actualizado. Cuando necesites un cambio, me escribes.</span></p>
           </div>
         </div>
       </div>
@@ -418,17 +541,17 @@
 <section id="work" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Recent work.</h2>
-      <p>Real businesses, real results. Every one of these owners can tell you what working with me is like.</p>
+      <h2><span lang="en">Recent work.</span><span lang="es">Trabajo reciente.</span></h2>
+      <p><span lang="en">Real businesses, real results. Every one of these owners can tell you what working with me is like.</span><span lang="es">Negocios reales, resultados reales. Cada uno de estos dueños puede contarte cómo es trabajar conmigo.</span></p>
     </div>
     <div class="work-grid" style="grid-template-columns:repeat(2,minmax(280px,420px))">
       <a class="tile" href="work.html">
         <div class="shot"><img src="assets/hero-rieralaw.jpg" alt="Riera Law Firm homepage — securities arbitration attorney with courthouse background" loading="lazy"></div>
-        <div class="meta"><h3>Riera Law Firm</h3><p>Securities law · Full bilingual build, 70+ pages, ongoing care</p></div>
+        <div class="meta"><h3>Riera Law Firm</h3><p><span lang="en">Securities law · Full bilingual build, 70+ pages, ongoing care</span><span lang="es">Derecho de valores · Sitio bilingüe completo, 70+ páginas, cuidado continuo</span></p></div>
       </a>
       <a class="tile" href="work.html">
         <div class="shot"><img src="assets/hero-elitecare.jpg" alt="Elite Care Recovery homepage — premium cold and compression therapy for post-operative patients" loading="lazy"></div>
-        <div class="meta"><h3>Elite Care Recovery</h3><p>Medical equipment · Full site build, GitHub Pages</p></div>
+        <div class="meta"><h3>Elite Care Recovery</h3><p><span lang="en">Medical equipment · Full site build, GitHub Pages</span><span lang="es">Equipo médico · Sitio completo, GitHub Pages</span></p></div>
       </a>
     </div>
   </div>
@@ -438,15 +561,15 @@
 <section style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <h2>What clients say.</h2>
+      <h2><span lang="en">What clients say.</span><span lang="es">Lo que dicen mis clientes.</span></h2>
     </div>
     <div class="quotes" style="grid-template-columns:1fr;max-width:780px">
       <div class="quote">
         <div class="mark" aria-hidden="true">"</div>
-        <p class="body">Sebby rebuilt my law firm's entire web presence and untangled infrastructure problems that had my domain, my email, and two competing websites at odds. He treats my site like it's his own. I trust him with the online face of my practice.</p>
+        <p class="body"><span lang="en">Sebby rebuilt my law firm's entire web presence and untangled infrastructure problems that had my domain, my email, and two competing websites at odds. He treats my site like it's his own. I trust him with the online face of my practice.</span><span lang="es">Sebby reconstruyó toda la presencia web de mi bufete y resolvió problemas de infraestructura que tenían mi dominio, mi correo y dos sitios web compitiendo entre sí. Trata mi sitio como si fuera suyo. Le confío la cara digital de mi práctica.</span></p>
         <div class="who">
           <div class="avatar">JR</div>
-          <div><strong>Jorge L. Riera</strong><span>Founding Principal, Riera Law Firm</span></div>
+          <div><strong>Jorge L. Riera</strong><span><span lang="en">Founding Principal, Riera Law Firm</span><span lang="es">Socio Fundador, Riera Law Firm</span></span></div>
         </div>
       </div>
     </div>
@@ -458,15 +581,15 @@
   <div class="wrap">
     <div class="care">
       <div>
-        <h2>Your website shouldn't be another job on your list.</h2>
-        <p>Most websites break slowly. Plugins go stale, pages slow down, security holes open, and nobody notices until a customer does. With Website Care, I notice first.</p>
-        <a class="btn" href="#contact">Ask about Website Care&nbsp;→</a>
+        <h2><span lang="en">Your website shouldn't be another job on your list.</span><span lang="es">Tu sitio web no debería ser otro trabajo en tu lista.</span></h2>
+        <p><span lang="en">Most websites break slowly. Plugins go stale, pages slow down, security holes open, and nobody notices until a customer does. With Website Care, I notice first.</span><span lang="es">La mayoría de los sitios web se deterioran lentamente. Los plugins se desactualizan, las páginas se vuelven lentas, se abren brechas de seguridad, y nadie se da cuenta hasta que un cliente lo nota. Con Cuidado Web, yo lo noto primero.</span></p>
+        <a class="btn" href="#contact"><span lang="en">Ask about Website Care</span><span lang="es">Pregunta por Cuidado Web</span>&nbsp;→</a>
       </div>
       <ul>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Updates, backups, and security handled every month</li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Speed checks so your site loads fast on every phone</li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Small changes done when you need them, just text me</li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>A real person who already knows your site</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Updates, backups, and security handled every month</span><span lang="es">Actualizaciones, respaldos y seguridad manejados cada mes</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Speed checks so your site loads fast on every phone</span><span lang="es">Revisiones de velocidad para que tu sitio cargue rápido en cualquier teléfono</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Small changes done when you need them, just text me</span><span lang="es">Cambios pequeños cuando los necesites, solo escríbeme</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">A real person who already knows your site</span><span lang="es">Una persona real que ya conoce tu sitio</span></li>
       </ul>
     </div>
   </div>
@@ -475,16 +598,16 @@
 <!-- ============ FINAL CTA ============ -->
 <section class="final" id="contact" style="padding-top:20px">
   <div class="wrap">
-    <h2>Let's make your business look as good online as it is in person.</h2>
-    <p>Tell me about your business. I'll tell you exactly what I'd build and what it costs.</p>
-    <a class="btn" href="mailto:hello@madebysebby.com">Work with Sebby&nbsp;→</a>
+    <h2><span lang="en">Let's make your business look as good online as it is in person.</span><span lang="es">Hagamos que tu negocio se vea tan bien en línea como en persona.</span></h2>
+    <p><span lang="en">Tell me about your business. I'll tell you exactly what I'd build and what it costs.</span><span lang="es">Cuéntame sobre tu negocio. Te diré exactamente qué construiría y cuánto cuesta.</span></p>
+    <a class="btn" href="mailto:hello@madebysebby.com"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span>&nbsp;→</a>
   </div>
 </section>
 
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap foot-inner">
-    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img src="assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><span>This site was <strong>Made by Sebby</strong>. Yours can be too.</span></div>
+    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span><span lang="en">This site was <strong>Made by Sebby</strong>. Yours can be too.</span><span lang="es">Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</span></span></div>
     <div class="foot-links">
       <a href="services.html">What I do</a>
       <a href="work.html">Work</a>
@@ -495,5 +618,6 @@
   </div>
 </footer>
 
+<script>!function(){var l=document.documentElement.getAttribute('data-lang');if(l==='es'){var b=document.querySelectorAll('.lang-toggle button');if(b.length===2){b[0].classList.remove('active');b[1].classList.add('active')}}}()</script>
 </body>
 </html>

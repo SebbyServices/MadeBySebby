@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
+<script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
 <style>
   :root{
     --ink:#1A1D29;
@@ -44,6 +46,8 @@
   .logo .sebby{color:var(--ink)}
   .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
   .nav-links a{color:var(--ink-soft);transition:color .15s}
+  .nav-links a.btn{color:#fff}
+  .nav-links a.btn:hover{color:#fff}
   .nav-links a:hover{color:var(--purple)}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
@@ -305,6 +309,117 @@
   .sitecard .url{margin-left:8px;background:#fff;border-radius:999px;padding:3px 14px;font-size:.72rem;color:#5a5e6b;font-weight:500}
   .sitecard-hero{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;object-position:top center}
   .sitecard .visit{background:#fff;padding:13px 18px;font-size:.88rem;font-weight:700;color:var(--purple);display:flex;justify-content:space-between;align-items:center}
+
+
+
+  /* ---------- Language Toggle ---------- */
+  :root:not([data-lang="es"]) [lang="es"]{display:none}
+  [data-lang="es"] [lang="en"]{display:none}
+  .lang-toggle{
+    display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;
+    font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0;
+  }
+  .lang-toggle button{
+    background:none;border:none;padding:7px 12px;cursor:pointer;
+    color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em;
+  }
+  .lang-toggle button:hover{color:var(--purple)}
+  .lang-toggle button.active{background:var(--purple);color:#fff}
+
+  /* ---------- Dark Mode ---------- */
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#717580;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#717580;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) nav{background:rgba(15,17,23,.92)}
+    :root:not([data-theme="light"]) .chip{background:rgba(30,32,42,.95);border-color:var(--line)}
+    :root:not([data-theme="light"]) .card,:root:not([data-theme="light"]) .step,:root:not([data-theme="light"]) .tile,:root:not([data-theme="light"]) .quote,:root:not([data-theme="light"]) .plan,:root:not([data-theme="light"]) .contact-card,:root:not([data-theme="light"]) .faq details{background:#1A1C25}
+    :root:not([data-theme="light"]) .card:hover{border-color:#3D3A4E}
+    :root:not([data-theme="light"]) .portrait{background:linear-gradient(160deg,#1D192D 0%,#1A1530 100%)}
+    :root:not([data-theme="light"]) .process{background:#1A1C25}
+    :root:not([data-theme="light"]) .tile .shot{background:linear-gradient(150deg,#1D192D,#1A1530)}
+    :root:not([data-theme="light"]) .svc-visual{background:linear-gradient(150deg,#1D192D,#1A1530)}
+    :root:not([data-theme="light"]) .care{background:#1A1C25}
+    :root:not([data-theme="light"]) .care h2{color:#E4E5EA}
+    :root:not([data-theme="light"]) .care p{color:#A0A3AD}
+    :root:not([data-theme="light"]) .care li{color:#C8CAD0}
+    :root:not([data-theme="light"]) .care li svg{stroke:#8B6CEF}
+    :root:not([data-theme="light"]) .care .btn{background:var(--purple);color:#fff}
+    :root:not([data-theme="light"]) .care .btn:hover{background:var(--purple-deep)}
+    :root:not([data-theme="light"]) .sitecard{background:#1A1C25}
+    :root:not([data-theme="light"]) .sitecard .bar{background:#222430}
+    :root:not([data-theme="light"]) .sitecard .url{background:#1A1C25;color:#717580}
+    :root:not([data-theme="light"]) .sitecard .visit{background:#1A1C25}
+    :root:not([data-theme="light"]) .promise{background:#1D192D}
+    :root:not([data-theme="light"]) .btn-ghost{border-color:var(--line)}
+    :root:not([data-theme="light"]) .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+    :root:not([data-theme="light"]) .contact-line{border-bottom-color:#2A2838}
+    :root:not([data-theme="light"]) .logo-light{display:none !important}
+    :root:not([data-theme="light"]) .logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
+    :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
+  }
+  [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
+  [data-theme="dark"] .chip{background:rgba(30,32,42,.95);border-color:var(--line)}
+  [data-theme="dark"] .card,[data-theme="dark"] .step,[data-theme="dark"] .tile,[data-theme="dark"] .quote,[data-theme="dark"] .plan,[data-theme="dark"] .contact-card,[data-theme="dark"] .faq details{background:#1A1C25}
+  [data-theme="dark"] .card:hover{border-color:#3D3A4E}
+  [data-theme="dark"] .portrait{background:linear-gradient(160deg,#1D192D 0%,#1A1530 100%)}
+  [data-theme="dark"] .process{background:#1A1C25}
+  [data-theme="dark"] .tile .shot{background:linear-gradient(150deg,#1D192D,#1A1530)}
+  [data-theme="dark"] .svc-visual{background:linear-gradient(150deg,#1D192D,#1A1530)}
+  [data-theme="dark"] .care{background:#1A1C25}
+  [data-theme="dark"] .care h2{color:#E4E5EA}
+  [data-theme="dark"] .care p{color:#A0A3AD}
+  [data-theme="dark"] .care li{color:#C8CAD0}
+  [data-theme="dark"] .care li svg{stroke:#8B6CEF}
+  [data-theme="dark"] .care .btn{background:var(--purple);color:#fff}
+  [data-theme="dark"] .care .btn:hover{background:var(--purple-deep)}
+  [data-theme="dark"] .sitecard{background:#1A1C25}
+  [data-theme="dark"] .sitecard .bar{background:#222430}
+  [data-theme="dark"] .sitecard .url{background:#1A1C25;color:#717580}
+  [data-theme="dark"] .sitecard .visit{background:#1A1C25}
+  [data-theme="dark"] .promise{background:#1D192D}
+  [data-theme="dark"] .btn-ghost{border-color:var(--line)}
+  [data-theme="dark"] .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+  [data-theme="dark"] .contact-line{border-bottom-color:#2A2838}
+  [data-theme="dark"] .logo-light{display:none !important}
+  [data-theme="dark"] .logo-dark{display:block !important}
+  [data-theme="dark"] .foot-logo-light{display:none !important}
+  [data-theme="dark"] .foot-logo-dark{display:block !important}
+
+
+  /* Theme transition (only applied during toggle, not page load) */
+  .theme-trans,.theme-trans *,.theme-trans *::before,.theme-trans *::after{
+    transition:background .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease,fill .35s ease,stroke .35s ease !important;
+  }
+  /* Theme toggle button */
+  .theme-toggle{
+    background:none;border:1.5px solid var(--line);border-radius:50%;
+    width:38px;height:38px;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;transition:border-color .15s,background .15s;flex-shrink:0;
+  }
+  .theme-toggle:hover{border-color:var(--purple);background:var(--tint)}
+  .theme-toggle svg{width:18px;height:18px;stroke:var(--muted);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .theme-toggle:hover svg{stroke:var(--purple)}
+  .theme-toggle .icon-sun{display:none}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon{display:none}
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun{display:block}
+  }
+  [data-theme="dark"] .theme-toggle .icon-moon{display:none}
+  [data-theme="dark"] .theme-toggle .icon-sun{display:block !important}
+  [data-theme="light"] .theme-toggle .icon-sun{display:none !important}
+  [data-theme="light"] .theme-toggle .icon-moon{display:block}
+
 </style>
 
 <!-- seo:start -->
@@ -333,22 +448,30 @@
 <body>
 <nav>
   <div class="wrap nav-inner">
-    <a class="logo" href="/" aria-label="Made by Sebby home"><img src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"></a>
+    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
     <div class="nav-links">
-      <a href="services.html">What I do</a>
-      <a href="work.html" style="color:var(--purple)">Work</a>
-      <a href="website-care.html">Website Care</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="btn btn-nav">Work with Sebby</a>
+      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
+      <a href="work.html" style="color:var(--purple)"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
+      <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <div class="lang-toggle">
+          <button onclick="document.documentElement.removeAttribute('data-lang');localStorage.setItem('lang','en');this.classList.add('active');this.nextElementSibling.classList.remove('active')" class="active">EN</button>
+          <button onclick="document.documentElement.setAttribute('data-lang','es');localStorage.setItem('lang','es');this.classList.add('active');this.previousElementSibling.classList.remove('active')">ES</button>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
+          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="contact.html" class="btn btn-nav"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span></a>
     </div>
   </div>
 </nav>
 
 <header class="page-hero">
   <div class="wrap">
-    <div class="eyebrow">Work</div>
-    <h1>Real businesses. <span class="accent">Real results.</span></h1>
-    <p class="lede">Every project below belongs to a real business owner who can tell you what working with me is like. That's the only kind of proof worth showing.</p>
+    <div class="eyebrow"><span lang="en">Work</span><span lang="es">Trabajo</span></div>
+    <h1><span lang="en">Real businesses. <span class="accent">Real results.</span></span><span lang="es">Negocios reales. <span class="accent">Resultados reales.</span></span></h1>
+    <p class="lede"><span lang="en">Every project below belongs to a real business owner who can tell you what working with me is like. That's the only kind of proof worth showing.</span><span lang="es">Cada proyecto pertenece a un dueño de negocio real que puede contarte cómo es trabajar conmigo. Esa es la única prueba que vale la pena mostrar.</span></p>
   </div>
 </header>
 
@@ -356,16 +479,16 @@
   <div class="wrap">
     <div class="svc-block" style="border-top:none;padding-top:0">
       <div>
-        <span class="tag">Featured project</span>
+        <span class="tag"><span lang="en">Featured project</span><span lang="es">Proyecto destacado</span></span>
         <h2>Riera Law Firm</h2>
-        <p class="body" style="margin-bottom:6px"><a href="https://rieralaw.com" target="_blank" rel="noopener" style="color:var(--purple);font-weight:600">rieralaw.com</a> · Securities arbitration law firm, Coral Gables, FL</p>
-        <p class="body">A complete WordPress and Elementor build for a nationwide securities arbitration practice led by a former SEC enforcement attorney. Seventy-plus pages in English and Spanish, a full design system, and the infrastructure work most visitors never see.</p>
+        <p class="body" style="margin-bottom:6px"><a href="https://rieralaw.com" target="_blank" rel="noopener" style="color:var(--purple);font-weight:600">rieralaw.com</a> · <span lang="en">Securities arbitration law firm, Coral Gables, FL</span><span lang="es">Bufete de arbitraje de valores, Coral Gables, FL</span></p>
+        <p class="body"><span lang="en">A complete WordPress and Elementor build for a nationwide securities arbitration practice led by a former SEC enforcement attorney. Seventy-plus pages in English and Spanish, a full design system, and the infrastructure work most visitors never see.</span><span lang="es">Un sitio completo en WordPress y Elementor para una práctica nacional de arbitraje de valores liderada por un ex fiscal de la SEC. Más de setenta páginas en inglés y español, un sistema de diseño completo, y el trabajo de infraestructura que la mayoría de visitantes no ven.</span></p>
         <ul class="checklist">
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Built the full bilingual site in WordPress and Elementor, 70+ pages</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Untangled a dual-site DNS conflict that had two websites competing on one domain</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Restored the firm's email and fixed mail delivery configuration</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Resolved plugin conflicts and licensing issues without downtime for a live practice</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Provides ongoing Website Care for a site clients depend on</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Built the full bilingual site in WordPress and Elementor, 70+ pages</span><span lang="es">Construí el sitio bilingüe completo en WordPress y Elementor, 70+ páginas</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Untangled a dual-site DNS conflict that had two websites competing on one domain</span><span lang="es">Resolví un conflicto DNS de dos sitios que tenían dos páginas web compitiendo en un solo dominio</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Restored the firm's email and fixed mail delivery configuration</span><span lang="es">Restauré el correo del bufete y corregí la configuración de entrega de correo</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Resolved plugin conflicts and licensing issues without downtime for a live practice</span><span lang="es">Resolví conflictos de plugins y licencias sin tiempo de inactividad para una práctica activa</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Provides ongoing Website Care for a site clients depend on</span><span lang="es">Proveo Cuidado Web continuo para un sitio del que dependen los clientes</span></li>
         </ul>
       </div>
       <a class="sitecard" href="https://rieralaw.com" target="_blank" rel="noopener">
@@ -374,21 +497,21 @@
           <span class="url">rieralaw.com</span>
         </div>
         <img class="sitecard-hero" src="assets/hero-rieralaw.jpg" alt="Riera Law Firm homepage hero" loading="lazy">
-        <div class="visit"><span>Visit the live site</span><span>rieralaw.com&nbsp;→</span></div>
+        <div class="visit"><span><span lang="en">Visit the live site</span><span lang="es">Visitar el sitio</span></span><span>rieralaw.com&nbsp;→</span></div>
       </a>
     </div>
     <div class="svc-block">
       <div>
-        <span class="tag">Client project</span>
+        <span class="tag"><span lang="en">Client project</span><span lang="es">Proyecto de cliente</span></span>
         <h2>Elite Care Recovery</h2>
-        <p class="body" style="margin-bottom:6px"><a href="https://elitecarerecovery.net" target="_blank" rel="noopener" style="color:var(--purple);font-weight:600">elitecarerecovery.net</a> · Orthopedic recovery equipment, South Florida</p>
-        <p class="body">A full website build for a family-owned orthopedic recovery company founded by two brothers with 23 combined years in the field. The site presents their premium NICE1 cold and compression therapy equipment rental service with white-glove delivery across South Florida.</p>
+        <p class="body" style="margin-bottom:6px"><a href="https://elitecarerecovery.net" target="_blank" rel="noopener" style="color:var(--purple);font-weight:600">elitecarerecovery.net</a> · <span lang="en">Orthopedic recovery equipment, South Florida</span><span lang="es">Equipo de recuperación ortopédica, Sur de Florida</span></p>
+        <p class="body"><span lang="en">A full website build for a family-owned orthopedic recovery company founded by two brothers with 23 combined years in the field. The site presents their premium NICE1 cold and compression therapy equipment rental service with white-glove delivery across South Florida.</span><span lang="es">Un sitio web completo para una empresa familiar de recuperación ortopédica fundada por dos hermanos con 23 años combinados en el campo. El sitio presenta su servicio premium de alquiler de equipos de terapia de frío y compresión NICE1 con entrega personalizada en todo el Sur de Florida.</span></p>
         <ul class="checklist">
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Designed and built the full site from scratch, hosted on GitHub Pages</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Home, About, Culture, and Reservation pages with cohesive brand identity</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>NICE1 recovery system product showcase with specs and features</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Contact integration with phone, email, and business hours</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Responsive design optimized for patients booking from mobile</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Designed and built the full site from scratch, hosted on GitHub Pages</span><span lang="es">Diseñé y construí el sitio completo desde cero, alojado en GitHub Pages</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Home, About, Culture, and Reservation pages with cohesive brand identity</span><span lang="es">Páginas de Inicio, Nosotros, Cultura y Reservas con identidad de marca cohesiva</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">NICE1 recovery system product showcase with specs and features</span><span lang="es">Exhibición del sistema de recuperación NICE1 con especificaciones y características</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Contact integration with phone, email, and business hours</span><span lang="es">Integración de contacto con teléfono, correo y horario comercial</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Responsive design optimized for patients booking from mobile</span><span lang="es">Diseño responsivo optimizado para pacientes reservando desde el móvil</span></li>
         </ul>
       </div>
       <a class="sitecard" href="https://elitecarerecovery.net" target="_blank" rel="noopener">
@@ -397,7 +520,7 @@
           <span class="url">elitecarerecovery.net</span>
         </div>
         <img class="sitecard-hero" src="assets/hero-elitecare.jpg" alt="Elite Care Recovery homepage hero" loading="lazy">
-        <div class="visit"><span>Visit the live site</span><span>elitecarerecovery.net&nbsp;→</span></div>
+        <div class="visit"><span><span lang="en">Visit the live site</span><span lang="es">Visitar el sitio</span></span><span>elitecarerecovery.net&nbsp;→</span></div>
       </a>
     </div>
   </div>
@@ -409,10 +532,10 @@
     <div class="quotes" style="grid-template-columns:1fr;max-width:780px">
       <div class="quote">
         <div class="mark" aria-hidden="true">"</div>
-        <p class="body">Sebby rebuilt my law firm's entire web presence and untangled infrastructure problems that had my domain, my email, and two competing websites at odds. He works fast, explains everything in plain English, and treats my site like it's his own. I trust him with the online face of my practice.</p>
+        <p class="body"><span lang="en">Sebby rebuilt my law firm's entire web presence and untangled infrastructure problems that had my domain, my email, and two competing websites at odds. He works fast, explains everything in plain English, and treats my site like it's his own. I trust him with the online face of my practice.</span><span lang="es">Sebby reconstruyó toda la presencia web de mi bufete y resolvió problemas de infraestructura que tenían mi dominio, mi correo y dos sitios web compitiendo entre sí. Trabaja rápido, explica todo en términos claros, y trata mi sitio como si fuera suyo. Le confío la cara digital de mi práctica.</span></p>
         <div class="who">
           <div class="avatar">JR</div>
-          <div><strong>Jorge L. Riera</strong><span>Founding Principal, Riera Law Firm</span></div>
+          <div><strong>Jorge L. Riera</strong><span><span lang="en">Founding Principal, Riera Law Firm</span><span lang="es">Socio Fundador, Riera Law Firm</span></span></div>
         </div>
       </div>
     </div>
@@ -421,23 +544,24 @@
 
 <section class="final" style="padding-top:10px">
   <div class="wrap">
-    <h2>Want your business up here next?</h2>
-    <p>Tell me what you do and I'll tell you exactly what I'd build.</p>
-    <a class="btn" href="contact.html">Work with Sebby&nbsp;→</a>
+    <h2><span lang="en">Want your business up here next?</span><span lang="es">¿Quieres que tu negocio aparezca aquí?</span></h2>
+    <p><span lang="en">Tell me what you do and I'll tell you exactly what I'd build.</span><span lang="es">Cuéntame a qué te dedicas y te diré exactamente qué construiría.</span></p>
+    <a class="btn" href="contact.html"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span>&nbsp;→</a>
   </div>
 </section>
 
 <footer>
   <div class="wrap foot-inner">
-    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img src="assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><span>This site was <strong>Made by Sebby</strong>. Yours can be too.</span></div>
+    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span><span lang="en">This site was <strong>Made by Sebby</strong>. Yours can be too.</span><span lang="es">Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</span></span></div>
     <div class="foot-links">
-      <a href="services.html">What I do</a>
-      <a href="work.html">Work</a>
-      <a href="website-care.html">Website Care</a>
-      <a href="about.html">About</a>
+      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
+      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
+      <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
       <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
     </div>
   </div>
 </footer>
+<script>!function(){var l=document.documentElement.getAttribute('data-lang');if(l==='es'){var b=document.querySelectorAll('.lang-toggle button');if(b.length===2){b[0].classList.remove('active');b[1].classList.add('active')}}}()</script>
 </body>
 </html>
