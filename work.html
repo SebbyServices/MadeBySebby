@@ -297,17 +297,13 @@
   .sebbymark{font-size:1.02rem;font-weight:700;letter-spacing:.24em;color:var(--ink)}
   .credit .lockup-inline strong{letter-spacing:.02em}
 
-  /* Riera Law site preview card */
-  .sitecard{display:block;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(26,29,41,.10);transition:transform .18s, box-shadow .18s;background:#0B1D33}
+  /* Site preview card */
+  .sitecard{display:block;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(26,29,41,.10);transition:transform .18s, box-shadow .18s;background:#fff}
   a.sitecard:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(26,29,41,.16)}
   .sitecard .bar{background:#EDEDF2;padding:9px 14px;display:flex;align-items:center;gap:8px}
   .sitecard .dot{width:9px;height:9px;border-radius:50%}
   .sitecard .url{margin-left:8px;background:#fff;border-radius:999px;padding:3px 14px;font-size:.72rem;color:#5a5e6b;font-weight:500}
-  .sitecard .rl-hero{background:#0B1D33;padding:30px 28px 28px;color:#fff}
-  .sitecard .rl-eyebrow{font-size:.6rem;letter-spacing:.16em;color:#C8A15A;text-transform:uppercase;font-weight:600;margin-bottom:12px}
-  .sitecard .rl-h1{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:1.28rem;line-height:1.32;color:#fff;margin-bottom:16px}
-  .sitecard .rl-btn{display:inline-block;background:#C8A15A;color:#0B1D33;font-size:.72rem;font-weight:700;padding:8px 16px;border-radius:4px;margin-bottom:12px}
-  .sitecard .rl-sub{font-size:.68rem;color:#B8C8D8}
+  .sitecard-hero{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;object-position:top center}
   .sitecard .visit{background:#fff;padding:13px 18px;font-size:.88rem;font-weight:700;color:var(--purple);display:flex;justify-content:space-between;align-items:center}
 </style>
 
@@ -377,13 +373,31 @@
           <span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span>
           <span class="url">rieralaw.com</span>
         </div>
-        <div class="rl-hero">
-          <div class="rl-eyebrow">Former SEC Senior Enforcement Counsel · FINRA NAMC Public Member</div>
-          <div class="rl-h1">I Spent a Decade at the SEC Investigating Securities Fraud. Today, I Represent the Investors It Harmed.</div>
-          <span class="rl-btn">Schedule a Free Consultation</span>
-          <div class="rl-sub">(305) 204-9779 · Representing Investors Nationwide · Contingency Fee</div>
-        </div>
+        <img class="sitecard-hero" src="assets/hero-rieralaw.jpg" alt="Riera Law Firm homepage hero" loading="lazy">
         <div class="visit"><span>Visit the live site</span><span>rieralaw.com&nbsp;→</span></div>
+      </a>
+    </div>
+    <div class="svc-block">
+      <div>
+        <span class="tag">Client project</span>
+        <h2>Elite Care Recovery</h2>
+        <p class="body" style="margin-bottom:6px"><a href="https://elitecarerecovery.net" target="_blank" rel="noopener" style="color:var(--purple);font-weight:600">elitecarerecovery.net</a> · Orthopedic recovery equipment, South Florida</p>
+        <p class="body">A full website build for a family-owned orthopedic recovery company founded by two brothers with 23 combined years in the field. The site presents their premium NICE1 cold and compression therapy equipment rental service with white-glove delivery across South Florida.</p>
+        <ul class="checklist">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Designed and built the full site from scratch, hosted on GitHub Pages</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Home, About, Culture, and Reservation pages with cohesive brand identity</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>NICE1 recovery system product showcase with specs and features</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Contact integration with phone, email, and business hours</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Responsive design optimized for patients booking from mobile</li>
+        </ul>
+      </div>
+      <a class="sitecard" href="https://elitecarerecovery.net" target="_blank" rel="noopener">
+        <div class="bar" aria-hidden="true">
+          <span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span>
+          <span class="url">elitecarerecovery.net</span>
+        </div>
+        <img class="sitecard-hero" src="assets/hero-elitecare.jpg" alt="Elite Care Recovery homepage hero" loading="lazy">
+        <div class="visit"><span>Visit the live site</span><span>elitecarerecovery.net&nbsp;→</span></div>
       </a>
     </div>
   </div>
