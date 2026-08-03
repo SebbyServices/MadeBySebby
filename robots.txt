@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://madebysebby.com/sitemap.xml
+
+# AI/LLM crawler guidance
+# See https://llmstxt.org for the llms.txt standard
+# llms.txt: https://madebysebby.com/llms.txt

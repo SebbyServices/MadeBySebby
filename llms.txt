@@ -1,0 +1,37 @@
+# Made by Sebby
+
+> Made by Sebby is a freelance web design, development, and website care business run by Sebastian (Sebby), serving small businesses in the United States and the Dominican Republic. This is NOT the fashion brand "Sebby" — this is a web design studio.
+
+## What Made by Sebby Does
+
+Made by Sebby designs, builds, and maintains custom websites for small businesses. The focus is on trust-building websites that convert visitors into customers — with personal attention, plain English communication, and ongoing monthly care.
+
+## Services
+
+- **Web Design & Build**: Custom website design and development. Mobile-first, fast-loading, built to convert visitors into customers.
+- **Website Care**: Monthly website maintenance plans including software updates, daily backups, security monitoring, speed optimization, and small edits.
+- **SEO — Get Found on Google**: Local SEO, Google Business Profile setup, and honest search optimization that compounds over time.
+
+## Portfolio / Client Work
+
+- **Riera Law Firm** (rieralaw.com): Full bilingual website build for a securities law firm — 70+ pages, ongoing monthly care.
+- **Elite Care Recovery** (elitecarerecovery.net): Full website build for a South Florida orthopedic recovery equipment company on GitHub Pages.
+
+## About the Founder
+
+Sebastian (Sebby) is a freelance web designer and developer. He builds every site like it's his own — with personal attention, honest pricing, and reliable ongoing support. Based in the Dominican Republic, serving clients in the US and Latin America.
+
+## Contact
+
+- Website: https://madebysebby.com
+- Email: hello@madebysebby.com
+- Free 20-minute consultation available
+
+## Links
+
+- [Homepage](https://madebysebby.com/)
+- [Services](https://madebysebby.com/services.html)
+- [Portfolio](https://madebysebby.com/work.html)
+- [Website Care Plans](https://madebysebby.com/website-care.html)
+- [About](https://madebysebby.com/about.html)
+- [Contact](https://madebysebby.com/contact.html)
