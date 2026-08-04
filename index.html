@@ -315,11 +315,12 @@
 
 
   /* Client logos */
+  .client-logos-bar{text-align:center;padding:28px 0 0}
   .client-logos{display:flex;align-items:center;gap:40px;flex-wrap:wrap;justify-content:center;opacity:.55;transition:opacity .3s}
   .client-logos:hover{opacity:.8}
-  .client-logos img{height:32px;width:auto;filter:grayscale(1);transition:filter .3s}
+  .client-logos img{height:28px;width:auto;filter:grayscale(1);transition:filter .3s}
   .client-logos img:hover{filter:grayscale(0)}
-  .client-logos-label{font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .client-logos-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
 
   /* ---------- Language Toggle ---------- */
   :root:not([data-lang="es"]) [lang="es"]{display:none}
@@ -338,13 +339,13 @@
   /* ---------- Dark Mode ---------- */
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
-      --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#717580;
+      --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
       --purple:#8B6CEF;--purple-deep:#7B5FDB;
       --tint:#1D192D;--line:#2A2838;--white:#0F1117;
     }
   }
   :root[data-theme="dark"]{
-    --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#717580;
+    --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
       --purple:#8B6CEF;--purple-deep:#7B5FDB;
       --tint:#1D192D;--line:#2A2838;--white:#0F1117;
   }
@@ -378,6 +379,11 @@
     :root:not([data-theme="light"]) .logo-dark{display:block !important}
     :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
     :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .client-logos img{filter:grayscale(1) invert(1) brightness(.8)}
+    :root:not([data-theme="light"]) .client-logos img:hover{filter:invert(1) brightness(.8)}
+    :root:not([data-theme="light"]) .btn{background:#6B4EC2}
+    :root:not([data-theme="light"]) .btn:hover{background:#5C41B0}
+    :root:not([data-theme="light"]) .step::before{background:#6B4EC2}
   }
   [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
   [data-theme="dark"] .chip{background:rgba(30,32,42,.95);border-color:var(--line)}
@@ -408,6 +414,11 @@
   [data-theme="dark"] .logo-dark{display:block !important}
   [data-theme="dark"] .foot-logo-light{display:none !important}
   [data-theme="dark"] .foot-logo-dark{display:block !important}
+  [data-theme="dark"] .client-logos img{filter:grayscale(1) invert(1) brightness(.8)}
+  [data-theme="dark"] .client-logos img:hover{filter:invert(1) brightness(.8)}
+  [data-theme="dark"] .btn{background:#6B4EC2}
+  [data-theme="dark"] .btn:hover{background:#5C41B0}
+  [data-theme="dark"] .step::before{background:#6B4EC2}
 
 
   /* Theme transition (only applied during toggle, not page load) */
@@ -651,6 +662,7 @@
   </div>
 </nav>
 
+<main>
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
   <div class="wrap hero-grid">
@@ -692,6 +704,13 @@
     <div class="trust-item">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16M6 16l4-4 3 3 5-6"/><path d="M14 9h4v4"/></svg>
       <span lang="en">Built for growth</span><span lang="es">Diseñado para crecer</span>
+    </div>
+  </div>
+  <div class="client-logos-bar">
+    <div class="client-logos-label"><span lang="en">Trusted by</span><span lang="es">Confían en mí</span></div>
+    <div class="client-logos">
+      <img src="assets/client-logos/rieralaw.svg" alt="Riera Law Firm" loading="lazy">
+      <img src="assets/client-logos/elitecare.svg" alt="Elite Care Recovery" loading="lazy">
     </div>
   </div>
 </div>
@@ -864,6 +883,8 @@
 </div>
 
 <!-- ============ FOOTER ============ -->
+</main>
+
 <footer>
   <div class="wrap foot-inner">
     <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span><span lang="en">This site was <strong>Made by Sebby</strong>. Yours can be too.</span><span lang="es">Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</span></span></div>
@@ -872,6 +893,7 @@
       <a href="work.html">Work</a>
       <a href="website-care.html">Website Care</a>
       <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
       <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
     </div>
   </div>

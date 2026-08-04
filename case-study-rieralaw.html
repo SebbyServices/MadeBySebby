@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riera Law Firm Case Study — Made by Sebby</title>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="Sebby — Made by Sebby">
+<meta name="description" content="How Sebby rebuilt a securities law firm's entire web presence — 70+ bilingual pages, DNS cleanup, email restoration, and ongoing website care.">
+<link rel="preload" as="image" href="assets/logo/sebby-nav.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
+<script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
+<style>
+  :root{
+    --ink:#1A1D29;
+    --ink-soft:#4A4E5C;
+    --muted:#6B7080;
+    --purple:#6C3CE9;
+    --purple-deep:#5A2FD0;
+    --blue:#2D6FFF;
+    --tint:#F4F1FD;
+    --line:#E8E6F2;
+    --white:#FFFFFF;
+    --radius:20px;
+    --radius-sm:12px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+  img{max-width:100%;display:block}
+
+  /* ---------- Nav ---------- */
+  nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:50}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.06rem;letter-spacing:-.01em}
+  .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
+  .nav-links a{color:var(--ink-soft);transition:color .15s}
+  .nav-links a.btn{color:#fff}
+  .nav-links a.btn:hover{color:#fff}
+  .nav-links a:hover{color:var(--purple)}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;
+    padding:13px 26px;border-radius:999px;border:none;cursor:pointer;
+    transition:background .15s, transform .15s;
+  }
+  .btn:hover{background:var(--purple-deep);transform:translateY(-1px)}
+  .btn:focus-visible{outline-color:var(--ink)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+  .btn-ghost:hover{background:var(--tint);border-color:var(--purple);color:var(--purple)}
+  .btn-nav{padding:10px 22px;font-size:.92rem}
+
+  /* ---------- Hero ---------- */
+  .page-hero{padding:76px 0 52px}
+  .eyebrow{
+    font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--purple);margin-bottom:20px;display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2.5px;background:var(--purple);border-radius:2px}
+  .page-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.09;letter-spacing:-.028em;margin-bottom:24px}
+  h1 .accent{color:var(--purple)}
+  .page-hero p.lede{font-size:1.14rem;color:var(--ink-soft);max-width:36em;margin-top:18px}
+  .breadcrumb{font-size:.85rem;color:var(--muted);margin-bottom:22px}
+  .breadcrumb a:hover{color:var(--purple)}
+
+  /* ---------- Sections ---------- */
+  section{padding:96px 0}
+  h2{font-size:clamp(1.7rem,3vw,2.35rem);font-weight:800;letter-spacing:-.022em;line-height:1.16;margin-bottom:16px}
+  h3{font-size:1.16rem;font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+
+  /* ---------- Challenge ---------- */
+  .challenge-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .challenge-intro{font-size:1.05rem;color:var(--ink-soft);margin-bottom:28px;max-width:38em}
+  .pain-list{list-style:none;display:grid;gap:16px}
+  .pain-list li{display:flex;gap:13px;align-items:flex-start;font-size:.99rem;color:var(--ink-soft)}
+  .pain-list li svg{width:20px;height:20px;stroke:#E04B4B;flex-shrink:0;margin-top:3px;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+  /* ---------- Approach ---------- */
+  .approach{background:var(--tint);border-radius:32px;padding:80px 48px}
+  .approach h2{margin-bottom:36px}
+  .approach-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .approach-item{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px 26px;transition:transform .18s, box-shadow .18s;
+  }
+  .approach-item:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(26,29,41,.08)}
+  .approach-item h3{margin-bottom:8px}
+  .approach-item p{font-size:.95rem;color:var(--ink-soft)}
+  .approach-item .glyph{
+    width:44px;height:44px;border-radius:12px;background:var(--tint);
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+  }
+  .approach-item .glyph svg{width:22px;height:22px;stroke:var(--purple);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+
+  /* ---------- Results ---------- */
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-bottom:56px}
+  .metric{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:32px 24px;text-align:center;
+  }
+  .metric .number{font-size:2.4rem;font-weight:800;color:var(--purple);letter-spacing:-.02em;line-height:1.1;margin-bottom:6px}
+  .metric .label{font-size:.88rem;font-weight:600;color:var(--ink-soft)}
+
+  /* ---------- Sitecard ---------- */
+  .sitecard{display:block;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(26,29,41,.10);transition:transform .18s, box-shadow .18s;background:#fff;max-width:560px}
+  a.sitecard:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(26,29,41,.16)}
+  .sitecard .bar{background:#EDEDF2;padding:9px 14px;display:flex;align-items:center;gap:8px}
+  .sitecard .dot{width:9px;height:9px;border-radius:50%}
+  .sitecard .url{margin-left:8px;background:#fff;border-radius:999px;padding:3px 14px;font-size:.72rem;color:#5a5e6b;font-weight:500}
+  .sitecard-hero{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;object-position:top center}
+  .sitecard .visit{background:#fff;padding:13px 18px;font-size:.88rem;font-weight:700;color:var(--purple);display:flex;justify-content:space-between;align-items:center}
+
+  /* ---------- Testimonial ---------- */
+  .quote{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:44px 42px;max-width:780px;margin:0 auto;
+  }
+  .quote .mark{font-size:2.6rem;line-height:1;color:var(--purple);font-weight:800;margin-bottom:14px}
+  .quote p.body{font-size:1.08rem;color:var(--ink);margin-bottom:24px;line-height:1.7}
+  .quote .who{display:flex;align-items:center;gap:14px}
+  .quote .avatar{
+    width:46px;height:46px;border-radius:50%;background:var(--tint);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;color:var(--purple);font-size:.95rem;flex-shrink:0;
+  }
+  .quote .who strong{display:block;font-size:.95rem}
+  .quote .who span{font-size:.85rem;color:var(--muted)}
+
+  /* ---------- Final CTA ---------- */
+  .final{text-align:center;padding:110px 0}
+  .final h2{max-width:18em;margin:0 auto 18px}
+  .final p{color:var(--ink-soft);font-size:1.1rem;margin-bottom:36px}
+
+  /* ---------- Footer ---------- */
+  footer{border-top:1px solid var(--line);padding:44px 0}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .credit{display:flex;align-items:center;gap:10px;font-size:.92rem;color:var(--muted)}
+  .credit strong{color:var(--ink);font-weight:700}
+  .foot-links{display:flex;gap:26px;font-size:.9rem;color:var(--muted)}
+  .foot-links a:hover{color:var(--purple)}
+
+  /* ---------- Motion ---------- */
+  .rise{opacity:0;transform:translateY(16px);animation:rise .7s ease forwards}
+  .d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    .rise{opacity:1;transform:none;animation:none}
+    *{transition:none !important;scroll-behavior:auto}
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){
+    .challenge-grid,.approach-grid{grid-template-columns:1fr}
+    .metrics{grid-template-columns:1fr 1fr}
+    .approach{padding:56px 32px}
+  }
+  @media (max-width:640px){
+    section{padding:68px 0}
+    .page-hero{padding:56px 0 40px}
+    .metrics{grid-template-columns:1fr 1fr}
+    .approach{padding:44px 24px}
+    .quote{padding:32px 26px}
+  }
+
+  /* ---------- Hamburger Menu ---------- */
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;z-index:51}
+  .menu-btn svg{width:26px;height:26px;stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round}
+  .menu-btn .close{display:none}
+  .nav-open .menu-btn .open{display:none}
+  .nav-open .menu-btn .close{display:block}
+  @media (max-width:640px){
+    .menu-btn{display:block}
+    .nav-links{
+      display:none;position:fixed;top:76px;left:0;right:0;bottom:0;
+      background:var(--white);flex-direction:column;gap:0;padding:20px 28px;
+      border-top:1px solid var(--line);z-index:49;
+      overflow-y:auto;
+    }
+    .nav-open .nav-links{display:flex}
+    .nav-links a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
+    .nav-links a:last-child{border-bottom:none}
+    .nav-links a.btn{margin-top:12px;justify-content:center;border-bottom:none}
+    .nav-links .lang-toggle{margin-top:8px;align-self:flex-start}
+    .nav-links .theme-toggle{margin-top:4px;align-self:flex-start}
+  }
+
+  /* ---------- Scroll Animations ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+
+  /* ---------- Sticky CTA ---------- */
+  .sticky-cta{
+    position:fixed;bottom:0;left:0;right:0;z-index:40;
+    background:var(--purple);color:#fff;
+    padding:14px 28px;text-align:center;
+    transform:translateY(100%);transition:transform .35s ease;
+    font-weight:600;font-size:.95rem;
+  }
+  .sticky-cta.show{transform:translateY(0)}
+  .sticky-cta a{color:#fff;text-decoration:none}
+  .sticky-cta a:hover{text-decoration:underline}
+  @media (max-width:640px){
+    .sticky-cta{font-size:.88rem;padding:12px 20px}
+  }
+
+  /* ---------- Language Toggle ---------- */
+  :root:not([data-lang="es"]) [lang="es"]{display:none}
+  [data-lang="es"] [lang="en"]{display:none}
+  .lang-toggle{
+    display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;
+    font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0;
+  }
+  .lang-toggle button{
+    background:none;border:none;padding:7px 12px;cursor:pointer;
+    color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em;
+  }
+  .lang-toggle button:hover{color:var(--purple)}
+  .lang-toggle button.active{background:var(--purple);color:#fff}
+
+  /* ---------- Dark Mode ---------- */
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
+    --purple:#8B6CEF;--purple-deep:#7B5FDB;
+    --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) nav{background:rgba(15,17,23,.92)}
+    :root:not([data-theme="light"]) .approach{background:#1A1C25}
+    :root:not([data-theme="light"]) .approach-item{background:#0F1117}
+    :root:not([data-theme="light"]) .metric{background:#1A1C25}
+    :root:not([data-theme="light"]) .quote{background:#1A1C25}
+    :root:not([data-theme="light"]) .sitecard{background:#1A1C25}
+    :root:not([data-theme="light"]) .sitecard-hero{filter:brightness(.85) saturate(.9)}
+    :root:not([data-theme="light"]) .sitecard .bar{background:#222430}
+    :root:not([data-theme="light"]) .sitecard .url{background:#1A1C25;color:#717580}
+    :root:not([data-theme="light"]) .sitecard .visit{background:#1A1C25}
+    :root:not([data-theme="light"]) .logo-light{display:none !important}
+    :root:not([data-theme="light"]) .logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
+    :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .btn{background:#6B4EC2}
+    :root:not([data-theme="light"]) .btn:hover{background:#5C41B0}
+  }
+  [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
+  [data-theme="dark"] .approach{background:#1A1C25}
+  [data-theme="dark"] .approach-item{background:#0F1117}
+  [data-theme="dark"] .metric{background:#1A1C25}
+  [data-theme="dark"] .quote{background:#1A1C25}
+  [data-theme="dark"] .sitecard{background:#1A1C25}
+  [data-theme="dark"] .sitecard-hero{filter:brightness(.85) saturate(.9)}
+  [data-theme="dark"] .sitecard .bar{background:#222430}
+  [data-theme="dark"] .sitecard .url{background:#1A1C25;color:#717580}
+  [data-theme="dark"] .sitecard .visit{background:#1A1C25}
+  [data-theme="dark"] .logo-light{display:none !important}
+  [data-theme="dark"] .logo-dark{display:block !important}
+  [data-theme="dark"] .foot-logo-light{display:none !important}
+  [data-theme="dark"] .foot-logo-dark{display:block !important}
+  [data-theme="dark"] .btn{background:#6B4EC2}
+  [data-theme="dark"] .btn:hover{background:#5C41B0}
+
+  /* Theme transition */
+  .theme-trans,.theme-trans *,.theme-trans *::before,.theme-trans *::after{
+    transition:background .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease,fill .35s ease,stroke .35s ease !important;
+  }
+  .theme-toggle{
+    background:none;border:1.5px solid var(--line);border-radius:50%;
+    width:38px;height:38px;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;transition:border-color .15s,background .15s;flex-shrink:0;
+  }
+  .theme-toggle:hover{border-color:var(--purple);background:var(--tint)}
+  .theme-toggle svg{width:18px;height:18px;stroke:var(--muted);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .theme-toggle:hover svg{stroke:var(--purple)}
+  .theme-toggle .icon-sun{display:none}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon{display:none}
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun{display:block}
+  }
+  [data-theme="dark"] .theme-toggle .icon-moon{display:none}
+  [data-theme="dark"] .theme-toggle .icon-sun{display:block !important}
+  [data-theme="light"] .theme-toggle .icon-sun{display:none !important}
+  [data-theme="light"] .theme-toggle .icon-moon{display:block}
+
+  /* ---------- Skip link ---------- */
+  .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
+  .skip-link:focus{top:12px}
+
+  /* ---------- Print ---------- */
+  @media print{
+    nav,.menu-btn,.sticky-cta,#stickyCta,.theme-toggle,.lang-toggle,footer,.hero-ctas,.btn,.cta-row,.foot-cta{display:none!important}
+    body{color:#000;background:#fff;-webkit-print-color-adjust:exact}
+    .wrap{max-width:100%;padding:0 12px}
+    a{color:#000}
+    a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em;color:#555}
+    a[href^="mailto"]::after{content:" (" attr(href) ")";font-size:.8em;color:#555}
+    img{max-width:100%!important;filter:none!important}
+    .reveal{opacity:1!important;transform:none!important}
+  }
+</style>
+
+<!-- seo:start -->
+<link rel="alternate" type="text/plain" title="LLM instructions" href="/llms.txt">
+<link rel="canonical" href="https://madebysebby.com/case-study-rieralaw.html">
+<link rel="alternate" hreflang="en" href="https://madebysebby.com/case-study-rieralaw.html">
+<link rel="alternate" hreflang="es" href="https://madebysebby.com/case-study-rieralaw.html">
+<link rel="alternate" hreflang="x-default" href="https://madebysebby.com/case-study-rieralaw.html">
+<meta name="theme-color" content="#6C3CE9">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Made by Sebby">
+<meta property="og:title" content="Riera Law Firm Case Study — Made by Sebby">
+<meta property="og:description" content="How Sebby rebuilt a securities law firm's entire web presence — 70+ bilingual pages, DNS cleanup, email restoration, and ongoing website care.">
+<meta property="og:url" content="https://madebysebby.com/case-study-rieralaw.html">
+<meta property="og:image" content="https://madebysebby.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Riera Law Firm Case Study — Made by Sebby">
+<meta name="twitter:description" content="How Sebby rebuilt a securities law firm's entire web presence — 70+ bilingual pages, DNS cleanup, email restoration, and ongoing website care.">
+<meta name="twitter:image" content="https://madebysebby.com/assets/og-image.jpg">
+<!-- seo:end -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Riera Law Firm — Case Study",
+  "description": "How Sebby rebuilt a securities law firm's entire web presence — 70+ bilingual pages, DNS cleanup, email restoration, and ongoing website care.",
+  "author": {
+    "@type": "Person",
+    "name": "Sebby",
+    "url": "https://madebysebby.com/"
+  },
+  "publisher": {
+    "@type": "ProfessionalService",
+    "name": "Made by Sebby",
+    "url": "https://madebysebby.com/"
+  },
+  "url": "https://madebysebby.com/case-study-rieralaw.html",
+  "about": {
+    "@type": "WebSite",
+    "name": "Riera Law Firm",
+    "url": "https://rieralaw.com"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://madebysebby.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://madebysebby.com/work.html" },
+    { "@type": "ListItem", "position": 3, "name": "Riera Law Firm Case Study", "item": "https://madebysebby.com/case-study-rieralaw.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('nav-open')">
+          <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      <div class="nav-links">
+      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
+      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
+      <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <div class="lang-toggle">
+          <button onclick="document.documentElement.removeAttribute('data-lang');localStorage.setItem('lang','en');this.classList.add('active');this.nextElementSibling.classList.remove('active')" class="active">EN</button>
+          <button onclick="document.documentElement.setAttribute('data-lang','es');localStorage.setItem('lang','es');this.classList.add('active');this.previousElementSibling.classList.remove('active')">ES</button>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
+          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="contact.html" class="btn btn-nav"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span></a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<header class="page-hero">
+  <div class="wrap">
+    <div class="breadcrumb rise"><a href="/"><span lang="en">Home</span><span lang="es">Inicio</span></a> / <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a> / <span lang="en">Riera Law Firm</span><span lang="es">Riera Law Firm</span></div>
+    <div class="eyebrow rise d1"><span lang="en">Case study</span><span lang="es">Caso de estudio</span></div>
+    <h1 class="rise d2">Riera Law Firm</h1>
+    <p class="lede rise d3"><span lang="en">How a securities arbitration practice went from infrastructure chaos to a bilingual, 70-page website that earns trust.</span><span lang="es">Cómo una práctica de arbitraje de valores pasó del caos de infraestructura a un sitio web bilingüe de más de 70 páginas que genera confianza.</span></p>
+  </div>
+</header>
+
+<!-- ============ THE CHALLENGE ============ -->
+<section id="main" style="padding-top:24px">
+  <div class="wrap">
+    <div class="challenge-grid reveal">
+      <div>
+        <h2><span lang="en">The challenge.</span><span lang="es">El desafío.</span></h2>
+        <p class="challenge-intro"><span lang="en">Jorge Riera is a former SEC enforcement attorney running a nationwide securities arbitration practice from Coral Gables, Florida. When Sebby got involved, the firm's digital presence was in disarray.</span><span lang="es">Jorge Riera es un ex fiscal de la SEC que dirige una práctica nacional de arbitraje de valores desde Coral Gables, Florida. Cuando Sebby se involucró, la presencia digital del bufete estaba en desorden.</span></p>
+        <ul class="pain-list">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            <span lang="en">Two competing websites lived on the same domain, causing DNS conflicts that confused visitors and search engines</span><span lang="es">Dos sitios web competían en el mismo dominio, causando conflictos DNS que confundían a visitantes y motores de búsqueda</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            <span lang="en">The firm's professional email had stopped delivering reliably — messages from clients and courts were going missing</span><span lang="es">El correo profesional del bufete había dejado de funcionar — mensajes de clientes y tribunales se perdían</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            <span lang="en">Plugin licensing conflicts were creating security vulnerabilities on a site handling sensitive client inquiries</span><span lang="es">Conflictos de licencias de plugins creaban vulnerabilidades de seguridad en un sitio que maneja consultas sensibles de clientes</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            <span lang="en">The existing site didn't reflect the caliber of a former federal prosecutor's practice</span><span lang="es">El sitio existente no reflejaba el calibre de la práctica de un ex fiscal federal</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            <span lang="en">No Spanish-language presence despite serving a bilingual client base across the country</span><span lang="es">Sin presencia en español a pesar de servir a una base de clientes bilingüe en todo el país</span>
+          </li>
+        </ul>
+      </div>
+      <a class="sitecard" href="https://rieralaw.com" target="_blank" rel="noopener">
+        <div class="bar" aria-hidden="true">
+          <span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span>
+          <span class="url">rieralaw.com</span>
+        </div>
+        <picture><source srcset="assets/hero-rieralaw.webp" type="image/webp"><img class="sitecard-hero" src="assets/hero-rieralaw.jpg" alt="Riera Law Firm homepage hero" loading="lazy"></picture>
+        <div class="visit"><span><span lang="en">Visit the live site</span><span lang="es">Visitar el sitio</span></span><span>rieralaw.com&nbsp;→</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE APPROACH ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="approach reveal">
+      <h2><span lang="en">The approach.</span><span lang="es">El enfoque.</span></h2>
+      <div class="approach-grid">
+        <div class="approach-item">
+          <div class="glyph"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+          <h3><span lang="en">Complete rebuild</span><span lang="es">Reconstrucción completa</span></h3>
+          <p><span lang="en">Built the entire site from scratch in WordPress and Elementor — 70+ pages covering every practice area with detailed legal content approved by Jorge.</span><span lang="es">Construí el sitio completo desde cero en WordPress y Elementor — más de 70 páginas cubriendo cada área de práctica con contenido legal detallado aprobado por Jorge.</span></p>
+        </div>
+        <div class="approach-item">
+          <div class="glyph"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10A15 15 0 0 1 12 2z"/></svg></div>
+          <h3><span lang="en">Full bilingual site</span><span lang="es">Sitio completamente bilingüe</span></h3>
+          <p><span lang="en">Every page in English and Spanish with proper hreflang implementation, so Google serves the right language to the right visitor.</span><span lang="es">Cada página en inglés y español con implementación correcta de hreflang, para que Google sirva el idioma correcto a cada visitante.</span></p>
+        </div>
+        <div class="approach-item">
+          <div class="glyph"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3><span lang="en">DNS & email restoration</span><span lang="es">Restauración de DNS y correo</span></h3>
+          <p><span lang="en">Untangled the dual-site DNS conflict, restored clean routing, and fixed email delivery with proper SPF and DKIM configuration.</span><span lang="es">Desenredé el conflicto DNS de dos sitios, restauré el enrutamiento limpio y arreglé la entrega de correo con configuración correcta de SPF y DKIM.</span></p>
+        </div>
+        <div class="approach-item">
+          <div class="glyph"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <h3><span lang="en">Plugin audit & security</span><span lang="es">Auditoría de plugins y seguridad</span></h3>
+          <p><span lang="en">Resolved all plugin licensing and compatibility issues without a single minute of downtime for a live legal practice.</span><span lang="es">Resolví todos los conflictos de licencias y compatibilidad de plugins sin un solo minuto de inactividad para una práctica legal activa.</span></p>
+        </div>
+        <div class="approach-item">
+          <div class="glyph"><svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+          <h3><span lang="en">Custom design system</span><span lang="es">Sistema de diseño personalizado</span></h3>
+          <p><span lang="en">Created a cohesive visual identity with typography, color palette, and reusable layout components that reflect the authority of a federal-level practice.</span><span lang="es">Creé una identidad visual cohesiva con tipografía, paleta de colores y componentes de diseño reutilizables que reflejan la autoridad de una práctica a nivel federal.</span></p>
+        </div>
+        <div class="approach-item">
+          <div class="glyph"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3><span lang="en">Ongoing website care</span><span lang="es">Cuidado web continuo</span></h3>
+          <p><span lang="en">Set up a monthly Website Care plan covering security updates, daily backups, content changes, and performance monitoring — so the site stays as good as the day it launched.</span><span lang="es">Establecí un plan mensual de Cuidado Web que cubre actualizaciones de seguridad, respaldos diarios, cambios de contenido y monitoreo de rendimiento — para que el sitio se mantenga tan bueno como el día que se lanzó.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESULTS ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="reveal"><span lang="en">The results.</span><span lang="es">Los resultados.</span></h2>
+    <div class="metrics reveal">
+      <div class="metric">
+        <div class="number">70+</div>
+        <div class="label"><span lang="en">Pages built</span><span lang="es">Páginas construidas</span></div>
+      </div>
+      <div class="metric">
+        <div class="number">2</div>
+        <div class="label"><span lang="en">Languages (EN/ES)</span><span lang="es">Idiomas (EN/ES)</span></div>
+      </div>
+      <div class="metric">
+        <div class="number">0</div>
+        <div class="label"><span lang="en">Downtime during migration</span><span lang="es">Inactividad durante migración</span></div>
+      </div>
+      <div class="metric">
+        <div class="number">∞</div>
+        <div class="label"><span lang="en">Ongoing care, every month</span><span lang="es">Cuidado continuo, cada mes</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIAL ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="quote reveal">
+      <div class="mark" aria-hidden="true">"</div>
+      <p class="body"><span lang="en">Sebby rebuilt my law firm's entire web presence and untangled infrastructure problems that had my domain, my email, and two competing websites at odds. He treats my site like it's his own. I trust him with the online face of my practice.</span><span lang="es">Sebby reconstruyó toda la presencia web de mi bufete y resolvió problemas de infraestructura que tenían mi dominio, mi correo y dos sitios web compitiendo entre sí. Trata mi sitio como si fuera suyo. Le confío la cara digital de mi práctica.</span></p>
+      <div class="who">
+        <div class="avatar">JR</div>
+        <div><strong>Jorge L. Riera</strong><span><span lang="en">Founding Principal, Riera Law Firm</span><span lang="es">Socio Fundador, Riera Law Firm</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="final" style="padding-top:30px">
+  <div class="wrap">
+    <h2 class="reveal"><span lang="en">Your business deserves this level of <span style="color:var(--purple)">care.</span></span><span lang="es">Tu negocio merece este nivel de <span style="color:var(--purple)">cuidado.</span></span></h2>
+    <p class="reveal"><span lang="en">Let's talk about what your website needs. Free 20-minute call, no pressure.</span><span lang="es">Hablemos de lo que tu sitio web necesita. Llamada gratuita de 20 minutos, sin presión.</span></p>
+    <a class="btn reveal" href="contact.html"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span>&nbsp;→</a>
+  </div>
+</section>
+</main>
+
+<div class="sticky-cta" id="stickyCta">
+  <a href="contact.html"><span lang="en">Ready to talk? Book a free 20-minute call →</span><span lang="es">¿Listo para hablar? Agenda una llamada gratuita de 20 minutos →</span></a>
+</div>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span><span lang="en">This site was <strong>Made by Sebby</strong>. Yours can be too.</span><span lang="es">Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</span></span></div>
+    <div class="foot-links">
+      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
+      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
+      <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <a href="blog.html"><span lang="en">Blog</span><span lang="es">Blog</span></a>
+      <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
+    </div>
+  </div>
+</footer>
+<script>!function(){var l=document.documentElement.getAttribute('data-lang');if(l==='es'){var b=document.querySelectorAll('.lang-toggle button');if(b.length===2){b[0].classList.remove('active');b[1].classList.add('active')}}}()</script>
+<script>!function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})}()</script>
+<script>!function(){var cta=document.getElementById('stickyCta');if(!cta)return;var footer=document.querySelector('footer');var shown=false;window.addEventListener('scroll',function(){var y=window.scrollY;var fTop=footer?footer.getBoundingClientRect().top+y-window.innerHeight:Infinity;if(y>400&&y<fTop){if(!shown){cta.classList.add('show');shown=true}}else{if(shown){cta.classList.remove('show');shown=false}}},{passive:true})}()</script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>
+</body>
+</html>

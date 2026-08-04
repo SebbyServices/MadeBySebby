@@ -35,3 +35,5 @@ Sebastian (Sebby) is a freelance web designer and developer. He builds every sit
 - [Website Care Plans](https://madebysebby.com/website-care.html)
 - [About](https://madebysebby.com/about.html)
 - [Contact](https://madebysebby.com/contact.html)
+- [Blog](https://madebysebby.com/blog.html)
+- [Riera Law Case Study](https://madebysebby.com/case-study-rieralaw.html)
