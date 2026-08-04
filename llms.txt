@@ -4,7 +4,7 @@
 
 ## What Made by Sebby Does
 
-Made by Sebby designs, builds, and maintains custom websites for small businesses. The focus is on trust-building websites that convert visitors into customers — with personal attention, plain English communication, and ongoing monthly care.
+Made by Sebby designs, builds, and maintains custom websites for small businesses in Miami, South Florida, the Dominican Republic, and Latin America. The focus is on trust-building bilingual websites (English and Spanish) that convert visitors into customers — with personal attention, plain English communication, and ongoing monthly care.
 
 ## Services
 
@@ -19,7 +19,7 @@ Made by Sebby designs, builds, and maintains custom websites for small businesse
 
 ## About the Founder
 
-Sebastian (Sebby) is a freelance web designer and developer. He builds every site like it's his own — with personal attention, honest pricing, and reliable ongoing support. Based in the Dominican Republic, serving clients in the US and Latin America.
+Sebastian (Sebby) is a freelance web designer and developer based in the Dominican Republic. He serves small businesses in Miami, Coral Gables, South Florida, Santo Domingo, and across Latin America. He builds every site like it's his own — with personal attention, honest pricing, and reliable ongoing support. Fluent in English and Spanish.
 
 ## Contact
 
@@ -36,4 +36,7 @@ Sebastian (Sebby) is a freelance web designer and developer. He builds every sit
 - [About](https://madebysebby.com/about.html)
 - [Contact](https://madebysebby.com/contact.html)
 - [Blog](https://madebysebby.com/blog.html)
+- [Web Design Miami](https://madebysebby.com/web-design-miami.html)
+- [Diseño Web Santo Domingo](https://madebysebby.com/diseno-web-santo-domingo.html)
+- [Blog: How Much Does a Website Cost in 2026?](https://madebysebby.com/blog/how-much-does-a-website-cost.html)
 - [Riera Law Case Study](https://madebysebby.com/case-study-rieralaw.html)

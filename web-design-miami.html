@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Design Miami — Custom Websites for Small Businesses | Made by Sebby</title>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="Sebby — Made by Sebby">
+<meta name="description" content="Miami web design for small businesses — custom websites that build trust and convert visitors. Bilingual (English & Spanish), mobile-first, with ongoing website care. Free consultation.">
+<link rel="preload" as="image" href="assets/logo/sebby-nav.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
+<script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
+<style>
+  :root{
+    --ink:#1A1D29;
+    --ink-soft:#4A4E5C;
+    --muted:#6B7080;
+    --purple:#6C3CE9;
+    --purple-deep:#5A2FD0;
+    --blue:#2D6FFF;
+    --tint:#F4F1FD;
+    --line:#E8E6F2;
+    --white:#FFFFFF;
+    --radius:20px;
+    --radius-sm:12px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+  img{max-width:100%;display:block}
+
+  /* ---------- Nav ---------- */
+  nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:50}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.06rem;letter-spacing:-.01em}
+  .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
+  .nav-links a{color:var(--ink-soft);transition:color .15s}
+  .nav-links a.btn{color:#fff}
+  .nav-links a.btn:hover{color:#fff}
+  .nav-links a:hover{color:var(--purple)}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;
+    padding:13px 26px;border-radius:999px;border:none;cursor:pointer;
+    transition:background .15s, transform .15s;
+  }
+  .btn:hover{background:var(--purple-deep);transform:translateY(-1px)}
+  .btn:focus-visible{outline-color:var(--ink)}
+  .btn-ghost{
+    background:transparent;color:var(--ink);border:1.5px solid var(--line);
+  }
+  .btn-ghost:hover{background:var(--tint);border-color:var(--purple);color:var(--purple)}
+  .btn-nav{padding:10px 22px;font-size:.92rem}
+
+  /* ---------- Page Hero ---------- */
+  .page-hero{padding:76px 0 52px}
+  .page-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.09;letter-spacing:-.028em;margin-bottom:24px}
+  .page-hero h1 .accent{color:var(--purple)}
+  .page-hero p.lede{font-size:1.14rem;color:var(--ink-soft);max-width:36em;margin-top:18px}
+  .eyebrow{
+    font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--purple);margin-bottom:20px;display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2.5px;background:var(--purple);border-radius:2px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
+  .breadcrumb{font-size:.85rem;color:var(--muted);margin-bottom:22px}
+  .breadcrumb a:hover{color:var(--purple)}
+
+  /* ---------- Sections ---------- */
+  section{padding:96px 0}
+  .sec-head{max-width:38em;margin-bottom:56px}
+  h2{font-size:clamp(1.7rem,3vw,2.35rem);font-weight:800;letter-spacing:-.022em;line-height:1.16;margin-bottom:16px}
+  .sec-head p{font-size:1.08rem;color:var(--ink-soft)}
+
+  /* Cards */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:34px 30px;transition:transform .18s, box-shadow .18s, border-color .18s;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08);border-color:#D8CFF6}
+  .card .glyph{
+    width:48px;height:48px;border-radius:14px;background:var(--tint);
+    display:flex;align-items:center;justify-content:center;margin-bottom:22px;
+  }
+  .card .glyph svg{width:23px;height:23px;stroke:var(--purple);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font-size:1.16rem;font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .card p{font-size:.97rem;color:var(--ink-soft)}
+
+  /* Services list */
+  .svc-list{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .svc-item{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px;transition:transform .18s,box-shadow .18s}
+  .svc-item:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08)}
+  .svc-item h3{font-size:1.1rem;font-weight:700;margin-bottom:9px}
+  .svc-item p{font-size:.95rem;color:var(--ink-soft);margin-bottom:16px}
+  .svc-item a{color:var(--purple);font-weight:600;font-size:.92rem}
+
+  /* Client logos */
+  .client-logos-bar{text-align:center;padding:28px 0 0}
+  .client-logos{display:flex;align-items:center;gap:40px;flex-wrap:wrap;justify-content:center;opacity:.55;transition:opacity .3s}
+  .client-logos:hover{opacity:.8}
+  .client-logos img{height:28px;width:auto;filter:grayscale(1);transition:filter .3s}
+  .client-logos img:hover{filter:grayscale(0)}
+  .client-logos-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+
+  /* Credibility */
+  .credibility{background:var(--tint);border-radius:32px;padding:64px}
+  .credibility h2{margin-bottom:12px}
+  .credibility .body{color:var(--ink-soft);font-size:1.04rem;margin-bottom:24px;max-width:36em}
+  .credibility .cta-link{color:var(--purple);font-weight:600;font-size:.95rem}
+
+  /* FAQ */
+  .faq{display:grid;gap:14px;max-width:44em}
+  .faq details{border:1px solid var(--line);border-radius:var(--radius-sm);padding:20px 24px;background:var(--white)}
+  .faq summary{font-weight:700;cursor:pointer;font-size:1rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq summary::after{content:"+";color:var(--purple);font-size:1.4rem;font-weight:600;line-height:1}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{margin-top:12px;color:var(--ink-soft);font-size:.97rem}
+
+  /* Final CTA */
+  .final{text-align:center;padding:110px 0}
+  .final h2{max-width:18em;margin:0 auto 18px}
+  .final p{color:var(--ink-soft);font-size:1.1rem;margin-bottom:36px}
+
+  /* Footer */
+  footer{border-top:1px solid var(--line);padding:44px 0}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .credit{display:flex;align-items:center;gap:10px;font-size:.92rem;color:var(--muted)}
+  .credit strong{color:var(--ink);font-weight:700}
+  .foot-links{display:flex;gap:26px;font-size:.9rem;color:var(--muted)}
+  .foot-links a:hover{color:var(--purple)}
+
+  /* Motion */
+  .rise{opacity:0;transform:translateY(16px);animation:rise .7s ease forwards}
+  .d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    .rise{opacity:1;transform:none;animation:none}
+    *{transition:none !important;scroll-behavior:auto}
+  }
+
+  /* Responsive */
+  @media (max-width:900px){
+    .cards{grid-template-columns:1fr}
+    .svc-list{grid-template-columns:1fr 1fr}
+    .credibility{padding:48px 32px}
+  }
+  @media (max-width:640px){
+    .svc-list{grid-template-columns:1fr}
+    section{padding:68px 0}
+    .page-hero{padding:56px 0 40px}
+    .credibility{padding:36px 24px;border-radius:var(--radius)}
+  }
+
+  /* ---------- Hamburger Menu ---------- */
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;z-index:51}
+  .menu-btn svg{width:26px;height:26px;stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round}
+  .menu-btn .close{display:none}
+  .nav-open .menu-btn .open{display:none}
+  .nav-open .menu-btn .close{display:block}
+  @media (max-width:640px){
+    .menu-btn{display:block}
+    .nav-links{
+      display:none;position:fixed;top:76px;left:0;right:0;bottom:0;
+      background:var(--white);flex-direction:column;gap:0;padding:20px 28px;
+      border-top:1px solid var(--line);z-index:49;
+      overflow-y:auto;
+    }
+    .nav-open .nav-links{display:flex}
+    .nav-links a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
+    .nav-links a:last-child{border-bottom:none}
+    .nav-links a.btn{margin-top:12px;justify-content:center;border-bottom:none}
+    .nav-links .lang-toggle{margin-top:8px;align-self:flex-start}
+    .nav-links .theme-toggle{margin-top:4px;align-self:flex-start}
+  }
+
+  /* ---------- Scroll Animations ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+
+  /* ---------- Sticky CTA ---------- */
+  .sticky-cta{
+    position:fixed;bottom:0;left:0;right:0;z-index:40;
+    background:var(--purple);color:#fff;
+    padding:14px 28px;text-align:center;
+    transform:translateY(100%);transition:transform .35s ease;
+    font-weight:600;font-size:.95rem;
+  }
+  .sticky-cta.show{transform:translateY(0)}
+  .sticky-cta a{color:#fff;text-decoration:none}
+  .sticky-cta a:hover{text-decoration:underline}
+  @media (max-width:640px){
+    .sticky-cta{font-size:.88rem;padding:12px 20px}
+  }
+
+  /* ---------- Language Toggle ---------- */
+  :root:not([data-lang="es"]) [lang="es"]{display:none}
+  [data-lang="es"] [lang="en"]{display:none}
+  .lang-toggle{
+    display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;
+    font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0;
+  }
+  .lang-toggle button{
+    background:none;border:none;padding:7px 12px;cursor:pointer;
+    color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em;
+  }
+  .lang-toggle button:hover{color:var(--purple)}
+  .lang-toggle button.active{background:var(--purple);color:#fff}
+
+  /* ---------- Dark Mode ---------- */
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) nav{background:rgba(15,17,23,.92)}
+    :root:not([data-theme="light"]) .card,:root:not([data-theme="light"]) .svc-item,:root:not([data-theme="light"]) .faq details{background:#1A1C25}
+    :root:not([data-theme="light"]) .card:hover{border-color:#3D3A4E}
+    :root:not([data-theme="light"]) .credibility{background:#1A1C25}
+    :root:not([data-theme="light"]) .btn-ghost{border-color:var(--line)}
+    :root:not([data-theme="light"]) .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+    :root:not([data-theme="light"]) .logo-light{display:none !important}
+    :root:not([data-theme="light"]) .logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
+    :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .btn{background:#6B4EC2}
+    :root:not([data-theme="light"]) .btn:hover{background:#5C41B0}
+    :root:not([data-theme="light"]) .client-logos img{filter:grayscale(1) invert(1) brightness(.8)}
+    :root:not([data-theme="light"]) .client-logos img:hover{filter:invert(1) brightness(.8)}
+  }
+  [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
+  [data-theme="dark"] .card,[data-theme="dark"] .svc-item,[data-theme="dark"] .faq details{background:#1A1C25}
+  [data-theme="dark"] .card:hover{border-color:#3D3A4E}
+  [data-theme="dark"] .credibility{background:#1A1C25}
+  [data-theme="dark"] .btn-ghost{border-color:var(--line)}
+  [data-theme="dark"] .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+  [data-theme="dark"] .logo-light{display:none !important}
+  [data-theme="dark"] .logo-dark{display:block !important}
+  [data-theme="dark"] .foot-logo-light{display:none !important}
+  [data-theme="dark"] .foot-logo-dark{display:block !important}
+  [data-theme="dark"] .btn{background:#6B4EC2}
+  [data-theme="dark"] .btn:hover{background:#5C41B0}
+  [data-theme="dark"] .client-logos img{filter:grayscale(1) invert(1) brightness(.8)}
+  [data-theme="dark"] .client-logos img:hover{filter:invert(1) brightness(.8)}
+
+  /* Theme transition */
+  .theme-trans,.theme-trans *,.theme-trans *::before,.theme-trans *::after{
+    transition:background .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease,fill .35s ease,stroke .35s ease !important;
+  }
+  .theme-toggle{
+    background:none;border:1.5px solid var(--line);border-radius:50%;
+    width:38px;height:38px;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;transition:border-color .15s,background .15s;flex-shrink:0;
+  }
+  .theme-toggle:hover{border-color:var(--purple);background:var(--tint)}
+  .theme-toggle svg{width:18px;height:18px;stroke:var(--muted);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .theme-toggle:hover svg{stroke:var(--purple)}
+  .theme-toggle .icon-sun{display:none}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon{display:none}
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun{display:block}
+  }
+  [data-theme="dark"] .theme-toggle .icon-moon{display:none}
+  [data-theme="dark"] .theme-toggle .icon-sun{display:block !important}
+  [data-theme="light"] .theme-toggle .icon-sun{display:none !important}
+  [data-theme="light"] .theme-toggle .icon-moon{display:block}
+
+  /* ---------- Skip link ---------- */
+  .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
+  .skip-link:focus{top:12px}
+
+  /* ---------- Print ---------- */
+  @media print{
+    nav,.menu-btn,.sticky-cta,#stickyCta,.theme-toggle,.lang-toggle,footer,.hero-ctas,.btn,.cta-row,.foot-cta{display:none!important}
+    body{color:#000;background:#fff;-webkit-print-color-adjust:exact}
+    .wrap{max-width:100%;padding:0 12px}
+    a{color:#000}
+    a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em;color:#555}
+    a[href^="mailto"]::after{content:" (" attr(href) ")";font-size:.8em;color:#555}
+    img{max-width:100%!important;filter:none!important}
+    .reveal{opacity:1!important;transform:none!important}
+  }
+</style>
+
+<!-- seo:start -->
+<link rel="alternate" type="text/plain" title="LLM instructions" href="/llms.txt">
+<link rel="canonical" href="https://madebysebby.com/web-design-miami.html">
+<link rel="alternate" hreflang="en" href="https://madebysebby.com/web-design-miami.html">
+<link rel="alternate" hreflang="es" href="https://madebysebby.com/diseno-web-santo-domingo.html">
+<link rel="alternate" hreflang="x-default" href="https://madebysebby.com/web-design-miami.html">
+<meta name="theme-color" content="#6C3CE9">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Made by Sebby">
+<meta property="og:title" content="Web Design Miami — Custom Websites for Small Businesses | Made by Sebby">
+<meta property="og:description" content="Miami web design for small businesses — custom websites that build trust and convert visitors. Bilingual (English & Spanish), mobile-first, with ongoing website care.">
+<meta property="og:url" content="https://madebysebby.com/web-design-miami.html">
+<meta property="og:image" content="https://madebysebby.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Web Design Miami — Custom Websites for Small Businesses | Made by Sebby">
+<meta name="twitter:description" content="Miami web design for small businesses — custom websites that build trust and convert visitors. Bilingual, mobile-first, with ongoing website care.">
+<meta name="twitter:image" content="https://madebysebby.com/assets/og-image.jpg">
+<!-- seo:end -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Made by Sebby — Web Design Miami",
+  "url": "https://madebysebby.com/web-design-miami.html",
+  "image": "https://madebysebby.com/assets/og-image.jpg",
+  "logo": "https://madebysebby.com/assets/icons/icon-512.png",
+  "description": "Custom web design, development, and ongoing website care for small businesses in Miami and South Florida. Bilingual (English & Spanish), mobile-first design.",
+  "email": "hello@madebysebby.com",
+  "founder": {
+    "@type": "Person",
+    "name": "Sebby",
+    "jobTitle": "Web Designer & Developer"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Miami", "containedInPlace": {"@type": "State", "name": "Florida"}},
+    {"@type": "City", "name": "Coral Gables", "containedInPlace": {"@type": "State", "name": "Florida"}},
+    {"@type": "City", "name": "Miami Beach", "containedInPlace": {"@type": "State", "name": "Florida"}},
+    {"@type": "City", "name": "Doral", "containedInPlace": {"@type": "State", "name": "Florida"}},
+    {"@type": "City", "name": "Hialeah", "containedInPlace": {"@type": "State", "name": "Florida"}},
+    {"@type": "City", "name": "Brickell", "containedInPlace": {"@type": "State", "name": "Florida"}}
+  ],
+  "serviceType": ["Web Design", "Web Development", "Website Maintenance", "SEO", "Bilingual Website Design"],
+  "knowsAbout": ["Web Design", "WordPress", "Custom Websites", "Small Business Websites", "Bilingual Web Design", "Miami Small Business"],
+  "priceRange": "$$",
+  "slogan": "Websites that build trust."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://madebysebby.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Web Design Miami", "item": "https://madebysebby.com/web-design-miami.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does a website cost in Miami?",
+      "acceptedAnswer": {"@type": "Answer", "text": "A custom 5-page small business website starts around $3,000–$5,000. Miami agencies typically charge $10,000–$30,000 for the same scope. I offer the same quality at freelancer rates because I don't carry agency overhead — no office in Brickell, no account managers, no layers between you and the work."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do you build bilingual websites in English and Spanish?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every site I build can include both English and Spanish content. I'm fluent in both languages and build bilingual functionality into the site's architecture — not as an afterthought plugin, but as a core feature. With 70% of Miami being Hispanic, a bilingual website isn't optional — it's a competitive advantage."}
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a website take to build?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Most small business websites take 3–6 weeks from kickoff to launch. Complex projects with 20+ pages, custom functionality, or full bilingual content take 6–10 weeks. I give you a timeline upfront and stick to it."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer ongoing website maintenance?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Website Care plans start at $99/month and include software updates, daily backups, security monitoring, speed optimization, and small content edits. Most Miami business owners don't have time to maintain their own site — that's exactly what this service is for."}
+    },
+    {
+      "@type": "Question",
+      "name": "Can we meet in person in Miami?",
+      "acceptedAnswer": {"@type": "Answer", "text": "I work remotely and serve Miami clients via video call, phone, text, and email during Eastern Time business hours. My clients in Coral Gables, Doral, and across South Florida find this works perfectly — you get the same personal attention without paying for an agency's Brickell office lease."}
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('nav-open')">
+          <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      <div class="nav-links">
+      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
+      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
+      <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <div class="lang-toggle">
+          <button onclick="document.documentElement.removeAttribute('data-lang');localStorage.setItem('lang','en');this.classList.add('active');this.nextElementSibling.classList.remove('active')" class="active">EN</button>
+          <button onclick="document.documentElement.setAttribute('data-lang','es');localStorage.setItem('lang','es');this.classList.add('active');this.previousElementSibling.classList.remove('active')">ES</button>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
+          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="contact.html" class="btn btn-nav"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span></a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<header class="page-hero">
+  <div class="wrap">
+    <div class="breadcrumb rise"><a href="/"><span lang="en">Home</span><span lang="es">Inicio</span></a> / <span lang="en">Web Design Miami</span><span lang="es">Diseño Web Miami</span></div>
+    <div class="eyebrow rise d1"><span lang="en">Web Design · Miami</span><span lang="es">Diseño Web · Miami</span></div>
+    <h1 class="rise d2"><span lang="en">Web Design in <span class="accent">Miami</span> for Small Businesses</span><span lang="es">Diseño Web en <span class="accent">Miami</span> para Pequeños Negocios</span></h1>
+    <p class="lede rise d3"><span lang="en">Your business deserves a website as sharp as you are. I design, build, and maintain custom websites for Miami small businesses — in English and Spanish. No agency runaround, no jargon. You talk to me, and I build it like it's my own.</span><span lang="es">Tu negocio merece un sitio web tan profesional como tú. Diseño, construyo y mantengo sitios web personalizados para pequeños negocios en Miami — en inglés y español. Sin rodeos de agencia, sin jerga. Hablas conmigo, y lo construyo como si fuera mío.</span></p>
+    <div class="hero-ctas rise d3">
+      <a class="btn" href="contact.html"><span lang="en">Free 20-minute call</span><span lang="es">Llamada gratuita de 20 minutos</span>&nbsp;→</a>
+      <a class="btn btn-ghost" href="work.html"><span lang="en">See my work</span><span lang="es">Ver mi trabajo</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ WHY MIAMI BUSINESSES CHOOSE ME ============ -->
+<section id="main">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">Why Miami businesses choose me.</span><span lang="es">Por qué los negocios de Miami me eligen.</span></h2>
+      <p><span lang="en">Miami isn't a one-size-fits-all market. Your website needs someone who understands that.</span><span lang="es">Miami no es un mercado genérico. Tu sitio web necesita a alguien que entienda eso.</span></p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2"/></svg></div>
+        <h3><span lang="en">Bilingual by default</span><span lang="es">Bilingüe por defecto</span></h3>
+        <p><span lang="en">70% of Miami is Hispanic. Your website should speak to every customer who walks through your door — or finds you on Google. I build in English and Spanish from day one, not as an afterthought plugin.</span><span lang="es">El 70% de Miami es hispano. Tu sitio web debe hablarle a cada cliente que entra por tu puerta — o te encuentra en Google. Construyo en inglés y español desde el primer día, no como un plugin agregado después.</span></p>
+      </div>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21c1-4 3.5-6 7-6s6 2 7 6"/></svg></div>
+        <h3><span lang="en">You talk to the person doing the work</span><span lang="es">Hablas con la persona que hace el trabajo</span></h3>
+        <p><span lang="en">No account managers, no project coordinators, no handoffs. When you call, I answer. When you have a question at 9 PM, I reply the next morning — not three days later through a ticket system. That's how I work with businesses across Coral Gables, Doral, Hialeah, and all of South Florida.</span><span lang="es">Sin gerentes de cuenta, sin coordinadores de proyecto, sin traspasos. Cuando llamas, yo respondo. Cuando tienes una pregunta a las 9 PM, respondo a la mañana siguiente — no tres días después a través de un sistema de tickets. Así trabajo con negocios en Coral Gables, Doral, Hialeah y todo el sur de Florida.</span></p>
+      </div>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3><span lang="en">Ongoing website care — I don't disappear</span><span lang="es">Cuidado web continuo — no desaparezco</span></h3>
+        <p><span lang="en">Most Miami web designers build your site and vanish. I offer monthly Website Care plans that keep your site secure, fast, and updated — software updates, daily backups, security monitoring, and small edits included. Your website keeps earning its keep long after launch.</span><span lang="es">La mayoría de diseñadores web en Miami construyen tu sitio y desaparecen. Ofrezco planes mensuales de Cuidado Web que mantienen tu sitio seguro, rápido y actualizado — actualizaciones de software, respaldos diarios, monitoreo de seguridad y pequeñas ediciones incluidas.</span></p>
+      </div>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <h3><span lang="en">Built for mobile — because Miami is mobile</span><span lang="es">Hecho para móvil — porque Miami es móvil</span></h3>
+        <p><span lang="en">65% of web traffic in Miami comes from phones. Every site I build is mobile-first — designed for the way your customers actually browse, not the way designers present mockups on a 27-inch monitor. Fast-loading, thumb-friendly, and sharp on every screen from Brickell to Miami Beach.</span><span lang="es">El 65% del tráfico web en Miami viene de teléfonos. Cada sitio que construyo es mobile-first — diseñado para cómo tus clientes realmente navegan, no cómo los diseñadores presentan maquetas en un monitor de 27 pulgadas. Carga rápida, fácil de usar con el pulgar, y nítido en cada pantalla.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">What I build for Miami businesses.</span><span lang="es">Lo que construyo para negocios de Miami.</span></h2>
+    </div>
+    <div class="svc-list">
+      <div class="svc-item reveal">
+        <h3><span lang="en">Web Design & Build</span><span lang="es">Diseño y Desarrollo Web</span></h3>
+        <p><span lang="en">Custom websites for Miami small businesses — law firms in Coral Gables, restaurants in Doral, medical practices in Hialeah. Mobile-first, fast-loading, and built to convert visitors into customers.</span><span lang="es">Sitios web personalizados para pequeños negocios de Miami — bufetes en Coral Gables, restaurantes en Doral, consultorios médicos en Hialeah. Mobile-first, carga rápida, y construidos para convertir visitantes en clientes.</span></p>
+        <a href="services.html"><span lang="en">Learn more →</span><span lang="es">Más información →</span></a>
+      </div>
+      <div class="svc-item reveal">
+        <h3><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></h3>
+        <p><span lang="en">Monthly maintenance so your Miami business website stays secure, fast, and current. Updates, backups, security monitoring, and small edits — starting at $99/month.</span><span lang="es">Mantenimiento mensual para que el sitio web de tu negocio en Miami se mantenga seguro, rápido y actualizado. Actualizaciones, respaldos, monitoreo de seguridad y pequeñas ediciones — desde $99/mes.</span></p>
+        <a href="website-care.html"><span lang="en">See plans →</span><span lang="es">Ver planes →</span></a>
+      </div>
+      <div class="svc-item reveal">
+        <h3><span lang="en">SEO — Get Found on Google</span><span lang="es">SEO — Aparece en Google</span></h3>
+        <p><span lang="en">Local SEO for South Florida businesses. Google Business Profile setup, on-page optimization, and honest search strategy that helps customers in Miami find you first.</span><span lang="es">SEO local para negocios del sur de Florida. Configuración de Google Business Profile, optimización on-page, y estrategia de búsqueda honesta que ayuda a clientes en Miami a encontrarte primero.</span></p>
+        <a href="services.html"><span lang="en">Learn more →</span><span lang="es">Más información →</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCAL CREDIBILITY ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="credibility reveal">
+      <h2><span lang="en">Trusted by Miami businesses.</span><span lang="es">Negocios de Miami confían en mí.</span></h2>
+      <p class="body"><span lang="en">I built the entire online presence for <strong>Riera Law Firm</strong> in Coral Gables — a securities arbitration practice led by a former SEC enforcement attorney. 70+ bilingual pages, DNS cleanup, email restoration, and ongoing Website Care every month. <a href="case-study-rieralaw.html" style="color:var(--purple);font-weight:600">Read the full case study →</a></span><span lang="es">Construí toda la presencia online de <strong>Riera Law Firm</strong> en Coral Gables — una práctica de arbitraje de valores liderada por un ex fiscal de la SEC. Más de 70 páginas bilingües, limpieza de DNS, restauración de correo, y Cuidado Web continuo cada mes. <a href="case-study-rieralaw.html" style="color:var(--purple);font-weight:600">Leer el caso de estudio completo →</a></span></p>
+      <div class="client-logos-bar">
+        <div class="client-logos-label"><span lang="en">Trusted by</span><span lang="es">Confían en mí</span></div>
+        <div class="client-logos">
+          <img src="assets/client-logos/rieralaw.svg" alt="Riera Law Firm — Coral Gables, Florida" loading="lazy">
+          <img src="assets/client-logos/elitecare.svg" alt="Elite Care Recovery — South Florida" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">Common questions from Miami business owners.</span><span lang="es">Preguntas comunes de dueños de negocios en Miami.</span></h2>
+    </div>
+    <div class="faq">
+      <details class="reveal">
+        <summary><span lang="en">How much does a website cost in Miami?</span><span lang="es">¿Cuánto cuesta un sitio web en Miami?</span></summary>
+        <p><span lang="en">A custom 5-page small business website starts around $3,000–$5,000. Miami agencies typically charge $10,000–$30,000 for the same scope. I offer the same quality at freelancer rates because I don't carry agency overhead — no office in Brickell, no account managers, no layers between you and the work.</span><span lang="es">Un sitio web personalizado de 5 páginas para pequeños negocios comienza alrededor de $3,000–$5,000. Las agencias de Miami típicamente cobran $10,000–$30,000 por el mismo alcance. Ofrezco la misma calidad a tarifas de freelancer porque no tengo los gastos de una agencia — sin oficina en Brickell, sin gerentes de cuenta, sin capas entre tú y el trabajo.</span></p>
+      </details>
+      <details class="reveal">
+        <summary><span lang="en">Do you build bilingual websites in English and Spanish?</span><span lang="es">¿Construyes sitios web bilingües en inglés y español?</span></summary>
+        <p><span lang="en">Yes. Every site I build can include both English and Spanish content. I'm fluent in both languages and build bilingual functionality into the site's architecture from day one — not as an afterthought translation plugin. With 70% of Miami being Hispanic, a bilingual website isn't optional — it's a competitive advantage.</span><span lang="es">Sí. Cada sitio que construyo puede incluir contenido en inglés y español. Soy fluido en ambos idiomas y construyo la funcionalidad bilingüe en la arquitectura del sitio desde el primer día — no como un plugin de traducción agregado después. Con el 70% de Miami siendo hispano, un sitio web bilingüe no es opcional — es una ventaja competitiva.</span></p>
+      </details>
+      <details class="reveal">
+        <summary><span lang="en">How long does a website take to build?</span><span lang="es">¿Cuánto tiempo toma construir un sitio web?</span></summary>
+        <p><span lang="en">Most small business websites take 3–6 weeks from kickoff to launch. Complex projects with 20+ pages, custom functionality, or full bilingual content take 6–10 weeks. I give you a timeline upfront and stick to it — no "we'll get to it when we can."</span><span lang="es">La mayoría de sitios web para pequeños negocios toman 3–6 semanas desde el inicio hasta el lanzamiento. Proyectos complejos con 20+ páginas, funcionalidad personalizada, o contenido bilingüe completo toman 6–10 semanas. Te doy un cronograma desde el inicio y lo cumplo.</span></p>
+      </details>
+      <details class="reveal">
+        <summary><span lang="en">Do you offer ongoing website maintenance?</span><span lang="es">¿Ofreces mantenimiento web continuo?</span></summary>
+        <p><span lang="en">Yes. Website Care plans start at $99/month and include software updates, daily backups, security monitoring, speed optimization, and small content edits. Most Miami business owners don't have time to maintain their own site — that's exactly what this service is for.</span><span lang="es">Sí. Los planes de Cuidado Web comienzan en $99/mes e incluyen actualizaciones de software, respaldos diarios, monitoreo de seguridad, optimización de velocidad y pequeñas ediciones de contenido. La mayoría de dueños de negocios en Miami no tienen tiempo para mantener su propio sitio — para eso es exactamente este servicio.</span></p>
+      </details>
+      <details class="reveal">
+        <summary><span lang="en">Can we meet in person in Miami?</span><span lang="es">¿Podemos reunirnos en persona en Miami?</span></summary>
+        <p><span lang="en">I work remotely and serve Miami clients via video call, phone, text, and email during Eastern Time business hours. My clients in Coral Gables, Doral, and across South Florida find this works perfectly — you get the same personal attention without paying for an agency's Brickell office lease.</span><span lang="es">Trabajo de forma remota y atiendo clientes de Miami por videollamada, teléfono, texto y correo electrónico durante horario de oficina hora del Este. Mis clientes en Coral Gables, Doral y todo el sur de Florida encuentran que esto funciona perfectamente — recibes la misma atención personal sin pagar por el alquiler de oficina de una agencia en Brickell.</span></p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final" style="padding-top:30px">
+  <div class="wrap">
+    <h2><span lang="en">Ready to upgrade your Miami business's website?</span><span lang="es">¿Listo para mejorar el sitio web de tu negocio en Miami?</span></h2>
+    <p><span lang="en">Free 20-minute call. No pressure, plain answers. I'll tell you exactly what I'd recommend — even if the answer is "less than you think."</span><span lang="es">Llamada gratuita de 20 minutos. Sin presión, respuestas claras. Te diré exactamente lo que recomendaría — incluso si la respuesta es "menos de lo que piensas."</span></p>
+    <a class="btn" href="contact.html"><span lang="en">Book a free call</span><span lang="es">Reserva una llamada gratuita</span>&nbsp;→</a>
+  </div>
+</section>
+
+</main>
+
+<div class="sticky-cta" id="stickyCta">
+  <a href="contact.html"><span lang="en">Free 20-minute call — no pressure, plain answers →</span><span lang="es">Llamada gratuita de 20 minutos — sin presión, respuestas claras →</span></a>
+</div>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span><span lang="en">This site was <strong>Made by Sebby</strong>. Yours can be too.</span><span lang="es">Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</span></span></div>
+    <div class="foot-links">
+      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
+      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
+      <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <a href="blog.html"><span lang="en">Blog</span><span lang="es">Blog</span></a>
+      <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
+    </div>
+  </div>
+</footer>
+<script>!function(){var l=document.documentElement.getAttribute('data-lang');if(l==='es'){var b=document.querySelectorAll('.lang-toggle button');if(b.length===2){b[0].classList.remove('active');b[1].classList.add('active')}}}()</script>
+<script>!function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})}()</script>
+<script>!function(){var cta=document.getElementById('stickyCta');if(!cta)return;var footer=document.querySelector('footer');var shown=false;window.addEventListener('scroll',function(){var y=window.scrollY;var fTop=footer?footer.getBoundingClientRect().top+y-window.innerHeight:Infinity;if(y>400&&y<fTop){if(!shown){cta.classList.add('show');shown=true}}else{if(shown){cta.classList.remove('show');shown=false}}},{passive:true})}()</script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>
+</body>
+</html>

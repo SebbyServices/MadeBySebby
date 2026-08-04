@@ -1,5 +1,5 @@
-var CACHE='mbs-v2';
-var PAGES=['/','/index.html','/services.html','/work.html','/about.html','/contact.html','/website-care.html','/thank-you.html','/404.html','/case-study-rieralaw.html','/blog.html','/blog/5-signs-your-website-is-losing-clients.html','/blog/what-is-website-care.html'];
+var CACHE='mbs-v3';
+var PAGES=['/','/index.html','/services.html','/work.html','/about.html','/contact.html','/website-care.html','/thank-you.html','/404.html','/case-study-rieralaw.html','/blog.html','/blog/5-signs-your-website-is-losing-clients.html','/blog/what-is-website-care.html','/blog/how-much-does-a-website-cost.html','/web-design-miami.html','/diseno-web-santo-domingo.html'];
 var ASSETS=['/assets/logo/sebby-nav.svg','/assets/logo/sebby-nav-white.svg','/assets/logo/sebby-horizontal.svg','/assets/logo/sebby-horizontal-white.svg','/favicon.ico','/favicon.svg'];
 
 self.addEventListener('install',function(e){
