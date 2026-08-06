@@ -6,14 +6,14 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DV4L5CZRML');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio — Web Design Projects & Client Results — Made by Sebby</title>
+<title>Web Design Pricing & Packages for Small Business — Made by Sebby</title>
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Sebby — Made by Sebby">
-<meta name="description" content="See websites designed and built by Sebby for businesses in Miami, South Florida, and the Dominican Republic — law firms, medical equipment companies, and more. Custom web design with real client testimonials and results.">
+<meta name="description" content="Transparent web design pricing for small businesses. Starter sites from $1,500, custom builds from $3,500, premium projects from $7,000. No hidden fees. Free consultation included.">
 <link rel="preload" as="image" href="assets/logo/sebby-nav.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
 <script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
 <style>
@@ -47,7 +47,7 @@
   /* ---------- Nav ---------- */
   nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:50}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
-  .logo{display:flex;align-items:center;gap:11px;font-weight:700;font-size:1.06rem;letter-spacing:-.01em}
+  .logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.06rem;letter-spacing:-.01em}
   .logo .made{font-weight:500;color:var(--muted)}
   .logo .sebby{color:var(--ink)}
   .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
@@ -165,16 +165,13 @@
   .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   .tile{
     border-radius:var(--radius);border:1px solid var(--line);overflow:hidden;
-    background:var(--white);transition:transform .18s, box-shadow .18s, border-color .18s;
-    cursor:pointer;
+    background:var(--white);transition:transform .18s, box-shadow .18s;
   }
-  .tile:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(108,60,233,.15);border-color:var(--purple)}
+  .tile:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08)}
   .tile .shot{
     aspect-ratio:16/10.5;background:linear-gradient(150deg,#EFEAFB,#E2D9F8);
-    display:flex;align-items:center;justify-content:center;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
   }
-  .tile .shot img{transition:transform .3s ease}
-  .tile:hover .shot img{transform:scale(1.03)}
   .tile .shot span{
     font-size:.8rem;font-weight:600;color:var(--purple);
     background:#fff;border:1px dashed var(--purple);padding:7px 14px;border-radius:999px;
@@ -269,7 +266,7 @@
   .plan{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:36px 30px;display:flex;flex-direction:column;transition:transform .18s, box-shadow .18s}
   .plan:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08)}
   .plan.featured{border:2px solid var(--purple);position:relative}
-  .plan.featured::before{content:"Most popular";position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--purple);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 16px;border-radius:999px}
+  .plan.featured::before{display:none}
   .plan h3{font-size:1.2rem;font-weight:800;margin-bottom:4px}
   .plan .for{font-size:.88rem;color:var(--muted);margin-bottom:18px}
   .plan .price{font-size:2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:4px}
@@ -279,7 +276,7 @@
   .faq details{border:1px solid var(--line);border-radius:var(--radius-sm);padding:20px 24px;background:#fff}
   .faq summary{font-weight:700;cursor:pointer;font-size:1rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
   .faq summary::after{content:"+";color:var(--purple);font-size:1.4rem;font-weight:600;line-height:1}
-  .faq details[open] summary::after{content:"–"}
+  .faq details[open] summary::after{content:"\2013"}
   .faq details p{margin-top:12px;color:var(--ink-soft);font-size:.97rem}
   .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}
   .about-grid .portrait{aspect-ratio:4/4.7;position:sticky;top:104px}
@@ -309,18 +306,6 @@
   .sebbymark{font-size:1.02rem;font-weight:700;letter-spacing:.24em;color:var(--ink)}
   .credit .lockup-inline strong{letter-spacing:.02em}
 
-  /* Site preview card */
-  .sitecard{display:block;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(26,29,41,.10);transition:transform .18s, box-shadow .18s;background:#fff}
-  a.sitecard:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(26,29,41,.16)}
-  .sitecard .bar{background:#EDEDF2;padding:9px 14px;display:flex;align-items:center;gap:8px}
-  .sitecard .dot{width:9px;height:9px;border-radius:50%}
-  .sitecard .url{margin-left:8px;background:#fff;border-radius:999px;padding:3px 14px;font-size:.72rem;color:#5a5e6b;font-weight:500}
-  .sitecard-hero{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;object-position:top center}
-  .sitecard .visit{background:#fff;padding:13px 18px;font-size:.88rem;font-weight:700;color:var(--purple);display:flex;justify-content:space-between;align-items:center}
-
-
-
-
   /* ---------- Hamburger Menu ---------- */
   .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;z-index:51}
   .menu-btn svg{width:26px;height:26px;stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round}
@@ -344,7 +329,6 @@
     .nav-links .theme-toggle{margin-top:4px;align-self:flex-start}
   }
 
-
   /* ---------- Scroll Animations ---------- */
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
   .reveal.visible{opacity:1;transform:none}
@@ -366,6 +350,7 @@
   @media (max-width:640px){
     .sticky-cta{font-size:.88rem;padding:12px 20px}
   }
+
   /* ---------- Language Toggle ---------- */
   :root:not([data-lang="es"]) [lang="es"]{display:none}
   [data-lang="es"] [lang="en"]{display:none}
@@ -411,7 +396,6 @@
     :root:not([data-theme="light"]) .care .btn{background:var(--purple);color:#fff}
     :root:not([data-theme="light"]) .care .btn:hover{background:var(--purple-deep)}
     :root:not([data-theme="light"]) .sitecard{background:#1A1C25}
-    :root:not([data-theme="light"]) .sitecard-hero{filter:brightness(.85) saturate(.9)}
     :root:not([data-theme="light"]) .sitecard .bar{background:#222430}
     :root:not([data-theme="light"]) .sitecard .url{background:#1A1C25;color:#717580}
     :root:not([data-theme="light"]) .sitecard .visit{background:#1A1C25}
@@ -426,6 +410,8 @@
     :root:not([data-theme="light"]) .btn{background:#6B4EC2}
     :root:not([data-theme="light"]) .btn:hover{background:#5C41B0}
     :root:not([data-theme="light"]) .step::before{background:#6B4EC2}
+    :root:not([data-theme="light"]) .included-grid .inc-card{background:#1A1C25}
+    :root:not([data-theme="light"]) .badge{background:#6B4EC2}
   }
   [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
   [data-theme="dark"] .chip{background:rgba(30,32,42,.95);border-color:var(--line)}
@@ -444,7 +430,6 @@
   [data-theme="dark"] .care .btn{background:var(--purple);color:#fff}
   [data-theme="dark"] .care .btn:hover{background:var(--purple-deep)}
   [data-theme="dark"] .sitecard{background:#1A1C25}
-  [data-theme="dark"] .sitecard-hero{filter:brightness(.85) saturate(.9)}
   [data-theme="dark"] .sitecard .bar{background:#222430}
   [data-theme="dark"] .sitecard .url{background:#1A1C25;color:#717580}
   [data-theme="dark"] .sitecard .visit{background:#1A1C25}
@@ -459,7 +444,8 @@
   [data-theme="dark"] .btn{background:#6B4EC2}
   [data-theme="dark"] .btn:hover{background:#5C41B0}
   [data-theme="dark"] .step::before{background:#6B4EC2}
-
+  [data-theme="dark"] .included-grid .inc-card{background:#1A1C25}
+  [data-theme="dark"] .badge{background:#6B4EC2}
 
   /* Theme transition (only applied during toggle, not page load) */
   .theme-trans,.theme-trans *,.theme-trans *::before,.theme-trans *::after{
@@ -484,7 +470,6 @@
   [data-theme="light"] .theme-toggle .icon-sun{display:none !important}
   [data-theme="light"] .theme-toggle .icon-moon{display:block}
 
-
   /* ---------- Skip link ---------- */
   .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
   .skip-link:focus{top:12px}
@@ -500,14 +485,52 @@
     img{max-width:100%!important;filter:none!important}
     .reveal{opacity:1!important;transform:none!important}
   }
+
+  /* ---------- Pricing Page Specifics ---------- */
+  .plan .price-label{font-size:.82rem;font-weight:600;color:var(--muted);margin-bottom:2px;text-transform:uppercase;letter-spacing:.06em}
+  .plan .timeline{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:.8rem;font-weight:600;color:var(--purple);
+    background:var(--tint);padding:6px 14px;border-radius:999px;
+    margin-bottom:18px;
+  }
+  .plan .timeline svg{width:14px;height:14px;stroke:var(--purple);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+  .plan .best-for{font-size:.85rem;color:var(--muted);margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
+  .plan .best-for strong{color:var(--ink-soft);font-weight:700}
+  .badge{
+    position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+    background:var(--purple);color:#fff;font-size:.72rem;font-weight:700;
+    letter-spacing:.08em;text-transform:uppercase;padding:5px 16px;
+    border-radius:999px;white-space:nowrap;
+  }
+  .plans-note{text-align:center;margin-top:32px;font-size:.95rem;color:var(--muted)}
+
+  .included-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .inc-card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px 24px;transition:transform .18s,box-shadow .18s;
+  }
+  .inc-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08)}
+  .inc-card .inc-icon{
+    width:44px;height:44px;border-radius:12px;background:var(--tint);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  }
+  .inc-card .inc-icon svg{width:22px;height:22px;stroke:var(--purple);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .inc-card h3{font-size:1.02rem;font-weight:700;margin-bottom:6px}
+  .inc-card p{font-size:.9rem;color:var(--ink-soft)}
+  @media(max-width:900px){.included-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.included-grid{grid-template-columns:1fr}}
+
+  .faq details a{color:var(--purple);font-weight:600}
+  .faq details a:hover{text-decoration:underline}
 </style>
 
 <!-- seo:start -->
 <link rel="alternate" type="text/plain" title="LLM instructions" href="/llms.txt">
-<link rel="canonical" href="https://madebysebby.com/work.html">
-<link rel="alternate" hreflang="en" href="https://madebysebby.com/work.html">
-<link rel="alternate" hreflang="es" href="https://madebysebby.com/work.html">
-<link rel="alternate" hreflang="x-default" href="https://madebysebby.com/work.html">
+<link rel="canonical" href="https://madebysebby.com/pricing.html">
+<link rel="alternate" hreflang="en" href="https://madebysebby.com/pricing.html">
+<link rel="alternate" hreflang="es" href="https://madebysebby.com/pricing.html">
+<link rel="alternate" hreflang="x-default" href="https://madebysebby.com/pricing.html">
 <meta name="theme-color" content="#6C3CE9">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -517,54 +540,119 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Made by Sebby">
-<meta property="og:title" content="Portfolio — Web Design Projects & Client Results — Made by Sebby">
-<meta property="og:description" content="See websites designed and built by Sebby for real businesses — law firms, medical equipment companies, and more. Custom web design with real client testimonials.">
-<meta property="og:url" content="https://madebysebby.com/work.html">
+<meta property="og:title" content="Web Design Pricing & Packages — Made by Sebby">
+<meta property="og:description" content="Transparent web design pricing for small businesses. Starter sites from $1,500, custom builds from $3,500, premium projects from $7,000. No hidden fees.">
+<meta property="og:url" content="https://madebysebby.com/pricing.html">
 <meta property="og:image" content="https://madebysebby.com/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Portfolio — Web Design Projects & Client Results — Made by Sebby">
-<meta name="twitter:description" content="See websites designed and built by Sebby for real businesses — law firms, medical equipment companies, and more. Custom web design with real client testimonials.">
+<meta name="twitter:title" content="Web Design Pricing & Packages — Made by Sebby">
+<meta name="twitter:description" content="Transparent web design pricing for small businesses. Starter sites from $1,500, custom builds from $3,500, premium projects from $7,000. No hidden fees.">
 <meta name="twitter:image" content="https://madebysebby.com/assets/og-image.jpg">
 <!-- seo:end -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Portfolio — Web Design Projects & Client Results",
-  "url": "https://madebysebby.com/work.html",
-  "description": "Websites designed and built by Sebby for real businesses — law firms, medical equipment companies, and more.",
-  "publisher": {
+  "@type": "Service",
+  "name": "Custom Web Design & Development",
+  "url": "https://madebysebby.com/pricing.html",
+  "provider": {
     "@type": "ProfessionalService",
     "name": "Made by Sebby",
-    "url": "https://madebysebby.com/"
+    "url": "https://madebysebby.com/",
+    "email": "hello@madebysebby.com"
   },
-  "mainEntity": {
-    "@type": "ItemList",
+  "description": "Custom web design and development for small businesses. Mobile-first, fast-loading websites built to convert visitors into customers.",
+  "serviceType": "Web Design",
+  "areaServed": [
+    {"@type": "Country", "name": "United States"},
+    {"@type": "Country", "name": "Dominican Republic"}
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Website Design Packages",
     "itemListElement": [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@type": "WebSite",
-          "name": "Riera Law Firm",
-          "url": "https://rieralaw.com",
-          "description": "Full bilingual website build for securities law firm — 70+ pages, ongoing care"
+        "@type": "Offer",
+        "price": "1500",
+        "priceCurrency": "USD",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Starter Website",
+          "description": "Up to 5 pages, mobile-responsive design, contact form, basic SEO setup, Google Analytics. Delivered in 2-3 weeks."
         }
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
-          "@type": "WebSite",
-          "name": "Elite Care Recovery",
-          "url": "https://elitecarerecovery.net",
-          "description": "Full website build for orthopedic recovery equipment company on GitHub Pages"
+        "@type": "Offer",
+        "price": "3500",
+        "priceCurrency": "USD",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Custom Website",
+          "description": "Up to 10 pages, custom design from scratch, copywriting help, SEO optimization, speed optimization, bilingual option. Delivered in 4-6 weeks."
+        }
+      },
+      {
+        "@type": "Offer",
+        "price": "7000",
+        "priceCurrency": "USD",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Premium Website",
+          "description": "Unlimited pages, full custom design and strategy, professional copywriting, advanced SEO, integrations, 30 days post-launch optimization. Delivered in 6-10 weeks."
         }
       }
     ]
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I add a care plan after launch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Many clients start with a build and add a care plan once they see the value of ongoing maintenance. I'll recommend the right plan for your site and you can start any time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my project doesn't fit these tiers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Book a call and we'll scope it together. These tiers cover most small business projects, but if yours is different I'll give you an honest, custom quote. No pressure either way."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with businesses outside Miami?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. I work with clients across the US and Latin America. Everything is remote-friendly. We'll communicate over video calls, email, and text, the same way I work with local clients."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do payments work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "50% upfront to start, 50% on launch. This is standard across the industry and keeps both sides invested. For Premium projects, we can discuss milestone-based payments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I already have a website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I can redesign or rebuild it. The same pricing applies. I'll review what you have, keep what works, and replace what doesn't. Your domain and content stay yours throughout."
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -581,8 +669,8 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Portfolio",
-      "item": "https://madebysebby.com/work.html"
+      "name": "Pricing",
+      "item": "https://madebysebby.com/pricing.html"
     }
   ]
 }
@@ -598,10 +686,11 @@
           <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
       <div class="nav-links">
-      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
-      <a href="work.html" style="color:var(--purple)"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
+      <a href="services.html"><span lang="en">What I do</span><span lang="es">Que hago</span></a>
+      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
       <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
-      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <a href="pricing.html" style="color:var(--purple)"><span lang="en">Pricing</span><span lang="es">Precios</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mi</span></a>
       <div class="lang-toggle">
           <button onclick="document.documentElement.removeAttribute('data-lang');localStorage.setItem('lang','en');this.classList.add('active');this.nextElementSibling.classList.remove('active')" class="active">EN</button>
           <button onclick="document.documentElement.setAttribute('data-lang','es');localStorage.setItem('lang','es');this.classList.add('active');this.previousElementSibling.classList.remove('active')">ES</button>
@@ -618,99 +707,229 @@
 <main>
 <header class="page-hero">
   <div class="wrap">
-    <div class="eyebrow"><span lang="en">Work</span><span lang="es">Trabajo</span></div>
-    <h1><span lang="en">Real businesses. <span class="accent">Real results.</span></span><span lang="es">Negocios reales. <span class="accent">Resultados reales.</span></span></h1>
-    <p class="lede"><span lang="en">Every project below belongs to a real business owner who can tell you what working with me is like. That's the only kind of proof worth showing.</span><span lang="es">Cada proyecto pertenece a un dueño de negocio real que puede contarte cómo es trabajar conmigo. Esa es la única prueba que vale la pena mostrar.</span></p>
+    <div class="eyebrow"><span lang="en">Pricing</span><span lang="es">Precios</span></div>
+    <h1><span lang="en">Transparent pricing. <span class="accent">No surprise invoices.</span></span><span lang="es">Precios transparentes. <span class="accent">Sin facturas sorpresa.</span></span></h1>
+    <p class="lede"><span lang="en">Every project is scoped to your goals, not a one-size template. Here's what to expect before we talk.</span><span lang="es">Cada proyecto se planifica segun tus objetivos, no una plantilla generica. Esto es lo que puedes esperar antes de hablar.</span></p>
+    <div class="hero-ctas">
+      <a class="btn" href="https://cal.com/madebysebby/chat" target="_blank" rel="noopener"><span lang="en">Book a free call</span><span lang="es">Reserva una llamada gratis</span>&nbsp;&#8594;</a>
+      <a class="btn btn-ghost" href="#packages"><span lang="en">See packages</span><span lang="es">Ver paquetes</span>&nbsp;&#8595;</a>
+    </div>
+    <p class="hero-note"><span lang="en">15 minutes, no commitment, honest answers.</span><span lang="es">15 minutos, sin compromiso, respuestas honestas.</span></p>
   </div>
 </header>
 
-<section id="main" style="padding-top:24px;padding-bottom:0">
+<!-- Pricing tiers -->
+<section id="main" style="padding-top:24px">
   <div class="wrap">
-    <div class="svc-block reveal" style="border-top:none;padding-top:0">
-      <div>
-        <span class="tag"><span lang="en">Featured project</span><span lang="es">Proyecto destacado</span></span>
-        <h2>Riera Law Firm</h2>
-        <p class="body" style="margin-bottom:6px"><a href="https://rieralaw.com" target="_blank" rel="noopener" style="color:var(--purple);font-weight:600">rieralaw.com</a> · <span lang="en">Securities arbitration law firm, Coral Gables, FL</span><span lang="es">Bufete de arbitraje de valores, Coral Gables, FL</span></p>
-        <p class="body"><span lang="en">A complete WordPress and Elementor build for a nationwide securities arbitration practice led by a former SEC enforcement attorney. Seventy-plus pages in English and Spanish, a full design system, and the infrastructure work most visitors never see.</span><span lang="es">Un sitio completo en WordPress y Elementor para una práctica nacional de arbitraje de valores liderada por un ex fiscal de la SEC. Más de setenta páginas en inglés y español, un sistema de diseño completo, y el trabajo de infraestructura que la mayoría de visitantes no ven.</span></p>
-        <ul class="checklist">
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Built the full bilingual site in WordPress and Elementor, 70+ pages</span><span lang="es">Construí el sitio bilingüe completo en WordPress y Elementor, 70+ páginas</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Untangled a dual-site DNS conflict that had two websites competing on one domain</span><span lang="es">Resolví un conflicto DNS de dos sitios que tenían dos páginas web compitiendo en un solo dominio</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Restored the firm's email and fixed mail delivery configuration</span><span lang="es">Restauré el correo del bufete y corregí la configuración de entrega de correo</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Resolved plugin conflicts and licensing issues without downtime for a live practice</span><span lang="es">Resolví conflictos de plugins y licencias sin tiempo de inactividad para una práctica activa</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Provides ongoing Website Care for a site clients depend on</span><span lang="es">Proveo Cuidado Web continuo para un sitio del que dependen los clientes</span></li>
-        </ul>
-        <p style="margin-top:18px"><a href="case-study-rieralaw.html" style="color:var(--purple);font-weight:600;font-size:.95rem"><span lang="en">Read the full case study →</span><span lang="es">Leer el caso de estudio completo →</span></a></p>
-      </div>
-      <a class="sitecard" href="https://rieralaw.com" target="_blank" rel="noopener">
-        <div class="bar" aria-hidden="true">
-          <span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span>
-          <span class="url">rieralaw.com</span>
+    <div class="sec-head reveal" id="packages">
+      <h2><span lang="en">Pick the build that fits your business.</span><span lang="es">Elige el proyecto que se ajuste a tu negocio.</span></h2>
+      <p><span lang="en">These are starting points. Every project is scoped after a conversation about what you actually need. If something here doesn't fit, I'll tell you.</span><span lang="es">Estos son puntos de partida. Cada proyecto se define despues de una conversacion sobre lo que realmente necesitas. Si algo no encaja, te lo dire.</span></p>
+    </div>
+
+    <div class="plans">
+      <!-- Starter -->
+      <div class="plan reveal">
+        <h3><span lang="en">Starter</span><span lang="es">Inicial</span></h3>
+        <p class="for"><span lang="en">A clean, professional online presence, built fast</span><span lang="es">Una presencia en linea profesional y limpia, construida rapido</span></p>
+        <div class="price-label"><span lang="en">Starting at</span><span lang="es">Desde</span></div>
+        <div class="price">$1,500</div>
+        <div class="timeline">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span lang="en">2-3 weeks</span><span lang="es">2-3 semanas</span>
         </div>
-        <picture><source srcset="assets/hero-rieralaw.webp" type="image/webp"><img class="sitecard-hero" src="assets/hero-rieralaw.jpg" alt="Riera Law Firm homepage hero" loading="lazy"></picture>
-        <div class="visit"><span><span lang="en">Visit the live site</span><span lang="es">Visitar el sitio</span></span><span>rieralaw.com&nbsp;→</span></div>
-      </a>
-    </div>
-    <div class="quote reveal" style="max-width:680px;margin:0 auto 48px">
-      <div class="mark" aria-hidden="true">"</div>
-      <p class="body"><span lang="en">Sebby rebuilt my law firm's entire web presence and untangled infrastructure problems that had my domain, my email, and two competing websites at odds. He works fast, explains everything in plain English, and treats my site like it's his own. I trust him with the online face of my practice.</span><span lang="es">Sebby reconstruyo toda la presencia web de mi bufete y resolvio problemas de infraestructura que tenian mi dominio, mi correo y dos sitios web compitiendo entre si. Trabaja rapido, explica todo en terminos claros, y trata mi sitio como si fuera suyo. Le confio la cara digital de mi practica.</span></p>
-      <div class="who">
-        <div class="avatar">JR</div>
-        <div><strong>Jorge L. Riera</strong><span><span lang="en">Founding Principal, Riera Law Firm</span><span lang="es">Socio Fundador, Riera Law Firm</span></span></div>
-      </div>
-    </div>
-    <div class="svc-block reveal">
-      <div>
-        <span class="tag"><span lang="en">Client project</span><span lang="es">Proyecto de cliente</span></span>
-        <h2>Elite Care Recovery</h2>
-        <p class="body" style="margin-bottom:6px"><a href="https://elitecarerecovery.net" target="_blank" rel="noopener" style="color:var(--purple);font-weight:600">elitecarerecovery.net</a> · <span lang="en">Orthopedic recovery equipment, South Florida</span><span lang="es">Equipo de recuperación ortopédica, Sur de Florida</span></p>
-        <p class="body"><span lang="en">A full website build for a family-owned orthopedic recovery company founded by two brothers with 23 combined years in the field. The site presents their premium NICE1 cold and compression therapy equipment rental service with white-glove delivery across South Florida.</span><span lang="es">Un sitio web completo para una empresa familiar de recuperación ortopédica fundada por dos hermanos con 23 años combinados en el campo. El sitio presenta su servicio premium de alquiler de equipos de terapia de frío y compresión NICE1 con entrega personalizada en todo el Sur de Florida.</span></p>
         <ul class="checklist">
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Designed and built the full site from scratch, hosted on GitHub Pages</span><span lang="es">Diseñé y construí el sitio completo desde cero, alojado en GitHub Pages</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Home, About, Culture, and Reservation pages with cohesive brand identity</span><span lang="es">Páginas de Inicio, Nosotros, Cultura y Reservas con identidad de marca cohesiva</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">NICE1 recovery system product showcase with specs and features</span><span lang="es">Exhibición del sistema de recuperación NICE1 con especificaciones y características</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Contact integration with phone, email, and business hours</span><span lang="es">Integración de contacto con teléfono, correo y horario comercial</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Responsive design optimized for patients booking from mobile</span><span lang="es">Diseño responsivo optimizado para pacientes reservando desde el móvil</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Up to 5 pages</span><span lang="es">Hasta 5 paginas</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Mobile-responsive design</span><span lang="es">Diseno adaptable a moviles</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Contact form</span><span lang="es">Formulario de contacto</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Basic SEO setup</span><span lang="es">Configuracion basica de SEO</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Google Analytics</span><span lang="es">Google Analytics</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">14 days of post-launch support</span><span lang="es">14 dias de soporte post-lanzamiento</span></li>
         </ul>
+        <p class="best-for"><strong><span lang="en">Best for:</span><span lang="es">Ideal para:</span></strong> <span lang="en">New businesses, solo practitioners, simple service sites</span><span lang="es">Negocios nuevos, profesionales independientes, sitios de servicios simples</span></p>
+        <p style="margin-top:18px"><a class="btn btn-ghost" href="https://cal.com/madebysebby/kickoff" target="_blank" rel="noopener" style="width:100%;justify-content:center"><span lang="en">Start a project</span><span lang="es">Iniciar un proyecto</span></a></p>
       </div>
-      <a class="sitecard" href="https://elitecarerecovery.net" target="_blank" rel="noopener">
-        <div class="bar" aria-hidden="true">
-          <span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span>
-          <span class="url">elitecarerecovery.net</span>
+
+      <!-- Custom (featured) -->
+      <div class="plan reveal featured">
+        <span class="badge"><span lang="en">Most popular</span><span lang="es">Mas popular</span></span>
+        <h3><span lang="en">Custom</span><span lang="es">Personalizado</span></h3>
+        <p class="for"><span lang="en">A site designed around your specific goals</span><span lang="es">Un sitio disenado alrededor de tus objetivos especificos</span></p>
+        <div class="price-label"><span lang="en">Starting at</span><span lang="es">Desde</span></div>
+        <div class="price">$3,500</div>
+        <div class="timeline">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span lang="en">4-6 weeks</span><span lang="es">4-6 semanas</span>
         </div>
-        <picture><source srcset="assets/hero-elitecare.webp" type="image/webp"><img class="sitecard-hero" src="assets/hero-elitecare.jpg" alt="Elite Care Recovery homepage hero" loading="lazy"></picture>
-        <div class="visit"><span><span lang="en">Visit the live site</span><span lang="es">Visitar el sitio</span></span><span>elitecarerecovery.net&nbsp;→</span></div>
-      </a>
-    </div>
-    <div class="quote reveal" style="max-width:680px;margin:0 auto 48px">
-      <div class="mark" aria-hidden="true">"</div>
-      <p class="body"><span lang="en">Working with Sebastian has been a fantastic experience. He took our vision for Elite Care Recovery and built a professional website that exceeded our expectations, from showcasing our NICE1 recovery equipment to making it easy for patients to reserve online. His communication and turnaround time were exceptional throughout the entire process. I highly recommend him to anyone looking for a talented, reliable web developer who genuinely cares about delivering a great result.</span><span lang="es">Trabajar con Sebastian ha sido una experiencia fantastica. Tomo nuestra vision para Elite Care Recovery y construyo un sitio web profesional que supero nuestras expectativas, desde mostrar nuestro equipo de recuperacion NICE1 hasta facilitar que los pacientes reserven en linea. Su comunicacion y tiempo de entrega fueron excepcionales durante todo el proceso. Lo recomiendo ampliamente a cualquiera que busque un desarrollador web talentoso y confiable que realmente se preocupa por entregar un gran resultado.</span></p>
-      <div class="who">
-        <div class="avatar">JP</div>
-        <div><strong>John Pierce</strong><span><span lang="en">Co-Founder, Elite Care Recovery</span><span lang="es">Cofundador, Elite Care Recovery</span></span></div>
+        <ul class="checklist">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Up to 10 pages</span><span lang="es">Hasta 10 paginas</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Custom design from scratch</span><span lang="es">Diseno personalizado desde cero</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Copywriting help included</span><span lang="es">Ayuda con textos incluida</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">SEO optimization</span><span lang="es">Optimizacion SEO</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Speed optimization</span><span lang="es">Optimizacion de velocidad</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Bilingual option (EN/ES)</span><span lang="es">Opcion bilingue (EN/ES)</span></li>
+        </ul>
+        <p class="best-for"><strong><span lang="en">Best for:</span><span lang="es">Ideal para:</span></strong> <span lang="en">Growing businesses, professional services, multi-location</span><span lang="es">Negocios en crecimiento, servicios profesionales, multi-ubicacion</span></p>
+        <p style="margin-top:18px"><a class="btn" href="https://cal.com/madebysebby/kickoff" target="_blank" rel="noopener" style="width:100%;justify-content:center"><span lang="en">Start a project</span><span lang="es">Iniciar un proyecto</span></a></p>
+      </div>
+
+      <!-- Premium -->
+      <div class="plan reveal">
+        <h3><span lang="en">Premium</span><span lang="es">Premium</span></h3>
+        <p class="for"><span lang="en">Your website becomes a growth engine</span><span lang="es">Tu sitio web se convierte en un motor de crecimiento</span></p>
+        <div class="price-label"><span lang="en">Starting at</span><span lang="es">Desde</span></div>
+        <div class="price">$7,000</div>
+        <div class="timeline">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span lang="en">6-10 weeks</span><span lang="es">6-10 semanas</span>
+        </div>
+        <ul class="checklist">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Unlimited pages</span><span lang="es">Paginas ilimitadas</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Full custom design + strategy</span><span lang="es">Diseno personalizado completo + estrategia</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Professional copywriting</span><span lang="es">Redaccion profesional</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Advanced SEO</span><span lang="es">SEO avanzado</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Integrations (booking, CRM, payments)</span><span lang="es">Integraciones (reservas, CRM, pagos)</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">30 days of post-launch optimization</span><span lang="es">30 dias de optimizacion post-lanzamiento</span></li>
+        </ul>
+        <p class="best-for"><strong><span lang="en">Best for:</span><span lang="es">Ideal para:</span></strong> <span lang="en">Established businesses investing in growth, competitive markets</span><span lang="es">Negocios establecidos invirtiendo en crecimiento, mercados competitivos</span></p>
+        <p style="margin-top:18px"><a class="btn btn-ghost" href="https://cal.com/madebysebby/kickoff" target="_blank" rel="noopener" style="width:100%;justify-content:center"><span lang="en">Start a project</span><span lang="es">Iniciar un proyecto</span></a></p>
       </div>
     </div>
-    <p style="text-align:center;margin-bottom:48px"><a href="case-study-elitecare.html" style="color:var(--purple);font-weight:600;font-size:.95rem"><span lang="en">Read the full case study →</span><span lang="es">Leer el caso de estudio completo →</span></a></p>
+
+    <p class="plans-note reveal"><span lang="en">Every project includes a free 15-minute call to scope your needs. No pressure, honest answers.</span><span lang="es">Cada proyecto incluye una llamada gratuita de 15 minutos para definir tus necesidades. Sin presion, respuestas honestas.</span></p>
   </div>
 </section>
 
+<!-- What's included in every build -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">What's included in every build.</span><span lang="es">Que incluye cada proyecto.</span></h2>
+      <p><span lang="en">These aren't add-ons or upgrades. They're the baseline, every project, every tier.</span><span lang="es">Estos no son extras ni mejoras. Son la base de cada proyecto, en cada nivel.</span></p>
+    </div>
+    <div class="included-grid">
+      <div class="inc-card reveal">
+        <div class="inc-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg></div>
+        <h3><span lang="en">Mobile-first design</span><span lang="es">Diseno mobile-first</span></h3>
+        <p><span lang="en">Built for phones first, because that's where your customers are browsing.</span><span lang="es">Construido para telefonos primero, porque ahi es donde navegan tus clientes.</span></p>
+      </div>
+      <div class="inc-card reveal">
+        <div class="inc-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <h3><span lang="en">Speed optimized</span><span lang="es">Velocidad optimizada</span></h3>
+        <p><span lang="en">Target under 2-second load time. Fast sites rank higher and convert more.</span><span lang="es">Objetivo de menos de 2 segundos de carga. Los sitios rapidos rankean mejor y convierten mas.</span></p>
+      </div>
+      <div class="inc-card reveal">
+        <div class="inc-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3><span lang="en">SEO foundations</span><span lang="es">Bases de SEO</span></h3>
+        <p><span lang="en">Meta tags, schema markup, sitemap, and clean URLs so search engines can find you.</span><span lang="es">Meta tags, schema markup, sitemap y URLs limpias para que los buscadores te encuentren.</span></p>
+      </div>
+      <div class="inc-card reveal">
+        <div class="inc-icon"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+        <h3><span lang="en">Google Analytics</span><span lang="es">Google Analytics</span></h3>
+        <p><span lang="en">Installed and configured so you can see who visits, from where, and what they do.</span><span lang="es">Instalado y configurado para que veas quien visita, de donde, y que hacen.</span></p>
+      </div>
+      <div class="inc-card reveal">
+        <div class="inc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3><span lang="en">SSL certificate</span><span lang="es">Certificado SSL</span></h3>
+        <p><span lang="en">The padlock in the browser. Protects your visitors and builds trust.</span><span lang="es">El candado en el navegador. Protege a tus visitantes y genera confianza.</span></p>
+      </div>
+      <div class="inc-card reveal">
+        <div class="inc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <h3><span lang="en">You own everything</span><span lang="es">Todo es tuyo</span></h3>
+        <p><span lang="en">Your domain, your code, your content. If you ever leave, it all comes with you.</span><span lang="es">Tu dominio, tu codigo, tu contenido. Si alguna vez te vas, todo se va contigo.</span></p>
+      </div>
+      <div class="inc-card reveal">
+        <div class="inc-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <h3><span lang="en">Post-launch support</span><span lang="es">Soporte post-lanzamiento</span></h3>
+        <p><span lang="en">Every build includes at least 14 days of support. Premium gets 30 days of active optimization.</span><span lang="es">Cada proyecto incluye al menos 14 dias de soporte. Premium obtiene 30 dias de optimizacion activa.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How payments work -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="promise reveal">
+      <p><span lang="en"><strong>How payments work:</strong> 50% upfront to start, 50% on launch. That's standard for the industry, and it keeps both sides invested in the result. For Premium projects, we can discuss milestone-based payments.</span><span lang="es"><strong>Como funcionan los pagos:</strong> 50% por adelantado para comenzar, 50% al lanzamiento. Esto es estandar en la industria, y mantiene a ambas partes comprometidas con el resultado. Para proyectos Premium, podemos discutir pagos por hitos.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- Care plan upsell -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="care reveal">
+      <div>
+        <h2><span lang="en">After launch, keep it running right.</span><span lang="es">Despues del lanzamiento, mantenlo funcionando bien.</span></h2>
+        <p><span lang="en">A website needs ongoing care. Updates, security, backups, speed. Website Care plans start at $99/month and cover everything so you never have to think about it.</span><span lang="es">Un sitio web necesita cuidado continuo. Actualizaciones, seguridad, respaldos, velocidad. Los planes de Cuidado Web comienzan en $99/mes y cubren todo para que nunca tengas que pensar en ello.</span></p>
+        <a class="btn" href="website-care.html"><span lang="en">See Website Care plans</span><span lang="es">Ver planes de Cuidado Web</span>&nbsp;&#8594;</a>
+      </div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Weekly software + security updates</span><span lang="es">Actualizaciones semanales de software y seguridad</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Daily off-site backups</span><span lang="es">Respaldos diarios fuera del sitio</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">24/7 uptime monitoring</span><span lang="es">Monitoreo de disponibilidad 24/7</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Speed optimization</span><span lang="es">Optimizacion de velocidad</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Small edits included</span><span lang="es">Ediciones pequenas incluidas</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">Fair questions.</span><span lang="es">Preguntas justas.</span></h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary><span lang="en">Can I add a care plan after launch?</span><span lang="es">Puedo agregar un plan de cuidado despues del lanzamiento?</span></summary>
+        <p><span lang="en">Yes. Many clients start with a build and add a care plan once they see the value of ongoing maintenance. I'll recommend the right plan for your site and you can start any time. <a href="website-care.html">See care plans</a>.</span><span lang="es">Si. Muchos clientes comienzan con un proyecto y agregan un plan de cuidado una vez que ven el valor del mantenimiento continuo. Te recomendare el plan adecuado para tu sitio y puedes empezar cuando quieras. <a href="website-care.html">Ver planes de cuidado</a>.</span></p>
+      </details>
+      <details>
+        <summary><span lang="en">What if my project doesn't fit these tiers?</span><span lang="es">Que pasa si mi proyecto no encaja en estos niveles?</span></summary>
+        <p><span lang="en">Book a call and we'll scope it together. These tiers cover most small business projects, but if yours is different I'll give you an honest, custom quote. No pressure either way.</span><span lang="es">Reserva una llamada y lo definimos juntos. Estos niveles cubren la mayoria de los proyectos de pequenos negocios, pero si el tuyo es diferente, te dare un presupuesto honesto y personalizado. Sin presion de ninguna manera.</span></p>
+      </details>
+      <details>
+        <summary><span lang="en">Do you work with businesses outside Miami?</span><span lang="es">Trabajas con negocios fuera de Miami?</span></summary>
+        <p><span lang="en">Yes. I work with clients across the US and Latin America. Everything is remote-friendly. We communicate over video calls, email, and text, the same way I work with local clients.</span><span lang="es">Si. Trabajo con clientes en todo Estados Unidos y America Latina. Todo es compatible con trabajo remoto. Nos comunicamos por videollamadas, email y mensajes de texto, de la misma forma que trabajo con clientes locales.</span></p>
+      </details>
+      <details>
+        <summary><span lang="en">How do payments work?</span><span lang="es">Como funcionan los pagos?</span></summary>
+        <p><span lang="en">50% upfront to start, 50% on launch. This is standard across the industry and keeps both sides invested in the result. For Premium projects, we can discuss milestone-based payments.</span><span lang="es">50% por adelantado para comenzar, 50% al lanzamiento. Esto es estandar en la industria y mantiene a ambas partes comprometidas con el resultado. Para proyectos Premium, podemos discutir pagos por hitos.</span></p>
+      </details>
+      <details>
+        <summary><span lang="en">What if I already have a website?</span><span lang="es">Que pasa si ya tengo un sitio web?</span></summary>
+        <p><span lang="en">I can redesign or rebuild it. The same pricing applies. I'll review what you have, keep what works, and replace what doesn't. Your domain and content stay yours throughout.</span><span lang="es">Puedo redisenar o reconstruir tu sitio. Los mismos precios aplican. Revisare lo que tienes, mantengo lo que funciona y reemplazo lo que no. Tu dominio y contenido siguen siendo tuyos durante todo el proceso.</span></p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
 <section class="final" style="padding-top:10px">
   <div class="wrap">
-    <h2><span lang="en">Want your business up here next?</span><span lang="es">¿Quieres que tu negocio aparezca aquí?</span></h2>
-    <p><span lang="en">Tell me what you do and I'll tell you exactly what I'd build.</span><span lang="es">Cuéntame a qué te dedicas y te diré exactamente qué construiría.</span></p>
-    <a class="btn" href="https://cal.com/madebysebby/chat" target="_blank" rel="noopener"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span>&nbsp;→</a>
+    <h2><span lang="en">Ready to talk about your project? <span class="accent">Let's start with a conversation.</span></span><span lang="es">Listo para hablar sobre tu proyecto? <span class="accent">Comencemos con una conversacion.</span></span></h2>
+    <p><span lang="en">15 minutes. No commitment. I'll ask about your business, your goals, and what you need. You'll walk away knowing exactly what your project looks like and what it costs.</span><span lang="es">15 minutos. Sin compromiso. Te preguntare sobre tu negocio, tus objetivos y lo que necesitas. Saldras sabiendo exactamente como se ve tu proyecto y cuanto cuesta.</span></p>
+    <a class="btn" href="https://cal.com/madebysebby/chat" target="_blank" rel="noopener"><span lang="en">Book a free 15-minute call</span><span lang="es">Reserva una llamada gratuita de 15 minutos</span>&nbsp;&#8594;</a>
   </div>
 </section>
 
 </main>
 
+<div class="sticky-cta" id="stickyCta">
+  <a href="https://cal.com/madebysebby/chat" target="_blank" rel="noopener"><span lang="en">Free 15-minute call. No pressure, honest answers &#8594;</span><span lang="es">Llamada gratuita de 15 minutos. Sin presion, respuestas honestas &#8594;</span></a>
+</div>
+
 <footer>
   <div class="wrap foot-inner">
-    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span><span lang="en">This site was <strong>Made by Sebby</strong>. Yours can be too.</span><span lang="es">Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</span></span></div>
+    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span><span lang="en">This site was <strong>Made by Sebby</strong>. Yours can be too.</span><span lang="es">Este sitio fue <strong>hecho por Sebby</strong>. El tuyo tambien puede serlo.</span></span></div>
     <div class="foot-links">
-      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
+      <a href="services.html"><span lang="en">What I do</span><span lang="es">Que hago</span></a>
       <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
       <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
-      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <a href="pricing.html"><span lang="en">Pricing</span><span lang="es">Precios</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mi</span></a>
       <a href="blog.html"><span lang="en">Blog</span><span lang="es">Blog</span></a>
       <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
     </div>

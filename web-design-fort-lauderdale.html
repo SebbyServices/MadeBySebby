@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DV4L5CZRML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DV4L5CZRML');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Design Fort Lauderdale | Small Business Websites | Made by Sebby</title>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="Sebby | Made by Sebby">
+<meta name="description" content="Fort Lauderdale web design for small businesses. Custom websites that build trust and convert visitors. Bilingual (English &amp; Spanish), mobile-first, with ongoing website care. Free consultation.">
+<link rel="preload" as="image" href="assets/logo/sebby-nav.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
+<script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
+<style>
+  :root{
+    --ink:#1A1D29;
+    --ink-soft:#4A4E5C;
+    --muted:#6B7080;
+    --purple:#6C3CE9;
+    --purple-deep:#5A2FD0;
+    --blue:#2D6FFF;
+    --tint:#F4F1FD;
+    --line:#E8E6F2;
+    --white:#FFFFFF;
+    --radius:20px;
+    --radius-sm:12px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+  img{max-width:100%;display:block}
+
+  /* ---------- Nav ---------- */
+  nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:50}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.06rem;letter-spacing:-.01em}
+  .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
+  .nav-links a{color:var(--ink-soft);transition:color .15s}
+  .nav-links a.btn{color:#fff}
+  .nav-links a.btn:hover{color:#fff}
+  .nav-links a:hover{color:var(--purple)}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;
+    padding:13px 26px;border-radius:999px;border:none;cursor:pointer;
+    transition:background .15s, transform .15s;
+  }
+  .btn:hover{background:var(--purple-deep);transform:translateY(-1px)}
+  .btn:focus-visible{outline-color:var(--ink)}
+  .btn-ghost{
+    background:transparent;color:var(--ink);border:1.5px solid var(--line);
+  }
+  .btn-ghost:hover{background:var(--tint);border-color:var(--purple);color:var(--purple)}
+  .btn-nav{padding:10px 22px;font-size:.92rem}
+
+  /* ---------- Page Hero ---------- */
+  .page-hero{padding:76px 0 52px}
+  .page-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.09;letter-spacing:-.028em;margin-bottom:24px}
+  .page-hero h1 .accent{color:var(--purple)}
+  .page-hero p.lede{font-size:1.14rem;color:var(--ink-soft);max-width:36em;margin-top:18px}
+  .eyebrow{
+    font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--purple);margin-bottom:20px;display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2.5px;background:var(--purple);border-radius:2px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
+  .breadcrumb{font-size:.85rem;color:var(--muted);margin-bottom:22px}
+  .breadcrumb a:hover{color:var(--purple)}
+
+  /* ---------- Sections ---------- */
+  section{padding:96px 0}
+  .sec-head{max-width:38em;margin-bottom:56px}
+  h2{font-size:clamp(1.7rem,3vw,2.35rem);font-weight:800;letter-spacing:-.022em;line-height:1.16;margin-bottom:16px}
+  .sec-head p{font-size:1.08rem;color:var(--ink-soft)}
+
+  /* Cards */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:34px 30px;transition:transform .18s, box-shadow .18s, border-color .18s;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08);border-color:#D8CFF6}
+  .card .glyph{
+    width:48px;height:48px;border-radius:14px;background:var(--tint);
+    display:flex;align-items:center;justify-content:center;margin-bottom:22px;
+  }
+  .card .glyph svg{width:23px;height:23px;stroke:var(--purple);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font-size:1.16rem;font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .card p{font-size:.97rem;color:var(--ink-soft)}
+
+  /* Services list */
+  .svc-list{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .svc-item{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px;transition:transform .18s,box-shadow .18s}
+  .svc-item:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08)}
+  .svc-item h3{font-size:1.1rem;font-weight:700;margin-bottom:9px}
+  .svc-item p{font-size:.95rem;color:var(--ink-soft);margin-bottom:16px}
+  .svc-item a{color:var(--purple);font-weight:600;font-size:.92rem}
+
+  /* Industries grid */
+  .ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .ind-item{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;text-align:center;transition:transform .18s,box-shadow .18s}
+  .ind-item:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08)}
+  .ind-item .ind-icon{font-size:2rem;margin-bottom:12px}
+  .ind-item h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
+  .ind-item p{font-size:.9rem;color:var(--ink-soft)}
+
+  /* Client logos */
+  .client-logos-bar{text-align:center;padding:28px 0 0}
+  .client-logos{display:flex;align-items:center;gap:40px;flex-wrap:wrap;justify-content:center;opacity:.55;transition:opacity .3s}
+  .client-logos:hover{opacity:.8}
+  .client-logos img{height:28px;width:auto;filter:grayscale(1);transition:filter .3s}
+  .client-logos img:hover{filter:grayscale(0)}
+  .client-logos-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+
+  /* Credibility */
+  .credibility{background:var(--tint);border-radius:32px;padding:64px}
+  .credibility h2{margin-bottom:12px}
+  .credibility .body{color:var(--ink-soft);font-size:1.04rem;margin-bottom:24px;max-width:36em}
+  .credibility .cta-link{color:var(--purple);font-weight:600;font-size:.95rem}
+
+  /* Proximity callout */
+  .proximity{background:var(--tint);border-radius:32px;padding:52px 64px;display:flex;gap:48px;align-items:center}
+  .proximity .prox-text{flex:1}
+  .proximity h2{margin-bottom:12px}
+  .proximity .body{color:var(--ink-soft);font-size:1.04rem;margin-bottom:0;max-width:36em}
+  .proximity .prox-stat{flex-shrink:0;text-align:center;padding:28px 36px;background:var(--white);border-radius:var(--radius);border:1px solid var(--line)}
+  .proximity .prox-stat .number{font-size:2.4rem;font-weight:800;color:var(--purple);line-height:1.1}
+  .proximity .prox-stat .label{font-size:.85rem;color:var(--muted);font-weight:600;margin-top:4px}
+
+  /* FAQ */
+  .faq{display:grid;gap:14px;max-width:44em}
+  .faq details{border:1px solid var(--line);border-radius:var(--radius-sm);padding:20px 24px;background:var(--white)}
+  .faq summary{font-weight:700;cursor:pointer;font-size:1rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq summary::after{content:"+";color:var(--purple);font-size:1.4rem;font-weight:600;line-height:1}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{margin-top:12px;color:var(--ink-soft);font-size:.97rem}
+
+  /* Final CTA */
+  .final{text-align:center;padding:110px 0}
+  .final h2{max-width:18em;margin:0 auto 18px}
+  .final p{color:var(--ink-soft);font-size:1.1rem;margin-bottom:36px}
+
+  /* Footer */
+  footer{border-top:1px solid var(--line);padding:44px 0}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .credit{display:flex;align-items:center;gap:10px;font-size:.92rem;color:var(--muted)}
+  .credit strong{color:var(--ink);font-weight:700}
+  .foot-links{display:flex;gap:26px;font-size:.9rem;color:var(--muted)}
+  .foot-links a:hover{color:var(--purple)}
+
+  /* Motion */
+  .rise{opacity:0;transform:translateY(16px);animation:rise .7s ease forwards}
+  .d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    .rise{opacity:1;transform:none;animation:none}
+    *{transition:none !important;scroll-behavior:auto}
+  }
+
+  /* Responsive */
+  @media (max-width:900px){
+    .cards{grid-template-columns:1fr}
+    .svc-list{grid-template-columns:1fr 1fr}
+    .ind-grid{grid-template-columns:1fr 1fr}
+    .credibility{padding:48px 32px}
+    .proximity{padding:40px 32px;flex-direction:column;gap:28px}
+  }
+  @media (max-width:640px){
+    .svc-list{grid-template-columns:1fr}
+    .ind-grid{grid-template-columns:1fr}
+    section{padding:68px 0}
+    .page-hero{padding:56px 0 40px}
+    .credibility{padding:36px 24px;border-radius:var(--radius)}
+    .proximity{padding:32px 24px;border-radius:var(--radius)}
+  }
+
+  /* ---------- Hamburger Menu ---------- */
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;z-index:51}
+  .menu-btn svg{width:26px;height:26px;stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round}
+  .menu-btn .close{display:none}
+  .nav-open .menu-btn .open{display:none}
+  .nav-open .menu-btn .close{display:block}
+  @media (max-width:640px){
+    .menu-btn{display:block}
+    .nav-links{
+      display:none;position:fixed;top:76px;left:0;right:0;bottom:0;
+      background:var(--white);flex-direction:column;gap:0;padding:20px 28px;
+      border-top:1px solid var(--line);z-index:49;
+      overflow-y:auto;
+    }
+    .nav-open{backdrop-filter:none;overflow:visible}
+    .nav-open .nav-links{display:flex}
+    .nav-links a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
+    .nav-links a:last-child{border-bottom:none}
+    .nav-links a.btn{margin-top:12px;justify-content:center;border-bottom:none}
+    .nav-links .lang-toggle{margin-top:8px;align-self:flex-start}
+    .nav-links .theme-toggle{margin-top:4px;align-self:flex-start}
+  }
+
+  /* ---------- Scroll Animations ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+
+  /* ---------- Sticky CTA ---------- */
+  .sticky-cta{
+    position:fixed;bottom:0;left:0;right:0;z-index:40;
+    background:var(--purple);color:#fff;
+    padding:14px 28px;text-align:center;
+    transform:translateY(100%);transition:transform .35s ease;
+    font-weight:600;font-size:.95rem;
+  }
+  .sticky-cta.show{transform:translateY(0)}
+  .sticky-cta a{color:#fff;text-decoration:none}
+  .sticky-cta a:hover{text-decoration:underline}
+  @media (max-width:640px){
+    .sticky-cta{font-size:.88rem;padding:12px 20px}
+  }
+
+  /* ---------- Language Toggle ---------- */
+  :root:not([data-lang="es"]) [lang="es"]{display:none}
+  [data-lang="es"] [lang="en"]{display:none}
+  .lang-toggle{
+    display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;
+    font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0;
+  }
+  .lang-toggle button{
+    background:none;border:none;padding:7px 12px;cursor:pointer;
+    color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em;
+  }
+  .lang-toggle button:hover{color:var(--purple)}
+  .lang-toggle button.active{background:var(--purple);color:#fff}
+
+  /* ---------- Dark Mode ---------- */
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) nav{background:rgba(15,17,23,.92)}
+    :root:not([data-theme="light"]) .card,:root:not([data-theme="light"]) .svc-item,:root:not([data-theme="light"]) .ind-item,:root:not([data-theme="light"]) .faq details{background:#1A1C25}
+    :root:not([data-theme="light"]) .card:hover{border-color:#3D3A4E}
+    :root:not([data-theme="light"]) .credibility,:root:not([data-theme="light"]) .proximity{background:#1A1C25}
+    :root:not([data-theme="light"]) .proximity .prox-stat{background:#0F1117;border-color:#2A2838}
+    :root:not([data-theme="light"]) .btn-ghost{border-color:var(--line)}
+    :root:not([data-theme="light"]) .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+    :root:not([data-theme="light"]) .logo-light{display:none !important}
+    :root:not([data-theme="light"]) .logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
+    :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .btn{background:#6B4EC2}
+    :root:not([data-theme="light"]) .btn:hover{background:#5C41B0}
+    :root:not([data-theme="light"]) .client-logos img{filter:grayscale(1) invert(1) brightness(.8)}
+    :root:not([data-theme="light"]) .client-logos img:hover{filter:invert(1) brightness(.8)}
+  }
+  [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
+  [data-theme="dark"] .card,[data-theme="dark"] .svc-item,[data-theme="dark"] .ind-item,[data-theme="dark"] .faq details{background:#1A1C25}
+  [data-theme="dark"] .card:hover{border-color:#3D3A4E}
+  [data-theme="dark"] .credibility,[data-theme="dark"] .proximity{background:#1A1C25}
+  [data-theme="dark"] .proximity .prox-stat{background:#0F1117;border-color:#2A2838}
+  [data-theme="dark"] .btn-ghost{border-color:var(--line)}
+  [data-theme="dark"] .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+  [data-theme="dark"] .logo-light{display:none !important}
+  [data-theme="dark"] .logo-dark{display:block !important}
+  [data-theme="dark"] .foot-logo-light{display:none !important}
+  [data-theme="dark"] .foot-logo-dark{display:block !important}
+  [data-theme="dark"] .btn{background:#6B4EC2}
+  [data-theme="dark"] .btn:hover{background:#5C41B0}
+  [data-theme="dark"] .client-logos img{filter:grayscale(1) invert(1) brightness(.8)}
+  [data-theme="dark"] .client-logos img:hover{filter:invert(1) brightness(.8)}
+
+  /* Theme transition */
+  .theme-trans,.theme-trans *,.theme-trans *::before,.theme-trans *::after{
+    transition:background .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease,fill .35s ease,stroke .35s ease !important;
+  }
+  .theme-toggle{
+    background:none;border:1.5px solid var(--line);border-radius:50%;
+    width:38px;height:38px;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;transition:border-color .15s,background .15s;flex-shrink:0;
+  }
+  .theme-toggle:hover{border-color:var(--purple);background:var(--tint)}
+  .theme-toggle svg{width:18px;height:18px;stroke:var(--muted);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .theme-toggle:hover svg{stroke:var(--purple)}
+  .theme-toggle .icon-sun{display:none}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon{display:none}
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun{display:block}
+  }
+  [data-theme="dark"] .theme-toggle .icon-moon{display:none}
+  [data-theme="dark"] .theme-toggle .icon-sun{display:block !important}
+  [data-theme="light"] .theme-toggle .icon-sun{display:none !important}
+  [data-theme="light"] .theme-toggle .icon-moon{display:block}
+
+  /* ---------- Skip link ---------- */
+  .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
+  .skip-link:focus{top:12px}
+
+  /* ---------- Print ---------- */
+  @media print{
+    nav,.menu-btn,.sticky-cta,#stickyCta,.theme-toggle,.lang-toggle,footer,.hero-ctas,.btn,.cta-row,.foot-cta{display:none!important}
+    body{color:#000;background:#fff;-webkit-print-color-adjust:exact}
+    .wrap{max-width:100%;padding:0 12px}
+    a{color:#000}
+    a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em;color:#555}
+    a[href^="mailto"]::after{content:" (" attr(href) ")";font-size:.8em;color:#555}
+    img{max-width:100%!important;filter:none!important}
+    .reveal{opacity:1!important;transform:none!important}
+  }
+</style>
+
+<!-- seo:start -->
+<link rel="alternate" type="text/plain" title="LLM instructions" href="/llms.txt">
+<link rel="canonical" href="https://madebysebby.com/web-design-fort-lauderdale.html">
+<link rel="alternate" hreflang="en" href="https://madebysebby.com/web-design-fort-lauderdale.html">
+<link rel="alternate" hreflang="es" href="https://madebysebby.com/web-design-fort-lauderdale.html">
+<link rel="alternate" hreflang="x-default" href="https://madebysebby.com/web-design-fort-lauderdale.html">
+<meta name="theme-color" content="#6C3CE9">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Made by Sebby">
+<meta property="og:title" content="Web Design Fort Lauderdale | Small Business Websites | Made by Sebby">
+<meta property="og:description" content="Fort Lauderdale web design for small businesses. Custom websites that build trust and convert visitors. Bilingual (English &amp; Spanish), mobile-first, with ongoing website care.">
+<meta property="og:url" content="https://madebysebby.com/web-design-fort-lauderdale.html">
+<meta property="og:image" content="https://madebysebby.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Web Design Fort Lauderdale | Small Business Websites | Made by Sebby">
+<meta name="twitter:description" content="Fort Lauderdale web design for small businesses. Custom websites that build trust and convert visitors. Bilingual, mobile-first, with ongoing website care.">
+<meta name="twitter:image" content="https://madebysebby.com/assets/og-image.jpg">
+<!-- seo:end -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Made by Sebby | Web Design Fort Lauderdale",
+  "url": "https://madebysebby.com/web-design-fort-lauderdale.html",
+  "image": "https://madebysebby.com/assets/og-image.jpg",
+  "logo": "https://madebysebby.com/assets/icons/icon-512.png",
+  "description": "Custom web design, development, and ongoing website care for small businesses in Fort Lauderdale and Broward County. Bilingual (English & Spanish), mobile-first design.",
+  "email": "hello@madebysebby.com",
+  "founder": {
+    "@type": "Person",
+    "name": "Sebby",
+    "jobTitle": "Web Designer & Developer"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Fort Lauderdale", "containedInPlace": {"@type": "State", "name": "Florida"}},
+    {"@type": "City", "name": "Wilton Manors", "containedInPlace": {"@type": "State", "name": "Florida"}},
+    {"@type": "City", "name": "Oakland Park", "containedInPlace": {"@type": "State", "name": "Florida"}},
+    {"@type": "City", "name": "Pompano Beach", "containedInPlace": {"@type": "State", "name": "Florida"}},
+    {"@type": "City", "name": "Deerfield Beach", "containedInPlace": {"@type": "State", "name": "Florida"}},
+    {"@type": "City", "name": "Hollywood", "containedInPlace": {"@type": "State", "name": "Florida"}},
+    {"@type": "City", "name": "Davie", "containedInPlace": {"@type": "State", "name": "Florida"}},
+    {"@type": "City", "name": "Plantation", "containedInPlace": {"@type": "State", "name": "Florida"}}
+  ],
+  "serviceType": ["Web Design", "Web Development", "Website Maintenance", "SEO", "Bilingual Website Design"],
+  "knowsAbout": ["Web Design", "WordPress", "Custom Websites", "Small Business Websites", "Bilingual Web Design", "Fort Lauderdale Small Business", "Marine Industry Websites"],
+  "priceRange": "$$",
+  "slogan": "Websites that build trust."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://madebysebby.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Web Design Fort Lauderdale", "item": "https://madebysebby.com/web-design-fort-lauderdale.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you work with Fort Lauderdale businesses?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. I serve small businesses across all of South Florida, including Fort Lauderdale, Wilton Manors, Oakland Park, Pompano Beach, Deerfield Beach, Hollywood, Davie, and Plantation. I'm based in Miami, which is a short drive down I-95. Many of my clients are in Broward County."}
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a website cost in Fort Lauderdale?",
+      "acceptedAnswer": {"@type": "Answer", "text": "A custom 5-page small business website starts around $3,000 to $5,000. Fort Lauderdale agencies typically charge $10,000 to $30,000 for the same scope. I offer the same quality at freelancer rates because I work without agency overhead. No Las Olas office, no account managers, no layers between you and the work."}
+    },
+    {
+      "@type": "Question",
+      "name": "Will you meet in person in Fort Lauderdale?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Fort Lauderdale is about 30 miles from Miami, a short drive on I-95. I do in-person meetings for local clients when it makes sense, and I'm always available by video call, phone, text, and email during Eastern Time business hours."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do you know the Fort Lauderdale market?",
+      "acceptedAnswer": {"@type": "Answer", "text": "I work with service businesses across South Florida. The fundamentals are the same: your website needs to show up when locals search for your service. Whether you're a marine services company near the Intracoastal, a restaurant on Las Olas, or a law firm downtown, I build sites that convert Fort Lauderdale customers."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do you build bilingual websites in English and Spanish?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every site I build can include both English and Spanish content. I'm fluent in both languages and build bilingual functionality into the site's architecture from day one, not as an afterthought translation plugin. Fort Lauderdale's growing Hispanic community makes bilingual websites a smart investment."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer ongoing website maintenance?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Website Care plans start at $99/month and include software updates, daily backups, security monitoring, speed optimization, and small content edits. Most Fort Lauderdale business owners don't have time to maintain their own site. That's exactly what this service is for."}
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('nav-open')">
+          <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      <div class="nav-links">
+      <a href="services.html"><span lang="en">What I do</span><span lang="es">Que hago</span></a>
+      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
+      <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mi</span></a>
+      <div class="lang-toggle">
+          <button onclick="document.documentElement.removeAttribute('data-lang');localStorage.setItem('lang','en');this.classList.add('active');this.nextElementSibling.classList.remove('active')" class="active">EN</button>
+          <button onclick="document.documentElement.setAttribute('data-lang','es');localStorage.setItem('lang','es');this.classList.add('active');this.previousElementSibling.classList.remove('active')">ES</button>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
+          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="contact.html" class="btn btn-nav"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span></a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<header class="page-hero">
+  <div class="wrap">
+    <div class="breadcrumb rise"><a href="/"><span lang="en">Home</span><span lang="es">Inicio</span></a> / <span lang="en">Web Design Fort Lauderdale</span><span lang="es">Diseno Web Fort Lauderdale</span></div>
+    <div class="eyebrow rise d1"><span lang="en">Web Design · Fort Lauderdale</span><span lang="es">Diseno Web · Fort Lauderdale</span></div>
+    <h1 class="rise d2"><span lang="en">Web Design in <span class="accent">Fort Lauderdale</span> for Small Businesses</span><span lang="es">Diseno Web en <span class="accent">Fort Lauderdale</span> para Pequenos Negocios</span></h1>
+    <p class="lede rise d3"><span lang="en">Fort Lauderdale businesses deserve websites as strong as their waterfront views. I design, build, and maintain custom websites for small businesses across Broward County. The same quality I bring to Miami clients, now serving Las Olas to Pompano Beach. No agency runaround, no jargon. You talk to me, and I build it like it's my own.</span><span lang="es">Los negocios de Fort Lauderdale merecen sitios web tan fuertes como sus vistas al mar. Diseno, construyo y mantengo sitios web personalizados para pequenos negocios en todo el condado de Broward. La misma calidad que ofrezco a clientes de Miami, ahora sirviendo desde Las Olas hasta Pompano Beach. Sin rodeos de agencia, sin jerga. Hablas conmigo, y lo construyo como si fuera mio.</span></p>
+    <div class="hero-ctas rise d3">
+      <a class="btn" href="https://cal.com/madebysebby/chat" target="_blank" rel="noopener"><span lang="en">Free 15-minute call</span><span lang="es">Llamada gratuita de 15 minutos</span>&nbsp;&rarr;</a>
+      <a class="btn btn-ghost" href="work.html"><span lang="en">See my work</span><span lang="es">Ver mi trabajo</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ WHY FORT LAUDERDALE BUSINESSES NEED A PRO WEBSITE ============ -->
+<section id="main">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">Why Fort Lauderdale businesses choose me.</span><span lang="es">Por que los negocios de Fort Lauderdale me eligen.</span></h2>
+      <p><span lang="en">Fort Lauderdale is booming. From marine services along the Intracoastal to restaurants on Las Olas Boulevard, local businesses need a website that works as hard as they do.</span><span lang="es">Fort Lauderdale esta en auge. Desde servicios marinos en el Intracoastal hasta restaurantes en Las Olas Boulevard, los negocios locales necesitan un sitio web que trabaje tan duro como ellos.</span></p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2"/></svg></div>
+        <h3><span lang="en">Bilingual by default</span><span lang="es">Bilingue por defecto</span></h3>
+        <p><span lang="en">Fort Lauderdale's Hispanic population is growing fast. Your website should speak to every customer who finds you on Google, whether they search in English or Spanish. I build bilingual from day one, not as an afterthought plugin.</span><span lang="es">La poblacion hispana de Fort Lauderdale esta creciendo rapidamente. Tu sitio web debe hablarle a cada cliente que te encuentre en Google, ya sea que busque en ingles o espanol. Construyo bilingue desde el primer dia, no como un plugin agregado despues.</span></p>
+      </div>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21c1-4 3.5-6 7-6s6 2 7 6"/></svg></div>
+        <h3><span lang="en">You talk to the person doing the work</span><span lang="es">Hablas con la persona que hace el trabajo</span></h3>
+        <p><span lang="en">No account managers, no project coordinators, no handoffs. When you call, I answer. When you have a question at 9 PM, I reply the next morning. That's how I work with businesses across Fort Lauderdale, Wilton Manors, Oakland Park, and all of Broward County.</span><span lang="es">Sin gerentes de cuenta, sin coordinadores de proyecto, sin traspasos. Cuando llamas, yo respondo. Cuando tienes una pregunta a las 9 PM, respondo a la manana siguiente. Asi trabajo con negocios en Fort Lauderdale, Wilton Manors, Oakland Park y todo el condado de Broward.</span></p>
+      </div>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3><span lang="en">Ongoing website care. I don't disappear.</span><span lang="es">Cuidado web continuo. No desaparezco.</span></h3>
+        <p><span lang="en">Most web designers build your site and vanish. I offer monthly Website Care plans that keep your site secure, fast, and updated. Software updates, daily backups, security monitoring, and small edits included. Your website keeps earning its keep long after launch.</span><span lang="es">La mayoria de disenadores web construyen tu sitio y desaparecen. Ofrezco planes mensuales de Cuidado Web que mantienen tu sitio seguro, rapido y actualizado. Actualizaciones de software, respaldos diarios, monitoreo de seguridad y pequenas ediciones incluidas.</span></p>
+      </div>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <h3><span lang="en">Built for mobile. Fort Lauderdale is mobile.</span><span lang="es">Hecho para movil. Fort Lauderdale es movil.</span></h3>
+        <p><span lang="en">Over 60% of web traffic comes from phones. Every site I build is mobile-first. Designed for the way your customers actually browse, not how designers present mockups on a 27-inch monitor. Fast-loading, thumb-friendly, and sharp on every screen from Las Olas to Deerfield Beach.</span><span lang="es">Mas del 60% del trafico web viene de telefonos. Cada sitio que construyo es mobile-first. Disenado para como tus clientes realmente navegan, no como los disenadores presentan maquetas en un monitor de 27 pulgadas. Carga rapida, facil de usar con el pulgar, y nitido en cada pantalla.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">What I build for Fort Lauderdale businesses.</span><span lang="es">Lo que construyo para negocios de Fort Lauderdale.</span></h2>
+    </div>
+    <div class="svc-list">
+      <div class="svc-item reveal">
+        <h3><span lang="en">Web Design & Build</span><span lang="es">Diseno y Desarrollo Web</span></h3>
+        <p><span lang="en">Custom websites for Fort Lauderdale small businesses. Marine services near the Intracoastal, restaurants on Las Olas, law firms downtown, real estate offices in Pompano Beach. Mobile-first, fast-loading, and built to convert visitors into customers.</span><span lang="es">Sitios web personalizados para pequenos negocios de Fort Lauderdale. Servicios marinos cerca del Intracoastal, restaurantes en Las Olas, bufetes en el centro, oficinas de bienes raices en Pompano Beach. Mobile-first, carga rapida, y construidos para convertir visitantes en clientes.</span></p>
+        <a href="services.html"><span lang="en">Learn more &rarr;</span><span lang="es">Mas informacion &rarr;</span></a>
+      </div>
+      <div class="svc-item reveal">
+        <h3><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></h3>
+        <p><span lang="en">Monthly maintenance so your Fort Lauderdale business website stays secure, fast, and current. Updates, backups, security monitoring, and small edits. Starting at $99/month.</span><span lang="es">Mantenimiento mensual para que el sitio web de tu negocio en Fort Lauderdale se mantenga seguro, rapido y actualizado. Actualizaciones, respaldos, monitoreo de seguridad y pequenas ediciones. Desde $99/mes.</span></p>
+        <a href="website-care.html"><span lang="en">See plans &rarr;</span><span lang="es">Ver planes &rarr;</span></a>
+      </div>
+      <div class="svc-item reveal">
+        <h3><span lang="en">SEO. Get Found on Google.</span><span lang="es">SEO. Aparece en Google.</span></h3>
+        <p><span lang="en">Local SEO for Broward County businesses. Google Business Profile setup, on-page optimization, and honest search strategy that helps customers in Fort Lauderdale find you first.</span><span lang="es">SEO local para negocios del condado de Broward. Configuracion de Google Business Profile, optimizacion on-page, y estrategia de busqueda honesta que ayuda a clientes en Fort Lauderdale a encontrarte primero.</span></p>
+        <a href="services.html"><span lang="en">Learn more &rarr;</span><span lang="es">Mas informacion &rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INDUSTRIES SERVED ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">Industries I serve in Fort Lauderdale.</span><span lang="es">Industrias que atiendo en Fort Lauderdale.</span></h2>
+      <p><span lang="en">Fort Lauderdale is the Yachting Capital of the World, a tourism powerhouse, and a growing hub for tech and finance. I build websites for the businesses that drive this city.</span><span lang="es">Fort Lauderdale es la Capital Mundial del Yachting, una potencia turistica, y un centro en crecimiento para tecnologia y finanzas. Construyo sitios web para los negocios que impulsan esta ciudad.</span></p>
+    </div>
+    <div class="ind-grid">
+      <div class="ind-item reveal">
+        <div class="ind-icon" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M5 20V10l7-6 7 6v10"/><path d="M4 13l-2 2"/><path d="M22 13l-2 2"/><path d="M9 20v-6h6v6"/></svg></div>
+        <h3><span lang="en">Marine & Boating</span><span lang="es">Marino y Nautico</span></h3>
+        <p><span lang="en">Yacht services, marinas, boat repair, charter companies along the Intracoastal and Port Everglades.</span><span lang="es">Servicios de yates, marinas, reparacion de botes, companias de charter a lo largo del Intracoastal y Port Everglades.</span></p>
+      </div>
+      <div class="ind-item reveal">
+        <div class="ind-icon" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2"/></svg></div>
+        <h3><span lang="en">Tourism & Hospitality</span><span lang="es">Turismo y Hospitalidad</span></h3>
+        <p><span lang="en">Hotels, vacation rentals, tour operators, and hospitality businesses near Fort Lauderdale Beach and the Riverwalk.</span><span lang="es">Hoteles, alquileres vacacionales, operadores turisticos, y negocios de hospitalidad cerca de Fort Lauderdale Beach y el Riverwalk.</span></p>
+      </div>
+      <div class="ind-item reveal">
+        <div class="ind-icon" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3><span lang="en">Real Estate</span><span lang="es">Bienes Raices</span></h3>
+        <p><span lang="en">Agents, brokerages, and property managers from Las Olas Isles to Pompano Beach and Plantation.</span><span lang="es">Agentes, corredoras y administradores de propiedades desde Las Olas Isles hasta Pompano Beach y Plantation.</span></p>
+      </div>
+      <div class="ind-item reveal">
+        <div class="ind-icon" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3><span lang="en">Healthcare</span><span lang="es">Salud</span></h3>
+        <p><span lang="en">Medical practices, dental offices, wellness clinics, and recovery centers across Broward County.</span><span lang="es">Consultorios medicos, oficinas dentales, clinicas de bienestar y centros de recuperacion en todo el condado de Broward.</span></p>
+      </div>
+      <div class="ind-item reveal">
+        <div class="ind-icon" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <h3><span lang="en">Legal</span><span lang="es">Legal</span></h3>
+        <p><span lang="en">Law firms, solo practitioners, and legal services in downtown Fort Lauderdale and surrounding areas.</span><span lang="es">Bufetes de abogados, practicantes independientes y servicios legales en el centro de Fort Lauderdale y areas circundantes.</span></p>
+      </div>
+      <div class="ind-item reveal">
+        <div class="ind-icon" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+        <h3><span lang="en">Restaurants & Food</span><span lang="es">Restaurantes y Comida</span></h3>
+        <p><span lang="en">Restaurants, cafes, catering companies, and food businesses from Las Olas to Oakland Park and Wilton Manors.</span><span lang="es">Restaurantes, cafes, companias de catering y negocios de comida desde Las Olas hasta Oakland Park y Wilton Manors.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BASED IN MIAMI, SERVING SOUTH FLORIDA ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="proximity reveal">
+      <div class="prox-text">
+        <h2><span lang="en">Based in Miami. Serving all of South Florida.</span><span lang="es">Con base en Miami. Sirviendo todo el sur de Florida.</span></h2>
+        <p class="body"><span lang="en">Fort Lauderdale is right up I-95 from where I work every day. I already serve clients across South Florida, from Coral Gables to Hollywood. Adding Fort Lauderdale, Wilton Manors, Oakland Park, Pompano Beach, Deerfield Beach, Davie, and Plantation to that list is a natural extension. Same time zone, same market, same commitment to quality. When you need an in-person meeting, I'm a short drive away.</span><span lang="es">Fort Lauderdale esta justo por la I-95 desde donde trabajo todos los dias. Ya atiendo clientes en todo el sur de Florida, desde Coral Gables hasta Hollywood. Agregar Fort Lauderdale, Wilton Manors, Oakland Park, Pompano Beach, Deerfield Beach, Davie y Plantation a esa lista es una extension natural. Misma zona horaria, mismo mercado, mismo compromiso con la calidad. Cuando necesitas una reunion en persona, estoy a un corto viaje en auto.</span></p>
+      </div>
+      <div class="prox-stat">
+        <div class="number"><span lang="en">~30 mi</span><span lang="es">~48 km</span></div>
+        <div class="label"><span lang="en">Miami to Fort Lauderdale</span><span lang="es">Miami a Fort Lauderdale</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCAL CREDIBILITY ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="credibility reveal">
+      <h2><span lang="en">Trusted by South Florida businesses.</span><span lang="es">Negocios del sur de Florida confian en mi.</span></h2>
+      <p class="body"><span lang="en">I built the entire online presence for <strong>Riera Law Firm</strong> in Coral Gables, a securities arbitration practice led by a former SEC enforcement attorney. 70+ bilingual pages, DNS cleanup, email restoration, and ongoing Website Care every month. The same attention to detail I bring to every project, whether it's in Miami or Fort Lauderdale. <a href="case-study-rieralaw.html" style="color:var(--purple);font-weight:600">Read the full case study &rarr;</a></span><span lang="es">Construi toda la presencia online de <strong>Riera Law Firm</strong> en Coral Gables, una practica de arbitraje de valores liderada por un ex fiscal de la SEC. Mas de 70 paginas bilingues, limpieza de DNS, restauracion de correo, y Cuidado Web continuo cada mes. La misma atencion al detalle que llevo a cada proyecto, ya sea en Miami o Fort Lauderdale. <a href="case-study-rieralaw.html" style="color:var(--purple);font-weight:600">Leer el caso de estudio completo &rarr;</a></span></p>
+      <div class="client-logos-bar">
+        <div class="client-logos-label"><span lang="en">Trusted by</span><span lang="es">Confian en mi</span></div>
+        <div class="client-logos">
+          <img src="assets/client-logos/rieralaw.svg" alt="Riera Law Firm, Coral Gables, Florida" loading="lazy">
+          <img src="assets/client-logos/elitecare.svg" alt="Elite Care Recovery, South Florida" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">Common questions from Fort Lauderdale business owners.</span><span lang="es">Preguntas comunes de duenos de negocios en Fort Lauderdale.</span></h2>
+    </div>
+    <div class="faq">
+      <details class="reveal">
+        <summary><span lang="en">Do you work with Fort Lauderdale businesses?</span><span lang="es">Trabajas con negocios de Fort Lauderdale?</span></summary>
+        <p><span lang="en">Yes. I serve small businesses across all of South Florida, including Fort Lauderdale, Wilton Manors, Oakland Park, Pompano Beach, Deerfield Beach, Hollywood, Davie, and Plantation. I'm based in Miami, which is about 30 miles south on I-95. Many of my clients are in Broward County.</span><span lang="es">Si. Atiendo pequenos negocios en todo el sur de Florida, incluyendo Fort Lauderdale, Wilton Manors, Oakland Park, Pompano Beach, Deerfield Beach, Hollywood, Davie y Plantation. Estoy basado en Miami, que esta a unas 30 millas al sur por la I-95. Muchos de mis clientes estan en el condado de Broward.</span></p>
+      </details>
+      <details class="reveal">
+        <summary><span lang="en">How much does a website cost in Fort Lauderdale?</span><span lang="es">Cuanto cuesta un sitio web en Fort Lauderdale?</span></summary>
+        <p><span lang="en">A custom 5-page small business website starts around $3,000 to $5,000. Fort Lauderdale agencies typically charge $10,000 to $30,000 for the same scope. I offer the same quality at freelancer rates because I work without agency overhead. No Las Olas office, no account managers, no layers between you and the work.</span><span lang="es">Un sitio web personalizado de 5 paginas para pequenos negocios comienza alrededor de $3,000 a $5,000. Las agencias de Fort Lauderdale tipicamente cobran $10,000 a $30,000 por el mismo alcance. Ofrezco la misma calidad a tarifas de freelancer porque trabajo sin los gastos de una agencia. Sin oficina en Las Olas, sin gerentes de cuenta, sin capas entre tu y el trabajo.</span></p>
+      </details>
+      <details class="reveal">
+        <summary><span lang="en">Will you meet in person in Fort Lauderdale?</span><span lang="es">Te reuniras en persona en Fort Lauderdale?</span></summary>
+        <p><span lang="en">Yes. Fort Lauderdale is about 30 miles from Miami. A short drive on I-95. I do in-person meetings for local clients when it makes sense, and I'm always available by video call, phone, text, and email during Eastern Time business hours. My clients across South Florida find this setup works perfectly.</span><span lang="es">Si. Fort Lauderdale esta a unas 30 millas de Miami. Un viaje corto por la I-95. Hago reuniones en persona para clientes locales cuando tiene sentido, y siempre estoy disponible por videollamada, telefono, texto y correo electronico durante horario de oficina hora del Este. Mis clientes en todo el sur de Florida encuentran que esta configuracion funciona perfectamente.</span></p>
+      </details>
+      <details class="reveal">
+        <summary><span lang="en">Do you know the Fort Lauderdale market?</span><span lang="es">Conoces el mercado de Fort Lauderdale?</span></summary>
+        <p><span lang="en">I work with service businesses across South Florida. The fundamentals are the same: your website needs to show up when locals search for your service. Whether you're a marine services company near the Intracoastal, a restaurant on Las Olas, or a law firm in downtown Fort Lauderdale, I build sites that convert local customers into paying clients.</span><span lang="es">Trabajo con negocios de servicios en todo el sur de Florida. Los fundamentos son los mismos: tu sitio web necesita aparecer cuando los locales buscan tu servicio. Ya sea que tengas una empresa de servicios marinos cerca del Intracoastal, un restaurante en Las Olas, o un bufete de abogados en el centro de Fort Lauderdale, construyo sitios que convierten clientes locales en clientes que pagan.</span></p>
+      </details>
+      <details class="reveal">
+        <summary><span lang="en">Do you build bilingual websites in English and Spanish?</span><span lang="es">Construyes sitios web bilingues en ingles y espanol?</span></summary>
+        <p><span lang="en">Yes. Every site I build can include both English and Spanish content. I'm fluent in both languages and build bilingual functionality into the site's architecture from day one. Fort Lauderdale's growing Hispanic community makes a bilingual website a smart investment for reaching more customers.</span><span lang="es">Si. Cada sitio que construyo puede incluir contenido en ingles y espanol. Soy fluido en ambos idiomas y construyo la funcionalidad bilingue en la arquitectura del sitio desde el primer dia. La creciente comunidad hispana de Fort Lauderdale hace que un sitio web bilingue sea una inversion inteligente para alcanzar mas clientes.</span></p>
+      </details>
+      <details class="reveal">
+        <summary><span lang="en">Do you offer ongoing website maintenance?</span><span lang="es">Ofreces mantenimiento web continuo?</span></summary>
+        <p><span lang="en">Yes. Website Care plans start at $99/month and include software updates, daily backups, security monitoring, speed optimization, and small content edits. Most Fort Lauderdale business owners don't have time to maintain their own site. That's exactly what this service is for.</span><span lang="es">Si. Los planes de Cuidado Web comienzan en $99/mes e incluyen actualizaciones de software, respaldos diarios, monitoreo de seguridad, optimizacion de velocidad y pequenas ediciones de contenido. La mayoria de duenos de negocios en Fort Lauderdale no tienen tiempo para mantener su propio sitio. Para eso es exactamente este servicio.</span></p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final" style="padding-top:30px">
+  <div class="wrap">
+    <h2><span lang="en">Ready to upgrade your Fort Lauderdale business's website?</span><span lang="es">Listo para mejorar el sitio web de tu negocio en Fort Lauderdale?</span></h2>
+    <p><span lang="en">Free 15-minute call. No pressure, plain answers. I'll tell you exactly what I'd recommend, even if the answer is "less than you think."</span><span lang="es">Llamada gratuita de 15 minutos. Sin presion, respuestas claras. Te dire exactamente lo que recomendaria, incluso si la respuesta es "menos de lo que piensas."</span></p>
+    <a class="btn" href="https://cal.com/madebysebby/chat" target="_blank" rel="noopener"><span lang="en">Book a free call</span><span lang="es">Reserva una llamada gratuita</span>&nbsp;&rarr;</a>
+  </div>
+</section>
+
+</main>
+
+<div class="sticky-cta" id="stickyCta">
+  <a href="https://cal.com/madebysebby/chat" target="_blank" rel="noopener"><span lang="en">Free 15-minute call. No pressure, plain answers &rarr;</span><span lang="es">Llamada gratuita de 15 minutos. Sin presion, respuestas claras &rarr;</span></a>
+</div>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="assets/logo/sebby-horizontal.svg" alt="Made by Sebby | Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby | Web Design, Development, Website Care" style="height:52px;display:none"><span><span lang="en">This site was <strong>Made by Sebby</strong>. Yours can be too.</span><span lang="es">Este sitio fue <strong>hecho por Sebby</strong>. El tuyo tambien puede serlo.</span></span></div>
+    <div class="foot-links">
+      <a href="services.html"><span lang="en">What I do</span><span lang="es">Que hago</span></a>
+      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
+      <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mi</span></a>
+      <a href="blog.html"><span lang="en">Blog</span><span lang="es">Blog</span></a>
+      <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
+    </div>
+  </div>
+</footer>
+<script>!function(){var l=document.documentElement.getAttribute('data-lang');if(l==='es'){var b=document.querySelectorAll('.lang-toggle button');if(b.length===2){b[0].classList.remove('active');b[1].classList.add('active')}}}()</script>
+<script>!function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})}()</script>
+<script>!function(){var cta=document.getElementById('stickyCta');if(!cta)return;var footer=document.querySelector('footer');var shown=false;window.addEventListener('scroll',function(){var y=window.scrollY;var fTop=footer?footer.getBoundingClientRect().top+y-window.innerHeight:Infinity;if(y>400&&y<fTop){if(!shown){cta.classList.add('show');shown=true}}else{if(shown){cta.classList.remove('show');shown=false}}},{passive:true})}()</script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>
+</body>
+</html>
