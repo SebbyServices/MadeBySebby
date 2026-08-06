@@ -166,14 +166,16 @@
   .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   .tile{
     border-radius:var(--radius);border:1px solid var(--line);overflow:hidden;
-    background:var(--white);transition:transform .18s, box-shadow .18s;
+    background:var(--white);transition:transform .18s, box-shadow .18s, border-color .18s;
+    cursor:pointer;
   }
-  .tile:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08)}
+  .tile:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(108,60,233,.15);border-color:var(--purple)}
   .tile .shot{
     aspect-ratio:16/10.5;background:linear-gradient(150deg,#EFEAFB,#E2D9F8);
     display:flex;align-items:center;justify-content:center;overflow:hidden;
   }
-  .tile .shot img{width:100%;height:100%;object-fit:cover;object-position:top center}
+  .tile .shot img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .3s ease}
+  .tile:hover .shot img{transform:scale(1.03)}
   .tile .shot span{
     font-size:.8rem;font-weight:600;color:var(--purple);
     background:#fff;border:1px dashed var(--purple);padding:7px 14px;border-radius:999px;
