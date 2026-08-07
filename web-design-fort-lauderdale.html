@@ -274,8 +274,8 @@
     :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
     :root:not([data-theme="light"]) .btn{background:#6B4EC2}
     :root:not([data-theme="light"]) .btn:hover{background:#5C41B0}
-    :root:not([data-theme="light"]) .client-logos img{filter:grayscale(1) invert(1) brightness(.8)}
-    :root:not([data-theme="light"]) .client-logos img:hover{filter:invert(1) brightness(.8)}
+    :root:not([data-theme="light"]) .client-logos img.logo-light{display:none !important}
+    :root:not([data-theme="light"]) .client-logos img.logo-dark{display:block !important}
   }
   [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
   [data-theme="dark"] .card,[data-theme="dark"] .svc-item,[data-theme="dark"] .ind-item,[data-theme="dark"] .faq details{background:#1A1C25}
@@ -290,8 +290,8 @@
   [data-theme="dark"] .foot-logo-dark{display:block !important}
   [data-theme="dark"] .btn{background:#6B4EC2}
   [data-theme="dark"] .btn:hover{background:#5C41B0}
-  [data-theme="dark"] .client-logos img{filter:grayscale(1) invert(1) brightness(.8)}
-  [data-theme="dark"] .client-logos img:hover{filter:invert(1) brightness(.8)}
+  [data-theme="dark"] .client-logos img.logo-light{display:none !important}
+  [data-theme="dark"] .client-logos img.logo-dark{display:block !important}
 
   /* Theme transition */
   .theme-trans,.theme-trans *,.theme-trans *::before,.theme-trans *::after{
@@ -604,8 +604,8 @@
       <div class="client-logos-bar">
         <div class="client-logos-label"><span lang="en">Trusted by</span><span lang="es">Confian en mi</span></div>
         <div class="client-logos">
-          <img src="assets/client-logos/rieralaw.svg" alt="Riera Law Firm, Coral Gables, Florida" loading="lazy">
-          <img src="assets/client-logos/elitecare.svg" alt="Elite Care Recovery, South Florida" loading="lazy">
+          <img class="logo-light" src="assets/client-logos/rieralaw-light.webp" alt="Riera Law Firm, Coral Gables, Florida" loading="lazy" style="display:block"><img class="logo-dark" src="assets/client-logos/rieralaw-dark.webp" alt="Riera Law Firm, Coral Gables, Florida" loading="lazy" style="display:none">
+          <img class="logo-light" src="assets/client-logos/elitecare-light.webp" alt="Elite Care Recovery, South Florida" loading="lazy" style="display:block"><img class="logo-dark" src="assets/client-logos/elitecare-dark.webp" alt="Elite Care Recovery, South Florida" loading="lazy" style="display:none">
         </div>
       </div>
     </div>

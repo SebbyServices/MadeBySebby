@@ -244,8 +244,8 @@
     :root:not([data-theme="light"]) .logo-dark{display:block !important}
     :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
     :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
-    :root:not([data-theme="light"]) .client-logos img{filter:grayscale(1) invert(1) brightness(.8)}
-    :root:not([data-theme="light"]) .client-logos img:hover{filter:invert(1) brightness(.8)}
+    :root:not([data-theme="light"]) .client-logos img.logo-light{display:none !important}
+    :root:not([data-theme="light"]) .client-logos img.logo-dark{display:block !important}
     :root:not([data-theme="light"]) .btn{background:#6B4EC2}
     :root:not([data-theme="light"]) .btn:hover{background:#5C41B0}
   }
@@ -259,8 +259,8 @@
   [data-theme="dark"] .logo-dark{display:block !important}
   [data-theme="dark"] .foot-logo-light{display:none !important}
   [data-theme="dark"] .foot-logo-dark{display:block !important}
-  [data-theme="dark"] .client-logos img{filter:grayscale(1) invert(1) brightness(.8)}
-  [data-theme="dark"] .client-logos img:hover{filter:invert(1) brightness(.8)}
+  [data-theme="dark"] .client-logos img.logo-light{display:none !important}
+  [data-theme="dark"] .client-logos img.logo-dark{display:block !important}
   [data-theme="dark"] .btn{background:#6B4EC2}
   [data-theme="dark"] .btn:hover{background:#5C41B0}
 
@@ -534,8 +534,8 @@
     <div class="client-logos-bar reveal">
       <div class="client-logos-label"><span lang="es">Negocios que confían en mí</span><span lang="en">Businesses that trust me</span></div>
       <div class="client-logos">
-        <img src="assets/client-logos/rieralaw.svg" alt="Riera Law Firm" loading="lazy">
-        <img src="assets/client-logos/elitecare.svg" alt="Elite Care Recovery" loading="lazy">
+        <img class="logo-light" src="assets/client-logos/rieralaw-light.webp" alt="Riera Law Firm" loading="lazy" style="display:block"><img class="logo-dark" src="assets/client-logos/rieralaw-dark.webp" alt="Riera Law Firm" loading="lazy" style="display:none">
+        <img class="logo-light" src="assets/client-logos/elitecare-light.webp" alt="Elite Care Recovery" loading="lazy" style="display:block"><img class="logo-dark" src="assets/client-logos/elitecare-dark.webp" alt="Elite Care Recovery" loading="lazy" style="display:none">
       </div>
     </div>
   </div>
