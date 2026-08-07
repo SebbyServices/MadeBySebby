@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
+<script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
@@ -21,6 +22,8 @@
     --purple:#6C3CE9;--purple-deep:#5A2FD0;
     --tint:#F4F1FD;--line:#E8E6F2;--white:#FFFFFF;
   }
+  :root:not([data-lang="es"]) [lang="es"]{display:none}
+  [data-lang="es"] [lang="en"]{display:none}
   *{margin:0;padding:0;box-sizing:border-box}
   body{
     font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
@@ -49,25 +52,29 @@
       --purple:#8B6CEF;--purple-deep:#7B5FDB;
       --tint:#1D192D;--line:#2A2838;--white:#0F1117;
     }
+    :root:not([data-theme="light"]) .btn{background:#6B4EC2}
+    :root:not([data-theme="light"]) .btn:hover{background:#5C41B0}
   }
   [data-theme="dark"]{
     --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#717580;
     --purple:#8B6CEF;--purple-deep:#7B5FDB;
     --tint:#1D192D;--line:#2A2838;--white:#0F1117;
   }
+  [data-theme="dark"] .btn{background:#6B4EC2}
+  [data-theme="dark"] .btn:hover{background:#5C41B0}
 </style>
 </head>
 <body>
   <div class="code">404</div>
-  <h1>This page doesn't exist.</h1>
-  <p>The page you're looking for may have been moved or removed. Here are some places to start:</p>
-  <a class="btn" href="/">Go to homepage&nbsp;→</a>
+  <h1><span lang="en">This page doesn't exist.</span><span lang="es">Esta página no existe.</span></h1>
+  <p><span lang="en">The page you're looking for may have been moved or removed. Here are some places to start:</span><span lang="es">La página que buscas pudo haber sido movida o eliminada. Aquí tienes algunos lugares para comenzar:</span></p>
+  <a class="btn" href="/"><span lang="en">Go to homepage</span><span lang="es">Ir al inicio</span>&nbsp;&rarr;</a>
   <div class="links">
-    <a href="/services.html">What I do</a>
-    <a href="/work.html">Work</a>
-    <a href="/website-care.html">Website Care</a>
-    <a href="/about.html">About</a>
-    <a href="/contact.html">Contact</a>
+    <a href="/services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
+    <a href="/work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
+    <a href="/website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
+    <a href="/about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+    <a href="/contact.html"><span lang="en">Contact</span><span lang="es">Contacto</span></a>
   </div>
 </body>
 </html>
