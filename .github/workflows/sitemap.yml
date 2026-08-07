@@ -1,0 +1,53 @@
+name: Update sitemap
+
+on:
+  push:
+    branches: [main]
+    paths: ['*.html', 'blog/*.html']
+
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate sitemap.xml
+        run: |
+          DOMAIN="https://madebysebby.com"
+
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
+          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
+
+          # Homepage first (use its own last-modified date)
+          HDATE=$(git log -1 --format=%aI -- index.html | cut -d'T' -f1)
+          echo "  <url><loc>${DOMAIN}/</loc><lastmod>${HDATE}</lastmod></url>" >> sitemap.xml
+
+          # All HTML pages except excluded ones
+          find . -name '*.html' \
+            -not -name '404.html' \
+            -not -name 'thank-you.html' \
+            -not -name 'index.html' \
+            | sed 's|^\./||' | sort \
+            | while read f; do
+                FDATE=$(git log -1 --format=%aI -- "$f" | cut -d'T' -f1)
+                echo "  <url><loc>${DOMAIN}/${f}</loc><lastmod>${FDATE}</lastmod></url>" >> sitemap.xml
+              done
+
+          echo '</urlset>' >> sitemap.xml
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          git diff --cached --quiet && echo "No sitemap changes" && exit 0
+          git commit -m "chore: auto-update sitemap.xml"
+          git push
+
+      - name: Ping Google
+        if: success()
+        run: curl -s "https://www.google.com/ping?sitemap=https://madebysebby.com/sitemap.xml"
