@@ -323,10 +323,10 @@
 
   /* Client logos */
   .client-logos-bar{text-align:center;padding:28px 0 0}
-  .client-logos{display:flex;align-items:center;gap:40px;flex-wrap:wrap;justify-content:center;opacity:.55;transition:opacity .3s}
-  .client-logos:hover{opacity:.8}
-  .client-logos img{height:28px;width:auto;filter:grayscale(1);transition:filter .3s}
-  .client-logos img:hover{filter:grayscale(0)}
+  .client-logos{display:flex;align-items:center;gap:48px;flex-wrap:wrap;justify-content:center;opacity:.75;transition:opacity .3s}
+  .client-logos:hover{opacity:1}
+  .client-logos img{height:44px;width:auto;transition:opacity .3s}
+  .client-logos img:hover{opacity:.85}
   .client-logos-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
 
   /* ---------- Language Toggle ---------- */
@@ -386,8 +386,8 @@
     :root:not([data-theme="light"]) .logo-dark{display:block !important}
     :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
     :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
-    :root:not([data-theme="light"]) .client-logos img{filter:grayscale(1) invert(1) brightness(.8)}
-    :root:not([data-theme="light"]) .client-logos img:hover{filter:invert(1) brightness(.8)}
+    :root:not([data-theme="light"]) .client-logos img.logo-light{display:none !important}
+    :root:not([data-theme="light"]) .client-logos img.logo-dark{display:block !important}
     :root:not([data-theme="light"]) .btn{background:#6B4EC2}
     :root:not([data-theme="light"]) .btn:hover{background:#5C41B0}
     :root:not([data-theme="light"]) .step::before{background:#6B4EC2}
@@ -421,8 +421,8 @@
   [data-theme="dark"] .logo-dark{display:block !important}
   [data-theme="dark"] .foot-logo-light{display:none !important}
   [data-theme="dark"] .foot-logo-dark{display:block !important}
-  [data-theme="dark"] .client-logos img{filter:grayscale(1) invert(1) brightness(.8)}
-  [data-theme="dark"] .client-logos img:hover{filter:invert(1) brightness(.8)}
+  [data-theme="dark"] .client-logos img.logo-light{display:none !important}
+  [data-theme="dark"] .client-logos img.logo-dark{display:block !important}
   [data-theme="dark"] .btn{background:#6B4EC2}
   [data-theme="dark"] .btn:hover{background:#5C41B0}
   [data-theme="dark"] .step::before{background:#6B4EC2}
