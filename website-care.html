@@ -677,7 +677,15 @@
       "name": "Can I cancel my website care plan?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Any time, no penalty. Your site, your backups, and your accounts are yours. I'll hand everything over cleanly if you ever move on."
+        "text": "Monthly plans: Cancel any time, no penalty. Your site, backups, and accounts are yours. Annual plans: You have 14 days after payment or renewal to cancel for a full refund. After 14 days, the annual payment is non-refundable. You'll receive a reminder 30 days before each renewal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does annual plan renewal work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Annual plans auto-renew each year. You'll receive a reminder 30 days before your renewal date. Cancel before the renewal to avoid being charged. If the renewal goes through and you change your mind, you have 14 days for a full refund."
       }
     },
     {
@@ -785,14 +793,18 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <h2><span lang="en">Pick the level of care that fits.</span><span lang="es">Elige el nivel de cuidado que te convenga.</span></h2>
-      <p><span lang="en">Every plan is month to month. No contracts, no lock-in. If I'm not earning it, cancel any time.</span><span lang="es">Cada plan es mes a mes. Sin contratos, sin ataduras. Si no lo merezco, cancela cuando quieras.</span></p>
+      <p><span lang="en">Monthly plans are month to month with no contracts. Cancel any time. Annual plans are billed once per year at a discounted rate and auto-renew yearly with 30 days' notice before renewal.</span><span lang="es">Los planes mensuales son mes a mes sin contratos. Cancela cuando quieras. Los planes anuales se facturan una vez al ano a una tarifa con descuento y se renuevan automaticamente con 30 dias de aviso antes de la renovacion.</span></p>
     </div>
 
     <div class="price-toggle reveal">
       <span><span lang="en">Monthly</span><span lang="es">Mensual</span></span>
-      <button class="toggle-switch" id="billingToggle" aria-label="Toggle annual billing" onclick="this.classList.toggle('active');var p=document.getElementById('pricingPlans');p.classList.toggle('show-annual');var isAnnual=p.classList.contains('show-annual');p.querySelectorAll('.plan-cta-monthly').forEach(function(el){el.style.display=isAnnual?'none':'inline-flex'});p.querySelectorAll('.plan-cta-annual').forEach(function(el){el.style.display=isAnnual?'inline-flex':'none'})"></button>
+      <button class="toggle-switch" id="billingToggle" aria-label="Toggle annual billing" onclick="this.classList.toggle('active');var p=document.getElementById('pricingPlans');p.classList.toggle('show-annual');var isAnnual=p.classList.contains('show-annual');p.querySelectorAll('.plan-cta-monthly').forEach(function(el){el.style.display=isAnnual?'none':'inline-flex'});p.querySelectorAll('.plan-cta-annual').forEach(function(el){el.style.display=isAnnual?'inline-flex':'none'});var n=document.getElementById('annualNote');if(n)n.style.display=isAnnual?'block':'none'"></button>
       <span><span lang="en">Annual</span><span lang="es">Anual</span></span>
       <span class="save"><span lang="en">Save 10-12%</span><span lang="es">Ahorra 10-12%</span></span>
+    </div>
+    <div style="text-align:center;margin-bottom:28px;font-size:.85rem;color:var(--muted);display:none" id="annualNote">
+      <span lang="en">Annual plans are billed as a one-time yearly payment. Auto-renews annually with 30 days' notice. 14-day refund window after each renewal.</span>
+      <span lang="es">Los planes anuales se facturan como un pago unico anual. Se renuevan automaticamente con 30 dias de aviso. Ventana de reembolso de 14 dias despues de cada renovacion.</span>
     </div>
 
     <div class="plans" id="pricingPlans">
@@ -800,7 +812,8 @@
         <h3><span lang="en">Essentials</span><span lang="es">Esencial</span></h3>
         <p class="for"><span lang="en">For simple sites that need to stay healthy</span><span lang="es">Para sitios simples que necesitan mantenerse saludables</span></p>
         <div class="price price-monthly">$99<em>/mo</em></div>
-        <div class="price price-annual">$89<em>/mo</em></div>
+        <div class="price price-annual">$1,068<em>/yr</em></div>
+        <div class="price-annual" style="font-size:.85rem;color:var(--muted);margin-bottom:4px;display:none"><span lang="en">$89/mo equivalent</span><span lang="es">equivalente a $89/mes</span></div>
         <ul class="checklist">
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Weekly software + security updates</span><span lang="es">Actualizaciones semanales de software y seguridad</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Daily off-site backups (30-day retention)</span><span lang="es">Respaldos diarios fuera del sitio (30 dias)</span></li>
@@ -816,7 +829,8 @@
         <h3><span lang="en">Standard</span><span lang="es">Estandar</span></h3>
         <p class="for"><span lang="en">For businesses whose website brings in customers</span><span lang="es">Para negocios cuyo sitio web atrae clientes</span></p>
         <div class="price price-monthly">$179<em>/mo</em></div>
-        <div class="price price-annual">$159<em>/mo</em></div>
+        <div class="price price-annual">$1,908<em>/yr</em></div>
+        <div class="price-annual" style="font-size:.85rem;color:var(--muted);margin-bottom:4px;display:none"><span lang="en">$159/mo equivalent</span><span lang="es">equivalente a $159/mes</span></div>
         <ul class="checklist">
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Everything in Essentials</span><span lang="es">Todo lo del plan Esencial</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">2 hours of edits + updates per month</span><span lang="es">2 horas de ediciones y actualizaciones al mes</span></li>
@@ -832,7 +846,8 @@
         <h3><span lang="en">Growth</span><span lang="es">Crecimiento</span></h3>
         <p class="for"><span lang="en">For businesses actively growing online</span><span lang="es">Para negocios que están creciendo activamente en línea</span></p>
         <div class="price price-monthly">$249<em>/mo</em></div>
-        <div class="price price-annual">$219<em>/mo</em></div>
+        <div class="price price-annual">$2,628<em>/yr</em></div>
+        <div class="price-annual" style="font-size:.85rem;color:var(--muted);margin-bottom:4px;display:none"><span lang="en">$219/mo equivalent</span><span lang="es">equivalente a $219/mes</span></div>
         <ul class="checklist">
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Everything in Standard</span><span lang="es">Todo lo del plan Estandar</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">4 hours of edits + updates per month</span><span lang="es">4 horas de ediciones y actualizaciones al mes</span></li>
@@ -845,6 +860,7 @@
         <a class="btn btn-ghost plan-cta-annual" href="https://link.waveapps.com/bp28zk-wg83ks" target="_blank" rel="noopener" style="display:none"><span lang="en">Start Growth (Annual)</span><span lang="es">Comenzar Crecimiento (Anual)</span></a>
       </div>
     </div>
+    <p style="text-align:center;font-size:.82rem;color:var(--muted);margin-top:20px"><span lang="en">By starting a plan, you agree to our <a href="terms.html" style="color:var(--purple);text-decoration:underline">Terms of Service</a>.</span><span lang="es">Al iniciar un plan, aceptas nuestros <a href="terms.html" style="color:var(--purple);text-decoration:underline">Terminos de Servicio</a>.</span></p>
 
     <!-- Comparison table -->
     <div class="compare reveal">
@@ -1061,11 +1077,15 @@
       </details>
       <details>
         <summary><span lang="en">Can I cancel?</span><span lang="es">Puedo cancelar?</span></summary>
-        <p><span lang="en">Any time, no penalty. Your site, your backups, and your accounts are yours. I'll hand everything over cleanly if you ever move on.</span><span lang="es">En cualquier momento, sin penalizacion. Tu sitio, tus respaldos y tus cuentas son tuyos. Te entregare todo limpiamente si decides seguir adelante.</span></p>
+        <p><span lang="en"><strong>Monthly plans:</strong> Cancel any time, no penalty. Your site, your backups, and your accounts are yours. I'll hand everything over cleanly if you ever move on.<br><br><strong>Annual plans:</strong> You have 14 days after payment (or renewal) to cancel for a full refund. After 14 days, the annual payment is non-refundable. You'll receive a reminder 30 days before each renewal so you're never surprised.</span><span lang="es"><strong>Planes mensuales:</strong> Cancela en cualquier momento, sin penalizacion. Tu sitio, tus respaldos y tus cuentas son tuyos. Te entregare todo limpiamente si decides seguir adelante.<br><br><strong>Planes anuales:</strong> Tienes 14 dias despues del pago (o renovacion) para cancelar con reembolso completo. Despues de 14 dias, el pago anual no es reembolsable. Recibiras un aviso 30 dias antes de cada renovacion para que nunca te tome por sorpresa.</span></p>
       </details>
       <details>
         <summary><span lang="en">Do edit hours roll over?</span><span lang="es">Las horas de edicion se acumulan?</span></summary>
         <p><span lang="en">Not month to month, but I'm flexible. If you didn't use your hours in June and need a little extra in July, we'll work it out. I'm reasonable and I want your site to look great.</span><span lang="es">No se acumulan mes a mes, pero soy flexible. Si no usaste tus horas en junio y necesitas un poco mas en julio, lo resolvemos. Soy razonable y quiero que tu sitio se vea excelente.</span></p>
+      </details>
+      <details>
+        <summary><span lang="en">How does annual plan renewal work?</span><span lang="es">Como funciona la renovacion del plan anual?</span></summary>
+        <p><span lang="en">Annual plans auto-renew each year. I'll send you a reminder 30 days before your renewal date. If you want to cancel, just let me know before the renewal and you won't be charged. If the renewal goes through and you change your mind, you have 14 days for a full refund. No fine print, no runaround.</span><span lang="es">Los planes anuales se renuevan automaticamente cada ano. Te enviare un recordatorio 30 dias antes de tu fecha de renovacion. Si quieres cancelar, solo avisame antes de la renovacion y no se te cobrara. Si la renovacion se procesa y cambias de opinion, tienes 14 dias para un reembolso completo. Sin letra pequena, sin complicaciones.</span></p>
       </details>
       <details>
         <summary><span lang="en">What if I need something bigger?</span><span lang="es">Que pasa si necesito algo mas grande?</span></summary>
