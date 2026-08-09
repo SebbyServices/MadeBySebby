@@ -790,7 +790,7 @@
 
     <div class="price-toggle reveal">
       <span><span lang="en">Monthly</span><span lang="es">Mensual</span></span>
-      <button class="toggle-switch" id="billingToggle" aria-label="Toggle annual billing" onclick="this.classList.toggle('active');document.getElementById('pricingPlans').classList.toggle('show-annual')"></button>
+      <button class="toggle-switch" id="billingToggle" aria-label="Toggle annual billing" onclick="this.classList.toggle('active');var p=document.getElementById('pricingPlans');p.classList.toggle('show-annual');var isAnnual=p.classList.contains('show-annual');p.querySelectorAll('.plan-cta-monthly').forEach(function(el){el.style.display=isAnnual?'none':'inline-flex'});p.querySelectorAll('.plan-cta-annual').forEach(function(el){el.style.display=isAnnual?'inline-flex':'none'})"></button>
       <span><span lang="en">Annual</span><span lang="es">Anual</span></span>
       <span class="save"><span lang="en">Save 10-12%</span><span lang="es">Ahorra 10-12%</span></span>
     </div>
@@ -809,7 +809,8 @@
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">48-hour response time</span><span lang="es">Tiempo de respuesta de 48 horas</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Edits available as add-on</span><span lang="es">Ediciones disponibles como complemento</span></li>
         </ul>
-        <a class="btn btn-ghost" href="https://cal.com/madebysebby/chat" target="_blank" rel="noopener"><span lang="en">Choose Essentials</span><span lang="es">Elegir Esencial</span></a>
+        <a class="btn btn-ghost plan-cta-monthly" href="https://link.waveapps.com/cnf8ay-upmnpb" target="_blank" rel="noopener"><span lang="en">Start Essentials</span><span lang="es">Comenzar Esencial</span></a>
+        <a class="btn btn-ghost plan-cta-annual" href="https://link.waveapps.com/bejbhr-xekxzx" target="_blank" rel="noopener" style="display:none"><span lang="en">Start Essentials (Annual)</span><span lang="es">Comenzar Esencial (Anual)</span></a>
       </div>
       <div class="plan reveal featured">
         <h3><span lang="en">Standard</span><span lang="es">Estandar</span></h3>
@@ -824,7 +825,8 @@
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">SSL certificate management</span><span lang="es">Gestion de certificado SSL</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Google Analytics monitoring</span><span lang="es">Monitoreo de Google Analytics</span></li>
         </ul>
-        <a class="btn" href="https://cal.com/madebysebby/chat" target="_blank" rel="noopener"><span lang="en">Choose Standard</span><span lang="es">Elegir Estandar</span></a>
+        <a class="btn plan-cta-monthly" href="https://link.waveapps.com/5hmu99-yqmucp" target="_blank" rel="noopener"><span lang="en">Start Standard</span><span lang="es">Comenzar Estandar</span></a>
+        <a class="btn plan-cta-annual" href="https://link.waveapps.com/fyehtw-53d3g8" target="_blank" rel="noopener" style="display:none"><span lang="en">Start Standard (Annual)</span><span lang="es">Comenzar Estandar (Anual)</span></a>
       </div>
       <div class="plan reveal">
         <h3><span lang="en">Growth</span><span lang="es">Crecimiento</span></h3>
@@ -839,7 +841,8 @@
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">SEO monitoring + content updates</span><span lang="es">Monitoreo SEO y actualizaciones de contenido</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Quarterly strategy call</span><span lang="es">Llamada trimestral de estrategia</span></li>
         </ul>
-        <a class="btn btn-ghost" href="https://cal.com/madebysebby/chat" target="_blank" rel="noopener"><span lang="en">Choose Growth</span><span lang="es">Elegir Crecimiento</span></a>
+        <a class="btn btn-ghost plan-cta-monthly" href="https://link.waveapps.com/ezt8u4-kvsmgf" target="_blank" rel="noopener"><span lang="en">Start Growth</span><span lang="es">Comenzar Crecimiento</span></a>
+        <a class="btn btn-ghost plan-cta-annual" href="https://link.waveapps.com/bp28zk-wg83ks" target="_blank" rel="noopener" style="display:none"><span lang="en">Start Growth (Annual)</span><span lang="es">Comenzar Crecimiento (Anual)</span></a>
       </div>
     </div>
 
@@ -940,18 +943,21 @@
         <div class="pack-price">$49</div>
         <div class="pack-per"><span lang="en">one-time</span><span lang="es">unico pago</span></div>
         <p><span lang="en">One focused change: swap a photo, update text, fix a link, add a testimonial.</span><span lang="es">Un cambio especifico: cambiar una foto, actualizar texto, arreglar un enlace, agregar un testimonio.</span></p>
+        <a class="btn btn-ghost" href="https://link.waveapps.com/hu5d4c-sc2cnw" target="_blank" rel="noopener" style="margin-top:16px;font-size:.88rem"><span lang="en">Buy Single Edit</span><span lang="es">Comprar Edicion</span></a>
       </div>
       <div class="edit-pack reveal">
         <h3><span lang="en">3-Pack</span><span lang="es">Paquete de 3</span></h3>
         <div class="pack-price">$129</div>
         <div class="pack-per"><span lang="en">$43/edit</span><span lang="es">$43/edicion</span></div>
         <p><span lang="en">Three edits to use whenever you need them. No expiration.</span><span lang="es">Tres ediciones para usar cuando las necesites. Sin vencimiento.</span></p>
+        <a class="btn btn-ghost" href="https://link.waveapps.com/u5nxs5-gy4rfs" target="_blank" rel="noopener" style="margin-top:16px;font-size:.88rem"><span lang="en">Buy 3-Pack</span><span lang="es">Comprar Paquete de 3</span></a>
       </div>
       <div class="edit-pack reveal">
         <h3><span lang="en">5-Pack</span><span lang="es">Paquete de 5</span></h3>
         <div class="pack-price">$199</div>
         <div class="pack-per"><span lang="en">$40/edit</span><span lang="es">$40/edicion</span></div>
         <p><span lang="en">Five edits, best value. Perfect for seasonal updates or a site refresh.</span><span lang="es">Cinco ediciones, mejor valor. Perfecto para actualizaciones de temporada o renovar tu sitio.</span></p>
+        <a class="btn btn-ghost" href="https://link.waveapps.com/rscsuc-hj8hg7" target="_blank" rel="noopener" style="margin-top:16px;font-size:.88rem"><span lang="en">Buy 5-Pack</span><span lang="es">Comprar Paquete de 5</span></a>
       </div>
     </div>
   </div>
@@ -1099,6 +1105,8 @@
       <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
       <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
       <a href="blog.html"><span lang="en">Blog</span><span lang="es">Blog</span></a>
+      <a href="privacy.html"><span lang="en">Privacy</span><span lang="es">Privacidad</span></a>
+      <a href="terms.html"><span lang="en">Terms</span><span lang="es">Términos</span></a>
       <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
     </div>
   </div>
