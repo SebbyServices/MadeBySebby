@@ -164,6 +164,7 @@
 
   /* Work */
   .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .work-duo{grid-template-columns:repeat(2,minmax(0,420px))}
   .tile{
     border-radius:var(--radius);border:1px solid var(--line);overflow:hidden;
     background:var(--white);transition:transform .18s, box-shadow .18s, border-color .18s;
@@ -241,14 +242,15 @@
   @media (max-width:900px){
     .hero-grid{grid-template-columns:1fr;gap:44px}
     .portrait{max-width:420px;margin:0 auto}
-    .cards,.steps,.work-grid{grid-template-columns:1fr 1fr}
+    .cards,.steps,.work-grid,.work-duo{grid-template-columns:1fr 1fr}
     .care{grid-template-columns:1fr;padding:52px 36px}
   }
   @media (max-width:640px){
-    .cards,.steps,.work-grid,.quotes{grid-template-columns:1fr}
+    .cards,.steps,.work-grid,.work-duo,.quotes{grid-template-columns:1fr}
     section{padding:68px 0}
     .hero{padding:56px 0 48px}
     .trust-inner{justify-content:flex-start}
+    .tile .shot{aspect-ratio:16/8}
   }
 
   /* Final brand lockup */
@@ -807,7 +809,7 @@
       <h2><span lang="en">Recent work.</span><span lang="es">Trabajo reciente.</span></h2>
       <p><span lang="en">Real businesses, real results. Every one of these owners can tell you what working with me is like.</span><span lang="es">Negocios reales, resultados reales. Cada uno de estos dueños puede contarte cómo es trabajar conmigo.</span></p>
     </div>
-    <div class="work-grid" style="grid-template-columns:repeat(2,minmax(280px,420px))">
+    <div class="work-grid work-duo">
       <a class="tile reveal" href="case-study-rieralaw.html">
         <div class="shot"><picture><source srcset="assets/hero-rieralaw.webp" type="image/webp"><img src="assets/hero-rieralaw.jpg" alt="Riera Law Firm homepage — securities arbitration attorney with courthouse background" loading="lazy"></picture></div>
         <div class="meta"><h3>Riera Law Firm</h3><p><span lang="en">Securities law · Full bilingual build, 70+ pages, ongoing care</span><span lang="es">Derecho de valores · Sitio bilingüe completo, 70+ páginas, cuidado continuo</span></p></div>
