@@ -617,17 +617,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Essentials Website Care",
-          "description": "Weekly updates, daily backups, 24/7 uptime monitoring, and monthly health reports for simple websites"
-        }
-      },
-      {
-        "@type": "Offer",
-        "price": "179",
-        "priceCurrency": "USD",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Standard Website Care",
-          "description": "Everything in Essentials plus 2 hours of edits, speed optimization, same-day response, SSL management, and Google Analytics monitoring"
+          "description": "Weekly tested software and security updates, daily off-site backups, uptime and security monitoring around the clock, monthly health report in plain English, and response within two business days"
         }
       },
       {
@@ -636,8 +626,18 @@
         "priceCurrency": "USD",
         "itemOffered": {
           "@type": "Service",
+          "name": "Standard Website Care",
+          "description": "Everything in Essentials plus 1 hour of content edits, quarterly speed and performance tuning, backup restoration if compromised, and one-business-day response"
+        }
+      },
+      {
+        "@type": "Offer",
+        "price": "549",
+        "priceCurrency": "USD",
+        "itemOffered": {
+          "@type": "Service",
           "name": "Growth Website Care",
-          "description": "Everything in Standard plus 4 hours of edits, monthly speed optimization, 4-hour response, SEO monitoring, and quarterly strategy calls"
+          "description": "Everything in Standard plus 2 hours monthly for edits and on-page SEO, monthly Search Console and Analytics review, quarterly 30-minute strategy call, and 4-business-hour critical outage response"
         }
       }
     ]
@@ -654,23 +654,23 @@
       "name": "What if you didn't build my website?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "That's fine. I'll do a health check first so we both know what shape it's in, then take it from there. Most sites I care for were built by someone else."
+        "text": "That's fine. Every plan starts with a free health check so we both know what shape your site is in. If the health check finds preexisting problems, I'll quote that remediation separately and the plan starts once your site is on solid footing. Most sites I care for were built by someone else."
       }
     },
     {
       "@type": "Question",
-      "name": "What counts as a small edit?",
+      "name": "What counts as included edit time?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Swapping photos, updating hours or prices, adding a testimonial, tweaking text. If something is bigger, I'll tell you before I start and quote it plainly. No surprise invoices, ever."
+        "text": "Changes to existing pages using content you provide: swapping photos, updating hours or prices, adding a testimonial, tweaking text. Included time does not roll over month to month. Work beyond your included hours is $125/hr, always approved by you first. New pages, redesigns, copywriting, online stores, and custom features are quoted separately."
       }
     },
     {
       "@type": "Question",
-      "name": "What happens if my site goes down?",
+      "name": "What happens if my site goes down or gets hacked?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "I usually know before you do. Monitoring alerts me the moment something's wrong, and getting you back online becomes my first priority."
+        "text": "I usually know before you do. Monitoring alerts me the moment something's wrong, and getting you back online becomes my first priority. Standard and Growth plans include restoration from a verified clean backup. If the issue requires deeper malware cleanup, forensics, or third-party remediation, I'll scope and quote that work before any additional billing."
       }
     },
     {
@@ -694,15 +694,23 @@
       "name": "Do edit hours roll over?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Not month to month, but I'm flexible. If you didn't use your hours in June and need a little extra in July, we'll work it out. I'm reasonable and I want your site to look great."
+        "text": "No, included hours do not roll over month to month. Any work beyond your included time is billed at $125/hr, always with your approval before I start."
       }
     },
     {
       "@type": "Question",
-      "name": "What if I need something bigger than a small edit?",
+      "name": "What if I need something bigger than an edit?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "New landing pages, redesigns, or custom features go beyond regular care. I'll scope it separately and give you a clear quote before any work starts. Care plan clients get priority scheduling and preferred rates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about e-commerce or complex sites?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "These plans cover standard business and brochure sites. WooCommerce, online stores, membership sites, LMS platforms, multisite, and heavily custom builds need more hands-on time and are priced individually after the free health check."
       }
     }
   ]
@@ -774,8 +782,8 @@
         <p><span lang="en">Websites hacked every single day</span><span lang="es">Sitios web hackeados cada dia</span></p>
       </div>
       <div class="stat-card reveal">
-        <div class="num">$3K-$25K</div>
-        <p><span lang="en">Average cost to recover from a breach</span><span lang="es">Costo promedio para recuperarse de una brecha</span></p>
+        <div class="num">$3K+</div>
+        <p><span lang="en">Typical cost to recover from a breach</span><span lang="es">Costo típico para recuperarse de una brecha</span></p>
       </div>
       <div class="stat-card reveal">
         <div class="num">53%</div>
@@ -801,7 +809,7 @@
       <span><span lang="en">Monthly</span><span lang="es">Mensual</span></span>
       <button class="toggle-switch" id="billingToggle" aria-label="Toggle annual billing" onclick="this.classList.toggle('active');var p=document.getElementById('pricingPlans');p.classList.toggle('show-annual');var isAnnual=p.classList.contains('show-annual');p.querySelectorAll('.plan-cta-monthly').forEach(function(el){el.style.display=isAnnual?'none':'inline-flex'});p.querySelectorAll('.plan-cta-annual').forEach(function(el){el.style.display=isAnnual?'inline-flex':'none'});var n=document.getElementById('annualNote');if(n)n.style.display=isAnnual?'block':'none'"></button>
       <span><span lang="en">Annual</span><span lang="es">Anual</span></span>
-      <span class="save"><span lang="en">Save 10-12%</span><span lang="es">Ahorra 10-12%</span></span>
+      <span class="save"><span lang="en">Save ~8%</span><span lang="es">Ahorra ~8%</span></span>
     </div>
     <div style="text-align:center;margin-bottom:28px;font-size:.85rem;color:var(--muted);display:none" id="annualNote">
       <span lang="en">Annual plans are billed as a one-time yearly payment. Auto-renews annually with 30 days' notice. 14-day refund window after each renewal.</span>
@@ -813,55 +821,56 @@
         <h3><span lang="en">Essentials</span><span lang="es">Esencial</span></h3>
         <p class="for"><span lang="en">For simple sites that need to stay healthy</span><span lang="es">Para sitios simples que necesitan mantenerse saludables</span></p>
         <div class="price price-monthly">$99<em>/mo</em></div>
-        <div class="price price-annual">$1,068<em>/yr</em></div>
-        <div class="price-annual" style="font-size:.85rem;color:var(--muted);margin-bottom:4px;display:none"><span lang="en">$89/mo equivalent</span><span lang="es">equivalente a $89/mes</span></div>
+        <div class="price price-annual">$1,089<em>/yr</em></div>
+        <div class="price-annual" style="font-size:.85rem;color:var(--muted);margin-bottom:4px;display:none"><span lang="en">$90.75/mo equivalent</span><span lang="es">equivalente a $90.75/mes</span></div>
         <ul class="checklist">
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Weekly software + security updates</span><span lang="es">Actualizaciones semanales de software y seguridad</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Daily off-site backups (30-day retention)</span><span lang="es">Respaldos diarios fuera del sitio (30 días)</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">24/7 uptime monitoring</span><span lang="es">Monitoreo de disponibilidad 24/7</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Monthly health report</span><span lang="es">Informe mensual de salud</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">48-hour response time</span><span lang="es">Tiempo de respuesta de 48 horas</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Edits available as add-on</span><span lang="es">Ediciones disponibles como complemento</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Weekly tested software and security updates</span><span lang="es">Actualizaciones semanales de software y seguridad verificadas</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Daily off-site backups</span><span lang="es">Respaldos diarios fuera del sitio</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Uptime and security monitoring around the clock</span><span lang="es">Monitoreo de disponibilidad y seguridad las 24 horas</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Monthly health report in plain English</span><span lang="es">Informe mensual de salud en términos claros</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Response within two business days</span><span lang="es">Respuesta dentro de dos días hábiles</span></li>
         </ul>
-        <a class="btn btn-ghost plan-cta-monthly" href="https://link.waveapps.com/cnf8ay-upmnpb" target="_blank" rel="noopener"><span lang="en">Start Essentials</span><span lang="es">Comenzar Esencial</span></a>
-        <a class="btn btn-ghost plan-cta-annual" href="https://link.waveapps.com/bejbhr-xekxzx" target="_blank" rel="noopener" style="display:none"><span lang="en">Start Essentials (Annual)</span><span lang="es">Comenzar Esencial (Anual)</span></a>
+        <a class="btn btn-ghost plan-cta-monthly" href="https://link.waveapps.com/cnf8ay-upmnpb" target="_blank" rel="noopener"><span lang="en">Choose Essentials</span><span lang="es">Elegir Esencial</span></a>
+        <a class="btn btn-ghost plan-cta-annual" href="https://link.waveapps.com/bejbhr-xekxzx" target="_blank" rel="noopener" style="display:none"><span lang="en">Choose Essentials (Annual)</span><span lang="es">Elegir Esencial (Anual)</span></a>
       </div>
       <div class="plan reveal featured">
         <h3><span lang="en">Standard</span><span lang="es">Estandar</span></h3>
         <p class="for"><span lang="en">For businesses whose website brings in customers</span><span lang="es">Para negocios cuyo sitio web atrae clientes</span></p>
-        <div class="price price-monthly">$179<em>/mo</em></div>
-        <div class="price price-annual">$1,908<em>/yr</em></div>
-        <div class="price-annual" style="font-size:.85rem;color:var(--muted);margin-bottom:4px;display:none"><span lang="en">$159/mo equivalent</span><span lang="es">equivalente a $159/mes</span></div>
+        <div class="price price-monthly">$249<em>/mo</em></div>
+        <div class="price price-annual">$2,739<em>/yr</em></div>
+        <div class="price-annual" style="font-size:.85rem;color:var(--muted);margin-bottom:4px;display:none"><span lang="en">$228.25/mo equivalent</span><span lang="es">equivalente a $228.25/mes</span></div>
         <ul class="checklist">
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Everything in Essentials</span><span lang="es">Todo lo del plan Esencial</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">2 hours of edits + updates per month</span><span lang="es">2 horas de ediciones y actualizaciones al mes</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Speed optimization (quarterly)</span><span lang="es">Optimizacion de velocidad (trimestral)</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Same-day response time</span><span lang="es">Tiempo de respuesta el mismo dia</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">SSL certificate management</span><span lang="es">Gestion de certificado SSL</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Google Analytics monitoring</span><span lang="es">Monitoreo de Google Analytics</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">One hour of content edits every month</span><span lang="es">Una hora de ediciones de contenido cada mes</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Quarterly speed and performance tuning</span><span lang="es">Optimización de velocidad y rendimiento trimestral</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Restoration from a clean backup if the site is compromised</span><span lang="es">Restauración desde un respaldo limpio si el sitio es comprometido</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Response within one business day</span><span lang="es">Respuesta dentro de un día hábil</span></li>
         </ul>
-        <a class="btn plan-cta-monthly" href="https://link.waveapps.com/5hmu99-yqmucp" target="_blank" rel="noopener"><span lang="en">Start Standard</span><span lang="es">Comenzar Estandar</span></a>
-        <a class="btn plan-cta-annual" href="https://link.waveapps.com/fyehtw-53d3g8" target="_blank" rel="noopener" style="display:none"><span lang="en">Start Standard (Annual)</span><span lang="es">Comenzar Estandar (Anual)</span></a>
+        <a class="btn plan-cta-monthly" href="https://link.waveapps.com/5hmu99-yqmucp" target="_blank" rel="noopener"><span lang="en">Choose Standard</span><span lang="es">Elegir Estandar</span></a>
+        <a class="btn plan-cta-annual" href="https://link.waveapps.com/fyehtw-53d3g8" target="_blank" rel="noopener" style="display:none"><span lang="en">Choose Standard (Annual)</span><span lang="es">Elegir Estandar (Anual)</span></a>
       </div>
       <div class="plan reveal">
         <h3><span lang="en">Growth</span><span lang="es">Crecimiento</span></h3>
         <p class="for"><span lang="en">For businesses actively growing online</span><span lang="es">Para negocios que están creciendo activamente en línea</span></p>
-        <div class="price price-monthly">$249<em>/mo</em></div>
-        <div class="price price-annual">$2,628<em>/yr</em></div>
-        <div class="price-annual" style="font-size:.85rem;color:var(--muted);margin-bottom:4px;display:none"><span lang="en">$219/mo equivalent</span><span lang="es">equivalente a $219/mes</span></div>
+        <div class="price price-monthly">$549<em>/mo</em></div>
+        <div class="price price-annual">$6,039<em>/yr</em></div>
+        <div class="price-annual" style="font-size:.85rem;color:var(--muted);margin-bottom:4px;display:none"><span lang="en">$503.25/mo equivalent</span><span lang="es">equivalente a $503.25/mes</span></div>
         <ul class="checklist">
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Everything in Standard</span><span lang="es">Todo lo del plan Estandar</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">4 hours of edits + updates per month</span><span lang="es">4 horas de ediciones y actualizaciones al mes</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Monthly speed optimization</span><span lang="es">Optimizacion de velocidad mensual</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">4-hour priority response</span><span lang="es">Respuesta prioritaria en 4 horas</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">SEO monitoring + content updates</span><span lang="es">Monitoreo SEO y actualizaciones de contenido</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Quarterly strategy call</span><span lang="es">Llamada trimestral de estrategia</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Two hours monthly for edits, on-page SEO, and site improvements</span><span lang="es">Dos horas mensuales para ediciones, SEO on-page y mejoras del sitio</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Monthly review of Search Console, Analytics, and Core Web Vitals</span><span lang="es">Revisión mensual de Search Console, Analytics y Core Web Vitals</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Quarterly 30-minute strategy call</span><span lang="es">Llamada trimestral de estrategia de 30 minutos</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Critical outages acknowledged within four business hours</span><span lang="es">Interrupciones críticas atendidas dentro de cuatro horas hábiles</span></li>
         </ul>
-        <a class="btn btn-ghost plan-cta-monthly" href="https://link.waveapps.com/ezt8u4-kvsmgf" target="_blank" rel="noopener"><span lang="en">Start Growth</span><span lang="es">Comenzar Crecimiento</span></a>
-        <a class="btn btn-ghost plan-cta-annual" href="https://link.waveapps.com/bp28zk-wg83ks" target="_blank" rel="noopener" style="display:none"><span lang="en">Start Growth (Annual)</span><span lang="es">Comenzar Crecimiento (Anual)</span></a>
+        <a class="btn btn-ghost plan-cta-monthly" href="https://link.waveapps.com/ezt8u4-kvsmgf" target="_blank" rel="noopener"><span lang="en">Choose Growth</span><span lang="es">Elegir Crecimiento</span></a>
+        <a class="btn btn-ghost plan-cta-annual" href="https://link.waveapps.com/bp28zk-wg83ks" target="_blank" rel="noopener" style="display:none"><span lang="en">Choose Growth (Annual)</span><span lang="es">Elegir Crecimiento (Anual)</span></a>
       </div>
     </div>
-    <p style="text-align:center;font-size:.82rem;color:var(--muted);margin-top:20px"><span lang="en">By starting a plan, you agree to our <a href="terms.html" style="color:var(--purple);text-decoration:underline">Terms of Service</a>.</span><span lang="es">Al iniciar un plan, aceptas nuestros <a href="terms.html" style="color:var(--purple);text-decoration:underline">Terminos de Servicio</a>.</span></p>
+    <div style="max-width:44em;margin:28px auto 0;text-align:center;font-size:.9rem;color:var(--ink-soft);line-height:1.65">
+      <p><span lang="en">Work beyond your included time is <strong>$125 per hour</strong>, always approved by you before I start. Included time covers changes to existing pages and does not roll over month to month. New pages, redesigns, copywriting, online stores, and custom features are always quoted separately, so there are no surprise invoices, ever.</span><span lang="es">El trabajo fuera de tu tiempo incluido es <strong>$125 por hora</strong>, siempre aprobado por ti antes de comenzar. El tiempo incluido cubre cambios a páginas existentes y no se acumula mes a mes. Páginas nuevas, rediseños, redacción de contenido, tiendas en línea y funciones personalizadas siempre se cotizan por separado, para que nunca haya facturas sorpresa.</span></p>
+      <p style="margin-top:12px;font-size:.84rem;color:var(--muted)"><span lang="en">Plans cover standard business and brochure sites. E-commerce, membership, LMS, and heavily custom sites are priced individually after a free health check. Hosting can be included for eligible sites, confirmed during the health check. Response times reflect acknowledgement during business hours (Mon-Fri 9am-6pm ET).</span><span lang="es">Los planes cubren sitios web estándar de negocios. Sitios de comercio electrónico, membresías, LMS y sitios altamente personalizados se cotizan individualmente después de una revisión de salud gratuita. El alojamiento puede incluirse para sitios elegibles, confirmado durante la revisión. Los tiempos de respuesta reflejan confirmación durante horario laboral (lun-vie 9am-6pm ET).</span></p>
+      <p style="margin-top:12px;font-size:.82rem;color:var(--muted)"><span lang="en">By starting a plan, you agree to the care plan terms on this page and our <a href="terms.html" style="color:var(--purple);text-decoration:underline">Terms of Service</a>.</span><span lang="es">Al iniciar un plan, aceptas los términos del plan de cuidado en esta página y nuestros <a href="terms.html" style="color:var(--purple);text-decoration:underline">Términos de Servicio</a>.</span></p>
+    </div>
 
     <!-- Comparison table -->
     <div class="compare reveal">
@@ -888,7 +897,7 @@
             <td><span lang="en">Daily</span><span lang="es">Diario</span></td>
           </tr>
           <tr>
-            <td><span lang="en">Uptime monitoring</span><span lang="es">Monitoreo de disponibilidad</span></td>
+            <td><span lang="en">Uptime + security monitoring</span><span lang="es">Monitoreo de disponibilidad y seguridad</span></td>
             <td class="check">&#10003;</td>
             <td class="check">&#10003;</td>
             <td class="check">&#10003;</td>
@@ -901,39 +910,33 @@
           </tr>
           <tr>
             <td><span lang="en">Response time</span><span lang="es">Tiempo de respuesta</span></td>
-            <td><span lang="en">48 hrs</span><span lang="es">48 hrs</span></td>
-            <td><span lang="en">Same day</span><span lang="es">Mismo dia</span></td>
-            <td><span lang="en">4 hours</span><span lang="es">4 horas</span></td>
+            <td><span lang="en">2 business days</span><span lang="es">2 días hábiles</span></td>
+            <td><span lang="en">1 business day</span><span lang="es">1 día hábil</span></td>
+            <td><span lang="en">4 business hrs (critical)</span><span lang="es">4 hrs hábiles (crítico)</span></td>
           </tr>
           <tr>
             <td><span lang="en">Content edits included</span><span lang="es">Ediciones de contenido incluidas</span></td>
-            <td class="dash"><span lang="en">Add-on</span><span lang="es">Complemento</span></td>
+            <td class="dash">-</td>
+            <td><span lang="en">1 hr/mo</span><span lang="es">1 hr/mes</span></td>
             <td><span lang="en">2 hrs/mo</span><span lang="es">2 hrs/mes</span></td>
-            <td><span lang="en">4 hrs/mo</span><span lang="es">4 hrs/mes</span></td>
           </tr>
           <tr>
-            <td><span lang="en">Speed optimization</span><span lang="es">Optimizacion de velocidad</span></td>
+            <td><span lang="en">Speed + performance tuning</span><span lang="es">Optimización de velocidad y rendimiento</span></td>
             <td class="dash">-</td>
             <td><span lang="en">Quarterly</span><span lang="es">Trimestral</span></td>
+            <td><span lang="en">Quarterly</span><span lang="es">Trimestral</span></td>
+          </tr>
+          <tr>
+            <td><span lang="en">Backup restoration (compromised site)</span><span lang="es">Restauración de respaldo (sitio comprometido)</span></td>
+            <td class="dash">-</td>
+            <td class="check">&#10003;</td>
+            <td class="check">&#10003;</td>
+          </tr>
+          <tr>
+            <td><span lang="en">Search Console + Analytics review</span><span lang="es">Revisión de Search Console y Analytics</span></td>
+            <td class="dash">-</td>
+            <td class="dash">-</td>
             <td><span lang="en">Monthly</span><span lang="es">Mensual</span></td>
-          </tr>
-          <tr>
-            <td><span lang="en">SSL management</span><span lang="es">Gestion SSL</span></td>
-            <td class="dash">-</td>
-            <td class="check">&#10003;</td>
-            <td class="check">&#10003;</td>
-          </tr>
-          <tr>
-            <td><span lang="en">Google Analytics</span><span lang="es">Google Analytics</span></td>
-            <td class="dash">-</td>
-            <td class="check">&#10003;</td>
-            <td class="check">&#10003;</td>
-          </tr>
-          <tr>
-            <td><span lang="en">SEO monitoring</span><span lang="es">Monitoreo SEO</span></td>
-            <td class="dash">-</td>
-            <td class="dash">-</td>
-            <td class="check">&#10003;</td>
           </tr>
           <tr>
             <td><span lang="en">Strategy calls</span><span lang="es">Llamadas de estrategia</span></td>
@@ -959,21 +962,21 @@
         <h3><span lang="en">Single Edit</span><span lang="es">Edición Individual</span></h3>
         <div class="pack-price">$49</div>
         <div class="pack-per"><span lang="en">one-time</span><span lang="es">único pago</span></div>
-        <p><span lang="en">One focused change: swap a photo, update text, fix a link, add a testimonial.</span><span lang="es">Un cambio específico: cambiar una foto, actualizar texto, arreglar un enlace, agregar un testimonio.</span></p>
+        <p><span lang="en">One focused change (30 min or less of client-supplied work): swap a photo, update text, fix a link, add a testimonial.</span><span lang="es">Un cambio específico (30 min o menos de trabajo con contenido del cliente): cambiar una foto, actualizar texto, arreglar un enlace, agregar un testimonio.</span></p>
         <a class="btn btn-ghost" href="https://link.waveapps.com/hu5d4c-sc2cnw" target="_blank" rel="noopener" style="margin-top:16px;font-size:.88rem"><span lang="en">Buy Single Edit</span><span lang="es">Comprar Edición</span></a>
       </div>
       <div class="edit-pack reveal">
         <h3><span lang="en">3-Pack</span><span lang="es">Paquete de 3</span></h3>
         <div class="pack-price">$129</div>
         <div class="pack-per"><span lang="en">$43/edit</span><span lang="es">$43/edición</span></div>
-        <p><span lang="en">Three edits to use whenever you need them. No expiration.</span><span lang="es">Tres ediciones para usar cuando las necesites. Sin vencimiento.</span></p>
+        <p><span lang="en">Three edits (30 min each) to use within 12 months of purchase.</span><span lang="es">Tres ediciones (30 min cada una) para usar dentro de 12 meses de la compra.</span></p>
         <a class="btn btn-ghost" href="https://link.waveapps.com/u5nxs5-gy4rfs" target="_blank" rel="noopener" style="margin-top:16px;font-size:.88rem"><span lang="en">Buy 3-Pack</span><span lang="es">Comprar Paquete de 3</span></a>
       </div>
       <div class="edit-pack reveal">
         <h3><span lang="en">5-Pack</span><span lang="es">Paquete de 5</span></h3>
         <div class="pack-price">$199</div>
         <div class="pack-per"><span lang="en">$40/edit</span><span lang="es">$40/edición</span></div>
-        <p><span lang="en">Five edits, best value. Perfect for seasonal updates or a site refresh.</span><span lang="es">Cinco ediciones, mejor valor. Perfecto para actualizaciones de temporada o renovar tu sitio.</span></p>
+        <p><span lang="en">Five edits (30 min each), best value. Use within 12 months of purchase. Perfect for seasonal updates.</span><span lang="es">Cinco ediciones (30 min cada una), mejor valor. Usar dentro de 12 meses de la compra. Perfecto para actualizaciones de temporada.</span></p>
         <a class="btn btn-ghost" href="https://link.waveapps.com/rscsuc-hj8hg7" target="_blank" rel="noopener" style="margin-top:16px;font-size:.88rem"><span lang="en">Buy 5-Pack</span><span lang="es">Comprar Paquete de 5</span></a>
       </div>
     </div>
@@ -986,11 +989,11 @@
     <div class="math-callout reveal">
       <div>
         <h2><span lang="en">Do the math.</span><span lang="es">Haz la cuenta.</span></h2>
-        <p><span lang="en">A single security breach costs small businesses $3,000 to $25,000 on average. An Essentials plan for a full year costs less than a single incident. Prevention always costs less than recovery.</span><span lang="es">Una sola brecha de seguridad le cuesta a las pequeñas empresas entre $3,000 y $25,000 en promedio. Un plan Esencial por un año completo cuesta menos que un solo incidente. La prevención siempre cuesta menos que la recuperación.</span></p>
+        <p><span lang="en">Security breaches can cost small businesses thousands in lost revenue, recovery, and reputation damage. An Essentials plan for a full year costs a fraction of a single incident.</span><span lang="es">Las brechas de seguridad pueden costarle a las pequeñas empresas miles en ingresos perdidos, recuperación y daño a la reputación. Un plan Esencial por un año completo cuesta una fracción de un solo incidente.</span></p>
       </div>
       <div class="math-vs">
         <div class="vs-item">
-          <div class="vs-label"><span lang="en">Website Care (1 year)</span><span lang="es">Cuidado Web (1 año)</span></div>
+          <div class="vs-label"><span lang="en">Essentials (12 monthly payments)</span><span lang="es">Esencial (12 pagos mensuales)</span></div>
           <div class="vs-price">$1,188 <em><span lang="en">/ year</span><span lang="es">/ año</span></em></div>
           <div class="vs-note"><span lang="en">Daily backups, updates, monitoring, peace of mind</span><span lang="es">Respaldos diarios, actualizaciones, monitoreo, tranquilidad</span></div>
         </div>
@@ -1066,15 +1069,15 @@
     <div class="faq">
       <details>
         <summary><span lang="en">What if you didn't build my website?</span><span lang="es">¿Y si tú no construiste mi sitio web?</span></summary>
-        <p><span lang="en">That's fine. I'll do a health check first so we both know what shape it's in, then take it from there. Most sites I care for were built by someone else.</span><span lang="es">No hay problema. Primero haré una revisión de salud para que ambos sepamos en qué estado está, y avanzamos desde ahí. La mayoría de los sitios que cuido fueron construidos por otra persona.</span></p>
+        <p><span lang="en">That's fine. Every plan starts with a free health check so we both know what shape your site is in. If the health check finds preexisting problems, I'll quote that remediation separately and the plan starts once your site is on solid footing. Most sites I care for were built by someone else.</span><span lang="es">No hay problema. Cada plan comienza con una revisión de salud gratuita para que ambos sepamos en qué estado está tu sitio. Si la revisión encuentra problemas preexistentes, cotizo esa corrección por separado y el plan comienza una vez que tu sitio esté en buenas condiciones. La mayoría de los sitios que cuido fueron construidos por otra persona.</span></p>
       </details>
       <details>
-        <summary><span lang="en">What counts as a "small edit"?</span><span lang="es">¿Qué cuenta como una "edición pequeña"?</span></summary>
-        <p><span lang="en">Swapping photos, updating hours or prices, adding a testimonial, tweaking text. If something is bigger, I'll tell you before I start and quote it plainly. No surprise invoices, ever.</span><span lang="es">Cambiar fotos, actualizar horarios o precios, agregar un testimonio, ajustar texto. Si algo es más grande, te lo digo antes de empezar y te doy un precio claro. Sin facturas sorpresa, nunca.</span></p>
+        <summary><span lang="en">What counts as included edit time?</span><span lang="es">¿Qué cuenta como tiempo de edición incluido?</span></summary>
+        <p><span lang="en">Changes to existing pages using content you provide: swapping photos, updating hours or prices, adding a testimonial, tweaking text. Included time does not roll over month to month. Work beyond your included hours is $125/hr, always approved by you first. New pages, redesigns, copywriting, online stores, and custom features are quoted separately.</span><span lang="es">Cambios a páginas existentes usando contenido que tú proporcionas: cambiar fotos, actualizar horarios o precios, agregar un testimonio, ajustar texto. El tiempo incluido no se acumula mes a mes. El trabajo fuera de tus horas incluidas es $125/hr, siempre aprobado por ti primero. Páginas nuevas, rediseños, redacción de contenido, tiendas en línea y funciones personalizadas se cotizan por separado.</span></p>
       </details>
       <details>
-        <summary><span lang="en">What happens if my site goes down?</span><span lang="es">¿Qué pasa si mi sitio se cae?</span></summary>
-        <p><span lang="en">I usually know before you do. Monitoring alerts me the moment something's wrong, and getting you back online becomes my first priority.</span><span lang="es">Generalmente lo sé antes que tu. El monitoreo me alerta en cuanto algo anda mal, y ponerte de nuevo en línea se convierte en mi primera prioridad.</span></p>
+        <summary><span lang="en">What happens if my site goes down or gets hacked?</span><span lang="es">¿Qué pasa si mi sitio se cae o es hackeado?</span></summary>
+        <p><span lang="en">I usually know before you do. Monitoring alerts me the moment something's wrong, and getting you back online becomes my first priority. Standard and Growth plans include restoration from a verified clean backup. If the issue requires deeper malware cleanup, forensics, or third-party remediation, I'll scope and quote that work before any additional billing.</span><span lang="es">Generalmente lo sé antes que tú. El monitoreo me alerta en cuanto algo anda mal, y ponerte de nuevo en línea se convierte en mi primera prioridad. Los planes Estándar y Crecimiento incluyen restauración desde un respaldo limpio verificado. Si el problema requiere limpieza de malware más profunda, análisis forense o remediación de terceros, cotizo ese trabajo antes de cualquier facturación adicional.</span></p>
       </details>
       <details>
         <summary><span lang="en">Can I cancel?</span><span lang="es">¿Puedo cancelar?</span></summary>
@@ -1082,7 +1085,7 @@
       </details>
       <details>
         <summary><span lang="en">Do edit hours roll over?</span><span lang="es">¿Las horas de edición se acumulan?</span></summary>
-        <p><span lang="en">Not month to month, but I'm flexible. If you didn't use your hours in June and need a little extra in July, we'll work it out. I'm reasonable and I want your site to look great.</span><span lang="es">No se acumulan mes a mes, pero soy flexible. Si no usaste tus horas en junio y necesitas un poco más en julio, lo resolvemos. Soy razonable y quiero que tu sitio se vea excelente.</span></p>
+        <p><span lang="en">No, included hours do not roll over month to month. Any work beyond your included time is billed at $125/hr, always with your approval before I start.</span><span lang="es">No, las horas incluidas no se acumulan mes a mes. Cualquier trabajo fuera de tu tiempo incluido se factura a $125/hr, siempre con tu aprobación antes de comenzar.</span></p>
       </details>
       <details>
         <summary><span lang="en">How does annual plan renewal work?</span><span lang="es">¿Cómo funciona la renovación del plan anual?</span></summary>
@@ -1091,6 +1094,10 @@
       <details>
         <summary><span lang="en">What if I need something bigger?</span><span lang="es">¿Qué pasa si necesito algo más grande?</span></summary>
         <p><span lang="en">New landing pages, redesigns, or custom features go beyond regular care. I'll scope it separately and give you a clear quote before any work starts. Care plan clients get priority scheduling and preferred rates.</span><span lang="es">Nuevas páginas de destino, rediseños o funciones personalizadas van más allá del cuidado regular. Lo cotizo por separado y te doy un precio claro antes de comenzar cualquier trabajo. Los clientes de planes de cuidado obtienen programación prioritaria y tarifas preferenciales.</span></p>
+      </details>
+      <details>
+        <summary><span lang="en">What about e-commerce or complex sites?</span><span lang="es">¿Qué pasa con sitios de comercio electrónico o complejos?</span></summary>
+        <p><span lang="en">These plans cover standard business and brochure sites. WooCommerce, online stores, membership sites, LMS platforms, multisite, and heavily custom builds need more hands-on time and are priced individually after the free health check.</span><span lang="es">Estos planes cubren sitios web estándar de negocios. WooCommerce, tiendas en línea, sitios de membresías, plataformas LMS, multisite y sitios altamente personalizados requieren más tiempo y se cotizan individualmente después de la revisión de salud gratuita.</span></p>
       </details>
     </div>
   </div>
