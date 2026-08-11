@@ -30,6 +30,7 @@ jobs:
           find . -name '*.html' \
             -not -name '404.html' \
             -not -name 'thank-you.html' \
+            -not -name 'precios.html' \
             -not -name 'index.html' \
             | sed 's|^\./||' | sort \
             | while read f; do
