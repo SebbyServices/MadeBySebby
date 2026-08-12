@@ -11,7 +11,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -49,6 +49,11 @@ jobs:
           git commit -m "chore: auto-update sitemap.xml"
           git push
 
-      - name: Ping Google
-        if: success()
-        run: curl -s "https://www.google.com/ping?sitemap=https://madebysebby.com/sitemap.xml"
+# NOTE: There used to be a "Ping Google" step hitting
+# https://www.google.com/ping?sitemap=... — do not re-add it. Google retired
+# that endpoint in 2023; it now returns HTTP 404 with "Sitemaps ping is
+# deprecated" (see https://developers.google.com/search/blog/2023/06/sitemaps-lastmod-ping).
+# Because it ran as `curl -s` without `-f`, it exited 0 and the workflow kept
+# reporting success while doing nothing.
+# Google now discovers updates via the <lastmod> dates this workflow writes,
+# plus the sitemap registered in Search Console. Nothing to call.
