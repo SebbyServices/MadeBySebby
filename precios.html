@@ -224,8 +224,10 @@
   [data-theme="dark"] .btn-wa:hover{background:#1DA851}
 
   /* ---------- Print ---------- */
+  .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
+  .skip-link:focus{top:12px}
   @media print{
-    nav,.wa-fab,footer,.cta-btns{display:none!important}
+    nav,.wa-fab,footer,.cta-btns,.skip-link{display:none!important}
     body{color:#000;background:#fff}
     .wrap{max-width:100%;padding:0 12px}
     .plan{break-inside:avoid}
@@ -233,6 +235,8 @@
 </style>
 </head>
 <body>
+
+<a class="skip-link" href="#main">Ir al contenido</a>
 
 <nav>
   <div class="wrap nav-inner">
@@ -247,7 +251,7 @@
   </div>
 </nav>
 
-<main>
+<main id="main">
 
 <!-- Hero -->
 <section class="hero">
