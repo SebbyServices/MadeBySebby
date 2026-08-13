@@ -702,6 +702,51 @@ NAP = {
     ],
 }
 
+# ---------------------------------------------------------------------------
+# Canonical prices — Aug 13, 2026.
+#
+# The site was telling prospects FOUR different things a website costs: the home
+# page said $2,000-$8,000, the pricing page $1,500/$3,500/$7,000, the Miami and
+# Fort Lauderdale pages $3,000-$5,000, and the DR one-pager $500-$2,500. Read the
+# Miami page then click Pricing and the number halved. Transparent pricing is the
+# stated differentiator against every agency that answers "it depends", so a
+# contradiction here costs more than it would anywhere else.
+#
+# Floor raised from $1,500 to $2,500: the old entry sat in the dead zone between
+# the commodity shops ($349-$700) and the South Florida boutique band
+# ($2,500-$8,000) -- the one position with no story. Competitors deliver at
+# $1,999 with published turnaround times and 11 five-star reviews.
+#
+# Sources are prose in three files, in JSON-LD and in BOTH language spans, so
+# they are substituted from here rather than hand-edited. check-consistency.py
+# fails on any bare price literal left in src/.
+#
+# USD is explicit because Sebby bills in USD and Dominican cards work: without
+# it a DR reader may reasonably assume pesos and read a number 58x off.
+PRICES = {
+    "{{PRICE_STARTER}}": "$2,500",
+    "{{PRICE_CUSTOM}}": "$5,000",
+    "{{PRICE_PREMIUM}}": "$9,000",
+    "{{PRICE_LOW}}": "$2,500",
+    "{{PRICE_HIGH}}": "$9,000",
+    # Care plans keep their prices -- they are already well placed against a
+    # $79-$350/mo market. Tokenised anyway so a change is one edit.
+    "{{CARE_ESSENTIALS}}": "$99",
+    "{{CARE_STANDARD}}": "$249",
+    "{{CARE_GROWTH}}": "$549",
+    # What competing agencies charge. A claim about others, not a price of ours.
+    "{{AGENCY_LOW}}": "$10,000",
+    "{{AGENCY_HIGH}}": "$30,000",
+    "{{USD}}": "USD",
+}
+
+
+def substitute_prices(html):
+    for token, value in PRICES.items():
+        html = html.replace(token, value)
+    return html
+
+
 # Stable identity so every page's block is understood as ONE business rather
 # than a separate branch per landing page.
 BUSINESS_ID = DOMAIN + "/#business"
@@ -863,6 +908,9 @@ def rewrite_jsonld(html, source, lang, memory):
 
 
 def render(source, html, lang):
+    # Prices resolve FIRST so everything downstream -- the translation memory,
+    # the FAQ schema read out of the DOM -- sees real numbers rather than tokens.
+    html = substitute_prices(html)
     memory = pair_map(html)          # must be read BEFORE the split removes the pairs
     html = split_language(html, lang)
     html = strip_toggle_machinery(html, lang)
@@ -922,7 +970,11 @@ def build(src_dir, out_dir):
             written[rel] = render(source, raw, lang)
 
     for name in PASSTHROUGH:
-        written[name] = open(os.path.join(src_dir, name), encoding="utf-8").read()
+        # Passthrough pages skip the language split, but NOT price substitution --
+        # precios.html is the DR one-pager and quoting stale prices there is
+        # exactly the contradiction this table exists to prevent.
+        written[name] = substitute_prices(
+            open(os.path.join(src_dir, name), encoding="utf-8").read())
 
     for old, target in REDIRECTS.items():
         written[old] = REDIRECT_STUB.format(domain=DOMAIN, target=target)

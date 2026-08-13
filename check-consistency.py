@@ -365,6 +365,9 @@ NON_TRANSLATABLE = {
     "<1s", "$3K+",       # a load-time metric and a price figure -- same in both
 }
 NUMERIC_ONLY = re.compile(r"^[\W\d]*$")
+# A price renders the same in both trees by design -- $2,500 USD is not
+# untranslated copy, it is a number.
+PRICE_ONLY = re.compile(r"^[\$\d,.\s\u2013\u2014-]*(USD)?[\$\d,.\s\u2013\u2014-]*$")
 
 
 def check_bilingual_coverage():
@@ -372,7 +375,7 @@ def check_bilingual_coverage():
         name = os.path.relpath(src_path, "src")
         if name in build.PASSTHROUGH:
             continue        # precios.html is Spanish-only; 404.html stays inline
-        html = read(src_path)
+        html = build.substitute_prices(read(src_path))
         html = re.sub(r"<script.*?</script>|<style.*?</style>|<!--.*?-->", "", html, flags=re.S)
         m = re.search(r"<body.*?</body>", html, re.S)
         if not m:
@@ -388,7 +391,8 @@ def check_bilingual_coverage():
                 remaining = remaining[:hit.start()] + " " + remaining[close_end:]
         for chunk in re.split(r"<[^>]+>", remaining):
             text = " ".join(unescape(chunk).split())
-            if len(text) < 2 or NUMERIC_ONLY.match(text) or text in NON_TRANSLATABLE:
+            if len(text) < 2 or NUMERIC_ONLY.match(text) or text in NON_TRANSLATABLE \
+               or PRICE_ONLY.match(text):
                 continue
             fail("bilingual coverage", src_path,
                  "visible text %r has no lang=\"en\"/lang=\"es\" siblings, so it "
@@ -504,6 +508,77 @@ def check_nap():
             fail("nap", page,
                  "does not show the phone number in visible text. The page invites a "
                  "call, and Google corroborates the Business Profile from rendered copy")
+
+
+# ---------------------------------------------------------------------------
+# 6d. No bare price literal survives in src/
+#
+# The site published FOUR different answers to "what does a website cost" --
+# $2,000-$8,000 on the home page, $1,500/$3,500/$7,000 on pricing, $3,000-$5,000
+# on the local landing pages, $500-$2,500 on the DR one-pager. Read the Miami
+# page then click Pricing and the number halved. Prices now come from
+# build.PRICES, and this fails on any literal typed back into a source file.
+#
+# Allowed literals are figures about the MARKET, not about us: what agencies
+# charge, what a client is worth, third-party survey numbers. Each is listed
+# with the file it belongs to so a new one has to be justified, not just added.
+# ---------------------------------------------------------------------------
+MARKET_FIGURES = {
+    # care-plan annual totals and edit packs -- derived, not tier prices
+    "pricing.html": {"$125", "$49", "$129", "$199"},
+    "terms.html": {"$100"},
+    "privacy.html": set(),
+    # editorial: market rates, competitor figures, client lifetime values
+    "blog/how-much-does-a-website-cost.html": {"$300", "$500", "$1,000", "$4,000",
+                                               "$4,500", "$5,000", "$8,000", "$50,000",
+                                               "$249", "$99", "$3,000", "$10,000", "$200"},
+    "blog/why-your-competitor-gets-calls-from-google.html": {"$3,000", "$10,000",
+                                                             "$1,500", "$200", "$500"},
+    "blog/what-a-website-does-for-a-law-firm.html": {"$3,000", "$10,000", "$500"},
+    "blog/what-is-website-care.html": {"$99", "$249", "$500", "$3,000"},
+    "blog/5-signs-your-website-is-losing-clients.html": {"$500", "$3,000"},
+    "blog/does-your-restaurant-need-a-website.html": {"$10,000", "$500", "$3,000"},
+    # RD$ agency comparison figures are pesos, explicitly marked, not our prices
+    "diseno-web-santo-domingo.html": {"$150,000", "$500,000", "$2,500", "$10,000"},
+    "website-care.html": {"$1,089", "$2,739", "$6,039", "$1,188", "$228", "$503",
+                          "$125", "$129", "$199", "$25,000", "$49", "$3,000"},
+}
+PRICE_LITERAL = re.compile(r"(?<!RD)\$[\d,]{3,}")
+
+
+def check_prices():
+    for src_path in sorted(glob.glob("src/*.html") + glob.glob("src/blog/*.html")):
+        name = os.path.relpath(src_path, "src")
+        allowed = MARKET_FIGURES.get(name, set())
+        html = read(src_path)
+        html = re.sub(r"<style.*?</style>", "", html, flags=re.S)
+        for m in PRICE_LITERAL.finditer(html):
+            literal = m.group(0).rstrip(",")
+            if literal in allowed:
+                continue
+            context = " ".join(unescape(re.sub(r"<[^>]+>", " ",
+                               html[max(0, m.start() - 70):m.end() + 40])).split())
+            fail("prices", src_path,
+                 "bare literal %s -- prices come from build.PRICES so the site cannot "
+                 "contradict itself. Use a token, or add it to MARKET_FIGURES in this "
+                 "file if it describes the market rather than our pricing. Context: …%s…"
+                 % (literal, context[:110]))
+
+    # Every price the visitor actually sees must be one we sanctioned.
+    ours = set(build.PRICES.values())
+    for page in pages():
+        if page in EXEMPT and page not in build.PASSTHROUGH:
+            continue
+        text = re.sub(r"<script.*?</script>|<style.*?</style>", "", read(page), flags=re.S)
+        text = unescape(re.sub(r"<[^>]+>", " ", text))
+        for literal in {m.rstrip(",") for m in PRICE_LITERAL.findall(text)}:
+            src_name = URL_TO_SOURCE.get("/" + page) or URL_TO_SOURCE.get(
+                "/" + page.replace("index.html", "")) or page
+            if literal in ours or literal in MARKET_FIGURES.get(src_name, set()) \
+               or literal in MARKET_FIGURES.get(page, set()):
+                continue
+            fail("prices", page, "shows %s, which is neither a canonical price nor a "
+                                 "declared market figure" % literal)
 
 
 # ---------------------------------------------------------------------------
@@ -623,6 +698,7 @@ def main():
     check_bilingual_coverage()
     check_translated_attributes()
     check_nap()
+    check_prices()
     check_lang_toggle()
     check_cta_routing()   # must precede check_shared_blocks (populates cta_flagged)
     check_shared_blocks()
