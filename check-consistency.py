@@ -582,6 +582,41 @@ def check_prices():
 
 
 # ---------------------------------------------------------------------------
+# 6e. The contact form actually submits somewhere
+#
+# It used to be a mailto: handler that redirected to the thank-you page after
+# 500ms whether or not anything sent -- so for every visitor on mobile or webmail
+# it silently did nothing while telling them "thanks, we got it". This makes the
+# half-configured state loud instead of silent.
+# ---------------------------------------------------------------------------
+def check_contact_form():
+    if build.FORM_ACCESS_KEY.startswith("REPLACE_WITH"):
+        fail("contact form", "build.py",
+             "FORM_ACCESS_KEY is still the placeholder, so every submission fails. "
+             "Get a free key at https://web3forms.com (enter the destination email, "
+             "the key arrives by email) and paste it into build.FORM_ACCESS_KEY")
+
+    for page in ("contact.html", "es/contacto.html"):
+        if not os.path.isfile(page):
+            continue
+        html = read(page)
+        if "mailto:hello@madebysebby.com?subject=" in html:
+            fail("contact form", page,
+                 "still builds a mailto: URL on submit -- that silently does nothing "
+                 "for anyone without a configured desktop mail client")
+        if "api.web3forms.com/submit" not in html:
+            fail("contact form", page, "has no form endpoint")
+        # The redirect must sit in the success branch, never on a timer.
+        if re.search(r"setTimeout\([^)]*location\.href", html):
+            fail("contact form", page,
+                 "redirects to the thank-you page on a timer rather than on a "
+                 "successful response, so a failed send still says it worked")
+        if "generate_lead" not in html:
+            fail("contact form", page,
+                 "fires no GA4 conversion event, so submissions are invisible in analytics")
+
+
+# ---------------------------------------------------------------------------
 # 7. Nav and footer link sets, compared by logical page across BOTH trees
 # ---------------------------------------------------------------------------
 def check_shared_blocks():
@@ -699,6 +734,7 @@ def main():
     check_translated_attributes()
     check_nap()
     check_prices()
+    check_contact_form()
     check_lang_toggle()
     check_cta_routing()   # must precede check_shared_blocks (populates cta_flagged)
     check_shared_blocks()

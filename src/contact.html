@@ -357,6 +357,13 @@
   .nap p{margin:0;font-size:.95rem;color:var(--ink-soft)}
 
   /* ---------- Contact Form ---------- */
+  .form-error{
+    color:#B4541F;background:#FDF1EC;border:1px solid #F0D2C4;
+    padding:12px 15px;border-radius:var(--radius-sm);font-size:.92rem;
+  }
+  .form-error a{text-decoration:underline;font-weight:600}
+  [data-theme="dark"] .form-error{color:#E8A583;background:#2A1C15;border-color:#4A3226}
+
   .contact-form{display:flex;flex-direction:column;gap:18px}
   .contact-form label{font-weight:700;font-size:.9rem;display:block;margin-bottom:6px}
   .contact-form input,.contact-form textarea,.contact-form select{
@@ -653,7 +660,7 @@
     </div>
     <div class="contact-card reveal">
       <h3><span lang="en">Send a message</span><span lang="es">Envía un mensaje</span></h3>
-      <form class="contact-form" onsubmit="return(function(f){var n=f.name.value,e=f.email.value,b=f.business.value,m=f.message.value;var s='Website project'+(b?' — '+b:'');var body='Name: '+n+'%0D%0AEmail: '+e+(b?'%0D%0ABusiness: '+b:'')+'%0D%0A%0D%0A'+encodeURIComponent(m);window.location.href='mailto:hello@madebysebby.com?subject='+encodeURIComponent(s)+'&body='+body;setTimeout(function(){window.location.href='/thank-you.html'},500);return false})(this)">
+      <form class="contact-form">
         <div>
           <label for="name"><span lang="en">Your name</span><span lang="es">Tu nombre</span></label>
           <input type="text" id="name" name="name" required>
@@ -670,9 +677,39 @@
           <label for="message"><span lang="en">Tell me about your project</span><span lang="es">Cuéntame sobre tu proyecto</span></label>
           <textarea id="message" name="message" required></textarea>
         </div>
-        <p class="form-note"><span lang="en">Opens your email app with the message ready to send.</span><span lang="es">Abre tu app de correo con el mensaje listo para enviar.</span></p>
-        <button type="submit" class="btn"><span lang="en">Send message</span><span lang="es">Enviar mensaje</span>&nbsp;→</button>
+        <p class="form-note"><span lang="en">I read every message myself and reply within one business day.</span><span lang="es">Leo cada mensaje personalmente y respondo en un día hábil.</span></p>
+        <p class="form-error" id="formError" role="alert" hidden><span lang="en">That didn't send. Please email <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a> or call <a href="tel:+17865431417">(786) 543-1417</a>.</span><span lang="es">No se pudo enviar. Escribe a <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a> o llama al <a href="tel:+17865431417">(786) 543-1417</a>.</span></p>
+        <button type="submit" class="btn" id="formSubmit"><span lang="en">Send message</span><span lang="es">Enviar mensaje</span>&nbsp;→</button>
       </form>
+<script>
+(function(){
+  var f=document.querySelector('.contact-form');
+  if(!f)return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=document.getElementById('formSubmit'),err=document.getElementById('formError');
+    var s='Website project';
+    err.hidden=true;btn.disabled=true;btn.style.opacity='.55';
+    fetch('https://api.web3forms.com/submit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify({
+        access_key:'{{FORM_ACCESS_KEY}}',
+        subject:s+(f.business.value?' \u2014 '+f.business.value:''),
+        from_name:f.name.value,
+        name:f.name.value,email:f.email.value,
+        business:f.business.value,message:f.message.value
+      })
+    }).then(function(r){return r.json()}).then(function(d){
+      if(!d.success)throw new Error(d.message||'send failed');
+      if(window.gtag)gtag('event','generate_lead',{event_category:'contact',event_label:'contact_form'});
+      window.location.href='/thank-you.html';
+    })['catch'](function(){
+      err.hidden=false;btn.disabled=false;btn.style.opacity='1';
+    });
+  });
+})();
+</script>
     </div>
   </div>
 </section>

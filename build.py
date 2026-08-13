@@ -741,8 +741,22 @@ PRICES = {
 }
 
 
+# Web3Forms access key. Free, 250 submissions/month, no backend — which is what a
+# GitHub Pages site needs. The key is PUBLIC by design: it only authorises posting
+# to one destination inbox, so exposing it in client JS is how the service works.
+#
+# Get it in about 30 seconds at https://web3forms.com — enter the destination
+# email, the key arrives by email. Paste it here, nowhere else.
+# check-consistency.py fails while this is still the placeholder.
+FORM_ACCESS_KEY = "REPLACE_WITH_WEB3FORMS_KEY"
+
+TOKENS = {"{{FORM_ACCESS_KEY}}": FORM_ACCESS_KEY}
+
+
 def substitute_prices(html):
     for token, value in PRICES.items():
+        html = html.replace(token, value)
+    for token, value in TOKENS.items():
         html = html.replace(token, value)
     return html
 
