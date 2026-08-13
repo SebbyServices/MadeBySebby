@@ -648,6 +648,46 @@ def pair_map(html):
     return out
 
 
+# ---------------------------------------------------------------------------
+# Canonical NAP — Name, Address, Phone.
+#
+# Local ranking depends on these matching EXACTLY between the site and the
+# Google Business Profile; Google cross-references them. They did not match: the
+# profile is verified at a Miami address with a (786) number, while the site's
+# only structured address said Santo Domingo, DO with no phone at all.
+#
+# Kept here, in one place, and injected into every LocalBusiness/ProfessionalService
+# node at build time. Hand-copying an address into six schema blocks is precisely
+# how NAP drifts, and NAP drift is the thing this is meant to prevent.
+#
+# NO streetAddress and NO geo on purpose. It is a family home, not a staffed
+# office. Google requires service-area businesses to HIDE a residential address,
+# and publishing its coordinates would broadcast what the profile hides.
+# Locality/region/postal is enough to corroborate the profile.
+NAP = {
+    "name": "Made by Sebby",
+    "telephone": "+1-786-543-1417",
+    "email": "hello@madebysebby.com",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Miami",
+        "addressRegion": "FL",
+        "postalCode": "33175",
+        "addressCountry": "US",
+    },
+    "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00",
+    }],
+}
+
+# Stable identity so every page's block is understood as ONE business rather
+# than a separate branch per landing page.
+BUSINESS_ID = DOMAIN + "/#business"
+LOCAL_TYPES = ("ProfessionalService", "LocalBusiness")
+
 # Schema keys holding human prose rather than identifiers or URLs.
 PROSE_KEYS = ("name", "description", "headline", "slogan", "reviewBody", "text",
               "articleBody", "acceptedAnswer")
@@ -745,6 +785,14 @@ def rewrite_jsonld(html, source, lang, memory):
                             node[key] = translated
                             continue
                     walk(value)
+
+                if node.get("@type") in LOCAL_TYPES:
+                    # Overwrite rather than fill gaps: a stale address left in a
+                    # source file is exactly the drift this exists to stop.
+                    node["@id"] = BUSINESS_ID
+                    for key, value in NAP.items():
+                        node[key] = json.loads(json.dumps(value))
+                    node.pop("geo", None)
 
                 if "inLanguage" in node or node.get("@type") in top_types:
                     node["inLanguage"] = "es" if lang == "es" else "en"

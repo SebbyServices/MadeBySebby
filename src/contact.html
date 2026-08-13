@@ -340,6 +340,22 @@
     .reveal{opacity:1;transform:none;transition:none}
   }
 
+  /* ---------- NAP block ----------
+     Name/Address/Phone as VISIBLE text, not only in JSON-LD. Google reads the
+     rendered page to corroborate the Business Profile, and this page used to
+     say "email or call" while publishing no number at all. */
+  .nap{
+    border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px;
+    background:var(--tint);display:grid;gap:16px;max-width:620px;
+  }
+  .nap-label{
+    font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:5px;
+  }
+  .nap-phone{font-size:1.3rem;font-weight:800;color:var(--purple);letter-spacing:-.01em}
+  .nap-phone:hover{color:var(--purple-deep)}
+  .nap p{margin:0;font-size:.95rem;color:var(--ink-soft)}
+
   /* ---------- Contact Form ---------- */
   .contact-form{display:flex;flex-direction:column;gap:18px}
   .contact-form label{font-weight:700;font-size:.9rem;display:block;margin-bottom:6px}
@@ -588,6 +604,29 @@
     <p class="lede"><span lang="en">A free 15-minute call, no pressure and no jargon. You tell me what you do, I tell you exactly what I'd build and what it costs. If I'm not the right fit, I'll say so and point you somewhere good.</span><span lang="es">Una llamada gratuita de 15 minutos, sin presión y sin jerga. Me cuentas a qué te dedicas, te digo exactamente qué construiría y cuánto cuesta. Si no soy la persona indicada, te lo digo y te recomiendo a alguien bueno.</span></p>
   </div>
 </header>
+
+<section style="padding-top:24px;padding-bottom:0">
+  <div class="wrap">
+    <div class="nap">
+      <div>
+        <div class="nap-label"><span lang="en">Call or text</span><span lang="es">Llama o escribe</span></div>
+        <a class="nap-phone" href="tel:+17865431417">(786) 543-1417</a>
+      </div>
+      <div>
+        <div class="nap-label"><span lang="en">Email</span><span lang="es">Correo</span></div>
+        <a href="mailto:hello@madebysebby.com" style="font-weight:600">hello@madebysebby.com</a>
+      </div>
+      <div>
+        <div class="nap-label"><span lang="en">Hours</span><span lang="es">Horario</span></div>
+        <p><span lang="en">Monday to Friday, 9am–6pm ET</span><span lang="es">Lunes a viernes, 9am–6pm ET</span></p>
+      </div>
+      <div>
+        <div class="nap-label"><span lang="en">Serving</span><span lang="es">Atendiendo</span></div>
+        <p><span lang="en">Miami, Coral Gables, Doral, Hialeah, Fort Lauderdale and South Florida. Also Santo Domingo and the Dominican Republic, in Spanish.</span><span lang="es">Miami, Coral Gables, Doral, Hialeah, Fort Lauderdale y el sur de la Florida. También Santo Domingo y República Dominicana, en español.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="main" style="padding-top:24px">
   <div class="wrap contact-grid">

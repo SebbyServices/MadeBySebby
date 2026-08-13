@@ -19,6 +19,7 @@ Every check here exists because that exact thing had already gone wrong.
 
 import glob
 import importlib.util
+import json
 import os
 import re
 import sys
@@ -435,6 +436,77 @@ def check_translated_attributes():
 
 
 # ---------------------------------------------------------------------------
+# 6c. NAP is identical everywhere it appears
+#
+# Local ranking depends on the site and the Google Business Profile agreeing on
+# Name/Address/Phone; Google cross-references them. They did not agree -- the
+# verified profile is a Miami address with a (786) number while the site's only
+# structured address said Santo Domingo, DO with no phone.
+#
+# build.py injects build.NAP into every LocalBusiness node, so this verifies the
+# injection actually reached every page and that no source snuck a second
+# address in. It also checks the visible phone on the contact page, because
+# Google reads the rendered page, not only the JSON-LD.
+# ---------------------------------------------------------------------------
+def check_nap():
+    seen = 0
+    for page in pages():
+        for m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>',
+                             read(page), re.S):
+            try:
+                data = json.loads(m.group(1))
+            except json.JSONDecodeError:
+                fail("nap", page, "JSON-LD block does not parse")
+                continue
+
+            def walk(node):
+                global_seen = None
+                if isinstance(node, dict):
+                    if node.get("@type") in build.LOCAL_TYPES:
+                        for key, want in build.NAP.items():
+                            got = node.get(key)
+                            if got != want:
+                                fail("nap", page,
+                                     "%s is %r but build.NAP says %r -- the canonical "
+                                     "NAP did not reach this page" % (key, got, want))
+                        if node.get("@id") != build.BUSINESS_ID:
+                            fail("nap", page,
+                                 "business node has @id %r, expected %r so every page "
+                                 "describes ONE business rather than a branch per page"
+                                 % (node.get("@id"), build.BUSINESS_ID))
+                        if "geo" in node:
+                            fail("nap", page,
+                                 "publishes geo coordinates. The address is a family "
+                                 "home the Business Profile hides; coordinates would "
+                                 "broadcast exactly what it hides")
+                        return 1
+                    return sum(walk(v) for v in node.values())
+                if isinstance(node, list):
+                    return sum(walk(i) for i in node)
+                return 0
+
+            seen += walk(data)
+
+    if not seen:
+        fail("nap", "(site)", "no LocalBusiness/ProfessionalService schema found anywhere")
+
+    # The phone must be readable by a human, not only by a parser.
+    phone_digits = re.sub(r"\D", "", build.NAP["telephone"])
+    for page in ("contact.html", "es/contacto.html"):
+        if not os.path.isfile(page):
+            continue
+        # Strip tags as well as script/style: a tel: href is an ATTRIBUTE, not
+        # visible text, and matching against it would let the number disappear
+        # from the rendered page while this check still passed.
+        visible = re.sub(r"<script.*?</script>|<style.*?</style>", "", read(page), flags=re.S)
+        visible = re.sub(r"<[^>]+>", " ", visible)
+        if phone_digits[-10:] not in re.sub(r"\D", "", visible):
+            fail("nap", page,
+                 "does not show the phone number in visible text. The page invites a "
+                 "call, and Google corroborates the Business Profile from rendered copy")
+
+
+# ---------------------------------------------------------------------------
 # 7. Nav and footer link sets, compared by logical page across BOTH trees
 # ---------------------------------------------------------------------------
 def check_shared_blocks():
@@ -550,6 +622,7 @@ def main():
     check_links()
     check_bilingual_coverage()
     check_translated_attributes()
+    check_nap()
     check_lang_toggle()
     check_cta_routing()   # must precede check_shared_blocks (populates cta_flagged)
     check_shared_blocks()
