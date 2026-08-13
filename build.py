@@ -697,6 +697,7 @@ NAP = {
     "sameAs": [
         "https://www.linkedin.com/company/made-by-sebby/",
         "https://instagram.com/madebysebby",
+        "https://clutch.co/profile/made-sebby",
         "https://github.com/SebbyServices",
     ],
 }
