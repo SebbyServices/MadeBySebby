@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DV4L5CZRML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DV4L5CZRML');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planes de Cuidado Web — Mantenimiento Mensual</title>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="Sebby — Made by Sebby">
+<meta name="description" content="Mantenimiento mensual de sitios web para negocios en Miami y el sur de Florida. Actualizaciones, respaldos, seguridad, velocidad y ediciones. Desde $99/mes.">
+<link rel="preload" as="image" href="/assets/logo/sebby-nav.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
+<style>
+  :root{
+    --ink:#1A1D29;
+    --ink-soft:#4A4E5C;
+    --muted:#6B7080;
+    --purple:#6C3CE9;
+    --purple-deep:#5A2FD0;
+    --blue:#2D6FFF;
+    --tint:#F4F1FD;
+    --line:#E8E6F2;
+    --white:#FFFFFF;
+    --radius:20px;
+    --radius-sm:12px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+  img{max-width:100%;display:block}
+
+  /* ---------- Nav ---------- */
+  nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:50}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .logo{display:flex;align-items:center;gap:11px;font-weight:700;font-size:1.06rem;letter-spacing:-.01em}
+  .logo .made{font-weight:500;color:var(--muted)}
+  .logo .sebby{color:var(--ink)}
+  .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
+  .nav-links>a{color:var(--ink-soft);transition:color .15s}
+  .nav-links>a.btn{color:#fff}
+  .nav-links>a.btn:hover{color:#fff}
+  .nav-links>a:hover{color:var(--purple)}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;
+    padding:13px 26px;border-radius:999px;border:none;cursor:pointer;
+    transition:background .15s, transform .15s;
+  }
+  .btn:hover{background:var(--purple-deep);transform:translateY(-1px)}
+  .btn:focus-visible{outline-color:var(--ink)}
+  .btn-ghost{
+    background:transparent;color:var(--ink);border:1.5px solid var(--line);
+  }
+  .btn-ghost:hover{background:var(--tint);border-color:var(--purple);color:var(--purple)}
+  .btn-nav{padding:10px 22px;font-size:.92rem}
+
+  /* ---------- Monogram ---------- */
+  .mono{width:36px;height:36px;flex-shrink:0}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:88px 0 64px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+  .eyebrow{
+    font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--purple);margin-bottom:20px;display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2.5px;background:var(--purple);border-radius:2px}
+  h1{
+    font-size:clamp(2.3rem,4.6vw,3.55rem);
+    font-weight:800;line-height:1.09;letter-spacing:-.028em;
+    margin-bottom:24px;
+  }
+  h1 .accent{color:var(--purple)}
+  .hero p.lede{font-size:1.17rem;color:var(--ink-soft);max-width:34em;margin-bottom:36px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+  .hero-note{font-size:.9rem;color:var(--muted)}
+
+  .portrait{
+    position:relative;border-radius:var(--radius);overflow:hidden;
+    background:linear-gradient(160deg,var(--tint) 0%,#EAE3FB 100%);
+    aspect-ratio:4/4.7;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:18px;
+    border:1px solid var(--line);
+  }
+  .portrait svg{width:96px;height:96px;opacity:.9}
+  .portrait .swap{
+    font-size:.82rem;font-weight:600;color:var(--purple);
+    background:#fff;border:1px dashed var(--purple);
+    padding:8px 16px;border-radius:999px;
+  }
+  .portrait .chip{
+    position:absolute;bottom:20px;left:20px;right:20px;
+    background:rgba(255,255,255,.95);border:1px solid var(--line);
+    border-radius:var(--radius-sm);padding:13px 18px;
+    display:flex;align-items:center;gap:12px;font-size:.9rem;font-weight:600;
+  }
+  .chip .dot{width:9px;height:9px;border-radius:50%;background:#2FBF71;flex-shrink:0}
+  .chip span em{font-style:normal;color:var(--muted);font-weight:500}
+
+  /* ---------- Trust bar ---------- */
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0}
+  .trust-inner{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;align-items:center}
+  .trust-item{display:flex;align-items:center;gap:11px;font-size:.95rem;font-weight:600;color:var(--ink-soft)}
+  .trust-item .stars{color:var(--purple);letter-spacing:2px;font-size:1rem}
+  .trust-item svg{width:19px;height:19px;stroke:var(--purple);flex-shrink:0}
+
+  /* ---------- Sections ---------- */
+  section{padding:96px 0}
+  .sec-head{max-width:38em;margin-bottom:56px}
+  h2{font-size:clamp(1.7rem,3vw,2.35rem);font-weight:800;letter-spacing:-.022em;line-height:1.16;margin-bottom:16px}
+  .sec-head p{font-size:1.08rem;color:var(--ink-soft)}
+
+  /* Services */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:34px 30px;transition:transform .18s, box-shadow .18s, border-color .18s;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08);border-color:#D8CFF6}
+  .card .glyph{
+    width:48px;height:48px;border-radius:14px;background:var(--tint);
+    display:flex;align-items:center;justify-content:center;margin-bottom:22px;
+  }
+  .card .glyph svg{width:23px;height:23px;stroke:var(--purple);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font-size:1.16rem;font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .card p{font-size:.97rem;color:var(--ink-soft)}
+  .card .tag{
+    display:inline-block;margin-bottom:14px;font-size:.72rem;font-weight:700;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--purple);
+  }
+
+  /* Process */
+  .process{background:var(--tint);border-radius:32px;padding:80px 0}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:step}
+  .step{
+    background:var(--white);border-radius:var(--radius);padding:32px 28px;
+    border:1px solid #E3DDF6;counter-increment:step;position:relative;
+  }
+  .step::before{
+    content:counter(step);
+    display:flex;align-items:center;justify-content:center;
+    width:38px;height:38px;border-radius:50%;
+    background:var(--purple);color:#fff;font-weight:700;font-size:1rem;
+    margin-bottom:20px;
+  }
+  .step h3{font-size:1.1rem;font-weight:700;margin-bottom:9px}
+  .step p{font-size:.95rem;color:var(--ink-soft)}
+
+  /* Work */
+  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .tile{
+    border-radius:var(--radius);border:1px solid var(--line);overflow:hidden;
+    background:var(--white);transition:transform .18s, box-shadow .18s;
+  }
+  .tile:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08)}
+  .tile .shot{
+    aspect-ratio:16/10.5;background:linear-gradient(150deg,#EFEAFB,#E2D9F8);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .tile .shot span{
+    font-size:.8rem;font-weight:600;color:var(--purple);
+    background:#fff;border:1px dashed var(--purple);padding:7px 14px;border-radius:999px;
+  }
+  .tile .meta{padding:20px 22px}
+  .tile .meta h3{font-size:1.02rem;font-weight:700}
+  .tile .meta p{font-size:.88rem;color:var(--muted)}
+
+  /* Testimonials */
+  .quotes{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .quote{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:36px 34px;
+  }
+  .quote .mark{font-size:2.6rem;line-height:1;color:var(--purple);font-weight:800;margin-bottom:14px}
+  .quote p.body{font-size:1.05rem;color:var(--ink);margin-bottom:24px}
+  .quote .who{display:flex;align-items:center;gap:14px}
+  .quote .avatar{
+    width:46px;height:46px;border-radius:50%;background:var(--tint);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;color:var(--purple);font-size:.95rem;flex-shrink:0;
+  }
+  .quote .who strong{display:block;font-size:.95rem}
+  .quote .who span{font-size:.85rem;color:var(--muted)}
+
+  /* Care callout */
+  .care{
+    background:var(--ink);border-radius:32px;color:#fff;
+    padding:72px 64px;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;
+  }
+  .care h2{color:#fff}
+  .care p{color:#B9BCC9;font-size:1.06rem;margin-bottom:32px;max-width:32em}
+  .care ul{list-style:none;display:grid;gap:16px}
+  .care li{display:flex;gap:13px;align-items:flex-start;font-size:.99rem;color:#E7E8EE}
+  .care li svg{width:20px;height:20px;stroke:var(--purple);flex-shrink:0;margin-top:2px;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .care .btn{background:#fff;color:var(--ink)}
+  .care .btn:hover{background:var(--tint);transform:translateY(-1px)}
+
+  /* Final CTA */
+  .final{text-align:center;padding:110px 0}
+  .final h2{max-width:18em;margin:0 auto 18px}
+  .final p{color:var(--ink-soft);font-size:1.1rem;margin-bottom:36px}
+
+  /* Footer */
+  footer{border-top:1px solid var(--line);padding:44px 0}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .credit{display:flex;align-items:center;gap:10px;font-size:.92rem;color:var(--muted)}
+  .credit .mono{width:22px;height:22px}
+  .credit strong{color:var(--ink);font-weight:700}
+  .foot-links{display:flex;gap:26px;font-size:.9rem;color:var(--muted)}
+  .foot-links a:hover{color:var(--purple)}
+
+  /* Motion */
+  .rise{opacity:0;transform:translateY(16px);animation:rise .7s ease forwards}
+  .d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    .rise{opacity:1;transform:none;animation:none}
+    *{transition:none !important;scroll-behavior:auto}
+  }
+
+  /* Responsive */
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:44px}
+    .portrait{max-width:420px;margin:0 auto}
+    .cards,.steps,.work-grid{grid-template-columns:1fr 1fr}
+    .care{grid-template-columns:1fr;padding:52px 36px}
+  }
+  @media (max-width:640px){
+    .cards,.steps,.work-grid,.quotes{grid-template-columns:1fr}
+    section{padding:68px 0}
+    .hero{padding:56px 0 48px}
+    .trust-inner{justify-content:flex-start}
+  }
+
+  /* Interior pages */
+  .page-hero{padding:76px 0 52px}
+  .page-hero h1{font-size:clamp(2rem,4vw,3rem)}
+  .page-hero p.lede{font-size:1.14rem;color:var(--ink-soft);max-width:36em;margin-top:18px}
+  .two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+  .checklist{list-style:none;display:grid;gap:14px;margin-top:22px}
+  .checklist li{display:flex;gap:12px;align-items:flex-start;font-size:.99rem;color:var(--ink-soft)}
+  .checklist li svg{width:20px;height:20px;stroke:var(--purple);flex-shrink:0;margin-top:3px;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .svc-block{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:64px 0;border-top:1px solid var(--line)}
+  .svc-block:first-of-type{border-top:none}
+  .svc-visual{border-radius:var(--radius);background:linear-gradient(150deg,#EFEAFB,#E2D9F8);aspect-ratio:16/11;display:flex;align-items:center;justify-content:center;border:1px solid var(--line)}
+  .svc-visual span{font-size:.8rem;font-weight:600;color:var(--purple);background:#fff;border:1px dashed var(--purple);padding:7px 14px;border-radius:999px}
+  .svc-block h2{margin-bottom:6px}
+  .svc-block .tag{display:inline-block;margin-bottom:14px;font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--purple)}
+  .svc-block p.body{color:var(--ink-soft);font-size:1.02rem}
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+  .plan{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:36px 30px;display:flex;flex-direction:column;transition:transform .18s, box-shadow .18s}
+  .plan:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08)}
+  .plan.featured{border:2px solid var(--purple);position:relative}
+  .plan.featured::before{content:"Most popular";position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--purple);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 16px;border-radius:999px}
+  .plan.featured::before{content:"Más popular"}
+  .plan h3{font-size:1.2rem;font-weight:800;margin-bottom:4px}
+  .plan .for{font-size:.88rem;color:var(--muted);margin-bottom:18px}
+  .plan .price{font-size:2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:4px}
+  .plan .price em{font-style:normal;font-size:.95rem;font-weight:500;color:var(--muted)}
+  .plan .checklist{margin:22px 0 28px;flex:1}
+  .faq{display:grid;gap:14px;max-width:44em}
+  .faq details{border:1px solid var(--line);border-radius:var(--radius-sm);padding:20px 24px;background:#fff}
+  .faq summary{font-weight:700;cursor:pointer;font-size:1rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq summary::after{content:"+";color:var(--purple);font-size:1.4rem;font-weight:600;line-height:1}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{margin-top:12px;color:var(--ink-soft);font-size:.97rem}
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}
+  .about-grid .portrait{aspect-ratio:4/4.7;position:sticky;top:104px}
+  .prose p{color:var(--ink-soft);font-size:1.05rem;margin-bottom:20px;max-width:38em}
+  .prose p strong{color:var(--ink)}
+  .promise{background:var(--tint);border-radius:var(--radius);padding:32px 34px;margin:28px 0;border-left:4px solid var(--purple)}
+  .promise p{font-size:1.08rem;font-weight:600;color:var(--ink);margin:0}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .contact-card{background:var(--tint);border-radius:var(--radius);padding:40px 36px}
+  .contact-card h3{font-size:1.1rem;font-weight:800;margin-bottom:16px}
+  .contact-line{display:flex;align-items:center;gap:13px;padding:14px 0;border-bottom:1px solid #E3DDF6;font-weight:600}
+  .contact-line:last-child{border-bottom:none}
+  .contact-line svg{width:21px;height:21px;stroke:var(--purple);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+  .contact-line a:hover{color:var(--purple)}
+  .breadcrumb{font-size:.85rem;color:var(--muted);margin-bottom:22px}
+  .breadcrumb a:hover{color:var(--purple)}
+  @media (max-width:900px){
+    .two-col,.svc-block,.about-grid,.contact-grid{grid-template-columns:1fr;gap:36px}
+    .plans{grid-template-columns:1fr}
+    .about-grid .portrait{position:static;max-width:420px}
+  }
+
+  /* Final brand lockup */
+  .logo{gap:12px}
+  .lockup{display:flex;flex-direction:column;line-height:1.15}
+  .madeby{font-size:.66rem;font-weight:500;color:var(--muted);letter-spacing:.04em;text-transform:lowercase}
+  .sebbymark{font-size:1.02rem;font-weight:700;letter-spacing:.24em;color:var(--ink)}
+  .credit .lockup-inline strong{letter-spacing:.02em}
+
+  /* ---------- Stats Bar ---------- */
+  .stat-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-bottom:56px}
+  .stat-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;text-align:center}
+  .stat-card .num{font-size:1.6rem;font-weight:800;color:var(--purple);margin-bottom:6px;letter-spacing:-.02em}
+  .stat-card p{font-size:.88rem;color:var(--ink-soft);line-height:1.4}
+  @media(max-width:900px){.stat-bar{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.stat-bar{grid-template-columns:1fr}}
+
+  /* ---------- Pricing Toggle ---------- */
+  .price-toggle{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:36px;font-size:.95rem;font-weight:600}
+  .price-toggle .save{font-size:.78rem;font-weight:700;color:#fff;background:var(--purple);padding:3px 10px;border-radius:999px}
+  .toggle-switch{position:relative;width:48px;height:26px;background:var(--line);border-radius:999px;cursor:pointer;border:none;transition:background .2s}
+  .toggle-switch::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .toggle-switch.active{background:var(--purple)}
+  .toggle-switch.active::after{transform:translateX(22px)}
+  .price-annual{display:none}
+  .show-annual .price-monthly{display:none}
+  .show-annual .price-annual{display:block}
+
+  /* ---------- Comparison Table ---------- */
+  .compare{overflow-x:auto;margin-top:48px}
+  .compare table{width:100%;border-collapse:collapse;min-width:600px}
+  .compare th,.compare td{padding:14px 18px;text-align:left;font-size:.92rem;border-bottom:1px solid var(--line)}
+  .compare th{font-weight:700;color:var(--ink);background:var(--tint)}
+  .compare th:first-child{border-radius:var(--radius-sm) 0 0 0}
+  .compare th:last-child{border-radius:0 var(--radius-sm) 0 0}
+  .compare td{color:var(--ink-soft)}
+  .compare td:first-child{font-weight:600;color:var(--ink)}
+  .compare .check{color:var(--purple);font-weight:700;font-size:1.1rem}
+  .compare .dash{color:var(--muted)}
+  .compare tr:last-child td{border-bottom:none}
+  .compare th.pop{color:var(--purple)}
+
+  /* ---------- Edit Packs ---------- */
+  .edit-packs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .edit-pack{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;text-align:center;transition:transform .18s,box-shadow .18s}
+  .edit-pack:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08)}
+  .edit-pack h3{font-size:1.1rem;font-weight:700;margin-bottom:4px}
+  .edit-pack .pack-price{font-size:1.8rem;font-weight:800;color:var(--purple);margin:10px 0 4px}
+  .edit-pack .pack-per{font-size:.85rem;color:var(--muted);margin-bottom:14px}
+  .edit-pack p{font-size:.9rem;color:var(--ink-soft)}
+  @media(max-width:640px){.edit-packs{grid-template-columns:1fr}}
+
+  /* ---------- Math Callout ---------- */
+  .math-callout{background:var(--ink);border-radius:32px;padding:56px 52px;color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .math-callout h2{color:#fff;margin-bottom:16px}
+  .math-callout p{color:#B9BCC9;font-size:1.02rem;margin-bottom:0}
+  .math-vs{display:grid;gap:18px}
+  .math-vs .vs-item{background:rgba(255,255,255,.08);border-radius:var(--radius-sm);padding:22px 24px}
+  .math-vs .vs-label{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8B6CEF;margin-bottom:6px}
+  .math-vs .vs-price{font-size:1.6rem;font-weight:800;color:#fff}
+  .math-vs .vs-price em{font-style:normal;font-size:.85rem;font-weight:500;color:#B9BCC9}
+  .math-vs .vs-note{font-size:.85rem;color:#B9BCC9;margin-top:4px}
+  @media(max-width:900px){.math-callout{grid-template-columns:1fr;padding:40px 32px}}
+
+  /* ---------- Why Sebby ---------- */
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .why-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px}
+  .why-card h3{font-size:1.05rem;font-weight:700;margin-bottom:8px}
+  .why-card p{font-size:.93rem;color:var(--ink-soft)}
+  .why-card .why-icon{width:44px;height:44px;border-radius:12px;background:var(--tint);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .why-card .why-icon svg{width:22px;height:22px;stroke:var(--purple);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  @media(max-width:640px){.why-grid{grid-template-columns:1fr}}
+
+  /* ---------- Hamburger Menu ---------- */
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;z-index:51}
+  .menu-btn svg{width:26px;height:26px;stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round}
+  .menu-btn .close{display:none}
+  .nav-open .menu-btn .open{display:none}
+  .nav-open .menu-btn .close{display:block}
+  @media (max-width:640px){
+    .menu-btn{display:block}
+    .nav-links{
+      display:none;position:fixed;top:76px;left:0;right:0;bottom:0;
+      background:var(--white);flex-direction:column;gap:0;padding:20px 28px;
+      border-top:1px solid var(--line);z-index:49;
+      overflow-y:auto;
+    }
+    .nav-open{backdrop-filter:none;overflow:visible}
+    .nav-open .nav-links{display:flex}
+    .nav-links>a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
+    .nav-links>a:last-child{border-bottom:none}
+    .nav-links>a.btn{margin-top:12px;justify-content:center;border-bottom:none}
+    .nav-links .lang-toggle{margin-top:8px;align-self:flex-start}
+    .nav-links .theme-toggle{margin-top:4px;align-self:flex-start}
+  }
+
+
+  /* ---------- Scroll Animations ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+
+  /* ---------- Sticky CTA ---------- */
+  .sticky-cta{
+    position:fixed;bottom:0;left:0;right:0;z-index:40;
+    background:var(--purple);color:#fff;
+    padding:14px 28px;text-align:center;
+    transform:translateY(100%);transition:transform .35s ease;
+    font-weight:600;font-size:.95rem;
+  }
+  .sticky-cta.show{transform:translateY(0)}
+  .sticky-cta a{color:#fff;text-decoration:none}
+  .sticky-cta a:hover{text-decoration:underline}
+  @media (max-width:640px){
+    .sticky-cta{font-size:.88rem;padding:12px 20px}
+  }
+  /* ---------- Language Toggle ---------- */
+  .lang-toggle{
+    display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;
+    font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0;
+  }
+  .lang-toggle>*{
+    background:none;border:none;padding:7px 12px;cursor:pointer;
+    color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em;
+    text-decoration:none;display:flex;align-items:center;
+  }
+  .lang-toggle>*:hover{color:var(--purple)}
+  .lang-toggle>.active{background:var(--purple);color:#fff}
+
+  /* ---------- Dark Mode ---------- */
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) nav{background:rgba(15,17,23,.92)}
+    :root:not([data-theme="light"]) .chip{background:rgba(30,32,42,.95);border-color:var(--line)}
+    :root:not([data-theme="light"]) .card,:root:not([data-theme="light"]) .step,:root:not([data-theme="light"]) .tile,:root:not([data-theme="light"]) .quote,:root:not([data-theme="light"]) .plan,:root:not([data-theme="light"]) .contact-card,:root:not([data-theme="light"]) .faq details{background:#1A1C25}
+    :root:not([data-theme="light"]) .card:hover{border-color:#3D3A4E}
+    :root:not([data-theme="light"]) .portrait{background:linear-gradient(160deg,#1D192D 0%,#1A1530 100%)}
+    :root:not([data-theme="light"]) .process{background:#1A1C25}
+    :root:not([data-theme="light"]) .tile .shot{background:linear-gradient(150deg,#1D192D,#1A1530)}
+    :root:not([data-theme="light"]) .svc-visual{background:linear-gradient(150deg,#1D192D,#1A1530);border-color:#2A2838}
+    :root:not([data-theme="light"]) .svc-visual img{filter:brightness(.82) saturate(.9)}
+    :root:not([data-theme="light"]) .care{background:#1A1C25}
+    :root:not([data-theme="light"]) .care h2{color:#E4E5EA}
+    :root:not([data-theme="light"]) .care p{color:#A0A3AD}
+    :root:not([data-theme="light"]) .care li{color:#C8CAD0}
+    :root:not([data-theme="light"]) .care li svg{stroke:#8B6CEF}
+    :root:not([data-theme="light"]) .care .btn{background:var(--purple);color:#fff}
+    :root:not([data-theme="light"]) .care .btn:hover{background:var(--purple-deep)}
+    :root:not([data-theme="light"]) .sitecard{background:#1A1C25}
+    :root:not([data-theme="light"]) .sitecard .bar{background:#222430}
+    :root:not([data-theme="light"]) .sitecard .url{background:#1A1C25;color:#717580}
+    :root:not([data-theme="light"]) .sitecard .visit{background:#1A1C25}
+    :root:not([data-theme="light"]) .promise{background:#1D192D}
+    :root:not([data-theme="light"]) .btn-ghost{border-color:var(--line)}
+    :root:not([data-theme="light"]) .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+    :root:not([data-theme="light"]) .contact-line{border-bottom-color:#2A2838}
+    :root:not([data-theme="light"]) .logo-light{display:none !important}
+    :root:not([data-theme="light"]) .logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
+    :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .btn{background:#6B4EC2}
+    :root:not([data-theme="light"]) .btn:hover{background:#5C41B0}
+    :root:not([data-theme="light"]) .step::before{background:#6B4EC2}
+    :root:not([data-theme="light"]) .stat-card{background:#1A1C25}
+    :root:not([data-theme="light"]) .edit-pack{background:#1A1C25}
+    :root:not([data-theme="light"]) .why-card{background:#1A1C25}
+    :root:not([data-theme="light"]) .compare th{background:#1D192D}
+    :root:not([data-theme="light"]) .compare table{background:#1A1C25}
+    :root:not([data-theme="light"]) .math-callout{background:#1A1C25}
+    :root:not([data-theme="light"]) .math-vs .vs-item{background:rgba(255,255,255,.06)}
+  }
+  [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
+  [data-theme="dark"] .chip{background:rgba(30,32,42,.95);border-color:var(--line)}
+  [data-theme="dark"] .card,[data-theme="dark"] .step,[data-theme="dark"] .tile,[data-theme="dark"] .quote,[data-theme="dark"] .plan,[data-theme="dark"] .contact-card,[data-theme="dark"] .faq details{background:#1A1C25}
+  [data-theme="dark"] .card:hover{border-color:#3D3A4E}
+  [data-theme="dark"] .portrait{background:linear-gradient(160deg,#1D192D 0%,#1A1530 100%)}
+  [data-theme="dark"] .process{background:#1A1C25}
+  [data-theme="dark"] .tile .shot{background:linear-gradient(150deg,#1D192D,#1A1530)}
+  [data-theme="dark"] .svc-visual{background:linear-gradient(150deg,#1D192D,#1A1530);border-color:#2A2838}
+  [data-theme="dark"] .svc-visual img{filter:brightness(.82) saturate(.9)}
+  [data-theme="dark"] .care{background:#1A1C25}
+  [data-theme="dark"] .care h2{color:#E4E5EA}
+  [data-theme="dark"] .care p{color:#A0A3AD}
+  [data-theme="dark"] .care li{color:#C8CAD0}
+  [data-theme="dark"] .care li svg{stroke:#8B6CEF}
+  [data-theme="dark"] .care .btn{background:var(--purple);color:#fff}
+  [data-theme="dark"] .care .btn:hover{background:var(--purple-deep)}
+  [data-theme="dark"] .sitecard{background:#1A1C25}
+  [data-theme="dark"] .sitecard .bar{background:#222430}
+  [data-theme="dark"] .sitecard .url{background:#1A1C25;color:#717580}
+  [data-theme="dark"] .sitecard .visit{background:#1A1C25}
+  [data-theme="dark"] .promise{background:#1D192D}
+  [data-theme="dark"] .btn-ghost{border-color:var(--line)}
+  [data-theme="dark"] .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+  [data-theme="dark"] .contact-line{border-bottom-color:#2A2838}
+  [data-theme="dark"] .logo-light{display:none !important}
+  [data-theme="dark"] .logo-dark{display:block !important}
+  [data-theme="dark"] .foot-logo-light{display:none !important}
+  [data-theme="dark"] .foot-logo-dark{display:block !important}
+  [data-theme="dark"] .btn{background:#6B4EC2}
+  [data-theme="dark"] .btn:hover{background:#5C41B0}
+  [data-theme="dark"] .step::before{background:#6B4EC2}
+  [data-theme="dark"] .stat-card{background:#1A1C25}
+  [data-theme="dark"] .edit-pack{background:#1A1C25}
+  [data-theme="dark"] .why-card{background:#1A1C25}
+  [data-theme="dark"] .compare th{background:#1D192D}
+  [data-theme="dark"] .compare table{background:#1A1C25}
+  [data-theme="dark"] .math-callout{background:#1A1C25}
+  [data-theme="dark"] .math-vs .vs-item{background:rgba(255,255,255,.06)}
+
+  /* Theme transition (only applied during toggle, not page load) */
+  .theme-trans,.theme-trans *,.theme-trans *::before,.theme-trans *::after{
+    transition:background .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease,fill .35s ease,stroke .35s ease !important;
+  }
+  /* Theme toggle button */
+  .theme-toggle{
+    background:none;border:1.5px solid var(--line);border-radius:50%;
+    width:38px;height:38px;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;transition:border-color .15s,background .15s;flex-shrink:0;
+  }
+  .theme-toggle:hover{border-color:var(--purple);background:var(--tint)}
+  .theme-toggle svg{width:18px;height:18px;stroke:var(--muted);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .theme-toggle:hover svg{stroke:var(--purple)}
+  .theme-toggle .icon-sun{display:none}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon{display:none}
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun{display:block}
+  }
+  [data-theme="dark"] .theme-toggle .icon-moon{display:none}
+  [data-theme="dark"] .theme-toggle .icon-sun{display:block !important}
+  [data-theme="light"] .theme-toggle .icon-sun{display:none !important}
+  [data-theme="light"] .theme-toggle .icon-moon{display:block}
+
+
+  /* ---------- Skip link ---------- */
+  .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
+  .skip-link:focus{top:12px}
+
+  /* ---------- Print ---------- */
+  @media print{
+    nav,.menu-btn,.sticky-cta,#stickyCta,.theme-toggle,.lang-toggle,footer,.hero-ctas,.btn,.cta-row,.foot-cta{display:none!important}
+    body{color:#000;background:#fff;-webkit-print-color-adjust:exact}
+    .wrap{max-width:100%;padding:0 12px}
+    a{color:#000}
+    a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em;color:#555}
+    a[href^="mailto"]::after{content:" (" attr(href) ")";font-size:.8em;color:#555}
+    img{max-width:100%!important;filter:none!important}
+    .reveal{opacity:1!important;transform:none!important}
+  }
+</style>
+
+<!-- seo:start -->
+<link rel="alternate" type="text/plain" title="LLM instructions" href="/llms.txt">
+<link rel="canonical" href="https://madebysebby.com/es/cuidado-web.html">
+<link rel="alternate" hreflang="en" href="https://madebysebby.com/website-care.html">
+<link rel="alternate" hreflang="es" href="https://madebysebby.com/es/cuidado-web.html">
+<link rel="alternate" hreflang="x-default" href="https://madebysebby.com/website-care.html">
+<meta name="theme-color" content="#6C3CE9">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Made by Sebby">
+<meta property="og:title" content="Planes de Cuidado Web — Mantenimiento Mensual">
+<meta property="og:description" content="Planes accesibles de mantenimiento mensual. Actualizaciones de software, respaldos diarios, monitoreo de seguridad, optimización de velocidad y ediciones incluidas.">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https://madebysebby.com/es/cuidado-web.html">
+<meta property="og:image" content="https://madebysebby.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Planes de Cuidado Web — Mantenimiento Mensual">
+<meta name="twitter:description" content="Planes accesibles de mantenimiento mensual. Actualizaciones, respaldos diarios, seguridad, velocidad y ediciones incluidas.">
+<meta name="twitter:image" content="https://madebysebby.com/assets/og-image.jpg">
+<!-- seo:end -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Website Care — Monthly Website Maintenance",
+  "url": "https://madebysebby.com/es/cuidado-web.html",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Made by Sebby",
+    "url": "https://madebysebby.com/es/",
+    "inLanguage": "es"
+  },
+  "description": "Monthly website maintenance including software updates, daily backups, security monitoring, speed optimization, and small edits.",
+  "serviceType": "Website Maintenance",
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "United States"
+    },
+    {
+      "@type": "Country",
+      "name": "Dominican Republic"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Website Care Plans",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "price": "99",
+        "priceCurrency": "USD",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Essentials Website Care",
+          "description": "Weekly tested software and security updates, daily off-site backups, uptime and security monitoring around the clock, monthly health report in plain English, and response within two business days"
+        }
+      },
+      {
+        "@type": "Offer",
+        "price": "249",
+        "priceCurrency": "USD",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Standard Website Care",
+          "description": "Everything in Essentials plus 1 hour of content edits, quarterly speed and performance tuning, backup restoration if compromised, and one-business-day response"
+        }
+      },
+      {
+        "@type": "Offer",
+        "price": "549",
+        "priceCurrency": "USD",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Growth Website Care",
+          "description": "Everything in Standard plus 2 hours monthly for edits and on-page SEO, monthly Search Console and Analytics review, quarterly 30-minute strategy call, and 4-business-hour critical outage response"
+        }
+      }
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Y si tú no construiste mi sitio web?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No hay problema. Cada plan comienza con una revisión de salud gratuita para que ambos sepamos en qué estado está tu sitio. Si la revisión encuentra problemas preexistentes, cotizo esa corrección por separado y el plan comienza una vez que tu sitio esté en buenas condiciones. La mayoría de los sitios que cuido fueron construidos por otra persona."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué cuenta como tiempo de edición incluido?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cambios a páginas existentes usando contenido que tú proporcionas: cambiar fotos, actualizar horarios o precios, agregar un testimonio, ajustar texto. El tiempo incluido no se acumula mes a mes. El trabajo fuera de tus horas incluidas es $125/hr, siempre aprobado por ti primero. Páginas nuevas, rediseños, redacción de contenido, tiendas en línea y funciones personalizadas se cotizan por separado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si mi sitio se cae o es hackeado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generalmente lo sé antes que tú. El monitoreo me alerta en cuanto algo anda mal, y ponerte de nuevo en línea se convierte en mi primera prioridad. Los planes Estándar y Crecimiento incluyen restauración desde un respaldo limpio verificado. Si el problema requiere limpieza de malware más profunda, análisis forense o remediación de terceros, cotizo ese trabajo antes de cualquier facturación adicional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Las horas de edición se acumulan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, las horas incluidas no se acumulan mes a mes. Cualquier trabajo fuera de tu tiempo incluido se factura a $125/hr, siempre con tu aprobación antes de comenzar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa con sitios de comercio electrónico o complejos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Estos planes cubren sitios web estándar de negocios. WooCommerce, tiendas en línea, sitios de membresías, plataformas LMS, multisite y sitios altamente personalizados requieren más tiempo y se cotizan individualmente después de la revisión de salud gratuita."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://madebysebby.com/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Website Care Plans",
+      "item": "https://madebysebby.com/es/cuidado-web.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Ir al contenido</a>
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="/es/" aria-label="Inicio de Made by Sebby"><img class="logo-light" src="/assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="/assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
+    <button class="menu-btn" aria-label="Menú" onclick="document.querySelector('nav').classList.toggle('nav-open')">
+          <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      <div class="nav-links">
+      <a href="/es/servicios.html">Qué hago</a>
+      <a href="/es/portafolio.html">Trabajo</a>
+      <a href="/es/cuidado-web.html" style="color:var(--purple)">Cuidado Web</a>
+      <a href="/es/sobre-mi.html">Sobre mí</a>
+      <div class="lang-toggle">
+          <a href="/website-care.html" hreflang="en" lang="en" aria-label="View this page in English">EN</a>
+          <span class="active">ES</span>
+        </div>
+        <button class="theme-toggle" aria-label="Alternar modo oscuro" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
+          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="/es/agendar.html" class="btn btn-nav">Trabaja con Sebby</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<header class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Cuidado Web</div>
+    <h1>Tu manejas tu negocio. <span class="accent">Yo me encargo de tu sitio web.</span></h1>
+    <p class="lede">La mayoría de los sitios web se deterioran lentamente. Los plugins se desactualizan, las páginas se vuelven lentas, se abren brechas de seguridad, y nadie se da cuenta hasta que un cliente lo nota. Con Cuidado Web, yo lo noto primero.</p>
+  </div>
+</header>
+
+<!-- Cost of doing nothing -->
+<section id="main" style="padding-top:24px;padding-bottom:0">
+  <div class="wrap">
+    <div class="stat-bar">
+      <div class="stat-card reveal">
+        <div class="num">30,000+</div>
+        <p>Sitios web hackeados cada dia</p>
+      </div>
+      <div class="stat-card reveal">
+        <div class="num">$3K+</div>
+        <p>Costo típico para recuperarse de una brecha</p>
+      </div>
+      <div class="stat-card reveal">
+        <div class="num">53%</div>
+        <p>de los visitantes se van si una página tarda más de 3 segundos</p>
+      </div>
+      <div class="stat-card reveal">
+        <div class="num">75%</div>
+        <p>juzgan tu credibilidad por el diseño de tu sitio web</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing tiers -->
+<section style="padding-top:48px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Elige el nivel de cuidado que te convenga.</h2>
+      <p>Los planes mensuales son mes a mes sin contratos. Cancela cuando quieras. Los planes anuales se facturan una vez al año a una tarifa con descuento y se renuevan automáticamente con 30 días de aviso antes de la renovación.</p>
+    </div>
+
+    <div class="price-toggle reveal">
+      <span>Mensual</span>
+      <button class="toggle-switch" id="billingToggle" aria-label="Alternar facturación anual" onclick="this.classList.toggle('active');var p=document.getElementById('pricingPlans');p.classList.toggle('show-annual');var isAnnual=p.classList.contains('show-annual');p.querySelectorAll('.plan-cta-monthly').forEach(function(el){el.style.display=isAnnual?'none':'inline-flex'});p.querySelectorAll('.plan-cta-annual').forEach(function(el){el.style.display=isAnnual?'inline-flex':'none'});var n=document.getElementById('annualNote');if(n)n.style.display=isAnnual?'block':'none'"></button>
+      <span>Anual</span>
+      <span class="save">Ahorra ~8%</span>
+    </div>
+    <div style="text-align:center;margin-bottom:28px;font-size:.85rem;color:var(--muted);display:none" id="annualNote">
+      
+      Los planes anuales se facturan como un pago único anual. Se renuevan automáticamente con 30 días de aviso. Ventana de reembolso de 14 días después de cada renovación.
+    </div>
+
+    <div class="plans" id="pricingPlans">
+      <div class="plan reveal">
+        <h3>Esencial</h3>
+        <p class="for">Para sitios simples que necesitan mantenerse saludables</p>
+        <div class="price price-monthly">$99<em>/mes</em></div>
+        <div class="price price-annual">$1,089<em>/año</em></div>
+        <div class="price-annual" style="font-size:.85rem;color:var(--muted);margin-bottom:4px;display:none">equivalente a $90.75/mes</div>
+        <ul class="checklist">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Actualizaciones semanales de software y seguridad verificadas</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Respaldos diarios fuera del sitio</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Monitoreo de disponibilidad y seguridad las 24 horas</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Informe mensual de salud en términos claros</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Respuesta dentro de dos días hábiles</li>
+        </ul>
+        <a class="btn btn-ghost plan-cta-monthly" href="https://link.waveapps.com/cnf8ay-upmnpb" target="_blank" rel="noopener">Elegir Esencial</a>
+        <a class="btn btn-ghost plan-cta-annual" href="https://link.waveapps.com/bejbhr-xekxzx" target="_blank" rel="noopener" style="display:none">Elegir Esencial (Anual)</a>
+      </div>
+      <div class="plan reveal featured">
+        <h3>Estandar</h3>
+        <p class="for">Para negocios cuyo sitio web atrae clientes</p>
+        <div class="price price-monthly">$249<em>/mes</em></div>
+        <div class="price price-annual">$2,739<em>/año</em></div>
+        <div class="price-annual" style="font-size:.85rem;color:var(--muted);margin-bottom:4px;display:none">equivalente a $228.25/mes</div>
+        <ul class="checklist">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Todo lo del plan Esencial</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Una hora de ediciones de contenido cada mes</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Optimización de velocidad y rendimiento trimestral</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Restauración desde un respaldo limpio si el sitio es comprometido</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Respuesta dentro de un día hábil</li>
+        </ul>
+        <a class="btn plan-cta-monthly" href="https://link.waveapps.com/5hmu99-yqmucp" target="_blank" rel="noopener">Elegir Estandar</a>
+        <a class="btn plan-cta-annual" href="https://link.waveapps.com/fyehtw-53d3g8" target="_blank" rel="noopener" style="display:none">Elegir Estandar (Anual)</a>
+      </div>
+      <div class="plan reveal">
+        <h3>Crecimiento</h3>
+        <p class="for">Para negocios que están creciendo activamente en línea</p>
+        <div class="price price-monthly">$549<em>/mes</em></div>
+        <div class="price price-annual">$6,039<em>/año</em></div>
+        <div class="price-annual" style="font-size:.85rem;color:var(--muted);margin-bottom:4px;display:none">equivalente a $503.25/mes</div>
+        <ul class="checklist">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Todo lo del plan Estandar</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Dos horas mensuales para ediciones, SEO on-page y mejoras del sitio</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Revisión mensual de Search Console, Analytics y Core Web Vitals</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Llamada trimestral de estrategia de 30 minutos</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Interrupciones críticas atendidas dentro de cuatro horas hábiles</li>
+        </ul>
+        <a class="btn btn-ghost plan-cta-monthly" href="https://link.waveapps.com/ezt8u4-kvsmgf" target="_blank" rel="noopener">Elegir Crecimiento</a>
+        <a class="btn btn-ghost plan-cta-annual" href="https://link.waveapps.com/bp28zk-wg83ks" target="_blank" rel="noopener" style="display:none">Elegir Crecimiento (Anual)</a>
+      </div>
+    </div>
+    <div style="max-width:44em;margin:28px auto 0;text-align:center;font-size:.9rem;color:var(--ink-soft);line-height:1.65">
+      <p>El trabajo fuera de tu tiempo incluido es <strong>$125 por hora</strong>, siempre aprobado por ti antes de comenzar. El tiempo incluido cubre cambios a páginas existentes y no se acumula mes a mes. Páginas nuevas, rediseños, redacción de contenido, tiendas en línea y funciones personalizadas siempre se cotizan por separado, para que nunca haya facturas sorpresa.</p>
+      <p style="margin-top:12px;font-size:.84rem;color:var(--muted)">Los planes cubren sitios web estándar de negocios. Sitios de comercio electrónico, membresías, LMS y sitios altamente personalizados se cotizan individualmente después de una revisión de salud gratuita. El alojamiento puede incluirse para sitios elegibles, confirmado durante la revisión. Los tiempos de respuesta reflejan confirmación durante horario laboral (lun-vie 9am-6pm ET).</p>
+      <p style="margin-top:12px;font-size:.82rem;color:var(--muted)">Al iniciar un plan, aceptas los términos del plan de cuidado en esta página y nuestros <a href="/es/terminos.html" style="color:var(--purple);text-decoration:underline">Términos de Servicio</a>.</p>
+    </div>
+
+    <!-- Comparison table -->
+    <div class="compare reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>Caracteristica</th>
+            <th>Esencial</th>
+            <th class="pop">Estandar</th>
+            <th>Crecimiento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Actualizaciones de software y seguridad</td>
+            <td>Semanal</td>
+            <td>Semanal</td>
+            <td>Semanal</td>
+          </tr>
+          <tr>
+            <td>Respaldos fuera del sitio</td>
+            <td>Diario</td>
+            <td>Diario</td>
+            <td>Diario</td>
+          </tr>
+          <tr>
+            <td>Monitoreo de disponibilidad y seguridad</td>
+            <td class="check">&#10003;</td>
+            <td class="check">&#10003;</td>
+            <td class="check">&#10003;</td>
+          </tr>
+          <tr>
+            <td>Informe mensual de salud</td>
+            <td class="check">&#10003;</td>
+            <td class="check">&#10003;</td>
+            <td class="check">&#10003;</td>
+          </tr>
+          <tr>
+            <td>Tiempo de respuesta</td>
+            <td>2 días hábiles</td>
+            <td>1 día hábil</td>
+            <td>4 hrs hábiles (crítico)</td>
+          </tr>
+          <tr>
+            <td>Ediciones de contenido incluidas</td>
+            <td class="dash">-</td>
+            <td>1 hr/mes</td>
+            <td>2 hrs/mes</td>
+          </tr>
+          <tr>
+            <td>Optimización de velocidad y rendimiento</td>
+            <td class="dash">-</td>
+            <td>Trimestral</td>
+            <td>Trimestral</td>
+          </tr>
+          <tr>
+            <td>Restauración de respaldo (sitio comprometido)</td>
+            <td class="dash">-</td>
+            <td class="check">&#10003;</td>
+            <td class="check">&#10003;</td>
+          </tr>
+          <tr>
+            <td>Revisión de Search Console y Analytics</td>
+            <td class="dash">-</td>
+            <td class="dash">-</td>
+            <td>Mensual</td>
+          </tr>
+          <tr>
+            <td>Llamadas de estrategia</td>
+            <td class="dash">-</td>
+            <td class="dash">-</td>
+            <td>Trimestral</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Per-edit add-ons -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>¿Necesitas ediciones sin un plan?</h2>
+      <p>En el plan Esencial o solo necesitas un cambio puntual? Toma un paquete de ediciones. Sin suscripción requerida.</p>
+    </div>
+    <div class="edit-packs">
+      <div class="edit-pack reveal">
+        <h3>Edición Individual</h3>
+        <div class="pack-price">$49</div>
+        <div class="pack-per">único pago</div>
+        <p>Un cambio específico (30 min o menos de trabajo con contenido del cliente): cambiar una foto, actualizar texto, arreglar un enlace, agregar un testimonio.</p>
+        <a class="btn btn-ghost" href="https://link.waveapps.com/hu5d4c-sc2cnw" target="_blank" rel="noopener" style="margin-top:16px;font-size:.88rem">Comprar Edición</a>
+      </div>
+      <div class="edit-pack reveal">
+        <h3>Paquete de 3</h3>
+        <div class="pack-price">$129</div>
+        <div class="pack-per">$43/edición</div>
+        <p>Tres ediciones (30 min cada una) para usar dentro de 12 meses de la compra.</p>
+        <a class="btn btn-ghost" href="https://link.waveapps.com/u5nxs5-gy4rfs" target="_blank" rel="noopener" style="margin-top:16px;font-size:.88rem">Comprar Paquete de 3</a>
+      </div>
+      <div class="edit-pack reveal">
+        <h3>Paquete de 5</h3>
+        <div class="pack-price">$199</div>
+        <div class="pack-per">$40/edición</div>
+        <p>Cinco ediciones (30 min cada una), mejor valor. Usar dentro de 12 meses de la compra. Perfecto para actualizaciones de temporada.</p>
+        <a class="btn btn-ghost" href="https://link.waveapps.com/rscsuc-hj8hg7" target="_blank" rel="noopener" style="margin-top:16px;font-size:.88rem">Comprar Paquete de 5</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The math -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="math-callout reveal">
+      <div>
+        <h2>Haz la cuenta.</h2>
+        <p>Las brechas de seguridad pueden costarle a las pequeñas empresas miles en ingresos perdidos, recuperación y daño a la reputación. Un plan Esencial por un año completo cuesta una fracción de un solo incidente.</p>
+      </div>
+      <div class="math-vs">
+        <div class="vs-item">
+          <div class="vs-label">Esencial (12 pagos mensuales)</div>
+          <div class="vs-price">$1,188 <em>/ año</em></div>
+          <div class="vs-note">Respaldos diarios, actualizaciones, monitoreo, tranquilidad</div>
+        </div>
+        <div class="vs-item">
+          <div class="vs-label">Una brecha de seguridad</div>
+          <div class="vs-price">$3,000-$25,000</div>
+          <div class="vs-note">Ingresos perdidos, daño a la reputación, costos de recuperación</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Sebby -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Por que los negocios me confian sus sitios.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Una persona, no una cola de tickets</h3>
+        <p>Me escribes directamente. Sin niveles de soporte, sin musica de espera, sin "tu ticket ha sido escalado."</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>Arreglo problemas antes de que los notes</h3>
+        <p>El monitoreo automatizado detecta problemas a las 2am para que tu no tengas que hacerlo. Recibes un informe, no una llamada de panico.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+        <h3>Informes en términos claros</h3>
+        <p>Sin jerga tecnica. Cada informe mensual te dice que paso, que esta saludable, y que considerar a continuacion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section style="background:var(--tint);border-radius:32px;margin:0 28px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Lo que dicen los clientes.</h2>
+    </div>
+    <div class="quotes">
+      <div class="quote reveal">
+        <div class="mark" aria-hidden="true">"</div>
+        <p class="body">Sebby reconstruyó toda la presencia web de mi bufete y resolvió problemas de infraestructura que tenían mi dominio, mi correo y dos sitios web compitiendo entre sí. Trabaja rápido, explica todo en términos claros, y trata mi sitio como si fuera suyo. Le confío la cara digital de mi práctica.</p>
+        <div class="who">
+          <div class="avatar">JR</div>
+          <div><strong>Jorge L. Riera</strong><span>Socio Fundador, Riera Law Firm</span></div>
+        </div>
+      </div>
+      <div class="quote reveal">
+        <div class="mark" aria-hidden="true">"</div>
+        <p class="body">Trabajar con Sebastian ha sido una experiencia fantástica. Tomó nuestra visión para Elite Care Recovery y construyó un sitio web profesional que superó nuestras expectativas, desde mostrar nuestro equipo de recuperación NICE1 hasta facilitar que los pacientes reserven en línea. Su comunicación y tiempo de entrega fueron excepcionales durante todo el proceso. Lo recomiendo ampliamente a cualquiera que busque un desarrollador web talentoso y confiable que realmente se preocupa por entregar un gran resultado.</p>
+        <div class="who">
+          <div class="avatar">JP</div>
+          <div><strong>John Pierce</strong><span>Cofundador, Elite Care Recovery</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Preguntas justas.</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>¿Y si tú no construiste mi sitio web?</summary>
+        <p>No hay problema. Cada plan comienza con una revisión de salud gratuita para que ambos sepamos en qué estado está tu sitio. Si la revisión encuentra problemas preexistentes, cotizo esa corrección por separado y el plan comienza una vez que tu sitio esté en buenas condiciones. La mayoría de los sitios que cuido fueron construidos por otra persona.</p>
+      </details>
+      <details>
+        <summary>¿Qué cuenta como tiempo de edición incluido?</summary>
+        <p>Cambios a páginas existentes usando contenido que tú proporcionas: cambiar fotos, actualizar horarios o precios, agregar un testimonio, ajustar texto. El tiempo incluido no se acumula mes a mes. El trabajo fuera de tus horas incluidas es $125/hr, siempre aprobado por ti primero. Páginas nuevas, rediseños, redacción de contenido, tiendas en línea y funciones personalizadas se cotizan por separado.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa si mi sitio se cae o es hackeado?</summary>
+        <p>Generalmente lo sé antes que tú. El monitoreo me alerta en cuanto algo anda mal, y ponerte de nuevo en línea se convierte en mi primera prioridad. Los planes Estándar y Crecimiento incluyen restauración desde un respaldo limpio verificado. Si el problema requiere limpieza de malware más profunda, análisis forense o remediación de terceros, cotizo ese trabajo antes de cualquier facturación adicional.</p>
+      </details>
+      <details>
+        <summary>¿Puedo cancelar?</summary>
+        <p><strong>Planes mensuales:</strong> Cancela en cualquier momento, sin penalización. Tu sitio, tus respaldos y tus cuentas son tuyos. Te entregaré todo limpiamente si decides seguir adelante.<br><br><strong>Planes anuales:</strong> Tienes 14 días después del pago (o renovación) para cancelar con reembolso completo. Después de 14 días, el pago anual no es reembolsable. Recibirás un aviso 30 días antes de cada renovación para que nunca te tome por sorpresa.</p>
+      </details>
+      <details>
+        <summary>¿Las horas de edición se acumulan?</summary>
+        <p>No, las horas incluidas no se acumulan mes a mes. Cualquier trabajo fuera de tu tiempo incluido se factura a $125/hr, siempre con tu aprobación antes de comenzar.</p>
+      </details>
+      <details>
+        <summary>¿Cómo funciona la renovación del plan anual?</summary>
+        <p>Los planes anuales se renuevan automáticamente cada año. Te enviaré un recordatorio 30 días antes de tu fecha de renovación. Si quieres cancelar, solo avísame antes de la renovación y no se te cobrará. Si la renovación se procesa y cambias de opinión, tienes 14 días para un reembolso completo. Sin letra pequeña, sin complicaciones.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa si necesito algo más grande?</summary>
+        <p>Nuevas páginas de destino, rediseños o funciones personalizadas van más allá del cuidado regular. Lo cotizo por separado y te doy un precio claro antes de comenzar cualquier trabajo. Los clientes de planes de cuidado obtienen programación prioritaria y tarifas preferenciales.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa con sitios de comercio electrónico o complejos?</summary>
+        <p>Estos planes cubren sitios web estándar de negocios. WooCommerce, tiendas en línea, sitios de membresías, plataformas LMS, multisite y sitios altamente personalizados requieren más tiempo y se cotizan individualmente después de la revisión de salud gratuita.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Free health check CTA -->
+<section class="final" style="padding-top:10px">
+  <div class="wrap">
+    <h2>¿No sabes cómo está tu sitio? <span class="accent">Obtén una revisión de salud gratis.</span></h2>
+    <p>Revisaré la velocidad, seguridad, respaldos y SEO de tu sitio en 24 horas. Sin costo, sin compromiso. Sabrás exactamente qué necesita atención.</p>
+    <a class="btn" href="/es/agendar.html">Solicitar Revisión Gratis&nbsp;&#8594;</a><a class="btn btn-ghost" href="/es/precios.html" style="margin-left:12px">Ver precios&nbsp;→</a>
+  </div>
+</section>
+
+<section style="padding:48px 0 64px">
+  <div class="wrap" style="text-align:center">
+    <p style="font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:16px">Del blog</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px 32px;justify-content:center">
+      <a href="/es/blog/que-es-el-cuidado-web.html" style="color:var(--purple);font-weight:600;font-size:.95rem">Qué significa realmente el cuidado web &rarr;</a>
+      <a href="/es/blog/5-senales-de-que-tu-sitio-web-pierde-clientes.html" style="color:var(--purple);font-weight:600;font-size:.95rem">5 señales de que tu sitio web te está haciendo perder clientes &rarr;</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="/assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="/assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span>Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</span></div>
+    <div class="foot-links">
+      <a href="/es/servicios.html">Qué hago</a>
+      <a href="/es/portafolio.html">Trabajo</a>
+      <a href="/es/cuidado-web.html">Cuidado Web</a>
+      <a href="/es/sobre-mi.html">Sobre mí</a>
+      <a href="/es/blog.html">Blog</a>
+      <a href="/es/privacidad.html">Privacidad</a>
+      <a href="/es/terminos.html">Términos</a>
+      <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
+    </div>
+  </div>
+</footer>
+<script>!function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})}()</script>
+<script>!function(){var cta=document.getElementById('stickyCta');if(!cta)return;var footer=document.querySelector('footer');var shown=false;window.addEventListener('scroll',function(){var y=window.scrollY;var fTop=footer?footer.getBoundingClientRect().top+y-window.innerHeight:Infinity;if(y>400&&y<fTop){if(!shown){cta.classList.add('show');shown=true}}else{if(shown){cta.classList.remove('show');shown=false}}},{passive:true})}()</script>
+
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>
+</body>
+</html>

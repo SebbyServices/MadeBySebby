@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DV4L5CZRML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DV4L5CZRML');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Call — Free Web Design Consultation — Made by Sebby</title>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="Sebby — Made by Sebby">
+<meta name="description" content="Book a free 15-minute web design consultation with Sebby. No pressure, no jargon. Pick a time that works for you and let's talk about your business.">
+<link rel="preload" as="image" href="assets/logo/sebby-nav.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
+<script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
+<style>
+  :root{
+    --ink:#1A1D29;
+    --ink-soft:#4A4E5C;
+    --muted:#6B7080;
+    --purple:#6C3CE9;
+    --purple-deep:#5A2FD0;
+    --blue:#2D6FFF;
+    --tint:#F4F1FD;
+    --line:#E8E6F2;
+    --white:#FFFFFF;
+    --radius:20px;
+    --radius-sm:12px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+  img{max-width:100%;display:block}
+
+  /* ---------- Nav ---------- */
+  nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:50}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.06rem;letter-spacing:-.01em}
+  .lockup{display:flex;flex-direction:column;line-height:1.15}
+  .madeby{font-size:.66rem;font-weight:500;color:var(--muted);letter-spacing:.04em;text-transform:lowercase}
+  .sebbymark{font-size:1.02rem;font-weight:700;letter-spacing:.24em;color:var(--ink)}
+  .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
+  .nav-links a{color:var(--ink-soft);transition:color .15s}
+  .nav-links a.btn{color:#fff}
+  .nav-links a.btn:hover{color:#fff}
+  .nav-links a:hover{color:var(--purple)}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;
+    padding:13px 26px;border-radius:999px;border:none;cursor:pointer;
+    transition:background .15s, transform .15s;
+  }
+  .btn:hover{background:var(--purple-deep);transform:translateY(-1px)}
+  .btn:focus-visible{outline-color:var(--ink)}
+  .btn-ghost{
+    background:transparent;color:var(--ink);border:1.5px solid var(--line);
+  }
+  .btn-ghost:hover{background:var(--tint);border-color:var(--purple);color:var(--purple)}
+  .btn-nav{padding:10px 22px;font-size:.92rem}
+
+  /* ---------- Monogram ---------- */
+  .mono{width:36px;height:36px;flex-shrink:0}
+
+  /* ---------- Interior pages ---------- */
+  section{padding:96px 0}
+  .sec-head{max-width:38em;margin-bottom:56px}
+  h2{font-size:clamp(1.7rem,3vw,2.35rem);font-weight:800;letter-spacing:-.022em;line-height:1.16;margin-bottom:16px}
+  .sec-head p{font-size:1.08rem;color:var(--ink-soft)}
+
+  .page-hero{padding:76px 0 32px}
+  .page-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.028em;line-height:1.09;margin-bottom:16px}
+  .page-hero h1 .accent{color:var(--purple)}
+  .page-hero p.lede{font-size:1.14rem;color:var(--ink-soft);max-width:36em;margin-top:0}
+  .eyebrow{
+    font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--purple);margin-bottom:20px;display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2.5px;background:var(--purple);border-radius:2px}
+  .breadcrumb{font-size:.85rem;color:var(--muted);margin-bottom:22px}
+  .breadcrumb a:hover{color:var(--purple)}
+
+  /* ---------- Cal embed ---------- */
+  .cal-container{
+    max-width:1000px;margin:0 auto;
+    min-height:600px;
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  #cal-booking{width:100%;min-height:600px;overflow:auto}
+
+  /* ---------- Trust signals ---------- */
+  .book-trust{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+    max-width:800px;margin:48px auto 0;text-align:center;
+  }
+  .book-trust-item{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .book-trust-item svg{width:28px;height:28px;stroke:var(--purple);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .book-trust-item strong{font-size:.95rem;font-weight:700}
+  .book-trust-item span{font-size:.88rem;color:var(--muted)}
+
+  /* Footer */
+  footer{border-top:1px solid var(--line);padding:44px 0}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .credit{display:flex;align-items:center;gap:10px;font-size:.92rem;color:var(--muted)}
+  .credit .mono{width:22px;height:22px}
+  .credit strong{color:var(--ink);font-weight:700}
+  .foot-links{display:flex;gap:26px;font-size:.9rem;color:var(--muted)}
+  .foot-links a:hover{color:var(--purple)}
+
+  /* Motion */
+  .rise{opacity:0;transform:translateY(16px);animation:rise .7s ease forwards}
+  .d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    .rise{opacity:1;transform:none;animation:none}
+    *{transition:none !important;scroll-behavior:auto}
+  }
+
+  /* Responsive */
+  @media (max-width:900px){
+    .book-trust{grid-template-columns:1fr;gap:20px;max-width:360px}
+  }
+  @media (max-width:640px){
+    section{padding:68px 0}
+    .page-hero{padding:56px 0 24px}
+    .cal-container{min-height:500px}
+    #cal-booking{min-height:500px}
+  }
+
+  /* ---------- Hamburger Menu ---------- */
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;z-index:51}
+  .menu-btn svg{width:26px;height:26px;stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round}
+  .menu-btn .close{display:none}
+  .nav-open .menu-btn .open{display:none}
+  .nav-open .menu-btn .close{display:block}
+  @media (max-width:640px){
+    .menu-btn{display:block}
+    .nav-links{
+      display:none;position:fixed;top:76px;left:0;right:0;bottom:0;
+      background:var(--white);flex-direction:column;gap:0;padding:20px 28px;
+      border-top:1px solid var(--line);z-index:49;
+      overflow-y:auto;
+    }
+    .nav-open{backdrop-filter:none;overflow:visible}
+    .nav-open .nav-links{display:flex}
+    .nav-links a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
+    .nav-links a:last-child{border-bottom:none}
+    .nav-links a.btn{margin-top:12px;justify-content:center;border-bottom:none}
+    .nav-links .lang-toggle{margin-top:8px;align-self:flex-start}
+    .nav-links .theme-toggle{margin-top:4px;align-self:flex-start}
+  }
+
+  /* ---------- Scroll Animations ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+
+  /* ---------- Language Toggle ---------- */
+  :root:not([data-lang="es"]) [lang="es"]{display:none}
+  [data-lang="es"] [lang="en"]{display:none}
+  .lang-toggle{
+    display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;
+    font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0;
+  }
+  .lang-toggle button{
+    background:none;border:none;padding:7px 12px;cursor:pointer;
+    color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em;
+  }
+  .lang-toggle button:hover{color:var(--purple)}
+  .lang-toggle button.active{background:var(--purple);color:#fff}
+
+  /* ---------- Dark Mode ---------- */
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) nav{background:rgba(15,17,23,.92)}
+    :root:not([data-theme="light"]) .btn-ghost{border-color:var(--line)}
+    :root:not([data-theme="light"]) .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+    :root:not([data-theme="light"]) .logo-light{display:none !important}
+    :root:not([data-theme="light"]) .logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
+    :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .btn{background:#6B4EC2}
+    :root:not([data-theme="light"]) .btn:hover{background:#5C41B0}
+  }
+  [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
+  [data-theme="dark"] .btn-ghost{border-color:var(--line)}
+  [data-theme="dark"] .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+  [data-theme="dark"] .logo-light{display:none !important}
+  [data-theme="dark"] .logo-dark{display:block !important}
+  [data-theme="dark"] .foot-logo-light{display:none !important}
+  [data-theme="dark"] .foot-logo-dark{display:block !important}
+  [data-theme="dark"] .btn{background:#6B4EC2}
+  [data-theme="dark"] .btn:hover{background:#5C41B0}
+
+  /* Theme transition */
+  .theme-trans,.theme-trans *,.theme-trans *::before,.theme-trans *::after{
+    transition:background .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease,fill .35s ease,stroke .35s ease !important;
+  }
+  /* Theme toggle button */
+  .theme-toggle{
+    background:none;border:1.5px solid var(--line);border-radius:50%;
+    width:38px;height:38px;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;transition:border-color .15s,background .15s;flex-shrink:0;
+  }
+  .theme-toggle:hover{border-color:var(--purple);background:var(--tint)}
+  .theme-toggle svg{width:18px;height:18px;stroke:var(--muted);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .theme-toggle:hover svg{stroke:var(--purple)}
+  .theme-toggle .icon-sun{display:none}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon{display:none}
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun{display:block}
+  }
+  [data-theme="dark"] .theme-toggle .icon-moon{display:none}
+  [data-theme="dark"] .theme-toggle .icon-sun{display:block !important}
+  [data-theme="light"] .theme-toggle .icon-sun{display:none !important}
+  [data-theme="light"] .theme-toggle .icon-moon{display:block}
+
+  /* ---------- Skip link ---------- */
+  .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
+  .skip-link:focus{top:12px}
+
+  /* ---------- Print ---------- */
+  @media print{
+    nav,.menu-btn,.theme-toggle,.lang-toggle,footer,.btn{display:none!important}
+    body{color:#000;background:#fff;-webkit-print-color-adjust:exact}
+    .wrap{max-width:100%;padding:0 12px}
+    a{color:#000}
+    a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em;color:#555}
+    .reveal{opacity:1!important;transform:none!important}
+  }
+</style>
+
+<!-- seo:start -->
+<link rel="alternate" type="text/plain" title="LLM instructions" href="/llms.txt">
+<link rel="canonical" href="https://madebysebby.com/book.html">
+<link rel="alternate" hreflang="en" href="https://madebysebby.com/book.html">
+<link rel="alternate" hreflang="es" href="https://madebysebby.com/book.html">
+<link rel="alternate" hreflang="x-default" href="https://madebysebby.com/book.html">
+<meta name="theme-color" content="#6C3CE9">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Made by Sebby">
+<meta property="og:title" content="Book a Call — Free Web Design Consultation">
+<meta property="og:description" content="Book a free 15-minute web design consultation with Sebby. No pressure, no jargon. Pick a time that works for you.">
+<meta property="og:url" content="https://madebysebby.com/book.html">
+<meta property="og:image" content="https://madebysebby.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Book a Call — Free Web Design Consultation">
+<meta name="twitter:description" content="Book a free 15-minute web design consultation with Sebby. No pressure, no jargon. Pick a time that works for you.">
+<meta name="twitter:image" content="https://madebysebby.com/assets/og-image.jpg">
+<!-- seo:end -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Book a Call — Free Web Design Consultation",
+  "url": "https://madebysebby.com/book.html",
+  "description": "Book a free 15-minute web design consultation with Sebby. Pick a time that works for you.",
+  "mainEntity": {
+    "@type": "ProfessionalService",
+    "name": "Made by Sebby",
+    "url": "https://madebysebby.com/",
+    "email": "hello@madebysebby.com",
+    "telephone": "+17865431417",
+    "potentialAction": {
+      "@type": "ReserveAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://madebysebby.com/book.html"
+      },
+      "result": {
+        "@type": "Reservation",
+        "name": "Free Web Design Consultation"
+      }
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://madebysebby.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Book a Call",
+      "item": "https://madebysebby.com/book.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main"><span lang="en">Skip to content</span><span lang="es">Ir al contenido</span></a>
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('nav-open')">
+          <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      <div class="nav-links">
+      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
+      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
+      <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <div class="lang-toggle">
+          <button onclick="document.documentElement.removeAttribute('data-lang');localStorage.setItem('lang','en');this.classList.add('active');this.nextElementSibling.classList.remove('active')" class="active">EN</button>
+          <button onclick="document.documentElement.setAttribute('data-lang','es');localStorage.setItem('lang','es');this.classList.add('active');this.previousElementSibling.classList.remove('active')">ES</button>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
+          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="book.html" class="btn btn-nav"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span></a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<header class="page-hero">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/"><span lang="en">Home</span><span lang="es">Inicio</span></a> / <span lang="en">Book a Call</span><span lang="es">Reservar Llamada</span></nav>
+    <div class="eyebrow"><span lang="en">Schedule</span><span lang="es">Agendar</span></div>
+    <h1><span lang="en">Pick a time. <span class="accent">Let's talk.</span></span><span lang="es">Elige un horario. <span class="accent">Hablemos.</span></span></h1>
+    <p class="lede"><span lang="en">15 minutes, no commitment. You tell me about your business, I tell you exactly what I'd build and what it costs. If I'm not the right fit, I'll say so.</span><span lang="es">15 minutos, sin compromiso. Me cuentas sobre tu negocio, te digo exactamente qué construiría y cuánto cuesta. Si no soy la persona indicada, te lo digo.</span></p>
+  </div>
+</header>
+
+<section id="main" style="padding-top:0">
+  <div class="wrap">
+    <div class="cal-container reveal">
+      <div id="cal-booking"></div>
+    </div>
+
+    <div class="book-trust reveal">
+      <div class="book-trust-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <strong><span lang="en">15 minutes</span><span lang="es">15 minutos</span></strong>
+        <span><span lang="en">Quick and focused</span><span lang="es">Rápido y enfocado</span></span>
+      </div>
+      <div class="book-trust-item">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <strong><span lang="en">No obligation</span><span lang="es">Sin compromiso</span></strong>
+        <span><span lang="en">Honest advice, no pitch</span><span lang="es">Consejo honesto, sin presión</span></span>
+      </div>
+      <div class="book-trust-item">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <strong><span lang="en">Real answers</span><span lang="es">Respuestas reales</span></strong>
+        <span><span lang="en">Scope, cost, timeline</span><span lang="es">Alcance, costo, tiempo</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span><span lang="en">This site was <strong>Made by Sebby</strong>. Yours can be too.</span><span lang="es">Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</span></span></div>
+    <div class="foot-links">
+      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
+      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
+      <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <a href="blog.html">Blog</a>
+      <a href="privacy.html"><span lang="en">Privacy</span><span lang="es">Privacidad</span></a>
+      <a href="terms.html"><span lang="en">Terms</span><span lang="es">Términos</span></a>
+      <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
+    </div>
+  </div>
+</footer>
+<script>!function(){var l=document.documentElement.getAttribute('data-lang');if(l==='es'){var b=document.querySelectorAll('.lang-toggle button');if(b.length===2){b[0].classList.remove('active');b[1].classList.add('active')}}}()</script>
+<script>!function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})}()</script>
+
+<!-- Cal.com Embed -->
+<script type="text/javascript">
+(function (C, A, L) {
+  let p = function (a, ar) { a.q.push(ar); };
+  let d = C.document;
+  C.Cal = C.Cal || function () {
+    let cal = C.Cal;
+    let ar = arguments;
+    if (!cal.loaded) {
+      cal.ns = {};
+      cal.q = cal.q || [];
+      d.head.appendChild(d.createElement("script")).src = A;
+      cal.loaded = true;
+    }
+    if (ar[0] === L) {
+      const api = function () { p(api, arguments); };
+      const namespace = ar[1];
+      api.q = api.q || [];
+      if (typeof namespace === "string") {
+        cal.ns[namespace] = cal.ns[namespace] || api;
+        p(cal.ns[namespace], ar);
+        p(cal, ["initNamespace", namespace]);
+      } else p(cal, ar);
+      return;
+    }
+    p(cal, ar);
+  };
+})(window, "https://app.cal.com/embed/embed.js", "init");
+
+Cal("init", { origin: "https://app.cal.com" });
+
+Cal("inline", {
+  elementOrSelector: "#cal-booking",
+  calLink: "madebysebby",
+  layout: "month_view",
+  config: {
+    theme: (function(){
+      var t = document.documentElement.getAttribute('data-theme');
+      if (t === 'dark') return 'dark';
+      if (t === 'light') return 'light';
+      return window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+    })()
+  }
+});
+
+Cal("ui", {
+  styles: { branding: { brandColor: "#6C3CE9" } },
+  hideEventTypeDetails: false,
+  layout: "month_view"
+});
+</script>
+
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>
+</body>
+</html>

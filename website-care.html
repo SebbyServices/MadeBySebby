@@ -10,12 +10,11 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Sebby — Made by Sebby">
 <meta name="description" content="Monthly website maintenance for Miami and South Florida businesses. Updates, backups, security, speed optimization, and edits. From $99/month.">
-<link rel="preload" as="image" href="assets/logo/sebby-nav.svg">
+<link rel="preload" as="image" href="/assets/logo/sebby-nav.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
-<script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
 <style>
   :root{
     --ink:#1A1D29;
@@ -51,10 +50,10 @@
   .logo .made{font-weight:500;color:var(--muted)}
   .logo .sebby{color:var(--ink)}
   .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
-  .nav-links a{color:var(--ink-soft);transition:color .15s}
-  .nav-links a.btn{color:#fff}
-  .nav-links a.btn:hover{color:#fff}
-  .nav-links a:hover{color:var(--purple)}
+  .nav-links>a{color:var(--ink-soft);transition:color .15s}
+  .nav-links>a.btn{color:#fff}
+  .nav-links>a.btn:hover{color:#fff}
+  .nav-links>a:hover{color:var(--purple)}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
     background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;
@@ -267,7 +266,6 @@
   .plan:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08)}
   .plan.featured{border:2px solid var(--purple);position:relative}
   .plan.featured::before{content:"Most popular";position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--purple);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 16px;border-radius:999px}
-  [data-lang="es"] .plan.featured::before{content:"Más popular"}
   .plan h3{font-size:1.2rem;font-weight:800;margin-bottom:4px}
   .plan .for{font-size:.88rem;color:var(--muted);margin-bottom:18px}
   .plan .price{font-size:2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:4px}
@@ -387,9 +385,9 @@
     }
     .nav-open{backdrop-filter:none;overflow:visible}
     .nav-open .nav-links{display:flex}
-    .nav-links a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
-    .nav-links a:last-child{border-bottom:none}
-    .nav-links a.btn{margin-top:12px;justify-content:center;border-bottom:none}
+    .nav-links>a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
+    .nav-links>a:last-child{border-bottom:none}
+    .nav-links>a.btn{margin-top:12px;justify-content:center;border-bottom:none}
     .nav-links .lang-toggle{margin-top:8px;align-self:flex-start}
     .nav-links .theme-toggle{margin-top:4px;align-self:flex-start}
   }
@@ -417,18 +415,17 @@
     .sticky-cta{font-size:.88rem;padding:12px 20px}
   }
   /* ---------- Language Toggle ---------- */
-  :root:not([data-lang="es"]) [lang="es"]{display:none}
-  [data-lang="es"] [lang="en"]{display:none}
   .lang-toggle{
     display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;
     font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0;
   }
-  .lang-toggle button{
+  .lang-toggle>*{
     background:none;border:none;padding:7px 12px;cursor:pointer;
     color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em;
+    text-decoration:none;display:flex;align-items:center;
   }
-  .lang-toggle button:hover{color:var(--purple)}
-  .lang-toggle button.active{background:var(--purple);color:#fff}
+  .lang-toggle>*:hover{color:var(--purple)}
+  .lang-toggle>.active{background:var(--purple);color:#fff}
 
   /* ---------- Dark Mode ---------- */
   @media (prefers-color-scheme:dark){
@@ -567,7 +564,7 @@
 <link rel="alternate" type="text/plain" title="LLM instructions" href="/llms.txt">
 <link rel="canonical" href="https://madebysebby.com/website-care.html">
 <link rel="alternate" hreflang="en" href="https://madebysebby.com/website-care.html">
-<link rel="alternate" hreflang="es" href="https://madebysebby.com/website-care.html">
+<link rel="alternate" hreflang="es" href="https://madebysebby.com/es/cuidado-web.html">
 <link rel="alternate" hreflang="x-default" href="https://madebysebby.com/website-care.html">
 <meta name="theme-color" content="#6C3CE9">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -580,6 +577,7 @@
 <meta property="og:site_name" content="Made by Sebby">
 <meta property="og:title" content="Website Care Plans — Monthly Maintenance | Made by Sebby">
 <meta property="og:description" content="Affordable monthly website maintenance plans. Software updates, daily backups, security monitoring, speed optimization, and small edits included.">
+<meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://madebysebby.com/website-care.html">
 <meta property="og:image" content="https://madebysebby.com/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -598,13 +596,20 @@
   "provider": {
     "@type": "ProfessionalService",
     "name": "Made by Sebby",
-    "url": "https://madebysebby.com/"
+    "url": "https://madebysebby.com/",
+    "inLanguage": "en"
   },
   "description": "Monthly website maintenance including software updates, daily backups, security monitoring, speed optimization, and small edits.",
   "serviceType": "Website Maintenance",
   "areaServed": [
-    {"@type": "Country", "name": "United States"},
-    {"@type": "Country", "name": "Dominican Republic"}
+    {
+      "@type": "Country",
+      "name": "United States"
+    },
+    {
+      "@type": "Country",
+      "name": "Dominican Republic"
+    }
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -741,25 +746,25 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <nav>
   <div class="wrap nav-inner">
-    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
+    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="/assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="/assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
     <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('nav-open')">
           <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
           <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
       <div class="nav-links">
-      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
-      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
-      <a href="website-care.html" style="color:var(--purple)"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
-      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <a href="/services.html">What I do</a>
+      <a href="/work.html">Work</a>
+      <a href="/website-care.html" style="color:var(--purple)">Website Care</a>
+      <a href="/about.html">About</a>
       <div class="lang-toggle">
-          <button onclick="document.documentElement.removeAttribute('data-lang');localStorage.setItem('lang','en');this.classList.add('active');this.nextElementSibling.classList.remove('active')" class="active">EN</button>
-          <button onclick="document.documentElement.setAttribute('data-lang','es');localStorage.setItem('lang','es');this.classList.add('active');this.previousElementSibling.classList.remove('active')">ES</button>
+          <span class="active">EN</span>
+          <a href="/es/cuidado-web.html" hreflang="es" lang="es" aria-label="Ver esta página en español">ES</a>
         </div>
         <button class="theme-toggle" aria-label="Toggle dark mode" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
           <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </button>
-        <a href="book.html" class="btn btn-nav"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span></a>
+        <a href="/book.html" class="btn btn-nav">Work with Sebby</a>
     </div>
   </div>
 </nav>
@@ -767,9 +772,9 @@
 <main>
 <header class="page-hero">
   <div class="wrap">
-    <div class="eyebrow"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></div>
-    <h1><span lang="en">You run your business. <span class="accent">I'll take care of your website.</span></span><span lang="es">Tu manejas tu negocio. <span class="accent">Yo me encargo de tu sitio web.</span></span></h1>
-    <p class="lede"><span lang="en">Most websites break slowly. Plugins go stale, pages slow down, security holes open, and nobody notices until a customer does. With Website Care, I notice first.</span><span lang="es">La mayoría de los sitios web se deterioran lentamente. Los plugins se desactualizan, las páginas se vuelven lentas, se abren brechas de seguridad, y nadie se da cuenta hasta que un cliente lo nota. Con Cuidado Web, yo lo noto primero.</span></p>
+    <div class="eyebrow">Website Care</div>
+    <h1>You run your business. <span class="accent">I'll take care of your website.</span></h1>
+    <p class="lede">Most websites break slowly. Plugins go stale, pages slow down, security holes open, and nobody notices until a customer does. With Website Care, I notice first.</p>
   </div>
 </header>
 
@@ -779,19 +784,19 @@
     <div class="stat-bar">
       <div class="stat-card reveal">
         <div class="num">30,000+</div>
-        <p><span lang="en">Websites hacked every single day</span><span lang="es">Sitios web hackeados cada dia</span></p>
+        <p>Websites hacked every single day</p>
       </div>
       <div class="stat-card reveal">
         <div class="num">$3K+</div>
-        <p><span lang="en">Typical cost to recover from a breach</span><span lang="es">Costo típico para recuperarse de una brecha</span></p>
+        <p>Typical cost to recover from a breach</p>
       </div>
       <div class="stat-card reveal">
         <div class="num">53%</div>
-        <p><span lang="en">of visitors leave if a page takes over 3 seconds</span><span lang="es">de los visitantes se van si una página tarda más de 3 segundos</span></p>
+        <p>of visitors leave if a page takes over 3 seconds</p>
       </div>
       <div class="stat-card reveal">
         <div class="num">75%</div>
-        <p><span lang="en">judge your credibility by your website design</span><span lang="es">juzgan tu credibilidad por el diseño de tu sitio web</span></p>
+        <p>judge your credibility by your website design</p>
       </div>
     </div>
   </div>
@@ -801,75 +806,75 @@
 <section style="padding-top:48px">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2><span lang="en">Pick the level of care that fits.</span><span lang="es">Elige el nivel de cuidado que te convenga.</span></h2>
-      <p><span lang="en">Monthly plans are month to month with no contracts. Cancel any time. Annual plans are billed once per year at a discounted rate and auto-renew yearly with 30 days' notice before renewal.</span><span lang="es">Los planes mensuales son mes a mes sin contratos. Cancela cuando quieras. Los planes anuales se facturan una vez al año a una tarifa con descuento y se renuevan automáticamente con 30 días de aviso antes de la renovación.</span></p>
+      <h2>Pick the level of care that fits.</h2>
+      <p>Monthly plans are month to month with no contracts. Cancel any time. Annual plans are billed once per year at a discounted rate and auto-renew yearly with 30 days' notice before renewal.</p>
     </div>
 
     <div class="price-toggle reveal">
-      <span><span lang="en">Monthly</span><span lang="es">Mensual</span></span>
+      <span>Monthly</span>
       <button class="toggle-switch" id="billingToggle" aria-label="Toggle annual billing" onclick="this.classList.toggle('active');var p=document.getElementById('pricingPlans');p.classList.toggle('show-annual');var isAnnual=p.classList.contains('show-annual');p.querySelectorAll('.plan-cta-monthly').forEach(function(el){el.style.display=isAnnual?'none':'inline-flex'});p.querySelectorAll('.plan-cta-annual').forEach(function(el){el.style.display=isAnnual?'inline-flex':'none'});var n=document.getElementById('annualNote');if(n)n.style.display=isAnnual?'block':'none'"></button>
-      <span><span lang="en">Annual</span><span lang="es">Anual</span></span>
-      <span class="save"><span lang="en">Save ~8%</span><span lang="es">Ahorra ~8%</span></span>
+      <span>Annual</span>
+      <span class="save">Save ~8%</span>
     </div>
     <div style="text-align:center;margin-bottom:28px;font-size:.85rem;color:var(--muted);display:none" id="annualNote">
-      <span lang="en">Annual plans are billed as a one-time yearly payment. Auto-renews annually with 30 days' notice. 14-day refund window after each renewal.</span>
-      <span lang="es">Los planes anuales se facturan como un pago único anual. Se renuevan automáticamente con 30 días de aviso. Ventana de reembolso de 14 días después de cada renovación.</span>
+      Annual plans are billed as a one-time yearly payment. Auto-renews annually with 30 days' notice. 14-day refund window after each renewal.
+      
     </div>
 
     <div class="plans" id="pricingPlans">
       <div class="plan reveal">
-        <h3><span lang="en">Essentials</span><span lang="es">Esencial</span></h3>
-        <p class="for"><span lang="en">For simple sites that need to stay healthy</span><span lang="es">Para sitios simples que necesitan mantenerse saludables</span></p>
+        <h3>Essentials</h3>
+        <p class="for">For simple sites that need to stay healthy</p>
         <div class="price price-monthly">$99<em>/mo</em></div>
         <div class="price price-annual">$1,089<em>/yr</em></div>
-        <div class="price-annual" style="font-size:.85rem;color:var(--muted);margin-bottom:4px;display:none"><span lang="en">$90.75/mo equivalent</span><span lang="es">equivalente a $90.75/mes</span></div>
+        <div class="price-annual" style="font-size:.85rem;color:var(--muted);margin-bottom:4px;display:none">$90.75/mo equivalent</div>
         <ul class="checklist">
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Weekly tested software and security updates</span><span lang="es">Actualizaciones semanales de software y seguridad verificadas</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Daily off-site backups</span><span lang="es">Respaldos diarios fuera del sitio</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Uptime and security monitoring around the clock</span><span lang="es">Monitoreo de disponibilidad y seguridad las 24 horas</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Monthly health report in plain English</span><span lang="es">Informe mensual de salud en términos claros</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Response within two business days</span><span lang="es">Respuesta dentro de dos días hábiles</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Weekly tested software and security updates</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Daily off-site backups</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Uptime and security monitoring around the clock</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Monthly health report in plain English</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Response within two business days</li>
         </ul>
-        <a class="btn btn-ghost plan-cta-monthly" href="https://link.waveapps.com/cnf8ay-upmnpb" target="_blank" rel="noopener"><span lang="en">Choose Essentials</span><span lang="es">Elegir Esencial</span></a>
-        <a class="btn btn-ghost plan-cta-annual" href="https://link.waveapps.com/bejbhr-xekxzx" target="_blank" rel="noopener" style="display:none"><span lang="en">Choose Essentials (Annual)</span><span lang="es">Elegir Esencial (Anual)</span></a>
+        <a class="btn btn-ghost plan-cta-monthly" href="https://link.waveapps.com/cnf8ay-upmnpb" target="_blank" rel="noopener">Choose Essentials</a>
+        <a class="btn btn-ghost plan-cta-annual" href="https://link.waveapps.com/bejbhr-xekxzx" target="_blank" rel="noopener" style="display:none">Choose Essentials (Annual)</a>
       </div>
       <div class="plan reveal featured">
-        <h3><span lang="en">Standard</span><span lang="es">Estandar</span></h3>
-        <p class="for"><span lang="en">For businesses whose website brings in customers</span><span lang="es">Para negocios cuyo sitio web atrae clientes</span></p>
+        <h3>Standard</h3>
+        <p class="for">For businesses whose website brings in customers</p>
         <div class="price price-monthly">$249<em>/mo</em></div>
         <div class="price price-annual">$2,739<em>/yr</em></div>
-        <div class="price-annual" style="font-size:.85rem;color:var(--muted);margin-bottom:4px;display:none"><span lang="en">$228.25/mo equivalent</span><span lang="es">equivalente a $228.25/mes</span></div>
+        <div class="price-annual" style="font-size:.85rem;color:var(--muted);margin-bottom:4px;display:none">$228.25/mo equivalent</div>
         <ul class="checklist">
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Everything in Essentials</span><span lang="es">Todo lo del plan Esencial</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">One hour of content edits every month</span><span lang="es">Una hora de ediciones de contenido cada mes</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Quarterly speed and performance tuning</span><span lang="es">Optimización de velocidad y rendimiento trimestral</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Restoration from a clean backup if the site is compromised</span><span lang="es">Restauración desde un respaldo limpio si el sitio es comprometido</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Response within one business day</span><span lang="es">Respuesta dentro de un día hábil</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Everything in Essentials</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>One hour of content edits every month</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Quarterly speed and performance tuning</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Restoration from a clean backup if the site is compromised</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Response within one business day</li>
         </ul>
-        <a class="btn plan-cta-monthly" href="https://link.waveapps.com/5hmu99-yqmucp" target="_blank" rel="noopener"><span lang="en">Choose Standard</span><span lang="es">Elegir Estandar</span></a>
-        <a class="btn plan-cta-annual" href="https://link.waveapps.com/fyehtw-53d3g8" target="_blank" rel="noopener" style="display:none"><span lang="en">Choose Standard (Annual)</span><span lang="es">Elegir Estandar (Anual)</span></a>
+        <a class="btn plan-cta-monthly" href="https://link.waveapps.com/5hmu99-yqmucp" target="_blank" rel="noopener">Choose Standard</a>
+        <a class="btn plan-cta-annual" href="https://link.waveapps.com/fyehtw-53d3g8" target="_blank" rel="noopener" style="display:none">Choose Standard (Annual)</a>
       </div>
       <div class="plan reveal">
-        <h3><span lang="en">Growth</span><span lang="es">Crecimiento</span></h3>
-        <p class="for"><span lang="en">For businesses actively growing online</span><span lang="es">Para negocios que están creciendo activamente en línea</span></p>
+        <h3>Growth</h3>
+        <p class="for">For businesses actively growing online</p>
         <div class="price price-monthly">$549<em>/mo</em></div>
         <div class="price price-annual">$6,039<em>/yr</em></div>
-        <div class="price-annual" style="font-size:.85rem;color:var(--muted);margin-bottom:4px;display:none"><span lang="en">$503.25/mo equivalent</span><span lang="es">equivalente a $503.25/mes</span></div>
+        <div class="price-annual" style="font-size:.85rem;color:var(--muted);margin-bottom:4px;display:none">$503.25/mo equivalent</div>
         <ul class="checklist">
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Everything in Standard</span><span lang="es">Todo lo del plan Estandar</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Two hours monthly for edits, on-page SEO, and site improvements</span><span lang="es">Dos horas mensuales para ediciones, SEO on-page y mejoras del sitio</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Monthly review of Search Console, Analytics, and Core Web Vitals</span><span lang="es">Revisión mensual de Search Console, Analytics y Core Web Vitals</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Quarterly 30-minute strategy call</span><span lang="es">Llamada trimestral de estrategia de 30 minutos</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Critical outages acknowledged within four business hours</span><span lang="es">Interrupciones críticas atendidas dentro de cuatro horas hábiles</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Everything in Standard</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Two hours monthly for edits, on-page SEO, and site improvements</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Monthly review of Search Console, Analytics, and Core Web Vitals</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Quarterly 30-minute strategy call</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Critical outages acknowledged within four business hours</li>
         </ul>
-        <a class="btn btn-ghost plan-cta-monthly" href="https://link.waveapps.com/ezt8u4-kvsmgf" target="_blank" rel="noopener"><span lang="en">Choose Growth</span><span lang="es">Elegir Crecimiento</span></a>
-        <a class="btn btn-ghost plan-cta-annual" href="https://link.waveapps.com/bp28zk-wg83ks" target="_blank" rel="noopener" style="display:none"><span lang="en">Choose Growth (Annual)</span><span lang="es">Elegir Crecimiento (Anual)</span></a>
+        <a class="btn btn-ghost plan-cta-monthly" href="https://link.waveapps.com/ezt8u4-kvsmgf" target="_blank" rel="noopener">Choose Growth</a>
+        <a class="btn btn-ghost plan-cta-annual" href="https://link.waveapps.com/bp28zk-wg83ks" target="_blank" rel="noopener" style="display:none">Choose Growth (Annual)</a>
       </div>
     </div>
     <div style="max-width:44em;margin:28px auto 0;text-align:center;font-size:.9rem;color:var(--ink-soft);line-height:1.65">
-      <p><span lang="en">Work beyond your included time is <strong>$125 per hour</strong>, always approved by you before I start. Included time covers changes to existing pages and does not roll over month to month. New pages, redesigns, copywriting, online stores, and custom features are always quoted separately, so there are no surprise invoices, ever.</span><span lang="es">El trabajo fuera de tu tiempo incluido es <strong>$125 por hora</strong>, siempre aprobado por ti antes de comenzar. El tiempo incluido cubre cambios a páginas existentes y no se acumula mes a mes. Páginas nuevas, rediseños, redacción de contenido, tiendas en línea y funciones personalizadas siempre se cotizan por separado, para que nunca haya facturas sorpresa.</span></p>
-      <p style="margin-top:12px;font-size:.84rem;color:var(--muted)"><span lang="en">Plans cover standard business and brochure sites. E-commerce, membership, LMS, and heavily custom sites are priced individually after a free health check. Hosting can be included for eligible sites, confirmed during the health check. Response times reflect acknowledgement during business hours (Mon-Fri 9am-6pm ET).</span><span lang="es">Los planes cubren sitios web estándar de negocios. Sitios de comercio electrónico, membresías, LMS y sitios altamente personalizados se cotizan individualmente después de una revisión de salud gratuita. El alojamiento puede incluirse para sitios elegibles, confirmado durante la revisión. Los tiempos de respuesta reflejan confirmación durante horario laboral (lun-vie 9am-6pm ET).</span></p>
-      <p style="margin-top:12px;font-size:.82rem;color:var(--muted)"><span lang="en">By starting a plan, you agree to the care plan terms on this page and our <a href="terms.html" style="color:var(--purple);text-decoration:underline">Terms of Service</a>.</span><span lang="es">Al iniciar un plan, aceptas los términos del plan de cuidado en esta página y nuestros <a href="terms.html" style="color:var(--purple);text-decoration:underline">Términos de Servicio</a>.</span></p>
+      <p>Work beyond your included time is <strong>$125 per hour</strong>, always approved by you before I start. Included time covers changes to existing pages and does not roll over month to month. New pages, redesigns, copywriting, online stores, and custom features are always quoted separately, so there are no surprise invoices, ever.</p>
+      <p style="margin-top:12px;font-size:.84rem;color:var(--muted)">Plans cover standard business and brochure sites. E-commerce, membership, LMS, and heavily custom sites are priced individually after a free health check. Hosting can be included for eligible sites, confirmed during the health check. Response times reflect acknowledgement during business hours (Mon-Fri 9am-6pm ET).</p>
+      <p style="margin-top:12px;font-size:.82rem;color:var(--muted)">By starting a plan, you agree to the care plan terms on this page and our <a href="/terms.html" style="color:var(--purple);text-decoration:underline">Terms of Service</a>.</p>
     </div>
 
     <!-- Comparison table -->
@@ -877,72 +882,72 @@
       <table>
         <thead>
           <tr>
-            <th><span lang="en">Feature</span><span lang="es">Caracteristica</span></th>
-            <th><span lang="en">Essentials</span><span lang="es">Esencial</span></th>
-            <th class="pop"><span lang="en">Standard</span><span lang="es">Estandar</span></th>
-            <th><span lang="en">Growth</span><span lang="es">Crecimiento</span></th>
+            <th>Feature</th>
+            <th>Essentials</th>
+            <th class="pop">Standard</th>
+            <th>Growth</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><span lang="en">Software + security updates</span><span lang="es">Actualizaciones de software y seguridad</span></td>
-            <td><span lang="en">Weekly</span><span lang="es">Semanal</span></td>
-            <td><span lang="en">Weekly</span><span lang="es">Semanal</span></td>
-            <td><span lang="en">Weekly</span><span lang="es">Semanal</span></td>
+            <td>Software + security updates</td>
+            <td>Weekly</td>
+            <td>Weekly</td>
+            <td>Weekly</td>
           </tr>
           <tr>
-            <td><span lang="en">Off-site backups</span><span lang="es">Respaldos fuera del sitio</span></td>
-            <td><span lang="en">Daily</span><span lang="es">Diario</span></td>
-            <td><span lang="en">Daily</span><span lang="es">Diario</span></td>
-            <td><span lang="en">Daily</span><span lang="es">Diario</span></td>
+            <td>Off-site backups</td>
+            <td>Daily</td>
+            <td>Daily</td>
+            <td>Daily</td>
           </tr>
           <tr>
-            <td><span lang="en">Uptime + security monitoring</span><span lang="es">Monitoreo de disponibilidad y seguridad</span></td>
-            <td class="check">&#10003;</td>
-            <td class="check">&#10003;</td>
-            <td class="check">&#10003;</td>
-          </tr>
-          <tr>
-            <td><span lang="en">Monthly health report</span><span lang="es">Informe mensual de salud</span></td>
+            <td>Uptime + security monitoring</td>
             <td class="check">&#10003;</td>
             <td class="check">&#10003;</td>
             <td class="check">&#10003;</td>
           </tr>
           <tr>
-            <td><span lang="en">Response time</span><span lang="es">Tiempo de respuesta</span></td>
-            <td><span lang="en">2 business days</span><span lang="es">2 días hábiles</span></td>
-            <td><span lang="en">1 business day</span><span lang="es">1 día hábil</span></td>
-            <td><span lang="en">4 business hrs (critical)</span><span lang="es">4 hrs hábiles (crítico)</span></td>
+            <td>Monthly health report</td>
+            <td class="check">&#10003;</td>
+            <td class="check">&#10003;</td>
+            <td class="check">&#10003;</td>
           </tr>
           <tr>
-            <td><span lang="en">Content edits included</span><span lang="es">Ediciones de contenido incluidas</span></td>
+            <td>Response time</td>
+            <td>2 business days</td>
+            <td>1 business day</td>
+            <td>4 business hrs (critical)</td>
+          </tr>
+          <tr>
+            <td>Content edits included</td>
             <td class="dash">-</td>
-            <td><span lang="en">1 hr/mo</span><span lang="es">1 hr/mes</span></td>
-            <td><span lang="en">2 hrs/mo</span><span lang="es">2 hrs/mes</span></td>
+            <td>1 hr/mo</td>
+            <td>2 hrs/mo</td>
           </tr>
           <tr>
-            <td><span lang="en">Speed + performance tuning</span><span lang="es">Optimización de velocidad y rendimiento</span></td>
+            <td>Speed + performance tuning</td>
             <td class="dash">-</td>
-            <td><span lang="en">Quarterly</span><span lang="es">Trimestral</span></td>
-            <td><span lang="en">Quarterly</span><span lang="es">Trimestral</span></td>
+            <td>Quarterly</td>
+            <td>Quarterly</td>
           </tr>
           <tr>
-            <td><span lang="en">Backup restoration (compromised site)</span><span lang="es">Restauración de respaldo (sitio comprometido)</span></td>
+            <td>Backup restoration (compromised site)</td>
             <td class="dash">-</td>
             <td class="check">&#10003;</td>
             <td class="check">&#10003;</td>
           </tr>
           <tr>
-            <td><span lang="en">Search Console + Analytics review</span><span lang="es">Revisión de Search Console y Analytics</span></td>
-            <td class="dash">-</td>
-            <td class="dash">-</td>
-            <td><span lang="en">Monthly</span><span lang="es">Mensual</span></td>
-          </tr>
-          <tr>
-            <td><span lang="en">Strategy calls</span><span lang="es">Llamadas de estrategia</span></td>
+            <td>Search Console + Analytics review</td>
             <td class="dash">-</td>
             <td class="dash">-</td>
-            <td><span lang="en">Quarterly</span><span lang="es">Trimestral</span></td>
+            <td>Monthly</td>
+          </tr>
+          <tr>
+            <td>Strategy calls</td>
+            <td class="dash">-</td>
+            <td class="dash">-</td>
+            <td>Quarterly</td>
           </tr>
         </tbody>
       </table>
@@ -954,30 +959,30 @@
 <section>
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2><span lang="en">Need edits without a plan?</span><span lang="es">¿Necesitas ediciones sin un plan?</span></h2>
-      <p><span lang="en">On the Essentials plan or just need a one-time change? Grab an edit pack. No subscription required.</span><span lang="es">En el plan Esencial o solo necesitas un cambio puntual? Toma un paquete de ediciones. Sin suscripción requerida.</span></p>
+      <h2>Need edits without a plan?</h2>
+      <p>On the Essentials plan or just need a one-time change? Grab an edit pack. No subscription required.</p>
     </div>
     <div class="edit-packs">
       <div class="edit-pack reveal">
-        <h3><span lang="en">Single Edit</span><span lang="es">Edición Individual</span></h3>
+        <h3>Single Edit</h3>
         <div class="pack-price">$49</div>
-        <div class="pack-per"><span lang="en">one-time</span><span lang="es">único pago</span></div>
-        <p><span lang="en">One focused change (30 min or less of client-supplied work): swap a photo, update text, fix a link, add a testimonial.</span><span lang="es">Un cambio específico (30 min o menos de trabajo con contenido del cliente): cambiar una foto, actualizar texto, arreglar un enlace, agregar un testimonio.</span></p>
-        <a class="btn btn-ghost" href="https://link.waveapps.com/hu5d4c-sc2cnw" target="_blank" rel="noopener" style="margin-top:16px;font-size:.88rem"><span lang="en">Buy Single Edit</span><span lang="es">Comprar Edición</span></a>
+        <div class="pack-per">one-time</div>
+        <p>One focused change (30 min or less of client-supplied work): swap a photo, update text, fix a link, add a testimonial.</p>
+        <a class="btn btn-ghost" href="https://link.waveapps.com/hu5d4c-sc2cnw" target="_blank" rel="noopener" style="margin-top:16px;font-size:.88rem">Buy Single Edit</a>
       </div>
       <div class="edit-pack reveal">
-        <h3><span lang="en">3-Pack</span><span lang="es">Paquete de 3</span></h3>
+        <h3>3-Pack</h3>
         <div class="pack-price">$129</div>
-        <div class="pack-per"><span lang="en">$43/edit</span><span lang="es">$43/edición</span></div>
-        <p><span lang="en">Three edits (30 min each) to use within 12 months of purchase.</span><span lang="es">Tres ediciones (30 min cada una) para usar dentro de 12 meses de la compra.</span></p>
-        <a class="btn btn-ghost" href="https://link.waveapps.com/u5nxs5-gy4rfs" target="_blank" rel="noopener" style="margin-top:16px;font-size:.88rem"><span lang="en">Buy 3-Pack</span><span lang="es">Comprar Paquete de 3</span></a>
+        <div class="pack-per">$43/edit</div>
+        <p>Three edits (30 min each) to use within 12 months of purchase.</p>
+        <a class="btn btn-ghost" href="https://link.waveapps.com/u5nxs5-gy4rfs" target="_blank" rel="noopener" style="margin-top:16px;font-size:.88rem">Buy 3-Pack</a>
       </div>
       <div class="edit-pack reveal">
-        <h3><span lang="en">5-Pack</span><span lang="es">Paquete de 5</span></h3>
+        <h3>5-Pack</h3>
         <div class="pack-price">$199</div>
-        <div class="pack-per"><span lang="en">$40/edit</span><span lang="es">$40/edición</span></div>
-        <p><span lang="en">Five edits (30 min each), best value. Use within 12 months of purchase. Perfect for seasonal updates.</span><span lang="es">Cinco ediciones (30 min cada una), mejor valor. Usar dentro de 12 meses de la compra. Perfecto para actualizaciones de temporada.</span></p>
-        <a class="btn btn-ghost" href="https://link.waveapps.com/rscsuc-hj8hg7" target="_blank" rel="noopener" style="margin-top:16px;font-size:.88rem"><span lang="en">Buy 5-Pack</span><span lang="es">Comprar Paquete de 5</span></a>
+        <div class="pack-per">$40/edit</div>
+        <p>Five edits (30 min each), best value. Use within 12 months of purchase. Perfect for seasonal updates.</p>
+        <a class="btn btn-ghost" href="https://link.waveapps.com/rscsuc-hj8hg7" target="_blank" rel="noopener" style="margin-top:16px;font-size:.88rem">Buy 5-Pack</a>
       </div>
     </div>
   </div>
@@ -988,19 +993,19 @@
   <div class="wrap">
     <div class="math-callout reveal">
       <div>
-        <h2><span lang="en">Do the math.</span><span lang="es">Haz la cuenta.</span></h2>
-        <p><span lang="en">Security breaches can cost small businesses thousands in lost revenue, recovery, and reputation damage. An Essentials plan for a full year costs a fraction of a single incident.</span><span lang="es">Las brechas de seguridad pueden costarle a las pequeñas empresas miles en ingresos perdidos, recuperación y daño a la reputación. Un plan Esencial por un año completo cuesta una fracción de un solo incidente.</span></p>
+        <h2>Do the math.</h2>
+        <p>Security breaches can cost small businesses thousands in lost revenue, recovery, and reputation damage. An Essentials plan for a full year costs a fraction of a single incident.</p>
       </div>
       <div class="math-vs">
         <div class="vs-item">
-          <div class="vs-label"><span lang="en">Essentials (12 monthly payments)</span><span lang="es">Esencial (12 pagos mensuales)</span></div>
-          <div class="vs-price">$1,188 <em><span lang="en">/ year</span><span lang="es">/ año</span></em></div>
-          <div class="vs-note"><span lang="en">Daily backups, updates, monitoring, peace of mind</span><span lang="es">Respaldos diarios, actualizaciones, monitoreo, tranquilidad</span></div>
+          <div class="vs-label">Essentials (12 monthly payments)</div>
+          <div class="vs-price">$1,188 <em>/ year</em></div>
+          <div class="vs-note">Daily backups, updates, monitoring, peace of mind</div>
         </div>
         <div class="vs-item">
-          <div class="vs-label"><span lang="en">One security breach</span><span lang="es">Una brecha de seguridad</span></div>
+          <div class="vs-label">One security breach</div>
           <div class="vs-price">$3,000-$25,000</div>
-          <div class="vs-note"><span lang="en">Lost revenue, reputation damage, recovery costs</span><span lang="es">Ingresos perdidos, daño a la reputación, costos de recuperación</span></div>
+          <div class="vs-note">Lost revenue, reputation damage, recovery costs</div>
         </div>
       </div>
     </div>
@@ -1011,23 +1016,23 @@
 <section>
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2><span lang="en">Why businesses trust me with their sites.</span><span lang="es">Por que los negocios me confian sus sitios.</span></h2>
+      <h2>Why businesses trust me with their sites.</h2>
     </div>
     <div class="why-grid">
       <div class="why-card reveal">
         <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3><span lang="en">One person, not a ticket queue</span><span lang="es">Una persona, no una cola de tickets</span></h3>
-        <p><span lang="en">You text or email me directly. No support tiers, no hold music, no "your ticket has been escalated."</span><span lang="es">Me escribes directamente. Sin niveles de soporte, sin musica de espera, sin "tu ticket ha sido escalado."</span></p>
+        <h3>One person, not a ticket queue</h3>
+        <p>You text or email me directly. No support tiers, no hold music, no "your ticket has been escalated."</p>
       </div>
       <div class="why-card reveal">
         <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-        <h3><span lang="en">I fix problems before you notice</span><span lang="es">Arreglo problemas antes de que los notes</span></h3>
-        <p><span lang="en">Automated monitoring catches issues at 2am so you never have to. You get a report, not a panic call.</span><span lang="es">El monitoreo automatizado detecta problemas a las 2am para que tu no tengas que hacerlo. Recibes un informe, no una llamada de panico.</span></p>
+        <h3>I fix problems before you notice</h3>
+        <p>Automated monitoring catches issues at 2am so you never have to. You get a report, not a panic call.</p>
       </div>
       <div class="why-card reveal">
         <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
-        <h3><span lang="en">Plain-English reports</span><span lang="es">Informes en términos claros</span></h3>
-        <p><span lang="en">No jargon dumps. Every monthly report tells you what happened, what's healthy, and what to think about next.</span><span lang="es">Sin jerga tecnica. Cada informe mensual te dice que paso, que esta saludable, y que considerar a continuacion.</span></p>
+        <h3>Plain-English reports</h3>
+        <p>No jargon dumps. Every monthly report tells you what happened, what's healthy, and what to think about next.</p>
       </div>
     </div>
   </div>
@@ -1037,23 +1042,23 @@
 <section style="background:var(--tint);border-radius:32px;margin:0 28px">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2><span lang="en">What clients say.</span><span lang="es">Lo que dicen los clientes.</span></h2>
+      <h2>What clients say.</h2>
     </div>
     <div class="quotes">
       <div class="quote reveal">
         <div class="mark" aria-hidden="true">"</div>
-        <p class="body"><span lang="en">Sebby rebuilt my law firm's entire web presence and untangled infrastructure problems that had my domain, my email, and two competing websites at odds. He works fast, explains everything in plain English, and treats my site like it's his own. I trust him with the online face of my practice.</span><span lang="es">Sebby reconstruyó toda la presencia web de mi bufete y resolvió problemas de infraestructura que tenían mi dominio, mi correo y dos sitios web compitiendo entre sí. Trabaja rápido, explica todo en términos claros, y trata mi sitio como si fuera suyo. Le confío la cara digital de mi práctica.</span></p>
+        <p class="body">Sebby rebuilt my law firm's entire web presence and untangled infrastructure problems that had my domain, my email, and two competing websites at odds. He works fast, explains everything in plain English, and treats my site like it's his own. I trust him with the online face of my practice.</p>
         <div class="who">
           <div class="avatar">JR</div>
-          <div><strong>Jorge L. Riera</strong><span><span lang="en">Founding Principal, Riera Law Firm</span><span lang="es">Socio Fundador, Riera Law Firm</span></span></div>
+          <div><strong>Jorge L. Riera</strong><span>Founding Principal, Riera Law Firm</span></div>
         </div>
       </div>
       <div class="quote reveal">
         <div class="mark" aria-hidden="true">"</div>
-        <p class="body"><span lang="en">Working with Sebastian has been a fantastic experience. He took our vision for Elite Care Recovery and built a professional website that exceeded our expectations, from showcasing our NICE1 recovery equipment to making it easy for patients to reserve online. His communication and turnaround time were exceptional throughout the entire process. I highly recommend him to anyone looking for a talented, reliable web developer who genuinely cares about delivering a great result.</span><span lang="es">Trabajar con Sebastian ha sido una experiencia fantástica. Tomó nuestra visión para Elite Care Recovery y construyó un sitio web profesional que superó nuestras expectativas, desde mostrar nuestro equipo de recuperación NICE1 hasta facilitar que los pacientes reserven en línea. Su comunicación y tiempo de entrega fueron excepcionales durante todo el proceso. Lo recomiendo ampliamente a cualquiera que busque un desarrollador web talentoso y confiable que realmente se preocupa por entregar un gran resultado.</span></p>
+        <p class="body">Working with Sebastian has been a fantastic experience. He took our vision for Elite Care Recovery and built a professional website that exceeded our expectations, from showcasing our NICE1 recovery equipment to making it easy for patients to reserve online. His communication and turnaround time were exceptional throughout the entire process. I highly recommend him to anyone looking for a talented, reliable web developer who genuinely cares about delivering a great result.</p>
         <div class="who">
           <div class="avatar">JP</div>
-          <div><strong>John Pierce</strong><span><span lang="en">Co-Founder, Elite Care Recovery</span><span lang="es">Cofundador, Elite Care Recovery</span></span></div>
+          <div><strong>John Pierce</strong><span>Co-Founder, Elite Care Recovery</span></div>
         </div>
       </div>
     </div>
@@ -1064,40 +1069,40 @@
 <section>
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2><span lang="en">Fair questions.</span><span lang="es">Preguntas justas.</span></h2>
+      <h2>Fair questions.</h2>
     </div>
     <div class="faq">
       <details>
-        <summary><span lang="en">What if you didn't build my website?</span><span lang="es">¿Y si tú no construiste mi sitio web?</span></summary>
-        <p><span lang="en">That's fine. Every plan starts with a free health check so we both know what shape your site is in. If the health check finds preexisting problems, I'll quote that remediation separately and the plan starts once your site is on solid footing. Most sites I care for were built by someone else.</span><span lang="es">No hay problema. Cada plan comienza con una revisión de salud gratuita para que ambos sepamos en qué estado está tu sitio. Si la revisión encuentra problemas preexistentes, cotizo esa corrección por separado y el plan comienza una vez que tu sitio esté en buenas condiciones. La mayoría de los sitios que cuido fueron construidos por otra persona.</span></p>
+        <summary>What if you didn't build my website?</summary>
+        <p>That's fine. Every plan starts with a free health check so we both know what shape your site is in. If the health check finds preexisting problems, I'll quote that remediation separately and the plan starts once your site is on solid footing. Most sites I care for were built by someone else.</p>
       </details>
       <details>
-        <summary><span lang="en">What counts as included edit time?</span><span lang="es">¿Qué cuenta como tiempo de edición incluido?</span></summary>
-        <p><span lang="en">Changes to existing pages using content you provide: swapping photos, updating hours or prices, adding a testimonial, tweaking text. Included time does not roll over month to month. Work beyond your included hours is $125/hr, always approved by you first. New pages, redesigns, copywriting, online stores, and custom features are quoted separately.</span><span lang="es">Cambios a páginas existentes usando contenido que tú proporcionas: cambiar fotos, actualizar horarios o precios, agregar un testimonio, ajustar texto. El tiempo incluido no se acumula mes a mes. El trabajo fuera de tus horas incluidas es $125/hr, siempre aprobado por ti primero. Páginas nuevas, rediseños, redacción de contenido, tiendas en línea y funciones personalizadas se cotizan por separado.</span></p>
+        <summary>What counts as included edit time?</summary>
+        <p>Changes to existing pages using content you provide: swapping photos, updating hours or prices, adding a testimonial, tweaking text. Included time does not roll over month to month. Work beyond your included hours is $125/hr, always approved by you first. New pages, redesigns, copywriting, online stores, and custom features are quoted separately.</p>
       </details>
       <details>
-        <summary><span lang="en">What happens if my site goes down or gets hacked?</span><span lang="es">¿Qué pasa si mi sitio se cae o es hackeado?</span></summary>
-        <p><span lang="en">I usually know before you do. Monitoring alerts me the moment something's wrong, and getting you back online becomes my first priority. Standard and Growth plans include restoration from a verified clean backup. If the issue requires deeper malware cleanup, forensics, or third-party remediation, I'll scope and quote that work before any additional billing.</span><span lang="es">Generalmente lo sé antes que tú. El monitoreo me alerta en cuanto algo anda mal, y ponerte de nuevo en línea se convierte en mi primera prioridad. Los planes Estándar y Crecimiento incluyen restauración desde un respaldo limpio verificado. Si el problema requiere limpieza de malware más profunda, análisis forense o remediación de terceros, cotizo ese trabajo antes de cualquier facturación adicional.</span></p>
+        <summary>What happens if my site goes down or gets hacked?</summary>
+        <p>I usually know before you do. Monitoring alerts me the moment something's wrong, and getting you back online becomes my first priority. Standard and Growth plans include restoration from a verified clean backup. If the issue requires deeper malware cleanup, forensics, or third-party remediation, I'll scope and quote that work before any additional billing.</p>
       </details>
       <details>
-        <summary><span lang="en">Can I cancel?</span><span lang="es">¿Puedo cancelar?</span></summary>
-        <p><span lang="en"><strong>Monthly plans:</strong> Cancel any time, no penalty. Your site, your backups, and your accounts are yours. I'll hand everything over cleanly if you ever move on.<br><br><strong>Annual plans:</strong> You have 14 days after payment (or renewal) to cancel for a full refund. After 14 days, the annual payment is non-refundable. You'll receive a reminder 30 days before each renewal so you're never surprised.</span><span lang="es"><strong>Planes mensuales:</strong> Cancela en cualquier momento, sin penalización. Tu sitio, tus respaldos y tus cuentas son tuyos. Te entregaré todo limpiamente si decides seguir adelante.<br><br><strong>Planes anuales:</strong> Tienes 14 días después del pago (o renovación) para cancelar con reembolso completo. Después de 14 días, el pago anual no es reembolsable. Recibirás un aviso 30 días antes de cada renovación para que nunca te tome por sorpresa.</span></p>
+        <summary>Can I cancel?</summary>
+        <p><strong>Monthly plans:</strong> Cancel any time, no penalty. Your site, your backups, and your accounts are yours. I'll hand everything over cleanly if you ever move on.<br><br><strong>Annual plans:</strong> You have 14 days after payment (or renewal) to cancel for a full refund. After 14 days, the annual payment is non-refundable. You'll receive a reminder 30 days before each renewal so you're never surprised.</p>
       </details>
       <details>
-        <summary><span lang="en">Do edit hours roll over?</span><span lang="es">¿Las horas de edición se acumulan?</span></summary>
-        <p><span lang="en">No, included hours do not roll over month to month. Any work beyond your included time is billed at $125/hr, always with your approval before I start.</span><span lang="es">No, las horas incluidas no se acumulan mes a mes. Cualquier trabajo fuera de tu tiempo incluido se factura a $125/hr, siempre con tu aprobación antes de comenzar.</span></p>
+        <summary>Do edit hours roll over?</summary>
+        <p>No, included hours do not roll over month to month. Any work beyond your included time is billed at $125/hr, always with your approval before I start.</p>
       </details>
       <details>
-        <summary><span lang="en">How does annual plan renewal work?</span><span lang="es">¿Cómo funciona la renovación del plan anual?</span></summary>
-        <p><span lang="en">Annual plans auto-renew each year. I'll send you a reminder 30 days before your renewal date. If you want to cancel, just let me know before the renewal and you won't be charged. If the renewal goes through and you change your mind, you have 14 days for a full refund. No fine print, no runaround.</span><span lang="es">Los planes anuales se renuevan automáticamente cada año. Te enviaré un recordatorio 30 días antes de tu fecha de renovación. Si quieres cancelar, solo avísame antes de la renovación y no se te cobrará. Si la renovación se procesa y cambias de opinión, tienes 14 días para un reembolso completo. Sin letra pequeña, sin complicaciones.</span></p>
+        <summary>How does annual plan renewal work?</summary>
+        <p>Annual plans auto-renew each year. I'll send you a reminder 30 days before your renewal date. If you want to cancel, just let me know before the renewal and you won't be charged. If the renewal goes through and you change your mind, you have 14 days for a full refund. No fine print, no runaround.</p>
       </details>
       <details>
-        <summary><span lang="en">What if I need something bigger?</span><span lang="es">¿Qué pasa si necesito algo más grande?</span></summary>
-        <p><span lang="en">New landing pages, redesigns, or custom features go beyond regular care. I'll scope it separately and give you a clear quote before any work starts. Care plan clients get priority scheduling and preferred rates.</span><span lang="es">Nuevas páginas de destino, rediseños o funciones personalizadas van más allá del cuidado regular. Lo cotizo por separado y te doy un precio claro antes de comenzar cualquier trabajo. Los clientes de planes de cuidado obtienen programación prioritaria y tarifas preferenciales.</span></p>
+        <summary>What if I need something bigger?</summary>
+        <p>New landing pages, redesigns, or custom features go beyond regular care. I'll scope it separately and give you a clear quote before any work starts. Care plan clients get priority scheduling and preferred rates.</p>
       </details>
       <details>
-        <summary><span lang="en">What about e-commerce or complex sites?</span><span lang="es">¿Qué pasa con sitios de comercio electrónico o complejos?</span></summary>
-        <p><span lang="en">These plans cover standard business and brochure sites. WooCommerce, online stores, membership sites, LMS platforms, multisite, and heavily custom builds need more hands-on time and are priced individually after the free health check.</span><span lang="es">Estos planes cubren sitios web estándar de negocios. WooCommerce, tiendas en línea, sitios de membresías, plataformas LMS, multisite y sitios altamente personalizados requieren más tiempo y se cotizan individualmente después de la revisión de salud gratuita.</span></p>
+        <summary>What about e-commerce or complex sites?</summary>
+        <p>These plans cover standard business and brochure sites. WooCommerce, online stores, membership sites, LMS platforms, multisite, and heavily custom builds need more hands-on time and are priced individually after the free health check.</p>
       </details>
     </div>
   </div>
@@ -1106,18 +1111,18 @@
 <!-- Free health check CTA -->
 <section class="final" style="padding-top:10px">
   <div class="wrap">
-    <h2><span lang="en">Not sure where your site stands? <span class="accent">Get a free health check.</span></span><span lang="es">¿No sabes cómo está tu sitio? <span class="accent">Obtén una revisión de salud gratis.</span></span></h2>
-    <p><span lang="en">I'll review your site's speed, security, backups, and SEO in 24 hours. No cost, no commitment. You'll know exactly what needs attention.</span><span lang="es">Revisaré la velocidad, seguridad, respaldos y SEO de tu sitio en 24 horas. Sin costo, sin compromiso. Sabrás exactamente qué necesita atención.</span></p>
-    <a class="btn" href="book.html"><span lang="en">Request Free Health Check</span><span lang="es">Solicitar Revisión Gratis</span>&nbsp;&#8594;</a><a class="btn btn-ghost" href="pricing.html" style="margin-left:12px"><span lang="en">See pricing</span><span lang="es">Ver precios</span>&nbsp;→</a>
+    <h2>Not sure where your site stands? <span class="accent">Get a free health check.</span></h2>
+    <p>I'll review your site's speed, security, backups, and SEO in 24 hours. No cost, no commitment. You'll know exactly what needs attention.</p>
+    <a class="btn" href="/book.html">Request Free Health Check&nbsp;&#8594;</a><a class="btn btn-ghost" href="/pricing.html" style="margin-left:12px">See pricing&nbsp;→</a>
   </div>
 </section>
 
 <section style="padding:48px 0 64px">
   <div class="wrap" style="text-align:center">
-    <p style="font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:16px"><span lang="en">From the blog</span><span lang="es">Del blog</span></p>
+    <p style="font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:16px">From the blog</p>
     <div style="display:flex;flex-wrap:wrap;gap:14px 32px;justify-content:center">
-      <a href="blog/what-is-website-care.html" style="color:var(--purple);font-weight:600;font-size:.95rem"><span lang="en">What Website Care Actually Means &rarr;</span><span lang="es">Qué significa realmente el cuidado web &rarr;</span></a>
-      <a href="blog/5-signs-your-website-is-losing-clients.html" style="color:var(--purple);font-weight:600;font-size:.95rem"><span lang="en">5 Signs Your Website Is Losing You Clients &rarr;</span><span lang="es">5 señales de que tu sitio web te está haciendo perder clientes &rarr;</span></a>
+      <a href="/blog/what-is-website-care.html" style="color:var(--purple);font-weight:600;font-size:.95rem">What Website Care Actually Means &rarr;</a>
+      <a href="/blog/5-signs-your-website-is-losing-clients.html" style="color:var(--purple);font-weight:600;font-size:.95rem">5 Signs Your Website Is Losing You Clients &rarr;</a>
     </div>
   </div>
 </section>
@@ -1126,20 +1131,19 @@
 
 <footer>
   <div class="wrap foot-inner">
-    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span><span lang="en">This site was <strong>Made by Sebby</strong>. Yours can be too.</span><span lang="es">Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</span></span></div>
+    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="/assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="/assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span>This site was <strong>Made by Sebby</strong>. Yours can be too.</span></div>
     <div class="foot-links">
-      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
-      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
-      <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
-      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
-      <a href="blog.html"><span lang="en">Blog</span><span lang="es">Blog</span></a>
-      <a href="privacy.html"><span lang="en">Privacy</span><span lang="es">Privacidad</span></a>
-      <a href="terms.html"><span lang="en">Terms</span><span lang="es">Términos</span></a>
+      <a href="/services.html">What I do</a>
+      <a href="/work.html">Work</a>
+      <a href="/website-care.html">Website Care</a>
+      <a href="/about.html">About</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
       <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
     </div>
   </div>
 </footer>
-<script>!function(){var l=document.documentElement.getAttribute('data-lang');if(l==='es'){var b=document.querySelectorAll('.lang-toggle button');if(b.length===2){b[0].classList.remove('active');b[1].classList.add('active')}}}()</script>
 <script>!function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})}()</script>
 <script>!function(){var cta=document.getElementById('stickyCta');if(!cta)return;var footer=document.querySelector('footer');var shown=false;window.addEventListener('scroll',function(){var y=window.scrollY;var fTop=footer?footer.getBoundingClientRect().top+y-window.innerHeight:Infinity;if(y>400&&y<fTop){if(!shown){cta.classList.add('show');shown=true}}else{if(shown){cta.classList.remove('show');shown=false}}},{passive:true})}()</script>
 

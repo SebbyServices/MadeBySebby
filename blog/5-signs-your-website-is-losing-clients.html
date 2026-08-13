@@ -10,12 +10,11 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Sebby — Made by Sebby">
 <meta name="description" content="Your website should bring in business, not turn it away. Here are 5 warning signs your site is losing you clients — and what to do about each one.">
-<link rel="preload" as="image" href="../assets/logo/sebby-nav.svg">
+<link rel="preload" as="image" href="/assets/logo/sebby-nav.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
-<script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
 <style>
   :root{
     --ink:#1A1D29;--ink-soft:#4A4E5C;--muted:#6B7080;
@@ -35,10 +34,10 @@
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
   .logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.06rem;letter-spacing:-.01em}
   .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
-  .nav-links a{color:var(--ink-soft);transition:color .15s}
-  .nav-links a.btn{color:#fff}
-  .nav-links a.btn:hover{color:#fff}
-  .nav-links a:hover{color:var(--purple)}
+  .nav-links>a{color:var(--ink-soft);transition:color .15s}
+  .nav-links>a.btn{color:#fff}
+  .nav-links>a.btn:hover{color:#fff}
+  .nav-links>a:hover{color:var(--purple)}
   .btn{display:inline-flex;align-items:center;gap:8px;background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;padding:13px 26px;border-radius:999px;border:none;cursor:pointer;transition:background .15s,transform .15s}
   .btn:hover{background:var(--purple-deep);transform:translateY(-1px)}
   .btn:focus-visible{outline-color:var(--ink)}
@@ -87,9 +86,9 @@
     .nav-links{display:none;position:fixed;top:76px;left:0;right:0;bottom:0;background:var(--white);flex-direction:column;gap:0;padding:20px 28px;border-top:1px solid var(--line);z-index:49;overflow-y:auto}
     .nav-open{backdrop-filter:none;overflow:visible}
     .nav-open .nav-links{display:flex}
-    .nav-links a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
-    .nav-links a:last-child{border-bottom:none}
-    .nav-links a.btn{margin-top:12px;justify-content:center;border-bottom:none}
+    .nav-links>a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
+    .nav-links>a:last-child{border-bottom:none}
+    .nav-links>a.btn{margin-top:12px;justify-content:center;border-bottom:none}
     .nav-links .lang-toggle{margin-top:8px;align-self:flex-start}
     .nav-links .theme-toggle{margin-top:4px;align-self:flex-start}
   }
@@ -103,13 +102,10 @@
   .sticky-cta a{color:#fff;text-decoration:none}
   .sticky-cta a:hover{text-decoration:underline}
   @media (max-width:640px){.sticky-cta{font-size:.88rem;padding:12px 20px}}
-
-  :root:not([data-lang="es"]) [lang="es"]{display:none}
-  [data-lang="es"] [lang="en"]{display:none}
   .lang-toggle{display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0}
-  .lang-toggle button{background:none;border:none;padding:7px 12px;cursor:pointer;color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em}
-  .lang-toggle button:hover{color:var(--purple)}
-  .lang-toggle button.active{background:var(--purple);color:#fff}
+  .lang-toggle>*{background:none;border:none;padding:7px 12px;cursor:pointer;color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em}
+  .lang-toggle>*:hover{color:var(--purple)}
+  .lang-toggle>.active{background:var(--purple);color:#fff}
 
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){--ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;--purple:#8B6CEF;--purple-deep:#7B5FDB;--tint:#1D192D;--line:#2A2838;--white:#0F1117}
@@ -168,7 +164,7 @@
 <link rel="alternate" type="text/plain" title="LLM instructions" href="/llms.txt">
 <link rel="canonical" href="https://madebysebby.com/blog/5-signs-your-website-is-losing-clients.html">
 <link rel="alternate" hreflang="en" href="https://madebysebby.com/blog/5-signs-your-website-is-losing-clients.html">
-<link rel="alternate" hreflang="es" href="https://madebysebby.com/blog/5-signs-your-website-is-losing-clients.html">
+<link rel="alternate" hreflang="es" href="https://madebysebby.com/es/blog/5-senales-de-que-tu-sitio-web-pierde-clientes.html">
 <link rel="alternate" hreflang="x-default" href="https://madebysebby.com/blog/5-signs-your-website-is-losing-clients.html">
 <meta name="theme-color" content="#6C3CE9">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -181,6 +177,7 @@
 <meta property="og:site_name" content="Made by Sebby">
 <meta property="og:title" content="5 Signs Your Website Is Losing You Clients — Made by Sebby">
 <meta property="og:description" content="Your website should bring in business, not turn it away. Here are 5 warning signs your site is losing you clients — and what to do about each one.">
+<meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://madebysebby.com/blog/5-signs-your-website-is-losing-clients.html">
 <meta property="og:image" content="https://madebysebby.com/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -197,10 +194,20 @@
   "headline": "5 Signs Your Website Is Losing You Clients",
   "datePublished": "2026-07-15",
   "dateModified": "2026-07-15",
-  "author": {"@type": "Person", "name": "Sebby", "url": "https://madebysebby.com/about.html"},
-  "publisher": {"@type": "ProfessionalService", "name": "Made by Sebby", "url": "https://madebysebby.com/"},
+  "author": {
+    "@type": "Person",
+    "name": "Sebby",
+    "url": "https://madebysebby.com/about.html"
+  },
+  "publisher": {
+    "@type": "ProfessionalService",
+    "name": "Made by Sebby",
+    "url": "https://madebysebby.com/",
+    "inLanguage": "en"
+  },
   "url": "https://madebysebby.com/blog/5-signs-your-website-is-losing-clients.html",
-  "description": "Your website should bring in business, not turn it away. Here are 5 warning signs your site is losing you clients."
+  "description": "Your website should bring in business, not turn it away. Here are 5 warning signs your site is losing you clients.",
+  "inLanguage": "en"
 }
 </script>
 <script type="application/ld+json">
@@ -208,9 +215,24 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://madebysebby.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://madebysebby.com/blog.html"},
-    {"@type": "ListItem", "position": 3, "name": "5 Signs Your Website Is Losing You Clients", "item": "https://madebysebby.com/blog/5-signs-your-website-is-losing-clients.html"}
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://madebysebby.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://madebysebby.com/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "5 Signs Your Website Is Losing You Clients",
+      "item": "https://madebysebby.com/blog/5-signs-your-website-is-losing-clients.html"
+    }
   ]
 }
 </script>
@@ -219,25 +241,25 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <nav>
   <div class="wrap nav-inner">
-    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="../assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="../assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
+    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="/assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="/assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
     <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('nav-open')">
       <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
     <div class="nav-links">
-      <a href="../services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
-      <a href="../work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
-      <a href="../website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
-      <a href="../about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <a href="/services.html">What I do</a>
+      <a href="/work.html">Work</a>
+      <a href="/website-care.html">Website Care</a>
+      <a href="/about.html">About</a>
       <div class="lang-toggle">
-        <button onclick="document.documentElement.removeAttribute('data-lang');localStorage.setItem('lang','en');this.classList.add('active');this.nextElementSibling.classList.remove('active')" class="active">EN</button>
-        <button onclick="document.documentElement.setAttribute('data-lang','es');localStorage.setItem('lang','es');this.classList.add('active');this.previousElementSibling.classList.remove('active')">ES</button>
-      </div>
+          <span class="active">EN</span>
+          <a href="/es/blog/5-senales-de-que-tu-sitio-web-pierde-clientes.html" hreflang="es" lang="es" aria-label="Ver esta página en español">ES</a>
+        </div>
       <button class="theme-toggle" aria-label="Toggle dark mode" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
         <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       </button>
-      <a href="../book.html" class="btn btn-nav"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span></a>
+      <a href="/book.html" class="btn btn-nav">Work with Sebby</a>
     </div>
   </div>
 </nav>
@@ -245,9 +267,9 @@
 <main>
 <header class="page-hero">
   <div class="wrap">
-    <a class="back-link rise" href="../blog.html">← <span lang="en">Back to blog</span><span lang="es">Volver al blog</span></a>
-    <div class="blog-meta rise d1"><span lang="en">July 2026</span><span lang="es">Julio 2026</span></div>
-    <h1 class="rise d2"><span lang="en">5 Signs Your Website Is <span class="accent">Losing You Clients</span></span><span lang="es">5 señales de que tu sitio web te está <span class="accent">haciendo perder clientes</span></span></h1>
+    <a class="back-link rise" href="/blog.html">← Back to blog</a>
+    <div class="blog-meta rise d1">July 2026</div>
+    <h1 class="rise d2">5 Signs Your Website Is <span class="accent">Losing You Clients</span></h1>
   </div>
 </header>
 
@@ -255,32 +277,32 @@
   <div class="wrap">
     <div class="article">
 
-      <p class="reveal"><span lang="en">Your website is supposed to work for you around the clock. It's the first impression most people get of your business, and they make a judgment in about three seconds. The problem is that most business owners built their site years ago and haven't looked at it with fresh eyes since. Here are five signs your website might be quietly sending clients to someone else.</span><span lang="es">Tu sitio web debería trabajar para ti las 24 horas. Es la primera impresión que la mayoría de las personas tienen de tu negocio, y toman una decisión en unos tres segundos. El problema es que la mayoría de los dueños de negocios construyeron su sitio hace años y no lo han visto con ojos frescos desde entonces. Aquí hay cinco señales de que tu sitio web podría estar enviando clientes silenciosamente a alguien más.</span></p>
+      <p class="reveal">Your website is supposed to work for you around the clock. It's the first impression most people get of your business, and they make a judgment in about three seconds. The problem is that most business owners built their site years ago and haven't looked at it with fresh eyes since. Here are five signs your website might be quietly sending clients to someone else.</p>
 
-      <h2 class="reveal"><span class="num">1.</span> <span lang="en">It takes more than 3 seconds to load</span><span lang="es">Tarda más de 3 segundos en cargar</span></h2>
-      <p class="reveal"><span lang="en">Here's the hard truth: if your website takes longer than three seconds to load, over half your visitors will leave before they see a single word you wrote. They won't wait. They'll hit the back button and click on the next result, which is probably your competitor.</span><span lang="es">La dura verdad: si tu sitio web tarda más de tres segundos en cargar, más de la mitad de tus visitantes se irán antes de ver una sola palabra que escribiste. No van a esperar. Presionarán el botón de atrás y harán clic en el siguiente resultado, que probablemente sea tu competidor.</span></p>
-      <p class="reveal"><span lang="en">It gets worse. Google uses page speed as a ranking factor. A slow site doesn't just frustrate visitors, it actively pushes you further down in search results. Every second of delay costs you visibility and credibility.</span><span lang="es">Y empeora. Google usa la velocidad de página como factor de clasificación. Un sitio lento no solo frustra a los visitantes, sino que activamente te empuja más abajo en los resultados de búsqueda. Cada segundo de retraso te cuesta visibilidad y credibilidad.</span></p>
-      <p class="reveal"><span lang="en"><strong>What to do:</strong> Test your site at <a href="https://pagespeed.web.dev" target="_blank" rel="noopener" style="color:var(--purple);font-weight:600">PageSpeed Insights</a>. If you're scoring below 70 on mobile, you have a problem worth fixing. Common culprits are oversized images, too many plugins, and cheap hosting.</span><span lang="es"><strong>Qué hacer:</strong> Prueba tu sitio en <a href="https://pagespeed.web.dev" target="_blank" rel="noopener" style="color:var(--purple);font-weight:600">PageSpeed Insights</a>. Si tienes menos de 70 en móvil, tienes un problema que vale la pena arreglar. Los culpables comunes son imágenes demasiado grandes, demasiados plugins y hosting barato.</span></p>
+      <h2 class="reveal"><span class="num">1.</span> It takes more than 3 seconds to load</h2>
+      <p class="reveal">Here's the hard truth: if your website takes longer than three seconds to load, over half your visitors will leave before they see a single word you wrote. They won't wait. They'll hit the back button and click on the next result, which is probably your competitor.</p>
+      <p class="reveal">It gets worse. Google uses page speed as a ranking factor. A slow site doesn't just frustrate visitors, it actively pushes you further down in search results. Every second of delay costs you visibility and credibility.</p>
+      <p class="reveal"><strong>What to do:</strong> Test your site at <a href="https://pagespeed.web.dev" target="_blank" rel="noopener" style="color:var(--purple);font-weight:600">PageSpeed Insights</a>. If you're scoring below 70 on mobile, you have a problem worth fixing. Common culprits are oversized images, too many plugins, and cheap hosting.</p>
 
-      <h2 class="reveal"><span class="num">2.</span> <span lang="en">It looks different on every device</span><span lang="es">Se ve diferente en cada dispositivo</span></h2>
-      <p class="reveal"><span lang="en">More than 60% of web traffic now comes from phones. If your site was designed for a desktop monitor and nobody tested it on a phone, you're losing the majority of your visitors. Text that's too small to read, buttons you can't tap, images that overflow off the screen — these aren't minor annoyances. They tell a prospective client that you don't pay attention to details.</span><span lang="es">Más del 60% del tráfico web ahora viene de teléfonos. Si tu sitio fue diseñado para un monitor de escritorio y nadie lo probó en un teléfono, estás perdiendo a la mayoría de tus visitantes. Texto demasiado pequeño para leer, botones que no se pueden tocar, imágenes que se salen de la pantalla — no son molestias menores. Le dicen a un posible cliente que no prestas atención a los detalles.</span></p>
-      <p class="reveal"><span lang="en"><strong>What to do:</strong> Pull out your phone right now and open your website. Navigate every page. Try to fill out your contact form. If anything feels clunky, your visitors feel it too — and they leave.</span><span lang="es"><strong>Qué hacer:</strong> Saca tu teléfono ahora mismo y abre tu sitio web. Navega por cada página. Intenta llenar tu formulario de contacto. Si algo se siente torpe, tus visitantes lo sienten también — y se van.</span></p>
+      <h2 class="reveal"><span class="num">2.</span> It looks different on every device</h2>
+      <p class="reveal">More than 60% of web traffic now comes from phones. If your site was designed for a desktop monitor and nobody tested it on a phone, you're losing the majority of your visitors. Text that's too small to read, buttons you can't tap, images that overflow off the screen — these aren't minor annoyances. They tell a prospective client that you don't pay attention to details.</p>
+      <p class="reveal"><strong>What to do:</strong> Pull out your phone right now and open your website. Navigate every page. Try to fill out your contact form. If anything feels clunky, your visitors feel it too — and they leave.</p>
 
-      <h2 class="reveal"><span class="num">3.</span> <span lang="en">There's no clear way to contact you</span><span lang="es">No hay una forma clara de contactarte</span></h2>
-      <p class="reveal"><span lang="en">You'd be surprised how many business websites bury their contact information. A phone number hidden in the footer. A "Contact" link three levels deep in a menu. No contact form at all. Every extra click between a visitor and your inbox is a chance for them to give up and call someone else.</span><span lang="es">Te sorprendería cuántos sitios web de negocios esconden su información de contacto. Un número de teléfono escondido en el pie de página. Un enlace de "Contacto" tres niveles adentro en un menú. Sin formulario de contacto. Cada clic extra entre un visitante y tu bandeja de entrada es una oportunidad para que se rindan y llamen a alguien más.</span></p>
-      <p class="reveal"><span lang="en"><strong>What to do:</strong> Your phone number or contact form should be visible on every page — ideally in the header or as a floating button. Make it effortless. The easier you are to reach, the more leads you'll get.</span><span lang="es"><strong>Qué hacer:</strong> Tu número de teléfono o formulario de contacto debería ser visible en cada página — idealmente en el encabezado o como un botón flotante. Hazlo sin esfuerzo. Mientras más fácil seas de contactar, más clientes potenciales recibirás.</span></p>
+      <h2 class="reveal"><span class="num">3.</span> There's no clear way to contact you</h2>
+      <p class="reveal">You'd be surprised how many business websites bury their contact information. A phone number hidden in the footer. A "Contact" link three levels deep in a menu. No contact form at all. Every extra click between a visitor and your inbox is a chance for them to give up and call someone else.</p>
+      <p class="reveal"><strong>What to do:</strong> Your phone number or contact form should be visible on every page — ideally in the header or as a floating button. Make it effortless. The easier you are to reach, the more leads you'll get.</p>
 
-      <h2 class="reveal"><span class="num">4.</span> <span lang="en">It hasn't been updated in over a year</span><span lang="es">No se ha actualizado en más de un año</span></h2>
-      <p class="reveal"><span lang="en">When someone lands on your site and sees a copyright date from 2022, they wonder if you're still in business. Old blog posts, outdated team photos, services you no longer offer — these details erode trust faster than no website at all. A stale website tells the world you've moved on.</span><span lang="es">Cuando alguien llega a tu sitio y ve una fecha de copyright de 2022, se preguntan si todavía estás en el negocio. Publicaciones de blog viejas, fotos de equipo desactualizadas, servicios que ya no ofreces — estos detalles erosionan la confianza más rápido que no tener sitio web. Un sitio web estancado le dice al mundo que ya te fuiste.</span></p>
-      <p class="reveal"><span lang="en"><strong>What to do:</strong> At a minimum, update your copyright year, review your services page, and make sure your contact info is current. Better yet, set up a <a href="../website-care.html" style="color:var(--purple);font-weight:600">website care plan</a> so these things get handled automatically every month.</span><span lang="es"><strong>Qué hacer:</strong> Como mínimo, actualiza tu año de copyright, revisa tu página de servicios y asegúrate de que tu información de contacto sea actual. Mejor aún, establece un <a href="../website-care.html" style="color:var(--purple);font-weight:600">plan de cuidado web</a> para que estas cosas se manejen automáticamente cada mes.</span></p>
+      <h2 class="reveal"><span class="num">4.</span> It hasn't been updated in over a year</h2>
+      <p class="reveal">When someone lands on your site and sees a copyright date from 2022, they wonder if you're still in business. Old blog posts, outdated team photos, services you no longer offer — these details erode trust faster than no website at all. A stale website tells the world you've moved on.</p>
+      <p class="reveal"><strong>What to do:</strong> At a minimum, update your copyright year, review your services page, and make sure your contact info is current. Better yet, set up a <a href="/website-care.html" style="color:var(--purple);font-weight:600">website care plan</a> so these things get handled automatically every month.</p>
 
-      <h2 class="reveal"><span class="num">5.</span> <span lang="en">You're embarrassed to share the link</span><span lang="es">Te da vergüenza compartir el enlace</span></h2>
-      <p class="reveal"><span lang="en">This is the simplest test. When someone asks for your website, do you say it proudly or do you add a disclaimer? "It's a little outdated" or "we're working on it" or "it doesn't really show what we do." If you wouldn't hand your website to a prospect with confidence, it's not doing its job.</span><span lang="es">Esta es la prueba más simple. Cuando alguien te pide tu sitio web, ¿lo dices con orgullo o agregas un descargo? "Está un poco desactualizado" o "estamos trabajando en ello" o "realmente no muestra lo que hacemos." Si no le darías tu sitio web a un prospecto con confianza, no está haciendo su trabajo.</span></p>
-      <p class="reveal"><span lang="en"><strong>What to do:</strong> If this resonated, it's time for a conversation about what your website should look like. Not what's trendy — what actually represents your business and helps you close deals.</span><span lang="es"><strong>Qué hacer:</strong> Si esto resonó contigo, es hora de una conversación sobre cómo debería verse tu sitio web. No lo que está de moda — lo que realmente representa tu negocio y te ayuda a cerrar tratos.</span></p>
+      <h2 class="reveal"><span class="num">5.</span> You're embarrassed to share the link</h2>
+      <p class="reveal">This is the simplest test. When someone asks for your website, do you say it proudly or do you add a disclaimer? "It's a little outdated" or "we're working on it" or "it doesn't really show what we do." If you wouldn't hand your website to a prospect with confidence, it's not doing its job.</p>
+      <p class="reveal"><strong>What to do:</strong> If this resonated, it's time for a conversation about what your website should look like. Not what's trendy — what actually represents your business and helps you close deals.</p>
 
       <div class="cta-box reveal">
-        <p><span lang="en">Want to know where your site stands? I'll take a look and tell you honestly what's working, what's not, and what's worth fixing. No sales pitch, just straight talk.</span><span lang="es">¿Quieres saber dónde está tu sitio? Le echo un vistazo y te digo honestamente qué funciona, qué no, y qué vale la pena arreglar. Sin discurso de ventas, solo honestidad.</span></p>
-        <a class="btn" href="book.html"><span lang="en">Schedule a free 15-minute call</span><span lang="es">Agenda una llamada gratuita de 15 minutos</span>&nbsp;→</a>
+        <p>Want to know where your site stands? I'll take a look and tell you honestly what's working, what's not, and what's worth fixing. No sales pitch, just straight talk.</p>
+        <a class="btn" href="/book.html">Schedule a free 15-minute call&nbsp;→</a>
       </div>
 
     </div>
@@ -289,35 +311,34 @@
 
 <section style="padding:48px 0 0">
   <div class="wrap">
-    <h2 class="reveal" style="font-size:1.3rem;margin-bottom:20px"><span lang="en">Keep reading</span><span lang="es">Sigue leyendo</span></h2>
+    <h2 class="reveal" style="font-size:1.3rem;margin-bottom:20px">Keep reading</h2>
     <div style="display:flex;flex-direction:column;gap:14px">
-      <a class="reveal" href="how-much-does-a-website-cost.html" style="color:var(--purple);font-weight:600;font-size:1rem"><span lang="en">How Much Does a Website Cost in 2026? &rarr;</span><span lang="es">&iquest;Cuánto cuesta un sitio web en 2026? &rarr;</span></a>
-      <a class="reveal" href="what-is-website-care.html" style="color:var(--purple);font-weight:600;font-size:1rem"><span lang="en">What Website Care Actually Means (And Why You Need It) &rarr;</span><span lang="es">Qué significa realmente el cuidado web (y por qué lo necesitas) &rarr;</span></a>
+      <a class="reveal" href="/blog/how-much-does-a-website-cost.html" style="color:var(--purple);font-weight:600;font-size:1rem">How Much Does a Website Cost in 2026? &rarr;</a>
+      <a class="reveal" href="/blog/what-is-website-care.html" style="color:var(--purple);font-weight:600;font-size:1rem">What Website Care Actually Means (And Why You Need It) &rarr;</a>
     </div>
   </div>
 </section>
 </main>
 
 <div class="sticky-cta" id="stickyCta">
-  <a href="book.html"><span lang="en">Ready for a website that works? → Free consultation</span><span lang="es">¿Listo para un sitio que funcione? → Consulta gratis</span></a>
+  <a href="/book.html">Ready for a website that works? → Free consultation</a>
 </div>
 
 <footer>
   <div class="wrap foot-inner">
-    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="../assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="../assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span><span lang="en">This site was <strong>Made by Sebby</strong>. Yours can be too.</span><span lang="es">Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</span></span></div>
+    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="/assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="/assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span>This site was <strong>Made by Sebby</strong>. Yours can be too.</span></div>
     <div class="foot-links">
-      <a href="../services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
-      <a href="../work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
-      <a href="../website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
-      <a href="../about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
-      <a href="../blog.html"><span lang="en">Blog</span><span lang="es">Blog</span></a>
-      <a href="../privacy.html"><span lang="en">Privacy</span><span lang="es">Privacidad</span></a>
-      <a href="../terms.html"><span lang="en">Terms</span><span lang="es">Términos</span></a>
+      <a href="/services.html">What I do</a>
+      <a href="/work.html">Work</a>
+      <a href="/website-care.html">Website Care</a>
+      <a href="/about.html">About</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
       <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
     </div>
   </div>
 </footer>
-<script>!function(){var l=document.documentElement.getAttribute('data-lang');if(l==='es'){var b=document.querySelectorAll('.lang-toggle button');if(b.length===2){b[0].classList.remove('active');b[1].classList.add('active')}}}()</script>
 <script>!function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})}()</script>
 <script>!function(){var cta=document.getElementById('stickyCta');if(!cta)return;var footer=document.querySelector('footer');var shown=false;window.addEventListener('scroll',function(){var y=window.scrollY;var fTop=footer?footer.getBoundingClientRect().top+y-window.innerHeight:Infinity;if(y>400&&y<fTop){if(!shown){cta.classList.add('show');shown=true}}else{if(shown){cta.classList.remove('show');shown=false}}},{passive:true})}()</script>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>

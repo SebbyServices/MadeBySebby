@@ -12,7 +12,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
-<script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
@@ -23,8 +22,6 @@
     --tint:#F4F1FD;--line:#E8E6F2;--white:#FFFFFF;
     --radius:20px;--radius-sm:12px;
   }
-  :root:not([data-lang="es"]) [lang="es"]{display:none}
-  [data-lang="es"] [lang="en"]{display:none}
   *{margin:0;padding:0;box-sizing:border-box}
   body{
     font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
@@ -89,38 +86,38 @@
   <div class="check">
     <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
   </div>
-  <h1><span lang="en">Message <span class="accent">sent!</span></span><span lang="es">Mensaje <span class="accent">enviado!</span></span></h1>
-  <p><span lang="en">Thanks for reaching out. Here's what happens next:</span><span lang="es">Gracias por escribir. Esto es lo que sigue:</span></p>
+  <h1>Message <span class="accent">sent!</span></h1>
+  <p>Thanks for reaching out. Here's what happens next:</p>
 
   <div class="timeline">
     <div class="timeline-item">
       <div class="timeline-dot">1</div>
       <div>
-        <p><strong><span lang="en">I read your message</span><span lang="es">Leo tu mensaje</span></strong><br>
-        <span lang="en">I personally read every message — no bots, no assistants.</span><span lang="es">Yo personalmente leo cada mensaje — sin bots, sin asistentes.</span></p>
+        <p><strong>I read your message</strong><br>
+        I personally read every message — no bots, no assistants.</p>
       </div>
     </div>
     <div class="timeline-item">
       <div class="timeline-dot">2</div>
       <div>
-        <p><strong><span lang="en">I reply within one business day</span><span lang="es">Respondo en un día hábil</span></strong><br>
-        <span lang="en">Usually much sooner. I'll tell you plainly what I'd recommend for your business.</span><span lang="es">Generalmente mucho antes. Te diré claramente qué recomendaría para tu negocio.</span></p>
+        <p><strong>I reply within one business day</strong><br>
+        Usually much sooner. I'll tell you plainly what I'd recommend for your business.</p>
       </div>
     </div>
     <div class="timeline-item">
       <div class="timeline-dot">3</div>
       <div>
-        <p><strong><span lang="en">We schedule a 15-minute call</span><span lang="es">Agendamos una llamada de 15 minutos</span></strong><br>
-        <span lang="en">Free, no pressure. If I'm not the right fit, I'll tell you.</span><span lang="es">Gratis, sin presión. Si no soy la persona indicada, te lo digo.</span></p>
+        <p><strong>We schedule a 15-minute call</strong><br>
+        Free, no pressure. If I'm not the right fit, I'll tell you.</p>
       </div>
     </div>
   </div>
 
   <div class="ctas">
-    <a class="btn" href="/"><span lang="en">Back to homepage</span><span lang="es">Volver al inicio</span></a>
-    <a class="btn btn-ghost" href="/work.html"><span lang="en">See my work</span><span lang="es">Ver mi trabajo</span></a>
+    <a class="btn" href="/">Back to homepage</a>
+    <a class="btn btn-ghost" href="/work.html">See my work</a>
   </div>
 
-  <p class="footer-note"><span lang="en">Didn't mean to send? No worries — just ignore the email draft. Questions? <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a></span><span lang="es">¿No querías enviar? No te preocupes — solo ignora el borrador. ¿Preguntas? <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a></span></p>
+  <p class="footer-note">Didn't mean to send? No worries — just ignore the email draft. Questions? <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a></p>
 </body>
 </html>

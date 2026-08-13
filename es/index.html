@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DV4L5CZRML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DV4L5CZRML');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diseño Web y Páginas Web para Negocios | Made by Sebby</title>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="Sebby — Made by Sebby">
+<meta name="description" content="Diseño web y cuidado mensual para pequeños negocios en Miami, el sur de Florida y República Dominicana. Bilingüe, móvil primero. Consulta gratis.">
+<link rel="preload" as="image" href="/assets/logo/sebby-nav.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
+<style>
+  :root{
+    --ink:#1A1D29;
+    --ink-soft:#4A4E5C;
+    --muted:#6B7080;
+    --purple:#6C3CE9;
+    --purple-deep:#5A2FD0;
+    --blue:#2D6FFF;
+    --tint:#F4F1FD;
+    --line:#E8E6F2;
+    --white:#FFFFFF;
+    --radius:20px;
+    --radius-sm:12px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+  img{max-width:100%;display:block}
+
+  /* ---------- Nav ---------- */
+  nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:50}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .logo{display:flex;align-items:center;gap:11px;font-weight:700;font-size:1.06rem;letter-spacing:-.01em}
+  .logo .made{font-weight:500;color:var(--muted)}
+  .logo .sebby{color:var(--ink)}
+  .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
+  .nav-links>a{color:var(--ink-soft);transition:color .15s}
+  .nav-links>a:hover{color:var(--purple)}
+  .nav-links>a.btn{color:#fff}
+  .nav-links>a.btn:hover{color:#fff}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;
+    padding:13px 26px;border-radius:999px;border:none;cursor:pointer;
+    transition:background .15s, transform .15s;
+  }
+  .btn:hover{background:var(--purple-deep);transform:translateY(-1px)}
+  .btn:focus-visible{outline-color:var(--ink)}
+  .btn-ghost{
+    background:transparent;color:var(--ink);border:1.5px solid var(--line);
+  }
+  .btn-ghost:hover{background:var(--tint);border-color:var(--purple);color:var(--purple)}
+  .btn-nav{padding:10px 22px;font-size:.92rem}
+
+  /* ---------- Monogram ---------- */
+  .mono{width:36px;height:36px;flex-shrink:0}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:88px 0 64px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+  .eyebrow{
+    font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--purple);margin-bottom:20px;display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2.5px;background:var(--purple);border-radius:2px}
+  h1{
+    font-size:clamp(2.3rem,4.6vw,3.55rem);
+    font-weight:800;line-height:1.09;letter-spacing:-.028em;
+    margin-bottom:24px;
+  }
+  h1 .accent{color:var(--purple)}
+  .hero p.lede{font-size:1.17rem;color:var(--ink-soft);max-width:34em;margin-bottom:36px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+  .hero-note{font-size:.9rem;color:var(--muted)}
+
+  .portrait{
+    position:relative;border-radius:var(--radius);overflow:hidden;
+    background:linear-gradient(160deg,var(--tint) 0%,#EAE3FB 100%);
+    aspect-ratio:4/4.7;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:18px;
+    border:1px solid var(--line);
+  }
+  .portrait svg{width:96px;height:96px;opacity:.9}
+  .portrait .swap{
+    font-size:.82rem;font-weight:600;color:var(--purple);
+    background:#fff;border:1px dashed var(--purple);
+    padding:8px 16px;border-radius:999px;
+  }
+  .portrait .chip{
+    position:absolute;bottom:20px;left:20px;right:20px;
+    background:rgba(255,255,255,.95);border:1px solid var(--line);
+    border-radius:var(--radius-sm);padding:13px 18px;
+    display:flex;align-items:center;gap:12px;font-size:.9rem;font-weight:600;
+  }
+  .chip .dot{width:9px;height:9px;border-radius:50%;background:#2FBF71;flex-shrink:0}
+  .chip span em{font-style:normal;color:var(--muted);font-weight:500}
+
+  /* ---------- Trust bar ---------- */
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0}
+  .trust-inner{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;align-items:center}
+  .trust-item{display:flex;align-items:center;gap:11px;font-size:.95rem;font-weight:600;color:var(--ink-soft)}
+  .trust-item .stars{color:var(--purple);letter-spacing:2px;font-size:1rem}
+  .trust-item svg{width:19px;height:19px;stroke:var(--purple);flex-shrink:0}
+
+  /* ---------- Sections ---------- */
+  section{padding:96px 0}
+  .sec-head{max-width:38em;margin-bottom:56px}
+  h2{font-size:clamp(1.7rem,3vw,2.35rem);font-weight:800;letter-spacing:-.022em;line-height:1.16;margin-bottom:16px}
+  .sec-head p{font-size:1.08rem;color:var(--ink-soft)}
+
+  /* Services */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{
+    display:block;
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:34px 30px;transition:transform .18s, box-shadow .18s, border-color .18s;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08);border-color:#D8CFF6}
+  .card .glyph{
+    width:48px;height:48px;border-radius:14px;background:var(--tint);
+    display:flex;align-items:center;justify-content:center;margin-bottom:22px;
+  }
+  .card .glyph svg{width:23px;height:23px;stroke:var(--purple);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font-size:1.16rem;font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .card p{font-size:.97rem;color:var(--ink-soft)}
+  .card .tag{
+    display:inline-block;margin-bottom:14px;font-size:.72rem;font-weight:700;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--purple);
+  }
+
+  /* Process */
+  .process{background:var(--tint);border-radius:32px;padding:80px 0}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:step}
+  .step{
+    background:var(--white);border-radius:var(--radius);padding:32px 28px;
+    border:1px solid #E3DDF6;counter-increment:step;position:relative;
+  }
+  .step::before{
+    content:counter(step);
+    display:flex;align-items:center;justify-content:center;
+    width:38px;height:38px;border-radius:50%;
+    background:var(--purple);color:#fff;font-weight:700;font-size:1rem;
+    margin-bottom:20px;
+  }
+  .step h3{font-size:1.1rem;font-weight:700;margin-bottom:9px}
+  .step p{font-size:.95rem;color:var(--ink-soft)}
+
+  /* Work */
+  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .work-duo{grid-template-columns:repeat(2,minmax(0,420px))}
+  .tile{
+    border-radius:var(--radius);border:1px solid var(--line);overflow:hidden;
+    background:var(--white);transition:transform .18s, box-shadow .18s, border-color .18s;
+    cursor:pointer;
+  }
+  .tile:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(108,60,233,.15);border-color:var(--purple)}
+  .tile .shot{
+    aspect-ratio:16/10.5;background:linear-gradient(150deg,#EFEAFB,#E2D9F8);
+    display:flex;align-items:center;justify-content:center;overflow:hidden;
+  }
+  .tile .shot img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .3s ease}
+  .tile:hover .shot img{transform:scale(1.03)}
+  .tile .shot span{
+    font-size:.8rem;font-weight:600;color:var(--purple);
+    background:#fff;border:1px dashed var(--purple);padding:7px 14px;border-radius:999px;
+  }
+  .tile .meta{padding:20px 22px}
+  .tile .meta h3{font-size:1.02rem;font-weight:700}
+  .tile .meta p{font-size:.88rem;color:var(--muted)}
+
+  /* Testimonials */
+  .quotes{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .quote{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:36px 34px;
+  }
+  .quote .mark{font-size:2.6rem;line-height:1;color:var(--purple);font-weight:800;margin-bottom:14px}
+  .quote p.body{font-size:1.05rem;color:var(--ink);margin-bottom:24px}
+  .quote .who{display:flex;align-items:center;gap:14px}
+  .quote .avatar{
+    width:46px;height:46px;border-radius:50%;background:var(--tint);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;color:var(--purple);font-size:.95rem;flex-shrink:0;
+  }
+  .quote .who strong{display:block;font-size:.95rem}
+  .quote .who span{font-size:.85rem;color:var(--muted)}
+
+  /* Care callout */
+  .care{
+    background:var(--ink);border-radius:32px;color:#fff;
+    padding:72px 64px;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;
+  }
+  .care h2{color:#fff}
+  .care p{color:#B9BCC9;font-size:1.06rem;margin-bottom:32px;max-width:32em}
+  .care ul{list-style:none;display:grid;gap:16px}
+  .care li{display:flex;gap:13px;align-items:flex-start;font-size:.99rem;color:#E7E8EE}
+  .care li svg{width:20px;height:20px;stroke:var(--purple);flex-shrink:0;margin-top:2px;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .care .btn{background:#fff;color:var(--ink)}
+  .care .btn:hover{background:var(--tint);transform:translateY(-1px)}
+
+  /* Final CTA */
+  .final{text-align:center;padding:110px 0}
+  .final h2{max-width:18em;margin:0 auto 18px}
+  .final p{color:var(--ink-soft);font-size:1.1rem;margin-bottom:36px}
+
+  /* Footer */
+  footer{border-top:1px solid var(--line);padding:44px 0}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .credit{display:flex;align-items:center;gap:10px;font-size:.92rem;color:var(--muted)}
+  .credit .mono{width:22px;height:22px}
+  .credit strong{color:var(--ink);font-weight:700}
+  .foot-links{display:flex;gap:26px;font-size:.9rem;color:var(--muted)}
+  .foot-links a:hover{color:var(--purple)}
+
+  /* Motion */
+  .rise{opacity:0;transform:translateY(16px);animation:rise .7s ease forwards}
+  .d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    .rise{opacity:1;transform:none;animation:none}
+    *{transition:none !important;scroll-behavior:auto}
+  }
+
+  /* Responsive */
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:44px}
+    .portrait{max-width:420px;margin:0 auto}
+    .cards,.steps,.work-grid,.work-duo{grid-template-columns:1fr 1fr}
+    .care{grid-template-columns:1fr;padding:52px 36px}
+  }
+  @media (max-width:640px){
+    .cards,.steps,.work-grid,.work-duo,.quotes{grid-template-columns:1fr}
+    section{padding:68px 0}
+    .hero{padding:56px 0 48px}
+    .trust-inner{justify-content:flex-start}
+    .tile .shot{aspect-ratio:16/8}
+  }
+
+  /* Final brand lockup */
+  .logo{gap:12px}
+  .lockup{display:flex;flex-direction:column;line-height:1.15}
+  .madeby{font-size:.66rem;font-weight:500;color:var(--muted);letter-spacing:.04em;text-transform:lowercase}
+  .sebbymark{font-size:1.02rem;font-weight:700;letter-spacing:.24em;color:var(--ink)}
+  .credit .lockup-inline strong{letter-spacing:.02em}
+
+  .portrait{padding:0}
+  .portrait img{width:100%;height:100%;object-fit:cover;object-position:top center}
+
+
+
+
+
+  /* ---------- Hamburger Menu ---------- */
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;z-index:51}
+  .menu-btn svg{width:26px;height:26px;stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round}
+  .menu-btn .close{display:none}
+  .nav-open .menu-btn .open{display:none}
+  .nav-open .menu-btn .close{display:block}
+  @media (max-width:640px){
+    .menu-btn{display:block}
+    .nav-links{
+      display:none;position:fixed;top:76px;left:0;right:0;bottom:0;
+      background:var(--white);flex-direction:column;gap:0;padding:20px 28px;
+      border-top:1px solid var(--line);z-index:49;
+      overflow-y:auto;
+    }
+    .nav-open{backdrop-filter:none;overflow:visible}
+    .nav-open .nav-links{display:flex}
+    .nav-links>a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
+    .nav-links>a:last-child{border-bottom:none}
+    .nav-links>a.btn{margin-top:12px;justify-content:center;border-bottom:none}
+    .nav-links .lang-toggle{margin-top:8px;align-self:flex-start}
+    .nav-links .theme-toggle{margin-top:4px;align-self:flex-start}
+  }
+
+
+  /* ---------- Scroll Animations ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+
+  /* ---------- Sticky CTA ---------- */
+  .sticky-cta{
+    position:fixed;bottom:0;left:0;right:0;z-index:40;
+    background:var(--purple);color:#fff;
+    padding:14px 28px;text-align:center;
+    transform:translateY(100%);transition:transform .35s ease;
+    font-weight:600;font-size:.95rem;
+  }
+  .sticky-cta.show{transform:translateY(0)}
+  .sticky-cta a{color:#fff;text-decoration:none}
+  .sticky-cta a:hover{text-decoration:underline}
+  @media (max-width:640px){
+    .sticky-cta{font-size:.88rem;padding:12px 20px}
+  }
+
+  /* FAQ */
+  .faq{display:grid;gap:14px;max-width:44em}
+  .faq details{border:1px solid var(--line);border-radius:var(--radius-sm);padding:20px 24px;background:#fff;transition:border-color .15s}
+  .faq details[open]{border-color:var(--purple)}
+  .faq summary{font-weight:700;cursor:pointer;font-size:1rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq summary::after{content:"+";color:var(--purple);font-size:1.4rem;font-weight:600;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{margin-top:12px;color:var(--ink-soft);font-size:.97rem}
+
+
+  /* Client logos */
+  .client-logos-bar{text-align:center;padding:28px 0 0}
+  .client-logos{display:flex;align-items:center;gap:48px;flex-wrap:wrap;justify-content:center;opacity:.75;transition:opacity .3s}
+  .client-logos:hover{opacity:1}
+  .client-logos a{display:inline-block;transition:transform .25s ease,opacity .25s ease}
+  .client-logos a:hover{transform:scale(1.06);opacity:.9}
+  .client-logos img{height:44px;width:auto}
+  .client-logos-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+
+  /* ---------- Language Toggle ---------- */
+  .lang-toggle{
+    display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;
+    font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0;
+  }
+  .lang-toggle>*{
+    background:none;border:none;padding:7px 12px;cursor:pointer;
+    color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em;
+    text-decoration:none;display:flex;align-items:center;
+  }
+  .lang-toggle>*:hover{color:var(--purple)}
+  .lang-toggle>.active{background:var(--purple);color:#fff}
+
+  /* ---------- Dark Mode ---------- */
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) nav{background:rgba(15,17,23,.92)}
+    :root:not([data-theme="light"]) .chip{background:rgba(30,32,42,.95);border-color:var(--line)}
+    :root:not([data-theme="light"]) .card,:root:not([data-theme="light"]) .step,:root:not([data-theme="light"]) .tile,:root:not([data-theme="light"]) .quote,:root:not([data-theme="light"]) .plan,:root:not([data-theme="light"]) .contact-card,:root:not([data-theme="light"]) .faq details{background:#1A1C25}
+    :root:not([data-theme="light"]) .card:hover{border-color:#3D3A4E}
+    :root:not([data-theme="light"]) .portrait{background:linear-gradient(160deg,#1D192D 0%,#1A1530 100%)}
+    :root:not([data-theme="light"]) .process{background:#1A1C25}
+    :root:not([data-theme="light"]) .tile .shot{background:linear-gradient(150deg,#1D192D,#1A1530)}
+    :root:not([data-theme="light"]) .tile .shot img{filter:brightness(.85) saturate(.9)}
+    :root:not([data-theme="light"]) .svc-visual{background:linear-gradient(150deg,#1D192D,#1A1530);border-color:#2A2838}
+    :root:not([data-theme="light"]) .svc-visual img{filter:brightness(.82) saturate(.9)}
+    :root:not([data-theme="light"]) .care{background:#1A1C25}
+    :root:not([data-theme="light"]) .care h2{color:#E4E5EA}
+    :root:not([data-theme="light"]) .care p{color:#A0A3AD}
+    :root:not([data-theme="light"]) .care li{color:#C8CAD0}
+    :root:not([data-theme="light"]) .care li svg{stroke:#8B6CEF}
+    :root:not([data-theme="light"]) .care .btn{background:var(--purple);color:#fff}
+    :root:not([data-theme="light"]) .care .btn:hover{background:var(--purple-deep)}
+    :root:not([data-theme="light"]) .sitecard{background:#1A1C25}
+    :root:not([data-theme="light"]) .sitecard .bar{background:#222430}
+    :root:not([data-theme="light"]) .sitecard .url{background:#1A1C25;color:#717580}
+    :root:not([data-theme="light"]) .sitecard .visit{background:#1A1C25}
+    :root:not([data-theme="light"]) .promise{background:#1D192D}
+    :root:not([data-theme="light"]) .btn-ghost{border-color:var(--line)}
+    :root:not([data-theme="light"]) .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+    :root:not([data-theme="light"]) .contact-line{border-bottom-color:#2A2838}
+    :root:not([data-theme="light"]) .logo-light{display:none !important}
+    :root:not([data-theme="light"]) .logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
+    :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .client-logos img.logo-light{display:none !important}
+    :root:not([data-theme="light"]) .client-logos img.logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .btn{background:#6B4EC2}
+    :root:not([data-theme="light"]) .btn:hover{background:#5C41B0}
+    :root:not([data-theme="light"]) .step::before{background:#6B4EC2}
+  }
+  [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
+  [data-theme="dark"] .chip{background:rgba(30,32,42,.95);border-color:var(--line)}
+  [data-theme="dark"] .card,[data-theme="dark"] .step,[data-theme="dark"] .tile,[data-theme="dark"] .quote,[data-theme="dark"] .plan,[data-theme="dark"] .contact-card,[data-theme="dark"] .faq details{background:#1A1C25}
+  [data-theme="dark"] .card:hover{border-color:#3D3A4E}
+  [data-theme="dark"] .portrait{background:linear-gradient(160deg,#1D192D 0%,#1A1530 100%)}
+  [data-theme="dark"] .process{background:#1A1C25}
+  [data-theme="dark"] .tile .shot{background:linear-gradient(150deg,#1D192D,#1A1530)}
+  [data-theme="dark"] .tile .shot img{filter:brightness(.85) saturate(.9)}
+  [data-theme="dark"] .svc-visual{background:linear-gradient(150deg,#1D192D,#1A1530);border-color:#2A2838}
+  [data-theme="dark"] .svc-visual img{filter:brightness(.82) saturate(.9)}
+  [data-theme="dark"] .care{background:#1A1C25}
+  [data-theme="dark"] .care h2{color:#E4E5EA}
+  [data-theme="dark"] .care p{color:#A0A3AD}
+  [data-theme="dark"] .care li{color:#C8CAD0}
+  [data-theme="dark"] .care li svg{stroke:#8B6CEF}
+  [data-theme="dark"] .care .btn{background:var(--purple);color:#fff}
+  [data-theme="dark"] .care .btn:hover{background:var(--purple-deep)}
+  [data-theme="dark"] .sitecard{background:#1A1C25}
+  [data-theme="dark"] .sitecard .bar{background:#222430}
+  [data-theme="dark"] .sitecard .url{background:#1A1C25;color:#717580}
+  [data-theme="dark"] .sitecard .visit{background:#1A1C25}
+  [data-theme="dark"] .promise{background:#1D192D}
+  [data-theme="dark"] .btn-ghost{border-color:var(--line)}
+  [data-theme="dark"] .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+  [data-theme="dark"] .contact-line{border-bottom-color:#2A2838}
+  [data-theme="dark"] .logo-light{display:none !important}
+  [data-theme="dark"] .logo-dark{display:block !important}
+  [data-theme="dark"] .foot-logo-light{display:none !important}
+  [data-theme="dark"] .foot-logo-dark{display:block !important}
+  [data-theme="dark"] .client-logos img.logo-light{display:none !important}
+  [data-theme="dark"] .client-logos img.logo-dark{display:block !important}
+  [data-theme="dark"] .btn{background:#6B4EC2}
+  [data-theme="dark"] .btn:hover{background:#5C41B0}
+  [data-theme="dark"] .step::before{background:#6B4EC2}
+
+
+  /* Theme transition (only applied during toggle, not page load) */
+  .theme-trans,.theme-trans *,.theme-trans *::before,.theme-trans *::after{
+    transition:background .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease,fill .35s ease,stroke .35s ease !important;
+  }
+  /* Theme toggle button */
+  .theme-toggle{
+    background:none;border:1.5px solid var(--line);border-radius:50%;
+    width:38px;height:38px;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;transition:border-color .15s,background .15s;flex-shrink:0;
+  }
+  .theme-toggle:hover{border-color:var(--purple);background:var(--tint)}
+  .theme-toggle svg{width:18px;height:18px;stroke:var(--muted);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .theme-toggle:hover svg{stroke:var(--purple)}
+  .theme-toggle .icon-sun{display:none}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon{display:none}
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun{display:block}
+  }
+  [data-theme="dark"] .theme-toggle .icon-moon{display:none}
+  [data-theme="dark"] .theme-toggle .icon-sun{display:block !important}
+  [data-theme="light"] .theme-toggle .icon-sun{display:none !important}
+  [data-theme="light"] .theme-toggle .icon-moon{display:block}
+
+
+  /* ---------- Skip link ---------- */
+  .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
+  .skip-link:focus{top:12px}
+
+  /* ---------- Print ---------- */
+  @media print{
+    nav,.menu-btn,.sticky-cta,#stickyCta,.theme-toggle,.lang-toggle,footer,.hero-ctas,.btn,.cta-row,.foot-cta{display:none!important}
+    body{color:#000;background:#fff;-webkit-print-color-adjust:exact}
+    .wrap{max-width:100%;padding:0 12px}
+    a{color:#000}
+    a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em;color:#555}
+    a[href^="mailto"]::after{content:" (" attr(href) ")";font-size:.8em;color:#555}
+    img{max-width:100%!important;filter:none!important}
+    .reveal{opacity:1!important;transform:none!important}
+  }
+</style>
+
+<!-- seo:start -->
+<link rel="alternate" type="text/plain" title="LLM instructions" href="/llms.txt">
+<link rel="canonical" href="https://madebysebby.com/es/">
+<link rel="alternate" hreflang="en" href="https://madebysebby.com/">
+<link rel="alternate" hreflang="es" href="https://madebysebby.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://madebysebby.com/">
+<meta name="theme-color" content="#6C3CE9">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Made by Sebby">
+<meta property="og:title" content="Diseño Web y Páginas Web para Negocios | Made by Sebby">
+<meta property="og:description" content="Diseño, desarrollo y cuidado de páginas web para pequeños negocios en Miami, el sur de Florida y República Dominicana. Sitios bilingües que generan confianza y convierten visitantes.">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https://madebysebby.com/es/">
+<meta property="og:image" content="https://madebysebby.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Diseño Web y Páginas Web para Negocios | Made by Sebby">
+<meta name="twitter:description" content="Diseño, desarrollo y cuidado mensual de páginas web para pequeños negocios. Sitios que generan confianza, convierten visitantes y crecen con tu negocio.">
+<meta name="twitter:image" content="https://madebysebby.com/assets/og-image.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Made by Sebby",
+  "alternateName": [
+    "Made by Sebby Web Design",
+    "MadeBySebby",
+    "Sebby IT Consulting"
+  ],
+  "url": "https://madebysebby.com/es/",
+  "image": "https://madebysebby.com/assets/og-image.jpg",
+  "logo": "https://madebysebby.com/assets/icons/icon-512.png",
+  "description": "Diseño web y cuidado mensual para pequeños negocios en Miami, el sur de Florida y República Dominicana. Bilingüe, móvil primero. Consulta gratis.",
+  "disambiguatingDescription": "Freelance web design studio run by Sebastian (Sebby), building custom websites for small businesses. Not affiliated with the Sebby fashion/outerwear brand.",
+  "email": "hello@madebysebby.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Santo Domingo",
+    "addressCountry": "DO"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 18.4861,
+    "longitude": -69.9312
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Sebastian",
+    "alternateName": "Sebby",
+    "jobTitle": "Freelance Web Designer & Developer",
+    "url": "https://madebysebby.com/es/sobre-mi.html"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Miami",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Florida",
+        "containedInPlace": {
+          "@type": "Country",
+          "name": "United States"
+        }
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Coral Gables",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Florida"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Santo Domingo",
+      "containedInPlace": {
+        "@type": "Country",
+        "name": "Dominican Republic"
+      }
+    },
+    {
+      "@type": "Country",
+      "name": "United States"
+    },
+    {
+      "@type": "Country",
+      "name": "Dominican Republic"
+    }
+  ],
+  "serviceType": [
+    "Web Design",
+    "Web Development",
+    "Website Maintenance",
+    "SEO"
+  ],
+  "slogan": "Sitios web que generan confianza.",
+  "knowsAbout": [
+    "Web Design",
+    "Web Development",
+    "Website Maintenance",
+    "SEO",
+    "WordPress",
+    "Elementor",
+    "Custom Websites",
+    "Small Business Websites"
+  ],
+  "priceRange": "$$",
+  "sameAs": [
+    "https://github.com/SebbyServices"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Web Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Diseño y desarrollo web",
+          "description": "Custom website design and development for small businesses. Mobile-first, fast-loading, built to convert."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cuidado Web",
+          "description": "Monthly website maintenance including updates, backups, security, speed optimization, and small edits."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SEO — Get Found on Google",
+          "description": "Local SEO, Google Business Profile setup, and honest search optimization that compounds over time."
+        }
+      }
+    ]
+  },
+  "inLanguage": "es"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Made by Sebby",
+  "url": "https://madebysebby.com/es/",
+  "description": "Professional web design, development, and monthly website care for small businesses.",
+  "publisher": {
+    "@type": "ProfessionalService",
+    "name": "Made by Sebby",
+    "url": "https://madebysebby.com/es/",
+    "inLanguage": "es"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "ProfessionalService",
+    "name": "Made by Sebby",
+    "url": "https://madebysebby.com/es/",
+    "inLanguage": "es"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Jorge L. Riera"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "reviewBody": "Sebby rebuilt my law firm's entire web presence and untangled infrastructure problems that had my domain, my email, and two competing websites at odds. He treats my site like it's his own. I trust him with the online face of my practice."
+}
+</script>
+
+</head>
+<body>
+<a class="skip-link" href="#top">Ir al contenido</a>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="#top" aria-label="Inicio de Made by Sebby"><img class="logo-light" src="/assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="/assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
+    <button class="menu-btn" aria-label="Menú" onclick="document.querySelector('nav').classList.toggle('nav-open')">
+          <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      <div class="nav-links">
+      <a href="/es/servicios.html">Qué hago</a>
+      <a href="/es/portafolio.html">Trabajo</a>
+      <a href="/es/cuidado-web.html">Cuidado Web</a>
+      <a href="/es/sobre-mi.html">Sobre mí</a>
+      <div class="lang-toggle">
+          <a href="/" hreflang="en" lang="en" aria-label="View this page in English">EN</a>
+          <span class="active">ES</span>
+        </div>
+        <button class="theme-toggle" aria-label="Alternar modo oscuro" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
+          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="/es/agendar.html" class="btn btn-nav">Trabaja con Sebby</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow rise">Diseño web · Desarrollo · Cuidado web</div>
+      <h1 class="rise d1">Sitios web que <span class="accent">generan confianza.</span></h1>
+      <p class="lede rise d2">Diseño, construyo y cuido sitios web que ayudan a tu negocio a verse profesional, generar confianza y crecer con seguridad. Sin rodeos, sin jerga. Hablas conmigo, y lo construyo como si fuera mío.</p>
+      <div class="hero-ctas rise d3">
+        <a class="btn" href="#contact">Trabaja con Sebby&nbsp;→</a>
+        <a class="btn btn-ghost" href="#work">Ver mi trabajo</a>
+      </div>
+      <p class="hero-note rise d3">Llamada gratuita de 15 minutos. Sin presión, respuestas claras.</p>
+    </div>
+    <div class="portrait rise d2">
+      <picture><source srcset="/assets/sebby.webp" type="image/webp"><img src="/assets/sebby.jpg" alt="Sebby, web designer and developer, smiling at his workstation"></picture>
+      <div class="chip">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Sebby está aceptando nuevos proyectos &nbsp;<em>· Responde en menos de un día</em></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ TRUST BAR ============ -->
+<div class="trust">
+  <div class="wrap trust-inner">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M5 21c1-4 3.5-6 7-6s6 2 7 6"/></svg>
+      Atención personal
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 12L2 9l4-6z"/><path d="M2 9h20M12 21 8 9l4-6 4 6-4 12"/></svg>
+      Calidad artesanal
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+      Soporte confiable
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16M6 16l4-4 3 3 5-6"/><path d="M14 9h4v4"/></svg>
+      Diseñado para crecer
+    </div>
+  </div>
+  <div class="client-logos-bar">
+    <div class="client-logos-label">Confían en mí</div>
+    <div class="client-logos">
+      <a href="/es/caso-riera-law.html"><img class="logo-light" src="/assets/client-logos/rieralaw-light.webp" alt="Riera Law Firm" loading="lazy" style="display:block"><img class="logo-dark" src="/assets/client-logos/rieralaw-dark.webp" alt="Riera Law Firm" loading="lazy" style="display:none"></a>
+      <a href="/es/caso-elite-care.html"><img class="logo-light" src="/assets/client-logos/elitecare-light.webp" alt="Elite Care Recovery" loading="lazy" style="display:block"><img class="logo-dark" src="/assets/client-logos/elitecare-dark.webp" alt="Elite Care Recovery" loading="lazy" style="display:none"></a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Tú manejas tu negocio. Yo me encargo de tu sitio web.</h2>
+      <p>Tres formas en que ayudo, todo en términos claros. Cada proyecto comienza con una conversación sobre lo que realmente necesitas, no un paquete que intento vender.</p>
+    </div>
+    <div class="cards">
+      <a class="card reveal" href="/es/servicios.html">
+        <span class="tag">Hecho para convertir</span>
+        <div class="glyph">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8M12 18v3"/></svg>
+        </div>
+        <h3>Diseño y desarrollo web</h3>
+        <p>Diseño y construyo un sitio web del que estarás orgulloso, uno que hace que desconocidos confíen en ti lo suficiente para llamar, reservar o comprar.</p>
+      </a>
+      <a class="card reveal" href="/es/cuidado-web.html">
+        <span class="tag">Hecho para durar</span>
+        <div class="glyph">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3>Cuidado Web</h3>
+        <p>Mantengo tu sitio rápido, seguro y actualizado mes tras mes, para que nunca tengas que preocuparte por él.</p>
+      </a>
+      <a class="card reveal" href="/es/servicios.html">
+        <span class="tag">Hecho para ser encontrado</span>
+        <div class="glyph">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </div>
+        <h3>Aparece en Google</h3>
+        <p>Ayudo a que la gente encuentre tu negocio cuando busca, con SEO honesto que crece con el tiempo.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="process">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <h2>Simple de principio a fin.</h2>
+          <p>Siempre sabes qué está pasando, cuánto cuesta y qué sigue.</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <h3>Hablamos</h3>
+            <p>Una llamada gratuita de 15 minutos sobre tu negocio y lo que necesita tu sitio web. Si no soy la persona indicada, te lo digo.</p>
+          </div>
+          <div class="step reveal">
+            <h3>Diseño y construyo</h3>
+            <p>Ves el diseño antes de que se construya nada, y recibes actualizaciones claras mientras lo armo.</p>
+          </div>
+          <div class="step reveal">
+            <h3>Lanzas, yo me quedo</h3>
+            <p>Tu sitio sale al aire, y yo lo mantengo rápido, seguro y actualizado. Cuando necesites un cambio, me escribes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section id="work" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Trabajo reciente.</h2>
+      <p>Negocios reales, resultados reales. Cada uno de estos dueños puede contarte cómo es trabajar conmigo.</p>
+    </div>
+    <div class="work-grid work-duo">
+      <a class="tile reveal" href="/es/caso-riera-law.html">
+        <div class="shot"><picture><source srcset="/assets/hero-rieralaw.webp" type="image/webp"><img src="/assets/hero-rieralaw.jpg" alt="Riera Law Firm homepage — securities arbitration attorney with courthouse background" loading="lazy"></picture></div>
+        <div class="meta"><h3>Riera Law Firm</h3><p>Derecho de valores · Sitio bilingüe completo, 70+ páginas, cuidado continuo</p></div>
+      </a>
+      <a class="tile reveal" href="/es/caso-elite-care.html">
+        <div class="shot"><picture><source srcset="/assets/hero-elitecare.webp" type="image/webp"><img src="/assets/hero-elitecare.jpg" alt="Elite Care Recovery homepage — premium cold and compression therapy for post-operative patients" loading="lazy"></picture></div>
+        <div class="meta"><h3>Elite Care Recovery</h3><p>Equipo médico · Sitio completo, GitHub Pages</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Lo que dicen mis clientes.</h2>
+    </div>
+    <div class="quotes">
+      <div class="quote reveal">
+        <div class="mark" aria-hidden="true">"</div>
+        <p class="body">Sebby reconstruyó toda la presencia web de mi bufete y resolvió problemas de infraestructura que tenían mi dominio, mi correo y dos sitios web compitiendo entre sí. Trabaja rápido, explica todo en términos claros, y trata mi sitio como si fuera suyo. Le confío la cara digital de mi práctica.</p>
+        <div class="who">
+          <div class="avatar">JR</div>
+          <div><strong>Jorge L. Riera</strong><span>Socio Fundador, Riera Law Firm</span></div>
+        </div>
+      </div>
+      <div class="quote reveal">
+        <div class="mark" aria-hidden="true">"</div>
+        <p class="body">Trabajar con Sebastian ha sido una experiencia fantástica. Tomó nuestra visión para Elite Care Recovery y construyó un sitio web profesional que superó nuestras expectativas, desde mostrar nuestro equipo de recuperación NICE1 hasta facilitar que los pacientes reserven en línea. Su comunicación y tiempo de entrega fueron excepcionales durante todo el proceso. Lo recomiendo ampliamente a cualquiera que busque un desarrollador web talentoso y confiable que realmente se preocupa por entregar un gran resultado.</p>
+        <div class="who">
+          <div class="avatar">JP</div>
+          <div><strong>John Pierce</strong><span>Cofundador, Elite Care Recovery</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CARE CALLOUT ============ -->
+<section id="care" style="padding-top:0">
+  <div class="wrap">
+    <div class="care reveal">
+      <div>
+        <h2>Tu sitio web no debería ser otro trabajo en tu lista.</h2>
+        <p>La mayoría de los sitios web se deterioran lentamente. Los plugins se desactualizan, las páginas se vuelven lentas, se abren brechas de seguridad, y nadie se da cuenta hasta que un cliente lo nota. Con Cuidado Web, yo lo noto primero.</p>
+        <a class="btn" href="#contact">Pregunta por Cuidado Web&nbsp;→</a>
+      </div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Actualizaciones, respaldos y seguridad manejados cada mes</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Revisiones de velocidad para que tu sitio cargue rápido en cualquier teléfono</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Cambios pequeños cuando los necesites, solo escríbeme</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Una persona real que ya conoce tu sitio</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ FAQ ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Preguntas frecuentes.</h2>
+    </div>
+    <div class="faq">
+      <details class="reveal">
+        <summary>¿Cuánto cuesta un sitio web?</summary>
+        <p>Cada proyecto es diferente, pero la mayoría de los sitios web para pequeños negocios están entre $2,000 y $8,000. Te daré un número exacto después de nuestra primera conversación — sin sorpresas, sin cobros por hora que se acumulan.</p>
+      </details>
+      <details class="reveal">
+        <summary>¿Cuánto tarda construir un sitio web?</summary>
+        <p>La mayoría de los proyectos tardan de 3 a 6 semanas desde el inicio hasta el lanzamiento. Verás el diseño en la primera semana y recibirás actualizaciones durante todo el proceso. No desapareceré por un mes para volver con algo que no pediste.</p>
+      </details>
+      <details class="reveal">
+        <summary>¿Soy dueño de mi sitio web?</summary>
+        <p>Sí, 100%. Tu dominio, tu cuenta de hosting, tu contenido, tu código — todo es tuyo. Si algún día quieres seguir por otro lado, te entrego todo limpiamente. Sin situaciones de rehén.</p>
+      </details>
+      <details class="reveal">
+        <summary>¿Y si ya tengo un sitio web?</summary>
+        <p>Puedo rediseñarlo, reconstruirlo con mejor tecnología, o simplemente hacerme cargo de su cuidado. Hablaremos sobre qué funciona, qué no, y si una renovación o una reconstrucción completa tiene más sentido para tu negocio.</p>
+      </details>
+      <details class="reveal">
+        <summary>¿Trabajas con negocios fuera de EE.UU.?</summary>
+        <p>Sí. Estoy basado en República Dominicana y trabajo con clientes en EE.UU., Latinoamérica y cualquier lugar donde se hable inglés o español. Todo se hace remotamente — las diferencias de zona horaria nunca han sido un problema.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section style="padding:40px 0 0">
+  <div class="wrap" style="text-align:center">
+    <p style="font-size:.95rem;color:var(--muted)">Sirviendo <a href="/es/diseno-web-miami.html" style="color:var(--purple);text-decoration:underline">Miami</a>, <a href="/es/diseno-web-fort-lauderdale.html" style="color:var(--purple);text-decoration:underline">Fort Lauderdale</a>, Coral Gables, Doral, Hialeah, y todo el sur de la Florida. También en <a href="/es/diseno-web-santo-domingo.html" style="color:var(--purple);text-decoration:underline">Santo Domingo</a> y República Dominicana.</p>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final" id="contact" style="padding-top:20px">
+  <div class="wrap">
+    <h2>Hagamos que tu negocio se vea tan bien en línea como en persona.</h2>
+    <p>Cuéntame sobre tu negocio. Te diré exactamente qué construiría y cuánto cuesta.</p>
+    <a class="btn" href="/es/agendar.html">Trabaja con Sebby&nbsp;→</a>
+  </div>
+</section>
+
+<div class="sticky-cta" id="stickyCta">
+  <a href="/es/agendar.html">¿Listo para hablar? Agenda una llamada gratis&nbsp;→</a>
+</div>
+
+<!-- ============ FOOTER ============ -->
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="/assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="/assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span>Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</span></div>
+    <div class="foot-links">
+      <a href="/es/servicios.html">Servicios</a>
+      <a href="/es/portafolio.html">Trabajo</a>
+      <a href="/es/cuidado-web.html">Cuidado Web</a>
+      <a href="/es/sobre-mi.html">Acerca</a>
+      <a href="/es/blog.html">Blog</a>
+      <a href="/es/privacidad.html">Privacidad</a>
+      <a href="/es/terminos.html">Términos</a>
+      <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>!function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})}()</script>
+<script>!function(){var cta=document.getElementById('stickyCta');if(!cta)return;var footer=document.querySelector('footer');var shown=false;window.addEventListener('scroll',function(){var y=window.scrollY;var fTop=footer?footer.getBoundingClientRect().top+y-window.innerHeight:Infinity;if(y>400&&y<fTop){if(!shown){cta.classList.add('show');shown=true}}else{if(shown){cta.classList.remove('show');shown=false}}},{passive:true})}()</script>
+
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>
+</body>
+</html>

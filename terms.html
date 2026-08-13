@@ -10,12 +10,11 @@
 <meta name="robots" content="index, follow">
 <meta name="author" content="Sebby — Made by Sebby">
 <meta name="description" content="Terms of Service for Made by Sebby. The rules and conditions that apply when you use our website or engage our web design services.">
-<link rel="preload" as="image" href="assets/logo/sebby-nav.svg">
+<link rel="preload" as="image" href="/assets/logo/sebby-nav.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
-<script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
 <style>
   :root{
     --ink:#1A1D29;
@@ -49,10 +48,10 @@
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
   .logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.06rem;letter-spacing:-.01em}
   .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
-  .nav-links a{color:var(--ink-soft);transition:color .15s}
-  .nav-links a.btn{color:#fff}
-  .nav-links a.btn:hover{color:#fff}
-  .nav-links a:hover{color:var(--purple)}
+  .nav-links>a{color:var(--ink-soft);transition:color .15s}
+  .nav-links>a.btn{color:#fff}
+  .nav-links>a.btn:hover{color:#fff}
+  .nav-links>a:hover{color:var(--purple)}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
     background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;
@@ -110,26 +109,25 @@
       border-top:1px solid var(--line);z-index:49;overflow-y:auto;
     }
     .nav-open .nav-links{display:flex}
-    .nav-links a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
-    .nav-links a:last-child{border-bottom:none}
-    .nav-links a.btn{margin-top:12px;justify-content:center;border-bottom:none}
+    .nav-links>a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
+    .nav-links>a:last-child{border-bottom:none}
+    .nav-links>a.btn{margin-top:12px;justify-content:center;border-bottom:none}
     .nav-links .lang-toggle{margin-top:8px;align-self:flex-start}
     .nav-links .theme-toggle{margin-top:4px;align-self:flex-start}
   }
 
   /* ---------- Language Toggle ---------- */
-  :root:not([data-lang="es"]) [lang="es"]{display:none}
-  [data-lang="es"] [lang="en"]{display:none}
   .lang-toggle{
     display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;
     font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0;
   }
-  .lang-toggle button{
+  .lang-toggle>*{
     background:none;border:none;padding:7px 12px;cursor:pointer;
     color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em;
+    text-decoration:none;display:flex;align-items:center;
   }
-  .lang-toggle button:hover{color:var(--purple)}
-  .lang-toggle button.active{background:var(--purple);color:#fff}
+  .lang-toggle>*:hover{color:var(--purple)}
+  .lang-toggle>.active{background:var(--purple);color:#fff}
 
   /* ---------- Dark Mode ---------- */
   @media (prefers-color-scheme:dark){
@@ -204,7 +202,7 @@
 <link rel="alternate" type="text/plain" title="LLM instructions" href="/llms.txt">
 <link rel="canonical" href="https://madebysebby.com/terms.html">
 <link rel="alternate" hreflang="en" href="https://madebysebby.com/terms.html">
-<link rel="alternate" hreflang="es" href="https://madebysebby.com/terms.html">
+<link rel="alternate" hreflang="es" href="https://madebysebby.com/es/terminos.html">
 <link rel="alternate" hreflang="x-default" href="https://madebysebby.com/terms.html">
 <meta name="theme-color" content="#6C3CE9">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -217,6 +215,7 @@
 <meta property="og:site_name" content="Made by Sebby">
 <meta property="og:title" content="Terms of Service | Made by Sebby">
 <meta property="og:description" content="Terms of Service for Made by Sebby. The rules and conditions that apply when you use our website or engage our services.">
+<meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://madebysebby.com/terms.html">
 <meta property="og:image" content="https://madebysebby.com/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -235,8 +234,10 @@
   "publisher": {
     "@type": "ProfessionalService",
     "name": "Made by Sebby",
-    "url": "https://madebysebby.com/"
-  }
+    "url": "https://madebysebby.com/",
+    "inLanguage": "en"
+  },
+  "inLanguage": "en"
 }
 </script>
 <script type="application/ld+json">
@@ -264,25 +265,25 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <nav>
   <div class="wrap nav-inner">
-    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
+    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="/assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="/assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
     <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('nav-open')">
       <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
     <div class="nav-links">
-      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
-      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
-      <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
-      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <a href="/services.html">What I do</a>
+      <a href="/work.html">Work</a>
+      <a href="/website-care.html">Website Care</a>
+      <a href="/about.html">About</a>
       <div class="lang-toggle">
-        <button onclick="document.documentElement.removeAttribute('data-lang');localStorage.setItem('lang','en');this.classList.add('active');this.nextElementSibling.classList.remove('active')" class="active">EN</button>
-        <button onclick="document.documentElement.setAttribute('data-lang','es');localStorage.setItem('lang','es');this.classList.add('active');this.previousElementSibling.classList.remove('active')">ES</button>
-      </div>
+          <span class="active">EN</span>
+          <a href="/es/terminos.html" hreflang="es" lang="es" aria-label="Ver esta página en español">ES</a>
+        </div>
       <button class="theme-toggle" aria-label="Toggle dark mode" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
         <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       </button>
-      <a href="book.html" class="btn btn-nav"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span></a>
+      <a href="/book.html" class="btn btn-nav">Work with Sebby</a>
     </div>
   </div>
 </nav>
@@ -290,10 +291,10 @@
 <main id="main">
 <header class="page-hero">
   <div class="wrap">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / <span lang="en">Terms of Service</span><span lang="es">Términos de servicio</span></nav>
-    <div class="eyebrow"><span lang="en">Legal</span><span lang="es">Legal</span></div>
-    <h1><span lang="en">Terms of <span class="accent">Service</span></span><span lang="es">Términos de <span class="accent">servicio</span></span></h1>
-    <p class="lede"><span lang="en">The rules and conditions that apply when you use our website or engage our web design services.</span><span lang="es">Las reglas y condiciones que aplican cuando usas nuestro sitio web o contratas nuestros servicios de diseño web.</span></p>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / Terms of Service</nav>
+    <div class="eyebrow">Legal</div>
+    <h1>Terms of <span class="accent">Service</span></h1>
+    <p class="lede">The rules and conditions that apply when you use our website or engage our web design services.</p>
   </div>
 </header>
 
@@ -301,7 +302,7 @@
   <div class="wrap">
 
     <!-- English -->
-    <div class="legal" lang="en">
+    
       <p class="updated">Last updated: August 7, 2026</p>
 
       <h2>Agreement to terms</h2>
@@ -374,83 +375,10 @@
       <p>If you have questions about these Terms of Service, contact us at:</p>
       <p><strong>Email:</strong> <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a><br>
       <strong>Website:</strong> <a href="https://madebysebby.com/contact.html">madebysebby.com/contact</a></p>
-    </div>
+    
 
     <!-- Spanish -->
-    <div class="legal" lang="es">
-      <p class="updated">Actualizado: 7 de agosto de 2026</p>
-
-      <h2>Aceptación de los términos</h2>
-      <p>Al acceder o usar el sitio web de Made by Sebby en <a href="https://madebysebby.com">madebysebby.com</a> ("el Sitio"), aceptas quedar sujeto a estos Términos de Servicio. Si no estás de acuerdo con alguna parte de estos términos, por favor no uses el Sitio.</p>
-      <p>Made by Sebby es operado por Sebby IT Consulting, Corp., una corporación de Florida ("nosotros" o "nuestro").</p>
-
-      <h2>Uso del sitio web</h2>
-      <p>Puedes usar el Sitio solo para fines legales. Aceptas no:</p>
-      <ul>
-        <li>Usar el Sitio de manera que viole las leyes o regulaciones aplicables</li>
-        <li>Intentar obtener acceso no autorizado a cualquier parte del Sitio o sus sistemas</li>
-        <li>Interferir con o interrumpir el Sitio o los servidores conectados a él</li>
-        <li>Extraer, rastrear o usar herramientas automatizadas para extraer contenido del Sitio con fines comerciales sin permiso escrito</li>
-        <li>Hacerse pasar por cualquier persona o entidad en comunicaciones a través del Sitio</li>
-      </ul>
-
-      <h2>Nuestros servicios</h2>
-      <p>El Sitio describe servicios de diseño web, desarrollo y cuidado de sitios web ofrecidos por Made by Sebby. Las descripciones de servicios, precios y plazos en el Sitio se proporcionan con fines informativos y pueden cambiar sin previo aviso.</p>
-      <p>La contratación de nuestros servicios profesionales se rige por un acuerdo de cliente separado firmado antes de comenzar el trabajo. Estos Términos de Servicio rigen tu uso de este sitio web, no los servicios profesionales en sí.</p>
-
-      <h2>Propiedad intelectual</h2>
-
-      <h3>Nuestro contenido</h3>
-      <p>El Sitio y su contenido original (incluyendo texto, diseño, gráficos, logotipos y código) son propiedad de Sebby IT Consulting, Corp. y están protegidos por leyes de derechos de autor y otras leyes de propiedad intelectual. No puedes reproducir, distribuir ni crear obras derivadas de nuestro contenido sin permiso escrito.</p>
-
-      <h3>Trabajo para clientes</h3>
-      <p>La propiedad del trabajo creado para los clientes se rige por los acuerdos individuales con cada cliente, no por estos Términos. Generalmente, los clientes reciben la propiedad completa de su sitio web una vez realizado el pago final.</p>
-
-      <h2>Blog y contenido educativo</h2>
-      <p>Nuestras publicaciones de blog y artículos se proporcionan solo con fines informativos y educativos generales. Aunque nos esforzamos por la precisión, el contenido del blog:</p>
-      <ul>
-        <li>No constituye asesoramiento profesional empresarial, legal o financiero</li>
-        <li>Puede no reflejar los desarrollos más recientes en diseño web o tecnología</li>
-        <li>No debe considerarse como sustituto de la consulta con profesionales calificados</li>
-      </ul>
-      <p>No hacemos garantías sobre la integridad, confiabilidad o aplicabilidad de la información en nuestras publicaciones de blog a tu situación específica.</p>
-
-      <h2>Enlaces a terceros</h2>
-      <p>El Sitio puede contener enlaces a sitios web o servicios de terceros (incluyendo Cal.com para programación y recursos externos referenciados en publicaciones del blog). No somos responsables del contenido, prácticas de privacidad o disponibilidad de sitios de terceros. Enlazar a un tercero no implica respaldo.</p>
-
-      <h2>Formulario de contacto y comunicaciones</h2>
-      <p>Cuando envías información a través de nuestro formulario de contacto o agendas una llamada, consientes recibir una respuesta nuestra a través de la información de contacto que proporcionas. No te agregaremos a listas de marketing ni enviaremos comunicaciones no solicitadas más allá de responder a tu consulta.</p>
-
-      <h2>Descargo de garantías</h2>
-      <p>El Sitio se proporciona "tal cual" y "según disponibilidad" sin garantías de ningún tipo, ya sean expresas o implícitas. No garantizamos que:</p>
-      <ul>
-        <li>El Sitio estará disponible en todo momento sin interrupción</li>
-        <li>El Sitio estará libre de errores o vulnerabilidades de seguridad</li>
-        <li>Cualquier información en el Sitio sea completa, precisa o actualizada</li>
-        <li>Los resultados descritos en estudios de caso o testimonios estén garantizados para futuros clientes</li>
-      </ul>
-
-      <h2>Limitación de responsabilidad</h2>
-      <p>En la máxima medida permitida por la ley, Sebby IT Consulting, Corp. y su propietario no serán responsables de ningún daño indirecto, incidental, especial, consecuente o punitivo que surja de tu uso o incapacidad de usar el Sitio, incluyendo pero no limitado a la pérdida de ganancias, datos u oportunidades de negocio.</p>
-      <p>Nuestra responsabilidad total por cualquier reclamo que surja de estos Términos o tu uso del Sitio no excederá la cantidad que nos hayas pagado en los doce meses anteriores al reclamo, o $100, lo que sea mayor.</p>
-
-      <h2>Indemnización</h2>
-      <p>Aceptas indemnizar y mantener indemne a Sebby IT Consulting, Corp. de cualquier reclamo, daño, pérdida o gasto (incluidos honorarios legales razonables) que surjan de tu violación de estos Términos o tu uso del Sitio.</p>
-
-      <h2>Ley aplicable</h2>
-      <p>Estos Términos se rigen por las leyes del Estado de Florida, Estados Unidos, sin tener en cuenta sus disposiciones sobre conflictos de leyes. Cualquier disputa que surja de estos Términos se resolverá en los tribunales del condado de Miami-Dade, Florida.</p>
-
-      <h2>Cambios a estos términos</h2>
-      <p>Podemos actualizar estos Términos de Servicio de vez en cuando. Cuando lo hagamos, actualizaremos la fecha de "Actualizado" en la parte superior de esta página. El uso continuado del Sitio después de que se publiquen los cambios constituye tu aceptación de los Términos revisados.</p>
-
-      <h2>Divisibilidad</h2>
-      <p>Si alguna disposición de estos Términos se considera inaplicable o inválida, esa disposición se limitará o eliminará en la medida mínima necesaria, y las disposiciones restantes permanecerán en pleno vigor.</p>
-
-      <h2>Contáctanos</h2>
-      <p>Si tienes preguntas sobre estos Términos de Servicio, contáctanos en:</p>
-      <p><strong>Correo:</strong> <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a><br>
-      <strong>Sitio web:</strong> <a href="https://madebysebby.com/contact.html">madebysebby.com/contact</a></p>
-    </div>
+    
 
   </div>
 </section>
@@ -458,20 +386,19 @@
 
 <footer>
   <div class="wrap foot-inner">
-    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span><span lang="en">This site was <strong>Made by Sebby</strong>. Yours can be too.</span><span lang="es">Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</span></span></div>
+    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="/assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="/assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span>This site was <strong>Made by Sebby</strong>. Yours can be too.</span></div>
     <div class="foot-links">
-      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
-      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
-      <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
-      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
-      <a href="blog.html"><span lang="en">Blog</span><span lang="es">Blog</span></a>
-      <a href="privacy.html"><span lang="en">Privacy</span><span lang="es">Privacidad</span></a>
-      <a href="terms.html"><span lang="en">Terms</span><span lang="es">Términos</span></a>
+      <a href="/services.html">What I do</a>
+      <a href="/work.html">Work</a>
+      <a href="/website-care.html">Website Care</a>
+      <a href="/about.html">About</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
       <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
     </div>
   </div>
 </footer>
-<script>!function(){var l=document.documentElement.getAttribute('data-lang');if(l==='es'){var b=document.querySelectorAll('.lang-toggle button');if(b.length===2){b[0].classList.remove('active');b[1].classList.add('active')}}}()</script>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>
 </body>
 </html>

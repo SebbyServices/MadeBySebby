@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DV4L5CZRML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DV4L5CZRML');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Qué Es el Cuidado Web y Por Qué Lo Necesitas?</title>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="Sebby — Made by Sebby">
+<meta name="description" content="Qué cubre realmente el cuidado web: actualizaciones, seguridad, respaldos, velocidad y ediciones. Por qué omitirlo cuesta más de lo que crees.">
+<link rel="preload" as="image" href="/assets/logo/sebby-nav.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
+<style>
+  :root{
+    --ink:#1A1D29;--ink-soft:#4A4E5C;--muted:#6B7080;
+    --purple:#6C3CE9;--purple-deep:#5A2FD0;--blue:#2D6FFF;
+    --tint:#F4F1FD;--line:#E8E6F2;--white:#FFFFFF;
+    --radius:20px;--radius-sm:12px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+  img{max-width:100%;display:block}
+
+  nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:50}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.06rem;letter-spacing:-.01em}
+  .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
+  .nav-links>a{color:var(--ink-soft);transition:color .15s}
+  .nav-links>a.btn{color:#fff}
+  .nav-links>a.btn:hover{color:#fff}
+  .nav-links>a:hover{color:var(--purple)}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;padding:13px 26px;border-radius:999px;border:none;cursor:pointer;transition:background .15s,transform .15s}
+  .btn:hover{background:var(--purple-deep);transform:translateY(-1px)}
+  .btn:focus-visible{outline-color:var(--ink)}
+  .btn-nav{padding:10px 22px;font-size:.92rem}
+
+  .eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:26px;height:2.5px;background:var(--purple);border-radius:2px}
+  .page-hero{padding:76px 0 52px}
+  .page-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.09;letter-spacing:-.028em;margin-bottom:24px}
+  .page-hero h1 .accent{color:var(--purple)}
+
+  .back-link{display:inline-flex;align-items:center;gap:6px;font-size:.9rem;font-weight:600;color:var(--muted);margin-bottom:28px;transition:color .15s}
+  .back-link:hover{color:var(--purple)}
+  .blog-meta{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+
+  .article{max-width:720px;margin:0 auto;padding:0 0 96px}
+  .article h2{font-size:clamp(1.3rem,2.5vw,1.65rem);font-weight:800;letter-spacing:-.022em;line-height:1.2;margin:48px 0 16px;color:var(--ink)}
+  .article h2 .num{color:var(--purple);margin-right:6px}
+  .article p{color:var(--ink-soft);font-size:1.05rem;margin-bottom:20px;max-width:38em;line-height:1.7}
+  .article p strong{color:var(--ink)}
+  .article .cta-box{background:var(--tint);border-radius:var(--radius);padding:36px 34px;margin:48px 0 0;border-left:4px solid var(--purple)}
+  .article .cta-box p{font-size:1.08rem;font-weight:600;color:var(--ink);margin-bottom:18px;max-width:none}
+  .article .cta-box .btn{margin-top:4px}
+
+  footer{border-top:1px solid var(--line);padding:44px 0}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .credit{display:flex;align-items:center;gap:10px;font-size:.92rem;color:var(--muted)}
+  .credit strong{color:var(--ink);font-weight:700}
+  .foot-links{display:flex;gap:26px;font-size:.9rem;color:var(--muted)}
+  .foot-links a:hover{color:var(--purple)}
+
+  .rise{opacity:0;transform:translateY(16px);animation:rise .7s ease forwards}
+  .d1{animation-delay:.08s}.d2{animation-delay:.16s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.rise{opacity:1;transform:none;animation:none}*{transition:none !important;scroll-behavior:auto}}
+
+  @media (max-width:640px){.page-hero{padding:56px 0 36px}}
+
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;z-index:51}
+  .menu-btn svg{width:26px;height:26px;stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round}
+  .menu-btn .close{display:none}
+  .nav-open .menu-btn .open{display:none}
+  .nav-open .menu-btn .close{display:block}
+  @media (max-width:640px){
+    .menu-btn{display:block}
+    .nav-links{display:none;position:fixed;top:76px;left:0;right:0;bottom:0;background:var(--white);flex-direction:column;gap:0;padding:20px 28px;border-top:1px solid var(--line);z-index:49;overflow-y:auto}
+    .nav-open{backdrop-filter:none;overflow:visible}
+    .nav-open .nav-links{display:flex}
+    .nav-links>a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
+    .nav-links>a:last-child{border-bottom:none}
+    .nav-links>a.btn{margin-top:12px;justify-content:center;border-bottom:none}
+    .nav-links .lang-toggle{margin-top:8px;align-self:flex-start}
+    .nav-links .theme-toggle{margin-top:4px;align-self:flex-start}
+  }
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+  .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:40;background:var(--purple);color:#fff;padding:14px 28px;text-align:center;transform:translateY(100%);transition:transform .35s ease;font-weight:600;font-size:.95rem}
+  .sticky-cta.show{transform:translateY(0)}
+  .sticky-cta a{color:#fff;text-decoration:none}
+  .sticky-cta a:hover{text-decoration:underline}
+  @media (max-width:640px){.sticky-cta{font-size:.88rem;padding:12px 20px}}
+  .lang-toggle{display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0}
+  .lang-toggle>*{background:none;border:none;padding:7px 12px;cursor:pointer;color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em}
+  .lang-toggle>*:hover{color:var(--purple)}
+  .lang-toggle>.active{background:var(--purple);color:#fff}
+
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){--ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;--purple:#8B6CEF;--purple-deep:#7B5FDB;--tint:#1D192D;--line:#2A2838;--white:#0F1117}
+  }
+  :root[data-theme="dark"]{--ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;--purple:#8B6CEF;--purple-deep:#7B5FDB;--tint:#1D192D;--line:#2A2838;--white:#0F1117}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) nav{background:rgba(15,17,23,.92)}
+    :root:not([data-theme="light"]) .cta-box{background:#1D192D}
+    :root:not([data-theme="light"]) .logo-light{display:none !important}
+    :root:not([data-theme="light"]) .logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
+    :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .btn{background:#6B4EC2}
+    :root:not([data-theme="light"]) .btn:hover{background:#5C41B0}
+  }
+  [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
+  [data-theme="dark"] .cta-box{background:#1D192D}
+  [data-theme="dark"] .logo-light{display:none !important}
+  [data-theme="dark"] .logo-dark{display:block !important}
+  [data-theme="dark"] .foot-logo-light{display:none !important}
+  [data-theme="dark"] .foot-logo-dark{display:block !important}
+  [data-theme="dark"] .btn{background:#6B4EC2}
+  [data-theme="dark"] .btn:hover{background:#5C41B0}
+
+  .theme-trans,.theme-trans *,.theme-trans *::before,.theme-trans *::after{transition:background .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease,fill .35s ease,stroke .35s ease !important}
+  .theme-toggle{background:none;border:1.5px solid var(--line);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .15s,background .15s;flex-shrink:0}
+  .theme-toggle:hover{border-color:var(--purple);background:var(--tint)}
+  .theme-toggle svg{width:18px;height:18px;stroke:var(--muted);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .theme-toggle:hover svg{stroke:var(--purple)}
+  .theme-toggle .icon-sun{display:none}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon{display:none}
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun{display:block}
+  }
+  [data-theme="dark"] .theme-toggle .icon-moon{display:none}
+  [data-theme="dark"] .theme-toggle .icon-sun{display:block !important}
+  [data-theme="light"] .theme-toggle .icon-sun{display:none !important}
+  [data-theme="light"] .theme-toggle .icon-moon{display:block}
+
+  .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
+  .skip-link:focus{top:12px}
+
+  @media print{
+    nav,.menu-btn,.sticky-cta,#stickyCta,.theme-toggle,.lang-toggle,footer,.hero-ctas,.btn,.cta-row,.foot-cta{display:none!important}
+    body{color:#000;background:#fff;-webkit-print-color-adjust:exact}
+    .wrap{max-width:100%;padding:0 12px}
+    a{color:#000}
+    a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em;color:#555}
+    a[href^="mailto"]::after{content:" (" attr(href) ")";font-size:.8em;color:#555}
+    img{max-width:100%!important;filter:none!important}
+    .reveal{opacity:1!important;transform:none!important}
+  }
+</style>
+
+<!-- seo:start -->
+<link rel="alternate" type="text/plain" title="LLM instructions" href="/llms.txt">
+<link rel="canonical" href="https://madebysebby.com/es/blog/que-es-el-cuidado-web.html">
+<link rel="alternate" hreflang="en" href="https://madebysebby.com/blog/what-is-website-care.html">
+<link rel="alternate" hreflang="es" href="https://madebysebby.com/es/blog/que-es-el-cuidado-web.html">
+<link rel="alternate" hreflang="x-default" href="https://madebysebby.com/blog/what-is-website-care.html">
+<meta name="theme-color" content="#6C3CE9">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Made by Sebby">
+<meta property="og:title" content="¿Qué Es el Cuidado Web y Por Qué Lo Necesitas?">
+<meta property="og:description" content="La mayoría de los dueños de negocios lanzan un sitio web y no lo tocan nunca más. Esto es lo que cubre el cuidado web y por qué omitirlo cuesta más de lo que crees.">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https://madebysebby.com/es/blog/que-es-el-cuidado-web.html">
+<meta property="og:image" content="https://madebysebby.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="¿Qué Es el Cuidado Web y Por Qué Lo Necesitas?">
+<meta name="twitter:description" content="Esto es lo que cubre el cuidado web y por qué omitirlo cuesta más de lo que crees.">
+<meta name="twitter:image" content="https://madebysebby.com/assets/og-image.jpg">
+<!-- seo:end -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "¿Qué Es el Cuidado Web y Por Qué Lo Necesitas?",
+  "datePublished": "2026-07-22",
+  "dateModified": "2026-07-22",
+  "author": {
+    "@type": "Person",
+    "name": "Sebby",
+    "url": "https://madebysebby.com/es/sobre-mi.html"
+  },
+  "publisher": {
+    "@type": "ProfessionalService",
+    "name": "Made by Sebby",
+    "url": "https://madebysebby.com/es/",
+    "inLanguage": "es"
+  },
+  "url": "https://madebysebby.com/es/blog/que-es-el-cuidado-web.html",
+  "description": "Qué cubre realmente el cuidado web: actualizaciones, seguridad, respaldos, velocidad y ediciones. Por qué omitirlo cuesta más de lo que crees.",
+  "inLanguage": "es"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://madebysebby.com/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://madebysebby.com/es/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Qué significa realmente el cuidado web",
+      "item": "https://madebysebby.com/es/blog/que-es-el-cuidado-web.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Ir al contenido</a>
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="/es/" aria-label="Inicio de Made by Sebby"><img class="logo-light" src="/assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="/assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
+    <button class="menu-btn" aria-label="Menú" onclick="document.querySelector('nav').classList.toggle('nav-open')">
+      <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="nav-links">
+      <a href="/es/servicios.html">Qué hago</a>
+      <a href="/es/portafolio.html">Trabajo</a>
+      <a href="/es/cuidado-web.html">Cuidado Web</a>
+      <a href="/es/sobre-mi.html">Sobre mí</a>
+      <div class="lang-toggle">
+          <a href="/blog/what-is-website-care.html" hreflang="en" lang="en" aria-label="View this page in English">EN</a>
+          <span class="active">ES</span>
+        </div>
+      <button class="theme-toggle" aria-label="Alternar modo oscuro" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
+        <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <a href="/es/agendar.html" class="btn btn-nav">Trabaja con Sebby</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<header class="page-hero">
+  <div class="wrap">
+    <a class="back-link rise" href="/es/blog.html">← Volver al blog</a>
+    <div class="blog-meta rise d1">Julio 2026</div>
+    <h1 class="rise d2">Qué significa realmente el <span class="accent">cuidado web</span></h1>
+  </div>
+</header>
+
+<section id="main" style="padding-top:0">
+  <div class="wrap">
+    <div class="article">
+
+      <p class="reveal">Construiste tu sitio web. Se ve genial. Se lanzó, todos estaban contentos, y luego... seguiste adelante. Eso es lo que hace la mayoría de los dueños de negocios. El sitio queda ahí, haciendo su trabajo, hasta que un día deja de hacerlo. Un formulario deja de funcionar. La página tarda ocho segundos en cargar. O peor — alguien lo hackea y tus clientes ven un anuncio de apuestas donde solía estar tu página de inicio.</p>
+      <p class="reveal">El cuidado web es lo que previene eso. Esto es lo que realmente incluye y por qué importa más de lo que la mayoría piensa.</p>
+
+      <h2 class="reveal"><span class="num">1.</span> Actualizaciones de software</h2>
+      <p class="reveal">Si tu sitio funciona con WordPress, tiene un sistema base, un tema y probablemente una docena de plugins. Cada uno recibe parches de seguridad y actualizaciones durante el año. Cuando los ignoras, pasan dos cosas: las vulnerabilidades se acumulan y las cosas empiezan a romperse cuando los componentes pierden sincronía entre sí.</p>
+      <p class="reveal"><strong>El software desactualizado es la forma número uno en que los sitios web son hackeados.</strong> No son ataques sofisticados — son bots automatizados que buscan vulnerabilidades conocidas en versiones antiguas de plugins. Un plan de cuidado significa que estas actualizaciones se hacen regularmente, probadas antes y después para asegurar que nada se rompa.</p>
+
+      <h2 class="reveal"><span class="num">2.</span> Monitoreo de seguridad</h2>
+      <p class="reveal">Las actualizaciones son preventivas. El monitoreo es el sistema de alarma. Un buen plan de cuidado incluye escaneos diarios de malware, un firewall de aplicación web para bloquear tráfico sospechoso, y alguien que realmente lee las alertas y responde. Cuando algo se ve mal, se detecta antes de que tus clientes lo noten.</p>
+
+      <h2 class="reveal"><span class="num">3.</span> Copias de seguridad</h2>
+      <p class="reveal">Imagina que tu sitio web desaparece mañana. Tu cuenta de hosting se compromete, una actualización de plugin sale mal, o alguien accidentalmente borra una página. Sin copias de seguridad, empiezas desde cero. Con copias de seguridad diarias automatizadas almacenadas fuera del sitio, el peor escenario es perder el trabajo de un día en lugar de todo.</p>
+      <p class="reveal"><strong>La palabra clave es "probadas."</strong> Una copia de seguridad que nunca se ha restaurado es una que esperas que funcione. Parte de un plan de cuidado real es probar periódicamente que las copias de seguridad realmente se restauren correctamente.</p>
+
+      <h2 class="reveal"><span class="num">4.</span> Optimización de rendimiento</h2>
+      <p class="reveal">Los sitios web se vuelven lentos con el tiempo. Se agrega contenido nuevo sin optimizar las imágenes. Los plugins se acumulan. La base de datos se llena con historial de revisiones y comentarios spam. La optimización de rendimiento significa verificar regularmente tus tiempos de carga, comprimir imágenes, limpiar la base de datos y asegurarte de que tu caché funcione correctamente.</p>
+      <p class="reveal">Un segundo de retraso en el tiempo de carga puede reducir las conversiones en un 7%. Para un negocio que recibe 1,000 visitantes al mes, eso es dinero real que se queda en la mesa.</p>
+
+      <h2 class="reveal"><span class="num">5.</span> Pequeñas ediciones y actualizaciones de contenido</h2>
+      <p class="reveal">¿Nuevo número de teléfono? ¿Horario actualizado? ¿Un empleado se fue y necesitas eliminar su biografía? Estos pequeños cambios son los que se acumulan. Sin un plan de cuidado, se convierten en una lista de pendientes que nunca se hace porque estás ocupado manejando tu negocio. Con uno, envías un correo rápido y se resuelve.</p>
+
+      <h2 class="reveal">Por qué la mayoría de los dueños de negocios lo omiten</h2>
+      <p class="reveal">Generalmente por una de tres razones: no saben que es necesario, piensan que su empresa de hosting se encarga, o creen que lo resolverán cuando algo se rompa. El problema con ese último enfoque es que arreglar un sitio web hackeado o roto cuesta de cinco a diez veces más que haberlo mantenido. Es la misma razón por la que cambias el aceite de tu carro en lugar de esperar a que el motor se funda.</p>
+      <p class="reveal"><strong>Tu empresa de hosting mantiene el servidor funcionando.</strong> No actualizan tus plugins, no monitorean tu sitio en busca de malware, no optimizan tus imágenes ni cambian tus horarios cuando estos cambian. Eso es cuidado web.</p>
+
+      <div class="cta-box reveal">
+        <p>Ofrezco planes de cuidado web directos que cubren todo lo anterior. Sin contratos largos, sin tarifas ocultas. Ve exactamente qué incluye y elige el plan que se adapte a tu negocio.</p>
+        <a class="btn" href="/es/cuidado-web.html">Ver planes de Cuidado Web&nbsp;→</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section style="padding:48px 0 0">
+  <div class="wrap">
+    <h2 class="reveal" style="font-size:1.3rem;margin-bottom:20px">Sigue leyendo</h2>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <a class="reveal" href="/es/blog/5-senales-de-que-tu-sitio-web-pierde-clientes.html" style="color:var(--purple);font-weight:600;font-size:1rem">5 señales de que tu sitio web te está haciendo perder clientes &rarr;</a>
+      <a class="reveal" href="/es/blog/cuanto-cuesta-un-sitio-web.html" style="color:var(--purple);font-weight:600;font-size:1rem">&iquest;Cuánto cuesta un sitio web en 2026? &rarr;</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="sticky-cta" id="stickyCta">
+  <a href="/es/agendar.html">¿Listo para un sitio que funcione? → Consulta gratis</a>
+</div>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="/assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="/assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span>Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</span></div>
+    <div class="foot-links">
+      <a href="/es/servicios.html">Qué hago</a>
+      <a href="/es/portafolio.html">Trabajo</a>
+      <a href="/es/cuidado-web.html">Cuidado Web</a>
+      <a href="/es/sobre-mi.html">Sobre mí</a>
+      <a href="/es/blog.html">Blog</a>
+      <a href="/es/privacidad.html">Privacidad</a>
+      <a href="/es/terminos.html">Términos</a>
+      <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
+    </div>
+  </div>
+</footer>
+<script>!function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})}()</script>
+<script>!function(){var cta=document.getElementById('stickyCta');if(!cta)return;var footer=document.querySelector('footer');var shown=false;window.addEventListener('scroll',function(){var y=window.scrollY;var fTop=footer?footer.getBoundingClientRect().top+y-window.innerHeight:Infinity;if(y>400&&y<fTop){if(!shown){cta.classList.add('show');shown=true}}else{if(shown){cta.classList.remove('show');shown=false}}},{passive:true})}()</script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>
+</body>
+</html>

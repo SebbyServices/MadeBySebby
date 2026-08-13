@@ -10,12 +10,11 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Sebby — Made by Sebby">
 <meta name="description" content="Book a free 15-minute web design consultation with Sebby. No pressure, no jargon. Pick a time that works for you and let's talk about your business.">
-<link rel="preload" as="image" href="assets/logo/sebby-nav.svg">
+<link rel="preload" as="image" href="/assets/logo/sebby-nav.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
-<script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
 <style>
   :root{
     --ink:#1A1D29;
@@ -52,10 +51,10 @@
   .madeby{font-size:.66rem;font-weight:500;color:var(--muted);letter-spacing:.04em;text-transform:lowercase}
   .sebbymark{font-size:1.02rem;font-weight:700;letter-spacing:.24em;color:var(--ink)}
   .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
-  .nav-links a{color:var(--ink-soft);transition:color .15s}
-  .nav-links a.btn{color:#fff}
-  .nav-links a.btn:hover{color:#fff}
-  .nav-links a:hover{color:var(--purple)}
+  .nav-links>a{color:var(--ink-soft);transition:color .15s}
+  .nav-links>a.btn{color:#fff}
+  .nav-links>a.btn:hover{color:#fff}
+  .nav-links>a:hover{color:var(--purple)}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
     background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;
@@ -155,9 +154,9 @@
     }
     .nav-open{backdrop-filter:none;overflow:visible}
     .nav-open .nav-links{display:flex}
-    .nav-links a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
-    .nav-links a:last-child{border-bottom:none}
-    .nav-links a.btn{margin-top:12px;justify-content:center;border-bottom:none}
+    .nav-links>a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
+    .nav-links>a:last-child{border-bottom:none}
+    .nav-links>a.btn{margin-top:12px;justify-content:center;border-bottom:none}
     .nav-links .lang-toggle{margin-top:8px;align-self:flex-start}
     .nav-links .theme-toggle{margin-top:4px;align-self:flex-start}
   }
@@ -170,18 +169,17 @@
   }
 
   /* ---------- Language Toggle ---------- */
-  :root:not([data-lang="es"]) [lang="es"]{display:none}
-  [data-lang="es"] [lang="en"]{display:none}
   .lang-toggle{
     display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;
     font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0;
   }
-  .lang-toggle button{
+  .lang-toggle>*{
     background:none;border:none;padding:7px 12px;cursor:pointer;
     color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em;
+    text-decoration:none;display:flex;align-items:center;
   }
-  .lang-toggle button:hover{color:var(--purple)}
-  .lang-toggle button.active{background:var(--purple);color:#fff}
+  .lang-toggle>*:hover{color:var(--purple)}
+  .lang-toggle>.active{background:var(--purple);color:#fff}
 
   /* ---------- Dark Mode ---------- */
   @media (prefers-color-scheme:dark){
@@ -259,7 +257,7 @@
 <link rel="alternate" type="text/plain" title="LLM instructions" href="/llms.txt">
 <link rel="canonical" href="https://madebysebby.com/book.html">
 <link rel="alternate" hreflang="en" href="https://madebysebby.com/book.html">
-<link rel="alternate" hreflang="es" href="https://madebysebby.com/book.html">
+<link rel="alternate" hreflang="es" href="https://madebysebby.com/es/agendar.html">
 <link rel="alternate" hreflang="x-default" href="https://madebysebby.com/book.html">
 <meta name="theme-color" content="#6C3CE9">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -272,6 +270,7 @@
 <meta property="og:site_name" content="Made by Sebby">
 <meta property="og:title" content="Book a Call — Free Web Design Consultation">
 <meta property="og:description" content="Book a free 15-minute web design consultation with Sebby. No pressure, no jargon. Pick a time that works for you.">
+<meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://madebysebby.com/book.html">
 <meta property="og:image" content="https://madebysebby.com/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -304,8 +303,10 @@
         "@type": "Reservation",
         "name": "Free Web Design Consultation"
       }
-    }
-  }
+    },
+    "inLanguage": "en"
+  },
+  "inLanguage": "en"
 }
 </script>
 <script type="application/ld+json">
@@ -333,25 +334,25 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <nav>
   <div class="wrap nav-inner">
-    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
+    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="/assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="/assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
     <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('nav-open')">
           <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
           <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
       <div class="nav-links">
-      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
-      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
-      <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
-      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <a href="/services.html">What I do</a>
+      <a href="/work.html">Work</a>
+      <a href="/website-care.html">Website Care</a>
+      <a href="/about.html">About</a>
       <div class="lang-toggle">
-          <button onclick="document.documentElement.removeAttribute('data-lang');localStorage.setItem('lang','en');this.classList.add('active');this.nextElementSibling.classList.remove('active')" class="active">EN</button>
-          <button onclick="document.documentElement.setAttribute('data-lang','es');localStorage.setItem('lang','es');this.classList.add('active');this.previousElementSibling.classList.remove('active')">ES</button>
+          <span class="active">EN</span>
+          <a href="/es/agendar.html" hreflang="es" lang="es" aria-label="Ver esta página en español">ES</a>
         </div>
         <button class="theme-toggle" aria-label="Toggle dark mode" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
           <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </button>
-        <a href="book.html" class="btn btn-nav"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span></a>
+        <a href="/book.html" class="btn btn-nav">Work with Sebby</a>
     </div>
   </div>
 </nav>
@@ -359,10 +360,10 @@
 <main>
 <header class="page-hero">
   <div class="wrap">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / <span lang="en">Book a Call</span><span lang="es">Reservar Llamada</span></nav>
-    <div class="eyebrow"><span lang="en">Schedule</span><span lang="es">Agendar</span></div>
-    <h1><span lang="en">Pick a time. <span class="accent">Let's talk.</span></span><span lang="es">Elige un horario. <span class="accent">Hablemos.</span></span></h1>
-    <p class="lede"><span lang="en">15 minutes, no commitment. You tell me about your business, I tell you exactly what I'd build and what it costs. If I'm not the right fit, I'll say so.</span><span lang="es">15 minutos, sin compromiso. Me cuentas sobre tu negocio, te digo exactamente qué construiría y cuánto cuesta. Si no soy la persona indicada, te lo digo.</span></p>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / Book a Call</nav>
+    <div class="eyebrow">Schedule</div>
+    <h1>Pick a time. <span class="accent">Let's talk.</span></h1>
+    <p class="lede">15 minutes, no commitment. You tell me about your business, I tell you exactly what I'd build and what it costs. If I'm not the right fit, I'll say so.</p>
   </div>
 </header>
 
@@ -375,18 +376,18 @@
     <div class="book-trust reveal">
       <div class="book-trust-item">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <strong><span lang="en">15 minutes</span><span lang="es">15 minutos</span></strong>
-        <span><span lang="en">Quick and focused</span><span lang="es">Rápido y enfocado</span></span>
+        <strong>15 minutes</strong>
+        <span>Quick and focused</span>
       </div>
       <div class="book-trust-item">
         <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        <strong><span lang="en">No obligation</span><span lang="es">Sin compromiso</span></strong>
-        <span><span lang="en">Honest advice, no pitch</span><span lang="es">Consejo honesto, sin presión</span></span>
+        <strong>No obligation</strong>
+        <span>Honest advice, no pitch</span>
       </div>
       <div class="book-trust-item">
         <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        <strong><span lang="en">Real answers</span><span lang="es">Respuestas reales</span></strong>
-        <span><span lang="en">Scope, cost, timeline</span><span lang="es">Alcance, costo, tiempo</span></span>
+        <strong>Real answers</strong>
+        <span>Scope, cost, timeline</span>
       </div>
     </div>
   </div>
@@ -396,20 +397,19 @@
 
 <footer>
   <div class="wrap foot-inner">
-    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span><span lang="en">This site was <strong>Made by Sebby</strong>. Yours can be too.</span><span lang="es">Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</span></span></div>
+    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="/assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="/assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span>This site was <strong>Made by Sebby</strong>. Yours can be too.</span></div>
     <div class="foot-links">
-      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
-      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
-      <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
-      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
-      <a href="blog.html">Blog</a>
-      <a href="privacy.html"><span lang="en">Privacy</span><span lang="es">Privacidad</span></a>
-      <a href="terms.html"><span lang="en">Terms</span><span lang="es">Términos</span></a>
+      <a href="/services.html">What I do</a>
+      <a href="/work.html">Work</a>
+      <a href="/website-care.html">Website Care</a>
+      <a href="/about.html">About</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
       <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
     </div>
   </div>
 </footer>
-<script>!function(){var l=document.documentElement.getAttribute('data-lang');if(l==='es'){var b=document.querySelectorAll('.lang-toggle button');if(b.length===2){b[0].classList.remove('active');b[1].classList.add('active')}}}()</script>
 <script>!function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})}()</script>
 
 <!-- Cal.com Embed -->

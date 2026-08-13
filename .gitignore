@@ -16,3 +16,6 @@ CLAUDE.md
 
 # macOS
 .DS_Store
+
+# Python bytecode (check-consistency.py imports build.py)
+__pycache__/

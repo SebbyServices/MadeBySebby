@@ -10,12 +10,11 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Sebby — Made by Sebby">
 <meta name="description" content="80% of people search for local businesses online every week. If you don't show up, your competitor gets the call. Here's why, and what to do about it.">
-<link rel="preload" as="image" href="../assets/logo/sebby-nav.svg">
+<link rel="preload" as="image" href="/assets/logo/sebby-nav.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
-<script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
 <style>
   :root{
     --ink:#1A1D29;--ink-soft:#4A4E5C;--muted:#6B7080;
@@ -35,10 +34,10 @@
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
   .logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.06rem;letter-spacing:-.01em}
   .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
-  .nav-links a{color:var(--ink-soft);transition:color .15s}
-  .nav-links a.btn{color:#fff}
-  .nav-links a.btn:hover{color:#fff}
-  .nav-links a:hover{color:var(--purple)}
+  .nav-links>a{color:var(--ink-soft);transition:color .15s}
+  .nav-links>a.btn{color:#fff}
+  .nav-links>a.btn:hover{color:#fff}
+  .nav-links>a:hover{color:var(--purple)}
   .btn{display:inline-flex;align-items:center;gap:8px;background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;padding:13px 26px;border-radius:999px;border:none;cursor:pointer;transition:background .15s,transform .15s}
   .btn:hover{background:var(--purple-deep);transform:translateY(-1px)}
   .btn:focus-visible{outline-color:var(--ink)}
@@ -91,9 +90,9 @@
     .nav-links{display:none;position:fixed;top:76px;left:0;right:0;bottom:0;background:var(--white);flex-direction:column;gap:0;padding:20px 28px;border-top:1px solid var(--line);z-index:49;overflow-y:auto}
     .nav-open{backdrop-filter:none;overflow:visible}
     .nav-open .nav-links{display:flex}
-    .nav-links a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
-    .nav-links a:last-child{border-bottom:none}
-    .nav-links a.btn{margin-top:12px;justify-content:center;border-bottom:none}
+    .nav-links>a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
+    .nav-links>a:last-child{border-bottom:none}
+    .nav-links>a.btn{margin-top:12px;justify-content:center;border-bottom:none}
     .nav-links .lang-toggle{margin-top:8px;align-self:flex-start}
     .nav-links .theme-toggle{margin-top:4px;align-self:flex-start}
   }
@@ -107,13 +106,10 @@
   .sticky-cta a{color:#fff;text-decoration:none}
   .sticky-cta a:hover{text-decoration:underline}
   @media (max-width:640px){.sticky-cta{font-size:.88rem;padding:12px 20px}}
-
-  :root:not([data-lang="es"]) [lang="es"]{display:none}
-  [data-lang="es"] [lang="en"]{display:none}
   .lang-toggle{display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0}
-  .lang-toggle button{background:none;border:none;padding:7px 12px;cursor:pointer;color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em}
-  .lang-toggle button:hover{color:var(--purple)}
-  .lang-toggle button.active{background:var(--purple);color:#fff}
+  .lang-toggle>*{background:none;border:none;padding:7px 12px;cursor:pointer;color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em}
+  .lang-toggle>*:hover{color:var(--purple)}
+  .lang-toggle>.active{background:var(--purple);color:#fff}
 
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){--ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;--purple:#8B6CEF;--purple-deep:#7B5FDB;--tint:#1D192D;--line:#2A2838;--white:#0F1117}
@@ -172,7 +168,7 @@
 <link rel="alternate" type="text/plain" title="LLM instructions" href="/llms.txt">
 <link rel="canonical" href="https://madebysebby.com/blog/why-your-competitor-gets-calls-from-google.html">
 <link rel="alternate" hreflang="en" href="https://madebysebby.com/blog/why-your-competitor-gets-calls-from-google.html">
-<link rel="alternate" hreflang="es" href="https://madebysebby.com/blog/why-your-competitor-gets-calls-from-google.html">
+<link rel="alternate" hreflang="es" href="https://madebysebby.com/es/blog/por-que-tu-competencia-recibe-llamadas-de-google.html">
 <link rel="alternate" hreflang="x-default" href="https://madebysebby.com/blog/why-your-competitor-gets-calls-from-google.html">
 <meta name="theme-color" content="#6C3CE9">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -185,6 +181,7 @@
 <meta property="og:site_name" content="Made by Sebby">
 <meta property="og:title" content="Why Your Competitor Gets Calls From Google | Made by Sebby">
 <meta property="og:description" content="80% of people search for local businesses online every week. If you don't show up, your competitor gets the call. Here's why, and what to do about it.">
+<meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://madebysebby.com/blog/why-your-competitor-gets-calls-from-google.html">
 <meta property="og:image" content="https://madebysebby.com/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -201,10 +198,20 @@
   "headline": "Why Your Competitor Gets Calls From Google (And You Don't)",
   "datePublished": "2026-08-06",
   "dateModified": "2026-08-06",
-  "author": {"@type": "Person", "name": "Sebby", "url": "https://madebysebby.com/about.html"},
-  "publisher": {"@type": "ProfessionalService", "name": "Made by Sebby", "url": "https://madebysebby.com/"},
+  "author": {
+    "@type": "Person",
+    "name": "Sebby",
+    "url": "https://madebysebby.com/about.html"
+  },
+  "publisher": {
+    "@type": "ProfessionalService",
+    "name": "Made by Sebby",
+    "url": "https://madebysebby.com/",
+    "inLanguage": "en"
+  },
   "url": "https://madebysebby.com/blog/why-your-competitor-gets-calls-from-google.html",
-  "description": "80% of people search for local businesses online every week. If you don't show up, your competitor gets the call. Here's why and what to do about it."
+  "description": "80% of people search for local businesses online every week. If you don't show up, your competitor gets the call. Here's why and what to do about it.",
+  "inLanguage": "en"
 }
 </script>
 <script type="application/ld+json">
@@ -212,9 +219,24 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://madebysebby.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://madebysebby.com/blog.html"},
-    {"@type": "ListItem", "position": 3, "name": "Why Your Competitor Gets Calls From Google", "item": "https://madebysebby.com/blog/why-your-competitor-gets-calls-from-google.html"}
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://madebysebby.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://madebysebby.com/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Why Your Competitor Gets Calls From Google",
+      "item": "https://madebysebby.com/blog/why-your-competitor-gets-calls-from-google.html"
+    }
   ]
 }
 </script>
@@ -223,25 +245,25 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <nav>
   <div class="wrap nav-inner">
-    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="../assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="../assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
+    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="/assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="/assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
     <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('nav-open')">
       <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
     <div class="nav-links">
-      <a href="../services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
-      <a href="../work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
-      <a href="../website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
-      <a href="../about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <a href="/services.html">What I do</a>
+      <a href="/work.html">Work</a>
+      <a href="/website-care.html">Website Care</a>
+      <a href="/about.html">About</a>
       <div class="lang-toggle">
-        <button onclick="document.documentElement.removeAttribute('data-lang');localStorage.setItem('lang','en');this.classList.add('active');this.nextElementSibling.classList.remove('active')" class="active">EN</button>
-        <button onclick="document.documentElement.setAttribute('data-lang','es');localStorage.setItem('lang','es');this.classList.add('active');this.previousElementSibling.classList.remove('active')">ES</button>
-      </div>
+          <span class="active">EN</span>
+          <a href="/es/blog/por-que-tu-competencia-recibe-llamadas-de-google.html" hreflang="es" lang="es" aria-label="Ver esta página en español">ES</a>
+        </div>
       <button class="theme-toggle" aria-label="Toggle dark mode" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
         <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       </button>
-      <a href="../book.html" class="btn btn-nav"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span></a>
+      <a href="/book.html" class="btn btn-nav">Work with Sebby</a>
     </div>
   </div>
 </nav>
@@ -249,9 +271,9 @@
 <main>
 <header class="page-hero">
   <div class="wrap">
-    <a class="back-link rise" href="../blog.html">← <span lang="en">Back to blog</span><span lang="es">Volver al blog</span></a>
-    <div class="blog-meta rise d1"><span lang="en">August 2026</span><span lang="es">Agosto 2026</span></div>
-    <h1 class="rise d2"><span lang="en">Why Your Competitor Gets <span class="accent">Calls From Google</span> (And You Don't)</span><span lang="es">Por Qué Tu Competencia Recibe <span class="accent">Llamadas de Google</span> (Y Tú No)</span></h1>
+    <a class="back-link rise" href="/blog.html">← Back to blog</a>
+    <div class="blog-meta rise d1">August 2026</div>
+    <h1 class="rise d2">Why Your Competitor Gets <span class="accent">Calls From Google</span> (And You Don't)</h1>
   </div>
 </header>
 
@@ -259,105 +281,105 @@
   <div class="wrap">
     <div class="article">
 
-      <p class="reveal"><span lang="en">Let's get something out of the way. Your competitor who seems to get all the phone calls? They're not smarter than you. They're not better at what they do. They might not even have more experience. They just show up when someone searches for what you both offer. And you don't.</span><span lang="es">Vamos a aclarar algo de una vez. ¿Tu competidor que parece recibir todas las llamadas? No es más inteligente que tú. No es mejor en lo que hace. Puede que ni siquiera tenga más experiencia. Simplemente aparece cuando alguien busca lo que ambos ofrecen. Y tú no.</span></p>
+      <p class="reveal">Let's get something out of the way. Your competitor who seems to get all the phone calls? They're not smarter than you. They're not better at what they do. They might not even have more experience. They just show up when someone searches for what you both offer. And you don't.</p>
 
-      <p class="reveal"><span lang="en">That's it. That's the whole difference.</span><span lang="es">Eso es todo. Esa es toda la diferencia.</span></p>
+      <p class="reveal">That's it. That's the whole difference.</p>
 
-      <h2 class="reveal"><span lang="en">The Numbers Don't Lie</span><span lang="es">Los Números No Mienten</span></h2>
+      <h2 class="reveal">The Numbers Don't Lie</h2>
 
-      <p class="reveal"><span lang="en">According to a 2024 BrightLocal survey, <strong>80% of U.S. consumers search online for local businesses every single week.</strong> Not occasionally. Not when they feel like it. Every week. And 32% search for local businesses every day.</span><span lang="es">Según una encuesta de BrightLocal de 2024, <strong>el 80% de los consumidores en EE.UU. busca negocios locales en línea cada semana.</strong> No de vez en cuando. No cuando les da la gana. Cada semana. Y el 32% busca negocios locales todos los días.</span></p>
+      <p class="reveal">According to a 2024 BrightLocal survey, <strong>80% of U.S. consumers search online for local businesses every single week.</strong> Not occasionally. Not when they feel like it. Every week. And 32% search for local businesses every day.</p>
 
       <div class="stat-callout reveal">
         <div class="big-num">80%</div>
-        <div class="stat-label"><span lang="en">of consumers search for local businesses online every week</span><span lang="es">de los consumidores buscan negocios locales en línea cada semana</span></div>
+        <div class="stat-label">of consumers search for local businesses online every week</div>
       </div>
-      <p class="source"><span lang="en">Source: BrightLocal Local Consumer Review Survey, 2024</span><span lang="es">Fuente: BrightLocal Local Consumer Review Survey, 2024</span></p>
+      <p class="source">Source: BrightLocal Local Consumer Review Survey, 2024</p>
 
-      <p class="reveal"><span lang="en">Think about that. Right now, while you're reading this, someone in your city is typing something like "dentist near me" or "lawyer Miami" or "plumber in Doral" into their phone. If you're not showing up in those results, it's like you don't exist.</span><span lang="es">Piensa en eso. Ahora mismo, mientras lees esto, alguien en tu ciudad está escribiendo algo como "dentista cerca de mí" o "abogado Miami" o "plomero en Doral" en su teléfono. Si no apareces en esos resultados, es como si no existieras.</span></p>
+      <p class="reveal">Think about that. Right now, while you're reading this, someone in your city is typing something like "dentist near me" or "lawyer Miami" or "plumber in Doral" into their phone. If you're not showing up in those results, it's like you don't exist.</p>
 
-      <p class="reveal"><span lang="en">And here's the kicker: according to Google's own data, <strong>"near me" searches have grown over 900% in recent years.</strong> People aren't flipping through the Yellow Pages anymore. They're not asking friends for recommendations first. They're Googling. Period.</span><span lang="es">Y aquí viene lo importante: según datos de Google, <strong>las búsquedas "cerca de mí" han crecido más de 900% en los últimos años.</strong> La gente ya no busca en las Páginas Amarillas. No le preguntan a amigos primero. Buscan en Google. Punto.</span></p>
+      <p class="reveal">And here's the kicker: according to Google's own data, <strong>"near me" searches have grown over 900% in recent years.</strong> People aren't flipping through the Yellow Pages anymore. They're not asking friends for recommendations first. They're Googling. Period.</p>
 
-      <h2 class="reveal"><span lang="en">What Happens When Someone Searches for Your Service</span><span lang="es">Qué Pasa Cuando Alguien Busca Tu Servicio</span></h2>
+      <h2 class="reveal">What Happens When Someone Searches for Your Service</h2>
 
-      <p class="reveal"><span lang="en">Let's walk through it. Someone's toilet is leaking at 9 PM. They grab their phone and type "plumber near me." Here's exactly what happens next.</span><span lang="es">Vamos paso a paso. A alguien se le está filtrando el inodoro a las 9 PM. Agarra su teléfono y escribe "plomero cerca de mí." Esto es exactamente lo que pasa después.</span></p>
+      <p class="reveal">Let's walk through it. Someone's toilet is leaking at 9 PM. They grab their phone and type "plumber near me." Here's exactly what happens next.</p>
 
-      <p class="reveal"><span lang="en">Google shows a map with <strong>three businesses</strong> at the top. Just three. These are the Google Local Pack results, and according to research by Moz, <strong>44% of all clicks on local searches go to those top three results.</strong> The first result gets about 18% of all clicks. The second gets 15%. The third gets 15%.</span><span lang="es">Google muestra un mapa con <strong>tres negocios</strong> en la parte superior. Solo tres. Estos son los resultados del Local Pack de Google, y según investigaciones de Moz, <strong>el 44% de todos los clics en búsquedas locales van a esos tres primeros resultados.</strong> El primer resultado recibe alrededor del 18% de todos los clics. El segundo recibe 15%. El tercero recibe 15%.</span></p>
+      <p class="reveal">Google shows a map with <strong>three businesses</strong> at the top. Just three. These are the Google Local Pack results, and according to research by Moz, <strong>44% of all clicks on local searches go to those top three results.</strong> The first result gets about 18% of all clicks. The second gets 15%. The third gets 15%.</p>
 
       <div class="stat-callout reveal">
         <div class="big-num">44%</div>
-        <div class="stat-label"><span lang="en">of all local search clicks go to the top 3 Google results</span><span lang="es">de todos los clics en búsquedas locales van a los 3 primeros resultados de Google</span></div>
+        <div class="stat-label">of all local search clicks go to the top 3 Google results</div>
       </div>
-      <p class="source"><span lang="en">Source: Moz Local Search Ranking Factors</span><span lang="es">Fuente: Moz Local Search Ranking Factors</span></p>
+      <p class="source">Source: Moz Local Search Ranking Factors</p>
 
-      <p class="reveal"><span lang="en">Everyone else? They split the leftovers. And if you're not on the first page at all? According to BizIQ, <strong>businesses in the Google Local Pack get 126% more traffic and 93% more actions</strong> (calls, clicks for directions, website visits) compared to businesses ranked 4 through 10.</span><span lang="es">¿Todos los demás? Se reparten las sobras. ¿Y si no estás en la primera página para nada? Según BizIQ, <strong>los negocios en el Local Pack de Google reciben 126% más tráfico y 93% más acciones</strong> (llamadas, clics para direcciones, visitas al sitio) comparado con negocios del puesto 4 al 10.</span></p>
+      <p class="reveal">Everyone else? They split the leftovers. And if you're not on the first page at all? According to BizIQ, <strong>businesses in the Google Local Pack get 126% more traffic and 93% more actions</strong> (calls, clicks for directions, website visits) compared to businesses ranked 4 through 10.</p>
 
-      <p class="reveal"><span lang="en">So those three businesses get the calls. They get the clients. They grow. Everyone else wonders why the phone isn't ringing.</span><span lang="es">Así que esos tres negocios reciben las llamadas. Reciben los clientes. Crecen. Todos los demás se preguntan por qué no suena el teléfono.</span></p>
+      <p class="reveal">So those three businesses get the calls. They get the clients. They grow. Everyone else wonders why the phone isn't ringing.</p>
 
-      <h2 class="reveal"><span lang="en">The Real Cost of Being Invisible</span><span lang="es">El Verdadero Costo de Ser Invisible</span></h2>
+      <h2 class="reveal">The Real Cost of Being Invisible</h2>
 
-      <p class="reveal"><span lang="en">Let's make this concrete. Say 200 people search for "family lawyer Miami" every month. That's a real, conservative number for most local service keywords.</span><span lang="es">Vamos a hacerlo concreto. Digamos que 200 personas buscan "abogado de familia Miami" cada mes. Ese es un número real y conservador para la mayoría de las palabras clave de servicios locales.</span></p>
+      <p class="reveal">Let's make this concrete. Say 200 people search for "family lawyer Miami" every month. That's a real, conservative number for most local service keywords.</p>
 
-      <p class="reveal"><span lang="en">According to Google, <strong>78% of local mobile searches result in an offline purchase within 24 hours.</strong> That means roughly 156 of those 200 people are going to call or visit a business the same day they search.</span><span lang="es">Segun Google, <strong>el 78% de las búsquedas locales en móvil resultan en una compra fuera de línea en 24 horas.</strong> Eso significa que aproximadamente 156 de esas 200 personas van a llamar o visitar un negocio el mismo día que buscan.</span></p>
+      <p class="reveal">According to Google, <strong>78% of local mobile searches result in an offline purchase within 24 hours.</strong> That means roughly 156 of those 200 people are going to call or visit a business the same day they search.</p>
 
-      <p class="reveal"><span lang="en">If you're not in those search results, you're not getting any of those 156 potential clients. They're all going to your competitor. Every single month.</span><span lang="es">Si no estás en esos resultados de búsqueda, no estás recibiendo a ninguno de esos 156 clientes potenciales. Todos van a tu competidor. Cada mes.</span></p>
+      <p class="reveal">If you're not in those search results, you're not getting any of those 156 potential clients. They're all going to your competitor. Every single month.</p>
 
-      <p class="reveal"><span lang="en">Now multiply that by what each client is worth to you. A family law case might be $3,000 to $10,000. A dental patient might spend $1,500 a year. Even a single plumbing job is $200 to $500. How much revenue are you leaving on the table every month by being invisible?</span><span lang="es">Ahora multiplica eso por lo que vale cada cliente para ti. Un caso de derecho familiar puede ser de $3,000 a $10,000. Un paciente dental puede gastar $1,500 al año. Incluso un solo trabajo de plomería es de $200 a $500. ¿Cuánto dinero estás dejando en la mesa cada mes por ser invisible?</span></p>
+      <p class="reveal">Now multiply that by what each client is worth to you. A family law case might be $3,000 to $10,000. A dental patient might spend $1,500 a year. Even a single plumbing job is $200 to $500. How much revenue are you leaving on the table every month by being invisible?</p>
 
-      <p class="reveal"><span lang="en">According to a 2025 report by Clutch.co, <strong>small businesses without a website earn about 39% less revenue</strong> than comparable businesses that have one. That's not a small gap. That's the difference between growing and struggling.</span><span lang="es">Según un informe de 2025 de Clutch.co, <strong>los pequeños negocios sin sitio web ganan aproximadamente 39% menos ingresos</strong> que negocios comparables que si tienen uno. Esa no es una brecha pequeña. Es la diferencia entre crecer y luchar.</span></p>
+      <p class="reveal">According to a 2025 report by Clutch.co, <strong>small businesses without a website earn about 39% less revenue</strong> than comparable businesses that have one. That's not a small gap. That's the difference between growing and struggling.</p>
 
       <div class="stat-callout reveal">
         <div class="big-num">39%</div>
-        <div class="stat-label"><span lang="en">less revenue for businesses without a website vs. those with one</span><span lang="es">menos ingresos para negocios sin sitio web vs. los que tienen uno</span></div>
+        <div class="stat-label">less revenue for businesses without a website vs. those with one</div>
       </div>
-      <p class="source"><span lang="en">Source: Clutch.co, The State of Small Business Websites, 2025</span><span lang="es">Fuente: Clutch.co, The State of Small Business Websites, 2025</span></p>
+      <p class="source">Source: Clutch.co, The State of Small Business Websites, 2025</p>
 
-      <h2 class="reveal"><span lang="en">"But I Get Referrals"</span><span lang="es">"Pero Yo Recibo Referidos"</span></h2>
+      <h2 class="reveal">"But I Get Referrals"</h2>
 
-      <p class="reveal"><span lang="en">I hear this all the time. And look, referrals are wonderful. Word-of-mouth is how great businesses have grown for centuries. I'm not knocking it.</span><span lang="es">Escucho esto todo el tiempo. Y mira, los referidos son maravillosos. El boca a boca es como los grandes negocios han crecido durante siglos. No lo estoy despreciando.</span></p>
+      <p class="reveal">I hear this all the time. And look, referrals are wonderful. Word-of-mouth is how great businesses have grown for centuries. I'm not knocking it.</p>
 
-      <p class="reveal"><span lang="en">But here's what most business owners don't realize: <strong>even people who get a referral still Google you before they call.</strong> According to BrightLocal's 2024 data, 92% of consumers read online reviews before choosing a local business. Your friend says "call my lawyer, she's great." What does that person do next? They Google the lawyer's name.</span><span lang="es">Pero esto es lo que la mayoría de los dueños de negocios no se dan cuenta: <strong>incluso las personas que reciben un referido te buscan en Google antes de llamar.</strong> Según datos de BrightLocal de 2024, el 92% de los consumidores leen reseñas en línea antes de elegir un negocio local. Tu amigo dice "llama a mi abogada, es excelente." ¿Qué hace esa persona después? Busca el nombre de la abogada en Google.</span></p>
+      <p class="reveal">But here's what most business owners don't realize: <strong>even people who get a referral still Google you before they call.</strong> According to BrightLocal's 2024 data, 92% of consumers read online reviews before choosing a local business. Your friend says "call my lawyer, she's great." What does that person do next? They Google the lawyer's name.</p>
 
-      <p class="reveal"><span lang="en">If they find a professional website with clear information, reviews, and a way to contact you, they call. If they find nothing, or they find a Facebook page that hasn't been updated since 2023, doubt creeps in. They hesitate. Maybe they look at other options. You just lost a warm lead that was practically handed to you.</span><span lang="es">Si encuentran un sitio web profesional con información clara, reseñas y una forma de contactarte, llaman. Si no encuentran nada, o encuentran una página de Facebook que no se ha actualizado desde 2023, la duda aparece. Dudan. Tal vez buscan otras opciones. Acabas de perder un cliente potencial caliente que prácticamente te fue entregado en la mano.</span></p>
+      <p class="reveal">If they find a professional website with clear information, reviews, and a way to contact you, they call. If they find nothing, or they find a Facebook page that hasn't been updated since 2023, doubt creeps in. They hesitate. Maybe they look at other options. You just lost a warm lead that was practically handed to you.</p>
 
-      <p class="reveal"><span lang="en">Referrals don't scale, either. You can't control when they come. You can't predict how many you'll get next month. A website working for you on Google? That's consistent, predictable, and always on.</span><span lang="es">Los referidos tampoco escalan. No puedes controlar cuándo llegan. No puedes predecir cuántos vas a recibir el próximo mes. ¿Un sitio web trabajando para ti en Google? Eso es consistente, predecible, y siempre está activo.</span></p>
+      <p class="reveal">Referrals don't scale, either. You can't control when they come. You can't predict how many you'll get next month. A website working for you on Google? That's consistent, predictable, and always on.</p>
 
-      <h2 class="reveal"><span lang="en">What a Website Actually Does for You</span><span lang="es">Lo Que un Sitio Web Realmente Hace por Ti</span></h2>
+      <h2 class="reveal">What a Website Actually Does for You</h2>
 
-      <p class="reveal"><span lang="en">A lot of business owners think of a website as a digital brochure. Something you build once, maybe put your phone number on, and forget about. That's like buying a car and never putting gas in it.</span><span lang="es">Muchos dueños de negocios piensan en un sitio web como un folleto digital. Algo que construyes una vez, tal vez pones tu número de teléfono, y te olvidas. Eso es como comprar un carro y nunca ponerle gasolina.</span></p>
+      <p class="reveal">A lot of business owners think of a website as a digital brochure. Something you build once, maybe put your phone number on, and forget about. That's like buying a car and never putting gas in it.</p>
 
-      <p class="reveal"><span lang="en">A real website is a 24/7 salesperson. It does things you can't do yourself:</span><span lang="es">Un sitio web real es un vendedor que trabaja 24/7. Hace cosas que tu no puedes hacer solo:</span></p>
+      <p class="reveal">A real website is a 24/7 salesperson. It does things you can't do yourself:</p>
 
-      <p class="reveal"><span lang="en"><strong>It shows up when you can't.</strong> Someone searches for your service at 11 PM on a Saturday. You're asleep. Your website is there, answering questions, building trust, and making it easy for them to contact you first thing Monday morning. Without a website, that person called your competitor who did show up.</span><span lang="es"><strong>Aparece cuando tú no puedes.</strong> Alguien busca tu servicio a las 11 PM un sábado. Tú estás dormido. Tu sitio web está ahí, respondiendo preguntas, generando confianza, y facilitando que te contacten a primera hora el lunes. Sin un sitio web, esa persona llamó a tu competidor que sí apareció.</span></p>
+      <p class="reveal"><strong>It shows up when you can't.</strong> Someone searches for your service at 11 PM on a Saturday. You're asleep. Your website is there, answering questions, building trust, and making it easy for them to contact you first thing Monday morning. Without a website, that person called your competitor who did show up.</p>
 
-      <p class="reveal"><span lang="en"><strong>It builds trust before the first conversation.</strong> People want to know who they're calling before they call. Your website shows them your work, your reviews, your face. It answers the question "Can I trust this person?" before they ever pick up the phone.</span><span lang="es"><strong>Genera confianza antes de la primera conversación.</strong> La gente quiere saber a quién está llamando antes de llamar. Tu sitio web les muestra tu trabajo, tus reseñas, tu cara. Responde la pregunta "¿Puedo confiar en esta persona?" antes de que levanten el teléfono.</span></p>
+      <p class="reveal"><strong>It builds trust before the first conversation.</strong> People want to know who they're calling before they call. Your website shows them your work, your reviews, your face. It answers the question "Can I trust this person?" before they ever pick up the phone.</p>
 
-      <p class="reveal"><span lang="en"><strong>It qualifies leads for you.</strong> When someone finds your website through Google, reads about your services, checks your pricing, and then contacts you, they already know what you do and what you charge. That's a better lead than a cold call. Your closing rate goes up because the website did the heavy lifting first.</span><span lang="es"><strong>Califica clientes potenciales por ti.</strong> Cuando alguien encuentra tu sitio web a través de Google, lee sobre tus servicios, revisa tus precios, y luego te contacta, ya sabe lo que haces y lo que cobras. Ese es un mejor cliente potencial que una llamada en frío. Tu tasa de cierre sube porque el sitio web hizo el trabajo pesado primero.</span></p>
+      <p class="reveal"><strong>It qualifies leads for you.</strong> When someone finds your website through Google, reads about your services, checks your pricing, and then contacts you, they already know what you do and what you charge. That's a better lead than a cold call. Your closing rate goes up because the website did the heavy lifting first.</p>
 
-      <p class="reveal"><span lang="en">According to BrightLocal's 2026 data, <strong>64% of people search for local businesses on mobile devices.</strong> Your website isn't just competing with other websites. It's competing for attention on a five-inch screen while someone is sitting in their car deciding who to call right now.</span><span lang="es">Según datos de BrightLocal de 2026, <strong>el 64% de las personas buscan negocios locales en dispositivos móviles.</strong> Tu sitio web no solo compite con otros sitios web. Compite por atención en una pantalla de cinco pulgadas mientras alguien está sentado en su carro decidiendo a quién llamar ahora mismo.</span></p>
+      <p class="reveal">According to BrightLocal's 2026 data, <strong>64% of people search for local businesses on mobile devices.</strong> Your website isn't just competing with other websites. It's competing for attention on a five-inch screen while someone is sitting in their car deciding who to call right now.</p>
 
-      <h2 class="reveal"><span lang="en">The Minimum Viable Online Presence</span><span lang="es">La Presencia en Línea Mínima Viable</span></h2>
+      <h2 class="reveal">The Minimum Viable Online Presence</h2>
 
-      <p class="reveal"><span lang="en">Here's the good news: you don't need to be a tech genius to show up on Google. You don't need a massive marketing budget or a team of SEO experts. You need three things.</span><span lang="es">Aquí están las buenas noticias: no necesitas ser un genio de la tecnología para aparecer en Google. No necesitas un presupuesto enorme de marketing ni un equipo de expertos en SEO. Necesitas tres cosas.</span></p>
+      <p class="reveal">Here's the good news: you don't need to be a tech genius to show up on Google. You don't need a massive marketing budget or a team of SEO experts. You need three things.</p>
 
-      <p class="reveal"><span lang="en"><strong>1. A Google Business Profile.</strong> This is free. Completely free. It's how you show up on Google Maps and in that Local Pack of three results we talked about. If you don't have one, you are literally leaving free visibility on the table. Set it up, add your hours, your address, your phone number, a few photos of your business. This alone can start generating calls.</span><span lang="es"><strong>1. Un Perfil de Google Business.</strong> Esto es gratis. Completamente gratis. Es como apareces en Google Maps y en ese Local Pack de tres resultados del que hablamos. Si no tienes uno, estás literalmente dejando visibilidad gratuita sobre la mesa. Configúralo, agrega tus horarios, tu dirección, tu número de teléfono, algunas fotos de tu negocio. Solo esto puede empezar a generar llamadas.</span></p>
+      <p class="reveal"><strong>1. A Google Business Profile.</strong> This is free. Completely free. It's how you show up on Google Maps and in that Local Pack of three results we talked about. If you don't have one, you are literally leaving free visibility on the table. Set it up, add your hours, your address, your phone number, a few photos of your business. This alone can start generating calls.</p>
 
-      <p class="reveal"><span lang="en"><strong>2. A professional website.</strong> Not a Facebook page. Not an Instagram account. A real website with your own domain name, clear information about what you do, and an obvious way for people to contact you. This is what Google looks at to decide if your business is legitimate enough to show in search results.</span><span lang="es"><strong>2. Un sitio web profesional.</strong> No una página de Facebook. No una cuenta de Instagram. Un sitio web real con tu propio dominio, información clara sobre lo que haces, y una forma obvia para que la gente te contacte. Esto es lo que Google analiza para decidir si tu negocio es lo suficientemente legítimo para mostrarlo en los resultados de búsqueda.</span></p>
+      <p class="reveal"><strong>2. A professional website.</strong> Not a Facebook page. Not an Instagram account. A real website with your own domain name, clear information about what you do, and an obvious way for people to contact you. This is what Google looks at to decide if your business is legitimate enough to show in search results.</p>
 
-      <p class="reveal"><span lang="en"><strong>3. Basic SEO.</strong> This isn't magic or black-hat trickery. It means your website has the right words on it. If you're a family lawyer in Miami, your website should literally say "family lawyer in Miami" in the right places. It means your site loads fast, works on phones, and has your real address and phone number on it. That's the foundation.</span><span lang="es"><strong>3. SEO básico.</strong> Esto no es magia ni trucos oscuros. Significa que tu sitio web tiene las palabras correctas. Si eres un abogado de familia en Miami, tu sitio web debería decir literalmente "abogado de familia en Miami" en los lugares correctos. Significa que tu sitio carga rápido, funciona en teléfonos, y tiene tu dirección real y número de teléfono. Esa es la base.</span></p>
+      <p class="reveal"><strong>3. Basic SEO.</strong> This isn't magic or black-hat trickery. It means your website has the right words on it. If you're a family lawyer in Miami, your website should literally say "family lawyer in Miami" in the right places. It means your site loads fast, works on phones, and has your real address and phone number on it. That's the foundation.</p>
 
-      <p class="reveal"><span lang="en">That's it. Google Business Profile + professional website + basic SEO. Not rocket science. Not a $10,000/month marketing retainer. Just the fundamentals done right.</span><span lang="es">Eso es todo. Perfil de Google Business + sitio web profesional + SEO básico. No es ciencia espacial. No es un contrato de marketing de $10,000/mes. Solo los fundamentos hechos correctamente.</span></p>
+      <p class="reveal">That's it. Google Business Profile + professional website + basic SEO. Not rocket science. Not a $10,000/month marketing retainer. Just the fundamentals done right.</p>
 
-      <h2 class="reveal"><span lang="en">Your Competitor Figured This Out Already</span><span lang="es">Tu Competidor Ya Se Dio Cuenta de Esto</span></h2>
+      <h2 class="reveal">Your Competitor Figured This Out Already</h2>
 
-      <p class="reveal"><span lang="en">The business down the street that always seems busy? They probably figured this out two or three years ago. They set up a website. They claimed their Google Business Profile. They asked a few happy clients to leave reviews. And now Google rewards them with free traffic every single day.</span><span lang="es">¿El negocio de la calle que siempre parece estar lleno? Probablemente se dieron cuenta de esto hace dos o tres años. Crearon un sitio web. Reclamaron su Perfil de Google Business. Le pidieron a algunos clientes felices que dejaran reseñas. Y ahora Google los recompensa con tráfico gratuito todos los días.</span></p>
+      <p class="reveal">The business down the street that always seems busy? They probably figured this out two or three years ago. They set up a website. They claimed their Google Business Profile. They asked a few happy clients to leave reviews. And now Google rewards them with free traffic every single day.</p>
 
-      <p class="reveal"><span lang="en">The longer you wait, the further ahead they get. Google favors businesses with longer track records, more reviews, and more established websites. Starting today puts you closer to catching up. Starting next year puts you further behind.</span><span lang="es">Cuanto más esperes, más ventaja les das. Google favorece negocios con trayectorias más largas, más reseñas, y sitios web más establecidos. Empezar hoy te acerca a alcanzarlos. Empezar el próximo año te deja más atrás.</span></p>
+      <p class="reveal">The longer you wait, the further ahead they get. Google favors businesses with longer track records, more reviews, and more established websites. Starting today puts you closer to catching up. Starting next year puts you further behind.</p>
 
-      <p class="reveal"><span lang="en">This isn't about being tech-savvy or spending a fortune. It's about showing up where your customers are already looking. And right now, they're looking on Google.</span><span lang="es">Esto no se trata de ser experto en tecnología o gastar una fortuna. Se trata de aparecer donde tus clientes ya están buscando. Y ahora mismo, están buscando en Google.</span></p>
+      <p class="reveal">This isn't about being tech-savvy or spending a fortune. It's about showing up where your customers are already looking. And right now, they're looking on Google.</p>
 
       <div class="cta-box reveal">
-        <p><span lang="en">Want to know where you stand? I'll do a free 15-minute audit of your online presence. I'll show you exactly what your customers see (or don't see) when they search for your business. No pitch, no pressure, just the truth.</span><span lang="es">¿Quieres saber dónde estás parado? Te hago una auditoría gratuita de 15 minutos de tu presencia en línea. Te muestro exactamente lo que tus clientes ven (o no ven) cuando buscan tu negocio. Sin discurso de ventas, sin presión, solo la verdad.</span></p>
-        <a class="btn" href="book.html"><span lang="en">Book your free 15-minute call</span><span lang="es">Agenda tu llamada gratuita de 15 minutos</span>&nbsp;&rarr;</a>
+        <p>Want to know where you stand? I'll do a free 15-minute audit of your online presence. I'll show you exactly what your customers see (or don't see) when they search for your business. No pitch, no pressure, just the truth.</p>
+        <a class="btn" href="/book.html">Book your free 15-minute call&nbsp;&rarr;</a>
       </div>
 
     </div>
@@ -366,35 +388,34 @@
 
 <section style="padding:48px 0 0">
   <div class="wrap">
-    <h2 class="reveal" style="font-size:1.3rem;margin-bottom:20px"><span lang="en">Keep reading</span><span lang="es">Sigue leyendo</span></h2>
+    <h2 class="reveal" style="font-size:1.3rem;margin-bottom:20px">Keep reading</h2>
     <div style="display:flex;flex-direction:column;gap:14px">
-      <a class="reveal" href="what-a-website-does-for-a-law-firm.html" style="color:var(--purple);font-weight:600;font-size:1rem"><span lang="en">What a Website Actually Does for a Law Firm &rarr;</span><span lang="es">Lo que un sitio web realmente hace por un bufete de abogados &rarr;</span></a>
-      <a class="reveal" href="5-signs-your-website-is-losing-clients.html" style="color:var(--purple);font-weight:600;font-size:1rem"><span lang="en">5 Signs Your Website Is Losing You Clients &rarr;</span><span lang="es">5 señales de que tu sitio web te está haciendo perder clientes &rarr;</span></a>
+      <a class="reveal" href="/blog/what-a-website-does-for-a-law-firm.html" style="color:var(--purple);font-weight:600;font-size:1rem">What a Website Actually Does for a Law Firm &rarr;</a>
+      <a class="reveal" href="/blog/5-signs-your-website-is-losing-clients.html" style="color:var(--purple);font-weight:600;font-size:1rem">5 Signs Your Website Is Losing You Clients &rarr;</a>
     </div>
   </div>
 </section>
 </main>
 
 <div class="sticky-cta" id="stickyCta">
-  <a href="book.html"><span lang="en">Find out where you stand on Google &rarr; Free 15-min audit</span><span lang="es">Descubre dónde estás en Google &rarr; Auditoría gratis de 15 min</span></a>
+  <a href="/book.html">Find out where you stand on Google &rarr; Free 15-min audit</a>
 </div>
 
 <footer>
   <div class="wrap foot-inner">
-    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="../assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="../assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span><span lang="en">This site was <strong>Made by Sebby</strong>. Yours can be too.</span><span lang="es">Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</span></span></div>
+    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="/assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="/assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span>This site was <strong>Made by Sebby</strong>. Yours can be too.</span></div>
     <div class="foot-links">
-      <a href="../services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
-      <a href="../work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
-      <a href="../website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
-      <a href="../about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
-      <a href="../blog.html"><span lang="en">Blog</span><span lang="es">Blog</span></a>
-      <a href="../privacy.html"><span lang="en">Privacy</span><span lang="es">Privacidad</span></a>
-      <a href="../terms.html"><span lang="en">Terms</span><span lang="es">Términos</span></a>
+      <a href="/services.html">What I do</a>
+      <a href="/work.html">Work</a>
+      <a href="/website-care.html">Website Care</a>
+      <a href="/about.html">About</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
       <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
     </div>
   </div>
 </footer>
-<script>!function(){var l=document.documentElement.getAttribute('data-lang');if(l==='es'){var b=document.querySelectorAll('.lang-toggle button');if(b.length===2){b[0].classList.remove('active');b[1].classList.add('active')}}}()</script>
 <script>!function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})}()</script>
 <script>!function(){var cta=document.getElementById('stickyCta');if(!cta)return;var footer=document.querySelector('footer');var shown=false;window.addEventListener('scroll',function(){var y=window.scrollY;var fTop=footer?footer.getBoundingClientRect().top+y-window.innerHeight:Infinity;if(y>400&&y<fTop){if(!shown){cta.classList.add('show');shown=true}}else{if(shown){cta.classList.remove('show');shown=false}}},{passive:true})}()</script>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>

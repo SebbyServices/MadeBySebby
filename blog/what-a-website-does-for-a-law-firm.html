@@ -10,12 +10,11 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Sebby — Made by Sebby">
 <meta name="description" content="Most people looking for a lawyer start with Google. Here's what a well-built law firm website actually does — with real data, real examples, and honest pricing.">
-<link rel="preload" as="image" href="../assets/logo/sebby-nav.svg">
+<link rel="preload" as="image" href="/assets/logo/sebby-nav.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
-<script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
 <style>
   :root{
     --ink:#1A1D29;--ink-soft:#4A4E5C;--muted:#6B7080;
@@ -35,10 +34,10 @@
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
   .logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.06rem;letter-spacing:-.01em}
   .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
-  .nav-links a{color:var(--ink-soft);transition:color .15s}
-  .nav-links a.btn{color:#fff}
-  .nav-links a.btn:hover{color:#fff}
-  .nav-links a:hover{color:var(--purple)}
+  .nav-links>a{color:var(--ink-soft);transition:color .15s}
+  .nav-links>a.btn{color:#fff}
+  .nav-links>a.btn:hover{color:#fff}
+  .nav-links>a:hover{color:var(--purple)}
   .btn{display:inline-flex;align-items:center;gap:8px;background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;padding:13px 26px;border-radius:999px;border:none;cursor:pointer;transition:background .15s,transform .15s}
   .btn:hover{background:var(--purple-deep);transform:translateY(-1px)}
   .btn:focus-visible{outline-color:var(--ink)}
@@ -92,9 +91,9 @@
     .nav-links{display:none;position:fixed;top:76px;left:0;right:0;bottom:0;background:var(--white);flex-direction:column;gap:0;padding:20px 28px;border-top:1px solid var(--line);z-index:49;overflow-y:auto}
     .nav-open{backdrop-filter:none;overflow:visible}
     .nav-open .nav-links{display:flex}
-    .nav-links a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
-    .nav-links a:last-child{border-bottom:none}
-    .nav-links a.btn{margin-top:12px;justify-content:center;border-bottom:none}
+    .nav-links>a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
+    .nav-links>a:last-child{border-bottom:none}
+    .nav-links>a.btn{margin-top:12px;justify-content:center;border-bottom:none}
     .nav-links .lang-toggle{margin-top:8px;align-self:flex-start}
     .nav-links .theme-toggle{margin-top:4px;align-self:flex-start}
   }
@@ -108,13 +107,10 @@
   .sticky-cta a{color:#fff;text-decoration:none}
   .sticky-cta a:hover{text-decoration:underline}
   @media (max-width:640px){.sticky-cta{font-size:.88rem;padding:12px 20px}}
-
-  :root:not([data-lang="es"]) [lang="es"]{display:none}
-  [data-lang="es"] [lang="en"]{display:none}
   .lang-toggle{display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0}
-  .lang-toggle button{background:none;border:none;padding:7px 12px;cursor:pointer;color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em}
-  .lang-toggle button:hover{color:var(--purple)}
-  .lang-toggle button.active{background:var(--purple);color:#fff}
+  .lang-toggle>*{background:none;border:none;padding:7px 12px;cursor:pointer;color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em}
+  .lang-toggle>*:hover{color:var(--purple)}
+  .lang-toggle>.active{background:var(--purple);color:#fff}
 
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){--ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;--purple:#8B6CEF;--purple-deep:#7B5FDB;--tint:#1D192D;--line:#2A2838;--white:#0F1117}
@@ -175,7 +171,7 @@
 <link rel="alternate" type="text/plain" title="LLM instructions" href="/llms.txt">
 <link rel="canonical" href="https://madebysebby.com/blog/what-a-website-does-for-a-law-firm.html">
 <link rel="alternate" hreflang="en" href="https://madebysebby.com/blog/what-a-website-does-for-a-law-firm.html">
-<link rel="alternate" hreflang="es" href="https://madebysebby.com/blog/what-a-website-does-for-a-law-firm.html">
+<link rel="alternate" hreflang="es" href="https://madebysebby.com/es/blog/que-hace-un-sitio-web-por-un-bufete.html">
 <link rel="alternate" hreflang="x-default" href="https://madebysebby.com/blog/what-a-website-does-for-a-law-firm.html">
 <meta name="theme-color" content="#6C3CE9">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -188,6 +184,7 @@
 <meta property="og:site_name" content="Made by Sebby">
 <meta property="og:title" content="What a Website Actually Does for a Law Firm — Made by Sebby">
 <meta property="og:description" content="Most people looking for a lawyer start with Google. Here's what a well-built law firm website actually does — with real data, real examples, and honest pricing.">
+<meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://madebysebby.com/blog/what-a-website-does-for-a-law-firm.html">
 <meta property="og:image" content="https://madebysebby.com/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -204,10 +201,20 @@
   "headline": "What a Website Actually Does for a Law Firm (From Someone Who Built One)",
   "datePublished": "2026-08-06",
   "dateModified": "2026-08-06",
-  "author": {"@type": "Person", "name": "Sebby", "url": "https://madebysebby.com/about.html"},
-  "publisher": {"@type": "ProfessionalService", "name": "Made by Sebby", "url": "https://madebysebby.com/"},
+  "author": {
+    "@type": "Person",
+    "name": "Sebby",
+    "url": "https://madebysebby.com/about.html"
+  },
+  "publisher": {
+    "@type": "ProfessionalService",
+    "name": "Made by Sebby",
+    "url": "https://madebysebby.com/",
+    "inLanguage": "en"
+  },
   "url": "https://madebysebby.com/blog/what-a-website-does-for-a-law-firm.html",
-  "description": "Most people looking for a lawyer start with Google. Here's what a well-built law firm website actually does — with real data, real examples, and honest pricing."
+  "description": "Most people looking for a lawyer start with Google. Here's what a well-built law firm website actually does — with real data, real examples, and honest pricing.",
+  "inLanguage": "en"
 }
 </script>
 <script type="application/ld+json">
@@ -215,9 +222,24 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://madebysebby.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://madebysebby.com/blog.html"},
-    {"@type": "ListItem", "position": 3, "name": "What a Website Actually Does for a Law Firm", "item": "https://madebysebby.com/blog/what-a-website-does-for-a-law-firm.html"}
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://madebysebby.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://madebysebby.com/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "What a Website Actually Does for a Law Firm",
+      "item": "https://madebysebby.com/blog/what-a-website-does-for-a-law-firm.html"
+    }
   ]
 }
 </script>
@@ -226,25 +248,25 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <nav>
   <div class="wrap nav-inner">
-    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="../assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="../assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
+    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="/assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="/assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
     <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('nav-open')">
       <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
     <div class="nav-links">
-      <a href="../services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
-      <a href="../work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
-      <a href="../website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
-      <a href="../about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <a href="/services.html">What I do</a>
+      <a href="/work.html">Work</a>
+      <a href="/website-care.html">Website Care</a>
+      <a href="/about.html">About</a>
       <div class="lang-toggle">
-        <button onclick="document.documentElement.removeAttribute('data-lang');localStorage.setItem('lang','en');this.classList.add('active');this.nextElementSibling.classList.remove('active')" class="active">EN</button>
-        <button onclick="document.documentElement.setAttribute('data-lang','es');localStorage.setItem('lang','es');this.classList.add('active');this.previousElementSibling.classList.remove('active')">ES</button>
-      </div>
+          <span class="active">EN</span>
+          <a href="/es/blog/que-hace-un-sitio-web-por-un-bufete.html" hreflang="es" lang="es" aria-label="Ver esta página en español">ES</a>
+        </div>
       <button class="theme-toggle" aria-label="Toggle dark mode" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
         <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       </button>
-      <a href="../book.html" class="btn btn-nav"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span></a>
+      <a href="/book.html" class="btn btn-nav">Work with Sebby</a>
     </div>
   </div>
 </nav>
@@ -252,9 +274,9 @@
 <main>
 <header class="page-hero">
   <div class="wrap">
-    <a class="back-link rise" href="../blog.html"><span lang="en">Back to blog</span><span lang="es">Volver al blog</span></a>
-    <div class="blog-meta rise d1"><span lang="en">August 2026</span><span lang="es">Agosto 2026</span></div>
-    <h1 class="rise d2"><span lang="en">What a Website Actually Does for a <span class="accent">Law Firm</span></span><span lang="es">Lo que un sitio web realmente hace por un <span class="accent">bufete de abogados</span></span></h1>
+    <a class="back-link rise" href="/blog.html">Back to blog</a>
+    <div class="blog-meta rise d1">August 2026</div>
+    <h1 class="rise d2">What a Website Actually Does for a <span class="accent">Law Firm</span></h1>
   </div>
 </header>
 
@@ -262,105 +284,105 @@
   <div class="wrap">
     <div class="article">
 
-      <p class="reveal"><span lang="en">You passed the bar. You built a practice. You earned a reputation in your community. But when someone in your city types "lawyer near me" into Google, are they finding you or your competitor down the street?</span><span lang="es">Pasaste el examen de abogacía. Construiste una práctica. Te ganaste una reputación en tu comunidad. Pero cuando alguien en tu ciudad escribe "abogado cerca de mí" en Google, ¿te encuentran a ti o a tu competidor?</span></p>
+      <p class="reveal">You passed the bar. You built a practice. You earned a reputation in your community. But when someone in your city types "lawyer near me" into Google, are they finding you or your competitor down the street?</p>
 
-      <p class="reveal"><span lang="en">I built a law firm website from the ground up for a securities arbitration attorney in Coral Gables, Florida. The project taught me exactly what works, what lawyers overlook, and what their clients actually need to see before they pick up the phone. This post is everything I learned, backed by data.</span><span lang="es">Construí un sitio web para un bufete de abogados desde cero para un abogado de arbitraje de valores en Coral Gables, Florida. El proyecto me enseñó exactamente qué funciona, qué pasan por alto los abogados y qué necesitan ver sus clientes antes de levantar el teléfono. Este artículo es todo lo que aprendí, respaldado con datos.</span></p>
+      <p class="reveal">I built a law firm website from the ground up for a securities arbitration attorney in Coral Gables, Florida. The project taught me exactly what works, what lawyers overlook, and what their clients actually need to see before they pick up the phone. This post is everything I learned, backed by data.</p>
 
-      <h2 class="reveal"><span lang="en">The data: your next client is Googling you right now</span><span lang="es">Los datos: tu próximo cliente te está buscando en Google ahora mismo</span></h2>
+      <h2 class="reveal">The data: your next client is Googling you right now</h2>
 
-      <p class="reveal"><span lang="en">Let's skip the opinions and look at the numbers.</span><span lang="es">Dejemos las opiniones y veamos los números.</span></p>
+      <p class="reveal">Let's skip the opinions and look at the numbers.</p>
 
       <div class="stat-highlight reveal">
-        <p><span lang="en">92% of people research their legal issue online before contacting an attorney.</span><span lang="es">El 92% de las personas investigan su problema legal en línea antes de contactar a un abogado.</span></p>
-        <span class="source"><span lang="en">Source: iLawyerMarketing Consumer Study, 2025</span><span lang="es">Fuente: Estudio del Consumidor de iLawyerMarketing, 2025</span></span>
+        <p>92% of people research their legal issue online before contacting an attorney.</p>
+        <span class="source">Source: iLawyerMarketing Consumer Study, 2025</span>
       </div>
 
-      <p class="reveal"><span lang="en">Google is still the dominant starting point. In 2025, 87% of consumers said they would use Google to research a lawyer, according to iLawyerMarketing. That percentage has stayed above 85% for three consecutive years.</span><span lang="es">Google sigue siendo el punto de partida dominante. En 2025, el 87% de los consumidores dijo que usaría Google para buscar un abogado, según iLawyerMarketing. Ese porcentaje se ha mantenido por encima del 85% durante tres años consecutivos.</span></p>
+      <p class="reveal">Google is still the dominant starting point. In 2025, 87% of consumers said they would use Google to research a lawyer, according to iLawyerMarketing. That percentage has stayed above 85% for three consecutive years.</p>
 
-      <p class="reveal"><span lang="en">"Near me" searches for legal services have increased by 500% in recent years, and local plus organic searches account for 69% of all digital traffic to law firm websites (On The Map Marketing). If your firm is not showing up in those results, you are invisible to the majority of potential clients.</span><span lang="es">Las búsquedas de "cerca de mí" para servicios legales han aumentado un 500% en los últimos años, y las búsquedas locales más orgánicas representan el 69% de todo el trafico digital a sitios web de bufetes (On The Map Marketing). Si tu bufete no aparece en esos resultados, eres invisible para la mayoría de los clientes potenciales.</span></p>
+      <p class="reveal">"Near me" searches for legal services have increased by 500% in recent years, and local plus organic searches account for 69% of all digital traffic to law firm websites (On The Map Marketing). If your firm is not showing up in those results, you are invisible to the majority of potential clients.</p>
 
-      <p class="reveal"><span lang="en">And it is not just Google anymore. 28% of consumers said they would use ChatGPT to research a lawyer in 2025, up from just 9% in 2023 (iLawyerMarketing). AI search is growing fast. But here is the key detail: 94% of those people also use Google. AI is additive. It is not a replacement. Your website still matters.</span><span lang="es">Y ya no es solo Google. El 28% de los consumidores dijo que usaría ChatGPT para investigar a un abogado en 2025, comparado con solo el 9% en 2023 (iLawyerMarketing). La búsqueda con IA está creciendo rápido. Pero aquí está el detalle clave: el 94% de esas personas también usan Google. La IA es un complemento, no un reemplazo. Tu sitio web sigue importando.</span></p>
+      <p class="reveal">And it is not just Google anymore. 28% of consumers said they would use ChatGPT to research a lawyer in 2025, up from just 9% in 2023 (iLawyerMarketing). AI search is growing fast. But here is the key detail: 94% of those people also use Google. AI is additive. It is not a replacement. Your website still matters.</p>
 
-      <h2 class="reveal"><span lang="en">What clients actually look for on a law firm website</span><span lang="es">Lo que los clientes realmente buscan en el sitio web de un bufete</span></h2>
+      <h2 class="reveal">What clients actually look for on a law firm website</h2>
 
-      <p class="reveal"><span lang="en">People hiring a lawyer are not browsing casually. They have a problem. They are stressed. They want to know three things fast:</span><span lang="es">Las personas que buscan un abogado no están navegando casualmente. Tienen un problema. Están estresados. Quieren saber tres cosas rápido:</span></p>
+      <p class="reveal">People hiring a lawyer are not browsing casually. They have a problem. They are stressed. They want to know three things fast:</p>
 
       <ul class="reveal">
-        <li><span lang="en"><strong>Can this person handle my case?</strong> They want to see specific practice areas, not vague language.</span><span lang="es"><strong>¿Puede esta persona manejar mi caso?</strong> Quieren ver áreas de práctica específicas, no lenguaje vago.</span></li>
-        <li><span lang="en"><strong>Is this person credible?</strong> They look for real attorney photos, credentials, bar memberships, and case results.</span><span lang="es"><strong>¿Es esta persona confiable?</strong> Buscan fotos reales de los abogados, credenciales, membresías del colegio de abogados y resultados de casos.</span></li>
-        <li><span lang="en"><strong>Can I trust this person?</strong> They read testimonials and reviews. 88% of consumers trust online reviews as much as personal recommendations (BrightLocal).</span><span lang="es"><strong>¿Puedo confiar en esta persona?</strong> Leen testimonios y reseñas. El 88% de los consumidores confían en las reseñas en línea tanto como en las recomendaciones personales (BrightLocal).</span></li>
+        <li><strong>Can this person handle my case?</strong> They want to see specific practice areas, not vague language.</li>
+        <li><strong>Is this person credible?</strong> They look for real attorney photos, credentials, bar memberships, and case results.</li>
+        <li><strong>Can I trust this person?</strong> They read testimonials and reviews. 88% of consumers trust online reviews as much as personal recommendations (BrightLocal).</li>
       </ul>
 
-      <p class="reveal"><span lang="en">Research from legal marketing firms shows that 92% of top-performing law firm websites use specific trust signals: client testimonials, professional certifications, bar association memberships, case results, and industry recognition. Visitors make a judgment about your firm in the first 3 to 5 seconds of landing on your site. If they do not see credibility immediately, they leave.</span><span lang="es">Investigaciones de firmas de marketing legal muestran que el 92% de los sitios web de bufetes de mejor rendimiento usan señales de confianza específicas: testimonios de clientes, certificaciones profesionales, membresías en colegios de abogados, resultados de casos y reconocimiento de la industria. Los visitantes juzgan tu bufete en los primeros 3 a 5 segundos de llegar a tu sitio. Si no ven credibilidad de inmediato, se van.</span></p>
+      <p class="reveal">Research from legal marketing firms shows that 92% of top-performing law firm websites use specific trust signals: client testimonials, professional certifications, bar association memberships, case results, and industry recognition. Visitors make a judgment about your firm in the first 3 to 5 seconds of landing on your site. If they do not see credibility immediately, they leave.</p>
 
-      <h2 class="reveal"><span lang="en">5 things every law firm website needs</span><span lang="es">5 cosas que todo sitio web de un bufete necesita</span></h2>
+      <h2 class="reveal">5 things every law firm website needs</h2>
 
-      <h2 class="reveal"><span class="num">1.</span> <span lang="en">Clear practice area pages</span><span lang="es">Páginas claras de áreas de práctica</span></h2>
-      <p class="reveal"><span lang="en">One page per specialty. Not a dropdown menu that lists 14 practice areas with a single paragraph each. A dedicated page that explains what you do, who you help, and what the process looks like. This is what Google indexes. This is what clients read. If you handle personal injury, securities fraud, and family law, each one needs its own page with real content.</span><span lang="es">Una página por especialidad. No un menú desplegable que lista 14 áreas de práctica con un solo párrafo cada una. Una página dedicada que explique qué haces, a quién ayudas y cómo es el proceso. Esto es lo que Google indexa. Esto es lo que los clientes leen. Si manejas lesiones personales, fraude de valores y derecho familiar, cada uno necesita su propia página con contenido real.</span></p>
+      <h2 class="reveal"><span class="num">1.</span> Clear practice area pages</h2>
+      <p class="reveal">One page per specialty. Not a dropdown menu that lists 14 practice areas with a single paragraph each. A dedicated page that explains what you do, who you help, and what the process looks like. This is what Google indexes. This is what clients read. If you handle personal injury, securities fraud, and family law, each one needs its own page with real content.</p>
 
-      <h2 class="reveal"><span class="num">2.</span> <span lang="en">Attorney bios with real photos</span><span lang="es">Biografías de abogados con fotos reales</span></h2>
-      <p class="reveal"><span lang="en">Stock photos erode trust instantly. Your bio page should include a professional headshot, your education, bar admissions, notable cases or experience, and a few sentences that sound like a human wrote them. People hire people, not firms. Let them see who they are calling.</span><span lang="es">Las fotos de archivo erosionan la confianza al instante. Tu página de biografía debe incluir una foto profesional, tu educación, admisiones al colegio de abogados, casos o experiencia notable, y algunas oraciones que suenen como si las escribió una persona real. La gente contrata personas, no firmas. Dejalos ver a quién están llamando.</span></p>
+      <h2 class="reveal"><span class="num">2.</span> Attorney bios with real photos</h2>
+      <p class="reveal">Stock photos erode trust instantly. Your bio page should include a professional headshot, your education, bar admissions, notable cases or experience, and a few sentences that sound like a human wrote them. People hire people, not firms. Let them see who they are calling.</p>
 
-      <h2 class="reveal"><span class="num">3.</span> <span lang="en">Client testimonials and case results</span><span lang="es">Testimonios de clientes y resultados de casos</span></h2>
-      <p class="reveal"><span lang="en">98% of potential clients read online reviews before hiring an attorney (Andava Digital). Testimonials on your own site carry weight, especially when they include specific details about the type of case and outcome. If your state bar allows it, include settlement amounts or verdict results. If not, focus on the client experience.</span><span lang="es">El 98% de los clientes potenciales leen reseñas en línea antes de contratar a un abogado (Andava Digital). Los testimonios en tu propio sitio tienen peso, especialmente cuando incluyen detalles específicos sobre el tipo de caso y resultado. Si tu colegio de abogados lo permite, incluye montos de acuerdos o resultados de veredictos. Si no, enfócate en la experiencia del cliente.</span></p>
-      <p class="reveal"><span lang="en"><strong>A note on ethics:</strong> ABA Model Rule 7.1 requires that all communications about a lawyer's services be truthful and not misleading. That includes testimonials and case results on your website. State rules vary, so check with your bar before publishing specific outcomes. States like Florida, New York, and Texas have stricter advertising requirements than others.</span><span lang="es"><strong>Una nota sobre ética:</strong> La Regla Modelo 7.1 de la ABA requiere que todas las comunicaciones sobre los servicios de un abogado sean verídicas y no engañosas. Eso incluye testimonios y resultados de casos en tu sitio web. Las reglas estatales varían, así que consulta con tu colegio de abogados antes de publicar resultados específicos. Estados como Florida, Nueva York y Texas tienen requisitos de publicidad más estrictos que otros.</span></p>
+      <h2 class="reveal"><span class="num">3.</span> Client testimonials and case results</h2>
+      <p class="reveal">98% of potential clients read online reviews before hiring an attorney (Andava Digital). Testimonials on your own site carry weight, especially when they include specific details about the type of case and outcome. If your state bar allows it, include settlement amounts or verdict results. If not, focus on the client experience.</p>
+      <p class="reveal"><strong>A note on ethics:</strong> ABA Model Rule 7.1 requires that all communications about a lawyer's services be truthful and not misleading. That includes testimonials and case results on your website. State rules vary, so check with your bar before publishing specific outcomes. States like Florida, New York, and Texas have stricter advertising requirements than others.</p>
 
-      <h2 class="reveal"><span class="num">4.</span> <span lang="en">Mobile-responsive design</span><span lang="es">Diseño adaptable a móviles</span></h2>
-      <p class="reveal"><span lang="en">More than 60% of web traffic comes from phones. For legal searches, that number is even higher because people search when they need help urgently, and that is usually on their phone. If your site does not load fast and look clean on a phone screen, you are losing the majority of your visitors before they read a word.</span><span lang="es">Más del 60% del tráfico web viene de teléfonos. Para búsquedas legales, ese número es aun más alto porque las personas buscan cuando necesitan ayuda urgentemente, y eso usualmente es en su teléfono. Si tu sitio no carga rápido y se ve limpio en la pantalla de un teléfono, estás perdiendo a la mayoría de tus visitantes antes de que lean una palabra.</span></p>
+      <h2 class="reveal"><span class="num">4.</span> Mobile-responsive design</h2>
+      <p class="reveal">More than 60% of web traffic comes from phones. For legal searches, that number is even higher because people search when they need help urgently, and that is usually on their phone. If your site does not load fast and look clean on a phone screen, you are losing the majority of your visitors before they read a word.</p>
 
-      <h2 class="reveal"><span class="num">5.</span> <span lang="en">Easy contact: click-to-call, forms, and booking</span><span lang="es">Contacto facil: clic para llamar, formularios y reservas</span></h2>
-      <p class="reveal"><span lang="en">67% of legal clients base their hiring decision on how fast a firm responds (Clio). Law firms that respond within the first five minutes see a 400% higher conversion rate. Your website needs a visible phone number on every page (click-to-call on mobile), a contact form that works, and ideally a link to book a consultation directly. Every extra click between a visitor and your inbox is a lost lead.</span><span lang="es">El 67% de los clientes legales basan su decisión de contratación en la rapidez de respuesta del bufete (Clio). Los bufetes que responden dentro de los primeros cinco minutos ven una tasa de conversión 400% más alta. Tu sitio web necesita un número de teléfono visible en cada página (clic para llamar en móvil), un formulario de contacto que funcione, e idealmente un enlace para agendar una consulta directamente. Cada clic adicional entre un visitante y tu bandeja de entrada es un cliente potencial perdido.</span></p>
+      <h2 class="reveal"><span class="num">5.</span> Easy contact: click-to-call, forms, and booking</h2>
+      <p class="reveal">67% of legal clients base their hiring decision on how fast a firm responds (Clio). Law firms that respond within the first five minutes see a 400% higher conversion rate. Your website needs a visible phone number on every page (click-to-call on mobile), a contact form that works, and ideally a link to book a consultation directly. Every extra click between a visitor and your inbox is a lost lead.</p>
 
-      <h2 class="reveal"><span lang="en">Real example: Riera Law Firm</span><span lang="es">Ejemplo real: Riera Law Firm</span></h2>
+      <h2 class="reveal">Real example: Riera Law Firm</h2>
 
-      <p class="reveal"><span lang="en">I did not write this post from theory. I built a website for <a href="../case-study-rieralaw.html" style="color:var(--purple);font-weight:600">Riera Law Firm</a>, a securities arbitration practice led by a former SEC enforcement attorney in Coral Gables, Florida.</span><span lang="es">No escribí este artículo desde la teoria. Construí un sitio web para <a href="../case-study-rieralaw.html" style="color:var(--purple);font-weight:600">Riera Law Firm</a>, una práctica de arbitraje de valores dirigida por un ex fiscal de la SEC en Coral Gables, Florida.</span></p>
+      <p class="reveal">I did not write this post from theory. I built a website for <a href="/case-study-rieralaw.html" style="color:var(--purple);font-weight:600">Riera Law Firm</a>, a securities arbitration practice led by a former SEC enforcement attorney in Coral Gables, Florida.</p>
 
-      <p class="reveal"><span lang="en">When I started, the firm had two competing websites on the same domain causing DNS conflicts, broken email delivery (messages from clients and courts were going missing), plugin security vulnerabilities, and no Spanish-language presence despite serving a bilingual client base.</span><span lang="es">Cuando empecé, el bufete tenía dos sitios web compitiendo en el mismo dominio causando conflictos de DNS, entrega de correo electrónico rota (mensajes de clientes y tribunales se perdían), vulnerabilidades de seguridad en plugins y ninguna presencia en español a pesar de servir a una base de clientes bilingüe.</span></p>
+      <p class="reveal">When I started, the firm had two competing websites on the same domain causing DNS conflicts, broken email delivery (messages from clients and courts were going missing), plugin security vulnerabilities, and no Spanish-language presence despite serving a bilingual client base.</p>
 
-      <p class="reveal"><span lang="en">I rebuilt the entire site from scratch: 70+ pages covering every practice area, full bilingual support in English and Spanish, proper DNS and email restoration, a custom design system that reflects the authority of a federal-level practice, and an ongoing monthly care plan for security updates and maintenance.</span><span lang="es">Reconstruí todo el sitio desde cero: más de 70 páginas cubriendo cada área de práctica, soporte bilingüe completo en inglés y español, restauración adecuada de DNS y correo, un sistema de diseño personalizado que refleja la autoridad de una práctica a nivel federal, y un plan de cuidado mensual continuo para actualizaciones de seguridad y mantenimiento.</span></p>
+      <p class="reveal">I rebuilt the entire site from scratch: 70+ pages covering every practice area, full bilingual support in English and Spanish, proper DNS and email restoration, a custom design system that reflects the authority of a federal-level practice, and an ongoing monthly care plan for security updates and maintenance.</p>
 
-      <p class="reveal"><span lang="en">The result? Zero downtime during migration. A site that earns trust from the first second. And a client who said: "He treats my site like it's his own. I trust him with the online face of my practice." You can read the <a href="../case-study-rieralaw.html" style="color:var(--purple);font-weight:600">full case study here</a>.</span><span lang="es">El resultado? Cero tiempo de inactividad durante la migración. Un sitio que genera confianza desde el primer segundo. Y un cliente que dijo: "Trata mi sitio como si fuera suyo. Le confío la cara digital de mi práctica." Puedes leer el <a href="../case-study-rieralaw.html" style="color:var(--purple);font-weight:600">caso de estudio completo aquí</a>.</span></p>
+      <p class="reveal">The result? Zero downtime during migration. A site that earns trust from the first second. And a client who said: "He treats my site like it's his own. I trust him with the online face of my practice." You can read the <a href="/case-study-rieralaw.html" style="color:var(--purple);font-weight:600">full case study here</a>.</p>
 
-      <h2 class="reveal"><span lang="en">What it costs (honest answer)</span><span lang="es">Cuánto cuesta (respuesta honesta)</span></h2>
+      <h2 class="reveal">What it costs (honest answer)</h2>
 
-      <p class="reveal"><span lang="en">Most custom law firm websites run between $3,000 and $7,000. That range gets you a professionally designed, mobile-responsive site with dedicated practice area pages, attorney bios, contact forms, and basic SEO. Larger firms or sites with complex features like client portals or case result databases can run higher.</span><span lang="es">La mayoría de los sitios web personalizados para bufetes cuestan entre $3,000 y $7,000. Ese rango te da un sitio diseñado profesionalmente, adaptable a móviles, con páginas dedicadas de áreas de práctica, biografías de abogados, formularios de contacto y SEO básico. Firmas más grandes o sitios con funciones complejas como portales de clientes o bases de datos de resultados pueden costar mas.</span></p>
+      <p class="reveal">Most custom law firm websites run between $3,000 and $7,000. That range gets you a professionally designed, mobile-responsive site with dedicated practice area pages, attorney bios, contact forms, and basic SEO. Larger firms or sites with complex features like client portals or case result databases can run higher.</p>
 
-      <p class="reveal"><span lang="en">The cheap alternatives exist. You can get a template site for $500 or use a DIY builder for $20 a month. But consider what it says to a prospective client when your website looks like every other template on the internet. You did not take a shortcut on your law degree. Your website should not look like you did either.</span><span lang="es">Las alternativas baratas existen. Puedes obtener un sitio de plantilla por $500 o usar un constructor haz-lo-tu-mismo por $20 al mes. Pero considera lo que le dice a un cliente potencial cuando tu sitio web se ve como cualquier otra plantilla en internet. No tomaste un atajo con tu título de abogado. Tu sitio web tampoco debería parecer que lo hiciste.</span></p>
+      <p class="reveal">The cheap alternatives exist. You can get a template site for $500 or use a DIY builder for $20 a month. But consider what it says to a prospective client when your website looks like every other template on the internet. You did not take a shortcut on your law degree. Your website should not look like you did either.</p>
 
-      <p class="reveal"><span lang="en">I wrote a detailed breakdown of website pricing for small businesses. <a href="how-much-does-a-website-cost.html" style="color:var(--purple);font-weight:600">Read the full pricing guide here</a>.</span><span lang="es">Escribí un desglose detallado de precios de sitios web para pequeños negocios. <a href="how-much-does-a-website-cost.html" style="color:var(--purple);font-weight:600">Lee la guía completa de precios aquí</a>.</span></p>
+      <p class="reveal">I wrote a detailed breakdown of website pricing for small businesses. <a href="/blog/how-much-does-a-website-cost.html" style="color:var(--purple);font-weight:600">Read the full pricing guide here</a>.</p>
 
-      <h2 class="reveal"><span lang="en">The referral myth: "All my clients come from referrals"</span><span lang="es">El mito de las referencias: "Todos mis clientes vienen por recomendación"</span></h2>
+      <h2 class="reveal">The referral myth: "All my clients come from referrals"</h2>
 
-      <p class="reveal"><span lang="en">This is the most common objection I hear from lawyers. "I don't need a website. All my clients come from referrals."</span><span lang="es">Esta es la objeción más común que escucho de los abogados. "No necesito un sitio web. Todos mis clientes vienen por recomendación."</span></p>
+      <p class="reveal">This is the most common objection I hear from lawyers. "I don't need a website. All my clients come from referrals."</p>
 
-      <p class="reveal"><span lang="en">Here is what the data actually says:</span><span lang="es">Esto es lo que dicen los datos:</span></p>
+      <p class="reveal">Here is what the data actually says:</p>
 
       <div class="stat-highlight reveal">
-        <p><span lang="en">46% of people who receive a personal referral to a lawyer still check the firm's website and read reviews before making contact.</span><span lang="es">El 46% de las personas que reciben una referencia personal hacia un abogado aún revisan el sitio web del bufete y leen reseñas antes de hacer contacto.</span></p>
-        <span class="source"><span lang="en">Source: Martindale-Avvo Consumer Research</span><span lang="es">Fuente: Investigación del Consumidor de Martindale-Avvo</span></span>
+        <p>46% of people who receive a personal referral to a lawyer still check the firm's website and read reviews before making contact.</p>
+        <span class="source">Source: Martindale-Avvo Consumer Research</span>
       </div>
 
-      <p class="reveal"><span lang="en">Nearly half of your referrals are Googling you before they call. They are looking at your website, reading your reviews, and deciding whether to follow through on that recommendation. If your site looks outdated, has broken links, or does not clearly show what you do, you are losing people who were already warm leads.</span><span lang="es">Casi la mitad de tus referidos te buscan en Google antes de llamar. Están viendo tu sitio web, leyendo tus reseñas y decidiendo si seguir adelante con esa recomendación. Si tu sitio se ve desactualizado, tiene enlaces rotos o no muestra claramente lo qué haces, estás perdiendo personas que ya eran clientes potenciales calificados.</span></p>
+      <p class="reveal">Nearly half of your referrals are Googling you before they call. They are looking at your website, reading your reviews, and deciding whether to follow through on that recommendation. If your site looks outdated, has broken links, or does not clearly show what you do, you are losing people who were already warm leads.</p>
 
-      <p class="reveal"><span lang="en">Over 75% of clients visit two to five law firm websites before deciding who to contact (MyCase). Your website is not just a digital business card. It is the deciding factor in whether someone calls you or the next firm on the list.</span><span lang="es">Más del 75% de los clientes visitan de dos a cinco sitios web de bufetes antes de decidir a quién contactar (MyCase). Tu sitio web no es solo una tarjeta de presentación digital. Es el factor decisivo en si alguien te llama a ti o al siguiente bufete en la lista.</span></p>
+      <p class="reveal">Over 75% of clients visit two to five law firm websites before deciding who to contact (MyCase). Your website is not just a digital business card. It is the deciding factor in whether someone calls you or the next firm on the list.</p>
 
-      <h2 class="reveal"><span lang="en">Speed matters more than you think</span><span lang="es">La velocidad importa más de lo que piensas</span></h2>
+      <h2 class="reveal">Speed matters more than you think</h2>
 
-      <p class="reveal"><span lang="en">This one surprises most attorneys. It is not just about having a website. It is about how fast you respond once someone reaches out through it.</span><span lang="es">Esto sorprende a la mayoría de los abogados. No se trata solo de tener un sitio web. Se trata de qué tan rápido respondes cuando alguien se comunica a través de él.</span></p>
+      <p class="reveal">This one surprises most attorneys. It is not just about having a website. It is about how fast you respond once someone reaches out through it.</p>
 
-      <p class="reveal"><span lang="en">72% of potential legal clients move on if a law firm does not respond within 24 hours (Clio Legal Trends Report). That means if someone fills out your contact form on a Friday evening and you do not get back to them until Monday, there is a strong chance they have already hired someone else.</span><span lang="es">El 72% de los clientes legales potenciales siguen adelante si un bufete no responde dentro de 24 horas (Informe de Tendencias Legales de Clio). Eso significa que si alguien llena tu formulario de contacto un viernes por la noche y no le respondes hasta el lunes, hay una alta probabilidad de que ya hayan contratado a alguien mas.</span></p>
+      <p class="reveal">72% of potential legal clients move on if a law firm does not respond within 24 hours (Clio Legal Trends Report). That means if someone fills out your contact form on a Friday evening and you do not get back to them until Monday, there is a strong chance they have already hired someone else.</p>
 
-      <p class="reveal"><span lang="en">A good law firm website makes this easier by connecting form submissions to your email or practice management software instantly, offering click-to-call on mobile, and even providing a direct booking link so clients can schedule a consultation without waiting for a callback.</span><span lang="es">Un buen sitio web para un bufete facilita esto al conectar los envíos de formularios con tu correo o software de gestión de práctica al instante, ofreciendo clic para llamar en móvil, e incluso proporcionando un enlace de reserva directa para que los clientes puedan agendar una consulta sin esperar que les devuelvan la llamada.</span></p>
+      <p class="reveal">A good law firm website makes this easier by connecting form submissions to your email or practice management software instantly, offering click-to-call on mobile, and even providing a direct booking link so clients can schedule a consultation without waiting for a callback.</p>
 
-      <h2 class="reveal"><span lang="en">Bottom line</span><span lang="es">En resumen</span></h2>
+      <h2 class="reveal">Bottom line</h2>
 
-      <p class="reveal"><span lang="en">A law firm website is not a brochure. It is the front door to your practice. 92% of your future clients will walk through it before they ever pick up the phone. It needs to load fast, look professional, clearly communicate your expertise, and make it effortless to get in touch.</span><span lang="es">Un sitio web para un bufete no es un folleto. Es la puerta principal de tu práctica. El 92% de tus futuros clientes pasarán por él antes de levantar el teléfono. Necesita cargar rápido, verse profesional, comunicar claramente tu experiencia y hacer que sea fácil ponerse en contacto.</span></p>
+      <p class="reveal">A law firm website is not a brochure. It is the front door to your practice. 92% of your future clients will walk through it before they ever pick up the phone. It needs to load fast, look professional, clearly communicate your expertise, and make it effortless to get in touch.</p>
 
-      <p class="reveal"><span lang="en">I have built one. I know what it takes. If you want to see the proof, <a href="../case-study-rieralaw.html" style="color:var(--purple);font-weight:600">read the Riera Law case study</a>.</span><span lang="es">Yo construí uno. Sé lo que se necesita. Si quieres ver la prueba, <a href="../case-study-rieralaw.html" style="color:var(--purple);font-weight:600">lee el caso de estudio de Riera Law</a>.</span></p>
+      <p class="reveal">I have built one. I know what it takes. If you want to see the proof, <a href="/case-study-rieralaw.html" style="color:var(--purple);font-weight:600">read the Riera Law case study</a>.</p>
 
       <div class="cta-box reveal">
-        <p><span lang="en">If you are a lawyer who knows your website needs work, let's talk. I offer a free 15-minute call. No pitch, no pressure. Just an honest look at what your site needs.</span><span lang="es">Si eres un abogado que sabe que su sitio web necesita trabajo, hablemos. Ofrezco una llamada gratuita de 15 minutos. Sin discurso de ventas, sin presión. Solo una mirada honesta a lo que tu sitio necesita.</span></p>
-        <a class="btn" href="book.html"><span lang="en">Book a free 15-minute call</span><span lang="es">Agenda una llamada gratuita de 15 minutos</span>&nbsp;&rarr;</a>
+        <p>If you are a lawyer who knows your website needs work, let's talk. I offer a free 15-minute call. No pitch, no pressure. Just an honest look at what your site needs.</p>
+        <a class="btn" href="/book.html">Book a free 15-minute call&nbsp;&rarr;</a>
       </div>
 
     </div>
@@ -369,35 +391,34 @@
 
 <section style="padding:48px 0 0">
   <div class="wrap">
-    <h2 class="reveal" style="font-size:1.3rem;margin-bottom:20px"><span lang="en">Keep reading</span><span lang="es">Sigue leyendo</span></h2>
+    <h2 class="reveal" style="font-size:1.3rem;margin-bottom:20px">Keep reading</h2>
     <div style="display:flex;flex-direction:column;gap:14px">
-      <a class="reveal" href="why-your-competitor-gets-calls-from-google.html" style="color:var(--purple);font-weight:600;font-size:1rem"><span lang="en">Why Your Competitor Gets Calls From Google (And You Don't) &rarr;</span><span lang="es">Por qué tu competencia recibe llamadas de Google (y tú no) &rarr;</span></a>
-      <a class="reveal" href="how-much-does-a-website-cost.html" style="color:var(--purple);font-weight:600;font-size:1rem"><span lang="en">How Much Does a Website Cost in 2026? &rarr;</span><span lang="es">&iquest;Cuánto cuesta un sitio web en 2026? &rarr;</span></a>
+      <a class="reveal" href="/blog/why-your-competitor-gets-calls-from-google.html" style="color:var(--purple);font-weight:600;font-size:1rem">Why Your Competitor Gets Calls From Google (And You Don't) &rarr;</a>
+      <a class="reveal" href="/blog/how-much-does-a-website-cost.html" style="color:var(--purple);font-weight:600;font-size:1rem">How Much Does a Website Cost in 2026? &rarr;</a>
     </div>
   </div>
 </section>
 </main>
 
 <div class="sticky-cta" id="stickyCta">
-  <a href="book.html"><span lang="en">Need a law firm website? Book a free call &rarr;</span><span lang="es">¿Necesitas un sitio web para tu bufete? Agenda una llamada gratis &rarr;</span></a>
+  <a href="/book.html">Need a law firm website? Book a free call &rarr;</a>
 </div>
 
 <footer>
   <div class="wrap foot-inner">
-    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="../assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="../assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span><span lang="en">This site was <strong>Made by Sebby</strong>. Yours can be too.</span><span lang="es">Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</span></span></div>
+    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="/assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="/assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span>This site was <strong>Made by Sebby</strong>. Yours can be too.</span></div>
     <div class="foot-links">
-      <a href="../services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
-      <a href="../work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
-      <a href="../website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
-      <a href="../about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
-      <a href="../blog.html"><span lang="en">Blog</span><span lang="es">Blog</span></a>
-      <a href="../privacy.html"><span lang="en">Privacy</span><span lang="es">Privacidad</span></a>
-      <a href="../terms.html"><span lang="en">Terms</span><span lang="es">Términos</span></a>
+      <a href="/services.html">What I do</a>
+      <a href="/work.html">Work</a>
+      <a href="/website-care.html">Website Care</a>
+      <a href="/about.html">About</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
       <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
     </div>
   </div>
 </footer>
-<script>!function(){var l=document.documentElement.getAttribute('data-lang');if(l==='es'){var b=document.querySelectorAll('.lang-toggle button');if(b.length===2){b[0].classList.remove('active');b[1].classList.add('active')}}}()</script>
 <script>!function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})}()</script>
 <script>!function(){var cta=document.getElementById('stickyCta');if(!cta)return;var footer=document.querySelector('footer');var shown=false;window.addEventListener('scroll',function(){var y=window.scrollY;var fTop=footer?footer.getBoundingClientRect().top+y-window.innerHeight:Infinity;if(y>400&&y<fTop){if(!shown){cta.classList.add('show');shown=true}}else{if(shown){cta.classList.remove('show');shown=false}}},{passive:true})}()</script>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>
