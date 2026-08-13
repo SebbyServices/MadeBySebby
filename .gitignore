@@ -19,3 +19,11 @@ CLAUDE.md
 
 # Python bytecode (check-consistency.py imports build.py)
 __pycache__/
+
+# Local-only working docs (research, decisions, plans). Never committed —
+# this repo is public. Ops docs proper live in ../madebysebby-ops/
+PRICING-DECISION.md
+*-DECISION.md
+*-PLAN.md
+*-RESEARCH.md
+*-AUDIT.md
