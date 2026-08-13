@@ -675,12 +675,30 @@ NAP = {
         "postalCode": "33175",
         "addressCountry": "US",
     },
-    "openingHoursSpecification": [{
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "18:00",
-    }],
+    # Mirrors the Business Profile exactly, Saturday included. The profile lists
+    # Sat 10:00-14:00; omitting it here would be a NAP mismatch on the one
+    # attribute a customer acts on.
+    "openingHoursSpecification": [
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00",
+        },
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Saturday"],
+            "opens": "10:00",
+            "closes": "14:00",
+        },
+    ],
+    # The profiles the Business Profile itself lists under "Social profiles".
+    # sameAs is how the site formally claims them as the same entity.
+    "sameAs": [
+        "https://www.linkedin.com/company/made-by-sebby/",
+        "https://instagram.com/madebysebby",
+        "https://github.com/SebbyServices",
+    ],
 }
 
 # Stable identity so every page's block is understood as ONE business rather
