@@ -49,6 +49,10 @@ DOMAIN = "https://madebysebby.com"
 # as "the Spanish FAQ is complete" when it is not.
 DROPPED = {}
 
+# Pages whose hand-written FAQ schema counted differently from the FAQ the page
+# renders. Reported so a real authoring mistake cannot hide behind the rebuild.
+MISMATCHED = {}
+
 # ---------------------------------------------------------------------------
 # The page table. One entry per source file in src/.
 #
@@ -354,6 +358,39 @@ ARIA_ES = {
     "Toggle annual billing": "Alternar facturación anual",
 }
 
+# alt text is an attribute too, so it has the same problem as aria-label: the
+# sibling-span trick cannot reach it, and a Spanish page was describing its own
+# images in English to screen readers and to image search.
+#
+# Only DESCRIPTIVE alts appear here. Brand names ("Riera Law Firm", "Made by
+# Sebby") are correctly identical in both languages and are deliberately absent;
+# translating a company's name would be wrong. check-consistency.py flags any
+# descriptive alt that reaches a Spanish page untranslated.
+ALT_ES = {
+    "Made by Sebby — Web Design, Development, Website Care":
+        "Made by Sebby — Diseño Web, Desarrollo, Cuidado Web",
+    "Made by Sebby | Web Design, Development, Website Care":
+        "Made by Sebby | Diseño Web, Desarrollo, Cuidado Web",
+    "Sebby, web designer and developer, smiling at his workstation":
+        "Sebby, diseñador y desarrollador web, sonriendo en su estación de trabajo",
+    "Sebby, web designer and developer":
+        "Sebby, diseñador y desarrollador web",
+    "Website care dashboard with security, backups, and performance monitoring":
+        "Panel de cuidado web con seguridad, respaldos y monitoreo de rendimiento",
+    "Responsive website design shown across laptop, tablet, and phone":
+        "Diseño web adaptable mostrado en laptop, tableta y teléfono",
+    "Google search result and Business Profile for a local business":
+        "Resultado de búsqueda de Google y Perfil de Empresa de un negocio local",
+    "Riera Law Firm homepage — securities arbitration attorney with courthouse background":
+        "Página de inicio de Riera Law Firm — abogado de arbitraje de valores con fondo de tribunal",
+    "Elite Care Recovery homepage — premium cold and compression therapy for post-operative patients":
+        "Página de inicio de Elite Care Recovery — terapia premium de frío y compresión para pacientes postoperatorios",
+    "Riera Law Firm homepage hero": "Portada del sitio de Riera Law Firm",
+    "Elite Care Recovery homepage hero": "Portada del sitio de Elite Care Recovery",
+    "Elite Care Recovery, South Florida": "Elite Care Recovery, sur de Florida",
+    "Elite Care Recovery — South Florida": "Elite Care Recovery — sur de Florida",
+}
+
 
 # ---------------------------------------------------------------------------
 # HTML surgery
@@ -616,15 +653,50 @@ PROSE_KEYS = ("name", "description", "headline", "slogan", "reviewBody", "text",
               "articleBody", "acceptedAnswer")
 
 
+def flatten_text(fragment):
+    return html_unescape(" ".join(re.sub(r"<[^>]+>", " ", fragment).split()))
+
+
+def faq_from_dom(html):
+    """Read the FAQ straight out of the rendered <details> blocks.
+
+    Google requires FAQPage content to appear on the page. The hand-written
+    schema had drifted from the visible copy -- it asked "Can I cancel my website
+    care plan?" where the page asks "Can I cancel?", and several answers were
+    tightened paraphrases that appeared nowhere. That is a compliance problem in
+    English before it is a translation problem in Spanish.
+
+    Deriving the schema from the DOM fixes both at once: it cannot drift again,
+    and because this runs after the language split it produces correct Spanish
+    schema with nothing to translate. Every page's <details> count already
+    matched its schema count exactly, so nothing is lost in the change.
+    """
+    entries = []
+    for block in re.finditer(r"<details[^>]*>(.*?)</details>", html, re.S):
+        inner = block.group(1)
+        summary = re.search(r"<summary[^>]*>(.*?)</summary>", inner, re.S)
+        if not summary:
+            continue
+        question = flatten_text(summary.group(1))
+        answer = flatten_text(inner[summary.end():])
+        if question and answer:
+            entries.append({
+                "@type": "Question",
+                "name": question,
+                "acceptedAnswer": {"@type": "Answer", "text": answer},
+            })
+    return entries
+
+
 def rewrite_jsonld(html, source, lang, memory):
     """Repoint schema URLs at this tree, stamp the language, translate prose.
 
-    FAQPage gets special handling. Google requires its Q&A to appear in the
-    visible page content; a Spanish page asserting English questions that appear
-    nowhere on it is a structured-data violation, not a cosmetic gap. So any
-    entry this cannot translate from the page's own copy is DROPPED rather than
-    shipped in the wrong language.
+    FAQPage is not translated -- it is regenerated from the page's own <details>
+    blocks, which are already in the right language by the time this runs. See
+    faq_from_dom().
     """
+    faq_entries = faq_from_dom(html)
+
     def fix_block(m):
         raw = m.group(1)
         try:
@@ -686,34 +758,33 @@ def rewrite_jsonld(html, source, lang, memory):
                 for item in node:
                     walk(item)
 
-        def prune_faq(node):
-            """Drop untranslatable Q&A anywhere in the graph. Returns False if
-            the node is an FAQPage left with nothing."""
+        def regenerate_faq(node):
+            """Replace every FAQPage's Q&A with what the page actually shows."""
             if isinstance(node, dict):
                 if node.get("@type") == "FAQPage":
-                    entries = node.get("mainEntity", [])
-                    kept = [q for q in entries if translatable(q)]
-                    DROPPED[source] = DROPPED.get(source, 0) + len(entries) - len(kept)
-                    if not kept:
+                    listed = len(node.get("mainEntity", []))
+                    if not faq_entries:
+                        # Schema claims an FAQ the page does not render. Better
+                        # to emit nothing than to assert invisible content.
+                        DROPPED[source] = DROPPED.get(source, 0) + listed
                         return False
-                    node["mainEntity"] = kept
+                    node["mainEntity"] = faq_entries
+                    if listed != len(faq_entries):
+                        MISMATCHED.setdefault(source, (listed, len(faq_entries)))
                 for key, value in list(node.items()):
-                    if isinstance(value, (dict, list)) and not prune_faq(value):
+                    if isinstance(value, (dict, list)) and not regenerate_faq(value):
                         del node[key]
             elif isinstance(node, list):
-                node[:] = [i for i in node if prune_faq(i)]
+                node[:] = [i for i in node if regenerate_faq(i)]
             return True
 
         # A Spanish-only page authored its schema in Spanish to begin with, so
-        # there is nothing to translate and nothing to prune. Deciding that from
-        # the page table is reliable; inferring it by string-matching the body
-        # is not, and cost Santo Domingo its entire FAQ.
+        # there is nothing to translate. Deciding that from the page table is
+        # reliable; inferring it by string-matching the body is not, and cost
+        # Santo Domingo its entire FAQ.
         spanish_source = PAGES[source].get("en", source) is None
 
-        # Prune BEFORE walk(), which rewrites the very strings translatable()
-        # inspects -- checking afterwards would compare Spanish against an
-        # English-keyed memory and drop everything.
-        if lang == "es" and not spanish_source and not prune_faq(data):
+        if not regenerate_faq(data):
             return ""           # an empty FAQPage is worse than no FAQPage
 
         walk(data)
@@ -731,10 +802,11 @@ def render(source, html, lang):
     html = rewrite_head(html, source, lang)
     html = rewrite_jsonld(html, source, lang, memory)
     if lang == "es":
-        html = re.sub(
-            r'aria-label="([^"]*)"',
-            lambda m: 'aria-label="%s"' % ARIA_ES.get(m.group(1), m.group(1)),
-            html)
+        for attr, table in (("aria-label", ARIA_ES), ("alt", ALT_ES)):
+            html = re.sub(
+                r'%s="([^"]*)"' % attr,
+                lambda m, t=table, a=attr: '%s="%s"' % (a, t.get(m.group(1), m.group(1))),
+                html)
     html = rewrite_paths(html, source, lang)
     # MUST come after rewrite_paths. The toggle is the one link that deliberately
     # points at the OTHER tree, and the path rewriter would drag it back into
@@ -826,11 +898,15 @@ def main():
     print("   %d Spanish" % es)
     dropped = {k: v for k, v in DROPPED.items() if v}
     if dropped:
-        print("\n   FAQ entries dropped from Spanish pages (no translation in the"
-              "\n   page's own copy -- they would have shipped in English):")
+        print("\n   FAQPage schema removed -- these pages declare an FAQ but render no"
+              "\n   <details> blocks, so the schema would assert invisible content:")
         for source in sorted(dropped):
-            print("      %-46s %d" % (source, dropped[source]))
-        print("   Fix by wording the schema question exactly as the visible copy.")
+            print("      %-46s %d entries" % (source, dropped[source]))
+    if MISMATCHED:
+        print("\n   FAQ schema regenerated from the page (counts differed from the"
+              "\n   hand-written schema -- worth a look):")
+        for source, (was, now) in sorted(MISMATCHED.items()):
+            print("      %-46s %d -> %d" % (source, was, now))
     return 0
 
 

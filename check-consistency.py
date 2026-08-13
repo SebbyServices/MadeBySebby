@@ -395,6 +395,46 @@ def check_bilingual_coverage():
 
 
 # ---------------------------------------------------------------------------
+# 6b. No English descriptive alt/aria text survives onto a Spanish page
+#
+# These are attributes, so the bilingual sibling spans cannot carry them and
+# check_bilingual_coverage cannot see them. build.py translates them from tables;
+# this makes sure a NEW image added later doesn't quietly ship English alt text
+# to Spanish screen readers and to Google Images.
+#
+# Brand names are correctly identical in both trees and are not translated.
+# ---------------------------------------------------------------------------
+BRAND_ALT = {
+    "Made by Sebby", "Riera Law Firm", "Elite Care Recovery",
+    "Riera Law Firm, Coral Gables, Florida", "Riera Law Firm — Coral Gables, Florida",
+}
+
+
+def check_translated_attributes():
+    for page in pages():
+        if not page.startswith("es/") or page in EXEMPT:
+            continue
+        # The language toggle is deliberately cross-language: its link to English
+        # carries lang="en" and an English aria-label, so a screen reader switches
+        # pronunciation and the label matches the element it labels.
+        html = re.sub(r'<div class="lang-toggle">.*?</div>', "", read(page), flags=re.S)
+        for attr, table in (("alt", build.ALT_ES), ("aria-label", build.ARIA_ES)):
+            for m in re.finditer(r'%s="([^"]*)"' % attr, html):
+                value = m.group(1)
+                if not value or value in BRAND_ALT or value in table.values():
+                    continue
+                if value in table:
+                    fail("translated attributes", page,
+                         "%s=%r is still the English key from build.py %s -- the "
+                         "table was not applied" % (attr, value, table))
+                else:
+                    fail("translated attributes", page,
+                         "%s=%r has no Spanish form. Add it to %s in build.py, or "
+                         "to BRAND_ALT here if it is a name that must not be translated"
+                         % (attr, value, "ALT_ES" if attr == "alt" else "ARIA_ES"))
+
+
+# ---------------------------------------------------------------------------
 # 7. Nav and footer link sets, compared by logical page across BOTH trees
 # ---------------------------------------------------------------------------
 def check_shared_blocks():
@@ -509,6 +549,7 @@ def main():
     check_hreflang()
     check_links()
     check_bilingual_coverage()
+    check_translated_attributes()
     check_lang_toggle()
     check_cta_routing()   # must precede check_shared_blocks (populates cta_flagged)
     check_shared_blocks()
