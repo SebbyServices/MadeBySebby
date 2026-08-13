@@ -768,7 +768,107 @@ LOCAL_TYPES = ("ProfessionalService", "LocalBusiness")
 
 # Schema keys holding human prose rather than identifiers or URLs.
 PROSE_KEYS = ("name", "description", "headline", "slogan", "reviewBody", "text",
-              "articleBody", "acceptedAnswer")
+              "articleBody", "acceptedAnswer", "disambiguatingDescription")
+
+
+# ---------------------------------------------------------------------------
+# Breadcrumb labels.
+#
+# These were hand-written per page and had drifted badly: 13 Spanish pages said
+# "Home" instead of "Inicio", and seven carried fully English labels -- "Portfolio",
+# "Website Care Plans", "Riera Law Firm Case Study" -- on pages declaring
+# inLanguage "es". Breadcrumbs render in search results, so that was English
+# showing under a Spanish listing.
+#
+# Generated from here now, URLs included, so the label and the tree cannot
+# disagree. Two English labels are also shortened: "Web Design, Website Care &
+# SEO Services" and "Website Care Plans" are page titles, not breadcrumbs, and
+# Google truncates them.
+CRUMB_HOME = {"en": "Home", "es": "Inicio"}
+CRUMBS = {
+    "services.html": {"en": "Services", "es": "Servicios"},
+    "work.html": {"en": "Portfolio", "es": "Portafolio"},
+    "about.html": {"en": "About Sebby", "es": "Sobre Sebby"},
+    "contact.html": {"en": "Contact", "es": "Contacto"},
+    "book.html": {"en": "Book a Call", "es": "Reservar Llamada"},
+    "pricing.html": {"en": "Pricing", "es": "Precios"},
+    "website-care.html": {"en": "Website Care", "es": "Cuidado Web"},
+    "blog.html": {"en": "Blog", "es": "Blog"},
+    "privacy.html": {"en": "Privacy Policy", "es": "Política de Privacidad"},
+    "terms.html": {"en": "Terms of Service", "es": "Términos de Servicio"},
+    "case-study-rieralaw.html": {"en": "Riera Law Firm Case Study",
+                                 "es": "Caso de Éxito: Riera Law Firm"},
+    "case-study-elitecare.html": {"en": "Elite Care Recovery Case Study",
+                                  "es": "Caso de Éxito: Elite Care Recovery"},
+    "web-design-miami.html": {"en": "Web Design Miami", "es": "Diseño Web Miami"},
+    "web-design-fort-lauderdale.html": {"en": "Web Design Fort Lauderdale",
+                                        "es": "Diseño Web Fort Lauderdale"},
+    "diseno-web-santo-domingo.html": {"en": "Web Design Santo Domingo",
+                                      "es": "Diseño Web Santo Domingo"},
+    "blog/5-signs-your-website-is-losing-clients.html": {
+        "en": "5 Signs Your Website Is Losing You Clients",
+        "es": "5 Señales de Que Tu Sitio Web Pierde Clientes"},
+    "blog/what-is-website-care.html": {
+        "en": "What Website Care Actually Means",
+        "es": "Qué Significa Realmente el Cuidado Web"},
+    "blog/how-much-does-a-website-cost.html": {
+        "en": "How Much Does a Website Cost in 2026?",
+        "es": "¿Cuánto Cuesta un Sitio Web en 2026?"},
+    "blog/why-your-competitor-gets-calls-from-google.html": {
+        "en": "Why Your Competitor Gets Calls From Google",
+        "es": "Por Qué Tu Competencia Recibe Llamadas de Google"},
+    "blog/what-a-website-does-for-a-law-firm.html": {
+        "en": "What a Website Actually Does for a Law Firm",
+        "es": "Qué Hace un Sitio Web por un Bufete de Abogados"},
+    "blog/does-your-restaurant-need-a-website.html": {
+        "en": "Does Your Restaurant Need a Website?",
+        "es": "¿Necesita Tu Restaurante un Sitio Web?"},
+}
+
+
+def breadcrumbs_for(source, lang):
+    """Home > [Blog >] this page, in the right language with the right URLs."""
+    if source not in CRUMBS:
+        return None
+    trail = [(CRUMB_HOME[lang], DOMAIN + url_for("index.html", lang))]
+    if source.startswith("blog/"):
+        trail.append((CRUMBS["blog.html"][lang], DOMAIN + url_for("blog.html", lang)))
+    trail.append((CRUMBS[source][lang], DOMAIN + url_for(source, lang)))
+    return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": i, "name": name, "item": url}
+            for i, (name, url) in enumerate(trail, start=1)
+        ],
+    }
+
+
+# Schema prose describing SERVICES rather than the page, so no page-level meta
+# value covers it and it does not appear verbatim in the body either -- which is
+# why the translation memory could not resolve it. Hand-written.
+#
+# Jorge's testimonial is the Spanish text already published on the portfolio page,
+# not a re-translation, so the schema quotes him exactly as the site does.
+SCHEMA_ES = {
+    "Custom website design and development for small businesses. Mobile-first, fast-loading, built to convert.": "Diseño y desarrollo web personalizado para pequeños negocios. Móvil primero, carga rápida, hecho para convertir.",
+    "Custom web design and development for small businesses. Mobile-first, fast-loading websites built to convert visitors into customers.": "Diseño y desarrollo web personalizado para pequeños negocios. Sitios rápidos, móvil primero, hechos para convertir visitantes en clientes.",
+    "Custom Web Design & Development": "Diseño y Desarrollo Web Personalizado",
+    "Monthly website maintenance including updates, backups, security, speed optimization, and small edits.": "Mantenimiento mensual de sitios web: actualizaciones, respaldos, seguridad, optimización de velocidad y ediciones pequeñas.",
+    "Monthly website maintenance including software updates, daily backups, security monitoring, speed optimization, and small edits.": "Mantenimiento mensual: actualizaciones de software, respaldos diarios, monitoreo de seguridad, optimización de velocidad y ediciones pequeñas.",
+    "Website Care — Monthly Website Maintenance": "Cuidado Web — Mantenimiento Mensual",
+    "Local SEO, Google Business Profile setup, and honest search optimization that compounds over time.": "SEO local, configuración del Perfil de Empresa de Google y optimización de búsqueda honesta que se acumula con el tiempo.",
+    "Free Web Design Consultation": "Consulta Gratuita de Diseño Web",
+    "Weekly tested software and security updates, daily off-site backups, uptime and security monitoring around the clock, monthly health report in plain English, and response within two business days": "Actualizaciones semanales de software y seguridad verificadas, respaldos diarios fuera del sitio, monitoreo de disponibilidad y seguridad las 24 horas, informe mensual de salud en términos claros, y respuesta dentro de dos días hábiles",
+    "Everything in Essentials plus 1 hour of content edits, quarterly speed and performance tuning, backup restoration if compromised, and one-business-day response": "Todo lo del plan Esencial más 1 hora de ediciones de contenido, optimización trimestral de velocidad y rendimiento, restauración desde respaldo si el sitio es comprometido, y respuesta en un día hábil",
+    "Everything in Standard plus 2 hours monthly for edits and on-page SEO, monthly Search Console and Analytics review, quarterly 30-minute strategy call, and 4-business-hour critical outage response": "Todo lo del plan Estándar más 2 horas mensuales para ediciones y SEO on-page, revisión mensual de Search Console y Analytics, llamada trimestral de estrategia de 30 minutos, y respuesta a interrupciones críticas en 4 horas hábiles",
+    "Up to 5 pages, mobile-responsive design, contact form, basic SEO setup, Google Analytics. Delivered in 2-3 weeks.": "Hasta 5 páginas, diseño adaptable a móvil, formulario de contacto, configuración básica de SEO, Google Analytics. Entrega en 2-3 semanas.",
+    "Up to 10 pages, custom design from scratch, copywriting help, SEO optimization, speed optimization, bilingual option. Delivered in 4-6 weeks.": "Hasta 10 páginas, diseño personalizado desde cero, ayuda con redacción, optimización SEO, optimización de velocidad, opción bilingüe. Entrega en 4-6 semanas.",
+    "Unlimited pages, full custom design and strategy, professional copywriting, advanced SEO, integrations, 30 days post-launch optimization. Delivered in 6-10 weeks.": "Páginas ilimitadas, diseño y estrategia totalmente personalizados, redacción profesional, SEO avanzado, integraciones, 30 días de optimización post-lanzamiento. Entrega en 6-10 semanas.",
+    "Freelance web design studio run by Sebastian (Sebby), building custom websites for small businesses. Not affiliated with the Sebby fashion/outerwear brand.": "Estudio de diseño web independiente dirigido por Sebastian (Sebby), que construye sitios web personalizados para pequeños negocios. Sin relación con la marca de ropa Sebby.",
+    "Freelance web designer and developer who builds custom websites for small businesses with personal attention and plain English communication.": "Diseñador y desarrollador web independiente que construye sitios web personalizados para pequeños negocios, con atención personal y comunicación clara.",
+    "Sebby rebuilt my law firm's entire web presence and untangled infrastructure problems that had my domain, my email, and two competing websites at odds. He treats my site like it's his own. I trust him with the online face of my practice.": "Sebby reconstruyó toda la presencia web de mi bufete y resolvió problemas de infraestructura que tenían mi dominio, mi correo y dos sitios web compitiendo entre sí. Trabaja rápido, explica todo en términos claros, y trata mi sitio como si fuera suyo. Le confío la cara digital de mi práctica."
+}
 
 
 def flatten_text(fragment):
@@ -814,6 +914,7 @@ def rewrite_jsonld(html, source, lang, memory):
     faq_from_dom().
     """
     faq_entries = faq_from_dom(html)
+    crumbs = breadcrumbs_for(source, lang)
 
     def fix_block(m):
         raw = m.group(1)
@@ -822,7 +923,19 @@ def rewrite_jsonld(html, source, lang, memory):
         except json.JSONDecodeError:
             return m.group(0)
 
-        top_types = ("WebPage", "BlogPosting", "ProfessionalService", "LocalBusiness")
+        # Breadcrumbs are generated, not translated -- see CRUMBS.
+        if isinstance(data, dict) and data.get("@type") == "BreadcrumbList":
+            if crumbs is None:
+                return m.group(0)
+            return '<script type="application/ld+json">\n%s\n</script>' % json.dumps(
+                crumbs, ensure_ascii=False, indent=2)
+
+        # Page-level types whose name/description describe THIS page, so the
+        # Spanish head strings we already wrote are the correct values. Without
+        # this, 31 English strings sat inside nodes declaring inLanguage "es".
+        top_types = ("WebPage", "BlogPosting", "ProfessionalService", "LocalBusiness",
+                     "ContactPage", "CollectionPage", "AboutPage", "ItemPage",
+                     "WebSite", "Blog", "Article")
 
         # A string that is already one of the Spanish sides needs no translation.
         # diseno-web-santo-domingo.html authored its schema in Spanish from the
@@ -858,7 +971,7 @@ def rewrite_jsonld(html, source, lang, memory):
                             node[key] = DOMAIN + url_for(candidate, lang)
                         continue
                     if lang == "es" and not spanish_source and key in PROSE_KEYS and isinstance(value, str):
-                        translated = resolved(value)
+                        translated = SCHEMA_ES.get(html_unescape(value)) or resolved(value)
                         if translated:
                             node[key] = translated
                             continue
@@ -875,11 +988,17 @@ def rewrite_jsonld(html, source, lang, memory):
                 if "inLanguage" in node or node.get("@type") in top_types:
                     node["inLanguage"] = "es" if lang == "es" else "en"
 
-                if lang == "es":
-                    if node.get("@type") == "BlogPosting" and "headline" in node:
-                        node["headline"] = PAGES[source]["meta"]["title"]
-                    if "description" in node and node.get("@type") in top_types:
-                        node["description"] = PAGES[source]["meta"]["desc"]
+                if lang == "es" and not spanish_source:
+                    meta = PAGES[source].get("meta")
+                    if meta and node.get("@type") in top_types:
+                        if "headline" in node:
+                            node["headline"] = meta["title"]
+                        if "description" in node:
+                            node["description"] = meta["desc"]
+                        # Brand identity keeps its real name; a page-level node's
+                        # name describes the page, so it follows the title.
+                        if "name" in node and node["name"] != NAP["name"]:
+                            node["name"] = meta["title"]
             elif isinstance(node, list):
                 for item in node:
                     walk(item)
