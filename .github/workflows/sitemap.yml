@@ -3,7 +3,7 @@ name: Update sitemap
 on:
   push:
     branches: [main]
-    paths: ['*.html', 'blog/*.html']
+    paths: ['*.html', 'blog/*.html', 'es/**/*.html']
 
 jobs:
   sitemap:
@@ -22,16 +22,35 @@ jobs:
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
           echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
 
-          # Homepage first (use its own last-modified date)
-          HDATE=$(git log -1 --format=%aI -- index.html | cut -d'T' -f1)
-          echo "  <url><loc>${DOMAIN}/</loc><lastmod>${HDATE}</lastmod></url>" >> sitemap.xml
+          # The root of each tree, emitted as a directory URL rather than
+          # /index.html so it matches the canonical the page itself declares.
+          for PAIR in "index.html:/" "es/index.html:/es/"; do
+            F="${PAIR%%:*}"; U="${PAIR##*:}"
+            FDATE=$(git log -1 --format=%aI -- "$F" | cut -d'T' -f1)
+            echo "  <url><loc>${DOMAIN}${U}</loc><lastmod>${FDATE}</lastmod></url>" >> sitemap.xml
+          done
 
-          # All HTML pages except excluded ones
+          # Everything else, across both trees.
+          #
+          # src/ holds the bilingual sources that build.py splits into these
+          # trees. They are not pages. If they reached the sitemap they would be
+          # indexable duplicates serving both languages at one URL -- precisely
+          # the defect the split exists to remove.
+          #
+          # Two exclusions are by -path, not -name, and the difference matters:
+          # precios.html at the root is the Spanish DR one-pager (noindex), but
+          # es/precios.html is the real Spanish pricing page; and
+          # diseno-web-santo-domingo.html at the root is now a redirect stub,
+          # while the /es/ one is the live page. -name would silently drop two
+          # indexable Spanish pages and nobody would notice for months.
           find . -name '*.html' \
+            -not -path './src/*' \
+            -not -name 'index.html' \
             -not -name '404.html' \
             -not -name 'thank-you.html' \
-            -not -name 'precios.html' \
-            -not -name 'index.html' \
+            -not -name 'gracias.html' \
+            -not -path './precios.html' \
+            -not -path './diseno-web-santo-domingo.html' \
             | sed 's|^\./||' | sort \
             | while read f; do
                 FDATE=$(git log -1 --format=%aI -- "$f" | cut -d'T' -f1)
@@ -39,6 +58,8 @@ jobs:
               done
 
           echo '</urlset>' >> sitemap.xml
+
+          echo "sitemap.xml: $(grep -c '<loc>' sitemap.xml) URLs"
 
       - name: Commit if changed
         run: |
