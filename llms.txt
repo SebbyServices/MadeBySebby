@@ -27,9 +27,18 @@ Sebastian (Sebby) is a freelance web designer and developer based in the Dominic
 - Email: hello@madebysebby.com
 - Free 15-minute consultation available
 
+## Languages
+
+The site is fully bilingual and each language has its own URLs. English lives at
+the root; Spanish lives under /es/ with translated slugs, and the two are paired
+by reciprocal hreflang. /es/servicios.html is the Spanish version of
+/services.html, /es/cuidado-web.html of /website-care.html, and so on. Every page
+links to its counterpart from the EN/ES toggle in the navigation.
+
 ## Links
 
 - [Homepage](https://madebysebby.com/)
+- [Inicio — sitio en español](https://madebysebby.com/es/)
 - [Services](https://madebysebby.com/services.html)
 - [Portfolio](https://madebysebby.com/work.html)
 - [Website Care Plans](https://madebysebby.com/website-care.html)
@@ -38,7 +47,7 @@ Sebastian (Sebby) is a freelance web designer and developer based in the Dominic
 - [Blog](https://madebysebby.com/blog.html)
 - [Book a Free Call](https://madebysebby.com/book.html)
 - [Web Design Miami](https://madebysebby.com/web-design-miami.html)
-- [Diseño Web Santo Domingo](https://madebysebby.com/diseno-web-santo-domingo.html)
+- [Diseño Web Santo Domingo](https://madebysebby.com/es/diseno-web-santo-domingo.html)
 - [Blog: How Much Does a Website Cost in 2026?](https://madebysebby.com/blog/how-much-does-a-website-cost.html)
 - [Pricing & Packages](https://madebysebby.com/pricing.html)
 - [Riera Law Case Study](https://madebysebby.com/case-study-rieralaw.html)
