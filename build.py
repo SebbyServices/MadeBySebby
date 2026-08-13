@@ -868,6 +868,17 @@ def render(source, html, lang):
     html = strip_toggle_machinery(html, lang)
     html = rewrite_head(html, source, lang)
     html = rewrite_jsonld(html, source, lang, memory)
+    # Strings living inside inline JS, which no lang= span can reach. The contact
+    # form's onsubmit handler hardcoded an English mail subject and redirected to
+    # the English thank-you page even from the Spanish form -- so a Spanish
+    # visitor who completed the form landed on "Message Sent" in English, while
+    # es/gracias.html sat there reachable from nowhere.
+    if lang == "es":
+        html = html.replace("var s='Website project'", "var s='Proyecto web'")
+        html = html.replace(
+            "window.location.href='/thank-you.html'",
+            "window.location.href='%s'" % url_for("thank-you.html", "es"))
+
     if lang == "es":
         for attr, table in (("aria-label", ARIA_ES), ("alt", ALT_ES)):
             html = re.sub(
