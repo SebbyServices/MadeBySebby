@@ -748,7 +748,12 @@ FOOTER_LINKS = {
         ("/services.html", "What I do", "Qué hago"),
         ("/pricing.html", "Pricing", "Precios"),
         ("/website-care.html", "Website Care", "Cuidado Web"),
-        ("/web-design-for-law-firms.html", "For law firms", "Para abogados"),
+        # Deliberately NOT a vertical link. The footer appears on all 52 pages,
+        # so naming one industry there tells every other industry the site is
+        # not for them, and the target vertical is not settled. The calculator
+        # is the highest-intent destination on the site and works for anyone:
+        # competitors gate theirs behind a form, this one just answers.
+        ("/pricing.html#calculator", "Price calculator", "Calculadora de precios"),
     ),
     "studio": (
         ("/work.html", "Work", "Trabajo"),
