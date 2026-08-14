@@ -931,6 +931,13 @@ PRICES = {
     "{{EDIT_SINGLE}}": "$49",
     "{{EDIT_3PACK}}": "$129",
     "{{EDIT_5PACK}}": "$199",
+    # Page counts per tier. Tokenised because pricing.html and the DR one-pager
+    # had drifted apart on exactly this: the same $2,500 bought "up to 5 pages"
+    # on one and "1-3 paginas" on the other. Prices matching is not enough if
+    # what the price BUYS disagrees, and the DR page was the stingier of the two,
+    # which is the opposite of the intent.
+    "{{PAGES_STARTER}}": "5",
+    "{{PAGES_CUSTOM}}": "10",
     # What competing agencies charge. A claim about others, not a price of ours.
     "{{AGENCY_LOW}}": "$10,000",
     "{{AGENCY_HIGH}}": "$30,000",

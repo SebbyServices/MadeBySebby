@@ -723,6 +723,44 @@ def check_precios_stays_spanish():
              % (path or "/"))
 
 
+def check_dr_price_parity():
+    """The DR one-pager must quote exactly the tier prices the main page does.
+
+    This is the invariant the whole "no regional discount" position rests on. If
+    precios.html and pricing.html ever disagree on a number, a prospect who finds
+    both has a real argument, and the answer to "price by scope, not by country"
+    stops being true.
+
+    Worth stating what actually went wrong, because it was not the prices. Those
+    matched. The two pages disagreed on what the price BOUGHT: $2,500 was "up to
+    5 pages" on the main page and "1-3 paginas" on the DR one, so the page built
+    for the Dominican market was the stingier of the two. Page counts are tokens
+    now, which is the structural fix; this check covers the prices.
+    """
+    dr, main = "precios.html", "es/precios.html"
+    if not (os.path.exists(dr) and os.path.exists(main)):
+        return
+    tiers = {build.PRICES[k] for k in
+             ("{{PRICE_STARTER}}", "{{PRICE_CUSTOM}}", "{{PRICE_PREMIUM}}")}
+    dr_text = unescape(re.sub(r"<[^>]+>", " ", read(dr)))
+    missing = sorted(t for t in tiers if t not in dr_text)
+    if missing:
+        fail("DR price parity", dr,
+             "does not quote %s, which the main Spanish pricing page does. The "
+             "two pages have to agree on every tier price or the no-regional-"
+             "discount position is not true." % ", ".join(missing))
+
+    # Anything the DR page quotes that is NOT a sanctioned price is the shape a
+    # regional discount would actually take.
+    ours = set(build.PRICES.values()) | MARKET_FIGURES.get(dr, set())
+    for literal in sorted({m.rstrip(",") for m in PRICE_LITERAL.findall(dr_text)}):
+        if literal not in ours:
+            fail("DR price parity", dr,
+                 "quotes %s, which is not a canonical price. A number that "
+                 "exists only on the DR page is exactly what a regional discount "
+                 "looks like." % literal)
+
+
 # ---------------------------------------------------------------------------
 # 7. Nav and footer link sets, compared by logical page across BOTH trees
 # ---------------------------------------------------------------------------
@@ -851,6 +889,7 @@ def main():
     check_em_dashes()
     check_copyright_year()
     check_precios_stays_spanish()
+    check_dr_price_parity()
     check_lang_toggle()
     check_cta_routing()   # must precede check_shared_blocks (populates cta_flagged)
     check_shared_blocks()

@@ -76,6 +76,12 @@
   .pricing h2{font-size:1.4rem;font-weight:800;text-align:center;margin-bottom:8px;letter-spacing:-.01em}
   .pricing .sub{font-size:.95rem;color:var(--muted);text-align:center;margin-bottom:32px}
   .plans{display:grid;gap:18px}
+  /* Price parity notice. Forecloses the "but your other page is cheaper"
+     conversation before it starts, in both directions. */
+  .parity{border:1px solid var(--line);border-radius:var(--radius-sm);
+    background:var(--tint);padding:18px 20px;margin-top:26px;font-size:.9rem;
+    line-height:1.6;color:var(--ink-soft)}
+  .parity strong{color:var(--ink);display:block;margin-bottom:6px;font-size:.95rem}
   .plan{
     border:1.5px solid var(--line);border-radius:var(--radius);
     padding:28px 26px;position:relative;transition:border-color .18s;
@@ -313,7 +319,7 @@
         <div class="plan-head">
           <div>
             <h3>Página Básica</h3>
-            <div class="pages">1–3 páginas</div>
+            <div class="pages">Hasta {{PAGES_STARTER}} páginas</div>
           </div>
           <div class="price">
             <div class="amount">Desde {{PRICE_STARTER}}</div>
@@ -336,7 +342,7 @@
         <div class="plan-head">
           <div>
             <h3>Sitio Profesional</h3>
-            <div class="pages">4–7 páginas</div>
+            <div class="pages">Hasta {{PAGES_CUSTOM}} páginas</div>
           </div>
           <div class="price">
             <div class="amount">Desde {{PRICE_CUSTOM}}</div>
@@ -359,7 +365,7 @@
         <div class="plan-head">
           <div>
             <h3>Sitio Avanzado</h3>
-            <div class="pages">8+ páginas · funciones a medida</div>
+            <div class="pages">Páginas ilimitadas · funciones a medida</div>
           </div>
           <div class="price">
             <div class="amount">Desde {{PRICE_PREMIUM}}</div>
@@ -380,6 +386,10 @@
     </div>
 
     <p class="plan-note">Todos los precios incluyen dominio (.com) y hosting por el primer año.<br>Hosting después del primer año: $15–$25/mes según el plan.</p>
+    <div class="parity">
+      <strong>Una nota sobre estos precios</strong>
+      Son los mismos para todos mis clientes, en Miami, en el sur de Florida y en Santo Domingo, y siempre en dólares estadounidenses ({{USD}}). Esta página existe porque aquí el contacto y la entrega funcionan distinto, por WhatsApp y en horario local, no porque los precios sean distintos. Lo que mueve el precio es el alcance del proyecto, nunca el país desde donde escribes. Puedes ver el mismo listado completo en <a href="https://madebysebby.com/es/precios.html">madebysebby.com/es/precios.html</a>.
+    </div>
   </div>
 </section>
 
