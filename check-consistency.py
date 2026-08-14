@@ -873,6 +873,91 @@ def check_cta_routing():
                  "links straight to cal.com (%s) instead of the booking page" % url)
 
 
+# Pages a visitor is NOT expected to reach by clicking from the home page.
+# Every one of these is deliberate, and the reason is what keeps this list from
+# quietly growing into an excuse.
+UNLINKED_BY_DESIGN = {
+    "404.html":                      "served by GitHub Pages on a bad URL, never linked",
+    "thank-you.html":                "reached only by submitting the contact form",
+    "es/gracias.html":               "same, Spanish",
+    "precios.html":                  "DR one-pager, shared over WhatsApp, deliberately not in nav",
+    "diseno-web-santo-domingo.html": "meta-refresh stub for the old English URL",
+}
+
+
+def check_reachable_from_home():
+    """Every page must be clickable from its own tree's home page.
+
+    A page nobody can navigate to is a page that only exists in the sitemap.
+    Before the footer was rebuilt, pricing, contact and book.html were not
+    linked from the footer at all, so whole branches depended on a single nav
+    entry. This walks the actual link graph instead of assuming.
+    """
+    def out_links(page):
+        html = re.sub(r"<(script|style)\b.*?</\1>", " ", read(page), flags=re.S | re.I)
+        found = set()
+        for href in re.findall(r'href="([^"]+)"', html):
+            if href.startswith(("http", "mailto:", "tel:", "#", "data:")):
+                continue
+            path = href.split("#")[0].split("?")[0].lstrip("/")
+            if not path or path.endswith("/"):
+                path += "index.html"
+            if path.endswith(".html") and os.path.exists(path):
+                found.add(path)
+        return found
+
+    for root in ("index.html", "es/index.html"):
+        if not os.path.exists(root):
+            continue
+        seen, queue = {root}, [root]
+        while queue:
+            for nxt in out_links(queue.pop()):
+                if nxt not in seen:
+                    seen.add(nxt)
+                    queue.append(nxt)
+        spanish = root.startswith("es/")
+        for page in pages():
+            if page.startswith("es/") != spanish or page in seen:
+                continue
+            if page in UNLINKED_BY_DESIGN:
+                continue
+            fail("reachability", page,
+                 "cannot be reached by clicking from %s. A page nobody can "
+                 "navigate to exists only in the sitemap. Link it, or add it to "
+                 "UNLINKED_BY_DESIGN with the reason." % root)
+
+
+def check_primary_buttons_go_somewhere():
+    """A primary button must navigate, not scroll.
+
+    The home page hero said "Work with Sebby" and scrolled to the closing
+    section, where a SECOND "Work with Sebby" then went to the booking page.
+    Two clicks to do one thing, with the intent already unambiguous at the
+    first. The Website Care section did the same, and pitched Website Care
+    without linking the Website Care page anywhere.
+
+    The nav CTA check above never saw either, because it only inspects <nav>.
+    A ghost button is exempt: those are secondary, and "See my work" scrolling
+    to the work section on the same page is correct behaviour.
+    """
+    for src_path in sorted(glob.glob("src/*.html") + glob.glob("src/blog/*.html")):
+        for m in re.finditer(r"<a\b([^>]*)>", read(src_path)):
+            attrs = m.group(1)
+            cls = re.search(r'class="([^"]*)"', attrs)
+            href = re.search(r'href="([^"]*)"', attrs)
+            if not (cls and href):
+                continue
+            classes = cls.group(1).split()
+            if "btn" not in classes or "btn-ghost" in classes:
+                continue
+            if href.group(1).startswith("#"):
+                fail("CTA routing", src_path,
+                     'primary button links to %s, so it scrolls instead of '
+                     "navigating. Point it at the page it is asking for. Use "
+                     "btn-ghost if it really is secondary in-page navigation."
+                     % href.group(1))
+
+
 # ---------------------------------------------------------------------------
 
 def main():
@@ -891,7 +976,9 @@ def main():
     check_precios_stays_spanish()
     check_dr_price_parity()
     check_lang_toggle()
-    check_cta_routing()   # must precede check_shared_blocks (populates cta_flagged)
+    check_cta_routing()
+    check_primary_buttons_go_somewhere()
+    check_reachable_from_home()   # must precede check_shared_blocks (populates cta_flagged)
     check_shared_blocks()
 
     built = pages()
