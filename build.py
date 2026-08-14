@@ -380,8 +380,19 @@ REDIRECTS = {
 #
 # GA4 is deliberately NOT on the stub. It would log a pageview here as well as at
 # the destination, turning one visit into two and attributing neither cleanly.
+#
+# WHEN TO ADD ONE. Only where the URL is READ by a human rather than clicked:
+# an Instagram bio, a printed page left at a front desk, a number said aloud.
+# Anywhere the link is genuinely clickable, put the tagged URL straight in the
+# href instead and let the visible text stay clean. A stub adds a hop, and a hop
+# is a place a redirect can be blocked or a visitor can bounce.
 SHORTLINKS = {
     "ig/index.html": "/?utm_source=instagram&utm_medium=bio",
+    "li/index.html": "/?utm_source=linkedin&utm_medium=bio",
+    "fb/index.html": "/?utm_source=facebook&utm_medium=bio",
+    # Printed material and walk-ins. Short enough to read off a page, and it is
+    # the only way a handed-over sheet can ever be attributed at all.
+    "card/index.html": "/?utm_source=print&utm_medium=card",
 }
 
 # aria-label is never inside a <span lang> pair -- it is an attribute, so the
