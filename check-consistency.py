@@ -927,6 +927,44 @@ def check_reachable_from_home():
                  "UNLINKED_BY_DESIGN with the reason." % root)
 
 
+def check_shortlinks():
+    """Vanity short links must exist, stay unindexed, and land somewhere real.
+
+    These are outside pages(), because they are not site pages, so nothing else
+    in this file looks at them. That is precisely why they need their own check:
+    a stub that silently stopped redirecting would keep passing every other test
+    while quietly sending an Instagram bio to a blank page.
+    """
+    for path, target in build.SHORTLINKS.items():
+        if not os.path.exists(path):
+            fail("shortlink", path, "declared in build.SHORTLINKS but not generated")
+            continue
+        html = read(path)
+        if "noindex" not in html:
+            fail("shortlink", path,
+                 "is missing noindex. A tracked short link indexed as a real page "
+                 "competes with the destination it points at.")
+        # The canonical must be the clean URL. A canonical carrying campaign tags
+        # is how a tracked URL ends up indexed as the canonical one.
+        canon = re.search(r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\']([^"\']+)', html)
+        if not canon:
+            fail("shortlink", path, "has no canonical")
+        elif "utm_" in canon.group(1):
+            fail("shortlink", path,
+                 "canonical %s carries campaign tags. It must point at the clean "
+                 "destination." % canon.group(1))
+        if "http-equiv=\"refresh\"" not in html.replace("'", '"'):
+            fail("shortlink", path, "has no meta refresh, so it redirects nowhere")
+        # The destination has to be a real page in this build.
+        dest = target.split("?")[0].split("#")[0].lstrip("/") or "index.html"
+        if dest.endswith("/"):
+            dest += "index.html"
+        if not dest.endswith(".html"):
+            dest = dest.rstrip("/") + "/index.html" if dest else "index.html"
+        if not os.path.exists(dest):
+            fail("shortlink", path, "points at %s, which does not exist" % target)
+
+
 def check_primary_buttons_go_somewhere():
     """A primary button must navigate, not scroll.
 
@@ -978,7 +1016,8 @@ def main():
     check_lang_toggle()
     check_cta_routing()
     check_primary_buttons_go_somewhere()
-    check_reachable_from_home()   # must precede check_shared_blocks (populates cta_flagged)
+    check_reachable_from_home()
+    check_shortlinks()   # must precede check_shared_blocks (populates cta_flagged)
     check_shared_blocks()
 
     built = pages()

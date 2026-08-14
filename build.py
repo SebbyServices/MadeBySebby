@@ -369,6 +369,21 @@ REDIRECTS = {
     "diseno-web-santo-domingo.html": "/es/diseno-web-santo-domingo.html",
 }
 
+# Vanity short links for places where a URL is read by a human rather than
+# clicked: an Instagram bio, a printed page left at a front desk, a voicemail.
+#
+# The point is attribution. Instagram's in-app browser frequently drops the
+# referrer, so a visit from the bio arrives in GA4 as "direct" and cannot be told
+# apart from someone typing the domain. The stub carries the campaign tags so the
+# destination records where the visit came from, while the bio shows something
+# short enough to read aloud.
+#
+# GA4 is deliberately NOT on the stub. It would log a pageview here as well as at
+# the destination, turning one visit into two and attributing neither cleanly.
+SHORTLINKS = {
+    "ig/index.html": "/?utm_source=instagram&utm_medium=bio",
+}
+
 # aria-label is never inside a <span lang> pair -- it is an attribute, so the
 # bilingual sibling trick cannot reach it. Under the old single-URL model that
 # was invisible; now a Spanish page would announce "Toggle dark mode" to a
@@ -1386,6 +1401,21 @@ def render(source, html, lang):
     return html
 
 
+SHORTLINK_STUB = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Made by Sebby</title>
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="{domain}{clean}">
+<meta http-equiv="refresh" content="0; url={target}">
+</head>
+<body>
+<p>Taking you to <a href="{target}">madebysebby.com</a>.</p>
+</body>
+</html>
+"""
+
 REDIRECT_STUB = """<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -1422,6 +1452,16 @@ def build(src_dir, out_dir):
 
     for old, target in REDIRECTS.items():
         written[old] = REDIRECT_STUB.format(domain=DOMAIN, target=target)
+
+    for path, target in SHORTLINKS.items():
+        # canonical points at the clean destination, without the campaign tags:
+        # a canonical carrying UTM parameters is how a tracked URL ends up
+        # indexed as the real one.
+        clean = target.split("?")[0] or "/"
+        # & must be escaped inside an HTML attribute. Browsers forgive it, the
+        # validator does not, and one day a parser will read &utm as an entity.
+        written[path] = SHORTLINK_STUB.format(
+            domain=DOMAIN, target=target.replace("&", "&amp;"), clean=clean)
 
     for rel, content in written.items():
         path = os.path.join(out_dir, rel)
