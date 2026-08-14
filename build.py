@@ -189,6 +189,17 @@ PAGES = {
             tw_desc="Cómo Sebby construyó un sitio web de salud para una empresa de recuperación ortopédica en el sur de Florida.",
         ),
     ),
+    "web-design-for-law-firms.html": dict(
+        es="diseno-web-para-abogados.html",
+        meta=dict(
+            title="Diseño Web para Bufetes de Abogados",
+            desc="Diseño web bilingüe para bufetes en Miami y el sur de Florida. Páginas de áreas de práctica que posicionan, biografías que convierten, y un sitio ya probado en un bufete de 70 páginas.",
+            og_title="Diseño Web para Bufetes de Abogados",
+            og_desc="Sitios web bilingües para bufetes que responden lo que un cliente preocupado realmente pregunta. Áreas de práctica, biografías y formularios que funcionan.",
+            tw_title="Diseño Web para Bufetes de Abogados",
+            tw_desc="Sitios web bilingües para bufetes. Áreas de práctica que posicionan, biografías que convierten, formularios que funcionan.",
+        ),
+    ),
     "web-design-miami.html": dict(
         es="diseno-web-miami.html",
         meta=dict(
@@ -834,6 +845,8 @@ CRUMBS = {
                                  "es": "Caso de Éxito: Riera Law Firm"},
     "case-study-elitecare.html": {"en": "Elite Care Recovery Case Study",
                                   "es": "Caso de Éxito: Elite Care Recovery"},
+    "web-design-for-law-firms.html": {"en": "Web Design for Law Firms",
+                                      "es": "Diseño Web para Bufetes"},
     "web-design-miami.html": {"en": "Web Design Miami", "es": "Diseño Web Miami"},
     "web-design-fort-lauderdale.html": {"en": "Web Design Fort Lauderdale",
                                         "es": "Diseño Web Fort Lauderdale"},
