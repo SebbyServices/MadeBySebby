@@ -93,44 +93,44 @@ PAGES = {
     "work.html": dict(
         es="portafolio.html",
         meta=dict(
-            title="Portafolio — Proyectos y Resultados | Made by Sebby",
+            title="Portafolio. Proyectos y Resultados | Made by Sebby",
             desc="Sitios web diseñados por Sebby para pequeños negocios en Miami y el sur de Florida. Casos reales de clientes, testimonios y resultados.",
-            og_title="Portafolio — Proyectos y Resultados | Made by Sebby",
-            og_desc="Mira sitios web diseñados y construidos por Sebby para negocios reales — bufetes de abogados, empresas de equipo médico y más. Con testimonios reales de clientes.",
-            tw_title="Portafolio — Proyectos y Resultados | Made by Sebby",
-            tw_desc="Mira sitios web diseñados y construidos por Sebby para negocios reales — bufetes de abogados, empresas de equipo médico y más.",
+            og_title="Portafolio. Proyectos y Resultados | Made by Sebby",
+            og_desc="Mira sitios web diseñados y construidos por Sebby para negocios reales, bufetes de abogados, empresas de equipo médico y más. Con testimonios reales de clientes.",
+            tw_title="Portafolio. Proyectos y Resultados | Made by Sebby",
+            tw_desc="Mira sitios web diseñados y construidos por Sebby para negocios reales, bufetes de abogados, empresas de equipo médico y más.",
         ),
     ),
     "about.html": dict(
         es="sobre-mi.html",
         meta=dict(
-            title="Sobre Sebby — Diseñador Web Independiente",
+            title="Sobre Sebby. Diseñador Web Independiente",
             desc="Diseñador web independiente para pequeños negocios en Miami y República Dominicana. Bilingüe, atención personal, y sitios cuidados como propios.",
-            og_title="Sobre Sebby — Diseñador Web Independiente",
+            og_title="Sobre Sebby. Diseñador Web Independiente",
             og_desc="Diseñador web independiente para pequeños negocios en Miami y República Dominicana. Bilingüe, atención personal, y sitios cuidados como propios.",
-            tw_title="Sobre Sebby — Diseñador Web Independiente",
+            tw_title="Sobre Sebby. Diseñador Web Independiente",
             tw_desc="Diseñador web independiente para pequeños negocios en Miami y República Dominicana. Bilingüe y con atención personal.",
         ),
     ),
     "contact.html": dict(
         es="contacto.html",
         meta=dict(
-            title="Contacto — Consulta Gratis de Diseño Web",
+            title="Contacto. Consulta Gratis de Diseño Web",
             desc="Agenda una consulta gratuita de 15 minutos en Miami o República Dominicana. Respuestas honestas sobre qué necesita tu sitio web y cuánto cuesta.",
-            og_title="Contacto — Consulta Gratis de Diseño Web",
+            og_title="Contacto. Consulta Gratis de Diseño Web",
             og_desc="Agenda una consulta gratuita de 15 minutos en Miami o República Dominicana. Respuestas honestas sobre qué necesita tu sitio web y cuánto cuesta.",
-            tw_title="Contacto — Consulta Gratis de Diseño Web",
+            tw_title="Contacto. Consulta Gratis de Diseño Web",
             tw_desc="Agenda una consulta gratuita de 15 minutos. Respuestas honestas sobre qué necesita tu sitio web y cuánto cuesta.",
         ),
     ),
     "book.html": dict(
         es="agendar.html",
         meta=dict(
-            title="Agendar Llamada — Consulta Gratis | Made by Sebby",
+            title="Agendar Llamada. Consulta Gratis | Made by Sebby",
             desc="Agenda una consulta gratuita de 15 minutos con Sebby. Sin presión, sin jerga. Elige la hora que te convenga y hablemos de tu negocio.",
-            og_title="Agendar Llamada — Consulta Gratis de Diseño Web",
+            og_title="Agendar Llamada. Consulta Gratis de Diseño Web",
             og_desc="Agenda una consulta gratuita de 15 minutos con Sebby. Sin presión, sin jerga. Elige la hora que te convenga.",
-            tw_title="Agendar Llamada — Consulta Gratis de Diseño Web",
+            tw_title="Agendar Llamada. Consulta Gratis de Diseño Web",
             tw_desc="Agenda una consulta gratuita de 15 minutos con Sebby. Sin presión, sin jerga. Elige la hora que te convenga.",
         ),
     ),
@@ -148,22 +148,22 @@ PAGES = {
     "website-care.html": dict(
         es="cuidado-web.html",
         meta=dict(
-            title="Planes de Cuidado Web — Mantenimiento Mensual",
+            title="Planes de Cuidado Web. Mantenimiento Mensual",
             desc="Mantenimiento mensual de sitios web para negocios en Miami y el sur de Florida. Actualizaciones, respaldos, seguridad, velocidad y ediciones. Desde $99/mes.",
-            og_title="Planes de Cuidado Web — Mantenimiento Mensual",
+            og_title="Planes de Cuidado Web. Mantenimiento Mensual",
             og_desc="Planes accesibles de mantenimiento mensual. Actualizaciones de software, respaldos diarios, monitoreo de seguridad, optimización de velocidad y ediciones incluidas.",
-            tw_title="Planes de Cuidado Web — Mantenimiento Mensual",
+            tw_title="Planes de Cuidado Web. Mantenimiento Mensual",
             tw_desc="Planes accesibles de mantenimiento mensual. Actualizaciones, respaldos diarios, seguridad, velocidad y ediciones incluidas.",
         ),
     ),
     "blog.html": dict(
         es="blog.html",
         meta=dict(
-            title="Blog — Consejos de Diseño Web para Negocios",
+            title="Blog. Consejos de Diseño Web para Negocios",
             desc="Consejos prácticos de diseño web para dueños de pequeños negocios. Sin jerga, sin ventas forzadas, solo información directa de un diseñador independiente.",
-            og_title="Blog — Consejos de Diseño Web para Negocios",
+            og_title="Blog. Consejos de Diseño Web para Negocios",
             og_desc="Consejos prácticos de diseño web para dueños de pequeños negocios. Sin jerga, sin ventas forzadas, solo información directa.",
-            tw_title="Blog — Consejos de Diseño Web para Negocios",
+            tw_title="Blog. Consejos de Diseño Web para Negocios",
             tw_desc="Consejos prácticos de diseño web para dueños de pequeños negocios. Sin jerga, solo información directa.",
         ),
     ),
@@ -171,11 +171,11 @@ PAGES = {
         es="caso-riera-law.html",
         meta=dict(
             title="Caso de Éxito: Riera Law Firm | Made by Sebby",
-            desc="Cómo Sebby reconstruyó la presencia web de un bufete de valores — más de 70 páginas bilingües, limpieza de DNS, correo restaurado y cuidado continuo.",
+            desc="Cómo Sebby reconstruyó la presencia web de un bufete de valores, más de 70 páginas bilingües, limpieza de DNS, correo restaurado y cuidado continuo.",
             og_title="Caso de Éxito: Riera Law Firm | Made by Sebby",
-            og_desc="Cómo Sebby reconstruyó la presencia web completa de un bufete de valores — más de 70 páginas bilingües, limpieza de DNS, correo restaurado y cuidado web continuo.",
+            og_desc="Cómo Sebby reconstruyó la presencia web completa de un bufete de valores, más de 70 páginas bilingües, limpieza de DNS, correo restaurado y cuidado web continuo.",
             tw_title="Caso de Éxito: Riera Law Firm | Made by Sebby",
-            tw_desc="Cómo Sebby reconstruyó la presencia web de un bufete de valores — más de 70 páginas bilingües y cuidado web continuo.",
+            tw_desc="Cómo Sebby reconstruyó la presencia web de un bufete de valores, más de 70 páginas bilingües y cuidado web continuo.",
         ),
     ),
     "case-study-elitecare.html": dict(
@@ -206,9 +206,9 @@ PAGES = {
             title="Diseño Web en Miami para Pequeños Negocios",
             desc="Diseño web en Miami para pequeños negocios. Sitios personalizados que generan confianza y convierten visitantes. Bilingüe, móvil primero. Consulta gratis.",
             og_title="Diseño Web en Miami para Pequeños Negocios",
-            og_desc="Diseño web en Miami para pequeños negocios — sitios personalizados que generan confianza y convierten visitantes. Bilingüe (español e inglés), móvil primero, con cuidado web continuo.",
+            og_desc="Diseño web en Miami para pequeños negocios, sitios personalizados que generan confianza y convierten visitantes. Bilingüe (español e inglés), móvil primero, con cuidado web continuo.",
             tw_title="Diseño Web en Miami para Pequeños Negocios",
-            tw_desc="Diseño web en Miami para pequeños negocios — sitios personalizados que generan confianza y convierten. Bilingüe y móvil primero.",
+            tw_desc="Diseño web en Miami para pequeños negocios, sitios personalizados que generan confianza y convierten. Bilingüe y móvil primero.",
         ),
     ),
     "web-design-fort-lauderdale.html": dict(
@@ -231,12 +231,12 @@ PAGES = {
         es="diseno-web-santo-domingo.html",
         en=None,
         meta=dict(
-            title="Diseño Web Santo Domingo — Páginas Web | Made by Sebby",
+            title="Diseño Web Santo Domingo. Páginas Web | Made by Sebby",
             desc="Diseño web profesional en Santo Domingo y República Dominicana. Sitios personalizados, rápidos, modernos y optimizados para móvil.",
-            og_title="Diseño Web Santo Domingo — Páginas Web para Negocios",
+            og_title="Diseño Web Santo Domingo. Páginas Web para Negocios",
             og_desc="Diseño web profesional en Santo Domingo y República Dominicana. Sitios personalizados, rápidos, modernos y optimizados para móvil.",
-            tw_title="Diseño Web Santo Domingo — Páginas Web para Negocios",
-            tw_desc="Diseño web profesional en Santo Domingo y República Dominicana. Sitios web personalizados para negocios — rápidos, modernos y optimizados para móvil.",
+            tw_title="Diseño Web Santo Domingo. Páginas Web para Negocios",
+            tw_desc="Diseño web profesional en Santo Domingo y República Dominicana. Sitios web personalizados para negocios, rápidos, modernos y optimizados para móvil.",
         ),
     ),
     "privacy.html": dict(
@@ -267,11 +267,11 @@ PAGES = {
         es="gracias.html",
         noindex=True,
         meta=dict(
-            title="Mensaje Enviado — Made by Sebby",
+            title="Mensaje Enviado. Made by Sebby",
             desc="Gracias por escribir. Te responderé pronto.",
-            og_title="Mensaje Enviado — Made by Sebby",
+            og_title="Mensaje Enviado. Made by Sebby",
             og_desc="Gracias por escribir. Te responderé pronto.",
-            tw_title="Mensaje Enviado — Made by Sebby",
+            tw_title="Mensaje Enviado. Made by Sebby",
             tw_desc="Gracias por escribir. Te responderé pronto.",
         ),
     ),
@@ -279,9 +279,9 @@ PAGES = {
         es="blog/5-senales-de-que-tu-sitio-web-pierde-clientes.html",
         meta=dict(
             title="5 Señales de Que Tu Sitio Web Pierde Clientes",
-            desc="Tu sitio web debería atraer negocio, no ahuyentarlo. Aquí hay 5 señales de alerta de que tu sitio te está costando clientes — y qué hacer con cada una.",
+            desc="Tu sitio web debería atraer negocio, no ahuyentarlo. Aquí hay 5 señales de alerta de que tu sitio te está costando clientes, y qué hacer con cada una.",
             og_title="5 Señales de Que Tu Sitio Web Pierde Clientes",
-            og_desc="Tu sitio web debería atraer negocio, no ahuyentarlo. Aquí hay 5 señales de alerta de que tu sitio te está costando clientes — y qué hacer con cada una.",
+            og_desc="Tu sitio web debería atraer negocio, no ahuyentarlo. Aquí hay 5 señales de alerta de que tu sitio te está costando clientes, y qué hacer con cada una.",
             tw_title="5 Señales de Que Tu Sitio Web Pierde Clientes",
             tw_desc="Tu sitio web debería atraer negocio, no ahuyentarlo. Aquí hay 5 señales de que tu sitio te está costando clientes.",
         ),
@@ -303,7 +303,7 @@ PAGES = {
             title="¿Cuánto Cuesta un Sitio Web en 2026? | Made by Sebby",
             desc="Precios reales de sitios web para pequeños negocios en 2026. Constructores DIY, freelancers y agencias comparados. Sin ventas forzadas, solo hechos.",
             og_title="¿Cuánto Cuesta un Sitio Web en 2026? | Made by Sebby",
-            og_desc="Precios reales de sitios web para pequeños negocios en 2026. Constructores DIY, freelancers y agencias comparados — con lo que realmente recibes en cada rango de precio.",
+            og_desc="Precios reales de sitios web para pequeños negocios en 2026. Constructores DIY, freelancers y agencias comparados, con lo que realmente recibes en cada rango de precio.",
             tw_title="¿Cuánto Cuesta un Sitio Web en 2026? | Made by Sebby",
             tw_desc="Precios reales de sitios web para pequeños negocios en 2026. Constructores DIY, freelancers y agencias comparados.",
         ),
@@ -323,9 +323,9 @@ PAGES = {
         es="blog/que-hace-un-sitio-web-por-un-bufete.html",
         meta=dict(
             title="Qué Hace un Sitio Web por un Bufete de Abogados",
-            desc="La mayoría de quienes buscan abogado empiezan en Google. Esto es lo que hace un sitio web bien construido para un bufete — con datos reales y precios honestos.",
+            desc="La mayoría de quienes buscan abogado empiezan en Google. Esto es lo que hace un sitio web bien construido para un bufete, con datos reales y precios honestos.",
             og_title="Qué Hace un Sitio Web por un Bufete de Abogados",
-            og_desc="La mayoría de quienes buscan abogado empiezan en Google. Esto es lo que hace un sitio web bien construido para un bufete — con datos reales, ejemplos reales y precios honestos.",
+            og_desc="La mayoría de quienes buscan abogado empiezan en Google. Esto es lo que hace un sitio web bien construido para un bufete, con datos reales, ejemplos reales y precios honestos.",
             tw_title="Qué Hace un Sitio Web por un Bufete de Abogados",
             tw_desc="La mayoría de quienes buscan abogado empiezan en Google. Esto es lo que hace un buen sitio web para un bufete.",
         ),
@@ -345,9 +345,9 @@ PAGES = {
         es="blog/necesita-tu-restaurante-un-sitio-web.html",
         meta=dict(
             title="¿Necesita Tu Restaurante un Sitio Web? | Made by Sebby",
-            desc="La mayoría de los restaurantes dependen solo de Instagram y Google Maps. Por qué un sitio web propio atrae más clientes — y qué debe incluir.",
+            desc="La mayoría de los restaurantes dependen solo de Instagram y Google Maps. Por qué un sitio web propio atrae más clientes, y qué debe incluir.",
             og_title="¿Necesita Tu Restaurante un Sitio Web? | Made by Sebby",
-            og_desc="La mayoría de los restaurantes dependen solo de Instagram y Google Maps. Por qué un sitio web propio atrae más clientes — y qué debe incluir realmente.",
+            og_desc="La mayoría de los restaurantes dependen solo de Instagram y Google Maps. Por qué un sitio web propio atrae más clientes, y qué debe incluir realmente.",
             tw_title="¿Necesita Tu Restaurante un Sitio Web? | Made by Sebby",
             tw_desc="La mayoría de los restaurantes dependen solo de Instagram y Google Maps. Por qué un sitio web propio atrae más clientes.",
         ),
@@ -390,8 +390,8 @@ ARIA_ES = {
 # translating a company's name would be wrong. check-consistency.py flags any
 # descriptive alt that reaches a Spanish page untranslated.
 ALT_ES = {
-    "Made by Sebby — Web Design, Development, Website Care":
-        "Made by Sebby — Diseño Web, Desarrollo, Cuidado Web",
+    "Made by Sebby: Web Design, Development, Website Care":
+        "Made by Sebby: Diseño Web, Desarrollo, Cuidado Web",
     "Made by Sebby | Web Design, Development, Website Care":
         "Made by Sebby | Diseño Web, Desarrollo, Cuidado Web",
     "Sebby, web designer and developer, smiling at his workstation":
@@ -404,14 +404,14 @@ ALT_ES = {
         "Diseño web adaptable mostrado en laptop, tableta y teléfono",
     "Google search result and Business Profile for a local business":
         "Resultado de búsqueda de Google y Perfil de Empresa de un negocio local",
-    "Riera Law Firm homepage — securities arbitration attorney with courthouse background":
-        "Página de inicio de Riera Law Firm — abogado de arbitraje de valores con fondo de tribunal",
-    "Elite Care Recovery homepage — premium cold and compression therapy for post-operative patients":
-        "Página de inicio de Elite Care Recovery — terapia premium de frío y compresión para pacientes postoperatorios",
+    "Riera Law Firm homepage: securities arbitration attorney with courthouse background":
+        "Página de inicio de Riera Law Firm: abogado de arbitraje de valores con fondo de tribunal",
+    "Elite Care Recovery homepage: premium cold and compression therapy for post-operative patients":
+        "Página de inicio de Elite Care Recovery: terapia premium de frío y compresión para pacientes postoperatorios",
     "Riera Law Firm homepage hero": "Portada del sitio de Riera Law Firm",
     "Elite Care Recovery homepage hero": "Portada del sitio de Elite Care Recovery",
     "Elite Care Recovery, South Florida": "Elite Care Recovery, sur de Florida",
-    "Elite Care Recovery — South Florida": "Elite Care Recovery — sur de Florida",
+    "Elite Care Recovery: South Florida": "Elite Care Recovery: sur de Florida",
 }
 
 
@@ -672,7 +672,7 @@ def pair_map(html):
 
 
 # ---------------------------------------------------------------------------
-# Canonical NAP — Name, Address, Phone.
+# Canonical NAP: Name, Address, Phone.
 #
 # Local ranking depends on these matching EXACTLY between the site and the
 # Google Business Profile; Google cross-references them. They did not match: the
@@ -726,7 +726,7 @@ NAP = {
 }
 
 # ---------------------------------------------------------------------------
-# Canonical prices — Aug 13, 2026.
+# Canonical prices, Aug 13 2026.
 #
 # The site was telling prospects FOUR different things a website costs: the home
 # page said $2,000-$8,000, the pricing page $1,500/$3,500/$7,000, the Miami and
@@ -922,7 +922,7 @@ SCHEMA_ES = {
     "Custom Web Design & Development": "Diseño y Desarrollo Web Personalizado",
     "Monthly website maintenance including updates, backups, security, speed optimization, and small edits.": "Mantenimiento mensual de sitios web: actualizaciones, respaldos, seguridad, optimización de velocidad y ediciones pequeñas.",
     "Monthly website maintenance including software updates, daily backups, security monitoring, speed optimization, and small edits.": "Mantenimiento mensual: actualizaciones de software, respaldos diarios, monitoreo de seguridad, optimización de velocidad y ediciones pequeñas.",
-    "Website Care — Monthly Website Maintenance": "Cuidado Web — Mantenimiento Mensual",
+    "Website Care. Monthly Website Maintenance": "Cuidado Web. Mantenimiento Mensual",
     "Local SEO, Google Business Profile setup, and honest search optimization that compounds over time.": "SEO local, configuración del Perfil de Empresa de Google y optimización de búsqueda honesta que se acumula con el tiempo.",
     "Free Web Design Consultation": "Consulta Gratuita de Diseño Web",
     "Weekly tested software and security updates, daily off-site backups, uptime and security monitoring around the clock, monthly health report in plain English, and response within two business days": "Actualizaciones semanales de software y seguridad verificadas, respaldos diarios fuera del sitio, monitoreo de disponibilidad y seguridad las 24 horas, informe mensual de salud en términos claros, y respuesta dentro de dos días hábiles",
@@ -1145,7 +1145,7 @@ REDIRECT_STUB = """<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Redirigiendo… — Made by Sebby</title>
+<title>Redirigiendo… | Made by Sebby</title>
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="{domain}{target}">
 <meta http-equiv="refresh" content="0; url={target}">

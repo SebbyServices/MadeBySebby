@@ -411,7 +411,7 @@ def check_bilingual_coverage():
 # ---------------------------------------------------------------------------
 BRAND_ALT = {
     "Made by Sebby", "Riera Law Firm", "Elite Care Recovery",
-    "Riera Law Firm, Coral Gables, Florida", "Riera Law Firm — Coral Gables, Florida",
+    "Riera Law Firm, Coral Gables, Florida", "Riera Law Firm: Coral Gables, Florida",
 }
 
 
@@ -620,6 +620,37 @@ def check_contact_form():
 
 
 # ---------------------------------------------------------------------------
+# 6f. No em dashes, anywhere
+#
+# Sebby's call, and it is a brand rule rather than a typographic one: the em dash
+# has become a tell for machine-written copy, and this site sells human judgment.
+# 341 of them had accumulated across 26 files before the sweep.
+#
+# Fail, do not auto-fix. The right replacement is a comma, a colon or a full stop
+# depending on the sentence, and a blind swap produces copy that reads worse than
+# what it replaced.
+#
+# The en dash (U+2013) is NOT covered: it is correct in ranges like 9am-6pm and
+# $2,500-$3,500, and swapping it would be wrong.
+# ---------------------------------------------------------------------------
+EM_DASH = "\u2014"
+
+
+def check_em_dashes():
+    for src_path in sorted(glob.glob("src/*.html") + glob.glob("src/blog/*.html")):
+        html = read(src_path)
+        hits = [m.start() for m in re.finditer(EM_DASH, html)]
+        if not hits:
+            continue
+        context = " ".join(unescape(re.sub(r"<[^>]+>", " ",
+                           html[max(0, hits[0] - 55):hits[0] + 55])).split())
+        fail("em dash", src_path,
+             "%d em dash%s. Replace with a comma, colon or full stop as the sentence "
+             "needs -- never a blind swap. First: ...%s..."
+             % (len(hits), "" if len(hits) == 1 else "es", context))
+
+
+# ---------------------------------------------------------------------------
 # 7. Nav and footer link sets, compared by logical page across BOTH trees
 # ---------------------------------------------------------------------------
 def check_shared_blocks():
@@ -738,6 +769,7 @@ def main():
     check_nap()
     check_prices()
     check_contact_form()
+    check_em_dashes()
     check_lang_toggle()
     check_cta_routing()   # must precede check_shared_blocks (populates cta_flagged)
     check_shared_blocks()
