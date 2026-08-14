@@ -518,6 +518,15 @@
   .inc-card .inc-icon svg{width:22px;height:22px;stroke:var(--purple);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
   .inc-card h3{font-size:1.02rem;font-weight:700;margin-bottom:6px}
   .inc-card p{font-size:.9rem;color:var(--ink-soft)}
+  /* Add-ons. Deliberately a plain list rather than cards: these are the few
+     things that cost extra, and dressing them up like products would undercut
+     the point of the section above, which is that everything else is included. */
+  .addons{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+  .addon{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 20px;
+    padding:26px 0;border-bottom:1px solid var(--line)}
+  .addon-name{font-weight:700;font-size:1.06rem;flex:1 1 260px}
+  .addon-price{font-weight:800;font-size:1.06rem;color:var(--purple);white-space:nowrap}
+  .addon p{flex:1 1 100%;color:var(--ink-soft);font-size:.98rem;margin-top:2px}
   @media(max-width:900px){.included-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:640px){.included-grid{grid-template-columns:1fr}}
 
@@ -947,6 +956,34 @@
   </div>
 </section>
 
+<!-- What costs extra. The honest counterpart to the section above: a list of
+     everything included is only credible if the exceptions are published too. -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">And what costs extra.</span><span lang="es">Y qué cuesta aparte.</span></h2>
+      <p><span lang="en">A short list, published for the same reason the prices are. Bilingual itself is never one of them.</span><span lang="es">Una lista corta, publicada por la misma razón que los precios. El bilingüe nunca es uno de ellos.</span></p>
+    </div>
+    <div class="addons reveal">
+      <div class="addon">
+        <span class="addon-name"><span lang="en">Spanish-market content strategy</span><span lang="es">Estrategia de contenido para el mercado hispano</span></span>
+        <span class="addon-price">{{PRICE_SPANISH_STRATEGY}} {{USD}}</span>
+        <p><span lang="en">Every build ships bilingual, with the Spanish mirroring the English. This is different work: keyword research in Spanish, pages the English version does not have, and copy written in the register your Spanish-speaking market actually uses. Included in Premium.</span><span lang="es">Cada proyecto se entrega bilingüe, con el español reflejando el inglés. Esto es un trabajo distinto: investigación de palabras clave en español, páginas que la versión en inglés no tiene, y textos escritos en el registro que tu mercado hispanohablante realmente usa. Incluido en Premium.</span></p>
+      </div>
+      <div class="addon">
+        <span class="addon-name"><span lang="en">Extra pages in Spanish only</span><span lang="es">Páginas adicionales solo en español</span></span>
+        <span class="addon-price">{{PRICE_EXTRA_PAGE}} {{USD}}<span lang="en"> per page</span><span lang="es"> por página</span></span>
+        <p><span lang="en">Pages that exist in Spanish with no English twin, usually because they target something only your Spanish-speaking market searches for.</span><span lang="es">Páginas que existen en español sin equivalente en inglés, normalmente porque apuntan a algo que solo busca tu mercado hispanohablante.</span></p>
+      </div>
+      <div class="addon">
+        <span class="addon-name"><span lang="en">Changes after launch</span><span lang="es">Cambios después del lanzamiento</span></span>
+        <span class="addon-price"><span lang="en">Edit packs, from</span><span lang="es">Paquetes de ediciones, desde</span> {{EDIT_SINGLE}} {{USD}}</span>
+        <p><span lang="en">Small changes are included in every Website Care plan. Beyond that, buy an edit pack or add care. Nothing is billed without your approval first.</span><span lang="es">Los cambios pequeños están incluidos en cada plan de Cuidado Web. Más allá de eso, compra un paquete de ediciones o añade cuidado. Nada se cobra sin tu aprobación primero.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- How payments work -->
 <section style="padding-top:0">
   <div class="wrap">
@@ -962,7 +999,7 @@
     <div class="care reveal">
       <div>
         <h2><span lang="en">After launch, keep it running right.</span><span lang="es">Después del lanzamiento, mantenlo funcionando bien.</span></h2>
-        <p><span lang="en">A website needs ongoing care. Updates, security, backups, speed. Website Care plans start at $99/month and cover everything so you never have to think about it.</span><span lang="es">Un sitio web necesita cuidado continuo. Actualizaciones, seguridad, respaldos, velocidad. Los planes de Cuidado Web comienzan en $99/mes y cubren todo para que nunca tengas que pensar en ello.</span></p>
+        <p><span lang="en">A website needs ongoing care. Updates, security, backups, speed. Website Care plans start at {{CARE_ESSENTIALS}}/month and cover everything so you never have to think about it.</span><span lang="es">Un sitio web necesita cuidado continuo. Actualizaciones, seguridad, respaldos, velocidad. Los planes de Cuidado Web comienzan en {{CARE_ESSENTIALS}}/mes y cubren todo para que nunca tengas que pensar en ello.</span></p>
         <a class="btn" href="website-care.html"><span lang="en">See Website Care plans</span><span lang="es">Ver planes de Cuidado Web</span>&nbsp;&#8594;</a>
       </div>
       <ul>

@@ -921,6 +921,16 @@ PRICES = {
     "{{CARE_STANDARD}}": "$249",
     "{{CARE_GROWTH}}": "$549",
     "{{CARE_OVERAGE}}": "$125",
+    "{{PRICE_SPANISH_STRATEGY}}": "$750",
+    "{{PRICE_EXTRA_PAGE}}": "$150",
+    # Edit packs. These were bare literals in two source files, allow-listed in
+    # the checker as "market figures" when they are nothing of the sort: they
+    # are our prices, and a change would have had to be made by hand in both
+    # places with nothing to catch a mismatch. That is the exact failure this
+    # table exists to prevent, and it had quietly survived the last sweep.
+    "{{EDIT_SINGLE}}": "$49",
+    "{{EDIT_3PACK}}": "$129",
+    "{{EDIT_5PACK}}": "$199",
     # What competing agencies charge. A claim about others, not a price of ours.
     "{{AGENCY_LOW}}": "$10,000",
     "{{AGENCY_HIGH}}": "$30,000",
@@ -940,6 +950,7 @@ PRICES = {
     "{{N_CARE_STANDARD}}": "249",
     "{{N_CARE_GROWTH}}": "549",
     "{{N_SPANISH_STRATEGY}}": "750",
+    "{{N_EXTRA_PAGE}}": "150",
 }
 
 
@@ -973,6 +984,54 @@ def load_env(path=".env"):
 # A missing .env falls back to the placeholder, which check-consistency.py fails
 # on. That is deliberate: a fresh clone rebuilding without .env would otherwise
 # quietly replace a working key with nothing.
+def _annual(monthly_token):
+    """Annual care price: eleven months, since the twelfth is free.
+
+    Derived rather than typed so the annual figure cannot contradict the monthly
+    one. Both appear on website-care.html and pricing.html.
+    """
+    n = int(PRICES[monthly_token].lstrip("$").replace(",", ""))
+    return "${:,}".format(n * 11)
+
+
+def _times(token, n):
+    v = int(PRICES[token].lstrip("$").replace(",", ""))
+    return "${:,}".format(v * n)
+
+
+def _per_edit(pack_token, count):
+    """Rounded to the dollar, which is how the page has always shown it."""
+    v = int(PRICES[pack_token].lstrip("$").replace(",", ""))
+    return "${:,}".format(int(round(v / float(count))))
+
+
+def _monthly_equivalent(monthly_token):
+    """What the annual plan works out to per month: eleven months over twelve.
+
+    Shown beside the annual price so the saving is legible without arithmetic.
+    Derived for the same reason as _annual: three related numbers typed by hand
+    are three chances to contradict each other.
+    """
+    n = int(PRICES[monthly_token].lstrip("$").replace(",", ""))
+    return "${:,.2f}".format(n * 11 / 12.0)
+
+
+PRICES.update({
+    "{{CARE_ESSENTIALS_YR}}": _annual("{{CARE_ESSENTIALS}}"),
+    "{{CARE_STANDARD_YR}}": _annual("{{CARE_STANDARD}}"),
+    "{{CARE_GROWTH_YR}}": _annual("{{CARE_GROWTH}}"),
+    "{{CARE_ESSENTIALS_MO_EQ}}": _monthly_equivalent("{{CARE_ESSENTIALS}}"),
+    "{{CARE_STANDARD_MO_EQ}}": _monthly_equivalent("{{CARE_STANDARD}}"),
+    "{{CARE_GROWTH_MO_EQ}}": _monthly_equivalent("{{CARE_GROWTH}}"),
+    # What twelve monthly payments cost, shown beside the annual price so the
+    # "one month free" claim is checkable rather than asserted.
+    "{{CARE_ESSENTIALS_12X}}": _times("{{CARE_ESSENTIALS}}", 12),
+    # Per-edit cost of each pack, which is the only reason the packs look like
+    # value. Derived so it cannot survive a pack price change unnoticed.
+    "{{EDIT_3PACK_EACH}}": _per_edit("{{EDIT_3PACK}}", 3),
+    "{{EDIT_5PACK_EACH}}": _per_edit("{{EDIT_5PACK}}", 5),
+})
+
 FORM_ACCESS_KEY = load_env().get("WEB3FORMS_ACCESS_KEY", "REPLACE_WITH_WEB3FORMS_KEY")
 
 TOKENS = {"{{FORM_ACCESS_KEY}}": FORM_ACCESS_KEY}

@@ -539,8 +539,7 @@ def check_nap():
 # with the file it belongs to so a new one has to be justified, not just added.
 # ---------------------------------------------------------------------------
 MARKET_FIGURES = {
-    # care-plan annual totals and edit packs -- derived, not tier prices
-    "pricing.html": {"$125", "$49", "$129", "$199"},
+    "pricing.html": set(),
     "terms.html": {"$100"},
     "privacy.html": set(),
     # editorial: market rates, competitor figures, client lifetime values
@@ -558,10 +557,17 @@ MARKET_FIGURES = {
     "blog/should-i-use-ai-to-build-my-website.html": {"$240"},
     # RD$ agency comparison figures are pesos, explicitly marked, not our prices
     "diseno-web-santo-domingo.html": {"$150,000", "$500,000", "$2,500", "$10,000"},
-    "website-care.html": {"$1,089", "$2,739", "$6,039", "$1,188", "$228", "$503",
-                          "$125", "$129", "$199", "$25,000", "$49", "$3,000"},
+    # Only the cost of a security breach survives here. Everything else that used
+    # to sit in this set was OUR pricing, allow-listed as though it described the
+    # market: edit packs, the hourly overage, annual totals, per-edit costs. That
+    # made the guard blind to exactly the drift it exists to catch, so those are
+    # now tokens in build.PRICES and the derived ones are computed, not typed.
+    "website-care.html": {"$25,000", "$3,000"},
 }
-PRICE_LITERAL = re.compile(r"(?<!RD)\$[\d,]{3,}")
+# Cents are part of the figure. Without \.\d\d the pattern matched "$503" out of
+# a perfectly correct "$503.25" and then failed it for not being a canonical
+# price, which is a false positive that reads exactly like a real one.
+PRICE_LITERAL = re.compile(r"(?<!RD)\$[\d,]{3,}(?:\.\d\d)?")
 
 
 def check_prices():
@@ -694,6 +700,29 @@ def check_copyright_year():
              % (len(stale), " shows" if len(stale) == 1 else "s show", year))
 
 
+def check_precios_stays_spanish():
+    """precios.html is Spanish-only, so every link it makes must stay Spanish.
+
+    It is a passthrough page: rewrite_paths never runs on it, so its links are
+    hand-written absolute URLs and nothing was retargeting them. All four pointed
+    into the English tree, which meant a Dominican prospect who tapped "ver
+    planes de mantenimiento" from a WhatsApp share landed on an English page.
+    """
+    page = "precios.html"
+    if not os.path.exists(page):
+        return
+    for href in sorted(set(re.findall(r'href="([^"]+)"', read(page)))):
+        if not href.startswith(BASE):
+            continue
+        path = href[len(BASE):] or "/"
+        if path.startswith("/es/"):
+            continue
+        fail("precios language", page,
+             "links to %s, which is in the English tree. This page is Spanish "
+             "only and shared over WhatsApp, so every link has to land in /es/."
+             % (path or "/"))
+
+
 # ---------------------------------------------------------------------------
 # 7. Nav and footer link sets, compared by logical page across BOTH trees
 # ---------------------------------------------------------------------------
@@ -821,6 +850,7 @@ def main():
     check_contact_form()
     check_em_dashes()
     check_copyright_year()
+    check_precios_stays_spanish()
     check_lang_toggle()
     check_cta_routing()   # must precede check_shared_blocks (populates cta_flagged)
     check_shared_blocks()

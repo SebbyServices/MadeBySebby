@@ -516,6 +516,15 @@
   .inc-card .inc-icon svg{width:22px;height:22px;stroke:var(--purple);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
   .inc-card h3{font-size:1.02rem;font-weight:700;margin-bottom:6px}
   .inc-card p{font-size:.9rem;color:var(--ink-soft)}
+  /* Add-ons. Deliberately a plain list rather than cards: these are the few
+     things that cost extra, and dressing them up like products would undercut
+     the point of the section above, which is that everything else is included. */
+  .addons{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+  .addon{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 20px;
+    padding:26px 0;border-bottom:1px solid var(--line)}
+  .addon-name{font-weight:700;font-size:1.06rem;flex:1 1 260px}
+  .addon-price{font-weight:800;font-size:1.06rem;color:var(--purple);white-space:nowrap}
+  .addon p{flex:1 1 100%;color:var(--ink-soft);font-size:.98rem;margin-top:2px}
   @media(max-width:900px){.included-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:640px){.included-grid{grid-template-columns:1fr}}
 
@@ -1023,6 +1032,34 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
         <div class="inc-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
         <h3>Soporte post-lanzamiento</h3>
         <p>Cada proyecto incluye al menos 14 días de soporte. Premium obtiene 30 días de optimización activa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What costs extra. The honest counterpart to the section above: a list of
+     everything included is only credible if the exceptions are published too. -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Y qué cuesta aparte.</h2>
+      <p>Una lista corta, publicada por la misma razón que los precios. El bilingüe nunca es uno de ellos.</p>
+    </div>
+    <div class="addons reveal">
+      <div class="addon">
+        <span class="addon-name">Estrategia de contenido para el mercado hispano</span>
+        <span class="addon-price">$750 USD</span>
+        <p>Cada proyecto se entrega bilingüe, con el español reflejando el inglés. Esto es un trabajo distinto: investigación de palabras clave en español, páginas que la versión en inglés no tiene, y textos escritos en el registro que tu mercado hispanohablante realmente usa. Incluido en Premium.</p>
+      </div>
+      <div class="addon">
+        <span class="addon-name">Páginas adicionales solo en español</span>
+        <span class="addon-price">$150 USD por página</span>
+        <p>Páginas que existen en español sin equivalente en inglés, normalmente porque apuntan a algo que solo busca tu mercado hispanohablante.</p>
+      </div>
+      <div class="addon">
+        <span class="addon-name">Cambios después del lanzamiento</span>
+        <span class="addon-price">Paquetes de ediciones, desde $49 USD</span>
+        <p>Los cambios pequeños están incluidos en cada plan de Cuidado Web. Más allá de eso, compra un paquete de ediciones o añade cuidado. Nada se cobra sin tu aprobación primero.</p>
       </div>
     </div>
   </div>
