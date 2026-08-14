@@ -1054,10 +1054,11 @@
     p:{name:ES?'Plan Premium':'Premium tier',      lo:{{N_PREMIUM}}, hi:{{N_PREMIUM_MAX}}, care:{{N_CARE_GROWTH}},     careName:ES?'Crecimiento':'Growth'}
   };
   var SPANISH_STRATEGY={{N_SPANISH_STRATEGY}};
-  // Weighted, not "highest answer wins". A blunt max would quote Premium to
-  // someone wanting five pages with a booking link -- a $2,500 job priced at
-  // $9,000, which loses the lead instead of qualifying it. Page count drives
-  // most of the cost, so it carries most of the weight.
+  // Weighted, not "highest answer wins". A blunt max would quote the Premium
+  // tier to someone wanting five pages with a booking link -- a Starter job
+  // priced at Premium, which loses the lead instead of qualifying it. Page
+  // count drives most of the cost, so it carries most of the weight.
+  // (Figures deliberately not written here: prices live in build.PRICES.)
   var WEIGHT={
     pages:{s:0,c:2,p:5},
     copy:{s:0,c:1,p:2},
