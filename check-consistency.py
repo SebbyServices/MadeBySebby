@@ -538,6 +538,9 @@ MARKET_FIGURES = {
     "blog/what-is-website-care.html": {"$99", "$249", "$500", "$3,000"},
     "blog/5-signs-your-website-is-losing-clients.html": {"$500", "$3,000"},
     "blog/does-your-restaurant-need-a-website.html": {"$10,000", "$500", "$3,000"},
+    # $240 is an AI builder's annual subscription -- a competitor's price, cited
+    # to compare against ours, which is the whole point of that post.
+    "blog/should-i-use-ai-to-build-my-website.html": {"$240"},
     # RD$ agency comparison figures are pesos, explicitly marked, not our prices
     "diseno-web-santo-domingo.html": {"$150,000", "$500,000", "$2,500", "$10,000"},
     "website-care.html": {"$1,089", "$2,739", "$6,039", "$1,188", "$228", "$503",

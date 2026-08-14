@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DV4L5CZRML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DV4L5CZRML');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Should You Use AI to Build Your Website? | Made by Sebby</title>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="Sebby — Made by Sebby">
+<meta name="description" content="You can build a website with AI, and sometimes you should. What AI builders do well, where they stop, and 12 things to check on any AI-built site.">
+<link rel="preload" as="image" href="../assets/logo/sebby-nav.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
+<script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
+<style>
+  :root{
+    --ink:#1A1D29;--ink-soft:#4A4E5C;--muted:#6B7080;
+    --purple:#6C3CE9;--purple-deep:#5A2FD0;--blue:#2D6FFF;
+    --tint:#F4F1FD;--line:#E8E6F2;--white:#FFFFFF;
+    --radius:20px;--radius-sm:12px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+  img{max-width:100%;display:block}
+
+  nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:50}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.06rem;letter-spacing:-.01em}
+  .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
+  .nav-links a{color:var(--ink-soft);transition:color .15s}
+  .nav-links a.btn{color:#fff}
+  .nav-links a.btn:hover{color:#fff}
+  .nav-links a:hover{color:var(--purple)}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;padding:13px 26px;border-radius:999px;border:none;cursor:pointer;transition:background .15s,transform .15s}
+  .btn:hover{background:var(--purple-deep);transform:translateY(-1px)}
+  .btn:focus-visible{outline-color:var(--ink)}
+  .btn-nav{padding:10px 22px;font-size:.92rem}
+
+  .eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:26px;height:2.5px;background:var(--purple);border-radius:2px}
+  .page-hero{padding:76px 0 52px}
+  .page-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.09;letter-spacing:-.028em;margin-bottom:24px}
+  .page-hero h1 .accent{color:var(--purple)}
+
+  .back-link{display:inline-flex;align-items:center;gap:6px;font-size:.9rem;font-weight:600;color:var(--muted);margin-bottom:28px;transition:color .15s}
+  .back-link:hover{color:var(--purple)}
+  .blog-meta{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+
+  .article{max-width:720px;margin:0 auto;padding:0 0 96px}
+  .article h2{font-size:clamp(1.3rem,2.5vw,1.65rem);font-weight:800;letter-spacing:-.022em;line-height:1.2;margin:48px 0 16px;color:var(--ink)}
+  .article h2 .num{color:var(--purple);margin-right:6px}
+  .article p{color:var(--ink-soft);font-size:1.05rem;margin-bottom:20px;max-width:38em;line-height:1.7}
+  .article p strong{color:var(--ink)}
+  .article .cta-box{background:var(--tint);border-radius:var(--radius);padding:36px 34px;margin:48px 0 0;border-left:4px solid var(--purple)}
+  .article .cta-box p{font-size:1.08rem;font-weight:600;color:var(--ink);margin-bottom:18px;max-width:none}
+  .article .cta-box .btn{margin-top:4px}
+
+  footer{border-top:1px solid var(--line);padding:44px 0}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .credit{display:flex;align-items:center;gap:10px;font-size:.92rem;color:var(--muted)}
+  .credit strong{color:var(--ink);font-weight:700}
+  .foot-links{display:flex;gap:26px;font-size:.9rem;color:var(--muted)}
+  .foot-links a:hover{color:var(--purple)}
+
+  .rise{opacity:0;transform:translateY(16px);animation:rise .7s ease forwards}
+  .d1{animation-delay:.08s}.d2{animation-delay:.16s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.rise{opacity:1;transform:none;animation:none}*{transition:none !important;scroll-behavior:auto}}
+
+  @media (max-width:640px){.page-hero{padding:56px 0 36px}}
+
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;z-index:51}
+  .menu-btn svg{width:26px;height:26px;stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round}
+  .menu-btn .close{display:none}
+  .nav-open .menu-btn .open{display:none}
+  .nav-open .menu-btn .close{display:block}
+  @media (max-width:640px){
+    .menu-btn{display:block}
+    .nav-links{display:none;position:fixed;top:76px;left:0;right:0;bottom:0;background:var(--white);flex-direction:column;gap:0;padding:20px 28px;border-top:1px solid var(--line);z-index:49;overflow-y:auto}
+    .nav-open{backdrop-filter:none;overflow:visible}
+    .nav-open .nav-links{display:flex}
+    .nav-links a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
+    .nav-links a:last-child{border-bottom:none}
+    .nav-links a.btn{margin-top:12px;justify-content:center;border-bottom:none}
+    .nav-links .lang-toggle{margin-top:8px;align-self:flex-start}
+    .nav-links .theme-toggle{margin-top:4px;align-self:flex-start}
+  }
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+  .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:40;background:var(--purple);color:#fff;padding:14px 28px;text-align:center;transform:translateY(100%);transition:transform .35s ease;font-weight:600;font-size:.95rem}
+  .sticky-cta.show{transform:translateY(0)}
+  .sticky-cta a{color:#fff;text-decoration:none}
+  .sticky-cta a:hover{text-decoration:underline}
+  @media (max-width:640px){.sticky-cta{font-size:.88rem;padding:12px 20px}}
+
+  :root:not([data-lang="es"]) [lang="es"]{display:none}
+  [data-lang="es"] [lang="en"]{display:none}
+  .lang-toggle{display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0}
+  .lang-toggle button{background:none;border:none;padding:7px 12px;cursor:pointer;color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em}
+  .lang-toggle button:hover{color:var(--purple)}
+  .lang-toggle button.active{background:var(--purple);color:#fff}
+
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){--ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;--purple:#8B6CEF;--purple-deep:#7B5FDB;--tint:#1D192D;--line:#2A2838;--white:#0F1117}
+  }
+  :root[data-theme="dark"]{--ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;--purple:#8B6CEF;--purple-deep:#7B5FDB;--tint:#1D192D;--line:#2A2838;--white:#0F1117}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) nav{background:rgba(15,17,23,.92)}
+    :root:not([data-theme="light"]) .cta-box{background:#1D192D}
+    :root:not([data-theme="light"]) .logo-light{display:none !important}
+    :root:not([data-theme="light"]) .logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
+    :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .btn{background:#6B4EC2}
+    :root:not([data-theme="light"]) .btn:hover{background:#5C41B0}
+  }
+  [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
+  [data-theme="dark"] .cta-box{background:#1D192D}
+  [data-theme="dark"] .logo-light{display:none !important}
+  [data-theme="dark"] .logo-dark{display:block !important}
+  [data-theme="dark"] .foot-logo-light{display:none !important}
+  [data-theme="dark"] .foot-logo-dark{display:block !important}
+  [data-theme="dark"] .btn{background:#6B4EC2}
+  [data-theme="dark"] .btn:hover{background:#5C41B0}
+
+  .theme-trans,.theme-trans *,.theme-trans *::before,.theme-trans *::after{transition:background .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease,fill .35s ease,stroke .35s ease !important}
+  .theme-toggle{background:none;border:1.5px solid var(--line);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .15s,background .15s;flex-shrink:0}
+  .theme-toggle:hover{border-color:var(--purple);background:var(--tint)}
+  .theme-toggle svg{width:18px;height:18px;stroke:var(--muted);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .theme-toggle:hover svg{stroke:var(--purple)}
+  .theme-toggle .icon-sun{display:none}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon{display:none}
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun{display:block}
+  }
+  [data-theme="dark"] .theme-toggle .icon-moon{display:none}
+  [data-theme="dark"] .theme-toggle .icon-sun{display:block !important}
+  [data-theme="light"] .theme-toggle .icon-sun{display:none !important}
+  [data-theme="light"] .theme-toggle .icon-moon{display:block}
+
+  .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
+  .skip-link:focus{top:12px}
+
+  @media print{
+    nav,.menu-btn,.sticky-cta,#stickyCta,.theme-toggle,.lang-toggle,footer,.hero-ctas,.btn,.cta-row,.foot-cta{display:none!important}
+    body{color:#000;background:#fff;-webkit-print-color-adjust:exact}
+    .wrap{max-width:100%;padding:0 12px}
+    a{color:#000}
+    a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em;color:#555}
+    a[href^="mailto"]::after{content:" (" attr(href) ")";font-size:.8em;color:#555}
+    img{max-width:100%!important;filter:none!important}
+    .reveal{opacity:1!important;transform:none!important}
+  }
+</style>
+
+<!-- seo:start -->
+<link rel="alternate" type="text/plain" title="LLM instructions" href="/llms.txt">
+<link rel="canonical" href="https://madebysebby.com/blog/should-i-use-ai-to-build-my-website.html">
+<link rel="alternate" hreflang="en" href="https://madebysebby.com/blog/should-i-use-ai-to-build-my-website.html">
+<link rel="alternate" hreflang="es" href="https://madebysebby.com/blog/should-i-use-ai-to-build-my-website.html">
+<link rel="alternate" hreflang="x-default" href="https://madebysebby.com/blog/should-i-use-ai-to-build-my-website.html">
+<meta name="theme-color" content="#6C3CE9">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Made by Sebby">
+<meta property="og:title" content="Should You Use AI to Build Your Website? | Made by Sebby">
+<meta property="og:description" content="You can build a website with AI, and sometimes you should. What AI builders do well, where they stop, and the invisible layer they routinely miss.">
+<meta property="og:url" content="https://madebysebby.com/blog/should-i-use-ai-to-build-my-website.html">
+<meta property="og:image" content="https://madebysebby.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Should You Use AI to Build Your Website? | Made by Sebby">
+<meta name="twitter:description" content="You can build a website with AI, and sometimes you should. What AI builders do well, where they stop, and the invisible layer they routinely miss.">
+<meta name="twitter:image" content="https://madebysebby.com/assets/og-image.jpg">
+<!-- seo:end -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Should You Use AI to Build Your Website?",
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "author": {
+    "@type": "Person",
+    "name": "Sebby",
+    "url": "https://madebysebby.com/about.html"
+  },
+  "publisher": {
+    "@type": "ProfessionalService",
+    "name": "Made by Sebby",
+    "url": "https://madebysebby.com/"
+  },
+  "url": "https://madebysebby.com/blog/should-i-use-ai-to-build-my-website.html",
+  "description": "You can build a website with AI, and sometimes you should. What AI builders do well, where they stop, and the invisible layer they routinely miss."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://madebysebby.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://madebysebby.com/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "What Website Care Actually Means",
+      "item": "https://madebysebby.com/blog/should-i-use-ai-to-build-my-website.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main"><span lang="en">Skip to content</span><span lang="es">Ir al contenido</span></a>
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="../assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="../assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('nav-open')">
+      <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="nav-links">
+      <a href="../services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
+      <a href="../work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
+      <a href="../website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
+      <a href="../about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <div class="lang-toggle">
+        <button onclick="document.documentElement.removeAttribute('data-lang');localStorage.setItem('lang','en');this.classList.add('active');this.nextElementSibling.classList.remove('active')" class="active">EN</button>
+        <button onclick="document.documentElement.setAttribute('data-lang','es');localStorage.setItem('lang','es');this.classList.add('active');this.previousElementSibling.classList.remove('active')">ES</button>
+      </div>
+      <button class="theme-toggle" aria-label="Toggle dark mode" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
+        <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <a href="../book.html" class="btn btn-nav"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span></a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<header class="page-hero">
+  <div class="wrap">
+    <a class="back-link rise" href="../blog.html">← <span lang="en">Back to blog</span><span lang="es">Volver al blog</span></a>
+    <div class="blog-meta rise d1"><span lang="en">August 2026</span><span lang="es">Agosto 2026</span></div>
+    <h1 class="rise d2"><span lang="en">Should You Use AI to <span class="accent">Build Your Website?</span></span><span lang="es">¿Deberías Usar IA para <span class="accent">Crear Tu Sitio Web?</span></span></h1>
+  </div>
+</header>
+
+<section id="main" style="padding-top:0">
+  <div class="wrap">
+    <div class="article">
+
+      <p class="reveal"><span lang="en">A guitar does not make you a musician. Hand the same instrument to someone who picked it up last week and to someone who has played for fifteen years, and you get two completely different sounds out of identical equipment. Nobody blames the guitar.</span><span lang="es">Una guitarra no te hace músico. Dale el mismo instrumento a alguien que la tomó la semana pasada y a alguien que lleva quince años tocando, y obtienes dos sonidos completamente distintos del mismo equipo. Nadie culpa a la guitarra.</span></p>
+      <p class="reveal"><span lang="en">AI website builders are the same. They are genuinely good, they are getting better quickly, and they are not going away. But the tool is not the variable. <strong>The person holding it is.</strong></span><span lang="es">Con la inteligencia artificial pasa igual. Los constructores web con IA son realmente buenos, mejoran rápido, y no van a desaparecer. Pero la herramienta no es la variable. <strong>Lo es la persona que la usa.</strong></span></p>
+      <p class="reveal"><span lang="en">So yes — you can build a website with AI, and sometimes you should. If you are testing an idea that is not a business yet, or you need something online by Friday, go use one. I would rather say that than sell you something you do not need. <strong>I use AI every day in my own work.</strong> That is exactly why I know where it stops.</span><span lang="es">Así que sí — puedes construir un sitio web con IA, y a veces deberías. Si estás probando una idea que todavía no es un negocio, o necesitas algo en línea para el viernes, úsala. Prefiero decirte eso que venderte algo que no necesitas. <strong>Yo uso IA todos los días en mi trabajo.</strong> Precisamente por eso sé dónde se detiene.</span></p>
+      <h2 class="reveal"><span class="num">1.</span> <span lang="en">The tools, honestly</span><span lang="es">Las herramientas, con honestidad</span></h2>
+      <p class="reveal"><span lang="en"><strong>Wix AI and Squarespace AI</strong> are the most complete option for a non-technical owner. You answer questions, you get a real site with hosting and a domain. Genuinely impressive, and the right answer for a lot of people.</span><span lang="es"><strong>Wix AI y Squarespace AI</strong> son la opción más completa para un dueño sin conocimientos técnicos. Respondes preguntas y obtienes un sitio real con hosting y dominio. Realmente impresionante, y la respuesta correcta para mucha gente.</span></p>
+      <p class="reveal"><span lang="en"><strong>Lovable and v0</strong> generate startlingly good interfaces from a written description. If you can describe what you want precisely, they will build something that looks like it cost thousands. That conditional is doing a lot of work.</span><span lang="es"><strong>Lovable y v0</strong> generan interfaces sorprendentemente buenas a partir de una descripción escrita. Si puedes describir con precisión lo que quieres, construirán algo que parece haber costado miles. Ese "si" carga con mucho peso.</span></p>
+      <p class="reveal"><span lang="en"><strong>ChatGPT</strong> will write your copy, your structure, and your code. It will also write it for a business it has never seen, in a market it does not know, for customers it has never met.</span><span lang="es"><strong>ChatGPT</strong> escribirá tu texto, tu estructura y tu código. También lo escribirá para un negocio que nunca ha visto, en un mercado que no conoce, para clientes que nunca ha conocido.</span></p>
+      <h2 class="reveal"><span class="num">2.</span> <span lang="en">What experience actually changes</span><span lang="es">Lo que la experiencia realmente cambia</span></h2>
+      <p class="reveal"><span lang="en"><strong>Knowing what to build.</strong> AI builds what you asked for. Knowing what to ask for is the job. A law firm needs practice-area pages and attorney bios before it needs anything clever. A restaurant needs hours, a map and a menu above the fold, and almost nothing else. Ask AI for "a website for my business" and you get a website for any business.</span><span lang="es"><strong>Saber qué construir.</strong> La IA construye lo que le pediste. Saber qué pedir es el trabajo. Un bufete necesita páginas de áreas de práctica y biografías de abogados antes que cualquier cosa ingeniosa. Un restaurante necesita horario, mapa y menú en lo primero que se ve, y casi nada más. Pídele a la IA "un sitio web para mi negocio" y obtienes un sitio web para cualquier negocio.</span></p>
+      <p class="reveal"><span lang="en"><strong>The invisible layer.</strong> Schema markup, hreflang tags, canonical URLs, page speed, accessibility, and a contact form that actually sends. None of it is visible. All of it decides whether Google can read your site and whether a message reaches you. This is not theory: auditing my own site recently, I found a contact form that opened a mail app instead of sending anything, and 22,000 words of Spanish that Google could not see at all. On my own site. That is how invisible this layer is.</span><span lang="es"><strong>La capa invisible.</strong> Marcado de datos estructurados, etiquetas hreflang, URLs canónicas, velocidad de carga, accesibilidad, y un formulario de contacto que de verdad envíe. Nada de eso se ve. Todo eso decide si Google puede leer tu sitio y si un mensaje te llega. Y no es teoría: auditando mi propio sitio hace poco, encontré un formulario que abría una app de correo en vez de enviar nada, y 22,000 palabras en español que Google no podía ver. En mi propio sitio. Así de invisible es esta capa.</span></p>
+      <p class="reveal"><span lang="en"><strong>Taste and restraint.</strong> AI defaults to more. More sections, more adjectives, more of everything. Knowing what to remove is the hardest thing to learn and the most obvious thing in the result. It is the entire difference between a site that looks generated and a site that looks considered.</span><span lang="es"><strong>Criterio y contención.</strong> La IA por defecto agrega. Más secciones, más adjetivos, más de todo. Saber qué quitar es lo más difícil de aprender y lo más evidente en el resultado. Es toda la diferencia entre un sitio que parece generado y uno que parece pensado.</span></p>
+      <p class="reveal"><span lang="en"><strong>What happens after launch.</strong> AI builds a site once. It does not notice when the contact form breaks, when the certificate expires, or when a plugin opens a hole someone walks through. A website is not a thing you finish. It is a thing you keep.</span><span lang="es"><strong>Lo que pasa después del lanzamiento.</strong> La IA construye un sitio una vez. No se da cuenta cuando el formulario se rompe, cuando el certificado vence, o cuando un plugin abre un hueco por el que alguien entra. Un sitio web no es algo que terminas. Es algo que mantienes.</span></p>
+      <h2 class="reveal"><span class="num">3.</span> <span lang="en">The part nobody says out loud: the price</span><span lang="es">La parte que nadie dice en voz alta: el precio</span></h2>
+      <p class="reveal"><span lang="en">An AI builder costs about $20 a month. I start at {{PRICE_STARTER}} {{USD}}. That gap is real and you deserve a straight answer about it.</span><span lang="es">Un constructor con IA cuesta unos $20 al mes. Yo empiezo en {{PRICE_STARTER}} {{USD}}. Esa diferencia es real y mereces una respuesta directa.</span></p>
+      <p class="reveal"><span lang="en">Add up the first year honestly. The subscription is $240. Then the hours you spend learning the tool and fighting it — most owners report somewhere between twenty and forty. Then whatever a slow or broken site costs you in customers who left before it loaded. Then, often, a rebuild in year two when the business has outgrown it. <strong>The sticker price and the real price are different numbers.</strong></span><span lang="es">Suma el primer año con honestidad. La suscripción son $240. Luego las horas que pasas aprendiendo la herramienta y peleando con ella — la mayoría de los dueños reportan entre veinte y cuarenta. Luego lo que te cuesta en clientes perdidos un sitio lento o roto que se fueron antes de que cargara. Y luego, muchas veces, reconstruirlo el segundo año cuando el negocio ya lo superó. <strong>El precio de etiqueta y el precio real son números distintos.</strong></span></p>
+      <p class="reveal"><span lang="en">Sometimes the subscription still wins. If your website is a placeholder rather than how customers find and judge you, it wins easily. That is a real answer, and it is free.</span><span lang="es">A veces la suscripción igual gana. Si tu sitio web es un marcador de posición y no la forma en que los clientes te encuentran y te evalúan, gana fácilmente. Esa es una respuesta real, y es gratis.</span></p>
+      <h2 class="reveal"><span class="num">4.</span> <span lang="en">I built one to see</span><span lang="es">Construí uno para comprobarlo</span></h2>
+      <p class="reveal"><span lang="en">I described a business with the problems I see most often — no mobile layout, an eight-second load, a form going nowhere, no hours listed anywhere — and had an AI builder produce a site for it. It is not a real client's site, deliberately. Nobody deserves to find their business in someone else's example.</span><span lang="es">Describí un negocio con los problemas que veo con más frecuencia — sin diseño móvil, ocho segundos de carga, un formulario que no lleva a ningún lado, sin horario visible — y dejé que un constructor con IA hiciera un sitio. No es el sitio de un cliente real, a propósito. Nadie merece encontrar su negocio en el ejemplo de otro.</span></p>
+      <p class="reveal"><span lang="en">What it got right: the layout was clean, the copy was grammatical, and it looked modern at a glance. Genuinely better than a lot of small business websites currently online.</span><span lang="es">Lo que hizo bien: el diseño quedó limpio, el texto era correcto, y a primera vista se veía moderno. Sinceramente mejor que muchos sitios de pequeños negocios que hay hoy en línea.</span></p>
+      <p class="reveal"><span lang="en">What it missed: no schema markup, so search engines had no idea what the business was or where. No hreflang, so the Spanish version competed with the English one instead of supporting it. A contact form that validated beautifully and submitted to nothing. And copy that could have described any business in any city — which is another way of saying it described none.</span><span lang="es">Lo que se le escapó: sin datos estructurados, así que los buscadores no tenían idea de qué era el negocio ni dónde estaba. Sin hreflang, así que la versión en español competía con la inglesa en vez de apoyarla. Un formulario que validaba perfectamente y no enviaba a ninguna parte. Y un texto que podría describir cualquier negocio en cualquier ciudad — que es otra forma de decir que no describía ninguno.</span></p>
+      <h2 class="reveal"><span class="num">5.</span> <span lang="en">Twelve things to check on any AI-built site</span><span lang="es">Doce cosas que revisar en cualquier sitio hecho con IA</span></h2>
+      <p class="reveal"><span lang="en">Run these against your own site right now. Every one is checkable in a few minutes, and every one is something an AI builder routinely misses.</span><span lang="es">Prueba esto en tu propio sitio ahora mismo. Cada punto se verifica en pocos minutos, y cada uno es algo que un constructor con IA suele pasar por alto.</span></p>
+      <p class="reveal"><span lang="en">Fill in your own contact form and confirm the message actually arrives.</span><span lang="es">Llena tu propio formulario de contacto y confirma que el mensaje de verdad llega.</span></p>
+      <p class="reveal"><span lang="en">Open the site on your phone, on mobile data, not wifi. Time it.</span><span lang="es">Abre el sitio en tu teléfono, con datos móviles, no con wifi. Cronométralo.</span></p>
+      <p class="reveal"><span lang="en">Search your business name on Google and see what description appears.</span><span lang="es">Busca el nombre de tu negocio en Google y mira qué descripción aparece.</span></p>
+      <p class="reveal"><span lang="en">Check that your hours, address and phone are visible without clicking anything.</span><span lang="es">Verifica que tu horario, dirección y teléfono se vean sin tener que hacer clic.</span></p>
+      <p class="reveal"><span lang="en">Click your phone number on a phone. It should dial.</span><span lang="es">Toca tu número de teléfono desde un celular. Debería marcar.</span></p>
+      <p class="reveal"><span lang="en">Confirm the padlock in the address bar — a missing certificate scares people off.</span><span lang="es">Confirma el candado en la barra de direcciones — un certificado ausente ahuyenta a la gente.</span></p>
+      <p class="reveal"><span lang="en">Read your homepage out loud. If it could describe a competitor, rewrite it.</span><span lang="es">Lee tu página de inicio en voz alta. Si podría describir a un competidor, reescríbela.</span></p>
+      <p class="reveal"><span lang="en">Check every image has meaningful alt text, for screen readers and image search.</span><span lang="es">Revisa que cada imagen tenga texto alternativo con sentido, para lectores de pantalla y búsqueda de imágenes.</span></p>
+      <p class="reveal"><span lang="en">Make sure each page has exactly one main heading, not zero and not four.</span><span lang="es">Asegúrate de que cada página tenga exactamente un encabezado principal, ni cero ni cuatro.</span></p>
+      <p class="reveal"><span lang="en">If you serve two languages, confirm each has its own address a search engine can reach.</span><span lang="es">Si atiendes en dos idiomas, confirma que cada uno tenga su propia dirección que un buscador pueda alcanzar.</span></p>
+      <p class="reveal"><span lang="en">Look for your business on Google Maps. If it is not there, that is free traffic you are not getting.</span><span lang="es">Busca tu negocio en Google Maps. Si no está, es tráfico gratis que no estás recibiendo.</span></p>
+      <p class="reveal"><span lang="en">Ask someone who has never seen it what you do. If they hesitate, the site is not doing its job.</span><span lang="es">Pregúntale a alguien que nunca lo haya visto qué es lo que haces. Si duda, el sitio no está haciendo su trabajo.</span></p>
+      <p class="reveal"><span lang="en">If most of that list checks out, your AI-built site is fine and you should keep it. If most of it does not, you now know exactly what to fix — whether you fix it yourself, or you do not.</span><span lang="es">Si la mayoría de esa lista está en orden, tu sitio hecho con IA está bien y deberías quedártelo. Si la mayoría no lo está, ahora sabes exactamente qué arreglar — lo arregles tú, o no.</span></p>
+
+      <div class="cta-box reveal">
+        <p><span lang="en">Want a second opinion on your site? I will run through that list with you and tell you honestly whether it needs work.</span><span lang="es">¿Quieres una segunda opinión sobre tu sitio? Repaso esa lista contigo y te digo con honestidad si necesita trabajo.</span></p>
+        <a class="btn" href="../book.html"><span lang="en">Book a free 15-minute call</span><span lang="es">Agenda una llamada gratis de 15 minutos</span>&nbsp;→</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="sticky-cta" id="stickyCta">
+  <a href="../book.html"><span lang="en">Ready for a website that works? → Free consultation</span><span lang="es">¿Listo para un sitio que funcione? → Consulta gratis</span></a>
+</div>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="credit" style="flex-direction:column;align-items:flex-start;gap:12px"><img class="foot-logo-light" src="../assets/logo/sebby-horizontal.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:block"><img class="foot-logo-dark" src="../assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby — Web Design, Development, Website Care" style="height:52px;display:none"><span><span lang="en">This site was <strong>Made by Sebby</strong>. Yours can be too.</span><span lang="es">Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</span></span></div>
+    <div class="foot-links">
+      <a href="../services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
+      <a href="../work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
+      <a href="../website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
+      <a href="../about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <a href="../blog.html"><span lang="en">Blog</span><span lang="es">Blog</span></a>
+      <a href="../privacy.html"><span lang="en">Privacy</span><span lang="es">Privacidad</span></a>
+      <a href="../terms.html"><span lang="en">Terms</span><span lang="es">Términos</span></a>
+      <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
+    </div>
+  </div>
+</footer>
+<script>!function(){var l=document.documentElement.getAttribute('data-lang');if(l==='es'){var b=document.querySelectorAll('.lang-toggle button');if(b.length===2){b[0].classList.remove('active');b[1].classList.add('active')}}}()</script>
+<script>!function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})}()</script>
+<script>!function(){var cta=document.getElementById('stickyCta');if(!cta)return;var footer=document.querySelector('footer');var shown=false;window.addEventListener('scroll',function(){var y=window.scrollY;var fTop=footer?footer.getBoundingClientRect().top+y-window.innerHeight:Infinity;if(y>400&&y<fTop){if(!shown){cta.classList.add('show');shown=true}}else{if(shown){cta.classList.remove('show');shown=false}}},{passive:true})}()</script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>
+</body>
+</html>

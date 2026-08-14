@@ -319,6 +319,17 @@ PAGES = {
             tw_desc="La mayoría de quienes buscan abogado empiezan en Google. Esto es lo que hace un buen sitio web para un bufete.",
         ),
     ),
+    "blog/should-i-use-ai-to-build-my-website.html": dict(
+        es="blog/deberia-usar-ia-para-crear-mi-sitio-web.html",
+        meta=dict(
+            title="¿Deberías Usar IA para Crear Tu Sitio Web?",
+            desc="Puedes crear un sitio web con IA, y a veces deberías. Una mirada honesta a lo que hacen bien, dónde se detienen, y 12 cosas que revisar en cualquier sitio hecho con IA.",
+            og_title="¿Deberías Usar IA para Crear Tu Sitio Web?",
+            og_desc="Puedes crear un sitio web con IA, y a veces deberías. Qué hacen bien los constructores con IA, dónde se detienen, y la capa invisible que suelen pasar por alto.",
+            tw_title="¿Deberías Usar IA para Crear Tu Sitio Web?",
+            tw_desc="Puedes crear un sitio web con IA, y a veces deberías. Qué hacen bien, dónde se detienen, y la capa invisible que suelen pasar por alto.",
+        ),
+    ),
     "blog/does-your-restaurant-need-a-website.html": dict(
         es="blog/necesita-tu-restaurante-un-sitio-web.html",
         meta=dict(
@@ -820,6 +831,9 @@ CRUMBS = {
     "blog/what-a-website-does-for-a-law-firm.html": {
         "en": "What a Website Actually Does for a Law Firm",
         "es": "Qué Hace un Sitio Web por un Bufete de Abogados"},
+    "blog/should-i-use-ai-to-build-my-website.html": {
+        "en": "Should You Use AI to Build Your Website?",
+        "es": "¿Deberías Usar IA para Crear Tu Sitio Web?"},
     "blog/does-your-restaurant-need-a-website.html": {
         "en": "Does Your Restaurant Need a Website?",
         "es": "¿Necesita Tu Restaurante un Sitio Web?"},

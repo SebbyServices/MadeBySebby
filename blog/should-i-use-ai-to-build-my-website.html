@@ -6,10 +6,10 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DV4L5CZRML');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog — Web Design Tips for Small Businesses — Made by Sebby</title>
+<title>Should You Use AI to Build Your Website? | Made by Sebby</title>
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Sebby — Made by Sebby">
-<meta name="description" content="Practical web design advice for small business owners. No jargon, no upsells, just straight talk from a freelance web designer.">
+<meta name="description" content="You can build a website with AI, and sometimes you should. What AI builders do well, where they stop, and 12 things to check on any AI-built site.">
 <link rel="preload" as="image" href="/assets/logo/sebby-nav.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,6 @@
   a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
   img{max-width:100%;display:block}
 
-  /* ---------- Nav ---------- */
   nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:50}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
   .logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.06rem;letter-spacing:-.01em}
@@ -42,32 +41,27 @@
   .btn{display:inline-flex;align-items:center;gap:8px;background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;padding:13px 26px;border-radius:999px;border:none;cursor:pointer;transition:background .15s,transform .15s}
   .btn:hover{background:var(--purple-deep);transform:translateY(-1px)}
   .btn:focus-visible{outline-color:var(--ink)}
-  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
-  .btn-ghost:hover{background:var(--tint);border-color:var(--purple);color:var(--purple)}
   .btn-nav{padding:10px 22px;font-size:.92rem}
 
-  /* ---------- Hero ---------- */
   .eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);margin-bottom:20px;display:flex;align-items:center;gap:10px}
   .eyebrow::before{content:"";width:26px;height:2.5px;background:var(--purple);border-radius:2px}
   .page-hero{padding:76px 0 52px}
   .page-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.09;letter-spacing:-.028em;margin-bottom:24px}
   .page-hero h1 .accent{color:var(--purple)}
-  .page-hero p.lede{font-size:1.14rem;color:var(--ink-soft);max-width:36em;margin-top:18px}
 
-  /* ---------- Sections ---------- */
-  section{padding:96px 0}
-  h2{font-size:clamp(1.7rem,3vw,2.35rem);font-weight:800;letter-spacing:-.022em;line-height:1.16;margin-bottom:16px}
+  .back-link{display:inline-flex;align-items:center;gap:6px;font-size:.9rem;font-weight:600;color:var(--muted);margin-bottom:28px;transition:color .15s}
+  .back-link:hover{color:var(--purple)}
+  .blog-meta{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
 
-  /* ---------- Blog cards ---------- */
-  .blog-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
-  .blog-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px;transition:transform .18s,box-shadow .18s,border-color .18s;text-decoration:none;display:block}
-  .blog-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08);border-color:#D8CFF6}
-  .blog-card .date{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-  .blog-card h2{font-size:1.2rem;font-weight:700;margin-bottom:10px;color:var(--ink)}
-  .blog-card p{font-size:.97rem;color:var(--ink-soft);margin-bottom:16px}
-  .blog-card .read-more{color:var(--purple);font-weight:600;font-size:.92rem}
+  .article{max-width:720px;margin:0 auto;padding:0 0 96px}
+  .article h2{font-size:clamp(1.3rem,2.5vw,1.65rem);font-weight:800;letter-spacing:-.022em;line-height:1.2;margin:48px 0 16px;color:var(--ink)}
+  .article h2 .num{color:var(--purple);margin-right:6px}
+  .article p{color:var(--ink-soft);font-size:1.05rem;margin-bottom:20px;max-width:38em;line-height:1.7}
+  .article p strong{color:var(--ink)}
+  .article .cta-box{background:var(--tint);border-radius:var(--radius);padding:36px 34px;margin:48px 0 0;border-left:4px solid var(--purple)}
+  .article .cta-box p{font-size:1.08rem;font-weight:600;color:var(--ink);margin-bottom:18px;max-width:none}
+  .article .cta-box .btn{margin-top:4px}
 
-  /* ---------- Footer ---------- */
   footer{border-top:1px solid var(--line);padding:44px 0}
   .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
   .credit{display:flex;align-items:center;gap:10px;font-size:.92rem;color:var(--muted)}
@@ -75,20 +69,13 @@
   .foot-links{display:flex;gap:26px;font-size:.9rem;color:var(--muted)}
   .foot-links a:hover{color:var(--purple)}
 
-  /* ---------- Motion ---------- */
   .rise{opacity:0;transform:translateY(16px);animation:rise .7s ease forwards}
-  .d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}
+  .d1{animation-delay:.08s}.d2{animation-delay:.16s}
   @keyframes rise{to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){.rise{opacity:1;transform:none;animation:none}*{transition:none !important;scroll-behavior:auto}}
 
-  /* ---------- Responsive ---------- */
-  @media (max-width:640px){
-    section{padding:68px 0}
-    .page-hero{padding:56px 0 36px}
-    .blog-cards{grid-template-columns:1fr}
-  }
+  @media (max-width:640px){.page-hero{padding:56px 0 36px}}
 
-  /* ---------- Hamburger Menu ---------- */
   .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;z-index:51}
   .menu-btn svg{width:26px;height:26px;stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round}
   .menu-btn .close{display:none}
@@ -106,36 +93,27 @@
     .nav-links .theme-toggle{margin-top:4px;align-self:flex-start}
   }
 
-  /* ---------- Scroll Animations ---------- */
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
   .reveal.visible{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
-  /* ---------- Sticky CTA ---------- */
   .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:40;background:var(--purple);color:#fff;padding:14px 28px;text-align:center;transform:translateY(100%);transition:transform .35s ease;font-weight:600;font-size:.95rem}
   .sticky-cta.show{transform:translateY(0)}
   .sticky-cta a{color:#fff;text-decoration:none}
   .sticky-cta a:hover{text-decoration:underline}
   @media (max-width:640px){.sticky-cta{font-size:.88rem;padding:12px 20px}}
-
-  /* ---------- Language Toggle ---------- */
   .lang-toggle{display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0}
   .lang-toggle>*{background:none;border:none;padding:7px 12px;cursor:pointer;color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em}
   .lang-toggle>*:hover{color:var(--purple)}
   .lang-toggle>.active{background:var(--purple);color:#fff}
 
-  /* ---------- Dark Mode ---------- */
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){--ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;--purple:#8B6CEF;--purple-deep:#7B5FDB;--tint:#1D192D;--line:#2A2838;--white:#0F1117}
   }
   :root[data-theme="dark"]{--ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;--purple:#8B6CEF;--purple-deep:#7B5FDB;--tint:#1D192D;--line:#2A2838;--white:#0F1117}
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]) nav{background:rgba(15,17,23,.92)}
-    :root:not([data-theme="light"]) .blog-card{background:#1A1C25}
-    :root:not([data-theme="light"]) .blog-card:hover{border-color:#3D3A4E}
-    :root:not([data-theme="light"]) .promise{background:#1D192D}
-    :root:not([data-theme="light"]) .btn-ghost{border-color:var(--line)}
-    :root:not([data-theme="light"]) .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+    :root:not([data-theme="light"]) .cta-box{background:#1D192D}
     :root:not([data-theme="light"]) .logo-light{display:none !important}
     :root:not([data-theme="light"]) .logo-dark{display:block !important}
     :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
@@ -144,11 +122,7 @@
     :root:not([data-theme="light"]) .btn:hover{background:#5C41B0}
   }
   [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
-  [data-theme="dark"] .blog-card{background:#1A1C25}
-  [data-theme="dark"] .blog-card:hover{border-color:#3D3A4E}
-  [data-theme="dark"] .promise{background:#1D192D}
-  [data-theme="dark"] .btn-ghost{border-color:var(--line)}
-  [data-theme="dark"] .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+  [data-theme="dark"] .cta-box{background:#1D192D}
   [data-theme="dark"] .logo-light{display:none !important}
   [data-theme="dark"] .logo-dark{display:block !important}
   [data-theme="dark"] .foot-logo-light{display:none !important}
@@ -156,7 +130,6 @@
   [data-theme="dark"] .btn{background:#6B4EC2}
   [data-theme="dark"] .btn:hover{background:#5C41B0}
 
-  /* ---------- Theme transition ---------- */
   .theme-trans,.theme-trans *,.theme-trans *::before,.theme-trans *::after{transition:background .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease,fill .35s ease,stroke .35s ease !important}
   .theme-toggle{background:none;border:1.5px solid var(--line);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .15s,background .15s;flex-shrink:0}
   .theme-toggle:hover{border-color:var(--purple);background:var(--tint)}
@@ -172,11 +145,9 @@
   [data-theme="light"] .theme-toggle .icon-sun{display:none !important}
   [data-theme="light"] .theme-toggle .icon-moon{display:block}
 
-  /* ---------- Skip link ---------- */
   .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
   .skip-link:focus{top:12px}
 
-  /* ---------- Print ---------- */
   @media print{
     nav,.menu-btn,.sticky-cta,#stickyCta,.theme-toggle,.lang-toggle,footer,.hero-ctas,.btn,.cta-row,.foot-cta{display:none!important}
     body{color:#000;background:#fff;-webkit-print-color-adjust:exact}
@@ -191,10 +162,10 @@
 
 <!-- seo:start -->
 <link rel="alternate" type="text/plain" title="LLM instructions" href="/llms.txt">
-<link rel="canonical" href="https://madebysebby.com/blog.html">
-<link rel="alternate" hreflang="en" href="https://madebysebby.com/blog.html">
-<link rel="alternate" hreflang="es" href="https://madebysebby.com/es/blog.html">
-<link rel="alternate" hreflang="x-default" href="https://madebysebby.com/blog.html">
+<link rel="canonical" href="https://madebysebby.com/blog/should-i-use-ai-to-build-my-website.html">
+<link rel="alternate" hreflang="en" href="https://madebysebby.com/blog/should-i-use-ai-to-build-my-website.html">
+<link rel="alternate" hreflang="es" href="https://madebysebby.com/es/blog/deberia-usar-ia-para-crear-mi-sitio-web.html">
+<link rel="alternate" hreflang="x-default" href="https://madebysebby.com/blog/should-i-use-ai-to-build-my-website.html">
 <meta name="theme-color" content="#6C3CE9">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -202,27 +173,32 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
 <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="Made by Sebby">
-<meta property="og:title" content="Blog — Web Design Tips for Small Businesses — Made by Sebby">
-<meta property="og:description" content="Practical web design advice for small business owners. No jargon, no upsells, just straight talk from a freelance web designer.">
+<meta property="og:title" content="Should You Use AI to Build Your Website? | Made by Sebby">
+<meta property="og:description" content="You can build a website with AI, and sometimes you should. What AI builders do well, where they stop, and the invisible layer they routinely miss.">
 <meta property="og:locale" content="en_US">
-<meta property="og:url" content="https://madebysebby.com/blog.html">
+<meta property="og:url" content="https://madebysebby.com/blog/should-i-use-ai-to-build-my-website.html">
 <meta property="og:image" content="https://madebysebby.com/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Blog — Web Design Tips for Small Businesses — Made by Sebby">
-<meta name="twitter:description" content="Practical web design advice for small business owners. No jargon, no upsells, just straight talk from a freelance web designer.">
+<meta name="twitter:title" content="Should You Use AI to Build Your Website? | Made by Sebby">
+<meta name="twitter:description" content="You can build a website with AI, and sometimes you should. What AI builders do well, where they stop, and the invisible layer they routinely miss.">
 <meta name="twitter:image" content="https://madebysebby.com/assets/og-image.jpg">
 <!-- seo:end -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "Made by Sebby Blog",
-  "url": "https://madebysebby.com/blog.html",
-  "description": "Practical web design advice for small business owners.",
+  "@type": "BlogPosting",
+  "headline": "Should You Use AI to Build Your Website?",
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "author": {
+    "@type": "Person",
+    "name": "Sebby",
+    "url": "https://madebysebby.com/about.html"
+  },
   "publisher": {
     "@type": "ProfessionalService",
     "name": "Made by Sebby",
@@ -267,6 +243,8 @@
     ],
     "inLanguage": "en"
   },
+  "url": "https://madebysebby.com/blog/should-i-use-ai-to-build-my-website.html",
+  "description": "You can build a website with AI, and sometimes you should. What AI builders do well, where they stop, and the invisible layer they routinely miss.",
   "inLanguage": "en"
 }
 </script>
@@ -286,6 +264,12 @@
       "position": 2,
       "name": "Blog",
       "item": "https://madebysebby.com/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Should You Use AI to Build Your Website?",
+      "item": "https://madebysebby.com/blog/should-i-use-ai-to-build-my-website.html"
     }
   ]
 }
@@ -307,7 +291,7 @@
       <a href="/about.html">About</a>
       <div class="lang-toggle">
           <span class="active">EN</span>
-          <a href="/es/blog.html" hreflang="es" lang="es" aria-label="Ver esta página en español">ES</a>
+          <a href="/es/blog/deberia-usar-ia-para-crear-mi-sitio-web.html" hreflang="es" lang="es" aria-label="Ver esta página en español">ES</a>
         </div>
       <button class="theme-toggle" aria-label="Toggle dark mode" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
         <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -321,63 +305,56 @@
 <main>
 <header class="page-hero">
   <div class="wrap">
-    <div class="eyebrow rise">Blog</div>
-    <h1 class="rise d1">Straight talk about <span class="accent">websites.</span></h1>
-    <p class="lede rise d2">Practical advice for business owners who want their website to actually work for them.</p>
+    <a class="back-link rise" href="/blog.html">← Back to blog</a>
+    <div class="blog-meta rise d1">August 2026</div>
+    <h1 class="rise d2">Should You Use AI to <span class="accent">Build Your Website?</span></h1>
   </div>
 </header>
 
-<section id="main" style="padding-top:24px">
+<section id="main" style="padding-top:0">
   <div class="wrap">
-    <div class="blog-cards">
+    <div class="article">
 
-      <a class="blog-card reveal" href="/blog/should-i-use-ai-to-build-my-website.html">
-        <div class="date">August 2026</div>
-        <h2>Should You Use AI to Build Your Website?</h2>
-        <p>You can build a website with AI, and sometimes you should. What AI builders do well, where they stop, and 12 things to check on any AI-built site.</p>
-        <span class="read-more">Read more &rarr;</span>
-      </a>
-      <a class="blog-card reveal" href="/blog/does-your-restaurant-need-a-website.html">
-        <div class="date">August 2026</div>
-        <h2>Does Your Restaurant Need a Website? (Yes — Here's Why)</h2>
-        <p>Most restaurants rely on Instagram and Google Maps alone. Here's why a dedicated website brings in more customers — and what it actually needs to include.</p>
-        <span class="read-more">Read more &rarr;</span>
-      </a>
+      <p class="reveal">A guitar does not make you a musician. Hand the same instrument to someone who picked it up last week and to someone who has played for fifteen years, and you get two completely different sounds out of identical equipment. Nobody blames the guitar.</p>
+      <p class="reveal">AI website builders are the same. They are genuinely good, they are getting better quickly, and they are not going away. But the tool is not the variable. <strong>The person holding it is.</strong></p>
+      <p class="reveal">So yes — you can build a website with AI, and sometimes you should. If you are testing an idea that is not a business yet, or you need something online by Friday, go use one. I would rather say that than sell you something you do not need. <strong>I use AI every day in my own work.</strong> That is exactly why I know where it stops.</p>
+      <h2 class="reveal"><span class="num">1.</span> The tools, honestly</h2>
+      <p class="reveal"><strong>Wix AI and Squarespace AI</strong> are the most complete option for a non-technical owner. You answer questions, you get a real site with hosting and a domain. Genuinely impressive, and the right answer for a lot of people.</p>
+      <p class="reveal"><strong>Lovable and v0</strong> generate startlingly good interfaces from a written description. If you can describe what you want precisely, they will build something that looks like it cost thousands. That conditional is doing a lot of work.</p>
+      <p class="reveal"><strong>ChatGPT</strong> will write your copy, your structure, and your code. It will also write it for a business it has never seen, in a market it does not know, for customers it has never met.</p>
+      <h2 class="reveal"><span class="num">2.</span> What experience actually changes</h2>
+      <p class="reveal"><strong>Knowing what to build.</strong> AI builds what you asked for. Knowing what to ask for is the job. A law firm needs practice-area pages and attorney bios before it needs anything clever. A restaurant needs hours, a map and a menu above the fold, and almost nothing else. Ask AI for "a website for my business" and you get a website for any business.</p>
+      <p class="reveal"><strong>The invisible layer.</strong> Schema markup, hreflang tags, canonical URLs, page speed, accessibility, and a contact form that actually sends. None of it is visible. All of it decides whether Google can read your site and whether a message reaches you. This is not theory: auditing my own site recently, I found a contact form that opened a mail app instead of sending anything, and 22,000 words of Spanish that Google could not see at all. On my own site. That is how invisible this layer is.</p>
+      <p class="reveal"><strong>Taste and restraint.</strong> AI defaults to more. More sections, more adjectives, more of everything. Knowing what to remove is the hardest thing to learn and the most obvious thing in the result. It is the entire difference between a site that looks generated and a site that looks considered.</p>
+      <p class="reveal"><strong>What happens after launch.</strong> AI builds a site once. It does not notice when the contact form breaks, when the certificate expires, or when a plugin opens a hole someone walks through. A website is not a thing you finish. It is a thing you keep.</p>
+      <h2 class="reveal"><span class="num">3.</span> The part nobody says out loud: the price</h2>
+      <p class="reveal">An AI builder costs about $20 a month. I start at $2,500 USD. That gap is real and you deserve a straight answer about it.</p>
+      <p class="reveal">Add up the first year honestly. The subscription is $240. Then the hours you spend learning the tool and fighting it — most owners report somewhere between twenty and forty. Then whatever a slow or broken site costs you in customers who left before it loaded. Then, often, a rebuild in year two when the business has outgrown it. <strong>The sticker price and the real price are different numbers.</strong></p>
+      <p class="reveal">Sometimes the subscription still wins. If your website is a placeholder rather than how customers find and judge you, it wins easily. That is a real answer, and it is free.</p>
+      <h2 class="reveal"><span class="num">4.</span> I built one to see</h2>
+      <p class="reveal">I described a business with the problems I see most often — no mobile layout, an eight-second load, a form going nowhere, no hours listed anywhere — and had an AI builder produce a site for it. It is not a real client's site, deliberately. Nobody deserves to find their business in someone else's example.</p>
+      <p class="reveal">What it got right: the layout was clean, the copy was grammatical, and it looked modern at a glance. Genuinely better than a lot of small business websites currently online.</p>
+      <p class="reveal">What it missed: no schema markup, so search engines had no idea what the business was or where. No hreflang, so the Spanish version competed with the English one instead of supporting it. A contact form that validated beautifully and submitted to nothing. And copy that could have described any business in any city — which is another way of saying it described none.</p>
+      <h2 class="reveal"><span class="num">5.</span> Twelve things to check on any AI-built site</h2>
+      <p class="reveal">Run these against your own site right now. Every one is checkable in a few minutes, and every one is something an AI builder routinely misses.</p>
+      <p class="reveal">Fill in your own contact form and confirm the message actually arrives.</p>
+      <p class="reveal">Open the site on your phone, on mobile data, not wifi. Time it.</p>
+      <p class="reveal">Search your business name on Google and see what description appears.</p>
+      <p class="reveal">Check that your hours, address and phone are visible without clicking anything.</p>
+      <p class="reveal">Click your phone number on a phone. It should dial.</p>
+      <p class="reveal">Confirm the padlock in the address bar — a missing certificate scares people off.</p>
+      <p class="reveal">Read your homepage out loud. If it could describe a competitor, rewrite it.</p>
+      <p class="reveal">Check every image has meaningful alt text, for screen readers and image search.</p>
+      <p class="reveal">Make sure each page has exactly one main heading, not zero and not four.</p>
+      <p class="reveal">If you serve two languages, confirm each has its own address a search engine can reach.</p>
+      <p class="reveal">Look for your business on Google Maps. If it is not there, that is free traffic you are not getting.</p>
+      <p class="reveal">Ask someone who has never seen it what you do. If they hesitate, the site is not doing its job.</p>
+      <p class="reveal">If most of that list checks out, your AI-built site is fine and you should keep it. If most of it does not, you now know exactly what to fix — whether you fix it yourself, or you do not.</p>
 
-      <a class="blog-card reveal" href="/blog/what-a-website-does-for-a-law-firm.html">
-        <div class="date">August 2026</div>
-        <h2>What a Website Actually Does for a Law Firm</h2>
-        <p>92% of people research their legal issue online before contacting an attorney. Here's what a well-built law firm website actually does, backed by data and a real case study.</p>
-        <span class="read-more">Read more &rarr;</span>
-      </a>
-
-      <a class="blog-card reveal" href="/blog/why-your-competitor-gets-calls-from-google.html">
-        <div class="date">August 2026</div>
-        <h2>Why Your Competitor Gets Calls From Google (And You Don't)</h2>
-        <p>80% of people search for local businesses online every week. If your business doesn't show up, your competitor gets the call. Here's exactly why, with real numbers.</p>
-        <span class="read-more">Read more →</span>
-      </a>
-
-      <a class="blog-card reveal" href="/blog/how-much-does-a-website-cost.html">
-        <div class="date">August 2026</div>
-        <h2>How Much Does a Website Cost in 2026?</h2>
-        <p>Real pricing for small businesses — DIY builders, freelancers, and agencies compared. What you actually get at each price point, with no upsells.</p>
-        <span class="read-more">Read more →</span>
-      </a>
-
-      <a class="blog-card reveal" href="/blog/5-signs-your-website-is-losing-clients.html">
-        <div class="date">July 2026</div>
-        <h2>5 Signs Your Website Is Losing You Clients</h2>
-        <p>Your website is supposed to bring in business. But what if it's quietly turning people away? Here are five warning signs most business owners miss.</p>
-        <span class="read-more">Read more →</span>
-      </a>
-
-      <a class="blog-card reveal" href="/blog/what-is-website-care.html">
-        <div class="date">July 2026</div>
-        <h2>What Website Care Actually Means (And Why You Need It)</h2>
-        <p>Most business owners launch a website and never touch it again. Here's what happens when you skip maintenance — and what a care plan actually covers.</p>
-        <span class="read-more">Read more →</span>
-      </a>
+      <div class="cta-box reveal">
+        <p>Want a second opinion on your site? I will run through that list with you and tell you honestly whether it needs work.</p>
+        <a class="btn" href="/book.html">Book a free 15-minute call&nbsp;→</a>
+      </div>
 
     </div>
   </div>
@@ -396,6 +373,7 @@
       <a href="/work.html">Work</a>
       <a href="/website-care.html">Website Care</a>
       <a href="/about.html">About</a>
+      <a href="/blog.html">Blog</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
       <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
