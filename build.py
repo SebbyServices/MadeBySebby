@@ -378,6 +378,7 @@ ARIA_ES = {
     "Made by Sebby home": "Inicio de Made by Sebby",
     "Breadcrumb": "Ruta de navegación",
     "Toggle annual billing": "Alternar facturación anual",
+    "Email": "Correo electrónico",
 }
 
 # alt text is an attribute too, so it has the same problem as aria-label: the
@@ -760,6 +761,21 @@ PRICES = {
     "{{AGENCY_LOW}}": "$10,000",
     "{{AGENCY_HIGH}}": "$30,000",
     "{{USD}}": "USD",
+    # Numeric forms for the price calculator's JavaScript. Same source as the
+    # display strings above, so the calculator cannot quote a number the pricing
+    # page does not. The upper bounds are the honest top of each tier's scope --
+    # the calculator reports a range, not a single figure, because a form cannot
+    # see everything a conversation does.
+    "{{N_STARTER}}": "2500",
+    "{{N_STARTER_MAX}}": "3500",
+    "{{N_CUSTOM}}": "5000",
+    "{{N_CUSTOM_MAX}}": "6500",
+    "{{N_PREMIUM}}": "9000",
+    "{{N_PREMIUM_MAX}}": "12000",
+    "{{N_CARE_ESSENTIALS}}": "99",
+    "{{N_CARE_STANDARD}}": "249",
+    "{{N_CARE_GROWTH}}": "549",
+    "{{N_SPANISH_STRATEGY}}": "750",
 }
 
 

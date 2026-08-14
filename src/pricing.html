@@ -523,6 +523,41 @@
 
   .faq details a{color:var(--purple);font-weight:600}
   .faq details a:hover{text-decoration:underline}
+
+  /* ---------- Price calculator ----------
+     Ungated on purpose. Every competitor's "calculator" is a lead-capture form
+     that promises a human quote in two hours; showing the number immediately is
+     the transparent-pricing claim made operational. Prices come from
+     build.PRICES so this can never quote a figure the tiers do not. */
+  .calc{border:1px solid var(--line);border-radius:var(--radius);background:var(--white);
+        padding:36px 34px;max-width:760px;margin:0 auto}
+  .calc-q{margin-bottom:26px}
+  .calc-q > p{font-weight:700;font-size:1rem;margin-bottom:12px;color:var(--ink)}
+  .calc-opts{display:flex;flex-wrap:wrap;gap:10px}
+  .calc-opts label{cursor:pointer}
+  .calc-opts input{position:absolute;opacity:0;width:0;height:0}
+  .calc-opts span.opt{display:inline-block;padding:10px 18px;border:1.5px solid var(--line);
+        border-radius:999px;font-size:.93rem;font-weight:600;color:var(--ink-soft);
+        transition:border-color .15s,background .15s,color .15s}
+  .calc-opts input:checked + span.opt{border-color:var(--purple);background:var(--tint);color:var(--purple)}
+  .calc-opts input:focus-visible + span.opt{outline:3px solid var(--blue);outline-offset:2px}
+  .calc-out{border-top:1px solid var(--line);margin-top:30px;padding-top:26px}
+  .calc-tier{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+        color:var(--purple);margin-bottom:8px}
+  .calc-range{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;letter-spacing:-.03em;color:var(--ink)}
+  .calc-typical{font-size:.95rem;color:var(--muted);margin-top:6px}
+  .calc-care{margin-top:18px;padding:14px 18px;background:var(--tint);border-radius:var(--radius-sm);
+        font-size:.95rem;color:var(--ink-soft)}
+  .calc-care strong{color:var(--ink)}
+  .calc-note{font-size:.88rem;color:var(--muted);margin-top:18px}
+  .calc-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:22px}
+  .calc-email{display:flex;gap:8px;flex:1;min-width:260px}
+  .calc-email input{flex:1;padding:12px 15px;border:1.5px solid var(--line);border-radius:var(--radius-sm);
+        font-family:inherit;font-size:.95rem;color:var(--ink);background:var(--white)}
+  .calc-email button{padding:12px 18px;border:1.5px solid var(--line);border-radius:var(--radius-sm);
+        background:none;font-family:inherit;font-size:.92rem;font-weight:600;color:var(--ink-soft);cursor:pointer}
+  .calc-email button:hover{border-color:var(--purple);color:var(--purple)}
+  @media (max-width:640px){.calc{padding:26px 22px}}
 </style>
 
 <!-- seo:start -->
@@ -805,6 +840,62 @@
 </section>
 
 <!-- What's included in every build -->
+
+<section id="calculator" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head" style="text-align:center;margin:0 auto 40px">
+      <h2><span lang="en">Get a number before you call.</span><span lang="es">Obtén un número antes de llamar.</span></h2>
+      <p><span lang="en">Four questions, a real range, no email required. Every other calculator in this market asks for your details and promises a quote later.</span><span lang="es">Cuatro preguntas, un rango real, sin pedir tu correo. Todos los demás calculadores de este mercado piden tus datos y prometen una cotización después.</span></p>
+    </div>
+    <div class="calc">
+      <div class="calc-q">
+        <p><span lang="en">How many pages do you need?</span><span lang="es">¿Cuántas páginas necesitas?</span></p>
+        <div class="calc-opts">
+          <label><input type="radio" name="pages" value="s" checked><span class="opt"><span lang="en">Up to 5</span><span lang="es">Hasta 5</span></span></label>
+          <label><input type="radio" name="pages" value="c"><span class="opt"><span lang="en">6 to 12</span><span lang="es">De 6 a 12</span></span></label>
+          <label><input type="radio" name="pages" value="p"><span class="opt"><span lang="en">More than 12</span><span lang="es">Más de 12</span></span></label>
+        </div>
+      </div>
+      <div class="calc-q">
+        <p><span lang="en">Who writes the words?</span><span lang="es">¿Quién escribe el contenido?</span></p>
+        <div class="calc-opts">
+          <label><input type="radio" name="copy" value="s" checked><span class="opt"><span lang="en">I'll provide them</span><span lang="es">Yo lo proporciono</span></span></label>
+          <label><input type="radio" name="copy" value="c"><span class="opt"><span lang="en">Help me tighten them</span><span lang="es">Ayúdame a pulirlo</span></span></label>
+          <label><input type="radio" name="copy" value="p"><span class="opt"><span lang="en">Write them for me</span><span lang="es">Escríbelo por mí</span></span></label>
+        </div>
+      </div>
+      <div class="calc-q">
+        <p><span lang="en">Any bookings, payments or CRM to connect?</span><span lang="es">¿Reservas, pagos o CRM que conectar?</span></p>
+        <div class="calc-opts">
+          <label><input type="radio" name="integrations" value="s" checked><span class="opt"><span lang="en">No</span><span lang="es">No</span></span></label>
+          <label><input type="radio" name="integrations" value="p"><span class="opt"><span lang="en">Yes</span><span lang="es">Sí</span></span></label>
+        </div>
+      </div>
+      <div class="calc-q">
+        <p><span lang="en">Spanish version</span><span lang="es">Versión en español</span></p>
+        <div class="calc-opts">
+          <label><input type="radio" name="spanish" value="mirror" checked><span class="opt"><span lang="en">Mirrors the English</span><span lang="es">Refleja el inglés</span></span></label>
+          <label><input type="radio" name="spanish" value="own"><span class="opt"><span lang="en">Written for its own market</span><span lang="es">Escrita para su propio mercado</span></span></label>
+        </div>
+      </div>
+      <div class="calc-out" aria-live="polite">
+        <div class="calc-tier" id="calcTier"></div>
+        <div class="calc-range" id="calcRange"></div>
+        <div class="calc-typical" id="calcTypical"></div>
+        <div class="calc-care" id="calcCare"></div>
+        <p class="calc-note"><span lang="en">A range, not a quote — a form cannot see everything a fifteen-minute conversation can. You get an exact number on the call, and it does not go up afterwards.</span><span lang="es">Un rango, no una cotización — un formulario no puede ver todo lo que ve una conversación de quince minutos. Recibes un número exacto en la llamada, y no sube después.</span></p>
+        <div class="calc-actions">
+          <a class="btn" href="book.html"><span lang="en">Book a free call</span><span lang="es">Agenda una llamada gratis</span>&nbsp;→</a>
+          <form class="calc-email" id="calcEmail">
+            <input type="email" id="calcEmailAddr" placeholder="<span lang="en"></span><span lang="es"></span>you@business.com" aria-label="Email">
+            <button type="submit"><span lang="en">Email me this</span><span lang="es">Envíamelo</span></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="sec-head reveal">
@@ -950,6 +1041,73 @@
 <script>!function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})}()</script>
 <script>!function(){var cta=document.getElementById('stickyCta');if(!cta)return;var footer=document.querySelector('footer');var shown=false;window.addEventListener('scroll',function(){var y=window.scrollY;var fTop=footer?footer.getBoundingClientRect().top+y-window.innerHeight:Infinity;if(y>400&&y<fTop){if(!shown){cta.classList.add('show');shown=true}}else{if(shown){cta.classList.remove('show');shown=false}}},{passive:true})}()</script>
 
+
+<script>
+(function(){
+  var root=document.querySelector('.calc'); if(!root) return;
+  var ES=document.documentElement.lang==='es';
+
+  // Numbers come from build.PRICES, so this cannot quote a figure the tiers do not.
+  var TIER={
+    s:{name:ES?'Plan Inicial':'Starter tier',      lo:{{N_STARTER}}, hi:{{N_STARTER_MAX}}, care:{{N_CARE_ESSENTIALS}}, careName:ES?'Esencial':'Essentials'},
+    c:{name:ES?'Plan Personalizado':'Custom tier', lo:{{N_CUSTOM}},  hi:{{N_CUSTOM_MAX}},  care:{{N_CARE_STANDARD}},   careName:ES?'Estándar':'Standard'},
+    p:{name:ES?'Plan Premium':'Premium tier',      lo:{{N_PREMIUM}}, hi:{{N_PREMIUM_MAX}}, care:{{N_CARE_GROWTH}},     careName:ES?'Crecimiento':'Growth'}
+  };
+  var SPANISH_STRATEGY={{N_SPANISH_STRATEGY}};
+  // Weighted, not "highest answer wins". A blunt max would quote Premium to
+  // someone wanting five pages with a booking link -- a $2,500 job priced at
+  // $9,000, which loses the lead instead of qualifying it. Page count drives
+  // most of the cost, so it carries most of the weight.
+  var WEIGHT={
+    pages:{s:0,c:2,p:5},
+    copy:{s:0,c:1,p:2},
+    integrations:{s:0,p:2}
+  };
+  var ORDER=['s','c','p'];
+
+  function money(n){ return '$'+n.toLocaleString('en-US'); }
+  function val(name){ var el=root.querySelector('input[name="'+name+'"]:checked'); return el?el.value:'s'; }
+
+  function update(){
+    var score=0;
+    ['pages','copy','integrations'].forEach(function(q){
+      var w=WEIGHT[q][val(q)]; if(w) score+=w;
+    });
+    var t=TIER[ORDER[score<=1?0:(score<=4?1:2)]];
+    var lo=t.lo, hi=t.hi, extra=(val('spanish')==='own');
+    if(extra){ lo+=SPANISH_STRATEGY; hi+=SPANISH_STRATEGY; }
+
+    root.querySelector('#calcTier').textContent=t.name;
+    root.querySelector('#calcRange').textContent=money(lo)+' – '+money(hi)+' USD';
+    root.querySelector('#calcTypical').textContent = ES
+      ? 'La mayoría de los proyectos de este alcance quedan en '+money(lo)+' USD.'
+      : 'Most projects at this scope land at '+money(lo)+' USD.';
+    root.querySelector('#calcCare').innerHTML = (ES
+      ? 'Después del lanzamiento, <strong>Cuidado Web '+t.careName+'</strong> a <strong>'+money(t.care)+' USD/mes</strong> mantiene el sitio actualizado, respaldado y monitoreado. Opcional, cancelable cuando quieras.'
+      : 'After launch, <strong>'+t.careName+' Website Care</strong> at <strong>'+money(t.care)+' USD/month</strong> keeps it updated, backed up and monitored. Optional, cancel any time.')
+      + (extra ? (ES
+          ? '<br><br>Incluye <strong>estrategia de contenido en español</strong> ('+money(SPANISH_STRATEGY)+' USD): investigación de palabras clave en español y textos escritos para ese mercado, no traducidos.'
+          : '<br><br>Includes <strong>Spanish-market content strategy</strong> ('+money(SPANISH_STRATEGY)+' USD): Spanish keyword research and copy written for that market rather than translated.') : '');
+  }
+
+  root.addEventListener('change',update);
+  update();
+
+  // Optional, never a gate -- the number is already on screen before this exists.
+  var f=document.getElementById('calcEmail');
+  if(f) f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var addr=document.getElementById('calcEmailAddr').value.trim();
+    if(!addr) return;
+    var t=root.querySelector('#calcTier').textContent;
+    var r=root.querySelector('#calcRange').textContent;
+    var subject=ES?'Mi estimado de sitio web':'My website estimate';
+    var body=(ES?'Estimado: ':'Estimate: ')+t+' — '+r+'%0D%0A%0D%0A'+encodeURIComponent(window.location.href);
+    if(window.gtag)gtag('event','calculator_email',{event_category:'pricing',event_label:t});
+    window.location.href='mailto:'+encodeURIComponent(addr)+'?subject='+encodeURIComponent(subject)+'&body='+body;
+  });
+})();
+</script>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>
 </body>
 </html>
