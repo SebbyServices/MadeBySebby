@@ -752,14 +752,37 @@ PRICES = {
 }
 
 
-# Web3Forms access key. Free, 250 submissions/month, no backend — which is what a
-# GitHub Pages site needs. The key is PUBLIC by design: it only authorises posting
-# to one destination inbox, so exposing it in client JS is how the service works.
+def load_env(path=".env"):
+    """Minimal .env reader -- stdlib only, nothing to install."""
+    values = {}
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as fh:
+            for line in fh:
+                line = line.strip()
+                if not line or line.startswith("#") or "=" not in line:
+                    continue
+                key, value = line.split("=", 1)
+                values[key.strip()] = value.strip().strip('"').strip("'")
+    return values
+
+
+# Web3Forms access key: free, 250 submissions/month, no backend, which is what a
+# GitHub Pages site needs.
 #
-# Get it in about 30 seconds at https://web3forms.com — enter the destination
-# email, the key arrives by email. Paste it here, nowhere else.
-# check-consistency.py fails while this is still the placeholder.
-FORM_ACCESS_KEY = "REPLACE_WITH_WEB3FORMS_KEY"
+# Read from .env so it lives in one editable place. But be precise about what that
+# buys: .env keeps the key out of THIS file, and out of git. It does NOT make the
+# key secret -- it is compiled into the built HTML and committed to a public repo,
+# because a static site has nowhere else to put it. That is the documented design.
+#
+# The exposure is bounded. Someone holding the key can submit to the form, which
+# is exactly what they could do by visiting the contact page. They cannot read
+# submissions or reach anything else on the account. Rotate at web3forms.com if
+# it is ever abused.
+#
+# A missing .env falls back to the placeholder, which check-consistency.py fails
+# on. That is deliberate: a fresh clone rebuilding without .env would otherwise
+# quietly replace a working key with nothing.
+FORM_ACCESS_KEY = load_env().get("WEB3FORMS_ACCESS_KEY", "REPLACE_WITH_WEB3FORMS_KEY")
 
 TOKENS = {"{{FORM_ACCESS_KEY}}": FORM_ACCESS_KEY}
 
