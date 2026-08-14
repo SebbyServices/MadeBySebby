@@ -35,6 +35,7 @@ failing when the committed output does not match a fresh build.
 """
 
 import argparse
+import datetime
 import json
 import os
 import posixpath
@@ -725,6 +726,168 @@ NAP = {
     ],
 }
 
+
+# ---------------------------------------------------------------------------
+# The footer, written once here and injected into every page
+#
+# It used to be copy-pasted into all 27 sources, which produced seven different
+# footers and, more to the point, a footer that did almost nothing. An audit
+# found it linked neither pricing, nor contact, nor book.html -- the three pages
+# the whole site exists to funnel toward -- carried no phone, no address and no
+# copyright line, and linked none of the social profiles the JSON-LD formally
+# claims under sameAs. On a local-SEO site the footer is where NAP is expected
+# to appear on every page, and it was the one place the business details were
+# missing entirely.
+#
+# Injected as {{FOOTER}} at the very top of render(), which buys three things
+# for free: the lang pairs get split like any other content, rewrite_paths turns
+# the root-absolute hrefs into the right tree, and the em dash gate applies.
+# ---------------------------------------------------------------------------
+FOOTER_LINKS = {
+    "services": (
+        ("/services.html", "What I do", "Qué hago"),
+        ("/pricing.html", "Pricing", "Precios"),
+        ("/website-care.html", "Website Care", "Cuidado Web"),
+        ("/web-design-for-law-firms.html", "For law firms", "Para abogados"),
+    ),
+    "studio": (
+        ("/work.html", "Work", "Trabajo"),
+        ("/about.html", "About", "Sobre mí"),
+        ("/blog.html", "Blog", "Blog"),
+        ("/contact.html", "Contact", "Contacto"),
+    ),
+    # Santo Domingo exists only in the Spanish tree, so the English footer must
+    # not link it. This is the one place the two footers legitimately differ,
+    # and check-consistency.py knows about it by name.
+    "areas": (
+        ("/web-design-miami.html", "Miami", "Miami"),
+        ("/web-design-fort-lauderdale.html", "Fort Lauderdale", "Fort Lauderdale"),
+        ("/diseno-web-santo-domingo.html", None, "Santo Domingo"),
+    ),
+}
+
+SOCIAL_ICONS = {
+    "https://www.linkedin.com/company/made-by-sebby/": (
+        "LinkedIn",
+        "M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.04c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z",
+    ),
+    "https://instagram.com/madebysebby": (
+        "Instagram",
+        "M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9c-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38C1.35 2.68.94 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.67.67 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.67-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.94 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z",
+    ),
+}
+
+
+def footer_html(lang):
+    """The one footer. Root-absolute hrefs; rewrite_paths retargets them."""
+    def col(key, en_head, es_head):
+        items = []
+        for href, en, es in FOOTER_LINKS[key]:
+            if en is None and lang != "es":
+                continue          # Spanish-only page, English tree skips it
+            label = ('<span lang="en">%s</span><span lang="es">%s</span>' % (en, es)
+                     if en is not None else es)
+            items.append('        <li><a href="%s">%s</a></li>' % (href, label))
+        return (
+            '      <div class="ft-col">\n'
+            '        <p class="ft-head" id="ft-%s"><span lang="en">%s</span>'
+            '<span lang="es">%s</span></p>\n'
+            '        <ul aria-labelledby="ft-%s">\n%s\n        </ul>\n'
+            '      </div>' % (key, en_head, es_head, key, "\n".join(items)))
+
+    social = "\n".join(
+        '        <a href="%s" rel="me noopener" target="_blank" title="%s">'
+        '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="%s"/></svg>'
+        '<span class="sr-only">%s</span></a>' % (url, name, path, name)
+        for url, (name, path) in SOCIAL_ICONS.items())
+
+    tel_href = "tel:" + NAP["telephone"].replace("-", "")
+    return FOOTER_TEMPLATE % dict(
+        services=col("services", "What I do", "Qué hago"),
+        studio=col("studio", "Studio", "Estudio"),
+        areas=col("areas", "Where I work", "Dónde trabajo"),
+        social=social,
+        tel_href=tel_href,
+        tel_display="(786) 543-1417",
+        email=NAP["email"],
+        year=datetime.date.today().year,
+    )
+
+
+FOOTER_TEMPLATE = '''<footer>
+  <div class="wrap foot-inner">
+      <div class="ft-brand">
+        <img class="foot-logo-light" src="/assets/logo/sebby-horizontal.svg" alt="Made by Sebby: Web Design, Development, Website Care" width="200" height="52">
+        <img class="foot-logo-dark" src="/assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby: Web Design, Development, Website Care" width="200" height="52">
+        <p class="ft-tag"><span lang="en">This site was <strong>Made by Sebby</strong>. Yours can be too.</span><span lang="es">Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</span></p>
+        <address class="ft-nap">
+          <span><span lang="en">Miami, Florida 33175, United States</span><span lang="es">Miami, Florida 33175, Estados Unidos</span></span>
+          <a href="%(tel_href)s">%(tel_display)s</a>
+          <a href="mailto:%(email)s">%(email)s</a>
+          <span class="ft-hours"><span lang="en">Mon to Fri, 9am to 6pm ET. Sat, 10am to 2pm.</span><span lang="es">Lun a Vie, 9am a 6pm ET. Sáb, 10am a 2pm.</span></span>
+        </address>
+      </div>
+%(services)s
+%(studio)s
+      <div class="ft-col ft-col-cta">
+%(areas)s
+        <a class="ft-cta" href="/book.html"><span lang="en">Book a free call</span><span lang="es">Agenda una llamada gratis</span></a>
+      </div>
+  </div>
+  <div class="wrap ft-bottom">
+    <p class="ft-copy">&copy; %(year)s Made by Sebby. <span lang="en">Web design and website care for small businesses in Miami, South Florida, and Santo Domingo.</span><span lang="es">Diseño web y cuidado de sitios para pequeños negocios en Miami, el sur de Florida y Santo Domingo.</span></p>
+    <div class="ft-legal">
+      <a href="/privacy.html"><span lang="en">Privacy</span><span lang="es">Privacidad</span></a>
+      <a href="/terms.html"><span lang="en">Terms</span><span lang="es">Términos</span></a>
+    </div>
+    <div class="ft-social">
+%(social)s
+    </div>
+  </div>
+</footer>'''
+
+# Appended to each page's single <style> block, so it lands last and wins the
+# cascade over the old flex rules still sitting in the sources.
+FOOTER_CSS = '''
+/* Footer: generated by build.py. Do not edit here, edit FOOTER_TEMPLATE. */
+footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
+.foot-inner{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.1fr;gap:40px;align-items:start;justify-content:normal}
+.ft-brand{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.ft-brand img{height:44px;width:auto;display:block}
+.foot-logo-dark{display:none}
+.ft-tag{font-size:.92rem;color:var(--muted);line-height:1.6;max-width:32ch;margin:0}
+.ft-tag strong{color:var(--ink);font-weight:700}
+.ft-nap{display:flex;flex-direction:column;gap:5px;font-size:.88rem;color:var(--muted);font-style:normal;line-height:1.5}
+.ft-nap a{color:var(--muted)}
+.ft-nap a:hover{color:var(--purple)}
+.ft-hours{font-size:.82rem;opacity:.85}
+.ft-head{font-size:.74rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink);margin:0 0 14px}
+.ft-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+.ft-col a{font-size:.9rem;color:var(--muted)}
+.ft-col a:hover{color:var(--purple)}
+.ft-col-cta{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+.ft-col-cta a.ft-cta{display:inline-block;padding:11px 20px;border-radius:var(--radius-sm);background:var(--purple);color:#fff;font-size:.88rem;font-weight:600;line-height:1}
+.ft-col-cta a.ft-cta:hover{background:var(--purple-deep);color:#fff}
+.ft-bottom{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:44px;padding-top:22px;padding-bottom:26px;border-top:1px solid var(--line)}
+.ft-copy{font-size:.82rem;color:var(--muted);margin:0;flex:1 1 320px;line-height:1.6}
+.ft-legal{display:flex;gap:20px;font-size:.82rem}
+.ft-legal a{color:var(--muted)}
+.ft-legal a:hover{color:var(--purple)}
+.ft-social{display:flex;gap:10px;margin-left:auto}
+.ft-social a{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--muted)}
+.ft-social a:hover{color:var(--purple);border-color:var(--purple)}
+.ft-social svg{width:15px;height:15px;fill:currentColor}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:900px){.foot-inner{grid-template-columns:1fr 1fr;gap:34px}.ft-brand{grid-column:1/-1}}
+@media(max-width:560px){.foot-inner{grid-template-columns:1fr;gap:30px}.ft-bottom{margin-top:34px}.ft-social{margin-left:0}}
+:root:not([data-theme="light"]) .foot-logo-light{display:none}
+:root:not([data-theme="light"]) .foot-logo-dark{display:block}
+[data-theme="dark"] .foot-logo-light{display:none}
+[data-theme="dark"] .foot-logo-dark{display:block}
+[data-theme="light"] .foot-logo-light{display:block}
+[data-theme="light"] .foot-logo-dark{display:none}
+'''
+
 # ---------------------------------------------------------------------------
 # Canonical prices, Aug 13 2026.
 #
@@ -1108,6 +1271,16 @@ def rewrite_jsonld(html, source, lang, memory):
 
 
 def render(source, html, lang):
+    # The footer goes in FIRST, before anything reads or splits the document, so
+    # it is treated as ordinary page content by every step that follows: its
+    # lang pairs get split, its root-absolute hrefs get retargeted at the right
+    # tree, and it is covered by the em dash gate like any other copy.
+    html = html.replace("{{FOOTER}}", footer_html(lang))
+    # Appended to the page's single <style> so it lands last and beats the old
+    # flex rules that are still sitting in the sources.
+    head, sep, tail = html.rpartition("</style>")
+    if sep:
+        html = head + FOOTER_CSS + sep + tail
     # Prices resolve FIRST so everything downstream -- the translation memory,
     # the FAQ schema read out of the DOM -- sees real numbers rather than tokens.
     html = substitute_prices(html)

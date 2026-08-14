@@ -17,6 +17,7 @@ Exit code 0 = consistent, 1 = drift found. Read-only; it never edits anything.
 Every check here exists because that exact thing had already gone wrong.
 """
 
+import datetime
 import glob
 import importlib.util
 import json
@@ -57,8 +58,12 @@ NO_SW = EXEMPT
 NOINDEX = EXEMPT
 # Both tree roots link their own logo to "#top" rather than "/". Deliberate.
 NAV_SELF_LINK = {"index.html": "#top", "es/index.html": "#top"}
-# The blog index doesn't repeat its own link in the footer.
-FOOTER_SELF_OMIT = {"blog.html": "blog.html", "es/blog.html": "blog.html"}
+# The footer is generated from a single template, so every page carries the
+# same links including a link to itself. The one real asymmetry: the Santo
+# Domingo landing page exists ONLY in Spanish, so the English footer cannot
+# link it. Anything else differing between the two trees is a bug.
+FOOTER_SELF_OMIT = {}
+FOOTER_ES_ONLY = {"diseno-web-santo-domingo.html"}
 
 BASE = "https://madebysebby.com"
 
@@ -360,7 +365,8 @@ NON_TRANSLATABLE = {
     "Riera Law Firm", "Elite Care Recovery", "rieralaw.com", "elitecarerecovery.net",
     "rieralaw.com →", "elitecarerecovery.net →", "madebysebby.com",
     "Jorge L. Riera", "John Pierce", "JP", "JR", "EC",
-    "WhatsApp", "Cal.com", "Google", "Instagram", "SEO", "GitHub Pages", "Wave",
+    "WhatsApp", "Cal.com", "Google", "Instagram", "LinkedIn", "SEO",
+    "GitHub Pages", "Wave",
     "Ir al contenido",   # diseno-web-santo-domingo is Spanish-only by design
     "<1s", "$3K+",       # a load-time metric and a price figure -- same in both
 }
@@ -368,6 +374,9 @@ NUMERIC_ONLY = re.compile(r"^[\W\d]*$")
 # A price renders the same in both trees by design -- $2,500 USD is not
 # untranslated copy, it is a number.
 PRICE_ONLY = re.compile(r"^[\$\d,.\s\u2013\u2014-]*(USD)?[\$\d,.\s\u2013\u2014-]*$")
+# The copyright line is a brand name and a year. Both are identical in Spanish;
+# the sentence that follows it in the footer IS a lang pair and is checked.
+COPYRIGHT_ONLY = re.compile(r"^\u00a9 \d{4} Made by Sebby\.$")
 
 
 def check_bilingual_coverage():
@@ -375,7 +384,13 @@ def check_bilingual_coverage():
         name = os.path.relpath(src_path, "src")
         if name in build.PASSTHROUGH:
             continue        # precios.html is Spanish-only; 404.html stays inline
-        html = build.substitute_prices(read(src_path))
+        html = read(src_path)
+        # Expand the footer before checking, rather than ignoring the token:
+        # the footer is real user-facing copy and has to be bilingual too. It is
+        # rendered as English here because the Spanish tree is what adds links,
+        # never what removes them.
+        html = html.replace("{{FOOTER}}", build.footer_html("en"))
+        html = build.substitute_prices(html)
         html = re.sub(r"<script.*?</script>|<style.*?</style>|<!--.*?-->", "", html, flags=re.S)
         m = re.search(r"<body.*?</body>", html, re.S)
         if not m:
@@ -392,7 +407,7 @@ def check_bilingual_coverage():
         for chunk in re.split(r"<[^>]+>", remaining):
             text = " ".join(unescape(chunk).split())
             if len(text) < 2 or NUMERIC_ONLY.match(text) or text in NON_TRANSLATABLE \
-               or PRICE_ONLY.match(text):
+               or PRICE_ONLY.match(text) or COPYRIGHT_ONLY.match(text):
                 continue
             fail("bilingual coverage", src_path,
                  "visible text %r has no lang=\"en\"/lang=\"es\" siblings, so it "
@@ -637,7 +652,11 @@ EM_DASH = "\u2014"
 
 
 def check_em_dashes():
-    for src_path in sorted(glob.glob("src/*.html") + glob.glob("src/blog/*.html")):
+    # build.py is in scope because user-facing copy now lives there too: the
+    # footer template is real page text, and a gate that only watched src/
+    # would have stopped seeing it the moment the footer moved.
+    for src_path in sorted(glob.glob("src/*.html") + glob.glob("src/blog/*.html")
+                           + ["build.py"]):
         html = read(src_path)
         hits = [m.start() for m in re.finditer(EM_DASH, html)]
         if not hits:
@@ -648,6 +667,31 @@ def check_em_dashes():
              "%d em dash%s. Replace with a comma, colon or full stop as the sentence "
              "needs -- never a blind swap. First: ...%s..."
              % (len(hits), "" if len(hits) == 1 else "es", context))
+
+
+def check_copyright_year():
+    """The footer year is stamped at build time and nothing rebuilds on Jan 1.
+
+    A footer showing last year is the cheapest possible signal that a site is
+    abandoned, and it is on all 52 pages at once. Rebuilding fixes it, so this
+    just has to notice.
+    """
+    year = str(datetime.date.today().year)
+    # The template writes the entity, not the literal character. Matching only
+    # U+00A9 made this check silently match nothing at all, which is worse than
+    # not having it: a green run that proves nothing.
+    pattern = re.compile(r"(?:&copy;|\u00a9)\s*(\d{4})\s+Made by Sebby")
+    stale = []
+    for p in pages():
+        if p in EXEMPT:
+            continue
+        m = pattern.search(read(p))
+        if m and m.group(1) != year:
+            stale.append(p)
+    if stale:
+        fail("copyright year", stale[0].split("/")[0] if len(stale) == 1 else "site",
+             "%d page%s a copyright year that is not %s. Re-run ./build.py."
+             % (len(stale), " shows" if len(stale) == 1 else "s show", year))
 
 
 # ---------------------------------------------------------------------------
@@ -684,6 +728,12 @@ def check_shared_blocks():
                 expected.add(self_link[page])
             if page in self_omit:
                 expected.discard(self_omit[page])
+
+            if tag == "footer":
+                if page.startswith("es/"):
+                    expected |= FOOTER_ES_ONLY
+                else:
+                    expected -= FOOTER_ES_ONLY
 
             noise = {"book.html", "contact.html"} if page in cta_flagged else set()
 
@@ -770,6 +820,7 @@ def main():
     check_prices()
     check_contact_form()
     check_em_dashes()
+    check_copyright_year()
     check_lang_toggle()
     check_cta_routing()   # must precede check_shared_blocks (populates cta_flagged)
     check_shared_blocks()
