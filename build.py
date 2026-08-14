@@ -757,6 +757,7 @@ PRICES = {
     "{{CARE_ESSENTIALS}}": "$99",
     "{{CARE_STANDARD}}": "$249",
     "{{CARE_GROWTH}}": "$549",
+    "{{CARE_OVERAGE}}": "$125",
     # What competing agencies charge. A claim about others, not a price of ours.
     "{{AGENCY_LOW}}": "$10,000",
     "{{AGENCY_HIGH}}": "$30,000",
