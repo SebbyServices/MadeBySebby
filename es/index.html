@@ -54,6 +54,7 @@
   .nav-links>a:hover{color:var(--purple)}
   .nav-links>a.btn{color:#fff}
   .nav-links>a.btn:hover{color:#fff}
+  .nav-controls{display:contents}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
     background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;
@@ -285,8 +286,8 @@
     .nav-links>a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
     .nav-links>a:last-child{border-bottom:none}
     .nav-links>a.btn{margin-top:12px;justify-content:center;border-bottom:none}
-    .nav-links .lang-toggle{margin-top:8px;align-self:flex-start}
-    .nav-links .theme-toggle{margin-top:4px;align-self:flex-start}
+    /* language + theme sit on one row, theme to the right of the pill */
+    .nav-links .nav-controls{display:flex;align-items:center;gap:14px;margin-top:8px;align-self:flex-start}
   }
 
 
@@ -861,14 +862,16 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
       <a href="/es/portafolio.html">Trabajo</a>
       <a href="/es/cuidado-web.html">Cuidado Web</a>
       <a href="/es/sobre-mi.html">Sobre mí</a>
-      <div class="lang-toggle">
+      <div class="nav-controls">
+        <div class="lang-toggle">
           <a href="/" hreflang="en" lang="en" aria-label="View this page in English">EN</a>
           <span class="active">ES</span>
         </div>
-        <button class="theme-toggle" aria-label="Alternar modo oscuro" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
-          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        </button>
+          <button class="theme-toggle" aria-label="Alternar modo oscuro" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
+            <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+      </div>
         <a href="/es/agendar.html" class="btn btn-nav">Trabaja con Sebby</a>
     </div>
   </div>
