@@ -70,6 +70,10 @@ BASE = "https://madebysebby.com"
 failures = []
 notes = []
 
+# Schema prose that is correctly identical in both trees. Keep this short: each
+# entry is a string a Spanish reader will see in English.
+BRAND_SCHEMA_PROSE = set()
+
 
 def fail(check, page, detail):
     failures.append((check, page, detail))
@@ -657,6 +661,26 @@ def check_contact_form():
 EM_DASH = "\u2014"
 
 
+EM_DASH_ESCAPES = ("&mdash;", "&#8212;", "&#x2014;", "\\u2014")
+
+
+def check_em_dash_escapes():
+    """Rule 1 covers the character, and an escape is still the character.
+
+    The literal-only gate ran clean for months over src/contact.html, which built
+    every inquiry email subject as "New inquiry \\u2014 Acme Dental". The em dash
+    was in the JS as an escape, so it never appeared in the file as U+2014 and the
+    check never saw it, while every lead notification carried one.
+    """
+    for src_path in sorted(glob.glob("src/*.html") + glob.glob("src/blog/*.html")):
+        body = read(src_path)
+        for esc in EM_DASH_ESCAPES:
+            if esc in body:
+                fail("em dash", src_path,
+                     "contains %s, an escaped em dash. Rule 1 is about the character "
+                     "that reaches a reader, not how it is spelled in source." % esc)
+
+
 def check_em_dashes():
     # build.py is in scope because user-facing copy now lives there too: the
     # footer template is real page text, and a gate that only watched src/
@@ -927,6 +951,115 @@ def check_reachable_from_home():
                  "UNLINKED_BY_DESIGN with the reason." % root)
 
 
+def check_schema_prices():
+    """Every Offer.price must equal a canonical price from build.PRICES.
+
+    This exists because the 2026-08-13 price raise reached the visible copy and
+    missed the schema entirely. For two days both pricing pages showed $2,500 to
+    a human and told every crawler the floor was $1,500, in the machine-readable
+    layer that Google and AI assistants trust over the visible page, on a site
+    whose central claim is transparent pricing.
+    """
+    numeric = {v.lstrip("$").replace(",", "") for v in build.PRICES.values()}
+    numeric |= {v for v in build.PRICES.values() if v.isdigit()}
+    for page in pages():
+        if page in EXEMPT:
+            continue
+        html = read(page)
+        for m in re.finditer(r'"price"\s*:\s*"?([\d.]+)"?', html):
+            price = m.group(1).rstrip(".0") if "." in m.group(1) else m.group(1)
+            if price not in numeric and m.group(1) not in numeric:
+                fail("schema price", page,
+                     "Offer.price is %s, which is not a canonical price. Schema "
+                     "prices must come from build.PRICES like the visible ones, "
+                     "or the two drift apart silently." % m.group(1))
+
+
+def check_llms_txt():
+    """llms.txt is the file written specifically for AI assistants.
+
+    It sits outside src/, so the em dash gate and every other content check
+    ignored it completely. It spent an unknown period stating the business was
+    based in the Dominican Republic, three days after that exact claim was
+    removed from all 52 pages for contradicting the Miami NAP.
+    """
+    if not os.path.exists("llms.txt"):
+        return
+    text = read("llms.txt")
+    hits = text.count(EM_DASH)
+    if hits:
+        fail("llms.txt", "llms.txt",
+             "%d em dash%s. Rule 1 applies here too, and this is the file AI "
+             "assistants read." % (hits, "" if hits == 1 else "es"))
+    for claim in ("based in the Dominican Republic", "based in Santo Domingo",
+                  "based in the DR"):
+        if claim.lower() in text.lower():
+            fail("llms.txt", "llms.txt",
+                 "says %r, which contradicts the Miami NAP every page declares."
+                 % claim)
+    digits = re.sub(r"\D", "", build.NAP["telephone"])
+    if digits and digits[-10:] not in re.sub(r"\D", "", text):
+        notes.append("llms.txt does not carry the canonical phone number")
+
+
+def check_spanish_schema_is_spanish():
+    """JSON-LD prose that is byte-identical in both trees was never translated.
+
+    SCHEMA_ES is a dict keyed on the exact English string, so every edit to an
+    English schema sentence silently orphans its Spanish translation: the lookup
+    misses, the walk falls through, and the Spanish page ships English prose to
+    the one consumer that cannot see the visible copy. On 2026-08-15 all three
+    Offer descriptions on /es/precios.html were English for exactly this reason,
+    because "bilingual option" had become "bilingual as standard" upstream.
+
+    Identity across twins is the precise test. Brand names and URLs are short or
+    listed, so a long string that survives translation unchanged is a bug.
+    """
+    keys = set(build.PROSE_KEYS)
+
+    def prose(page):
+        out = {}
+        for block in re.findall(
+                r'<script type="application/ld\+json">(.*?)</script>', read(page), re.S):
+            try:
+                data = json.loads(block)
+            except ValueError:
+                continue
+
+            def walk(node):
+                if isinstance(node, dict):
+                    for k, v in node.items():
+                        if k in keys and isinstance(v, str):
+                            out.setdefault(v, k)
+                        else:
+                            walk(v)
+                elif isinstance(node, list):
+                    for i in node:
+                        walk(i)
+            walk(data)
+        return out
+
+    for source in build.PAGES:
+        if build.PAGES[source].get("en", source) is None:
+            continue                      # Spanish-only page, no twin to compare
+        en_page = rel_path(build.url_for(source, "en"))
+        es_page = rel_path(build.url_for(source, "es"))
+        if not (os.path.isfile(en_page) and os.path.isfile(es_page)):
+            continue
+        english = set(prose(en_page))
+        for text, key in prose(es_page).items():
+            if len(text.split()) < 5:
+                continue                  # names, brands, short labels
+            if text in BRAND_SCHEMA_PROSE:
+                continue
+            if text in english:
+                fail("spanish schema", es_page,
+                     "JSON-LD %s is identical to the English page, so it was never "
+                     "translated and Google reads this Spanish page as English: %r. "
+                     "Add it to SCHEMA_ES in build.py, keyed with the same {{TOKENS}} "
+                     "the source uses." % (key, text[:90]))
+
+
 def check_shortlinks():
     """Vanity short links must exist, stay unindexed, and land somewhere real.
 
@@ -1010,6 +1143,7 @@ def main():
     check_prices()
     check_contact_form()
     check_em_dashes()
+    check_em_dash_escapes()
     check_copyright_year()
     check_precios_stays_spanish()
     check_dr_price_parity()
@@ -1017,7 +1151,10 @@ def main():
     check_cta_routing()
     check_primary_buttons_go_somewhere()
     check_reachable_from_home()
-    check_shortlinks()   # must precede check_shared_blocks (populates cta_flagged)
+    check_shortlinks()
+    check_schema_prices()
+    check_spanish_schema_is_spanish()
+    check_llms_txt()   # must precede check_shared_blocks (populates cta_flagged)
     check_shared_blocks()
 
     built = pages()

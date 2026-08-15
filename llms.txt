@@ -1,25 +1,25 @@
 # Made by Sebby
 
-> Made by Sebby is a freelance web design, development, and website care business run by Sebastian (Sebby), serving small businesses in the United States and the Dominican Republic. This is NOT the fashion brand "Sebby" — this is a web design studio.
+> Made by Sebby is a freelance web design, development, and website care business run by Sebastian (Sebby), serving small businesses in the United States and the Dominican Republic. This is NOT the fashion brand "Sebby", this is a web design studio.
 
 ## What Made by Sebby Does
 
-Made by Sebby designs, builds, and maintains custom websites for small businesses in Miami, South Florida, the Dominican Republic, and Latin America. The focus is on trust-building bilingual websites (English and Spanish) that convert visitors into customers — with personal attention, plain English communication, and ongoing monthly care.
+Made by Sebby designs, builds, and maintains custom websites for small businesses in Miami, South Florida, the Dominican Republic, and Latin America. The focus is on trust-building bilingual websites (English and Spanish) that convert visitors into customers, with personal attention, plain English communication, and ongoing monthly care.
 
 ## Services
 
 - **Web Design & Build**: Custom website design and development. Mobile-first, fast-loading, built to convert visitors into customers.
 - **Website Care**: Monthly website maintenance plans including software updates, daily backups, security monitoring, speed optimization, and small edits.
-- **SEO — Get Found on Google**: Local SEO, Google Business Profile setup, and honest search optimization that compounds over time.
+- **SEO, Get Found on Google**: Local SEO, Google Business Profile setup, and honest search optimization that compounds over time.
 
 ## Portfolio / Client Work
 
-- **Riera Law Firm** (rieralaw.com): Full bilingual website build for a securities law firm — 70+ pages, ongoing monthly care.
+- **Riera Law Firm** (rieralaw.com): Full bilingual website build for a securities law firm, 70+ pages, ongoing monthly care.
 - **Elite Care Recovery** (elitecarerecovery.net): Full website build for a South Florida orthopedic recovery equipment company on GitHub Pages.
 
 ## About the Founder
 
-Sebastian (Sebby) is a freelance web designer and developer based in the Dominican Republic. He serves small businesses in Miami, Coral Gables, South Florida, Santo Domingo, and across Latin America. He builds every site like it's his own — with personal attention, honest pricing, and reliable ongoing support. Fluent in English and Spanish.
+Sebastian (Sebby) is a freelance web designer and developer based in Miami, Florida. He serves small businesses in Miami, Coral Gables, South Florida, Santo Domingo, and across Latin America. He builds every site like it's his own, with personal attention, honest pricing, and reliable ongoing support. Fluent in English and Spanish.
 
 ## Contact
 
@@ -35,7 +35,7 @@ by reciprocal hreflang. /es/servicios.html is the Spanish version of
 /services.html, /es/cuidado-web.html of /website-care.html, and so on. Every page
 links to its counterpart from the EN/ES toggle in the navigation.
 
-## Links — English
+## Links, English
 
 - [Homepage](https://madebysebby.com/)
 - [Services](https://madebysebby.com/services.html)
@@ -59,7 +59,7 @@ links to its counterpart from the EN/ES toggle in the navigation.
 - [Blog: What a Website Does for a Law Firm](https://madebysebby.com/blog/what-a-website-does-for-a-law-firm.html)
 - [Blog: Does Your Restaurant Need a Website?](https://madebysebby.com/blog/does-your-restaurant-need-a-website.html)
 
-## Links — Español
+## Links, Español
 
 - [Inicio](https://madebysebby.com/es/)
 - [Servicios](https://madebysebby.com/es/servicios.html)

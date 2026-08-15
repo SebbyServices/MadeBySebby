@@ -139,11 +139,11 @@ PAGES = {
         es="precios.html",
         meta=dict(
             title="Precios de Diseño Web para Negocios | Made by Sebby",
-            desc="Precios claros de diseño web para pequeños negocios. Sitios básicos desde $1,500, personalizados desde $3,500. Sin costos ocultos. Consulta gratis.",
+            desc="Precios claros de diseño web para pequeños negocios. Sitios básicos desde {{PRICE_STARTER}}, personalizados desde {{PRICE_CUSTOM}}. Sin costos ocultos. Consulta gratis.",
             og_title="Precios y Paquetes de Diseño Web | Made by Sebby",
-            og_desc="Precios claros de diseño web para pequeños negocios. Sitios básicos desde $1,500, personalizados desde $3,500, proyectos premium desde $7,000. Sin costos ocultos.",
+            og_desc="Precios claros de diseño web para pequeños negocios. Sitios básicos desde {{PRICE_STARTER}}, personalizados desde {{PRICE_CUSTOM}}, proyectos premium desde {{PRICE_PREMIUM}}. Sin costos ocultos.",
             tw_title="Precios y Paquetes de Diseño Web | Made by Sebby",
-            tw_desc="Precios claros de diseño web para pequeños negocios. Sitios básicos desde $1,500, personalizados desde $3,500. Sin costos ocultos.",
+            tw_desc="Precios claros de diseño web para pequeños negocios. Sitios básicos desde {{PRICE_STARTER}}, personalizados desde {{PRICE_CUSTOM}}. Sin costos ocultos.",
         ),
     ),
     "website-care.html": dict(
@@ -618,6 +618,12 @@ def rewrite_toggle(html, source, lang):
 
 
 def rewrite_head(html, source, lang):
+    # Head strings come from the PAGES table, which is inserted here, AFTER
+    # substitute_prices has already run over the body. So any price token in a
+    # meta description has to be resolved locally or it ships as a literal
+    # {{PRICE_STARTER}} in the Google snippet. This is exactly how the Spanish
+    # pricing page kept advertising the old $1,500 floor for two days after the
+    # raise: the visible copy was tokenised and the head was not.
     entry = PAGES[source]
     noindex = entry.get("noindex", False)
     self_url = DOMAIN + url_for(source, lang)
@@ -626,13 +632,13 @@ def rewrite_head(html, source, lang):
     if lang == "es":
         meta = entry["meta"]
         html = re.sub(r"<title>.*?</title>",
-                      lambda _: "<title>%s</title>" % meta["title"], html, count=1, flags=re.S)
+                      lambda _: "<title>%s</title>" % substitute_prices(meta["title"]), html, count=1, flags=re.S)
         for pattern, value in (
-            (r'(<meta name="description" content=")[^"]*(">)', meta["desc"]),
-            (r'(<meta property="og:title" content=")[^"]*(">)', meta["og_title"]),
-            (r'(<meta property="og:description" content=")[^"]*(">)', meta["og_desc"]),
-            (r'(<meta name="twitter:title" content=")[^"]*(">)', meta["tw_title"]),
-            (r'(<meta name="twitter:description" content=")[^"]*(">)', meta["tw_desc"]),
+            (r'(<meta name="description" content=")[^"]*(">)', substitute_prices(meta["desc"])),
+            (r'(<meta property="og:title" content=")[^"]*(">)', substitute_prices(meta["og_title"])),
+            (r'(<meta property="og:description" content=")[^"]*(">)', substitute_prices(meta["og_desc"])),
+            (r'(<meta name="twitter:title" content=")[^"]*(">)', substitute_prices(meta["tw_title"])),
+            (r'(<meta name="twitter:description" content=")[^"]*(">)', substitute_prices(meta["tw_desc"])),
         ):
             html = re.sub(pattern, lambda m, v=value: m.group(1) + v + m.group(2), html, count=1)
 
@@ -954,6 +960,18 @@ PRICES = {
     "{{CARE_OVERAGE}}": "$125",
     "{{PRICE_SPANISH_STRATEGY}}": "$750",
     "{{PRICE_EXTRA_PAGE}}": "$150",
+
+    # Delivery windows and post-launch support. Tokenized 2026-08-15 because
+    # precios.html promised the DR a faster build than pricing.html sold in
+    # Miami (3-4 vs 4-6, 4-6 vs 6-10) on the same page that says the terms are
+    # identical everywhere, and the Premium support period read 90 days on the
+    # tier card and 30 days in the FAQ four hundred lines below it.
+    "{{WEEKS_STARTER}}": "2\u20133",
+    "{{WEEKS_CUSTOM}}": "4\u20136",
+    "{{WEEKS_PREMIUM}}": "6\u201310",
+    "{{SUPPORT_STARTER}}": "14",
+    "{{SUPPORT_CUSTOM}}": "30",
+    "{{SUPPORT_PREMIUM}}": "90",
     # Edit packs. These were bare literals in two source files, allow-listed in
     # the checker as "market figures" when they are nothing of the sort: they
     # are our prices, and a change would have had to be made by hand in both
@@ -1186,16 +1204,24 @@ SCHEMA_ES = {
     "Website Care. Monthly Website Maintenance": "Cuidado Web. Mantenimiento Mensual",
     "Local SEO, Google Business Profile setup, and honest search optimization that compounds over time.": "SEO local, configuración del Perfil de Empresa de Google y optimización de búsqueda honesta que se acumula con el tiempo.",
     "Free Web Design Consultation": "Consulta Gratuita de Diseño Web",
+    "SEO. Get Found on Google": "SEO. Aparece en Google",
     "Weekly tested software and security updates, daily off-site backups, uptime and security monitoring around the clock, monthly health report in plain English, and response within two business days": "Actualizaciones semanales de software y seguridad verificadas, respaldos diarios fuera del sitio, monitoreo de disponibilidad y seguridad las 24 horas, informe mensual de salud en términos claros, y respuesta dentro de dos días hábiles",
     "Everything in Essentials plus 1 hour of content edits, quarterly speed and performance tuning, backup restoration if compromised, and one-business-day response": "Todo lo del plan Esencial más 1 hora de ediciones de contenido, optimización trimestral de velocidad y rendimiento, restauración desde respaldo si el sitio es comprometido, y respuesta en un día hábil",
     "Everything in Standard plus 2 hours monthly for edits and on-page SEO, monthly Search Console and Analytics review, quarterly 30-minute strategy call, and 4-business-hour critical outage response": "Todo lo del plan Estándar más 2 horas mensuales para ediciones y SEO on-page, revisión mensual de Search Console y Analytics, llamada trimestral de estrategia de 30 minutos, y respuesta a interrupciones críticas en 4 horas hábiles",
-    "Up to 5 pages, mobile-responsive design, contact form, basic SEO setup, Google Analytics. Delivered in 2-3 weeks.": "Hasta 5 páginas, diseño adaptable a móvil, formulario de contacto, configuración básica de SEO, Google Analytics. Entrega en 2-3 semanas.",
-    "Up to 10 pages, custom design from scratch, copywriting help, SEO optimization, speed optimization, bilingual option. Delivered in 4-6 weeks.": "Hasta 10 páginas, diseño personalizado desde cero, ayuda con redacción, optimización SEO, optimización de velocidad, opción bilingüe. Entrega en 4-6 semanas.",
-    "Unlimited pages, full custom design and strategy, professional copywriting, advanced SEO, integrations, 30 days post-launch optimization. Delivered in 6-10 weeks.": "Páginas ilimitadas, diseño y estrategia totalmente personalizados, redacción profesional, SEO avanzado, integraciones, 30 días de optimización post-lanzamiento. Entrega en 6-10 semanas.",
+    "Up to {{PAGES_STARTER}} pages, mobile-responsive design, contact form, basic SEO setup, Google Analytics. Delivered in {{WEEKS_STARTER}} weeks.": "Hasta {{PAGES_STARTER}} páginas, diseño adaptable a móvil, formulario de contacto, configuración básica de SEO, Google Analytics. Entrega en {{WEEKS_STARTER}} semanas.",
+    "Up to {{PAGES_CUSTOM}} pages, custom design from scratch, copywriting help, SEO optimization, speed optimization, bilingual as standard. Delivered in {{WEEKS_CUSTOM}} weeks.": "Hasta {{PAGES_CUSTOM}} páginas, diseño personalizado desde cero, ayuda con redacción, optimización SEO, optimización de velocidad, bilingüe de serie. Entrega en {{WEEKS_CUSTOM}} semanas.",
+    "Unlimited pages, full custom design and strategy, professional copywriting, advanced SEO, integrations, {{SUPPORT_PREMIUM}} days post-launch optimization. Delivered in {{WEEKS_PREMIUM}} weeks.": "Páginas ilimitadas, diseño y estrategia totalmente personalizados, redacción profesional, SEO avanzado, integraciones, {{SUPPORT_PREMIUM}} días de optimización post-lanzamiento. Entrega en {{WEEKS_PREMIUM}} semanas.",
     "Freelance web design studio run by Sebastian (Sebby), building custom websites for small businesses. Not affiliated with the Sebby fashion/outerwear brand.": "Estudio de diseño web independiente dirigido por Sebastian (Sebby), que construye sitios web personalizados para pequeños negocios. Sin relación con la marca de ropa Sebby.",
     "Freelance web designer and developer who builds custom websites for small businesses with personal attention and plain English communication.": "Diseñador y desarrollador web independiente que construye sitios web personalizados para pequeños negocios, con atención personal y comunicación clara.",
     "Sebby rebuilt my law firm's entire web presence and untangled infrastructure problems that had my domain, my email, and two competing websites at odds. He treats my site like it's his own. I trust him with the online face of my practice.": "Sebby reconstruyó toda la presencia web de mi bufete y resolvió problemas de infraestructura que tenían mi dominio, mi correo y dos sitios web compitiendo entre sí. Trabaja rápido, explica todo en términos claros, y trata mi sitio como si fuera suyo. Le confío la cara digital de mi práctica."
 }
+
+# Resolve tokens on BOTH sides at import. Keying on raw English is what broke on
+# 2026-08-15: schema strings are price-substituted before the JSON-LD walk runs,
+# so every literal in a key had to be hand-synced, and when "bilingual option"
+# became "bilingual as standard" the lookup missed and the Spanish offer catalog
+# silently shipped three English paragraphs to Google.
+SCHEMA_ES = {substitute_prices(k): substitute_prices(v) for k, v in SCHEMA_ES.items()}
 
 
 def flatten_text(fragment):

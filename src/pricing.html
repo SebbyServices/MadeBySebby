@@ -619,32 +619,32 @@
     "itemListElement": [
       {
         "@type": "Offer",
-        "price": "1500",
+        "price": "{{N_STARTER}}",
         "priceCurrency": "USD",
         "itemOffered": {
           "@type": "Service",
           "name": "Starter Website",
-          "description": "Up to {{PAGES_STARTER}} pages, mobile-responsive design, contact form, basic SEO setup, Google Analytics. Delivered in 2-3 weeks."
+          "description": "Up to {{PAGES_STARTER}} pages, mobile-responsive design, contact form, basic SEO setup, Google Analytics. Delivered in {{WEEKS_STARTER}} weeks."
         }
       },
       {
         "@type": "Offer",
-        "price": "3500",
+        "price": "{{N_CUSTOM}}",
         "priceCurrency": "USD",
         "itemOffered": {
           "@type": "Service",
           "name": "Custom Website",
-          "description": "Up to {{PAGES_CUSTOM}} pages, custom design from scratch, copywriting help, SEO optimization, speed optimization, bilingual option. Delivered in 4-6 weeks."
+          "description": "Up to {{PAGES_CUSTOM}} pages, custom design from scratch, copywriting help, SEO optimization, speed optimization, bilingual as standard. Delivered in {{WEEKS_CUSTOM}} weeks."
         }
       },
       {
         "@type": "Offer",
-        "price": "7000",
+        "price": "{{N_PREMIUM}}",
         "priceCurrency": "USD",
         "itemOffered": {
           "@type": "Service",
           "name": "Premium Website",
-          "description": "Unlimited pages, full custom design and strategy, professional copywriting, advanced SEO, integrations, 30 days post-launch optimization. Delivered in 6-10 weeks."
+          "description": "Unlimited pages, full custom design and strategy, professional copywriting, advanced SEO, integrations, {{SUPPORT_PREMIUM}} days post-launch optimization. Delivered in {{WEEKS_PREMIUM}} weeks."
         }
       }
     ]
@@ -778,7 +778,7 @@
         <div class="price">{{PRICE_STARTER}} {{USD}}</div>
         <div class="timeline">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span lang="en">2-3 weeks</span><span lang="es">2-3 semanas</span>
+          <span lang="en">{{WEEKS_STARTER}} weeks</span><span lang="es">{{WEEKS_STARTER}} semanas</span>
         </div>
         <ul class="checklist">
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Up to {{PAGES_STARTER}} pages</span><span lang="es">Hasta {{PAGES_STARTER}} páginas</span></li>
@@ -788,7 +788,7 @@
               <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Bilingual build. English + Spanish</span><span lang="es">Sitio bilingüe, inglés y español</span></li>
               <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Schema markup so Google reads your business correctly</span><span lang="es">Datos estructurados para que Google entienda tu negocio</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Google Analytics</span><span lang="es">Google Analytics</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">14 days of post-launch support</span><span lang="es">14 días de soporte post-lanzamiento</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">{{SUPPORT_STARTER}} days of post-launch support</span><span lang="es">{{SUPPORT_STARTER}} días de soporte post-lanzamiento</span></li>
         </ul>
         <p class="best-for"><strong><span lang="en">Best for:</span><span lang="es">Ideal para:</span></strong> <span lang="en">New businesses, solo practitioners, simple service sites</span><span lang="es">Negocios nuevos, profesionales independientes, sitios de servicios simples</span></p>
         <p style="margin-top:18px"><a class="btn btn-ghost" href="book.html" style="width:100%;justify-content:center"><span lang="en">Start a project</span><span lang="es">Iniciar un proyecto</span></a></p>
@@ -803,7 +803,7 @@
         <div class="price">{{PRICE_CUSTOM}} {{USD}}</div>
         <div class="timeline">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span lang="en">4-6 weeks</span><span lang="es">4-6 semanas</span>
+          <span lang="en">{{WEEKS_CUSTOM}} weeks</span><span lang="es">{{WEEKS_CUSTOM}} semanas</span>
         </div>
         <ul class="checklist">
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Up to {{PAGES_CUSTOM}} pages</span><span lang="es">Hasta {{PAGES_CUSTOM}} páginas</span></li>
@@ -812,7 +812,7 @@
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">SEO optimization</span><span lang="es">Optimización SEO</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Speed optimization</span><span lang="es">Optimización de velocidad</span></li>
               <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Schema markup and Google Business Profile setup</span><span lang="es">Datos estructurados y configuración del Perfil de Empresa de Google</span></li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">30 days of post-launch support</span><span lang="es">30 días de soporte post-lanzamiento</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">{{SUPPORT_CUSTOM}} days of post-launch support</span><span lang="es">{{SUPPORT_CUSTOM}} días de soporte post-lanzamiento</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Bilingual build. English + Spanish</span><span lang="es">Sitio bilingüe, inglés y español</span></li>
         </ul>
         <p class="best-for"><strong><span lang="en">Best for:</span><span lang="es">Ideal para:</span></strong> <span lang="en">Growing businesses, professional services, multi-location</span><span lang="es">Negocios en crecimiento, servicios profesionales, multi-ubicación</span></p>
@@ -827,7 +827,7 @@
         <div class="price">{{PRICE_PREMIUM}} {{USD}}</div>
         <div class="timeline">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span lang="en">6-10 weeks</span><span lang="es">6-10 semanas</span>
+          <span lang="en">{{WEEKS_PREMIUM}} weeks</span><span lang="es">{{WEEKS_PREMIUM}} semanas</span>
         </div>
         <ul class="checklist">
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Unlimited pages</span><span lang="es">Páginas ilimitadas</span></li>
@@ -836,7 +836,7 @@
               <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Bilingual copywriting written for each market, not translated</span><span lang="es">Redacción bilingüe escrita para cada mercado, no traducida</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Advanced SEO</span><span lang="es">SEO avanzado</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Integrations (booking, CRM, payments)</span><span lang="es">Integraciones (reservas, CRM, pagos)</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">90 days of post-launch optimization</span><span lang="es">90 días de optimización post-lanzamiento</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">{{SUPPORT_PREMIUM}} days of post-launch optimization</span><span lang="es">{{SUPPORT_PREMIUM}} días de optimización post-lanzamiento</span></li>
               <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Website Care included for the first three months</span><span lang="es">Cuidado Web incluido los primeros tres meses</span></li>
         </ul>
         <p class="best-for"><strong><span lang="en">Best for:</span><span lang="es">Ideal para:</span></strong> <span lang="en">Established businesses investing in growth, competitive markets</span><span lang="es">Negocios establecidos invirtiendo en crecimiento, mercados competitivos</span></p>
@@ -950,7 +950,7 @@
       <div class="inc-card reveal">
         <div class="inc-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
         <h3><span lang="en">Post-launch support</span><span lang="es">Soporte post-lanzamiento</span></h3>
-        <p><span lang="en">Every build includes at least 14 days of support. Premium gets 30 days of active optimization.</span><span lang="es">Cada proyecto incluye al menos 14 días de soporte. Premium obtiene 30 días de optimización activa.</span></p>
+        <p><span lang="en">Starter includes {{SUPPORT_STARTER}} days of support, Custom {{SUPPORT_CUSTOM}} days, and Premium {{SUPPORT_PREMIUM}} days of active optimization.</span><span lang="es">Starter incluye {{SUPPORT_STARTER}} días de soporte, Custom {{SUPPORT_CUSTOM}} días, y Premium {{SUPPORT_PREMIUM}} días de optimización activa.</span></p>
       </div>
     </div>
   </div>

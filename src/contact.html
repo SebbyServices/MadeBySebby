@@ -695,7 +695,7 @@
       headers:{'Content-Type':'application/json',Accept:'application/json'},
       body:JSON.stringify({
         access_key:'{{FORM_ACCESS_KEY}}',
-        subject:s+(f.business.value?' \u2014 '+f.business.value:''),
+        subject:s+(f.business.value?', '+f.business.value:''),
         from_name:f.name.value,
         name:f.name.value,email:f.email.value,
         business:f.business.value,message:f.message.value

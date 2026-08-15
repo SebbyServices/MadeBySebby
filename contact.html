@@ -771,7 +771,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
       headers:{'Content-Type':'application/json',Accept:'application/json'},
       body:JSON.stringify({
         access_key:'ac665ecb-41e5-40b1-a9f0-c0318e2f2e74',
-        subject:s+(f.business.value?' \u2014 '+f.business.value:''),
+        subject:s+(f.business.value?', '+f.business.value:''),
         from_name:f.name.value,
         name:f.name.value,email:f.email.value,
         business:f.business.value,message:f.message.value
