@@ -1393,12 +1393,34 @@ def rewrite_jsonld(html, source, lang, memory):
                   fix_block, html, flags=re.S)
 
 
+# Cal.com event slugs, per language.
+#
+# Measured 2026-08-15: cal.com renders its own widget chrome from the visitor's
+# Accept-Language header, so a Spanish-speaking browser already gets "Zona
+# horaria", "Selecciona" and "Reservar" with no help from us. No URL parameter
+# changes it, ?locale=es and ?lang=es were both tried and both returned English.
+#
+# What the header does NOT translate is the event's own name, because that is
+# account content rather than interface. A Spanish visitor currently books
+# something called "Free Website Chat".
+#
+# Both entries point at the same event on purpose. Pointing the Spanish tree at
+# a slug that does not exist yet would 404 the only booking page a Spanish
+# speaker can reach, which is worse than an English event title. Create the
+# Spanish event type in cal.com, then change one string here.
+CAL_LINKS = {
+    "en": "madebysebby/chat",
+    "es": "madebysebby/chat",
+}
+
+
 def render(source, html, lang):
     # The footer goes in FIRST, before anything reads or splits the document, so
     # it is treated as ordinary page content by every step that follows: its
     # lang pairs get split, its root-absolute hrefs get retargeted at the right
     # tree, and it is covered by the em dash gate like any other copy.
     html = html.replace("{{FOOTER}}", footer_html(lang))
+    html = html.replace("{{CAL_LINK}}", CAL_LINKS[lang])
     # Appended to the page's single <style> so it lands last and beats the old
     # flex rules that are still sitting in the sources.
     head, sep, tail = html.rpartition("</style>")
