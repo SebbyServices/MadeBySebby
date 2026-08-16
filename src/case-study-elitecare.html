@@ -13,7 +13,12 @@
 <link rel="preload" as="image" href="assets/logo/sebby-nav.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<!-- Fonts load without blocking first paint. The URL already carries display=swap,
+     so fallback text was always going to show first; this stops the stylesheet
+     itself from holding up FCP. -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" media="print" onload="this.onload=null;this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"></noscript>
 <script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
 <script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
 <style>
@@ -22,7 +27,7 @@
     --ink-soft:#4A4E5C;
     --muted:#6B7080;
     --purple:#6C3CE9;
-    --purple-deep:#5A2FD0;
+    --purple-deep:#5A2FD0;--purple-cta:#6C3CE9;--purple-cta-deep:#5A2FD0;
     --blue:#2D6FFF;
     --tint:#F4F1FD;
     --line:#E8E6F2;
@@ -56,11 +61,11 @@
   .nav-links a:hover{color:var(--purple)}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
-    background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;
+    background:var(--purple-cta);color:#fff;font-weight:600;font-size:.98rem;
     padding:13px 26px;border-radius:999px;border:none;cursor:pointer;
     transition:background .15s, transform .15s;
   }
-  .btn:hover{background:var(--purple-deep);transform:translateY(-1px)}
+  .btn:hover{background:var(--purple-cta-deep);transform:translateY(-1px)}
   .btn:focus-visible{outline-color:var(--ink)}
   .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
   .btn-ghost:hover{background:var(--tint);border-color:var(--purple);color:var(--purple)}
@@ -211,7 +216,7 @@
   /* ---------- Sticky CTA ---------- */
   .sticky-cta{
     position:fixed;bottom:0;left:0;right:0;z-index:40;
-    background:var(--purple);color:#fff;
+    background:var(--purple-cta);color:#fff;
     padding:14px 28px;text-align:center;
     transform:translateY(100%);transition:transform .35s ease;
     font-weight:600;font-size:.95rem;
@@ -235,19 +240,19 @@
     color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em;
   }
   .lang-toggle button:hover{color:var(--purple)}
-  .lang-toggle button.active{background:var(--purple);color:#fff}
+  .lang-toggle button.active{background:var(--purple-cta);color:#fff}
 
   /* ---------- Dark Mode ---------- */
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
       --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
-      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;--purple-cta:#6B4EC2;--purple-cta-deep:#5C41B0;
       --tint:#1D192D;--line:#2A2838;--white:#0F1117;
     }
   }
   :root[data-theme="dark"]{
     --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
-    --purple:#8B6CEF;--purple-deep:#7B5FDB;
+    --purple:#8B6CEF;--purple-deep:#7B5FDB;--purple-cta:#6B4EC2;--purple-cta-deep:#5C41B0;
     --tint:#1D192D;--line:#2A2838;--white:#0F1117;
   }
   @media (prefers-color-scheme:dark){
@@ -265,8 +270,6 @@
     :root:not([data-theme="light"]) .logo-dark{display:block !important}
     :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
     :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
-    :root:not([data-theme="light"]) .btn{background:#6B4EC2}
-    :root:not([data-theme="light"]) .btn:hover{background:#5C41B0}
   }
   [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
   [data-theme="dark"] .approach{background:#1A1C25}
@@ -282,8 +285,6 @@
   [data-theme="dark"] .logo-dark{display:block !important}
   [data-theme="dark"] .foot-logo-light{display:none !important}
   [data-theme="dark"] .foot-logo-dark{display:block !important}
-  [data-theme="dark"] .btn{background:#6B4EC2}
-  [data-theme="dark"] .btn:hover{background:#5C41B0}
 
   /* Theme transition */
   .theme-trans,.theme-trans *,.theme-trans *::before,.theme-trans *::after{
@@ -308,7 +309,7 @@
   [data-theme="light"] .theme-toggle .icon-moon{display:block}
 
   /* ---------- Skip link ---------- */
-  .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
+  .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple-cta);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
   .skip-link:focus{top:12px}
 
   /* ---------- Print ---------- */
@@ -554,7 +555,7 @@
 <section style="padding-top:0">
   <div class="wrap">
     <div class="approach reveal" style="background:var(--white);border:1px solid var(--line);padding:56px 48px">
-      <h2><span lang="en">Why this matters for healthcare businesses.</span><span lang="es">Por que esto importa para negocios de salud.</span></h2>
+      <h2><span lang="en">Why this matters for healthcare businesses.</span><span lang="es">Por qué esto importa para negocios de salud.</span></h2>
       <p style="font-size:1.05rem;color:var(--ink-soft);max-width:42em;margin-bottom:28px"><span lang="en">In healthcare, trust is everything. Patients are making decisions about their recovery while they are in pain, often under time pressure. A professional website is not a luxury. It is the first place a patient or surgeon looks to decide whether your business is credible. Here is what a strong healthcare website needs to do:</span><span lang="es">En el sector salud, la confianza lo es todo. Los pacientes toman decisiones sobre su recuperación mientras están con dolor, a menudo bajo presión de tiempo. Un sitio web profesional no es un lujo. Es el primer lugar donde un paciente o cirujano busca para decidir si tu negocio es confiable. Esto es lo que un buen sitio web de salud necesita hacer:</span></p>
       <div class="approach-grid">
         <div class="approach-item" style="background:var(--tint)">
@@ -567,10 +568,10 @@
         </div>
         <div class="approach-item" style="background:var(--tint)">
           <h3><span lang="en">Look as professional as you are</span><span lang="es">Verse tan profesional como lo eres</span></h3>
-          <p><span lang="en">Surgeons refer patients to businesses they trust. A polished website signals that you take your business seriously. A missing or outdated site signals the opposite.</span><span lang="es">Los cirujanos refieren pacientes a negocios en los que confian. Un sitio web pulido senala que tomas tu negocio en serio. Un sitio faltante o desactualizado senala lo contrario.</span></p>
+          <p><span lang="en">Surgeons refer patients to businesses they trust. A polished website signals that you take your business seriously. A missing or outdated site signals the opposite.</span><span lang="es">Los cirujanos refieren pacientes a negocios en los que confían. Un sitio web pulido señala que tomas tu negocio en serio. Un sitio faltante o desactualizado señala lo contrario.</span></p>
         </div>
         <div class="approach-item" style="background:var(--tint)">
-          <h3><span lang="en">Make it easy to take action</span><span lang="es">Facilitar la accion</span></h3>
+          <h3><span lang="en">Make it easy to take action</span><span lang="es">Facilitar la acción</span></h3>
           <p><span lang="en">A clear reservation form, a visible phone number, and business hours right on the page. Patients should never have to hunt for how to reach you.</span><span lang="es">Un formulario de reserva claro, un número de teléfono visible y horario comercial directamente en la página. Los pacientes nunca deberían tener que buscar cómo contactarte.</span></p>
         </div>
       </div>

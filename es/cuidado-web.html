@@ -13,7 +13,12 @@
 <link rel="preload" as="image" href="/assets/logo/sebby-nav.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<!-- Fonts load without blocking first paint. The URL already carries display=swap,
+     so fallback text was always going to show first; this stops the stylesheet
+     itself from holding up FCP. -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" media="print" onload="this.onload=null;this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"></noscript>
 <script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
 <style>
   :root{
@@ -21,7 +26,7 @@
     --ink-soft:#4A4E5C;
     --muted:#6B7080;
     --purple:#6C3CE9;
-    --purple-deep:#5A2FD0;
+    --purple-deep:#5A2FD0;--purple-cta:#6C3CE9;--purple-cta-deep:#5A2FD0;
     --blue:#2D6FFF;
     --tint:#F4F1FD;
     --line:#E8E6F2;
@@ -57,11 +62,11 @@
   .nav-links>a:hover{color:var(--purple)}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
-    background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;
+    background:var(--purple-cta);color:#fff;font-weight:600;font-size:.98rem;
     padding:13px 26px;border-radius:999px;border:none;cursor:pointer;
     transition:background .15s, transform .15s;
   }
-  .btn:hover{background:var(--purple-deep);transform:translateY(-1px)}
+  .btn:hover{background:var(--purple-cta-deep);transform:translateY(-1px)}
   .btn:focus-visible{outline-color:var(--ink)}
   .btn-ghost{
     background:transparent;color:var(--ink);border:1.5px solid var(--line);
@@ -155,7 +160,7 @@
     content:counter(step);
     display:flex;align-items:center;justify-content:center;
     width:38px;height:38px;border-radius:50%;
-    background:var(--purple);color:#fff;font-weight:700;font-size:1rem;
+    background:var(--purple-cta);color:#fff;font-weight:700;font-size:1rem;
     margin-bottom:20px;
   }
   .step h3{font-size:1.1rem;font-weight:700;margin-bottom:9px}
@@ -266,7 +271,7 @@
   .plan{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:36px 30px;display:flex;flex-direction:column;transition:transform .18s, box-shadow .18s}
   .plan:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08)}
   .plan.featured{border:2px solid var(--purple);position:relative}
-  .plan.featured::before{content:"Most popular";position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--purple);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 16px;border-radius:999px}
+  .plan.featured::before{content:"Most popular";position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--purple-cta);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 16px;border-radius:999px}
   .plan.featured::before{content:"Más popular"}
   .plan h3{font-size:1.2rem;font-weight:800;margin-bottom:4px}
   .plan .for{font-size:.88rem;color:var(--muted);margin-bottom:18px}
@@ -317,7 +322,7 @@
 
   /* ---------- Pricing Toggle ---------- */
   .price-toggle{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:36px;font-size:.95rem;font-weight:600}
-  .price-toggle .save{font-size:.78rem;font-weight:700;color:#fff;background:var(--purple);padding:3px 10px;border-radius:999px}
+  .price-toggle .save{font-size:.78rem;font-weight:700;color:#fff;background:var(--purple-cta);padding:3px 10px;border-radius:999px}
   .toggle-switch{position:relative;width:48px;height:26px;background:var(--line);border-radius:999px;cursor:pointer;border:none;transition:background .2s}
   .toggle-switch::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
   .toggle-switch.active{background:var(--purple)}
@@ -423,7 +428,7 @@
   /* ---------- Sticky CTA ---------- */
   .sticky-cta{
     position:fixed;bottom:0;left:0;right:0;z-index:40;
-    background:var(--purple);color:#fff;
+    background:var(--purple-cta);color:#fff;
     padding:14px 28px;text-align:center;
     transform:translateY(100%);transition:transform .35s ease;
     font-weight:600;font-size:.95rem;
@@ -445,19 +450,19 @@
     text-decoration:none;display:flex;align-items:center;
   }
   .lang-toggle>*:hover{color:var(--purple)}
-  .lang-toggle>.active{background:var(--purple);color:#fff}
+  .lang-toggle button.active{background:var(--purple-cta);color:#fff}
 
   /* ---------- Dark Mode ---------- */
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
       --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
-      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;--purple-cta:#6B4EC2;--purple-cta-deep:#5C41B0;
       --tint:#1D192D;--line:#2A2838;--white:#0F1117;
     }
   }
   :root[data-theme="dark"]{
     --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
-      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;--purple-cta:#6B4EC2;--purple-cta-deep:#5C41B0;
       --tint:#1D192D;--line:#2A2838;--white:#0F1117;
   }
   @media (prefers-color-scheme:dark){
@@ -475,8 +480,8 @@
     :root:not([data-theme="light"]) .care p{color:#A0A3AD}
     :root:not([data-theme="light"]) .care li{color:#C8CAD0}
     :root:not([data-theme="light"]) .care li svg{stroke:#8B6CEF}
-    :root:not([data-theme="light"]) .care .btn{background:var(--purple);color:#fff}
-    :root:not([data-theme="light"]) .care .btn:hover{background:var(--purple-deep)}
+    :root:not([data-theme="light"]) .care .btn{background:var(--purple-cta);color:#fff}
+    :root:not([data-theme="light"]) .care .btn:hover{background:var(--purple-cta-deep)}
     :root:not([data-theme="light"]) .sitecard{background:#1A1C25}
     :root:not([data-theme="light"]) .sitecard .bar{background:#222430}
     :root:not([data-theme="light"]) .sitecard .url{background:#1A1C25;color:#717580}
@@ -489,9 +494,6 @@
     :root:not([data-theme="light"]) .logo-dark{display:block !important}
     :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
     :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
-    :root:not([data-theme="light"]) .btn{background:#6B4EC2}
-    :root:not([data-theme="light"]) .btn:hover{background:#5C41B0}
-    :root:not([data-theme="light"]) .step::before{background:#6B4EC2}
     :root:not([data-theme="light"]) .stat-card{background:#1A1C25}
     :root:not([data-theme="light"]) .edit-pack{background:#1A1C25}
     :root:not([data-theme="light"]) .why-card{background:#1A1C25}
@@ -514,8 +516,8 @@
   [data-theme="dark"] .care p{color:#A0A3AD}
   [data-theme="dark"] .care li{color:#C8CAD0}
   [data-theme="dark"] .care li svg{stroke:#8B6CEF}
-  [data-theme="dark"] .care .btn{background:var(--purple);color:#fff}
-  [data-theme="dark"] .care .btn:hover{background:var(--purple-deep)}
+  [data-theme="dark"] .care .btn{background:var(--purple-cta);color:#fff}
+  [data-theme="dark"] .care .btn:hover{background:var(--purple-cta-deep)}
   [data-theme="dark"] .sitecard{background:#1A1C25}
   [data-theme="dark"] .sitecard .bar{background:#222430}
   [data-theme="dark"] .sitecard .url{background:#1A1C25;color:#717580}
@@ -528,9 +530,6 @@
   [data-theme="dark"] .logo-dark{display:block !important}
   [data-theme="dark"] .foot-logo-light{display:none !important}
   [data-theme="dark"] .foot-logo-dark{display:block !important}
-  [data-theme="dark"] .btn{background:#6B4EC2}
-  [data-theme="dark"] .btn:hover{background:#5C41B0}
-  [data-theme="dark"] .step::before{background:#6B4EC2}
   [data-theme="dark"] .stat-card{background:#1A1C25}
   [data-theme="dark"] .edit-pack{background:#1A1C25}
   [data-theme="dark"] .why-card{background:#1A1C25}
@@ -564,7 +563,7 @@
 
 
   /* ---------- Skip link ---------- */
-  .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
+  .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple-cta);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
   .skip-link:focus{top:12px}
 
   /* ---------- Print ---------- */
@@ -875,7 +874,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <header class="page-hero">
   <div class="wrap">
     <div class="eyebrow">Cuidado Web</div>
-    <h1>Tu manejas tu negocio. <span class="accent">Yo me encargo de tu sitio web.</span></h1>
+    <h1>Tú manejas tu negocio. <span class="accent">Yo me encargo de tu sitio web.</span></h1>
     <p class="lede">La mayoría de los sitios web se deterioran lentamente. Los plugins se desactualizan, las páginas se vuelven lentas, se abren brechas de seguridad, y nadie se da cuenta hasta que un cliente lo nota. Con Cuidado Web, yo lo noto primero.</p>
   </div>
 </header>
@@ -886,7 +885,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
     <div class="stat-bar">
       <div class="stat-card reveal">
         <div class="num">30,000+</div>
-        <p>Sitios web hackeados cada dia</p>
+        <p>Sitios web hackeados cada día</p>
       </div>
       <div class="stat-card reveal">
         <div class="num">$3K+</div>
@@ -941,7 +940,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
         <a class="btn btn-ghost plan-cta-annual" href="https://link.waveapps.com/bejbhr-xekxzx" target="_blank" rel="noopener" style="display:none">Elegir Esencial (Anual)</a>
       </div>
       <div class="plan reveal featured">
-        <h3>Estandar</h3>
+        <h3>Estándar</h3>
         <p class="for">Para negocios cuyo sitio web atrae clientes</p>
         <div class="price price-monthly">$249<em>/mes</em></div>
         <div class="price price-annual">$2,739<em>/año</em></div>
@@ -953,8 +952,8 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Restauración desde un respaldo limpio si el sitio es comprometido</li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Respuesta dentro de un día hábil</li>
         </ul>
-        <a class="btn plan-cta-monthly" href="https://link.waveapps.com/5hmu99-yqmucp" target="_blank" rel="noopener">Elegir Estandar</a>
-        <a class="btn plan-cta-annual" href="https://link.waveapps.com/fyehtw-53d3g8" target="_blank" rel="noopener" style="display:none">Elegir Estandar (Anual)</a>
+        <a class="btn plan-cta-monthly" href="https://link.waveapps.com/5hmu99-yqmucp" target="_blank" rel="noopener">Elegir Estándar</a>
+        <a class="btn plan-cta-annual" href="https://link.waveapps.com/fyehtw-53d3g8" target="_blank" rel="noopener" style="display:none">Elegir Estándar (Anual)</a>
       </div>
       <div class="plan reveal">
         <h3>Crecimiento</h3>
@@ -963,7 +962,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
         <div class="price price-annual">$6,039<em>/año</em></div>
         <div class="price-annual" style="font-size:.85rem;color:var(--muted);margin-bottom:4px;display:none">equivalente a $503.25/mes</div>
         <ul class="checklist">
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Todo lo del plan Estandar</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Todo lo del plan Estándar</li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Dos horas mensuales para ediciones, SEO on-page y mejoras del sitio</li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Revisión mensual de Search Console, Analytics y Core Web Vitals</li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Llamada trimestral de estrategia de 30 minutos</li>
@@ -984,9 +983,9 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
       <table>
         <thead>
           <tr>
-            <th>Caracteristica</th>
+            <th>Característica</th>
             <th>Esencial</th>
-            <th class="pop">Estandar</th>
+            <th class="pop">Estándar</th>
             <th>Crecimiento</th>
           </tr>
         </thead>
@@ -1062,7 +1061,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>¿Necesitas ediciones sin un plan?</h2>
-      <p>En el plan Esencial o solo necesitas un cambio puntual? Toma un paquete de ediciones. Sin suscripción requerida.</p>
+      <p>¿En el plan Esencial o solo necesitas un cambio puntual? Toma un paquete de ediciones. Sin suscripción requerida.</p>
     </div>
     <div class="edit-packs">
       <div class="edit-pack reveal">
@@ -1125,23 +1124,23 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <section>
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>Por que los negocios me confian sus sitios.</h2>
+      <h2>Por qué los negocios me confían sus sitios.</h2>
     </div>
     <div class="why-grid">
       <div class="why-card reveal">
         <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <h3>Una persona, no una cola de tickets</h3>
-        <p>Me escribes directamente. Sin niveles de soporte, sin musica de espera, sin "tu ticket ha sido escalado."</p>
+        <p>Me escribes directamente. Sin niveles de soporte, sin música de espera, sin "tu ticket ha sido escalado."</p>
       </div>
       <div class="why-card reveal">
         <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
         <h3>Arreglo problemas antes de que los notes</h3>
-        <p>El monitoreo automatizado detecta problemas a las 2am para que tu no tengas que hacerlo. Recibes un informe, no una llamada de panico.</p>
+        <p>El monitoreo automatizado detecta problemas a las 2am para que tú no tengas que hacerlo. Recibes un informe, no una llamada de pánico.</p>
       </div>
       <div class="why-card reveal">
         <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
         <h3>Informes en términos claros</h3>
-        <p>Sin jerga tecnica. Cada informe mensual te dice que paso, que esta saludable, y que considerar a continuacion.</p>
+        <p>Sin jerga técnica. Cada informe mensual te dice qué pasó, qué está saludable, y qué considerar a continuación.</p>
       </div>
     </div>
   </div>

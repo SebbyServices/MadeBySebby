@@ -36,6 +36,7 @@ failing when the committed output does not match a fresh build.
 
 import argparse
 import datetime
+import glob
 import json
 import os
 import posixpath
@@ -1507,6 +1508,38 @@ REDIRECT_STUB = """<!DOCTYPE html>
 """
 
 
+def audit_sources(src_dir):
+    """Every .html in src/ must be published, and everything published must exist.
+
+    This used to be silent in both directions. A source that was never added to
+    PAGES simply did not build: no error, exit 0, "wrote 52 files", and a page
+    that a writer had spent an afternoon on was quietly unpublished. The only
+    thing that ever caught it was check-consistency.py, which runs later, if it
+    runs, and which cannot help someone who builds and pushes.
+
+    The other direction crashed with a bare IOError and a traceback halfway
+    through writing, leaving the output tree half old and half new.
+
+    Returns a list of complaints. Empty means the two sides agree.
+    """
+    problems = []
+    known = set(PAGES) | set(PASSTHROUGH)
+    on_disk = set()
+    for path in sorted(glob.glob(os.path.join(src_dir, "*.html"))
+                       + glob.glob(os.path.join(src_dir, "blog", "*.html"))):
+        on_disk.add(os.path.relpath(path, src_dir))
+    for name in sorted(on_disk - known):
+        problems.append(
+            "%s/%s is in neither PAGES nor PASSTHROUGH, so building would drop "
+            "it. Add it to PAGES with its Spanish slug and head strings, or to "
+            "PASSTHROUGH if it ships verbatim." % (src_dir, name))
+    for name in sorted(known - on_disk):
+        problems.append(
+            "%s is listed in %s but no file exists at %s/%s."
+            % (name, "PAGES" if name in PAGES else "PASSTHROUGH", src_dir, name))
+    return problems
+
+
 def build(src_dir, out_dir):
     written = {}
     for source in PAGES:
@@ -1556,6 +1589,17 @@ def main():
 
     root = os.path.dirname(os.path.abspath(__file__))
     os.chdir(root)
+
+    # Before anything is written, and before --check reports on a tree that is
+    # already missing a page. A build that silently publishes less than src/
+    # holds is worse than a build that refuses to run.
+    problems = audit_sources(args.src)
+    if problems:
+        print("REFUSING TO BUILD -- src/ and the PAGES table disagree:")
+        for line in problems:
+            print("   ", line)
+        print("\nNothing was written.")
+        return 1
 
     if args.check:
         stale = []

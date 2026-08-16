@@ -13,12 +13,17 @@
 <link rel="preload" as="image" href="/assets/logo/sebby-nav.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<!-- Fonts load without blocking first paint. The URL already carries display=swap,
+     so fallback text was always going to show first; this stops the stylesheet
+     itself from holding up FCP. -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" media="print" onload="this.onload=null;this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"></noscript>
 <script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
 <style>
   :root{
     --ink:#1A1D29;--ink-soft:#4A4E5C;--muted:#6B7080;
-    --purple:#6C3CE9;--purple-deep:#5A2FD0;--blue:#2D6FFF;
+    --purple:#6C3CE9;--purple-deep:#5A2FD0;--purple-cta:#6C3CE9;--purple-cta-deep:#5A2FD0;--blue:#2D6FFF;
     --tint:#F4F1FD;--line:#E8E6F2;--white:#FFFFFF;
     --radius:20px;--radius-sm:12px;
   }
@@ -38,8 +43,8 @@
   .nav-links>a.btn{color:#fff}
   .nav-links>a.btn:hover{color:#fff}
   .nav-links>a:hover{color:var(--purple)}
-  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;padding:13px 26px;border-radius:999px;border:none;cursor:pointer;transition:background .15s,transform .15s}
-  .btn:hover{background:var(--purple-deep);transform:translateY(-1px)}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--purple-cta);color:#fff;font-weight:600;font-size:.98rem;padding:13px 26px;border-radius:999px;border:none;cursor:pointer;transition:background .15s,transform .15s}
+  .btn:hover{background:var(--purple-cta-deep);transform:translateY(-1px)}
   .btn:focus-visible{outline-color:var(--ink)}
   .btn-nav{padding:10px 22px;font-size:.92rem}
 
@@ -102,7 +107,7 @@
   .reveal.visible{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
-  .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:40;background:var(--purple);color:#fff;padding:14px 28px;text-align:center;transform:translateY(100%);transition:transform .35s ease;font-weight:600;font-size:.95rem}
+  .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:40;background:var(--purple-cta);color:#fff;padding:14px 28px;text-align:center;transform:translateY(100%);transition:transform .35s ease;font-weight:600;font-size:.95rem}
   .sticky-cta.show{transform:translateY(0)}
   .sticky-cta a{color:#fff;text-decoration:none}
   .sticky-cta a:hover{text-decoration:underline}
@@ -110,12 +115,12 @@
   .lang-toggle{display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0}
   .lang-toggle>*{background:none;border:none;padding:7px 12px;cursor:pointer;color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em}
   .lang-toggle>*:hover{color:var(--purple)}
-  .lang-toggle>.active{background:var(--purple);color:#fff}
+  .lang-toggle button.active{background:var(--purple-cta);color:#fff}
 
   @media (prefers-color-scheme:dark){
-    :root:not([data-theme="light"]){--ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;--purple:#8B6CEF;--purple-deep:#7B5FDB;--tint:#1D192D;--line:#2A2838;--white:#0F1117}
+    :root:not([data-theme="light"]){--ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;--purple:#8B6CEF;--purple-deep:#7B5FDB;--purple-cta:#6B4EC2;--purple-cta-deep:#5C41B0;--tint:#1D192D;--line:#2A2838;--white:#0F1117}
   }
-  :root[data-theme="dark"]{--ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;--purple:#8B6CEF;--purple-deep:#7B5FDB;--tint:#1D192D;--line:#2A2838;--white:#0F1117}
+  :root[data-theme="dark"]{--ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;--purple:#8B6CEF;--purple-deep:#7B5FDB;--purple-cta:#6B4EC2;--purple-cta-deep:#5C41B0;--tint:#1D192D;--line:#2A2838;--white:#0F1117}
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]) nav{background:rgba(15,17,23,.92)}
     :root:not([data-theme="light"]) .cta-box{background:#1D192D}
@@ -124,8 +129,6 @@
     :root:not([data-theme="light"]) .logo-dark{display:block !important}
     :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
     :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
-    :root:not([data-theme="light"]) .btn{background:#6B4EC2}
-    :root:not([data-theme="light"]) .btn:hover{background:#5C41B0}
   }
   [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
   [data-theme="dark"] .cta-box{background:#1D192D}
@@ -134,8 +137,6 @@
   [data-theme="dark"] .logo-dark{display:block !important}
   [data-theme="dark"] .foot-logo-light{display:none !important}
   [data-theme="dark"] .foot-logo-dark{display:block !important}
-  [data-theme="dark"] .btn{background:#6B4EC2}
-  [data-theme="dark"] .btn:hover{background:#5C41B0}
 
   .theme-trans,.theme-trans *,.theme-trans *::before,.theme-trans *::after{transition:background .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease,fill .35s ease,stroke .35s ease !important}
   .theme-toggle{background:none;border:1.5px solid var(--line);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .15s,background .15s;flex-shrink:0}
@@ -152,7 +153,7 @@
   [data-theme="light"] .theme-toggle .icon-sun{display:none !important}
   [data-theme="light"] .theme-toggle .icon-moon{display:block}
 
-  .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
+  .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple-cta);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
   .skip-link:focus{top:12px}
 
   @media print{
@@ -379,7 +380,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 
       <p class="reveal">Google sigue siendo el punto de partida dominante. En 2025, el 87% de los consumidores dijo que usaría Google para buscar un abogado, según iLawyerMarketing. Ese porcentaje se ha mantenido por encima del 85% durante tres años consecutivos.</p>
 
-      <p class="reveal">Las búsquedas de "cerca de mí" para servicios legales han aumentado un 500% en los últimos años, y las búsquedas locales más orgánicas representan el 69% de todo el trafico digital a sitios web de bufetes (On The Map Marketing). Si tu bufete no aparece en esos resultados, eres invisible para la mayoría de los clientes potenciales.</p>
+      <p class="reveal">Las búsquedas de "cerca de mí" para servicios legales han aumentado un 500% en los últimos años, y las búsquedas locales más orgánicas representan el 69% de todo el tráfico digital a sitios web de bufetes (On The Map Marketing). Si tu bufete no aparece en esos resultados, eres invisible para la mayoría de los clientes potenciales.</p>
 
       <p class="reveal">Y ya no es solo Google. El 28% de los consumidores dijo que usaría ChatGPT para investigar a un abogado en 2025, comparado con solo el 9% en 2023 (iLawyerMarketing). La búsqueda con IA está creciendo rápido. Pero aquí está el detalle clave: el 94% de esas personas también usan Google. La IA es un complemento, no un reemplazo. Tu sitio web sigue importando.</p>
 
@@ -408,24 +409,24 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
       <p class="reveal"><strong>Una nota sobre ética:</strong> La Regla Modelo 7.1 de la ABA requiere que todas las comunicaciones sobre los servicios de un abogado sean verídicas y no engañosas. Eso incluye testimonios y resultados de casos en tu sitio web. Las reglas estatales varían, así que consulta con tu colegio de abogados antes de publicar resultados específicos. Estados como Florida, Nueva York y Texas tienen requisitos de publicidad más estrictos que otros.</p>
 
       <h2 class="reveal"><span class="num">4.</span> Diseño adaptable a móviles</h2>
-      <p class="reveal">Más del 60% del tráfico web viene de teléfonos. Para búsquedas legales, ese número es aun más alto porque las personas buscan cuando necesitan ayuda urgentemente, y eso usualmente es en su teléfono. Si tu sitio no carga rápido y se ve limpio en la pantalla de un teléfono, estás perdiendo a la mayoría de tus visitantes antes de que lean una palabra.</p>
+      <p class="reveal">Más del 60% del tráfico web viene de teléfonos. Para búsquedas legales, ese número es aún más alto porque las personas buscan cuando necesitan ayuda urgentemente, y eso usualmente es en su teléfono. Si tu sitio no carga rápido y se ve limpio en la pantalla de un teléfono, estás perdiendo a la mayoría de tus visitantes antes de que lean una palabra.</p>
 
-      <h2 class="reveal"><span class="num">5.</span> Contacto facil: clic para llamar, formularios y reservas</h2>
+      <h2 class="reveal"><span class="num">5.</span> Contacto fácil: clic para llamar, formularios y reservas</h2>
       <p class="reveal">El 67% de los clientes legales basan su decisión de contratación en la rapidez de respuesta del bufete (Clio). Los bufetes que responden dentro de los primeros cinco minutos ven una tasa de conversión 400% más alta. Tu sitio web necesita un número de teléfono visible en cada página (clic para llamar en móvil), un formulario de contacto que funcione, e idealmente un enlace para agendar una consulta directamente. Cada clic adicional entre un visitante y tu bandeja de entrada es un cliente potencial perdido.</p>
 
       <h2 class="reveal">Ejemplo real: Riera Law Firm</h2>
 
-      <p class="reveal">No escribí este artículo desde la teoria. Construí un sitio web para <a href="/es/caso-riera-law.html" style="color:var(--purple);font-weight:600">Riera Law Firm</a>, una práctica de arbitraje de valores dirigida por un ex fiscal de la SEC en Coral Gables, Florida.</p>
+      <p class="reveal">No escribí este artículo desde la teoría. Construí un sitio web para <a href="/es/caso-riera-law.html" style="color:var(--purple);font-weight:600">Riera Law Firm</a>, una práctica de arbitraje de valores dirigida por un ex fiscal de la SEC en Coral Gables, Florida.</p>
 
       <p class="reveal">Cuando empecé, el bufete tenía dos sitios web compitiendo en el mismo dominio causando conflictos de DNS, entrega de correo electrónico rota (mensajes de clientes y tribunales se perdían), vulnerabilidades de seguridad en plugins y ninguna presencia en español a pesar de servir a una base de clientes bilingüe.</p>
 
       <p class="reveal">Reconstruí todo el sitio desde cero: más de 70 páginas cubriendo cada área de práctica, soporte bilingüe completo en inglés y español, restauración adecuada de DNS y correo, un sistema de diseño personalizado que refleja la autoridad de una práctica a nivel federal, y un plan de cuidado mensual continuo para actualizaciones de seguridad y mantenimiento.</p>
 
-      <p class="reveal">El resultado? Cero tiempo de inactividad durante la migración. Un sitio que genera confianza desde el primer segundo. Y un cliente que dijo: "Trata mi sitio como si fuera suyo. Le confío la cara digital de mi práctica." Puedes leer el <a href="/es/caso-riera-law.html" style="color:var(--purple);font-weight:600">caso de estudio completo aquí</a>.</p>
+      <p class="reveal">¿El resultado? Cero tiempo de inactividad durante la migración. Un sitio que genera confianza desde el primer segundo. Y un cliente que dijo: "Trata mi sitio como si fuera suyo. Le confío la cara digital de mi práctica." Puedes leer el <a href="/es/caso-riera-law.html" style="color:var(--purple);font-weight:600">caso de estudio completo aquí</a>.</p>
 
       <h2 class="reveal">Cuánto cuesta (respuesta honesta)</h2>
 
-      <p class="reveal">La mayoría de los sitios web personalizados para bufetes cuestan entre $2,500 y $9,000 USD. Ese rango te da un sitio diseñado profesionalmente, adaptable a móviles, con páginas dedicadas de áreas de práctica, biografías de abogados, formularios de contacto y SEO básico. Firmas más grandes o sitios con funciones complejas como portales de clientes o bases de datos de resultados pueden costar mas.</p>
+      <p class="reveal">La mayoría de los sitios web personalizados para bufetes cuestan entre $2,500 y $9,000 USD. Ese rango te da un sitio diseñado profesionalmente, adaptable a móviles, con páginas dedicadas de áreas de práctica, biografías de abogados, formularios de contacto y SEO básico. Firmas más grandes o sitios con funciones complejas como portales de clientes o bases de datos de resultados pueden costar más.</p>
 
       <p class="reveal">Las alternativas baratas existen. Puedes obtener un sitio de plantilla por $500 o usar un constructor haz-lo-tu-mismo por $20 al mes. Pero considera lo que le dice a un cliente potencial cuando tu sitio web se ve como cualquier otra plantilla en internet. No tomaste un atajo con tu título de abogado. Tu sitio web tampoco debería parecer que lo hiciste.</p>
 
@@ -450,7 +451,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 
       <p class="reveal">Esto sorprende a la mayoría de los abogados. No se trata solo de tener un sitio web. Se trata de qué tan rápido respondes cuando alguien se comunica a través de él.</p>
 
-      <p class="reveal">El 72% de los clientes legales potenciales siguen adelante si un bufete no responde dentro de 24 horas (Informe de Tendencias Legales de Clio). Eso significa que si alguien llena tu formulario de contacto un viernes por la noche y no le respondes hasta el lunes, hay una alta probabilidad de que ya hayan contratado a alguien mas.</p>
+      <p class="reveal">El 72% de los clientes legales potenciales siguen adelante si un bufete no responde dentro de 24 horas (Informe de Tendencias Legales de Clio). Eso significa que si alguien llena tu formulario de contacto un viernes por la noche y no le respondes hasta el lunes, hay una alta probabilidad de que ya hayan contratado a alguien más.</p>
 
       <p class="reveal">Un buen sitio web para un bufete facilita esto al conectar los envíos de formularios con tu correo o software de gestión de práctica al instante, ofreciendo clic para llamar en móvil, e incluso proporcionando un enlace de reserva directa para que los clientes puedan agendar una consulta sin esperar que les devuelvan la llamada.</p>
 

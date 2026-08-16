@@ -13,7 +13,12 @@
 <link rel="preload" as="image" href="assets/logo/sebby-nav.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<!-- Fonts load without blocking first paint. The URL already carries display=swap,
+     so fallback text was always going to show first; this stops the stylesheet
+     itself from holding up FCP. -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" media="print" onload="this.onload=null;this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"></noscript>
 <script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
 <script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
 <style>
@@ -22,7 +27,7 @@
     --ink-soft:#4A4E5C;
     --muted:#6B7080;
     --purple:#6C3CE9;
-    --purple-deep:#5A2FD0;
+    --purple-deep:#5A2FD0;--purple-cta:#6C3CE9;--purple-cta-deep:#5A2FD0;
     --blue:#2D6FFF;
     --tint:#F4F1FD;
     --line:#E8E6F2;
@@ -58,11 +63,11 @@
   .nav-links a:hover{color:var(--purple)}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
-    background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;
+    background:var(--purple-cta);color:#fff;font-weight:600;font-size:.98rem;
     padding:13px 26px;border-radius:999px;border:none;cursor:pointer;
     transition:background .15s, transform .15s;
   }
-  .btn:hover{background:var(--purple-deep);transform:translateY(-1px)}
+  .btn:hover{background:var(--purple-cta-deep);transform:translateY(-1px)}
   .btn:focus-visible{outline-color:var(--ink)}
   .btn-ghost{
     background:transparent;color:var(--ink);border:1.5px solid var(--line);
@@ -156,7 +161,7 @@
     content:counter(step);
     display:flex;align-items:center;justify-content:center;
     width:38px;height:38px;border-radius:50%;
-    background:var(--purple);color:#fff;font-weight:700;font-size:1rem;
+    background:var(--purple-cta);color:#fff;font-weight:700;font-size:1rem;
     margin-bottom:20px;
   }
   .step h3{font-size:1.1rem;font-weight:700;margin-bottom:9px}
@@ -267,7 +272,7 @@
   .plan{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:36px 30px;display:flex;flex-direction:column;transition:transform .18s, box-shadow .18s}
   .plan:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08)}
   .plan.featured{border:2px solid var(--purple);position:relative}
-  .plan.featured::before{content:"Most popular";position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--purple);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 16px;border-radius:999px}
+  .plan.featured::before{content:"Most popular";position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--purple-cta);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 16px;border-radius:999px}
   [data-lang="es"] .plan.featured::before{content:"Más popular"}
   .plan h3{font-size:1.2rem;font-weight:800;margin-bottom:4px}
   .plan .for{font-size:.88rem;color:var(--muted);margin-bottom:18px}
@@ -318,7 +323,7 @@
 
   /* ---------- Pricing Toggle ---------- */
   .price-toggle{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:36px;font-size:.95rem;font-weight:600}
-  .price-toggle .save{font-size:.78rem;font-weight:700;color:#fff;background:var(--purple);padding:3px 10px;border-radius:999px}
+  .price-toggle .save{font-size:.78rem;font-weight:700;color:#fff;background:var(--purple-cta);padding:3px 10px;border-radius:999px}
   .toggle-switch{position:relative;width:48px;height:26px;background:var(--line);border-radius:999px;cursor:pointer;border:none;transition:background .2s}
   .toggle-switch::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
   .toggle-switch.active{background:var(--purple)}
@@ -424,7 +429,7 @@
   /* ---------- Sticky CTA ---------- */
   .sticky-cta{
     position:fixed;bottom:0;left:0;right:0;z-index:40;
-    background:var(--purple);color:#fff;
+    background:var(--purple-cta);color:#fff;
     padding:14px 28px;text-align:center;
     transform:translateY(100%);transition:transform .35s ease;
     font-weight:600;font-size:.95rem;
@@ -447,19 +452,19 @@
     color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em;
   }
   .lang-toggle button:hover{color:var(--purple)}
-  .lang-toggle button.active{background:var(--purple);color:#fff}
+  .lang-toggle button.active{background:var(--purple-cta);color:#fff}
 
   /* ---------- Dark Mode ---------- */
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
       --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
-      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;--purple-cta:#6B4EC2;--purple-cta-deep:#5C41B0;
       --tint:#1D192D;--line:#2A2838;--white:#0F1117;
     }
   }
   :root[data-theme="dark"]{
     --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
-      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;--purple-cta:#6B4EC2;--purple-cta-deep:#5C41B0;
       --tint:#1D192D;--line:#2A2838;--white:#0F1117;
   }
   @media (prefers-color-scheme:dark){
@@ -477,8 +482,8 @@
     :root:not([data-theme="light"]) .care p{color:#A0A3AD}
     :root:not([data-theme="light"]) .care li{color:#C8CAD0}
     :root:not([data-theme="light"]) .care li svg{stroke:#8B6CEF}
-    :root:not([data-theme="light"]) .care .btn{background:var(--purple);color:#fff}
-    :root:not([data-theme="light"]) .care .btn:hover{background:var(--purple-deep)}
+    :root:not([data-theme="light"]) .care .btn{background:var(--purple-cta);color:#fff}
+    :root:not([data-theme="light"]) .care .btn:hover{background:var(--purple-cta-deep)}
     :root:not([data-theme="light"]) .sitecard{background:#1A1C25}
     :root:not([data-theme="light"]) .sitecard .bar{background:#222430}
     :root:not([data-theme="light"]) .sitecard .url{background:#1A1C25;color:#717580}
@@ -491,9 +496,6 @@
     :root:not([data-theme="light"]) .logo-dark{display:block !important}
     :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
     :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
-    :root:not([data-theme="light"]) .btn{background:#6B4EC2}
-    :root:not([data-theme="light"]) .btn:hover{background:#5C41B0}
-    :root:not([data-theme="light"]) .step::before{background:#6B4EC2}
     :root:not([data-theme="light"]) .stat-card{background:#1A1C25}
     :root:not([data-theme="light"]) .edit-pack{background:#1A1C25}
     :root:not([data-theme="light"]) .why-card{background:#1A1C25}
@@ -516,8 +518,8 @@
   [data-theme="dark"] .care p{color:#A0A3AD}
   [data-theme="dark"] .care li{color:#C8CAD0}
   [data-theme="dark"] .care li svg{stroke:#8B6CEF}
-  [data-theme="dark"] .care .btn{background:var(--purple);color:#fff}
-  [data-theme="dark"] .care .btn:hover{background:var(--purple-deep)}
+  [data-theme="dark"] .care .btn{background:var(--purple-cta);color:#fff}
+  [data-theme="dark"] .care .btn:hover{background:var(--purple-cta-deep)}
   [data-theme="dark"] .sitecard{background:#1A1C25}
   [data-theme="dark"] .sitecard .bar{background:#222430}
   [data-theme="dark"] .sitecard .url{background:#1A1C25;color:#717580}
@@ -530,9 +532,6 @@
   [data-theme="dark"] .logo-dark{display:block !important}
   [data-theme="dark"] .foot-logo-light{display:none !important}
   [data-theme="dark"] .foot-logo-dark{display:block !important}
-  [data-theme="dark"] .btn{background:#6B4EC2}
-  [data-theme="dark"] .btn:hover{background:#5C41B0}
-  [data-theme="dark"] .step::before{background:#6B4EC2}
   [data-theme="dark"] .stat-card{background:#1A1C25}
   [data-theme="dark"] .edit-pack{background:#1A1C25}
   [data-theme="dark"] .why-card{background:#1A1C25}
@@ -566,7 +565,7 @@
 
 
   /* ---------- Skip link ---------- */
-  .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
+  .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple-cta);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
   .skip-link:focus{top:12px}
 
   /* ---------- Print ---------- */
@@ -789,7 +788,7 @@
 <header class="page-hero">
   <div class="wrap">
     <div class="eyebrow"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></div>
-    <h1><span lang="en">You run your business. <span class="accent">I'll take care of your website.</span></span><span lang="es">Tu manejas tu negocio. <span class="accent">Yo me encargo de tu sitio web.</span></span></h1>
+    <h1><span lang="en">You run your business. <span class="accent">I'll take care of your website.</span></span><span lang="es">Tú manejas tu negocio. <span class="accent">Yo me encargo de tu sitio web.</span></span></h1>
     <p class="lede"><span lang="en">Most websites break slowly. Plugins go stale, pages slow down, security holes open, and nobody notices until a customer does. With Website Care, I notice first.</span><span lang="es">La mayoría de los sitios web se deterioran lentamente. Los plugins se desactualizan, las páginas se vuelven lentas, se abren brechas de seguridad, y nadie se da cuenta hasta que un cliente lo nota. Con Cuidado Web, yo lo noto primero.</span></p>
   </div>
 </header>
@@ -800,7 +799,7 @@
     <div class="stat-bar">
       <div class="stat-card reveal">
         <div class="num">30,000+</div>
-        <p><span lang="en">Websites hacked every single day</span><span lang="es">Sitios web hackeados cada dia</span></p>
+        <p><span lang="en">Websites hacked every single day</span><span lang="es">Sitios web hackeados cada día</span></p>
       </div>
       <div class="stat-card reveal">
         <div class="num">$3K+</div>
@@ -855,7 +854,7 @@
         <a class="btn btn-ghost plan-cta-annual" href="https://link.waveapps.com/bejbhr-xekxzx" target="_blank" rel="noopener" style="display:none"><span lang="en">Choose Essentials (Annual)</span><span lang="es">Elegir Esencial (Anual)</span></a>
       </div>
       <div class="plan reveal featured">
-        <h3><span lang="en">Standard</span><span lang="es">Estandar</span></h3>
+        <h3><span lang="en">Standard</span><span lang="es">Estándar</span></h3>
         <p class="for"><span lang="en">For businesses whose website brings in customers</span><span lang="es">Para negocios cuyo sitio web atrae clientes</span></p>
         <div class="price price-monthly">{{CARE_STANDARD}}<em><span lang="en">/mo</span><span lang="es">/mes</span></em></div>
         <div class="price price-annual">{{CARE_STANDARD_YR}}<em><span lang="en">/yr</span><span lang="es">/año</span></em></div>
@@ -867,8 +866,8 @@
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Restoration from a clean backup if the site is compromised</span><span lang="es">Restauración desde un respaldo limpio si el sitio es comprometido</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Response within one business day</span><span lang="es">Respuesta dentro de un día hábil</span></li>
         </ul>
-        <a class="btn plan-cta-monthly" href="https://link.waveapps.com/5hmu99-yqmucp" target="_blank" rel="noopener"><span lang="en">Choose Standard</span><span lang="es">Elegir Estandar</span></a>
-        <a class="btn plan-cta-annual" href="https://link.waveapps.com/fyehtw-53d3g8" target="_blank" rel="noopener" style="display:none"><span lang="en">Choose Standard (Annual)</span><span lang="es">Elegir Estandar (Anual)</span></a>
+        <a class="btn plan-cta-monthly" href="https://link.waveapps.com/5hmu99-yqmucp" target="_blank" rel="noopener"><span lang="en">Choose Standard</span><span lang="es">Elegir Estándar</span></a>
+        <a class="btn plan-cta-annual" href="https://link.waveapps.com/fyehtw-53d3g8" target="_blank" rel="noopener" style="display:none"><span lang="en">Choose Standard (Annual)</span><span lang="es">Elegir Estándar (Anual)</span></a>
       </div>
       <div class="plan reveal">
         <h3><span lang="en">Growth</span><span lang="es">Crecimiento</span></h3>
@@ -877,7 +876,7 @@
         <div class="price price-annual">{{CARE_GROWTH_YR}}<em><span lang="en">/yr</span><span lang="es">/año</span></em></div>
         <div class="price-annual" style="font-size:.85rem;color:var(--muted);margin-bottom:4px;display:none"><span lang="en">{{CARE_GROWTH_MO_EQ}}/mo equivalent</span><span lang="es">equivalente a {{CARE_GROWTH_MO_EQ}}/mes</span></div>
         <ul class="checklist">
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Everything in Standard</span><span lang="es">Todo lo del plan Estandar</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Everything in Standard</span><span lang="es">Todo lo del plan Estándar</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Two hours monthly for edits, on-page SEO, and site improvements</span><span lang="es">Dos horas mensuales para ediciones, SEO on-page y mejoras del sitio</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Monthly review of Search Console, Analytics, and Core Web Vitals</span><span lang="es">Revisión mensual de Search Console, Analytics y Core Web Vitals</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Quarterly 30-minute strategy call</span><span lang="es">Llamada trimestral de estrategia de 30 minutos</span></li>
@@ -898,9 +897,9 @@
       <table>
         <thead>
           <tr>
-            <th><span lang="en">Feature</span><span lang="es">Caracteristica</span></th>
+            <th><span lang="en">Feature</span><span lang="es">Característica</span></th>
             <th><span lang="en">Essentials</span><span lang="es">Esencial</span></th>
-            <th class="pop"><span lang="en">Standard</span><span lang="es">Estandar</span></th>
+            <th class="pop"><span lang="en">Standard</span><span lang="es">Estándar</span></th>
             <th><span lang="en">Growth</span><span lang="es">Crecimiento</span></th>
           </tr>
         </thead>
@@ -976,7 +975,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <h2><span lang="en">Need edits without a plan?</span><span lang="es">¿Necesitas ediciones sin un plan?</span></h2>
-      <p><span lang="en">On the Essentials plan or just need a one-time change? Grab an edit pack. No subscription required.</span><span lang="es">En el plan Esencial o solo necesitas un cambio puntual? Toma un paquete de ediciones. Sin suscripción requerida.</span></p>
+      <p><span lang="en">On the Essentials plan or just need a one-time change? Grab an edit pack. No subscription required.</span><span lang="es">¿En el plan Esencial o solo necesitas un cambio puntual? Toma un paquete de ediciones. Sin suscripción requerida.</span></p>
     </div>
     <div class="edit-packs">
       <div class="edit-pack reveal">
@@ -1039,23 +1038,23 @@
 <section>
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2><span lang="en">Why businesses trust me with their sites.</span><span lang="es">Por que los negocios me confian sus sitios.</span></h2>
+      <h2><span lang="en">Why businesses trust me with their sites.</span><span lang="es">Por qué los negocios me confían sus sitios.</span></h2>
     </div>
     <div class="why-grid">
       <div class="why-card reveal">
         <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <h3><span lang="en">One person, not a ticket queue</span><span lang="es">Una persona, no una cola de tickets</span></h3>
-        <p><span lang="en">You text or email me directly. No support tiers, no hold music, no "your ticket has been escalated."</span><span lang="es">Me escribes directamente. Sin niveles de soporte, sin musica de espera, sin "tu ticket ha sido escalado."</span></p>
+        <p><span lang="en">You text or email me directly. No support tiers, no hold music, no "your ticket has been escalated."</span><span lang="es">Me escribes directamente. Sin niveles de soporte, sin música de espera, sin "tu ticket ha sido escalado."</span></p>
       </div>
       <div class="why-card reveal">
         <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
         <h3><span lang="en">I fix problems before you notice</span><span lang="es">Arreglo problemas antes de que los notes</span></h3>
-        <p><span lang="en">Automated monitoring catches issues at 2am so you never have to. You get a report, not a panic call.</span><span lang="es">El monitoreo automatizado detecta problemas a las 2am para que tu no tengas que hacerlo. Recibes un informe, no una llamada de panico.</span></p>
+        <p><span lang="en">Automated monitoring catches issues at 2am so you never have to. You get a report, not a panic call.</span><span lang="es">El monitoreo automatizado detecta problemas a las 2am para que tú no tengas que hacerlo. Recibes un informe, no una llamada de pánico.</span></p>
       </div>
       <div class="why-card reveal">
         <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
         <h3><span lang="en">Plain-English reports</span><span lang="es">Informes en términos claros</span></h3>
-        <p><span lang="en">No jargon dumps. Every monthly report tells you what happened, what's healthy, and what to think about next.</span><span lang="es">Sin jerga tecnica. Cada informe mensual te dice que paso, que esta saludable, y que considerar a continuacion.</span></p>
+        <p><span lang="en">No jargon dumps. Every monthly report tells you what happened, what's healthy, and what to think about next.</span><span lang="es">Sin jerga técnica. Cada informe mensual te dice qué pasó, qué está saludable, y qué considerar a continuación.</span></p>
       </div>
     </div>
   </div>

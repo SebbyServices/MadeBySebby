@@ -24,6 +24,7 @@ import json
 import os
 import re
 import sys
+import unicodedata
 from html import unescape
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -546,21 +547,27 @@ MARKET_FIGURES = {
     "pricing.html": set(),
     "terms.html": {"$100"},
     "privacy.html": set(),
-    # editorial: market rates, competitor figures, client lifetime values
+    # editorial: market rates, competitor figures, client lifetime values.
+    #
+    # Pruned 2026-08-16 down to what each page still quotes, and kept pruned by
+    # check_market_figures_are_justified below. $4,500 and $8,000 lived here for
+    # weeks after the copy stopped using them, which is exactly how the blog's
+    # second price list slipped past a green run: the numbers were already
+    # exempt before anyone typed them.
     "blog/how-much-does-a-website-cost.html": {"$300", "$500", "$1,000", "$4,000",
-                                               "$4,500", "$5,000", "$8,000", "$50,000",
-                                               "$249", "$99", "$3,000", "$10,000", "$200"},
+                                               "$5,000", "$50,000", "$3,000",
+                                               "$10,000"},
     "blog/why-your-competitor-gets-calls-from-google.html": {"$3,000", "$10,000",
                                                              "$1,500", "$200", "$500"},
-    "blog/what-a-website-does-for-a-law-firm.html": {"$3,000", "$10,000", "$500"},
-    "blog/what-is-website-care.html": {"$99", "$249", "$500", "$3,000"},
-    "blog/5-signs-your-website-is-losing-clients.html": {"$500", "$3,000"},
-    "blog/does-your-restaurant-need-a-website.html": {"$10,000", "$500", "$3,000"},
+    "blog/what-a-website-does-for-a-law-firm.html": {"$500"},
+    "blog/what-is-website-care.html": set(),
+    "blog/5-signs-your-website-is-losing-clients.html": set(),
+    "blog/does-your-restaurant-need-a-website.html": {"$10,000"},
     # $240 is an AI builder's annual subscription -- a competitor's price, cited
     # to compare against ours, which is the whole point of that post.
     "blog/should-i-use-ai-to-build-my-website.html": {"$240"},
     # RD$ agency comparison figures are pesos, explicitly marked, not our prices
-    "diseno-web-santo-domingo.html": {"$150,000", "$500,000", "$2,500", "$10,000"},
+    "diseno-web-santo-domingo.html": {"$2,500", "$10,000"},
     # Only the cost of a security breach survives here. Everything else that used
     # to sit in this set was OUR pricing, allow-listed as though it described the
     # market: edit packs, the hourly overage, annual totals, per-edit costs. That
@@ -1130,6 +1137,458 @@ def check_primary_buttons_go_somewhere():
 
 
 # ---------------------------------------------------------------------------
+# 9. Spanish that lost its diacritics
+#
+# 28 of these reached production across five Spanish pages while every check
+# above ran green, because none of them reads the copy. The care plan page, the
+# one that sells the recurring revenue, carried "Tu manejas tu negocio" as its
+# H1 and spelled its own product tier "Estandar" five times in the pricing card
+# and "Estandar" again in the comparison table, with "Estandar" appearing
+# correctly in the FAQ four hundred lines below. pricing.html sells that page
+# with "written by a native speaker, never machine-translated", and stripped
+# diacritics are the single most recognisable signature of machine output, so
+# the claim was falsifiable on the site in about thirty seconds.
+#
+# The whole difficulty is precision. A naive word list fails on "esta", "el",
+# "tu", "mas", "se", "si", "aun" and "solo", every one of which is a real word
+# whose accented form is a DIFFERENT real word, and a check that cries wolf on
+# correct Spanish gets commented out within a week. So this runs three passes,
+# each with its own reason to be trusted:
+#
+#   A. words with no valid unaccented spelling in Spanish at all
+#   B. one word spelled two ways on a single page, which is wrong either way
+#   C. a closing "?" with no opening "¿"
+#
+# It reads the GENERATED Spanish pages rather than src/, on purpose: that is
+# where build.py's own Spanish lands too (the <head> strings in PAGES, ALT_ES,
+# ARIA_ES, SCHEMA_ES), and a missing accent in a <title> is the one a searcher
+# sees first. The failure names the source file to fix.
+# ---------------------------------------------------------------------------
+
+# Every entry here is a misspelling in any context. Words with a legitimate
+# unaccented twin are deliberately absent and listed in DUAL_FORM below.
+#
+# Two rules keep this list honest, and both were learned by getting them wrong:
+# a -cion noun loses its accent in the plural (informacion is an error,
+# informaciones is not), and a derived form usually loses it too (rapido needs
+# one, rapidez does not; posicion needs one, posicionamiento does not).
+NEEDS_ACCENT = set("""
+diseno disenos disenar disenador disenadora disenadores disenada disenado
+senal senales senala senalan senalar senalado
+estandar caracteristica confia confian confio
+musica panico tecnica tecnico tecnicas tecnicos
+continuacion configuracion capacitacion basica basico basicas basicos
+dia dias republica bilingue bilingues
+facil faciles facilmente dificil dificiles teoria teorias
+segun despues ademas tambien aqui alli ahi alla aca asi estan
+pagina paginas rapido rapida rapidos rapidas rapidamente
+informacion atencion seccion accion razon version
+mayoria garantia garantias tecnologia tecnologias
+movil moviles unico unica unicos unicas unicamente ultimos
+proximo proxima minimo minima maximo maxima
+metodo metodos dolares ingles espanol espanola
+ano anos pequeno pequena pequenos pequenas
+dueno duena duenos duenas compania companias manana
+exito exitos interes terminos numeros telefonos
+sesion opcion descripcion optimizacion conversion navegacion reputacion
+gestion decision direccion posicion produccion publicacion
+recomendacion resolucion actualizacion aplicacion integracion migracion
+validacion traduccion inversion comunicacion creacion educacion evaluacion
+generacion instalacion presentacion programacion promocion proteccion
+reduccion relacion reparacion revision solucion transaccion ubicacion
+duracion medicion presion politica politicas
+automatico automatica automaticamente electronico electronica
+economico economica organico organica estrategico estrategica
+historico historica clasico clasica dinamico dinamica estatico estatica
+telefonico telefonica juridico juridica juridicos juridicas
+academico academica grafico grafica graficos graficas
+analisis sintoma sintomas credito creditos debito parrafo parrafos
+util utiles inutil sabado miercoles quiza quizas
+podria deberia haria tendria sera estara hara podra
+""".split())
+
+# Unaccented these are only valid as a conjugated verb: "yo trafico", "el
+# publica". Flagged only directly after an article or possessive, which forces
+# the noun reading and makes "el trafico" unambiguously wrong.
+NEEDS_ACCENT_AS_NOUN = set("""
+trafico numero telefono ultimo ultima ultimas publico publica practica
+practicas practico medico medica medicos medicas critico critica calculo
+limite termino titulo titulos articulo articulos capitulo diagnostico
+""".split())
+DETERMINERS = set("""
+el la los las un una unos unas del al su sus tu tus mi mis nuestro nuestra
+este esta estos estas ese esa esos esas cada otro otra otros otras mismo misma
+""".split())
+
+# Pass B compares a page against itself, so it needs to know which words really
+# do appear both ways in correct Spanish. These are the function words the brief
+# warns about: "el" and "él", "tu" and "tú", "si" and "sí", "mas" and "más".
+DUAL_FORM = set("""
+el tu mi si se de te mas aun solo esta este ese esos esas estas aquel aquella
+que como cuando donde quien cual cuanto cuanta cuantos cuantas porque
+esto eso aquello sino
+""".split())
+
+WORD = re.compile(r"[0-9A-Za-zÀ-ɏ]+")
+# Slugs are deliberately unaccented (/es/diseno-web-santo-domingo.html), so any
+# token that is part of a path or a domain is not copy and is not checked.
+URLISH = re.compile(r"https?://\S+|\S*/\S*|\b[\w.-]+\.(?:html|com|net|org|dev|io)\b")
+PROSE_META = re.compile(
+    r'<meta[^>]+(?:name|property)="(?:description|og:title|og:description|'
+    r'og:site_name|twitter:title|twitter:description)"[^>]*content="([^"]*)"')
+JSONLD_PROSE = ("name", "description", "headline", "slogan", "reviewBody",
+                "text", "articleBody", "alternateName", "caption")
+# The accent falls on the final syllable, which is where Spanish puts the
+# preterite and the second person: "construyo" and "construyo", "estas" and
+# "estas" are both correct and both common on one page. Pass A already covers
+# the words in this shape that ARE errors ("segun", "tambien"), so pass B can
+# skip the shape entirely and stay silent on correct copy.
+FINAL_STRESS = re.compile(r"[áéíóú][sn]?$")
+
+
+def unaccented(word):
+    return "".join(c for c in unicodedata.normalize("NFD", word)
+                   if unicodedata.category(c) != "Mn")
+
+
+def spanish_pages():
+    """Everything a Spanish reader sees, including the pages exempt elsewhere.
+
+    es/gracias.html is in MINIMAL_PAGES and skipped by most checks here. It is
+    also where "¡Mensaje enviado!" is missing its opening exclamation mark, so
+    the exemptions that exist for structure must not extend to the copy.
+    """
+    found = glob.glob("es/*.html") + glob.glob("es/blog/*.html")
+    for extra in ("precios.html", "diseno-web-santo-domingo.html"):
+        if os.path.isfile(extra):
+            found.append(extra)
+    return sorted(found)
+
+
+def readable_text(html):
+    """Copy a human reads: body text, prose meta, alt/aria, JSON-LD prose."""
+    parts = list(PROSE_META.findall(html))
+    title = re.search(r"<title>(.*?)</title>", html, re.S)
+    if title:
+        parts.append(title.group(1))
+    for m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>',
+                         html, re.S):
+        try:
+            data = json.loads(m.group(1))
+        except ValueError:
+            continue
+
+        def walk(node):
+            if isinstance(node, dict):
+                for key, value in node.items():
+                    if isinstance(value, str):
+                        if key in JSONLD_PROSE:
+                            parts.append(value)
+                    else:
+                        walk(value)
+            elif isinstance(node, list):
+                for item in node:
+                    walk(item)
+        walk(data)
+    body = re.sub(r"<script.*?</script>|<style.*?</style>|<!--.*?-->", " ",
+                  html, flags=re.S)
+    parts += re.findall(r'\b(?:alt|aria-label|title)="([^"]*)"', body)
+    parts.append(re.sub(r"<[^>]+>", " ", body))
+    return URLISH.sub(" ", unescape(" ".join(parts)))
+
+
+def source_of(page):
+    return "src/" + URL_TO_SOURCE.get(
+        "/" + page, URL_TO_SOURCE.get("/" + page.replace("index.html", ""), page))
+
+
+def check_spanish_diacritics():
+    for page in spanish_pages():
+        text = readable_text(read(page))
+        tokens = list(WORD.finditer(text))
+        for i, m in enumerate(tokens):
+            word = m.group(0).lower()
+            previous = tokens[i - 1].group(0).lower() if i else ""
+            if word in NEEDS_ACCENT or (word in NEEDS_ACCENT_AS_NOUN
+                                        and previous in DETERMINERS):
+                context = " ".join(text[max(0, m.start() - 45):m.end() + 45].split())
+                fail("spanish diacritics", source_of(page),
+                     "%s renders %r, which is not a Spanish word without its "
+                     "accent. Fix the Spanish copy in the source. Context: ...%s..."
+                     % (page, m.group(0), context[:110]))
+
+        forms = {}
+        for m in WORD.finditer(text):
+            word = m.group(0).lower()
+            forms.setdefault(unaccented(word), set()).add(word)
+        for base, spellings in sorted(forms.items()):
+            if len(spellings) < 2 or len(base) < 4 or base in DUAL_FORM:
+                continue
+            accented = [s for s in spellings if s != unaccented(s)]
+            if not accented or all(FINAL_STRESS.search(s) for s in accented):
+                continue
+            fail("spanish diacritics", source_of(page),
+                 "%s spells one word two ways: %s. One of them is wrong on a "
+                 "page that sells copy written by a native speaker."
+                 % (page, " and ".join(sorted(spellings))))
+
+
+def check_spanish_punctuation():
+    """Spanish opens a question. English does not, and the copy forgets.
+
+    "El resultado?" and "En el plan Esencial o solo necesitas un cambio
+    puntual?" both shipped, and the second is inside the FAQ on the page that
+    sells the care plans. Counting is enough to catch it and cannot misfire on
+    correct copy, because correct copy pairs every mark.
+    """
+    for page in spanish_pages():
+        text = readable_text(read(page))
+        for closing, opening, name in (("?", "¿", "question"),
+                                       ("!", "¡", "exclamation")):
+            if text.count(closing) != text.count(opening):
+                fail("spanish punctuation", source_of(page),
+                     "%s has %d closing %s mark%s and %d opening. Spanish opens "
+                     "them too." % (page, text.count(closing), name,
+                                    "" if text.count(closing) == 1 else "s",
+                                    text.count(opening)))
+
+
+# ---------------------------------------------------------------------------
+# 10. MARKET_FIGURES is an allowlist, and an allowlist is a place bugs hide
+#
+# check_prices above already reads every price literal in src/. It still exited
+# 0 the day blog/how-much-does-a-website-cost.html published a three tier table
+# at $3,000 / $4,500 / $8,000 against real prices of $2,500 / $5,000 / $9,000,
+# because all three numbers were sitting in
+# MARKET_FIGURES["blog/how-much-does-a-website-cost.html"] under a comment
+# reading "market rates, competitor figures, client lifetime values". They were
+# none of those. They were a second price list for our own packages, and once a
+# number is in that set it is invisible to BOTH halves of check_prices, the src
+# pass and the rendered pass, permanently and without expiry.
+#
+# So the allowlist needs two things it did not have.
+#
+# A. An entry has to still be in use. Nothing noticed when the copy stopped
+#    quoting a number, so the exemption outlived the sentence that earned it and
+#    the same wrong table could be pasted back in tomorrow to another green run.
+#    Delete the figure from the copy, delete it here, in the same commit.
+#
+# B. An entry has to read like a figure about someone else. A market rate says
+#    who charges it: an agency, a freelancer, a template subscription, the
+#    typical range. A number sitting in a table of tiers with a plan name next
+#    to it is our price no matter which file it is in.
+# ---------------------------------------------------------------------------
+THIRD_PARTY = re.compile(
+    r"\b(agenc(?:y|ies)|agencias?|freelancers?|competitors?|competencia|market"
+    r"|mercado|typical(?:ly)?|t[ií]pic[oa]s?|average|promedio|industry|industria"
+    r"|DIY|Wix|Squarespace|Shopify|WordPress|template|plantilla|others?"
+    r"|elsewhere|quotes?|cotiza|charge[sd]?|cobran?|cuestan?|worth|vale"
+    r"|lifetime value|breach|hack(?:ed)?|recover|subscription|suscripci[oó]n"
+    r"|retainer|per year|al a[nñ]o|anual|range|rango|somewhere between|entre"
+    # A liability cap in the terms is not a market rate and not a price. It is
+    # a contract number, and it is the third legitimate kind.
+    r"|liabilit(?:y|ies)|liable|claim|reclamo|responsabilidad|indemn\w*)\b",
+    re.I)
+
+
+def check_market_figures_are_justified():
+    for name, allowed in sorted(MARKET_FIGURES.items()):
+        src_path = os.path.join("src", name)
+        if not os.path.isfile(src_path):
+            fail("prices", src_path,
+                 "has entries in MARKET_FIGURES but no longer exists in src/. "
+                 "Remove the entry.")
+            continue
+        # Presence is measured exactly the way check_prices measures it, or the
+        # two disagree about what "still quoted" means and this reports a
+        # phantom stale entry for a literal that only lives in a script.
+        raw = re.sub(r"<style.*?</style>", "", read(src_path), flags=re.S)
+        present = {m.group(0).rstrip(",") for m in PRICE_LITERAL.finditer(raw)}
+        text = unescape(re.sub(r"<[^>]+>", " ",
+                               re.sub(r"<script.*?</script>", " ", raw, flags=re.S)))
+        for stale in sorted(allowed - present):
+            fail("prices", src_path,
+                 "MARKET_FIGURES still exempts %s, which this page no longer "
+                 "quotes. A dead exemption is how the same wrong table gets "
+                 "pasted back in to another green run. Remove it here in the "
+                 "same commit that removed it from the copy." % stale)
+        for m in PRICE_LITERAL.finditer(text):
+            literal = m.group(0).rstrip(",")
+            if literal not in allowed:
+                continue        # check_prices already fails on it
+            window = text[max(0, m.start() - 200):m.end() + 160]
+            if THIRD_PARTY.search(window):
+                continue
+            context = " ".join(text[max(0, m.start() - 70):m.end() + 70].split())
+            fail("prices", src_path,
+                 "%s is exempted as a market figure, but nothing around it says "
+                 "whose figure it is. A market rate names an agency, a template "
+                 "subscription or a typical range; anything else reads as our "
+                 "price, which is how a second price list shipped. Context: "
+                 "...%s..." % (literal, context[:110]))
+
+
+# ---------------------------------------------------------------------------
+# 11. A statistic presented as fact needs a source
+#
+# Four numbers sit in display type across the top of website-care.html: 30,000+
+# websites hacked every day, $3K+ to recover from a breach, 53% of visitors
+# leave after 3 seconds, 75% judge credibility by design. None of them says who
+# measured it, in either language, on the page that asks for a recurring
+# payment. Roughly fifteen more sit in the blog.
+#
+# The site already knows how to do this properly. why-your-competitor,
+# does-your-restaurant and what-a-website-does-for-a-law-firm each put a
+# <p class="source">Source: BrightLocal ...</p> under the number, naming Moz,
+# Clio, TouchBistro, Clutch and the National Restaurant Association. Sourcing
+# here is inconsistent by page, not absent as a habit, so this check is mostly
+# asking the weak pages to match the strong ones.
+#
+# Precision is the whole game, so this deliberately does not fire on:
+#   100%             "no method of storage is 100% secure", "Yes, 100%"
+#   50%              "50% upfront to start, 50% on launch"
+#   8%               "Save ~8%" on the annual plan
+#   1,000            "for a business that gets 1,000 visitors a month"
+#   ~30 mi           the drive to Fort Lauderdale
+# A figure has to be attached to a population ("of people", "de las visitas")
+# to count as a statistic at all, and a round count has to be at least ten
+# thousand to count as large. Everything else is arithmetic or a spec.
+# ---------------------------------------------------------------------------
+STAT_FIGURE = re.compile(r"(?<![\d.,$])(?!100\s?%)\d{1,3}\s?%"
+                         r"|(?<![\d.,$])\d{2,3}(?:,\d{3})+\+?"
+                         r"|\$\s?\d{1,3}(?:\.\d+)?\s?[KM]\+")
+POPULATION = re.compile(
+    r"\b(people|person|visitors?|users?|clients?|customers?|consumers?|buyers?"
+    r"|shoppers?|diners?|patients?|searchers?|searches|traffic|businesses|owners?"
+    r"|firms?|websites?|sites?|adults?|respondents?|prospects?|leads|companies"
+    r"|personas|gente|visitantes|visitas|usuarios?|clientes?|compradores"
+    r"|comensales|pacientes|b[uú]squedas|tr[aá]fico|negocios|empresas|bufetes"
+    r"|sitios|adultos|encuestados|due[nñ]os|propietarios)\b", re.I)
+CITED_SOURCES = ("Clio", "BrightLocal", "Moz", "TouchBistro", "iLawyerMarketing",
+                 "BizIQ", "MyCase", "National Restaurant Association", "Andava",
+                 "On The Map", "Clutch", "Martindale", "Avvo", "Statista",
+                 "Nielsen", "HubSpot", "Pew", "Census", "Censo", "Sucuri",
+                 "Wordfence", "Verizon")
+ATTRIBUTION = re.compile(
+    r"\b(?:according to|research (?:from|by|shows)|a study|studies (?:show|find)"
+    r"|survey|reports? (?:from|by)|data from|source|seg[uú]n|de acuerdo con"
+    r"|un estudio|una encuesta|datos de|fuente|investigaci[oó]n de"
+    r"|" + "|".join(re.escape(s) for s in CITED_SOURCES) + r")\b", re.I)
+SENTENCE_END = re.compile(r"[.!?;]")
+STAT_BLOCK = re.compile(r'<(\w+)[^>]*class="[^"]*\bstat[\w-]*\b[^"]*"', re.I)
+
+
+def check_statistics_are_sourced():
+    for src_path in sorted(glob.glob("src/*.html") + glob.glob("src/blog/*.html")):
+        html = read(src_path)
+
+        # Pass A: a number set in display type. The class name is the site's own
+        # signal that this is a claim, not a detail, and every correctly built
+        # one already carries class="source" inside it or right after it.
+        blocks = []
+        for m in STAT_BLOCK.finditer(html):
+            _, close = build.matching_close(html, m.start(), m.group(1))
+            blocks.append((m.start(), close))
+        for start, close in blocks:
+            fragment = html[start:close]
+            if any(s > start and e <= close for s, e in blocks if (s, e) != (start, close)):
+                continue        # a container; the inner cards are checked
+            visible = unescape(re.sub(r"<[^>]+>", " ", fragment))
+            if not STAT_FIGURE.search(visible):
+                continue        # "~30 mi" is a distance, not a statistic
+            trailing = unescape(re.sub(r"<[^>]+>", " ", html[close:close + 420]))
+            if 'class="source"' in fragment or 'class="source"' in html[close:close + 420] \
+               or ATTRIBUTION.search(visible + " " + trailing):
+                continue
+            fail("unsourced statistic", src_path,
+                 "a display statistic carries no source: %r. Put a "
+                 '<p class="source"> under it naming who measured it, in both '
+                 "languages, the way why-your-competitor-gets-calls-from-google "
+                 "does, or take the number out."
+                 % " ".join(visible.split())[:80])
+
+        # Pass B: the same claim in running copy. Display blocks are removed
+        # first so a sourced one is not reported twice from two directions.
+        stripped = html
+        for start, close in reversed(blocks):
+            stripped = stripped[:start] + " " + stripped[close:]
+        body = re.search(r"<body.*?</body>", stripped, re.S)
+        body = body.group(0) if body else stripped
+        body = re.sub(r"<script.*?</script>|<style.*?</style>|<!--.*?-->", " ",
+                      body, flags=re.S)
+        text = unescape(re.sub(r"<[^>]+>", " ", body))
+        for m in STAT_FIGURE.finditer(text):
+            ahead = text[m.end():m.end() + 45]
+            stop = SENTENCE_END.search(ahead)
+            if stop:
+                ahead = ahead[:stop.start()]
+            if not POPULATION.search(ahead):
+                continue
+            if ATTRIBUTION.search(text[max(0, m.start() - 260):m.end() + 180]):
+                continue
+            context = " ".join(text[max(0, m.start() - 55):m.end() + 85].split())
+            fail("unsourced statistic", src_path,
+                 "%s is stated as fact with nothing nearby saying who measured "
+                 "it. Name the source in the same paragraph, in both languages, "
+                 "or drop the number. Context: ...%s..."
+                 % (m.group(0), context[:120]))
+
+
+# ---------------------------------------------------------------------------
+# 12. Nothing in <head> may block the render
+#
+# CLAUDE.md rule 10 says all CSS and JS is inline, no external stylesheets or
+# script files, and the reason is performance. 51 of 52 pages then shipped a
+# blocking <link rel="stylesheet"> to fonts.googleapis.com, which Lighthouse
+# scores at roughly 1,600 ms of both FCP and LCP, about five times what the GA4
+# tag costs. It survived because the rule lived in prose and nothing enforced
+# it, to the point where a prior audit recorded "zero render-blocking
+# resources" while the request was in every <head> on the site.
+#
+# GA4 is exempt by being async, which is the point: the test is whether the
+# browser has to wait, not who owns the domain.
+# ---------------------------------------------------------------------------
+def check_render_blocking():
+    offenders = {}
+    for page in pages():
+        head = re.search(r"<head.*?</head>", read(page), re.S)
+        if not head:
+            continue
+        head = head.group(0)
+        # A stylesheet inside <noscript> only applies when scripting is off, so
+        # it never blocks the render for a normal visitor. It is the required
+        # other half of the media="print" onload pattern, and counting it made
+        # this check fire on all 51 pages that had just been correctly fixed.
+        head = re.sub(r"<noscript\b.*?</noscript>", " ", head, flags=re.S | re.I)
+        for m in re.finditer(r"<link\b[^>]*>", head):
+            tag = m.group(0)
+            if not re.search(r'rel="?stylesheet', tag):
+                continue
+            href = re.search(r'href="([^"]+)"', tag)
+            if not href or not href.group(1).startswith(("http://", "https://", "//")):
+                continue
+            # media="print" plus an onload swap is the standard non-blocking
+            # pattern and is fine.
+            if 'media="print"' in tag and "onload" in tag:
+                continue
+            offenders.setdefault(href.group(1).split("?")[0], []).append(page)
+        for m in re.finditer(r"<script\b[^>]*\bsrc=\"(https?:)?//[^\"]+\"[^>]*>", head):
+            tag = m.group(0)
+            if "async" in tag or "defer" in tag:
+                continue
+            src = re.search(r'src="([^"]+)"', tag)
+            offenders.setdefault(src.group(1).split("?")[0], []).append(page)
+
+    for url, hit in sorted(offenders.items()):
+        fail("render blocking", "%d page%s" % (len(hit), "" if len(hit) == 1 else "s"),
+             "block on %s before anything paints. CLAUDE.md rule 10 says all CSS "
+             "and JS is inline; this is the one request that is not. Inline an "
+             "@font-face block with self-hosted files, or load it with "
+             'media="print" onload="this.media=\'all\'". First: %s'
+             % (url, hit[0]))
+
+
+# ---------------------------------------------------------------------------
 
 def main():
     check_build_current()
@@ -1154,6 +1613,11 @@ def main():
     check_shortlinks()
     check_schema_prices()
     check_spanish_schema_is_spanish()
+    check_spanish_diacritics()
+    check_spanish_punctuation()
+    check_market_figures_are_justified()
+    check_statistics_are_sourced()
+    check_render_blocking()
     check_llms_txt()   # must precede check_shared_blocks (populates cta_flagged)
     check_shared_blocks()
 

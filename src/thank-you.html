@@ -10,7 +10,12 @@
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Fonts load without blocking first paint. The URL already carries display=swap,
+     so fallback text was always going to show first; this stops the stylesheet
+     itself from holding up FCP. -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.onload=null;this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"></noscript>
 <script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
 <script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -19,7 +24,7 @@
 <style>
   :root{
     --ink:#1A1D29;--ink-soft:#4A4E5C;--muted:#6B7080;
-    --purple:#6C3CE9;--purple-deep:#5A2FD0;
+    --purple:#6C3CE9;--purple-deep:#5A2FD0;--purple-cta:#6C3CE9;--purple-cta-deep:#5A2FD0;
     --tint:#F4F1FD;--line:#E8E6F2;--white:#FFFFFF;
     --radius:20px;--radius-sm:12px;
   }
@@ -57,11 +62,11 @@
   .ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:32px}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
-    background:var(--purple);color:#fff;font-weight:600;font-size:.98rem;
+    background:var(--purple-cta);color:#fff;font-weight:600;font-size:.98rem;
     padding:13px 26px;border-radius:999px;text-decoration:none;
     transition:background .15s,transform .15s;
   }
-  .btn:hover{background:var(--purple-deep);transform:translateY(-1px)}
+  .btn:hover{background:var(--purple-cta-deep);transform:translateY(-1px)}
   .btn-ghost{
     background:transparent;color:var(--ink);border:1.5px solid var(--line);
   }
@@ -73,13 +78,13 @@
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
       --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#717580;
-      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;--purple-cta:#6B4EC2;--purple-cta-deep:#5C41B0;
       --tint:#1D192D;--line:#2A2838;--white:#0F1117;
     }
   }
   [data-theme="dark"]{
     --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#717580;
-    --purple:#8B6CEF;--purple-deep:#7B5FDB;
+    --purple:#8B6CEF;--purple-deep:#7B5FDB;--purple-cta:#6B4EC2;--purple-cta-deep:#5C41B0;
     --tint:#1D192D;--line:#2A2838;--white:#0F1117;
   }
   [data-theme="dark"] .btn-ghost{color:var(--ink)}
@@ -89,7 +94,7 @@
   <div class="check">
     <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
   </div>
-  <h1><span lang="en">Message <span class="accent">sent!</span></span><span lang="es">Mensaje <span class="accent">enviado!</span></span></h1>
+  <h1><span lang="en">Message <span class="accent">sent!</span></span><span lang="es">¡Mensaje <span class="accent">enviado!</span></span></h1>
   <p><span lang="en">Thanks for reaching out. Here's what happens next:</span><span lang="es">Gracias por escribir. Esto es lo que sigue:</span></p>
 
   <div class="timeline">

@@ -13,7 +13,12 @@
 <link rel="preload" as="image" href="assets/logo/sebby-nav.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Fonts load without blocking first paint. The URL already carries display=swap,
+     so fallback text was always going to show first; this stops the stylesheet
+     itself from holding up FCP. -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.onload=null;this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"></noscript>
 <script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
 <style>
   :root{
@@ -21,7 +26,7 @@
     --ink-soft:#4A4E5C;
     --muted:#6B7080;
     --purple:#6C3CE9;
-    --purple-deep:#5A2FD0;
+    --purple-deep:#5A2FD0;--purple-cta:#6C3CE9;--purple-cta-deep:#5A2FD0;
     --blue:#2D6FFF;
     --tint:#F4F1FD;
     --line:#E8E6F2;
@@ -90,7 +95,7 @@
   .plan.popular{border-color:var(--purple);background:var(--tint)}
   .plan .badge{
     position:absolute;top:-11px;left:24px;
-    background:var(--purple);color:#fff;font-size:.7rem;font-weight:700;
+    background:var(--purple-cta);color:#fff;font-size:.7rem;font-weight:700;
     letter-spacing:.06em;text-transform:uppercase;
     padding:4px 14px;border-radius:999px;
   }
@@ -108,12 +113,12 @@
   .plan-features li svg{width:16px;height:16px;stroke:var(--green);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
   .plan-cta{
     display:block;width:100%;text-align:center;
-    background:var(--purple);color:#fff;font-weight:700;font-size:.95rem;
+    background:var(--purple-cta);color:#fff;font-weight:700;font-size:.95rem;
     padding:13px 24px;border-radius:999px;border:none;cursor:pointer;
     transition:background .15s,transform .15s;text-decoration:none;
   }
-  .plan-cta:hover{background:var(--purple-deep);transform:translateY(-1px)}
-  .plan.popular .plan-cta{background:var(--purple-deep)}
+  .plan-cta:hover{background:var(--purple-cta-deep);transform:translateY(-1px)}
+  .plan.popular .plan-cta{background:var(--purple-cta-deep)}
   .plan.popular .plan-cta:hover{background:#4D27B8}
   .plan-note{font-size:.78rem;color:var(--muted);text-align:center;margin-top:24px;line-height:1.5}
 
@@ -143,11 +148,11 @@
   .cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
-    background:var(--purple);color:#fff;font-weight:700;font-size:.95rem;
+    background:var(--purple-cta);color:#fff;font-weight:700;font-size:.95rem;
     padding:14px 28px;border-radius:999px;border:none;cursor:pointer;
     transition:background .15s,transform .15s;text-decoration:none;
   }
-  .btn:hover{background:var(--purple-deep);transform:translateY(-1px)}
+  .btn:hover{background:var(--purple-cta-deep);transform:translateY(-1px)}
   .btn-wa{background:#25D366}
   .btn-wa:hover{background:#1DA851}
   .btn-ghost{
@@ -191,7 +196,7 @@
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
       --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
-      --purple:#8B6CEF;--purple-deep:#7B5FDB;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;--purple-cta:#6B4EC2;--purple-cta-deep:#5C41B0;
       --tint:#1D192D;--line:#2A2838;--white:#0F1117;
       --green:#3FD97F;
     }
@@ -204,14 +209,12 @@
     :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
     :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
     :root:not([data-theme="light"]) .trust-logos img{filter:brightness(1.5) saturate(.8)}
-    :root:not([data-theme="light"]) .btn{background:#6B4EC2}
-    :root:not([data-theme="light"]) .btn:hover{background:#5C41B0}
     :root:not([data-theme="light"]) .btn-wa{background:#25D366}
     :root:not([data-theme="light"]) .btn-wa:hover{background:#1DA851}
   }
   :root[data-theme="dark"]{
     --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
-    --purple:#8B6CEF;--purple-deep:#7B5FDB;
+    --purple:#8B6CEF;--purple-deep:#7B5FDB;--purple-cta:#6B4EC2;--purple-cta-deep:#5C41B0;
     --tint:#1D192D;--line:#2A2838;--white:#0F1117;
     --green:#3FD97F;
   }
@@ -224,13 +227,11 @@
   [data-theme="dark"] .foot-logo-light{display:none !important}
   [data-theme="dark"] .foot-logo-dark{display:block !important}
   [data-theme="dark"] .trust-logos img{filter:brightness(1.5) saturate(.8)}
-  [data-theme="dark"] .btn{background:#6B4EC2}
-  [data-theme="dark"] .btn:hover{background:#5C41B0}
   [data-theme="dark"] .btn-wa{background:#25D366}
   [data-theme="dark"] .btn-wa:hover{background:#1DA851}
 
   /* ---------- Print ---------- */
-  .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
+  .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple-cta);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
   .skip-link:focus{top:12px}
   @media print{
     nav,.wa-fab,footer,.cta-btns,.skip-link{display:none!important}
