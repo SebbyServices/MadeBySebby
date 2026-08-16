@@ -193,11 +193,11 @@ PAGES = {
     "web-design-for-law-firms.html": dict(
         es="diseno-web-para-abogados.html",
         meta=dict(
-            title="Diseño Web para Bufetes de Abogados",
+            title="Diseño Web para Abogados en Miami",
             desc="Diseño web bilingüe para bufetes en Miami y el sur de Florida. Páginas de áreas de práctica que posicionan, biografías que convierten, y un sitio ya probado en un bufete de 70 páginas.",
-            og_title="Diseño Web para Bufetes de Abogados",
+            og_title="Diseño Web para Abogados en Miami",
             og_desc="Sitios web bilingües para bufetes que responden lo que un cliente preocupado realmente pregunta. Áreas de práctica, biografías y formularios que funcionan.",
-            tw_title="Diseño Web para Bufetes de Abogados",
+            tw_title="Diseño Web para Abogados en Miami",
             tw_desc="Sitios web bilingües para bufetes. Áreas de práctica que posicionan, biografías que convierten, formularios que funcionan.",
         ),
     ),
