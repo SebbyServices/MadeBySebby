@@ -177,7 +177,11 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 .ft-nap{display:flex;flex-direction:column;gap:5px;font-size:.88rem;color:var(--muted);font-style:normal;line-height:1.5}
 .ft-nap a{color:var(--muted)}
 .ft-nap a:hover{color:var(--purple)}
-.ft-hours{font-size:.82rem;opacity:.85}
+/* No opacity here. --muted on --white is 4.94:1, which passes AA, but fading it
+   to 85% blended it to roughly 3.9:1 and was the ONLY accessibility failure
+   Lighthouse reported, on all 52 pages. The smaller font already carries the
+   visual hierarchy this was reaching for. */
+.ft-hours{font-size:.82rem}
 .ft-head{font-size:.74rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink);margin:0 0 14px}
 .ft-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
 .ft-col a{font-size:.9rem;color:var(--muted)}
@@ -454,7 +458,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 
       <p class="reveal">Un sitio web para un bufete no es un folleto. Es la puerta principal de tu práctica. El 92% de tus futuros clientes pasarán por él antes de levantar el teléfono. Necesita cargar rápido, verse profesional, comunicar claramente tu experiencia y hacer que sea fácil ponerse en contacto.</p>
 
-      <p class="reveal">Yo construí uno. Sé lo que se necesita. Si quieres ver la prueba, <a href="/es/caso-riera-law.html" style="color:var(--purple);font-weight:600">lee el caso de estudio de Riera Law</a>.</p>
+      <p class="reveal">Yo construí uno. Sé lo que se necesita. Si quieres ver la prueba, <a href="/es/caso-riera-law.html" style="color:var(--purple);font-weight:600">lee el caso de estudio de Riera Law</a>, o mira cómo enfoco el <a href="/es/diseno-web-para-abogados.html" style="color:var(--purple);font-weight:600">diseño web para bufetes de abogados</a>.</p>
 
       <div class="cta-box reveal">
         <p>Si eres un abogado que sabe que su sitio web necesita trabajo, hablemos. Ofrezco una llamada gratuita de 15 minutos. Sin discurso de ventas, sin presión. Solo una mirada honesta a lo que tu sitio necesita.</p>

@@ -897,7 +897,11 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 .ft-nap{display:flex;flex-direction:column;gap:5px;font-size:.88rem;color:var(--muted);font-style:normal;line-height:1.5}
 .ft-nap a{color:var(--muted)}
 .ft-nap a:hover{color:var(--purple)}
-.ft-hours{font-size:.82rem;opacity:.85}
+/* No opacity here. --muted on --white is 4.94:1, which passes AA, but fading it
+   to 85% blended it to roughly 3.9:1 and was the ONLY accessibility failure
+   Lighthouse reported, on all 52 pages. The smaller font already carries the
+   visual hierarchy this was reaching for. */
+.ft-hours{font-size:.82rem}
 .ft-head{font-size:.74rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink);margin:0 0 14px}
 .ft-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
 .ft-col a{font-size:.9rem;color:var(--muted)}
@@ -1225,7 +1229,12 @@ SCHEMA_ES = {substitute_prices(k): substitute_prices(v) for k, v in SCHEMA_ES.it
 
 
 def flatten_text(fragment):
-    return html_unescape(" ".join(re.sub(r"<[^>]+>", " ", fragment).split()))
+    text = html_unescape(" ".join(re.sub(r"<[^>]+>", " ", fragment).split()))
+    # Tags become spaces, so an inline link that ends a sentence -- "...
+    # <a>See care plans</a>." -- flattened to "See care plans ." and shipped
+    # that stray space into the FAQ schema on pricing.html and es/precios.html.
+    # Punctuation never takes a space before it in either language.
+    return re.sub(r"\s+([.,;:!?])", r"\1", text)
 
 
 def faq_from_dom(html):
@@ -1336,6 +1345,13 @@ def rewrite_jsonld(html, source, lang, memory):
                     node["@id"] = BUSINESS_ID
                     for key, value in NAP.items():
                         node[key] = json.loads(json.dumps(value))
+                    # Every one of these nodes IS the business, so they all share
+                    # BUSINESS_ID -- which makes "url" a property of the business,
+                    # not of the page carrying the block. Seven landing pages had
+                    # inherited the page's own URL here, so the same @id was
+                    # asserting url=/web-design-miami.html on one page and
+                    # url=/ on the other 45. One entity cannot have two homepages.
+                    node["url"] = DOMAIN + url_for("index.html", lang)
                     node.pop("geo", None)
 
                 if "inLanguage" in node or node.get("@type") in top_types:

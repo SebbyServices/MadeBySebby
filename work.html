@@ -511,7 +511,11 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 .ft-nap{display:flex;flex-direction:column;gap:5px;font-size:.88rem;color:var(--muted);font-style:normal;line-height:1.5}
 .ft-nap a{color:var(--muted)}
 .ft-nap a:hover{color:var(--purple)}
-.ft-hours{font-size:.82rem;opacity:.85}
+/* No opacity here. --muted on --white is 4.94:1, which passes AA, but fading it
+   to 85% blended it to roughly 3.9:1 and was the ONLY accessibility failure
+   Lighthouse reported, on all 52 pages. The smaller font already carries the
+   visual hierarchy this was reaching for. */
+.ft-hours{font-size:.82rem}
 .ft-head{font-size:.74rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink);margin:0 0 14px}
 .ft-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
 .ft-col a{font-size:.9rem;color:var(--muted)}
@@ -722,6 +726,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Provides ongoing Website Care for a site clients depend on</li>
         </ul>
         <p style="margin-top:18px"><a href="/case-study-rieralaw.html" style="color:var(--purple);font-weight:600;font-size:.95rem">Read the full case study →</a></p>
+        <p style="margin-top:6px;font-size:.95rem">Run a practice of your own? See how I approach <a href="/web-design-for-law-firms.html" style="color:var(--purple);font-weight:600">web design for law firms</a>.</p>
       </div>
       <a class="sitecard" href="https://rieralaw.com" target="_blank" rel="noopener">
         <div class="bar" aria-hidden="true">
