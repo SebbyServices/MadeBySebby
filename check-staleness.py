@@ -147,6 +147,106 @@ def gsc_crawl_times(urls):
     return out
 
 
+QUEUE_FILE = os.path.join(HERE, "reindex-queue.json")
+
+# Search Console's daily cap on Request Indexing is not published and moves.
+# Observed 2026-08-16: ten submissions went through, the eleventh was refused.
+# Treat this as a ceiling to aim at, not a number to trust.
+DAILY_CAP = 10
+
+
+def load_queue():
+    if not os.path.isfile(QUEUE_FILE):
+        return {}
+    try:
+        return json.load(open(QUEUE_FILE, encoding="utf-8"))
+    except ValueError:
+        # A corrupt queue must not silently look like an empty one, or every
+        # page reappears as never-submitted and the next ten days are wasted
+        # resubmitting things that were already done.
+        sys.exit("reindex-queue.json is not valid JSON. Fix or delete it, but "
+                 "do not let this run treat it as empty.")
+
+
+def save_queue(q):
+    with open(QUEUE_FILE, "w", encoding="utf-8") as fh:
+        json.dump(q, fh, indent=1, sort_keys=True)
+        fh.write("\n")
+
+
+def pending(rows, q):
+    """Pages needing submission: never sent, or changed since they were sent.
+
+    The second half is the point. A page submitted last week and edited since
+    is as stale as one never submitted, and without this it would sit marked
+    done forever.
+    """
+    out = []
+    for r in rows:
+        sent = q.get(r["url"], {}).get("submitted")
+        if not sent:
+            r["queue_state"] = "never submitted"
+            out.append(r)
+        elif r["changed"] and r["changed"][:10] > sent:
+            r["queue_state"] = "changed since %s" % sent
+            out.append(r)
+    return out
+
+
+def cmd_queue(rows, args):
+    q = load_queue()
+    pend = pending(rows, q)
+    done = [r for r in rows if r["url"] in q and r not in pend]
+    print("\n  %d pending, %d submitted and unchanged since\n" % (len(pend), len(done)))
+    for i, r in enumerate(pend, 1):
+        print("  %2d. %s" % (i, r["url"]))
+        print("        %s, %s" % (r["queue_state"], r["why"]))
+    if done:
+        print("\n  Already submitted:")
+        for r in sorted(done, key=lambda x: q[x["url"]]["submitted"], reverse=True):
+            print("      %s  %s" % (q[r["url"]]["submitted"], r["url"]))
+
+
+def cmd_next(rows, args):
+    q = load_queue()
+    pend = pending(rows, q)
+    today = __import__("datetime").date.today().isoformat()
+    sent_today = [u for u, v in q.items() if v.get("submitted") == today]
+    left = max(0, args.cap - len(sent_today))
+
+    if not pend:
+        print("\n  Nothing pending. Every page has been submitted since it last changed.\n")
+        return
+    if not left:
+        print("\n  %d already submitted today, which is the observed cap." % len(sent_today))
+        print("  %d still pending. Come back tomorrow.\n" % len(pend))
+        return
+
+    batch = pend[:left]
+    print("\n  %d pending, %d submitted today, room for %d more.\n"
+          % (len(pend), len(sent_today), left))
+    print("  Submit these, then run:  ./check-staleness.py done <url> ...\n")
+    for r in batch:
+        print("  %s" % r["url"])
+    print()
+    for r in batch:
+        print("      %-58s %s" % (r["url"].replace(DOMAIN, ""), r["why"]))
+
+
+def cmd_done(rows, args):
+    q = load_queue()
+    today = __import__("datetime").date.today().isoformat()
+    known = {r["url"] for r in rows}
+    for u in args.urls:
+        full = u if u.startswith("http") else DOMAIN + ("" if u.startswith("/") else "/") + u
+        if full not in known:
+            print("  not a page on this site, skipped: %s" % full)
+            continue
+        q.setdefault(full, {})["submitted"] = today
+        print("  marked submitted %s  %s" % (today, full))
+    save_queue(q)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -154,6 +254,12 @@ def main():
     ap.add_argument("--top", type=int, default=0, help="show only the top N")
     ap.add_argument("--gsc", action="store_true", help="use real Search Console crawl dates")
     ap.add_argument("--json", action="store_true")
+    sub = ap.add_subparsers(dest="cmd")
+    sub.add_parser("queue", help="everything still needing submission")
+    n = sub.add_parser("next", help="today's batch, respecting the daily cap")
+    n.add_argument("--cap", type=int, default=DAILY_CAP)
+    d = sub.add_parser("done", help="record URLs as submitted today")
+    d.add_argument("urls", nargs="+")
     args = ap.parse_args()
 
     rows = []
@@ -181,6 +287,14 @@ def main():
     # Provably stale first, then by commercial value, then most recently changed.
     rows.sort(key=lambda r: (r["stale"] is not True, -r["score"], r["changed"] or ""),
               reverse=False)
+
+    if args.cmd == "queue":
+        return cmd_queue(rows, args)
+    if args.cmd == "next":
+        return cmd_next(rows, args)
+    if args.cmd == "done":
+        return cmd_done(rows, args)
+
     if args.top:
         rows = rows[:args.top]
 
