@@ -119,6 +119,14 @@
   .ind-item h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
   .ind-item p{font-size:.9rem;color:var(--ink-soft)}
 
+  /* Process steps */
+  .steps{display:grid;gap:26px;max-width:46em}
+  .step{display:flex;gap:20px;align-items:flex-start}
+  .step-n{flex:0 0 38px;width:38px;height:38px;border-radius:50%;background:var(--tint);color:var(--purple);font-weight:800;font-size:.95rem;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.06rem;font-weight:700;margin-bottom:6px;letter-spacing:-.01em}
+  .step p{font-size:.95rem;color:var(--ink-soft)}
+  .note{margin-top:30px;font-size:.97rem;color:var(--ink-soft);max-width:46em}
+
   /* Client logos */
   .client-logos-bar{text-align:center;padding:28px 0 0}
   .client-logos{display:flex;align-items:center;gap:48px;flex-wrap:wrap;justify-content:center;opacity:.75;transition:opacity .3s}
@@ -408,33 +416,51 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Do you work with Fort Lauderdale businesses?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Yes. I serve small businesses across all of South Florida, including Fort Lauderdale, Wilton Manors, Oakland Park, Pompano Beach, Deerfield Beach, Hollywood, Davie, and Plantation. I'm based in Miami, which is a short drive down I-95. Many of my clients are in Broward County."}
+      "name": "Almost all my work is referrals. What is a website going to do for me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It closes the referrals you are already getting. When somebody passes your name along, the next thing that happens is a search, and whatever comes up is the first impression you never got to make in person. A dated site, or none at all, quietly costs you a share of the introductions your customers are working hard to give you. That is a different job from advertising, and it is a much easier one."
+      }
     },
     {
       "@type": "Question",
-      "name": "How much does a website cost in Fort Lauderdale?",
-      "acceptedAnswer": {"@type": "Answer", "text": "A custom 5-page small business website starts at {{PRICE_STARTER}} {{USD}}. Fort Lauderdale agencies typically charge {{AGENCY_LOW}} to {{AGENCY_HIGH}} for the same scope. I offer the same quality at freelancer rates because I work without agency overhead. No Las Olas office, no account managers, no layers between you and the work."}
+      "name": "Will you meet me in person in Fort Lauderdale?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, when it earns the trip. Some jobs genuinely need it: photographing a yard, walking a dining room, sitting with a team that will be updating the site themselves. Most kickoffs and reviews go faster on a screen share where we can both see the thing we are talking about. I am reachable by phone, text and email in Eastern time either way."
+      }
     },
     {
       "@type": "Question",
-      "name": "Will you meet in person in Fort Lauderdale?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Fort Lauderdale is about 30 miles from Miami, a short drive on I-95. I do in-person meetings for local clients when it makes sense, and I'm always available by video call, phone, text, and email during Eastern Time business hours."}
+      "name": "My site exists but it is old. Repair or replace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depends what is wrong with it. Slow, ugly and out of date is often repairable and much cheaper than starting over. Built on something abandoned, or dependent on a plugin that no longer has an author, usually is not, because you would be paying me to maintain a countdown. I look before I quote, and I have talked people out of a rebuild more than once."
+      }
     },
     {
       "@type": "Question",
-      "name": "Do you know the Fort Lauderdale market?",
-      "acceptedAnswer": {"@type": "Answer", "text": "I work with service businesses across South Florida. The fundamentals are the same: your website needs to show up when locals search for your service. Whether you're a marine services company near the Intracoastal, a restaurant on Las Olas, or a law firm downtown, I build sites that convert Fort Lauderdale customers."}
+      "name": "What moves the price up or down?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three things, in this order. How many pages, because each one is a piece of writing and a layout. Whether you have usable photographs, since stock imagery of somebody else's boat is visible from a mile away. And whether the site has to do something beyond informing, like taking a booking or a deposit. Everything is listed on the pricing page, including what costs extra, so there is nothing to discover on the invoice."
+      }
     },
     {
       "@type": "Question",
-      "name": "Do you build bilingual websites in English and Spanish?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every site I build can include both English and Spanish content. I'm fluent in both languages and build bilingual functionality into the site's architecture from day one, not as an afterthought translation plugin. Fort Lauderdale's growing Hispanic community makes bilingual websites a smart investment."}
+      "name": "Do you understand the marine trade?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I understand the shape of the business: long sales cycles, high ticket, buyers who are frequently not in Florida, and a reputation that lives on the dock rather than online. I will not claim to know a refit schedule better than you do. What I do is get that knowledge out of your head and onto a page a prospective owner can read on a phone from another time zone."
+      }
     },
     {
       "@type": "Question",
-      "name": "Do you offer ongoing website maintenance?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Website Care plans start at $99/month and include software updates, daily backups, security monitoring, speed optimization, and small content edits. Most Fort Lauderdale business owners don't have time to maintain their own site. That's exactly what this service is for."}
+      "name": "Do I need my site in Spanish up here?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only if your customers are there, and in Fort Lauderdale that varies by trade far more than it does south of the county line. I build bilingual as a matter of course and I write the Spanish myself, so it is available to you at no extra charge. But I am not going to tell you it is mandatory when it may not be. If Spanish-speaking customers are a real part of your market, the argument for doing it properly is set out on the Miami web design page."
+      }
     }
   ]
 }
@@ -475,142 +501,140 @@
     <div class="breadcrumb rise"><a href="/"><span lang="en">Home</span><span lang="es">Inicio</span></a> / <span lang="en">Web Design Fort Lauderdale</span><span lang="es">Diseño Web Fort Lauderdale</span></div>
     <div class="eyebrow rise d1"><span lang="en">Web Design · Fort Lauderdale</span><span lang="es">Diseño Web · Fort Lauderdale</span></div>
     <h1 class="rise d2"><span lang="en">Web Design in <span class="accent">Fort Lauderdale</span> for Small Businesses</span><span lang="es">Diseño Web en <span class="accent">Fort Lauderdale</span> para Pequeños Negocios</span></h1>
-    <p class="lede rise d3"><span lang="en">Fort Lauderdale businesses deserve websites as strong as their waterfront views. I design, build, and maintain custom websites for small businesses across Broward County. The same quality I bring to Miami clients, now serving Las Olas to Pompano Beach. No agency runaround, no jargon. You talk to me, and I build it like it's my own.</span><span lang="es">Los negocios de Fort Lauderdale merecen sitios web tan fuertes como sus vistas al mar. Diseño, construyo y mantengo sitios web personalizados para pequeños negocios en todo el condado de Broward. La misma calidad que ofrezco a clientes de Miami, ahora sirviendo desde Las Olas hasta Pompano Beach. Sin rodeos de agencia, sin jerga. Hablas conmigo, y lo construyo como si fuera mío.</span></p>
+    <p class="lede rise d3"><span lang="en">Most of the work here arrives by referral. Somebody gives your name, the other person looks you up on their phone, and about four seconds later they decide whether you are worth calling. That is the moment your website is for. I build sites for Fort Lauderdale businesses that hold up in it.</span><span lang="es">Aquí casi todo el trabajo llega por referencia. Alguien da tu nombre, la otra persona te busca en el teléfono, y unos cuatro segundos después decide si vale la pena llamarte. Para ese momento sirve tu sitio web. Yo construyo sitios para negocios de Fort Lauderdale que aguantan ese momento.</span></p>
     <div class="hero-ctas rise d3">
       <a class="btn" href="book.html"><span lang="en">Free 15-minute call</span><span lang="es">Llamada gratuita de 15 minutos</span>&nbsp;&rarr;</a>
-      <a class="btn btn-ghost" href="work.html"><span lang="en">See my work</span><span lang="es">Ver mi trabajo</span></a>
+      <a class="btn btn-ghost" href="work.html"><span lang="en">Browse the portfolio</span><span lang="es">Ver el portafolio</span></a>
     </div>
   </div>
 </header>
 
-<!-- ============ WHY FORT LAUDERDALE BUSINESSES NEED A PRO WEBSITE ============ -->
+<!-- ============ A RECENT BUILD ============ -->
 <section id="main">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2><span lang="en">Why Fort Lauderdale businesses choose me.</span><span lang="es">Por qué los negocios de Fort Lauderdale me eligen.</span></h2>
-      <p><span lang="en">Fort Lauderdale is booming. From marine services along the Intracoastal to restaurants on Las Olas Boulevard, local businesses need a website that works as hard as they do.</span><span lang="es">Fort Lauderdale está en auge. Desde servicios marinos en el Intracoastal hasta restaurantes en Las Olas Boulevard, los negocios locales necesitan un sitio web que trabaje tan duro como ellos.</span></p>
+      <h2><span lang="en">A recent build, and the job it had to do.</span><span lang="es">Un proyecto reciente y el trabajo que tenía que hacer.</span></h2>
+      <p><span lang="en">Elite Care Recovery is a family business run by two brothers with twenty-three years in orthopedic recovery between them. They rent cold and compression therapy equipment to patients coming out of surgery and deliver it to the door.</span><span lang="es">Elite Care Recovery es un negocio familiar que llevan dos hermanos con veintitrés años de experiencia en recuperación ortopédica entre los dos. Rentan equipos de terapia de frío y compresión a pacientes que salen de cirugía y los entregan en la puerta.</span></p>
     </div>
     <div class="cards">
       <div class="card reveal">
-        <div class="glyph"><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2"/></svg></div>
-        <h3><span lang="en">Bilingual by default</span><span lang="es">Bilingüe por defecto</span></h3>
-        <p><span lang="en">Fort Lauderdale's Hispanic population is growing fast. Your website should speak to every customer who finds you on Google, whether they search in English or Spanish. I build bilingual from day one, not as an afterthought plugin.</span><span lang="es">La población hispana de Fort Lauderdale está creciendo rápidamente. Tu sitio web debe hablarle a cada cliente que te encuentre en Google, ya sea que busque en inglés o español. Construyo bilingüe desde el primer día, no como un plugin agregado después.</span></p>
-      </div>
-      <div class="card reveal">
-        <div class="glyph"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21c1-4 3.5-6 7-6s6 2 7 6"/></svg></div>
-        <h3><span lang="en">You talk to the person doing the work</span><span lang="es">Hablas con la persona que hace el trabajo</span></h3>
-        <p><span lang="en">No account managers, no project coordinators, no handoffs. When you call, I answer. When you have a question at 9 PM, I reply the next morning. That's how I work with businesses across Fort Lauderdale, Wilton Manors, Oakland Park, and all of Broward County.</span><span lang="es">Sin gerentes de cuenta, sin coordinadores de proyecto, sin traspasos. Cuando llamas, yo respondo. Cuando tienes una pregunta a las 9 PM, respondo a la mañana siguiente. Así trabajo con negocios en Fort Lauderdale, Wilton Manors, Oakland Park y todo el condado de Broward.</span></p>
-      </div>
-      <div class="card reveal">
         <div class="glyph"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3><span lang="en">Ongoing website care. I don't disappear.</span><span lang="es">Cuidado web continuo. No desaparezco.</span></h3>
-        <p><span lang="en">Most web designers build your site and vanish. I offer monthly Website Care plans that keep your site secure, fast, and updated. Software updates, daily backups, security monitoring, and small edits included. Your website keeps earning its keep long after launch.</span><span lang="es">La mayoría de diseñadores web construyen tu sitio y desaparecen. Ofrezco planes mensuales de Cuidado Web que mantienen tu sitio seguro, rápido y actualizado. Actualizaciones de software, respaldos diarios, monitoreo de seguridad y pequeñas ediciones incluidas.</span></p>
+        <h3><span lang="en">The site was not there to find customers</span><span lang="es">El sitio no estaba para conseguir clientes</span></h3>
+        <p><span lang="en">Surgeons were already sending patients. The website's job was to survive being checked afterwards, by a patient who has just been told a name and wants to know whether these people are real.</span><span lang="es">Los cirujanos ya estaban enviando pacientes. El trabajo del sitio era sobrevivir a la revisión posterior, la de un paciente al que acaban de dar un nombre y quiere saber si esta gente es de verdad.</span></p>
       </div>
       <div class="card reveal">
         <div class="glyph"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
-        <h3><span lang="en">Built for mobile. Fort Lauderdale is mobile.</span><span lang="es">Hecho para móvil. Fort Lauderdale es móvil.</span></h3>
-        <p><span lang="en">Over 60% of web traffic comes from phones. Every site I build is mobile-first. Designed for the way your customers actually browse, not how designers present mockups on a 27-inch monitor. Fast-loading, thumb-friendly, and sharp on every screen from Las Olas to Deerfield Beach.</span><span lang="es">Más del 60% del tráfico web viene de teléfonos. Cada sitio que construyo es mobile-first. Diseñado para como tus clientes realmente navegan, no como los diseñadores presentan maquetas en un monitor de 27 pulgadas. Carga rápida, fácil de usar con el pulgar, y nitido en cada pantalla.</span></p>
+        <h3><span lang="en">Read from a hospital bed, on hospital wifi</span><span lang="es">Se lee desde una cama de hospital, con el wifi del hospital</span></h3>
+        <p><span lang="en">That is who the design was drawn for. One thumb, a small screen, a bad connection, and often the night before an operation. Every page loads in under a second, which is why it is static files with no content system sitting behind them.</span><span lang="es">Para esa persona se dibujó el diseño. Un solo pulgar, una pantalla chica, una conexión mala y, muchas veces, la noche antes de una operación. Cada página carga en menos de un segundo, y por eso son archivos estáticos sin ningún sistema de contenido detrás.</span></p>
+      </div>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3><span lang="en">A reservation form that works at 3am</span><span lang="es">Un formulario de reserva que funciona a las 3 de la mañana</span></h3>
+        <p><span lang="en">Surgery dates do not respect office hours. Patients book their equipment when they think of it, which is frequently the middle of the night, so the form had to be the easiest thing on the page rather than the last thing on it.</span><span lang="es">Las fechas de cirugía no respetan el horario de oficina. Los pacientes reservan su equipo cuando se acuerdan, que muchas veces es de madrugada, así que el formulario tenía que ser lo más fácil de la página y no lo último de ella.</span></p>
+      </div>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div>
+        <h3><span lang="en">Nothing to maintain and no hosting bill</span><span lang="es">Nada que mantener y ninguna factura de alojamiento</span></h3>
+        <p><span lang="en">Four core pages, no plugins to update and no monthly server to pay for. A small business should not inherit a maintenance problem as the price of having a website, and this one did not.</span><span lang="es">Cuatro páginas principales, ningún plugin que actualizar y ningún servidor mensual que pagar. Un negocio pequeño no debería heredar un problema de mantenimiento como precio de tener un sitio web, y este no lo heredó.</span></p>
       </div>
     </div>
+    <p class="note reveal"><a href="case-study-elitecare.html" style="color:var(--purple);font-weight:600"><span lang="en">Read the Elite Care Recovery case study &rarr;</span><span lang="es">Leer el caso de Elite Care Recovery &rarr;</span></a></p>
   </div>
 </section>
 
-<!-- ============ SERVICES ============ -->
+<!-- ============ THE PATTERN ============ -->
 <section style="padding-top:0">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2><span lang="en">What I build for Fort Lauderdale businesses.</span><span lang="es">Lo que construyo para negocios de Fort Lauderdale.</span></h2>
-    </div>
-    <div class="svc-list">
-      <div class="svc-item reveal">
-        <h3><span lang="en">Web Design & Build</span><span lang="es">Diseño y Desarrollo Web</span></h3>
-        <p><span lang="en">Custom websites for Fort Lauderdale small businesses. Marine services near the Intracoastal, restaurants on Las Olas, law firms downtown, real estate offices in Pompano Beach. Mobile-first, fast-loading, and built to convert visitors into customers.</span><span lang="es">Sitios web personalizados para pequeños negocios de Fort Lauderdale. Servicios marinos cerca del Intracoastal, restaurantes en Las Olas, bufetes en el centro, oficinas de bienes raíces en Pompano Beach. Mobile-first, carga rápida, y construidos para convertir visitantes en clientes.</span></p>
-        <a href="services.html"><span lang="en">Learn more &rarr;</span><span lang="es">Más información &rarr;</span></a>
-      </div>
-      <div class="svc-item reveal">
-        <h3><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></h3>
-        <p><span lang="en">Monthly maintenance so your Fort Lauderdale business website stays secure, fast, and current. Updates, backups, security monitoring, and small edits. Starting at $99/month.</span><span lang="es">Mantenimiento mensual para que el sitio web de tu negocio en Fort Lauderdale se mantenga seguro, rápido y actualizado. Actualizaciones, respaldos, monitoreo de seguridad y pequeñas ediciones. Desde $99/mes.</span></p>
-        <a href="website-care.html"><span lang="en">See plans &rarr;</span><span lang="es">Ver planes &rarr;</span></a>
-      </div>
-      <div class="svc-item reveal">
-        <h3><span lang="en">SEO. Get Found on Google.</span><span lang="es">SEO. Aparece en Google.</span></h3>
-        <p><span lang="en">Local SEO for Broward County businesses. Google Business Profile setup, on-page optimization, and honest search strategy that helps customers in Fort Lauderdale find you first.</span><span lang="es">SEO local para negocios del condado de Broward. Configuración de Google Business Profile, optimización on-page, y estrategia de búsqueda honesta que ayuda a clientes en Fort Lauderdale a encontrarte primero.</span></p>
-        <a href="services.html"><span lang="en">Learn more &rarr;</span><span lang="es">Más información &rarr;</span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ INDUSTRIES SERVED ============ -->
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2><span lang="en">Industries I serve in Fort Lauderdale.</span><span lang="es">Industrias que atiendo en Fort Lauderdale.</span></h2>
-      <p><span lang="en">Fort Lauderdale is the Yachting Capital of the World, a tourism powerhouse, and a growing hub for tech and finance. I build websites for the businesses that drive this city.</span><span lang="es">Fort Lauderdale es la Capital Mundial del Yachting, una potencia turística, y un centro en crecimiento para tecnología y finanzas. Construyo sitios web para los negocios que impulsan esta ciudad.</span></p>
+      <h2><span lang="en">That shape repeats across Fort Lauderdale.</span><span lang="es">Esa forma se repite por todo Fort Lauderdale.</span></h2>
+      <p><span lang="en">The marine trades along the Intracoastal and around Port Everglades, contractors, brokers, clinics, the restaurants on Las Olas. The lead usually comes from a person, not from an advertisement, and the website is where that lead is either confirmed or quietly lost. It changes what the site has to be good at. Not cleverness. Speed, plain language about what you do and who you do it for, and an obvious next step.</span><span lang="es">Los oficios marítimos a lo largo del Intracoastal y alrededor de Port Everglades, los contratistas, los corredores, las clínicas, los restaurantes de Las Olas. El contacto casi siempre viene de una persona y no de un anuncio, y el sitio web es donde ese contacto se confirma o se pierde en silencio. Eso cambia en qué tiene que ser bueno el sitio. No en ingenio. En velocidad, en decir claro qué haces y para quién lo haces, y en dejar obvio el siguiente paso.</span></p>
     </div>
     <div class="ind-grid">
       <div class="ind-item reveal">
-        <div class="ind-icon" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M5 20V10l7-6 7 6v10"/><path d="M4 13l-2 2"/><path d="M22 13l-2 2"/><path d="M9 20v-6h6v6"/></svg></div>
-        <h3><span lang="en">Marine & Boating</span><span lang="es">Marino y Náutico</span></h3>
-        <p><span lang="en">Yacht services, marinas, boat repair, charter companies along the Intracoastal and Port Everglades.</span><span lang="es">Servicios de yates, marinas, reparación de botes, compañías de charter a lo largo del Intracoastal y Port Everglades.</span></p>
+        <div class="ind-icon" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2.5"/><line x1="12" y1="22" x2="12" y2="7"/><line x1="7" y1="10" x2="17" y2="10"/><path d="M4 13H2a10 10 0 0 0 20 0h-2"/></svg></div>
+        <h3><span lang="en">Marine and boating</span><span lang="es">Marítimo y náutico</span></h3>
+        <p><span lang="en">Yacht service, refit yards, brokerage and charter. Buyers arrive from all over, so the site is often the only thing they see before the call.</span><span lang="es">Servicio de yates, astilleros de refit, corretaje y charter. Los compradores llegan de todas partes, así que el sitio suele ser lo único que ven antes de la llamada.</span></p>
       </div>
       <div class="ind-item reveal">
-        <div class="ind-icon" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2"/></svg></div>
-        <h3><span lang="en">Tourism & Hospitality</span><span lang="es">Turismo y Hospitalidad</span></h3>
-        <p><span lang="en">Hotels, vacation rentals, tour operators, and hospitality businesses near Fort Lauderdale Beach and the Riverwalk.</span><span lang="es">Hoteles, alquileres vacacionales, operadores turísticos, y negocios de hospitalidad cerca de Fort Lauderdale Beach y el Riverwalk.</span></p>
+        <div class="ind-icon" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20v-7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v7"/><line x1="2" y1="16" x2="22" y2="16"/><path d="M6 11V8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/><line x1="2" y1="20" x2="2" y2="18"/><line x1="22" y1="20" x2="22" y2="18"/></svg></div>
+        <h3><span lang="en">Hotels and short stays</span><span lang="es">Hoteles y estancias cortas</span></h3>
+        <p><span lang="en">Small properties near the beach and the Riverwalk competing with booking platforms that take a cut of every reservation.</span><span lang="es">Propiedades pequeñas cerca de la playa y del Riverwalk que compiten con plataformas de reservas que se llevan una tajada de cada reservación.</span></p>
       </div>
       <div class="ind-item reveal">
         <div class="ind-icon" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-        <h3><span lang="en">Real Estate</span><span lang="es">Bienes Raices</span></h3>
-        <p><span lang="en">Agents, brokerages, and property managers from Las Olas Isles to Pompano Beach and Plantation.</span><span lang="es">Agentes, corredoras y administradores de propiedades desde Las Olas Isles hasta Pompano Beach y Plantation.</span></p>
+        <h3><span lang="en">Property and real estate</span><span lang="es">Propiedades y bienes raíces</span></h3>
+        <p><span lang="en">Agents and managers from Las Olas Isles up to Pompano Beach, who need a home online that is theirs rather than a profile on a portal.</span><span lang="es">Agentes y administradores desde Las Olas Isles hasta Pompano Beach, que necesitan una casa en línea propia y no un perfil en un portal.</span></p>
       </div>
       <div class="ind-item reveal">
         <div class="ind-icon" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-        <h3><span lang="en">Healthcare</span><span lang="es">Salud</span></h3>
-        <p><span lang="en">Medical practices, dental offices, wellness clinics, and recovery centers across Broward County.</span><span lang="es">Consultorios médicos, oficinas dentales, clínicas de bienestar y centros de recuperación en todo el condado de Broward.</span></p>
+        <h3><span lang="en">Clinics and recovery</span><span lang="es">Clínicas y recuperación</span></h3>
+        <p><span lang="en">Medical, dental and rehabilitation practices where the patient is choosing while in pain and has very little patience for a slow page.</span><span lang="es">Consultorios médicos, dentales y de rehabilitación, donde el paciente elige con dolor encima y con muy poca paciencia para una página lenta.</span></p>
       </div>
       <div class="ind-item reveal">
         <div class="ind-icon" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
-        <h3><span lang="en">Legal</span><span lang="es">Legal</span></h3>
-        <p><span lang="en">Law firms, solo practitioners, and legal services in downtown Fort Lauderdale and surrounding areas.</span><span lang="es">Bufetes de abogados, practicantes independientes y servicios legales en el centro de Fort Lauderdale y áreas circundantes.</span></p>
+        <h3><span lang="en">Law and professional services</span><span lang="es">Derecho y servicios profesionales</span></h3>
+        <p><span lang="en">Solo practitioners and small firms downtown, where the site has to read as serious before anybody reads a word of it.</span><span lang="es">Abogados independientes y bufetes pequeños del centro, donde el sitio tiene que verse serio antes de que alguien lea una sola palabra.</span></p>
       </div>
       <div class="ind-item reveal">
         <div class="ind-icon" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
-        <h3><span lang="en">Restaurants & Food</span><span lang="es">Restaurantes y Comida</span></h3>
-        <p><span lang="en">Restaurants, cafes, catering companies, and food businesses from Las Olas to Oakland Park and Wilton Manors.</span><span lang="es">Restaurantes, cafes, compañías de catering y negocios de comida desde Las Olas hasta Oakland Park y Wilton Manors.</span></p>
+        <h3><span lang="en">Kitchens and counters</span><span lang="es">Cocinas y barras</span></h3>
+        <p><span lang="en">Restaurants and cafes from Las Olas out to Oakland Park and Wilton Manors, where the menu and the hours are what people came for.</span><span lang="es">Restaurantes y cafés desde Las Olas hasta Oakland Park y Wilton Manors, donde el menú y el horario son justo lo que la gente vino a buscar.</span></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ BASED IN MIAMI, SERVING SOUTH FLORIDA ============ -->
+<!-- ============ HOW THE WORK RUNS ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">How a Fort Lauderdale project actually runs.</span><span lang="es">Cómo se desarrolla en la práctica un proyecto en Fort Lauderdale.</span></h2>
+      <p><span lang="en">Written down because the most common complaint I hear about the last designer is not the design. It is not knowing what was happening or when it would end.</span><span lang="es">Lo escribo porque la queja más común que escucho sobre el diseñador anterior no es el diseño. Es no saber qué estaba pasando ni cuándo iba a terminar.</span></p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-n" aria-hidden="true">1</div>
+        <div>
+          <h3><span lang="en">A call, then a number that does not move</span><span lang="es">Una llamada y luego un número que no se mueve</span></h3>
+          <p><span lang="en">Fifteen minutes on the phone, then I write down what the site has to do and what it will cost to do it. That figure is the figure. If the work grows later, you approve the change before it happens, never after.</span><span lang="es">Quince minutos por teléfono y después escribo qué tiene que hacer el sitio y cuánto va a costar hacerlo. Esa cifra es la cifra. Si el trabajo crece más adelante, tú apruebas el cambio antes de que ocurra, nunca después.</span></p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-n" aria-hidden="true">2</div>
+        <div>
+          <h3><span lang="en">Design and build, on a stated calendar</span><span lang="es">Diseño y construcción, con un calendario dicho de antemano</span></h3>
+          <p><span lang="en">{{WEEKS_STARTER}} weeks for a small site, {{WEEKS_CUSTOM}} for a custom one, {{WEEKS_PREMIUM}} for the largest. You see it as it goes rather than at a reveal, because a surprise at the end is expensive for both of us.</span><span lang="es">{{WEEKS_STARTER}} semanas para un sitio pequeño, {{WEEKS_CUSTOM}} para uno personalizado, {{WEEKS_PREMIUM}} para el más grande. Lo ves mientras avanza y no en una gran presentación final, porque una sorpresa al final nos sale cara a los dos.</span></p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-n" aria-hidden="true">3</div>
+        <div>
+          <h3><span lang="en">Launch, including the unglamorous parts</span><span lang="es">Lanzamiento, incluida la parte sin glamour</span></h3>
+          <p><span lang="en">Domain moved, mail records set so your email keeps arriving, redirects mapped from the old pages so you do not lose what you had. This is where most handovers go wrong and where I spend the most care. Then {{SUPPORT_CUSTOM}} days of adjustments on a custom build.</span><span lang="es">Dominio movido, registros de correo configurados para que tus mensajes sigan llegando, redirecciones mapeadas desde las páginas viejas para que no pierdas lo que tenías. Aquí es donde fallan la mayoría de las entregas y donde pongo más cuidado. Después, {{SUPPORT_CUSTOM}} días de ajustes en un proyecto personalizado.</span></p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-n" aria-hidden="true">4</div>
+        <div>
+          <h3><span lang="en">Afterwards, whichever way you want it</span><span lang="es">Después, como tú lo prefieras</span></h3>
+          <p><span lang="en">Either you take the keys and run it, or I keep it updated, backed up and watched for {{CARE_ESSENTIALS}} {{USD}} a month and up. Both are fine, and I will not pretend the second one is compulsory. See <a href="website-care.html" style="color:var(--purple);font-weight:600">what the care plans cover</a> or the rest of <a href="services.html" style="color:var(--purple);font-weight:600">what I do</a>.</span><span lang="es">O te quedas con las llaves y lo manejas, o yo lo mantengo actualizado, respaldado y vigilado desde {{CARE_ESSENTIALS}} {{USD}} al mes. Las dos opciones están bien, y no voy a fingir que la segunda es obligatoria. Mira <a href="website-care.html" style="color:var(--purple);font-weight:600">qué cubren los planes de cuidado</a> o el resto de <a href="services.html" style="color:var(--purple);font-weight:600">lo que hago</a>.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROXIMITY ============ -->
 <section style="padding-top:0">
   <div class="wrap">
     <div class="proximity reveal">
       <div class="prox-text">
-        <h2><span lang="en">Based in Miami. Serving all of South Florida.</span><span lang="es">Con base en Miami. Sirviendo todo el sur de Florida.</span></h2>
-        <p class="body"><span lang="en">Fort Lauderdale is right up I-95 from where I work every day. I already serve clients across South Florida, from Coral Gables to Hollywood. Adding Fort Lauderdale, Wilton Manors, Oakland Park, Pompano Beach, Deerfield Beach, Davie, and Plantation to that list is a natural extension. Same time zone, same market, same commitment to quality. When you need an in-person meeting, I'm a short drive away.</span><span lang="es">Fort Lauderdale esta justo por la I-95 desde donde trabajo todos los dias. Ya atiendo clientes en todo el sur de Florida, desde Coral Gables hasta Hollywood. Agregar Fort Lauderdale, Wilton Manors, Oakland Park, Pompano Beach, Deerfield Beach, Davie y Plantation a esa lista es una extension natural. Misma zona horaria, mismo mercado, mismo compromiso con la calidad. Cuando necesitas una reunion en persona, estoy a un corto viaje en auto.</span></p>
+        <h2><span lang="en">Close enough to drive up.</span><span lang="es">Lo bastante cerca como para subir manejando.</span></h2>
+        <p class="body"><span lang="en">I work out of Miami, which is a straight run north on I-95 into Fort Lauderdale. Close enough that meeting at your shop, your office or your yard is a normal thing to do rather than a favour, and far enough that most weeks it is quicker for both of us on a video call. Wilton Manors, Oakland Park, Pompano Beach, Deerfield Beach, Hollywood, Davie and Plantation all sit inside that same drive.</span><span lang="es">Trabajo desde Miami, que es un tramo directo hacia el norte por la I-95 hasta Fort Lauderdale. Lo bastante cerca como para que vernos en tu taller, tu oficina o tu patio sea algo normal y no un favor, y lo bastante lejos como para que casi todas las semanas nos convenga más una videollamada a los dos. Wilton Manors, Oakland Park, Pompano Beach, Deerfield Beach, Hollywood, Davie y Plantation quedan dentro de ese mismo viaje.</span></p>
       </div>
       <div class="prox-stat">
         <div class="number"><span lang="en">~30 mi</span><span lang="es">~48 km</span></div>
-        <div class="label"><span lang="en">Miami to Fort Lauderdale</span><span lang="es">Miami a Fort Lauderdale</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ LOCAL CREDIBILITY ============ -->
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="credibility reveal">
-      <h2><span lang="en">Trusted by South Florida businesses.</span><span lang="es">Negocios del sur de Florida confían en mí.</span></h2>
-      <p class="body"><span lang="en">I built the entire online presence for <strong>Riera Law Firm</strong> in Coral Gables, a securities arbitration practice led by a former SEC enforcement attorney. 70+ bilingual pages, DNS cleanup, email restoration, and ongoing Website Care every month. The same attention to detail I bring to every project, whether it's in Miami or Fort Lauderdale. <a href="case-study-rieralaw.html" style="color:var(--purple);font-weight:600">Read the full case study &rarr;</a></span><span lang="es">Construí toda la presencia online de <strong>Riera Law Firm</strong> en Coral Gables, una práctica de arbitraje de valores liderada por un ex fiscal de la SEC. Más de 70 páginas bilingües, limpieza de DNS, restauración de correo, y Cuidado Web continuo cada mes. La misma atención al detalle que llevo a cada proyecto, ya sea en Miami o Fort Lauderdale. <a href="case-study-rieralaw.html" style="color:var(--purple);font-weight:600">Leer el caso de estudio completo &rarr;</a></span></p>
-      <div class="client-logos-bar">
-        <div class="client-logos-label"><span lang="en">Trusted by</span><span lang="es">Confían en mí</span></div>
-        <div class="client-logos">
-          <a href="case-study-rieralaw.html"><img class="logo-light" src="assets/client-logos/rieralaw-light.webp" alt="Riera Law Firm, Coral Gables, Florida" loading="lazy" style="display:block"><img class="logo-dark" src="assets/client-logos/rieralaw-dark.webp" alt="Riera Law Firm, Coral Gables, Florida" loading="lazy" style="display:none"></a>
-          <a href="case-study-elitecare.html"><img class="logo-light" src="assets/client-logos/elitecare-light.webp" alt="Elite Care Recovery, South Florida" loading="lazy" style="display:block"><img class="logo-dark" src="assets/client-logos/elitecare-dark.webp" alt="Elite Care Recovery, South Florida" loading="lazy" style="display:none"></a>
-        </div>
+        <div class="label"><span lang="en">up I-95 from my desk</span><span lang="es">por la I-95 desde mi escritorio</span></div>
       </div>
     </div>
   </div>
@@ -620,32 +644,32 @@
 <section>
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2><span lang="en">Common questions from Fort Lauderdale business owners.</span><span lang="es">Preguntas comunes de dueños de negocios en Fort Lauderdale.</span></h2>
+      <h2><span lang="en">Things Fort Lauderdale owners want settled first.</span><span lang="es">Cosas que los dueños en Fort Lauderdale quieren aclarar primero.</span></h2>
     </div>
     <div class="faq">
       <details class="reveal">
-        <summary><span lang="en">Do you work with Fort Lauderdale businesses?</span><span lang="es">¿Trabajas con negocios de Fort Lauderdale?</span></summary>
-        <p><span lang="en">Yes. I serve small businesses across all of South Florida, including Fort Lauderdale, Wilton Manors, Oakland Park, Pompano Beach, Deerfield Beach, Hollywood, Davie, and Plantation. I'm based in Miami, which is about 30 miles south on I-95. Many of my clients are in Broward County.</span><span lang="es">Sí. Atiendo pequeños negocios en todo el sur de Florida, incluyendo Fort Lauderdale, Wilton Manors, Oakland Park, Pompano Beach, Deerfield Beach, Hollywood, Davie y Plantation. Estoy basado en Miami, que está a unas 30 millas al sur por la I-95. Muchos de mis clientes están en el condado de Broward.</span></p>
+        <summary><span lang="en">Almost all my work is referrals. What is a website going to do for me?</span><span lang="es">Casi todo mi trabajo llega por referencias. ¿Qué va a hacer un sitio web por mí?</span></summary>
+        <p><span lang="en">It closes the referrals you are already getting. When somebody passes your name along, the next thing that happens is a search, and whatever comes up is the first impression you never got to make in person. A dated site, or none at all, quietly costs you a share of the introductions your customers are working hard to give you. That is a different job from advertising, and it is a much easier one.</span><span lang="es">Cierra las referencias que ya estás recibiendo. Cuando alguien pasa tu nombre, lo siguiente que ocurre es una búsqueda, y lo que aparezca ahí es la primera impresión que no pudiste dar en persona. Un sitio viejo, o ninguno, te cuesta calladamente una parte de las presentaciones que tus clientes se esfuerzan en darte. Ese trabajo no es publicidad, y es bastante más fácil.</span></p>
       </details>
       <details class="reveal">
-        <summary><span lang="en">How much does a website cost in Fort Lauderdale?</span><span lang="es">¿Cuánto cuesta un sitio web en Fort Lauderdale?</span></summary>
-        <p><span lang="en">A custom 5-page small business website starts at {{PRICE_STARTER}} {{USD}}. Fort Lauderdale agencies typically charge {{AGENCY_LOW}} to {{AGENCY_HIGH}} for the same scope. I offer the same quality at freelancer rates because I work without agency overhead. No Las Olas office, no account managers, no layers between you and the work.</span><span lang="es">Un sitio web personalizado de 5 páginas para pequeños negocios comienza en {{PRICE_STARTER}} {{USD}}. Las agencias de Fort Lauderdale típicamente cobran {{AGENCY_LOW}} a {{AGENCY_HIGH}} por el mismo alcance. Ofrezco la misma calidad a tarifas de freelancer porque trabajo sin los gastos de una agencia. Sin oficina en Las Olas, sin gerentes de cuenta, sin capas entre tu y el trabajo.</span></p>
+        <summary><span lang="en">Will you meet me in person in Fort Lauderdale?</span><span lang="es">¿Nos podemos ver en persona en Fort Lauderdale?</span></summary>
+        <p><span lang="en">Yes, when it earns the trip. Some jobs genuinely need it: photographing a yard, walking a dining room, sitting with a team that will be updating the site themselves. Most kickoffs and reviews go faster on a screen share where we can both see the thing we are talking about. I am reachable by phone, text and email in Eastern time either way.</span><span lang="es">Sí, cuando el viaje se justifica. Hay trabajos que de verdad lo necesitan: fotografiar un patio, recorrer un comedor, sentarse con el equipo que después va a actualizar el sitio. La mayoría de los arranques y las revisiones salen más rápido compartiendo pantalla, donde los dos vemos lo mismo de lo que hablamos. De cualquier forma me localizas por teléfono, mensaje y correo en horario del Este.</span></p>
       </details>
       <details class="reveal">
-        <summary><span lang="en">Will you meet in person in Fort Lauderdale?</span><span lang="es">¿Te reunirás en persona en Fort Lauderdale?</span></summary>
-        <p><span lang="en">Yes. Fort Lauderdale is about 30 miles from Miami. A short drive on I-95. I do in-person meetings for local clients when it makes sense, and I'm always available by video call, phone, text, and email during Eastern Time business hours. My clients across South Florida find this setup works perfectly.</span><span lang="es">Sí. Fort Lauderdale está a unas 30 millas de Miami. Un viaje corto por la I-95. Hago reuniones en persona para clientes locales cuando tiene sentido, y siempre estoy disponible por videollamada, teléfono, texto y correo electrónico durante horario de oficina hora del Este. Mis clientes en todo el sur de Florida encuentran que esta configuración funciona perfectamente.</span></p>
+        <summary><span lang="en">My site exists but it is old. Repair or replace?</span><span lang="es">Mi sitio existe pero está viejo. ¿Reparar o reemplazar?</span></summary>
+        <p><span lang="en">Depends what is wrong with it. Slow, ugly and out of date is often repairable and much cheaper than starting over. Built on something abandoned, or dependent on a plugin that no longer has an author, usually is not, because you would be paying me to maintain a countdown. I look before I quote, and I have talked people out of a rebuild more than once.</span><span lang="es">Depende de qué le pase. Lento, feo y desactualizado suele tener arreglo y sale mucho más barato que empezar de cero. Construido sobre algo abandonado, o que depende de un plugin que ya no tiene autor, normalmente no, porque me estarías pagando por mantener una cuenta regresiva. Reviso antes de cotizar, y más de una vez he convencido a alguien de no reconstruir.</span></p>
       </details>
       <details class="reveal">
-        <summary><span lang="en">Do you know the Fort Lauderdale market?</span><span lang="es">¿Conoces el mercado de Fort Lauderdale?</span></summary>
-        <p><span lang="en">I work with service businesses across South Florida. The fundamentals are the same: your website needs to show up when locals search for your service. Whether you're a marine services company near the Intracoastal, a restaurant on Las Olas, or a law firm in downtown Fort Lauderdale, I build sites that convert local customers into paying clients.</span><span lang="es">Trabajo con negocios de servicios en todo el sur de Florida. Los fundamentos son los mismos: tu sitio web necesita aparecer cuando los locales buscan tu servicio. Ya sea que tengas una empresa de servicios marinos cerca del Intracoastal, un restaurante en Las Olas, o un bufete de abogados en el centro de Fort Lauderdale, construyo sitios que convierten clientes locales en clientes que pagan.</span></p>
+        <summary><span lang="en">What moves the price up or down?</span><span lang="es">¿Qué hace que el precio suba o baje?</span></summary>
+        <p><span lang="en">Three things, in this order. How many pages, because each one is a piece of writing and a layout. Whether you have usable photographs, since stock imagery of somebody else's boat is visible from a mile away. And whether the site has to do something beyond informing, like taking a booking or a deposit. Everything is listed on the <a href="pricing.html" style="color:var(--purple);font-weight:600">pricing page</a>, including what costs extra, so there is nothing to discover on the invoice.</span><span lang="es">Tres cosas, en este orden. Cuántas páginas, porque cada una es un texto y un diseño. Si tienes fotos aprovechables, porque una imagen de banco del barco de otro se nota a kilómetros. Y si el sitio tiene que hacer algo más que informar, como tomar una reserva o un depósito. Todo está en la <a href="pricing.html" style="color:var(--purple);font-weight:600">página de precios</a>, incluido lo que cuesta aparte, así que no hay nada que descubrir en la factura.</span></p>
       </details>
       <details class="reveal">
-        <summary><span lang="en">Do you build bilingual websites in English and Spanish?</span><span lang="es">¿Construyes sitios web bilingües en inglés y español?</span></summary>
-        <p><span lang="en">Yes. Every site I build can include both English and Spanish content. I'm fluent in both languages and build bilingual functionality into the site's architecture from day one. Fort Lauderdale's growing Hispanic community makes a bilingual website a smart investment for reaching more customers.</span><span lang="es">Sí. Cada sitio que construyo puede incluir contenido en inglés y español. Soy fluido en ambos idiomas y construyo la funcionalidad bilingüe en la arquitectura del sitio desde el primer día. La creciente comunidad hispana de Fort Lauderdale hace que un sitio web bilingüe sea una inversión inteligente para alcanzar más clientes.</span></p>
+        <summary><span lang="en">Do you understand the marine trade?</span><span lang="es">¿Entiendes el sector náutico?</span></summary>
+        <p><span lang="en">I understand the shape of the business: long sales cycles, high ticket, buyers who are frequently not in Florida, and a reputation that lives on the dock rather than online. I will not claim to know a refit schedule better than you do. What I do is get that knowledge out of your head and onto a page a prospective owner can read on a phone from another time zone.</span><span lang="es">Entiendo la forma del negocio: ciclos de venta largos, tickets altos, compradores que muchas veces no están en Florida, y una reputación que vive en el muelle más que en internet. No voy a decir que conozco un cronograma de refit mejor que tú. Lo que hago es sacar ese conocimiento de tu cabeza y ponerlo en una página que un posible dueño pueda leer desde el teléfono en otro huso horario.</span></p>
       </details>
       <details class="reveal">
-        <summary><span lang="en">Do you offer ongoing website maintenance?</span><span lang="es">¿Ofreces mantenimiento web continuo?</span></summary>
-        <p><span lang="en">Yes. Website Care plans start at $99/month and include software updates, daily backups, security monitoring, speed optimization, and small content edits. Most Fort Lauderdale business owners don't have time to maintain their own site. That's exactly what this service is for.</span><span lang="es">Sí. Los planes de Cuidado Web comienzan en $99/mes e incluyen actualizaciones de software, respaldos diarios, monitoreo de seguridad, optimización de velocidad y pequeñas ediciones de contenido. La mayoría de dueños de negocios en Fort Lauderdale no tienen tiempo para mantener su propio sitio. Para eso es exactamente este servicio.</span></p>
+        <summary><span lang="en">Do I need my site in Spanish up here?</span><span lang="es">¿Necesito mi sitio en español aquí arriba?</span></summary>
+        <p><span lang="en">Only if your customers are there, and in Fort Lauderdale that varies by trade far more than it does south of the county line. I build bilingual as a matter of course and I write the Spanish myself, so it is available to you at no extra charge. But I am not going to tell you it is mandatory when it may not be. If Spanish-speaking customers are a real part of your market, the argument for doing it properly is set out on the <a href="web-design-miami.html" style="color:var(--purple);font-weight:600">Miami web design page</a>.</span><span lang="es">Solo si tus clientes están ahí, y en Fort Lauderdale eso varía según el oficio mucho más que al sur del límite del condado. Construyo bilingüe por costumbre y el español lo escribo yo, así que lo tienes disponible sin costo adicional. Pero no te voy a decir que es obligatorio cuando puede que no lo sea. Si los clientes hispanohablantes son una parte real de tu mercado, el argumento de hacerlo bien está explicado en la <a href="web-design-miami.html" style="color:var(--purple);font-weight:600">página de diseño web en Miami</a>.</span></p>
       </details>
     </div>
   </div>
@@ -654,8 +678,8 @@
 <!-- ============ FINAL CTA ============ -->
 <section class="final" style="padding-top:30px">
   <div class="wrap">
-    <h2><span lang="en">Ready to upgrade your Fort Lauderdale business's website?</span><span lang="es">¿Listo para mejorar el sitio web de tu negocio en Fort Lauderdale?</span></h2>
-    <p><span lang="en">Free 15-minute call. No pressure, plain answers. I'll tell you exactly what I'd recommend, even if the answer is "less than you think."</span><span lang="es">Llamada gratuita de 15 minutos. Sin presión, respuestas claras. Te dire exactamente lo que recomendaria, incluso si la respuesta es "menos de lo que piensas."</span></p>
+    <h2><span lang="en">Bring me the site your Fort Lauderdale business has now.</span><span lang="es">Tráeme el sitio que tiene ahora tu negocio en Fort Lauderdale.</span></h2>
+    <p><span lang="en">Fifteen minutes on the phone, nothing to pay, and I will look at it with you before recommending anything. Half the time the honest answer is smaller than people expect.</span><span lang="es">Quince minutos por teléfono, nada que pagar, y lo reviso contigo antes de recomendar nada. La mitad de las veces la respuesta honesta es más pequeña de lo que la gente espera.</span></p>
     <a class="btn" href="book.html"><span lang="en">Book a free call</span><span lang="es">Reserva una llamada gratuita</span>&nbsp;&rarr;</a>
   </div>
 </section>

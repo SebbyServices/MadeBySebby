@@ -110,6 +110,17 @@
   .svc-item p{font-size:.95rem;color:var(--ink-soft);margin-bottom:16px}
   .svc-item a{color:var(--purple);font-weight:600;font-size:.92rem}
 
+  /* Two-panel comparison */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .split-panel{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px}
+  .split-panel.good{background:var(--tint);border-color:#D8CFF6}
+  .split-panel h3{font-size:1.06rem;font-weight:700;margin-bottom:18px;letter-spacing:-.01em}
+  .split-panel ul{list-style:none;display:grid;gap:13px}
+  .split-panel li{font-size:.95rem;color:var(--ink-soft);padding-left:26px;position:relative}
+  .split-panel li::before{content:"";position:absolute;left:0;top:.62em;width:13px;height:2px;background:var(--muted);border-radius:2px}
+  .split-panel.good li::before{background:var(--purple);height:3px}
+  .note{margin-top:30px;font-size:.97rem;color:var(--ink-soft);max-width:46em}
+
   /* Client logos */
   .client-logos-bar{text-align:center;padding:28px 0 0}
   .client-logos{display:flex;align-items:center;gap:48px;flex-wrap:wrap;justify-content:center;opacity:.75;transition:opacity .3s}
@@ -158,6 +169,7 @@
   /* Responsive */
   @media (max-width:900px){
     .cards{grid-template-columns:1fr}
+    .split{grid-template-columns:1fr}
     .svc-list{grid-template-columns:1fr 1fr}
     .credibility{padding:48px 32px}
   }
@@ -241,7 +253,8 @@
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]) nav{background:rgba(15,17,23,.92)}
-    :root:not([data-theme="light"]) .card,:root:not([data-theme="light"]) .svc-item,:root:not([data-theme="light"]) .faq details{background:#1A1C25}
+    :root:not([data-theme="light"]) .card,:root:not([data-theme="light"]) .svc-item,:root:not([data-theme="light"]) .split-panel,:root:not([data-theme="light"]) .faq details{background:#1A1C25}
+    :root:not([data-theme="light"]) .split-panel.good{background:#221E33;border-color:#3D3A4E}
     :root:not([data-theme="light"]) .card:hover{border-color:#3D3A4E}
     :root:not([data-theme="light"]) .credibility{background:#1A1C25}
     :root:not([data-theme="light"]) .btn-ghost{border-color:var(--line)}
@@ -256,7 +269,8 @@
     :root:not([data-theme="light"]) .client-logos img.logo-dark{display:block !important}
   }
   [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
-  [data-theme="dark"] .card,[data-theme="dark"] .svc-item,[data-theme="dark"] .faq details{background:#1A1C25}
+  [data-theme="dark"] .card,[data-theme="dark"] .svc-item,[data-theme="dark"] .split-panel,[data-theme="dark"] .faq details{background:#1A1C25}
+    [data-theme="dark"] .split-panel.good{background:#221E33;border-color:#3D3A4E}
   [data-theme="dark"] .card:hover{border-color:#3D3A4E}
   [data-theme="dark"] .credibility{background:#1A1C25}
   [data-theme="dark"] .btn-ghost{border-color:var(--line)}
@@ -527,42 +541,50 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "¿El español lo escribes tú o lo tengo que dar yo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lo escribo yo. El español es mi primera lengua, así que lo que va en la página se escribe en español en vez de traducirse del inglés, y por eso no tiene ese tono rígido y un poco raro que deja una máquina. Si ya tienes textos en español que te gustan, los uso. Si tienes textos en español que salieron de un plugin, te digo con honestidad cómo se leen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Google de verdad va a mostrar mis páginas en español a quien busca en español?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para eso sirve la estructura de dos direcciones. Cada página en español tiene su propia URL, su propio título y descripción en español, y una etiqueta hreflang que nombra a su gemela en inglés. Así Google puede tratarla como una página en español y no como una capa escondida de una en inglés. Lo que nadie te puede prometer es una posición: hreflang decide qué versión se muestra, no qué tan arriba aparece."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Todos mis clientes hablan inglés. ¿Aun así necesito español?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Puede que no, y prefiero decírtelo a venderte algo. La pregunta que hago en la llamada no es a quién tienes, sino a quién estás perdiendo. Un consultorio dental cuyos pacientes llegan todos por referencia de una red que habla inglés es un caso distinto al de un techador que quiere que el teléfono suene desde el buscador. Si la respuesta honesta es que el inglés te alcanza, construimos en inglés y ponemos el dinero en las páginas que sí rinden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedes agregarle español al sitio que ya tengo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A veces sí, y depende de cómo esté armado el sitio actual. Si puede generar un segundo conjunto de URLs, agregar un lado en español bien indexado es un trabajo de contenido y configuración, no una reconstrucción. Si es un constructor de páginas que solo sabe intercambiar palabras en el mismo lugar, estarías pagando por pegarle un traductor encima, que es justo lo que esta página argumenta en contra. Lo reviso y te digo cuál de los dos tienes antes de cotizar nada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Quién lo mantiene funcionando después del lanzamiento?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yo, si así lo quieres. Un sitio bilingüe son dos conjuntos de páginas que hay que mantener al mismo paso, y la forma habitual en que se deteriora es que el lado en inglés recibe una página de servicio nueva y el lado en español, calladamente, no. Un plan de cuidado mensual cubre actualizaciones, respaldos, monitoreo y ediciones pequeñas, y trata los dos idiomas como un solo sitio. También puedes quedarte con las llaves y manejarlo tú, que es una decisión perfectamente razonable."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "¿Cuánto cuesta un sitio web en Miami?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un sitio web personalizado de 5 páginas para pequeños negocios comienza en $2,500 USD. Las agencias de Miami típicamente cobran $10,000–$30,000 por el mismo alcance. Ofrezco la misma calidad a tarifas de freelancer porque no tengo los gastos de una agencia, sin oficina en Brickell, sin gerentes de cuenta, sin capas entre tú y el trabajo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Construyes sitios web bilingües en inglés y español?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Cada sitio que construyo puede incluir contenido en inglés y español. Soy fluido en ambos idiomas y construyo la funcionalidad bilingüe en la arquitectura del sitio desde el primer día, no como un plugin de traducción agregado después. Con el 70% de Miami siendo hispano, un sitio web bilingüe no es opcional, es una ventaja competitiva."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuánto tiempo toma construir un sitio web?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La mayoría de sitios web para pequeños negocios toman 3–6 semanas desde el inicio hasta el lanzamiento. Proyectos complejos con 20+ páginas, funcionalidad personalizada, o contenido bilingüe completo toman 6–10 semanas. Te doy un cronograma desde el inicio y lo cumplo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Ofreces mantenimiento web continuo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Los planes de Cuidado Web comienzan en $99/mes e incluyen actualizaciones de software, respaldos diarios, monitoreo de seguridad, optimización de velocidad y pequeñas ediciones de contenido. La mayoría de dueños de negocios en Miami no tienen tiempo para mantener su propio sitio, para eso es exactamente este servicio."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Podemos reunirnos en persona en Miami?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Trabajo de forma remota y atiendo clientes de Miami por videollamada, teléfono, texto y correo electrónico durante horario de oficina hora del Este. Mis clientes en Coral Gables, Doral y todo el sur de Florida encuentran que esto funciona perfectamente, recibes la misma atención personal sin pagar por el alquiler de oficina de una agencia en Brickell."
+        "text": "Los míos empiezan en $2,500 USD y los niveles están arriba, con el desglose completo en la página de precios. También vas a ver ofertas por ahí de unos cuantos cientos de dólares, y por lo general son una plantilla con tu logo encima y tu texto vaciado en el diseño de otro. Es una opción real y a veces es la correcta. No es esto."
       }
     }
   ]
@@ -604,80 +626,54 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
     <div class="breadcrumb rise"><a href="/es/">Inicio</a> / Diseño Web Miami</div>
     <div class="eyebrow rise d1">Diseño Web · Miami</div>
     <h1 class="rise d2">Diseño Web en <span class="accent">Miami</span> para Pequeños Negocios</h1>
-    <p class="lede rise d3">Tu negocio merece un sitio web tan profesional como tú. Diseño, construyo y mantengo sitios web personalizados para pequeños negocios en Miami, en inglés y español. Sin rodeos de agencia, sin jerga. Hablas conmigo, y lo construyo como si fuera mío.</p>
+    <p class="lede rise d3">En Miami el mismo cliente te busca en inglés una semana y en español la siguiente. Casi todos los sitios de aquí responden solo a uno de los dos. Yo construyo sitios para pequeños negocios que responden a los dos, como dos páginas reales en dos direcciones reales, con el español escrito y no traducido por una máquina.</p>
     <div class="hero-ctas rise d3">
-      <a class="btn" href="/es/agendar.html">Llamada gratuita de 15 minutos&nbsp;→</a>
-      <a class="btn btn-ghost" href="/es/portafolio.html">Ver mi trabajo</a>
+      <a class="btn" href="/es/agendar.html">Llamada gratuita de 15 minutos&nbsp;&rarr;</a>
+      <a class="btn btn-ghost" href="/es/caso-riera-law.html">Ver un proyecto en Coral Gables</a>
     </div>
   </div>
 </header>
 
-<!-- ============ WHY MIAMI BUSINESSES CHOOSE ME ============ -->
+<!-- ============ THE TWO-LANGUAGE ARGUMENT ============ -->
 <section id="main">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>Por qué los negocios de Miami me eligen.</h2>
-      <p>Miami no es un mercado genérico. Tu sitio web necesita a alguien que entienda eso.</p>
+      <h2>Miami es un mercado de dos idiomas. Casi todos los sitios de aquí están hechos para uno.</h2>
+      <p>Una clínica en Hialeah, un restaurante en Doral, un bufete en Coral Gables. Sus clientes se mueven entre el inglés y el español sin pensarlo, y sus búsquedas se mueven con ellos. Si tu sitio existe solo en inglés, Google no tiene nada en español que ponerle enfrente a ese cliente, así que pone a otro.</p>
     </div>
-    <div class="cards">
-      <div class="card reveal">
-        <div class="glyph"><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2"/></svg></div>
-        <h3>Bilingüe por defecto</h3>
-        <p>Casi 900,000 personas en Miami-Dade hablan español y poco inglés, uno de cada tres residentes. Tu sitio web debe hablarle a cada cliente que entra por tu puerta, o te encuentra en Google. Construyo en inglés y español desde el primer día, no como un plugin agregado después.</p>
+    <div class="split">
+      <div class="split-panel reveal">
+        <h3>Un botón de traducir pegado a un sitio en inglés</h3>
+        <ul>
+          <li>Una sola página en una sola dirección. El español aparece después de que la página cargó, así que no hay nada aparte que un buscador pueda archivar.</li>
+          <li>Tu resultado en el buscador sigue en inglés, así que quien busca en español pasa de largo.</li>
+          <li>El texto lo produce una máquina. Se entiende, y se lee como si nadie de tu negocio lo hubiera escrito.</li>
+          <li>El formulario de contacto, los botones y el correo de confirmación se quedan en inglés de todos modos.</li>
+        </ul>
       </div>
-      <div class="card reveal">
-        <div class="glyph"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21c1-4 3.5-6 7-6s6 2 7 6"/></svg></div>
-        <h3>Hablas con la persona que hace el trabajo</h3>
-        <p>Sin gerentes de cuenta, sin coordinadores de proyecto, sin traspasos. Cuando llamas, yo respondo. Cuando tienes una pregunta a las 9 PM, respondo a la mañana siguiente, no tres días después a través de un sistema de tickets. Así trabajo con negocios en Coral Gables, Doral, Hialeah y todo el sur de Florida.</p>
-      </div>
-      <div class="card reveal">
-        <div class="glyph"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3>Cuidado web continuo, no desaparezco</h3>
-        <p>La mayoría de diseñadores web en Miami construyen tu sitio y desaparecen. Ofrezco planes mensuales de Cuidado Web que mantienen tu sitio seguro, rápido y actualizado, actualizaciones de software, respaldos diarios, monitoreo de seguridad y pequeñas ediciones incluidas.</p>
-      </div>
-      <div class="card reveal">
-        <div class="glyph"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
-        <h3>Hecho para móvil, porque Miami es móvil</h3>
-        <p>El 65% del tráfico web en Miami viene de teléfonos. Cada sitio que construyo es mobile-first, diseñado para cómo tus clientes realmente navegan, no cómo los diseñadores presentan maquetas en un monitor de 27 pulgadas. Carga rápida, fácil de usar con el pulgar, y nítido en cada pantalla.</p>
+      <div class="split-panel good reveal">
+        <h3>Lo que construyo en su lugar</h3>
+        <ul>
+          <li>Cada página existe dos veces, en su propia dirección, en un idioma cada una. Las dos son páginas reales y las dos se pueden indexar.</li>
+          <li>Cada una declara a su gemela con hreflang, que es como Google sabe que debe entregarle la página en español a quien lee en español.</li>
+          <li>El título y la descripción que salen en los resultados están escritos en español, así que el resultado se ve hecho para quien lo está leyendo.</li>
+          <li>El español lo escribo yo, y los formularios, los botones y el correo que recibes siguen el idioma con el que llegó la visita.</li>
+        </ul>
       </div>
     </div>
+    <p class="note reveal">Esta página está hecha así. Tiene una gemela en español en su propia dirección, igual que el resto de las páginas de este sitio. Usa el selector EN y ES del menú y mira cómo cambia la barra de direcciones.</p>
   </div>
 </section>
 
-<!-- ============ SERVICES ============ -->
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>Lo que construyo para negocios de Miami.</h2>
-    </div>
-    <div class="svc-list">
-      <div class="svc-item reveal">
-        <h3>Diseño y Desarrollo Web</h3>
-        <p>Sitios web personalizados para pequeños negocios de Miami, bufetes en Coral Gables, restaurantes en Doral, consultorios médicos en Hialeah. Mobile-first, carga rápida, y construidos para convertir visitantes en clientes.</p>
-        <a href="/es/servicios.html">Más información →</a>
-      </div>
-      <div class="svc-item reveal">
-        <h3>Cuidado Web</h3>
-        <p>Mantenimiento mensual para que el sitio web de tu negocio en Miami se mantenga seguro, rápido y actualizado. Actualizaciones, respaldos, monitoreo de seguridad y pequeñas ediciones, desde $99/mes.</p>
-        <a href="/es/cuidado-web.html">Ver planes →</a>
-      </div>
-      <div class="svc-item reveal">
-        <h3>SEO. Aparece en Google</h3>
-        <p>SEO local para negocios del sur de Florida. Configuración de Google Business Profile, optimización on-page, y estrategia de búsqueda honesta que ayuda a clientes en Miami a encontrarte primero.</p>
-        <a href="/es/servicios.html">Más información →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ LOCAL CREDIBILITY ============ -->
+<!-- ============ RIERA LAW, CORAL GABLES ============ -->
 <section style="padding-top:0">
   <div class="wrap">
     <div class="credibility reveal">
-      <h2>Negocios de Miami confían en mí.</h2>
-      <p class="body">Construí toda la presencia online de <strong>Riera Law Firm</strong> en Coral Gables, una práctica de arbitraje de valores liderada por un ex fiscal de la SEC. Más de 70 páginas bilingües, limpieza de DNS, restauración de correo, y Cuidado Web continuo cada mes. <a href="/es/caso-riera-law.html" style="color:var(--purple);font-weight:600">Leer el caso de estudio completo →</a></p>
+      <h2>El proyecto en Miami del que sale este argumento.</h2>
+      <p class="body">Jorge Riera dirige desde Coral Gables una práctica de arbitraje de valores con alcance nacional, y llegó a ella desde el área de cumplimiento de la SEC. No todos sus clientes hablan inglés. Reconstruí la presencia digital del bufete de principio a fin: más de 70 páginas, cada una en inglés y en español, con hreflang configurado para que cada versión llegue al lector para el que fue escrita. En el camino desenredé el DNS del dominio y devolví el correo del bufete a un funcionamiento confiable, sin dejar fuera de línea ni un minuto a una práctica que seguía trabajando. Desde el lanzamiento está en un plan de cuidado mensual. <a href="/es/caso-riera-law.html" style="color:var(--purple);font-weight:600">Leer el caso de Riera Law &rarr;</a></p>
+      <p class="body">Si tú también diriges un bufete, los detalles de este tipo de proyecto están explicados aparte en <a href="/es/diseno-web-para-abogados.html" style="color:var(--purple);font-weight:600">diseño web para bufetes de abogados</a>.</p>
       <div class="client-logos-bar">
-        <div class="client-logos-label">Confían en mí</div>
+        <div class="client-logos-label">Clientes recientes</div>
         <div class="client-logos">
           <a href="/es/caso-riera-law.html"><img class="logo-light" src="/assets/client-logos/rieralaw-light.webp" alt="Riera Law Firm: Coral Gables, Florida" loading="lazy" style="display:block"><img class="logo-dark" src="/assets/client-logos/rieralaw-dark.webp" alt="Riera Law Firm: Coral Gables, Florida" loading="lazy" style="display:none"></a>
           <a href="/es/caso-elite-care.html"><img class="logo-light" src="/assets/client-logos/elitecare-light.webp" alt="Elite Care Recovery: sur de Florida" loading="lazy" style="display:block"><img class="logo-dark" src="/assets/client-logos/elitecare-dark.webp" alt="Elite Care Recovery: sur de Florida" loading="lazy" style="display:none"></a>
@@ -687,32 +683,64 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
   </div>
 </section>
 
+<!-- ============ WHAT IT COSTS ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Lo que cuesta un sitio web en Miami, publicado.</h2>
+      <p>Para que decidas si vale la pena seguir leyendo. El español nunca es un renglón aparte en la factura: sale del mismo trabajo de diseño que el inglés.</p>
+    </div>
+    <div class="svc-list">
+      <div class="svc-item reveal">
+        <h3>Inicial, desde $2,500 USD</h3>
+        <p>Hasta 5 páginas, móvil primero, formulario de contacto, analítica. En línea en 2–3 semanas. El tamaño correcto para un negocio que sobre todo necesita que lo encuentren y que le crean.</p>
+        <a href="/es/precios.html">Precios completos &rarr;</a>
+      </div>
+      <div class="svc-item reveal">
+        <h3>Personalizado, desde $5,000 USD</h3>
+        <p>Hasta 10 páginas diseñadas desde cero, ayuda con los textos, trabajo de velocidad y de búsqueda, bilingüe de serie. En línea en 4–6 semanas. Aquí es donde cae la mayoría de los negocios de Miami.</p>
+        <a href="/es/precios.html">Precios completos &rarr;</a>
+      </div>
+      <div class="svc-item reveal">
+        <h3>Premium, desde $9,000 USD</h3>
+        <p>Sin límite de páginas, textos profesionales, integraciones y 90 días de trabajo después del lanzamiento. En línea en 6–10 semanas. Incluye la estrategia de contenido para el mercado hispano que describo abajo.</p>
+        <a href="/es/precios.html">Precios completos &rarr;</a>
+      </div>
+    </div>
+    <p class="note reveal">Las agencias de Miami cotizan entre $10,000 y $30,000 por el del medio. La diferencia es el gasto fijo, no el oficio: aquí no hay renta en Brickell, no hay gerente de cuenta y no hay nadie entre tú y la persona que construye el sitio. Ir más a fondo en español que un simple espejo del inglés es un trabajo aparte, investigación de palabras clave en español y páginas que el lado en inglés no tiene, por $750 USD.</p>
+  </div>
+</section>
+
 <!-- ============ FAQ ============ -->
 <section>
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>Preguntas comunes de dueños de negocios en Miami.</h2>
+      <h2>Preguntas que de verdad me hacen los dueños en Miami.</h2>
     </div>
     <div class="faq">
       <details class="reveal">
+        <summary>¿El español lo escribes tú o lo tengo que dar yo?</summary>
+        <p>Lo escribo yo. El español es mi primera lengua, así que lo que va en la página se escribe en español en vez de traducirse del inglés, y por eso no tiene ese tono rígido y un poco raro que deja una máquina. Si ya tienes textos en español que te gustan, los uso. Si tienes textos en español que salieron de un plugin, te digo con honestidad cómo se leen.</p>
+      </details>
+      <details class="reveal">
+        <summary>¿Google de verdad va a mostrar mis páginas en español a quien busca en español?</summary>
+        <p>Para eso sirve la estructura de dos direcciones. Cada página en español tiene su propia URL, su propio título y descripción en español, y una etiqueta hreflang que nombra a su gemela en inglés. Así Google puede tratarla como una página en español y no como una capa escondida de una en inglés. Lo que nadie te puede prometer es una posición: hreflang decide qué versión se muestra, no qué tan arriba aparece.</p>
+      </details>
+      <details class="reveal">
+        <summary>Todos mis clientes hablan inglés. ¿Aun así necesito español?</summary>
+        <p>Puede que no, y prefiero decírtelo a venderte algo. La pregunta que hago en la llamada no es a quién tienes, sino a quién estás perdiendo. Un consultorio dental cuyos pacientes llegan todos por referencia de una red que habla inglés es un caso distinto al de un techador que quiere que el teléfono suene desde el buscador. Si la respuesta honesta es que el inglés te alcanza, construimos en inglés y ponemos el dinero en las páginas que sí rinden.</p>
+      </details>
+      <details class="reveal">
+        <summary>¿Puedes agregarle español al sitio que ya tengo?</summary>
+        <p>A veces sí, y depende de cómo esté armado el sitio actual. Si puede generar un segundo conjunto de URLs, agregar un lado en español bien indexado es un trabajo de contenido y configuración, no una reconstrucción. Si es un constructor de páginas que solo sabe intercambiar palabras en el mismo lugar, estarías pagando por pegarle un traductor encima, que es justo lo que esta página argumenta en contra. Lo reviso y te digo cuál de los dos tienes antes de cotizar nada.</p>
+      </details>
+      <details class="reveal">
+        <summary>¿Quién lo mantiene funcionando después del lanzamiento?</summary>
+        <p>Yo, si así lo quieres. Un sitio bilingüe son dos conjuntos de páginas que hay que mantener al mismo paso, y la forma habitual en que se deteriora es que el lado en inglés recibe una página de servicio nueva y el lado en español, calladamente, no. Un <a href="/es/cuidado-web.html" style="color:var(--purple);font-weight:600">plan de cuidado mensual</a> cubre actualizaciones, respaldos, monitoreo y ediciones pequeñas, y trata los dos idiomas como un solo sitio. También puedes quedarte con las llaves y manejarlo tú, que es una decisión perfectamente razonable.</p>
+      </details>
+      <details class="reveal">
         <summary>¿Cuánto cuesta un sitio web en Miami?</summary>
-        <p>Un sitio web personalizado de 5 páginas para pequeños negocios comienza en $2,500 USD. Las agencias de Miami típicamente cobran $10,000–$30,000 por el mismo alcance. Ofrezco la misma calidad a tarifas de freelancer porque no tengo los gastos de una agencia, sin oficina en Brickell, sin gerentes de cuenta, sin capas entre tú y el trabajo.</p>
-      </details>
-      <details class="reveal">
-        <summary>¿Construyes sitios web bilingües en inglés y español?</summary>
-        <p>Sí. Cada sitio que construyo puede incluir contenido en inglés y español. Soy fluido en ambos idiomas y construyo la funcionalidad bilingüe en la arquitectura del sitio desde el primer día, no como un plugin de traducción agregado después. Con el 70% de Miami siendo hispano, un sitio web bilingüe no es opcional, es una ventaja competitiva.</p>
-      </details>
-      <details class="reveal">
-        <summary>¿Cuánto tiempo toma construir un sitio web?</summary>
-        <p>La mayoría de sitios web para pequeños negocios toman 3–6 semanas desde el inicio hasta el lanzamiento. Proyectos complejos con 20+ páginas, funcionalidad personalizada, o contenido bilingüe completo toman 6–10 semanas. Te doy un cronograma desde el inicio y lo cumplo.</p>
-      </details>
-      <details class="reveal">
-        <summary>¿Ofreces mantenimiento web continuo?</summary>
-        <p>Sí. Los planes de Cuidado Web comienzan en $99/mes e incluyen actualizaciones de software, respaldos diarios, monitoreo de seguridad, optimización de velocidad y pequeñas ediciones de contenido. La mayoría de dueños de negocios en Miami no tienen tiempo para mantener su propio sitio, para eso es exactamente este servicio.</p>
-      </details>
-      <details class="reveal">
-        <summary>¿Podemos reunirnos en persona en Miami?</summary>
-        <p>Trabajo de forma remota y atiendo clientes de Miami por videollamada, teléfono, texto y correo electrónico durante horario de oficina hora del Este. Mis clientes en Coral Gables, Doral y todo el sur de Florida encuentran que esto funciona perfectamente, recibes la misma atención personal sin pagar por el alquiler de oficina de una agencia en Brickell.</p>
+        <p>Los míos empiezan en $2,500 USD y los niveles están arriba, con el desglose completo en la <a href="/es/precios.html" style="color:var(--purple);font-weight:600">página de precios</a>. También vas a ver ofertas por ahí de unos cuantos cientos de dólares, y por lo general son una plantilla con tu logo encima y tu texto vaciado en el diseño de otro. Es una opción real y a veces es la correcta. No es esto.</p>
       </details>
     </div>
   </div>
@@ -721,16 +749,16 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <!-- ============ ALSO SERVING ============ -->
 <section style="padding:40px 0 0">
   <div class="wrap" style="text-align:center">
-    <p style="font-size:.95rem;color:var(--muted)">También sirviendo <a href="/es/diseno-web-fort-lauderdale.html" style="color:var(--purple);text-decoration:underline">Fort Lauderdale</a>, Coral Gables, Doral, Hialeah y todo el sur de Florida.</p>
+    <p style="font-size:.95rem;color:var(--muted)">Trabajo en Coral Gables, Doral, Hialeah, Brickell y Miami Beach. Al norte del límite del condado, mira <a href="/es/diseno-web-fort-lauderdale.html" style="color:var(--purple);text-decoration:underline">diseño web en Fort Lauderdale</a>.</p>
   </div>
 </section>
 
 <!-- ============ FINAL CTA ============ -->
 <section class="final" style="padding-top:30px">
   <div class="wrap">
-    <h2>¿Listo para mejorar el sitio web de tu negocio en Miami?</h2>
-    <p>Llamada gratuita de 15 minutos. Sin presión, respuestas claras. Te diré exactamente lo que recomendaría, incluso si la respuesta es "menos de lo que piensas."</p>
-    <a class="btn" href="/es/agendar.html">Reserva una llamada gratuita&nbsp;→</a>
+    <h2>Averigüemos si estás perdiendo la mitad hispanohablante.</h2>
+    <p>Quince minutos, sin costo, y reviso lo que ya tienes antes de opinar sobre qué construir. Si la conclusión es que tu sitio está bien, eso es lo que te voy a decir.</p>
+    <a class="btn" href="/es/agendar.html">Reserva una llamada gratuita&nbsp;&rarr;</a>
   </div>
 </section>
 
