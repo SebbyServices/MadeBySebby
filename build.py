@@ -1410,7 +1410,7 @@ def rewrite_jsonld(html, source, lang, memory):
 # Spanish event type in cal.com, then change one string here.
 CAL_LINKS = {
     "en": "madebysebby/chat",
-    "es": "madebysebby/chat",
+    "es": "madebysebby/consulta",
 }
 
 
