@@ -554,9 +554,7 @@ MARKET_FIGURES = {
     # weeks after the copy stopped using them, which is exactly how the blog's
     # second price list slipped past a green run: the numbers were already
     # exempt before anyone typed them.
-    "blog/how-much-does-a-website-cost.html": {"$300", "$500", "$1,000", "$4,000",
-                                               "$5,000", "$50,000", "$3,000",
-                                               "$10,000"},
+    "blog/how-much-does-a-website-cost.html": {"$300", "$500", "$1,000", "$5,000", "$3,000"},
     "blog/why-your-competitor-gets-calls-from-google.html": {"$3,000", "$10,000",
                                                              "$1,500", "$200", "$500"},
     "blog/what-a-website-does-for-a-law-firm.html": {"$500"},
@@ -573,7 +571,10 @@ MARKET_FIGURES = {
     # market: edit packs, the hourly overage, annual totals, per-edit costs. That
     # made the guard blind to exactly the drift it exists to catch, so those are
     # now tokens in build.PRICES and the derived ones are computed, not typed.
-    "website-care.html": {"$25,000", "$3,000"},
+    # $250 is the top of the competitor maintenance range quoted in the PAA
+    # answer. Sourced: madebysebby-ops/brand/KEYWORD-RESEARCH.md line 562,
+    # TechArk from $225/mo and Abaton at $90/$140/$250. Not our pricing.
+    "website-care.html": {"$25,000", "$3,000", "$250"},
 }
 # Cents are part of the figure. Without \.\d\d the pattern matched "$503" out of
 # a perfectly correct "$503.25" and then failed it for not being a canonical
