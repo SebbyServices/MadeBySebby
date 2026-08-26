@@ -1465,11 +1465,14 @@ POPULATION = re.compile(
     r"|personas|gente|visitantes|visitas|usuarios?|clientes?|compradores"
     r"|comensales|pacientes|b[uú]squedas|tr[aá]fico|negocios|empresas|bufetes"
     r"|sitios|adultos|encuestados|due[nñ]os|propietarios)\b", re.I)
-CITED_SOURCES = ("Clio", "BrightLocal", "Moz", "TouchBistro", "iLawyerMarketing",
-                 "BizIQ", "MyCase", "National Restaurant Association", "Andava",
-                 "On The Map", "Clutch", "Martindale", "Avvo", "Statista",
-                 "Nielsen", "HubSpot", "Pew", "Census", "Censo", "Sucuri",
-                 "Wordfence", "Verizon")
+# Only names actually cited in src/ belong here. Leaving a retired source in
+# this tuple lets the same discredited attribution back in silently, which is
+# how the citation audit on 2026-08-25 found nine claims pointing at sources
+# that never made them.
+CITED_SOURCES = ("Clio", "BrightLocal", "iLawyerMarketing", "SOCi", "MGH",
+                 "National Restaurant Association", "Martindale", "Avvo",
+                 "FindLaw", "comScore", "Neustar", "Statcounter", "Stanford",
+                 "Census", "Censo", "Sucuri", "Verizon")
 ATTRIBUTION = re.compile(
     r"\b(?:according to|research (?:from|by|shows)|a study|studies (?:show|find)"
     r"|survey|reports? (?:from|by)|data from|source|seg[uú]n|de acuerdo con"
@@ -1510,8 +1513,17 @@ def check_statistics_are_sourced():
 
         # Pass B: the same claim in running copy. Display blocks are removed
         # first so a sourced one is not reported twice from two directions.
+        # Strip only the outermost blocks. `blocks` also holds the nested
+        # cards (a stat-callout contains a stat-label), and removing an inner
+        # range first invalidates the outer range's indices, so the outer
+        # removal over-runs into the paragraph that follows. That silently ate
+        # the "According to ..." clause off the next sentence and reported a
+        # correctly sourced statistic as unsourced.
+        outermost = [(s, e) for (s, e) in blocks
+                     if not any(s2 <= s and e <= e2
+                                for (s2, e2) in blocks if (s2, e2) != (s, e))]
         stripped = html
-        for start, close in reversed(blocks):
+        for start, close in sorted(outermost, reverse=True):
             stripped = stripped[:start] + " " + stripped[close:]
         body = re.search(r"<body.*?</body>", stripped, re.S)
         body = body.group(0) if body else stripped
