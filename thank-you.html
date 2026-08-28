@@ -35,6 +35,7 @@
     text-align:center;padding:28px;
     -webkit-font-smoothing:antialiased;
   }
+  main{display:flex;flex-direction:column;align-items:center;width:100%}
   .check{
     width:72px;height:72px;border-radius:50%;background:var(--tint);
     display:flex;align-items:center;justify-content:center;margin:0 auto 28px;
@@ -130,6 +131,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 </style>
 </head>
 <body>
+  <main>
   <div class="check">
     <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
   </div>
@@ -161,10 +163,12 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
   </div>
 
   <div class="ctas">
-    <a class="btn" href="/">Back to homepage</a>
+    <a class="btn" href="/book.html">Book the call now</a>
     <a class="btn btn-ghost" href="/work.html">See my work</a>
+    <a class="btn btn-ghost" href="/">Back to homepage</a>
   </div>
 
   <p class="footer-note">Didn't mean to send? No worries, just ignore the email draft. Questions? <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a></p>
+  </main>
 </body>
 </html>

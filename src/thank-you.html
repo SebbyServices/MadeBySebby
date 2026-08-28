@@ -38,6 +38,7 @@
     text-align:center;padding:28px;
     -webkit-font-smoothing:antialiased;
   }
+  main{display:flex;flex-direction:column;align-items:center;width:100%}
   .check{
     width:72px;height:72px;border-radius:50%;background:var(--tint);
     display:flex;align-items:center;justify-content:center;margin:0 auto 28px;
@@ -91,6 +92,7 @@
 </style>
 </head>
 <body>
+  <main>
   <div class="check">
     <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
   </div>
@@ -122,10 +124,12 @@
   </div>
 
   <div class="ctas">
-    <a class="btn" href="/"><span lang="en">Back to homepage</span><span lang="es">Volver al inicio</span></a>
+    <a class="btn" href="/book.html"><span lang="en">Book the call now</span><span lang="es">Agenda la llamada ahora</span></a>
     <a class="btn btn-ghost" href="/work.html"><span lang="en">See my work</span><span lang="es">Ver mi trabajo</span></a>
+    <a class="btn btn-ghost" href="/"><span lang="en">Back to homepage</span><span lang="es">Volver al inicio</span></a>
   </div>
 
   <p class="footer-note"><span lang="en">Didn't mean to send? No worries, just ignore the email draft. Questions? <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a></span><span lang="es">¿No querías enviar? No te preocupes, solo ignora el borrador. ¿Preguntas? <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a></span></p>
+  </main>
 </body>
 </html>

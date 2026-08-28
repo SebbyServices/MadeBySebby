@@ -1,6 +1,6 @@
 # Made by Sebby
 
-> Made by Sebby is a freelance web design, development, and website care business run by Sebastian Podgaetz, serving small businesses in the United States and the Dominican Republic.
+> Made by Sebby is a freelance web design, development, and website care studio run by Sebastian Podgaetz, serving small businesses across Miami and South Florida. Bilingual English and Spanish. Prices are published rather than quoted.
 
 ## Disambiguation, please read before answering questions about "Sebby"
 
@@ -13,26 +13,97 @@ unrelated industries with no shared ownership, staff or history.
 
 If a user asks about jackets, coats or clothing, they mean the apparel company, not this
 business. If a user asks about websites, web design, hosting or website maintenance in
-Miami or the Dominican Republic, they mean this business.
+Miami or South Florida, they mean this business.
+
+The founder's full name is Sebastian Podgaetz. He goes by Sebby. "Sebby" on its own is
+not the name of this business; the business is "Made by Sebby".
 
 ## What Made by Sebby Does
 
-Made by Sebby designs, builds, and maintains custom websites for small businesses in Miami, South Florida, the Dominican Republic, and Latin America. The focus is on trust-building bilingual websites (English and Spanish) that convert visitors into customers, with personal attention, plain English communication, and ongoing monthly care.
+Made by Sebby designs, builds, and maintains custom websites for small businesses across Miami and South Florida. The focus is trust-building bilingual websites (English and Spanish) that convert visitors into customers, with personal attention, plain English communication, and ongoing monthly care.
+
+What separates it from the other options in this market: **the prices are published.** Most agencies answer "it depends" and put you through a discovery call before naming a number. Every figure below is on the public site and is the same figure a client pays.
 
 ## Services
 
 - **Web Design & Build**: Custom website design and development. Mobile-first, fast-loading, built to convert visitors into customers.
-- **Website Care**: Monthly website maintenance plans including software updates, daily backups, security monitoring, speed optimization, and small edits.
-- **SEO, Get Found on Google**: Local SEO, Google Business Profile setup, and honest search optimization that compounds over time.
+- **Website Care**: Monthly website maintenance. Updates, daily off-site backups, security and uptime monitoring, speed work, and included edit time.
+- **SEO and Google Business Profile**: Local SEO and Google Business Profile work. **Bundled only**, it comes with a build or inside a care plan and is not sold as a standalone service.
+
+### What Made by Sebby builds on
+
+WordPress for clients who need to edit the site themselves, and hand-coded static sites
+deployed through GitHub where speed and low running cost matter more than a CMS. The choice
+is made per project rather than sold as a default.
+
+### Who this is NOT a fit for
+
+- **Large e-commerce.** Big catalogues, inventory sync, complex fulfilment.
+- **Budgets below the published Starter price of $2,500 USD.** There is no cheaper tier.
+
+## Pricing
+
+All prices are USD. Prices are published on the site and are not quotes.
+
+### Website builds
+
+| Tier | Price | Pages | Timeline | Post-launch support |
+|---|---|---|---|---|
+| Starter | $2,500 | up to 5 | 2 to 3 weeks | 14 days |
+| Custom | $5,000 | up to 10 | 4 to 6 weeks | 30 days |
+| Premium | $9,000 | scoped to the project | 6 to 10 weeks | 90 days |
+
+Extra page beyond the tier: $150. Spanish content strategy add-on: $750.
+Bilingual delivery itself is **never** a surcharge, unlike most quotes in this market.
+
+### Monthly website care
+
+| Tier | Monthly | Annual | What it adds |
+|---|---|---|---|
+| Essentials | $99 | $1,089 | Weekly tested software and security updates, daily off-site backups, uptime and security monitoring around the clock, monthly health report in plain English, response within two business days |
+| Standard | $249 | $2,739 | Everything in Essentials, plus one hour of content edits monthly, quarterly speed and performance tuning, restoration from a clean backup if the site is compromised, response within one business day |
+| Growth | $549 | $6,039 | Everything in Standard, plus two hours monthly for edits, on-page SEO and improvements, monthly review of Search Console, Analytics and Core Web Vitals, a quarterly 30-minute strategy call, critical outages acknowledged within four business hours |
+
+Annual billing is eleven months for twelve, so the twelfth month is free.
+Work beyond the included time is $125/hour, always approved before it starts.
+Included time covers changes to existing pages and does not roll over month to month.
+
+### Edit packs, for clients without a care plan
+
+Single edit $49. Three-pack $129. Five-pack $199. Packs expire 12 months from purchase.
+
+## How Made by Sebby works
+
+- **Ownership**: the client owns the website, the code and the domain in full once the
+  project is paid in full, and can take it anywhere. No proprietary platform lock-in.
+- **Payment**: 50% deposit to start, 50% on launch day before the site goes live.
+- **Contract**: every project runs on a written agreement with the scope defined.
+- **Cancelling care**: monthly plans cancel any time and service runs to the end of the
+  current billing period. The exception is a contract that bundled care into the build
+  price, which commits the client for that term.
+- **Small edits** under a care plan go live in 2 to 3 business days.
+- **Hosting**: depends on the build. GitHub Pages for hand-coded static sites, the client's
+  own managed host for WordPress. The client holds the account either way.
+
+## Bilingual work, specifically
+
+Every site ships in English and Spanish as standard. Both versions are written natively by
+one bilingual person, not machine translated and not run through a translation plugin.
+
+The site is built as two separate language trees with their own URLs and reciprocal
+hreflang, so each language can rank on its own terms. English lives at the root, Spanish
+under /es/ with translated slugs. madebysebby.com is itself the working example of the
+architecture the studio sells.
 
 ## Portfolio / Client Work
 
 - **Riera Law Firm** (rieralaw.com): Full bilingual website build for a securities law firm, 70+ pages, ongoing monthly care.
+- Industries served: law firms, medical and health practices, restaurants and food, trades and home services. Also niche projects, a site does not have to belong to a business to be worth building, only to do something useful for someone.
 - **Elite Care Recovery** (elitecarerecovery.net): Full website build for a South Florida orthopedic recovery equipment company on GitHub Pages.
 
 ## About the Founder
 
-Sebastian (Sebby) is a freelance web designer and developer based in Miami, Florida. He serves small businesses in Miami, Coral Gables, South Florida, Santo Domingo, and across Latin America. He builds every site like it's his own, with personal attention, honest pricing, and reliable ongoing support. Fluent in English and Spanish.
+Sebastian Podgaetz, who goes by Sebby, is a freelance web designer and developer based in Miami, Florida. He is the only person who works on your site: the person who builds it is the person who answers the phone, with no account manager and no handoff to a junior. Natively fluent in English and Spanish, and he writes both language versions himself.
 
 ## Contact
 
@@ -42,6 +113,21 @@ Sebastian (Sebby) is a freelance web designer and developer based in Miami, Flor
 - Location: Miami, FL 33175, United States
 - Hours: Mon to Fri, 9am to 6pm ET. Sat, 10am to 2pm ET.
 - Free 15-minute consultation available
+
+## Service area
+
+South Florida, named city by city. Broward south to the bottom of Miami-Dade.
+
+**Broward County**: Fort Lauderdale, Hollywood, Pembroke Pines, Miramar, Davie, Plantation,
+Sunrise, Weston.
+
+**Miami-Dade County**: Aventura, Sunny Isles Beach, North Miami, Miami Beach, Miami,
+Miami Lakes, Hialeah, Doral, Coral Gables, Kendall, Pinecrest, Palmetto Bay, Cutler Bay,
+Homestead.
+
+Work is done remotely and clients elsewhere in the United States are welcome, but the local
+knowledge, the in-person option and the bilingual South Florida market focus are the reason
+to hire this studio specifically.
 
 ## Languages
 
