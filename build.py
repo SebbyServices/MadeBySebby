@@ -751,10 +751,25 @@ NAP = {
     ],
     # The profiles the Business Profile itself lists under "Social profiles".
     # sameAs is how the site formally claims them as the same entity.
+    #
+    # The Google Business Profile entry is the load-bearing one and it was
+    # missing until 2026-08-27. sameAs is the mechanism that tells Google the
+    # website and the Maps listing are ONE entity, and it is a direct input to
+    # the knowledge panel the brand query still does not produce. Leaving it out
+    # while an apparel brand of the same name owns the SERP was the expensive
+    # kind of omission: on 27 August the AI Overview was describing the studio as
+    # an alias of that brand.
+    #
+    # Only URLs that have been verified to resolve belong here. A dead sameAs is
+    # worse than a short one, since it is a claim Google can check and fail.
+    # Facebook and The Manifest were deliberately NOT added: neither is listed in
+    # the ops BUSINESS-INFO-TRACKER and neither could be confirmed.
     "sameAs": [
+        "https://g.page/r/CRmCP0Hp1prPEAI",
         "https://www.linkedin.com/company/made-by-sebby/",
         "https://instagram.com/madebysebby",
         "https://clutch.co/profile/made-sebby",
+        "https://www.reddit.com/user/MadeBySebby/",
         "https://github.com/SebbyServices",
     ],
 }
@@ -873,7 +888,7 @@ FOOTER_TEMPLATE = '''<footer>
       </div>
   </div>
   <div class="wrap ft-bottom">
-    <p class="ft-copy">&copy; %(year)s Made by Sebby. <span lang="en">Web design and website care for small businesses in Miami, South Florida, and Santo Domingo.</span><span lang="es">Diseño web y cuidado de sitios para pequeños negocios en Miami, el sur de Florida y Santo Domingo.</span></p>
+    <p class="ft-copy">&copy; %(year)s Made by Sebby. <span lang="en">Web design and website care for small businesses in Miami and South Florida.</span><span lang="es">Diseño web y cuidado de sitios para pequeños negocios en Miami, el sur de Florida y Santo Domingo.</span></p>
     <div class="ft-legal">
       <a href="/privacy.html"><span lang="en">Privacy</span><span lang="es">Privacidad</span></a>
       <a href="/terms.html"><span lang="en">Terms</span><span lang="es">Términos</span></a>
@@ -1109,6 +1124,10 @@ def substitute_prices(html):
 # Stable identity so every page's block is understood as ONE business rather
 # than a separate branch per landing page.
 BUSINESS_ID = DOMAIN + "/#business"
+# Matches an areaServed entry that belongs to the Dominican Republic, in any
+# nesting. Used to keep the DR out of the English tree's service area only.
+DR_AREA = re.compile(r"Santo Domingo|Dominican Republic")
+
 LOCAL_TYPES = ("ProfessionalService", "LocalBusiness")
 
 # Schema keys holding human prose rather than identifiers or URLs.
@@ -1354,6 +1373,23 @@ def rewrite_jsonld(html, source, lang, memory):
                     # url=/ on the other 45. One entity cannot have two homepages.
                     node["url"] = DOMAIN + url_for("index.html", lang)
                     node.pop("geo", None)
+
+                # The English tree claims South Florida and nothing else. Leaving
+                # Santo Domingo and the Dominican Republic in areaServed splits the
+                # location signal on precisely the pages trying to rank in Miami,
+                # and Google was already giving two different answers about where
+                # this business is. The Spanish tree keeps both: it genuinely
+                # serves the DR, and /es/diseno-web-santo-domingo.html is live.
+                #
+                # Deliberately OUTSIDE the LOCAL_TYPES block above. areaServed also
+                # sits on Service and Offer nodes (pricing.html, website-care.html,
+                # services.html all carry one), and scoping this to the business
+                # node would have left those three untouched while reading as done.
+                if lang == "en" and isinstance(node.get("areaServed"), list):
+                    node["areaServed"] = [
+                        area for area in node["areaServed"]
+                        if not DR_AREA.search(json.dumps(area))
+                    ]
 
                 if "inLanguage" in node or node.get("@type") in top_types:
                     node["inLanguage"] = "es" if lang == "es" else "en"

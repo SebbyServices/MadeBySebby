@@ -38,6 +38,9 @@ Sebastian (Sebby) is a freelance web designer and developer based in Miami, Flor
 
 - Website: https://madebysebby.com
 - Email: hello@madebysebby.com
+- Phone: (786) 543-1417, international format +1-786-543-1417
+- Location: Miami, FL 33175, United States
+- Hours: Mon to Fri, 9am to 6pm ET. Sat, 10am to 2pm ET.
 - Free 15-minute consultation available
 
 ## Languages
@@ -63,6 +66,7 @@ links to its counterpart from the EN/ES toggle in the navigation.
 - [Elite Care Recovery Case Study](https://madebysebby.com/case-study-elitecare.html)
 - [Web Design Miami](https://madebysebby.com/web-design-miami.html)
 - [Web Design Fort Lauderdale](https://madebysebby.com/web-design-fort-lauderdale.html)
+- [Web Design for Law Firms](https://madebysebby.com/web-design-for-law-firms.html)
 - [Privacy Policy](https://madebysebby.com/privacy.html)
 - [Terms of Service](https://madebysebby.com/terms.html)
 - [Blog: 5 Signs Your Website Is Losing You Clients](https://madebysebby.com/blog/5-signs-your-website-is-losing-clients.html)
@@ -71,6 +75,7 @@ links to its counterpart from the EN/ES toggle in the navigation.
 - [Blog: Why Your Competitor Gets Calls From Google](https://madebysebby.com/blog/why-your-competitor-gets-calls-from-google.html)
 - [Blog: What a Website Does for a Law Firm](https://madebysebby.com/blog/what-a-website-does-for-a-law-firm.html)
 - [Blog: Does Your Restaurant Need a Website?](https://madebysebby.com/blog/does-your-restaurant-need-a-website.html)
+- [Blog: Should I Use AI to Build My Website?](https://madebysebby.com/blog/should-i-use-ai-to-build-my-website.html)
 
 ## Links, Español
 
@@ -88,6 +93,7 @@ links to its counterpart from the EN/ES toggle in the navigation.
 - [Diseño Web Miami](https://madebysebby.com/es/diseno-web-miami.html)
 - [Diseño Web Fort Lauderdale](https://madebysebby.com/es/diseno-web-fort-lauderdale.html)
 - [Diseño Web Santo Domingo](https://madebysebby.com/es/diseno-web-santo-domingo.html)
+- [Diseño Web para Abogados](https://madebysebby.com/es/diseno-web-para-abogados.html)
 - [Política de Privacidad](https://madebysebby.com/es/privacidad.html)
 - [Términos de Servicio](https://madebysebby.com/es/terminos.html)
 - [Blog: 5 Señales de Que Tu Sitio Web Pierde Clientes](https://madebysebby.com/es/blog/5-senales-de-que-tu-sitio-web-pierde-clientes.html)
@@ -96,3 +102,4 @@ links to its counterpart from the EN/ES toggle in the navigation.
 - [Blog: Por Qué Tu Competencia Recibe Llamadas de Google](https://madebysebby.com/es/blog/por-que-tu-competencia-recibe-llamadas-de-google.html)
 - [Blog: Qué Hace un Sitio Web por un Bufete](https://madebysebby.com/es/blog/que-hace-un-sitio-web-por-un-bufete.html)
 - [Blog: ¿Necesita Tu Restaurante un Sitio Web?](https://madebysebby.com/es/blog/necesita-tu-restaurante-un-sitio-web.html)
+- [Blog: ¿Debería Usar IA para Crear Mi Sitio Web?](https://madebysebby.com/es/blog/deberia-usar-ia-para-crear-mi-sitio-web.html)
