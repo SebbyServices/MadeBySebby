@@ -1,32 +1,44 @@
 {
- "https://madebysebby.com/": {
-  "submitted": "2026-08-16"
- },
- "https://madebysebby.com/about.html": {
-  "submitted": "2026-08-16"
- },
- "https://madebysebby.com/es/": {
-  "submitted": "2026-08-16"
- },
- "https://madebysebby.com/es/diseno-web-miami.html": {
-  "submitted": "2026-08-16"
- },
- "https://madebysebby.com/es/diseno-web-para-abogados.html": {
-  "submitted": "2026-08-16"
- },
- "https://madebysebby.com/es/precios.html": {
-  "submitted": "2026-08-16"
- },
- "https://madebysebby.com/pricing.html": {
-  "submitted": "2026-08-16"
- },
- "https://madebysebby.com/web-design-for-law-firms.html": {
-  "submitted": "2026-08-16"
- },
- "https://madebysebby.com/web-design-miami.html": {
-  "submitted": "2026-08-16"
- },
- "https://madebysebby.com/website-care.html": {
-  "submitted": "2026-08-16"
- }
+  "https://madebysebby.com/": {
+    "submitted": "2026-08-28",
+    "previously": "2026-08-16"
+  },
+  "https://madebysebby.com/about.html": {
+    "submitted": "2026-08-16"
+  },
+  "https://madebysebby.com/es/": {
+    "submitted": "2026-08-28",
+    "previously": "2026-08-16"
+  },
+  "https://madebysebby.com/es/cuidado-web.html": {
+    "submitted": "2026-08-28"
+  },
+  "https://madebysebby.com/es/diseno-web-miami.html": {
+    "submitted": "2026-08-28",
+    "previously": "2026-08-16"
+  },
+  "https://madebysebby.com/es/diseno-web-para-abogados.html": {
+    "submitted": "2026-08-28",
+    "previously": "2026-08-16"
+  },
+  "https://madebysebby.com/es/precios.html": {
+    "submitted": "2026-08-28",
+    "previously": "2026-08-16"
+  },
+  "https://madebysebby.com/pricing.html": {
+    "submitted": "2026-08-28",
+    "previously": "2026-08-16"
+  },
+  "https://madebysebby.com/web-design-for-law-firms.html": {
+    "submitted": "2026-08-28",
+    "previously": "2026-08-16"
+  },
+  "https://madebysebby.com/web-design-miami.html": {
+    "submitted": "2026-08-28",
+    "previously": "2026-08-16"
+  },
+  "https://madebysebby.com/website-care.html": {
+    "submitted": "2026-08-28",
+    "previously": "2026-08-16"
+  }
 }
