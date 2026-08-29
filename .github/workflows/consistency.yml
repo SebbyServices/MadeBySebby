@@ -1,0 +1,74 @@
+# Runs the two gates that every push is supposed to pass, so they stop depending
+# on a human remembering. Both are stdlib Python and take about a second.
+#
+# WHY THIS EXISTS. check-consistency.py holds 29 checks and every one of them was
+# added because that exact thing had already shipped broken: a Spanish page with
+# an English indexed body, a CTA that bypassed the booking page, a service worker
+# precaching a path that 404s, prices that disagreed between two pages. Running
+# it was documented as a rule and enforced by nothing.
+#
+# SETUP, ONE TIME. This needs the Web3Forms key, because build.py substitutes it
+# into the contact form and the checker verifies the committed output matches a
+# fresh build. Without it the run reports contact.html as stale and the form key
+# as a placeholder, which is true but useless as a CI signal.
+#
+#   Repo Settings > Secrets and variables > Actions > New repository secret
+#   Name:  WEB3FORMS_ACCESS_KEY
+#   Value: the same value as the local .env
+#
+# The key is NOT a secret in the cryptographic sense. It is compiled into public
+# HTML and committed to this public repo, which is documented in build.py and is
+# unavoidable for a static site. It lives in a GitHub secret to keep it out of
+# this file and out of the logs, not because holding it grants anything beyond
+# what visiting the contact page already grants.
+
+name: consistency
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # No pip install anywhere in this file. build.py and check-consistency.py
+      # are stdlib only, deliberately, and adding a dependency here would be the
+      # first one the project has.
+
+      - name: Write .env from the repository secret
+        env:
+          KEY: ${{ secrets.WEB3FORMS_ACCESS_KEY }}
+        run: |
+          if [ -z "$KEY" ]; then
+            echo "::error::WEB3FORMS_ACCESS_KEY secret is not set. See the setup note at the top of .github/workflows/consistency.yml. Without it the build substitutes a placeholder and the checker reports contact.html as stale, which is a false signal rather than a real defect."
+            exit 1
+          fi
+          printf 'WEB3FORMS_ACCESS_KEY=%s\n' "$KEY" > .env
+
+      - name: Committed output matches a fresh build of src/
+        run: ./build.py --check
+
+      - name: Consistency checks
+        run: ./check-consistency.py
+
+      # build.py --check is read-only and check-consistency.py is read-only, so
+      # nothing above can write to the tree. This proves it, and would catch a
+      # future edit that made either of them write.
+      - name: Neither script modified the tree
+        run: |
+          rm -f .env
+          if ! git diff --quiet; then
+            echo "::error::A check script modified tracked files. Both are supposed to be read-only."
+            git --no-pager diff --stat
+            exit 1
+          fi
