@@ -749,6 +749,21 @@ NAP = {
             "closes": "14:00",
         },
     ],
+    # Google wants publisher.logo as an ImageObject on Article types, and every
+    # blog post's publisher IS this node. It was absent from all 14 posts.
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://madebysebby.com/assets/icons/icon-512.png",
+        "width": 512,
+        "height": 512,
+    },
+    # The bilingual claim, stated in the one form a machine can read. The entire
+    # positioning of this studio is that it ships English and Spanish natively,
+    # and until now nothing in the structured data said so. Google was observed
+    # on 2026-08-27 matching the Miami local pack on whether a competitor's page
+    # merely MENTIONED bilingual work, which makes the omission expensive.
+    "knowsLanguage": ["en", "es"],
+    "availableLanguage": ["English", "Spanish"],
     # The profiles the Business Profile itself lists under "Social profiles".
     # sameAs is how the site formally claims them as the same entity.
     #
@@ -1390,6 +1405,17 @@ def rewrite_jsonld(html, source, lang, memory):
                         area for area in node["areaServed"]
                         if not DR_AREA.search(json.dumps(area))
                     ]
+
+                # Both were absent from every BlogPosting on the site. image is
+                # the shared OG card rather than a per-post asset, which is
+                # honest: there is currently one. mainEntityOfPage has to be the
+                # page's own URL in the tree being built, not the business URL.
+                if node.get("@type") in ("BlogPosting", "Article"):
+                    node.setdefault("image", DOMAIN + "/assets/og-image.jpg")
+                    node["mainEntityOfPage"] = {
+                        "@type": "WebPage",
+                        "@id": DOMAIN + url_for(source, lang),
+                    }
 
                 if "inLanguage" in node or node.get("@type") in top_types:
                     node["inLanguage"] = "es" if lang == "es" else "en"
