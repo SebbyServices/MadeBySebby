@@ -1246,6 +1246,16 @@ JSONLD_PROSE = ("name", "description", "headline", "slogan", "reviewBody",
 # skip the shape entirely and stay silent on correct copy.
 FINAL_STRESS = re.compile(r"[áéíóú][sn]?$")
 
+# A second, unrelated reason the SAME base word can legitimately carry two
+# different accented spellings on one page: -iar/-uar verbs write the accent
+# on the i/u to break the hiatus in the yo-present ("confio" -> "confío",
+# "envio" -> "envío", "continuo" -> "continúo"), one vowel before the end, not
+# on the final letter the way the preterite does ("confió", "envió"). Found
+# 2026-09-05: "Un bufete que confió en mí" (preterite) and "Le confío la cara
+# digital de mi práctica" (yo-present, a direct quote) landed on the same
+# page, both correct, and FINAL_STRESS alone doesn't cover the second one.
+HIATUS_STRESS = re.compile(r"[íú][aeo][sn]?$")
+
 
 def unaccented(word):
     return "".join(c for c in unicodedata.normalize("NFD", word)
@@ -1326,7 +1336,8 @@ def check_spanish_diacritics():
             if len(spellings) < 2 or len(base) < 4 or base in DUAL_FORM:
                 continue
             accented = [s for s in spellings if s != unaccented(s)]
-            if not accented or all(FINAL_STRESS.search(s) for s in accented):
+            if not accented or all(FINAL_STRESS.search(s) or HIATUS_STRESS.search(s)
+                                   for s in accented):
                 continue
             fail("spanish diacritics", source_of(page),
                  "%s spells one word two ways: %s. One of them is wrong on a "
