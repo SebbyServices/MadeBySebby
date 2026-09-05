@@ -241,6 +241,25 @@ PAGES = {
             tw_desc="Diseño web profesional en Santo Domingo y República Dominicana. Sitios web personalizados para negocios, rápidos, modernos y optimizados para móvil.",
         ),
     ),
+    # Spanish-only, same reasoning as diseno-web-santo-domingo.html above, one
+    # vertical down. Added 2026-09-05 after a Santo Domingo business owner
+    # searched for the service and this site did not appear for either the
+    # generic query or "diseñador web para abogados Santo Domingo" -- see
+    # SD-SEO-PLAN.md. The generic DR page stayed generic on purpose; this one
+    # exists so a law-firm-specific search has a page built for it instead of
+    # a page built for everyone.
+    "diseno-web-abogados-santo-domingo.html": dict(
+        es="diseno-web-abogados-santo-domingo.html",
+        en=None,
+        meta=dict(
+            title="Diseño Web para Abogados en Santo Domingo | Made by Sebby",
+            desc="Diseño web para bufetes de abogados en Santo Domingo. Páginas por área de práctica, biografías que generan confianza, y un proceso ya probado en un bufete de 70+ páginas.",
+            og_title="Diseño Web para Abogados en Santo Domingo",
+            og_desc="Diseño web para bufetes de abogados en Santo Domingo. Páginas por área de práctica, biografías que generan confianza, y un proceso ya probado en un bufete de 70+ páginas.",
+            tw_title="Diseño Web para Abogados en Santo Domingo",
+            tw_desc="Diseño web para bufetes de abogados en Santo Domingo. Páginas por área de práctica y biografías que generan confianza.",
+        ),
+    ),
     "privacy.html": dict(
         es="privacidad.html",
         meta=dict(
@@ -1186,6 +1205,9 @@ CRUMBS = {
                                         "es": "Diseño Web Fort Lauderdale"},
     "diseno-web-santo-domingo.html": {"en": "Web Design Santo Domingo",
                                       "es": "Diseño Web Santo Domingo"},
+    "diseno-web-abogados-santo-domingo.html": {
+        "en": "Web Design for Law Firms, Santo Domingo",
+        "es": "Diseño Web para Abogados en Santo Domingo"},
     "blog/5-signs-your-website-is-losing-clients.html": {
         "en": "5 Signs Your Website Is Losing You Clients",
         "es": "5 Señales de Que Tu Sitio Web Pierde Clientes"},

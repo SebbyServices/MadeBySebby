@@ -6,10 +6,10 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DV4L5CZRML');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diseño Web Santo Domingo. Páginas Web | Made by Sebby</title>
+<title>Diseño Web para Abogados en Santo Domingo | Made by Sebby</title>
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Sebby. Made by Sebby">
-<meta name="description" content="Diseño web profesional en Santo Domingo y República Dominicana. Sitios personalizados, rápidos, modernos y optimizados para móvil.">
+<meta name="description" content="Diseño web para bufetes de abogados en Santo Domingo. Páginas por área de práctica, biografías que generan confianza, y un proceso ya probado en un bufete de 70+ páginas.">
 <link rel="preload" as="image" href="/assets/logo/sebby-nav.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -108,6 +108,13 @@
   .card h3{font-size:1.16rem;font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
   .card p{font-size:.97rem;color:var(--ink-soft)}
 
+  /* Practice areas */
+  .practice-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .practice-item{
+    background:var(--tint);border-radius:var(--radius-sm);padding:20px 22px;
+    font-size:.98rem;font-weight:600;
+  }
+
   /* Services list */
   .svc-list{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   .svc-item{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px;text-align:center;transition:transform .18s,box-shadow .18s}
@@ -161,9 +168,11 @@
   @media (max-width:900px){
     .cards{grid-template-columns:1fr 1fr}
     .svc-list{grid-template-columns:1fr}
+    .practice-list{grid-template-columns:1fr 1fr}
   }
   @media (max-width:640px){
     .cards{grid-template-columns:1fr}
+    .practice-list{grid-template-columns:1fr}
     section{padding:68px 0}
     .page-hero{padding:56px 0 40px}
   }
@@ -241,9 +250,8 @@
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]) nav{background:rgba(15,17,23,.92)}
-    :root:not([data-theme="light"]) .card,:root:not([data-theme="light"]) .svc-item,:root:not([data-theme="light"]) .faq details{background:#1A1C25}
+    :root:not([data-theme="light"]) .card,:root:not([data-theme="light"]) .svc-item,:root:not([data-theme="light"]) .faq details,:root:not([data-theme="light"]) .practice-item{background:#1A1C25}
     :root:not([data-theme="light"]) .card:hover{border-color:#3D3A4E}
-    :root:not([data-theme="light"]) .promise{background:#1D192D}
     :root:not([data-theme="light"]) .btn-ghost{border-color:var(--line)}
     :root:not([data-theme="light"]) .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
     :root:not([data-theme="light"]) .logo-light{display:none !important}
@@ -254,9 +262,8 @@
     :root:not([data-theme="light"]) .client-logos img.logo-dark{display:block !important}
   }
   [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
-  [data-theme="dark"] .card,[data-theme="dark"] .svc-item,[data-theme="dark"] .faq details{background:#1A1C25}
+  [data-theme="dark"] .card,[data-theme="dark"] .svc-item,[data-theme="dark"] .faq details,[data-theme="dark"] .practice-item{background:#1A1C25}
   [data-theme="dark"] .card:hover{border-color:#3D3A4E}
-  [data-theme="dark"] .promise{background:#1D192D}
   [data-theme="dark"] .btn-ghost{border-color:var(--line)}
   [data-theme="dark"] .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
   [data-theme="dark"] .logo-light{display:none !important}
@@ -349,9 +356,9 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 
 <!-- seo:start -->
 <link rel="alternate" type="text/plain" title="LLM instructions" href="/llms.txt">
-<link rel="canonical" href="https://madebysebby.com/es/diseno-web-santo-domingo.html">
-<link rel="alternate" hreflang="es" href="https://madebysebby.com/es/diseno-web-santo-domingo.html">
-<link rel="alternate" hreflang="x-default" href="https://madebysebby.com/es/diseno-web-santo-domingo.html">
+<link rel="canonical" href="https://madebysebby.com/es/diseno-web-abogados-santo-domingo.html">
+<link rel="alternate" hreflang="es" href="https://madebysebby.com/es/diseno-web-abogados-santo-domingo.html">
+<link rel="alternate" hreflang="x-default" href="https://madebysebby.com/es/diseno-web-abogados-santo-domingo.html">
 <meta name="theme-color" content="#6C3CE9">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -361,16 +368,16 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Made by Sebby">
-<meta property="og:title" content="Diseño Web Santo Domingo. Páginas Web para Negocios">
-<meta property="og:description" content="Diseño web profesional en Santo Domingo y República Dominicana. Sitios personalizados, rápidos, modernos y optimizados para móvil.">
-<meta property="og:url" content="https://madebysebby.com/es/diseno-web-santo-domingo.html">
+<meta property="og:title" content="Diseño Web para Abogados en Santo Domingo">
+<meta property="og:description" content="Diseño web para bufetes de abogados en Santo Domingo. Páginas por área de práctica, biografías que generan confianza, y un proceso ya probado en un bufete de 70+ páginas.">
+<meta property="og:url" content="https://madebysebby.com/es/diseno-web-abogados-santo-domingo.html">
 <meta property="og:image" content="https://madebysebby.com/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="es_DO">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Diseño Web Santo Domingo. Páginas Web para Negocios">
-<meta name="twitter:description" content="Diseño web profesional en Santo Domingo y República Dominicana. Sitios web personalizados para negocios, rápidos, modernos y optimizados para móvil.">
+<meta name="twitter:title" content="Diseño Web para Abogados en Santo Domingo">
+<meta name="twitter:description" content="Diseño web para bufetes de abogados en Santo Domingo. Páginas por área de práctica y biografías que generan confianza.">
 <meta name="twitter:image" content="https://madebysebby.com/assets/og-image.jpg">
 <!-- seo:end -->
 <script type="application/ld+json">
@@ -386,7 +393,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
     "width": 512,
     "height": 512
   },
-  "description": "Diseño web profesional para negocios en Santo Domingo y República Dominicana. Sitios web personalizados, rápidos y optimizados para móvil.",
+  "description": "Diseño web para bufetes de abogados y notarías en Santo Domingo. Páginas por área de práctica, biografías de abogados y un proceso ya probado en un bufete de más de 70 páginas.",
   "email": "hello@madebysebby.com",
   "founder": {
     "@type": "Person",
@@ -426,19 +433,19 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
     }
   ],
   "serviceType": [
-    "Diseño Web",
+    "Diseño Web para Bufetes de Abogados",
     "Desarrollo Web",
     "Mantenimiento de Sitios Web",
-    "SEO"
+    "SEO Legal"
   ],
-  "slogan": "Sitios web que generan confianza.",
+  "slogan": "Sitios web que generan confianza para quien busca un abogado.",
   "knowsAbout": [
-    "Diseño Web",
+    "Diseño Web para Abogados",
+    "Derecho",
     "Desarrollo Web",
-    "WordPress",
     "SEO",
     "Páginas Web",
-    "Sitios Web para Negocios"
+    "Sitios Web para Bufetes"
   ],
   "knowsLanguage": [
     "en",
@@ -505,8 +512,8 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Diseño Web Santo Domingo",
-      "item": "https://madebysebby.com/es/diseno-web-santo-domingo.html"
+      "name": "Diseño Web para Abogados en Santo Domingo",
+      "item": "https://madebysebby.com/es/diseno-web-abogados-santo-domingo.html"
     }
   ]
 }
@@ -518,26 +525,26 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Cuánto cuesta una página web en República Dominicana?",
+      "name": "¿Cuánto cuesta un sitio web para un bufete en Santo Domingo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Los precios varían según la complejidad del proyecto. Un sitio profesional de 5 páginas comienza desde US$2,500. Las agencias en Santo Domingo cobran entre RD$150,000 y RD$500,000 por un sitio comparable. Yo ofrezco la misma calidad a precios de freelancer porque trabajo directamente contigo, sin intermediarios ni gastos de agencia."
+        "text": "Un sitio profesional para un bufete, con páginas separadas por área de práctica, comienza desde $2,500. Las agencias en Santo Domingo cobran entre RD$150,000 y RD$500,000 por un sitio comparable, y las agencias en Miami desde $10,000. Ofrezco la misma calidad a precio justo porque trabajo directamente contigo, sin intermediarios."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cuánto tiempo toma hacer un sitio web?",
+      "name": "¿Por qué un bufete necesita páginas separadas por área de práctica?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La mayoría de los sitios web toman entre 3 y 6 semanas desde la primera conversación hasta el lanzamiento. Proyectos más complejos con 20 o más páginas pueden tomar 6 a 10 semanas. Cada proyecto comienza con un cronograma claro para que sepas exactamente qué esperar."
+        "text": "Porque alguien que busca \"abogado de bienes raíces en Piantini\" escribe algo distinto a alguien que busca \"abogado penalista en Gazcue\", y Google posiciona cada búsqueda por separado. Una sola página que menciona diez áreas de práctica no puede competir con una página dedicada a cada una."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Hacen sitios web bilingües en español e inglés?",
+      "name": "¿Hacen sitios web bilingües para bufetes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. Cada sitio puede ser completamente bilingüe en español e inglés. Si tu negocio atiende turistas, clientes internacionales o la diáspora dominicana en Estados Unidos, tu sitio web los atiende en su idioma."
+        "text": "Sí. Cada sitio puede ser completamente bilingüe en español e inglés, útil para bufetes que atienden clientes internacionales, inversionistas extranjeros o la diáspora dominicana en Estados Unidos."
       }
     },
     {
@@ -545,15 +552,15 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
       "name": "¿Incluyen mantenimiento después del lanzamiento?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. Los planes de Cuidado Web comienzan desde $99/mes e incluyen actualizaciones de software, respaldos diarios, monitoreo de seguridad, optimización de velocidad y ediciones pequeñas. Tu sitio siempre está seguro, rápido y actualizado."
+        "text": "Sí. Los planes de Cuidado Web comienzan desde $99/mes e incluyen actualizaciones de software, respaldos diarios, monitoreo de seguridad y ediciones pequeñas, como agregar un nuevo abogado o actualizar una biografía."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Puedo ver ejemplos de su trabajo?",
+      "name": "¿Tienen experiencia real con bufetes de abogados?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. Visita mi página de Trabajo para ver proyectos completos, incluyendo un bufete de abogados con 70+ páginas y una empresa de equipos médicos, con testimonios reales de los dueños de negocio."
+        "text": "Sí. Construí el sitio completo de Riera Law Firm, un bufete de valores, más de 70 páginas bilingües, con testimonios reales del dueño. Visita mi página de Trabajo para verlo."
       }
     }
   ]
@@ -593,46 +600,67 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <main>
 <header class="page-hero">
   <div class="wrap">
-    <div class="breadcrumb rise"><a href="/es/">Inicio</a> / Diseño Web Santo Domingo</div>
-    <div class="eyebrow rise">Diseño Web · Santo Domingo</div>
-    <h1 class="rise d1">Diseño Web en Santo Domingo <span class="accent">para tu Negocio.</span></h1>
-    <p class="lede rise d2">Tu negocio merece un sitio web que genere confianza y convierta visitantes en clientes. Diseño, construyo y cuido sitios web para negocios en República Dominicana, con calidad internacional.</p>
+    <div class="breadcrumb rise"><a href="/es/">Inicio</a> / <a href="/es/diseno-web-santo-domingo.html">Santo Domingo</a> / Abogados</div>
+    <div class="eyebrow rise">Diseño Web · Bufetes de Abogados</div>
+    <h1 class="rise d1">Diseño Web para <span class="accent">Bufetes de Abogados</span> en Santo Domingo.</h1>
+    <p class="lede rise d2">Su reputación ya la construyeron. Lo que falta es el lugar donde aterriza la búsqueda de un cliente que los necesita hoy. Diseño y construyo sitios web para bufetes, con una página por cada área de práctica, biografías que generan confianza y cuidado continuo después del lanzamiento.</p>
     <div class="hero-ctas rise d3">
       <a class="btn" href="/es/agendar.html">Consulta gratuita&nbsp;→</a>
-      <a class="btn btn-ghost" href="/es/portafolio.html">Ver mi trabajo</a>
+      <a class="btn btn-ghost" href="/es/caso-riera-law.html">Ver caso de un bufete</a>
     </div>
   </div>
 </header>
 
-<!-- ============ POR QUÉ ELEGIRME ============ -->
+<!-- ============ POR QUÉ UN SITIO WEB ============ -->
 <section id="main">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>¿Por qué elegirme?</h2>
-      <p>No soy una agencia. Soy un diseñador web profesional que trabaja directamente contigo, desde la primera llamada hasta el día que tu sitio se lanza y cada mes después.</p>
+      <h2>¿Por qué un bufete necesita un sitio web?</h2>
+      <p>Alguien que decide confiarle un asunto serio a un abogado busca primero en Google. Si su bufete no aparece, esa persona contrata al que sí aparece.</p>
     </div>
 
     <div class="cards">
       <div class="card reveal">
-        <div class="glyph"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-        <h3>Calidad internacional, precio local</h3>
-        <p>Trabajo con estándares de Estados Unidos pero desde República Dominicana. Obtienes un sitio web de primera sin pagar precios de agencia americana. La misma calidad que empresas en Miami pagan $10,000+, tú la obtienes a precio justo.</p>
+        <div class="glyph"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Confianza antes de la primera llamada</h3>
+        <p>Un cliente que busca abogado ya está nervioso por lo que enfrenta. Un sitio profesional, con su foto, su trayectoria y respuestas claras, reduce esa duda antes de que levante el teléfono.</p>
+      </div>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3>Aparecer cuando alguien busca con urgencia</h3>
+        <p>La mayoría de las búsquedas legales pasan por un momento difícil: un despido, una herencia, un problema inmobiliario. Esa persona busca ahora, no la semana que viene. Su bufete debe estar ahí en ese momento.</p>
+      </div>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 3v3M16 3v3"/></svg></div>
+        <h3>Una página por cada área de práctica</h3>
+        <p>Derecho inmobiliario, penal, laboral, familia, notarial: cada una es una búsqueda distinta en Google. Un bufete con siete áreas mencionadas en un solo párrafo no compite con un bufete que tiene siete páginas dedicadas.</p>
       </div>
       <div class="card reveal">
         <div class="glyph"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
         <h3>Hablas directamente conmigo</h3>
-        <p>Sin intermediarios, sin asistentes, sin bots. Cuando llamas, yo contesto. Cuando envías un mensaje, yo respondo. Te explico todo en términos claros porque tu tiempo vale demasiado para perderlo descifrando jerga técnica.</p>
+        <p>Sin intermediarios, sin asistentes, sin bots. Cuando llamas, yo contesto. Cuando necesitas agregar un nuevo abogado o actualizar una biografía, me escribes y se hace.</p>
       </div>
-      <div class="card reveal">
-        <div class="glyph"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
-        <h3>Bilingüe: español e inglés</h3>
-        <p>Si tu negocio atiende turistas, clientes internacionales o la diáspora dominicana en Estados Unidos, tu sitio web también los atiende, en su idioma. Cada sitio puede ser completamente bilingüe.</p>
-      </div>
-      <div class="card reveal">
-        <div class="glyph"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3>No desaparezco después</h3>
-        <p>El problema más común con diseñadores web en RD: construyen tu sitio y desaparecen. Yo ofrezco planes mensuales de Cuidado Web que mantienen tu sitio seguro, rápido y actualizado. Cuando necesitas un cambio, me escribes y se hace.</p>
-      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ÁREAS DE PRÁCTICA ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Páginas que construyo para bufetes</h2>
+      <p>Cada área de práctica de su bufete, con su propia página, su propio título y su propia oportunidad de posicionar en Google.</p>
+    </div>
+    <div class="practice-list reveal">
+      <div class="practice-item">Derecho Civil</div>
+      <div class="practice-item">Derecho Penal</div>
+      <div class="practice-item">Derecho Inmobiliario</div>
+      <div class="practice-item">Derecho Laboral</div>
+      <div class="practice-item">Derecho de Familia</div>
+      <div class="practice-item">Notaría y Traducciones Juradas</div>
+      <div class="practice-item">Derecho Migratorio</div>
+      <div class="practice-item">Derecho Corporativo</div>
+      <div class="practice-item">Biografías de abogados</div>
     </div>
   </div>
 </section>
@@ -641,38 +669,35 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <section style="padding-top:0">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>Servicios para negocios en Santo Domingo</h2>
-      <p>Todo lo que tu negocio necesita para verse profesional en línea, sin paquetes innecesarios.</p>
+      <h2>Servicios para bufetes en Santo Domingo</h2>
+      <p>Todo lo que su bufete necesita para verse tan sólido en línea como lo es en la práctica.</p>
     </div>
 
     <div class="svc-list reveal">
       <div class="svc-item">
         <div class="glyph"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
         <h3>Diseño y Desarrollo Web</h3>
-        <p>Sitios web personalizados, rápidos y optimizados para móvil. Diseñados para que tus clientes confíen en tu negocio desde el primer clic.</p>
+        <p>Sitios personalizados, rápidos y optimizados para móvil, con una página por área de práctica y biografías que generan confianza.</p>
         <a href="/es/servicios.html">Ver más →</a>
       </div>
       <div class="svc-item">
         <div class="glyph"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4z"/></svg></div>
         <h3>Cuidado Web Mensual</h3>
-        <p>Actualizaciones, respaldos, seguridad y ediciones pequeñas cada mes. Tu sitio siempre funciona, siempre seguro.</p>
+        <p>Actualizaciones, respaldos, seguridad y ediciones pequeñas cada mes. Agregar un abogado o actualizar una biografía nunca espera a un proyecto nuevo.</p>
         <a href="/es/cuidado-web.html">Ver planes →</a>
       </div>
       <div class="svc-item">
         <div class="glyph"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
-        <h3>SEO. Aparece en Google</h3>
-        <p>Que te encuentren cuando buscan lo que ofreces en Santo Domingo, Santiago o Punta Cana. SEO honesto que funciona.</p>
+        <h3>SEO Legal. Aparece en Google</h3>
+        <p>Que le encuentren cuando alguien busca un abogado en Santo Domingo, por área de práctica y por zona. SEO honesto que funciona.</p>
         <a href="/es/servicios.html">Ver más →</a>
       </div>
     </div>
 
-    <p style="margin-top:8px;font-size:.95rem">¿Tiene un bufete de abogados? <a href="/es/diseno-web-abogados-santo-domingo.html" style="color:var(--purple);font-weight:600;text-decoration:underline">Diseño web para abogados en Santo Domingo</a>.</p>
-
     <div class="client-logos-bar reveal">
-      <div class="client-logos-label">Negocios que confían en mí</div>
+      <div class="client-logos-label">Un bufete que confió en mí</div>
       <div class="client-logos">
         <a href="/es/caso-riera-law.html"><img class="logo-light" src="/assets/client-logos/rieralaw-light.webp" alt="Riera Law Firm" loading="lazy" style="display:block"><img class="logo-dark" src="/assets/client-logos/rieralaw-dark.webp" alt="Riera Law Firm" loading="lazy" style="display:none"></a>
-        <a href="/es/caso-elite-care.html"><img class="logo-light" src="/assets/client-logos/elitecare-light.webp" alt="Elite Care Recovery" loading="lazy" style="display:block"><img class="logo-dark" src="/assets/client-logos/elitecare-dark.webp" alt="Elite Care Recovery" loading="lazy" style="display:none"></a>
       </div>
     </div>
   </div>
@@ -686,24 +711,24 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
     </div>
     <div class="faq reveal">
       <details>
-        <summary>¿Cuánto cuesta una página web en República Dominicana?</summary>
-        <p>Los precios varían según la complejidad del proyecto. Un sitio profesional de 5 páginas comienza desde US$2,500. Las agencias en Santo Domingo cobran entre RD$150,000 y RD$500,000 por un sitio comparable. Yo ofrezco la misma calidad a precios de freelancer porque trabajo directamente contigo, sin intermediarios ni gastos de agencia.</p>
+        <summary>¿Cuánto cuesta un sitio web para un bufete en Santo Domingo?</summary>
+        <p>Un sitio profesional para un bufete, con páginas separadas por área de práctica, comienza desde $2,500. Las agencias en Santo Domingo cobran entre RD$150,000 y RD$500,000 por un sitio comparable, y las agencias en Miami desde $10,000. Ofrezco la misma calidad a precio justo porque trabajo directamente contigo, sin intermediarios.</p>
       </details>
       <details>
-        <summary>¿Cuánto tiempo toma hacer un sitio web?</summary>
-        <p>La mayoría de los sitios web toman entre 3 y 6 semanas desde la primera conversación hasta el lanzamiento. Proyectos más complejos con 20 o más páginas pueden tomar 6 a 10 semanas. Cada proyecto comienza con un cronograma claro para que sepas exactamente qué esperar.</p>
+        <summary>¿Por qué un bufete necesita páginas separadas por área de práctica?</summary>
+        <p>Porque alguien que busca "abogado de bienes raíces en Piantini" escribe algo distinto a alguien que busca "abogado penalista en Gazcue", y Google posiciona cada búsqueda por separado. Una sola página que menciona diez áreas de práctica no puede competir con una página dedicada a cada una.</p>
       </details>
       <details>
-        <summary>¿Hacen sitios web bilingües en español e inglés?</summary>
-        <p>Sí. Cada sitio puede ser completamente bilingüe en español e inglés. Si tu negocio atiende turistas, clientes internacionales o la diáspora dominicana en Estados Unidos, tu sitio web los atiende en su idioma.</p>
+        <summary>¿Hacen sitios web bilingües para bufetes?</summary>
+        <p>Sí. Cada sitio puede ser completamente bilingüe en español e inglés, útil para bufetes que atienden clientes internacionales, inversionistas extranjeros o la diáspora dominicana en Estados Unidos.</p>
       </details>
       <details>
         <summary>¿Incluyen mantenimiento después del lanzamiento?</summary>
-        <p>Sí. Los planes de Cuidado Web comienzan desde $99/mes e incluyen actualizaciones de software, respaldos diarios, monitoreo de seguridad, optimización de velocidad y ediciones pequeñas. Tu sitio siempre está seguro, rápido y actualizado.</p>
+        <p>Sí. Los planes de Cuidado Web comienzan desde $99/mes e incluyen actualizaciones de software, respaldos diarios, monitoreo de seguridad y ediciones pequeñas, como agregar un nuevo abogado o actualizar una biografía.</p>
       </details>
       <details>
-        <summary>¿Puedo ver ejemplos de su trabajo?</summary>
-        <p>Sí. Visita mi <a href="/es/portafolio.html" style="color:var(--purple);font-weight:600">página de Trabajo</a> para ver proyectos completos, incluyendo un bufete de abogados con 70+ páginas y una empresa de equipos médicos, con testimonios reales de los dueños de negocio.</p>
+        <summary>¿Tienen experiencia real con bufetes de abogados?</summary>
+        <p>Sí. Construí el sitio completo de <a href="/es/caso-riera-law.html" style="color:var(--purple);font-weight:600">Riera Law Firm</a>, un bufete de valores, más de 70 páginas bilingües, con testimonios reales del dueño. Visita mi <a href="/es/portafolio.html" style="color:var(--purple);font-weight:600">página de Trabajo</a> para verlo.</p>
       </details>
     </div>
   </div>
@@ -712,8 +737,8 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <!-- ============ FINAL CTA ============ -->
 <section class="final" style="padding-top:30px">
   <div class="wrap">
-    <h2>¿Listo para un sitio web que <span class="accent">trabaje para tu negocio?</span></h2>
-    <p>Hablemos. Te diré honestamente qué necesita tu negocio, cuánto cuesta y cuánto tiempo toma. Sin presión, sin jerga.</p>
+    <h2>¿Listo para un sitio que <span class="accent">represente a su bufete?</span></h2>
+    <p>Hablemos. Le diré honestamente qué necesita su bufete, cuánto cuesta y cuánto tiempo toma. Sin presión, sin jerga.</p>
     <a class="btn" href="/es/agendar.html">Agenda una consulta gratuita&nbsp;→</a>
   </div>
 </section>
@@ -721,7 +746,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 </main>
 
 <div class="sticky-cta" id="stickyCta">
-  <a href="/es/agendar.html">¿Necesitas un sitio web? Consulta gratuita →</a>
+  <a href="/es/agendar.html">¿Su bufete necesita un sitio web? Consulta gratuita →</a>
 </div>
 
 <footer>
