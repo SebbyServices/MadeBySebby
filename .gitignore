@@ -29,3 +29,7 @@ PRICING-DECISION.md
 *-AUDIT.md
 *-REQUESTS.md
 SESSION-STATE.md
+
+# Print-ready exports kept here for local storage only, not site assets.
+# The PNGs in this folder are used across the site and stay tracked.
+assets/brand-kit/*.pdf
