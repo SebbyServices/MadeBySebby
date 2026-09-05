@@ -125,6 +125,22 @@
   .svc-item p{font-size:.93rem;color:var(--ink-soft);margin-bottom:18px}
   .svc-item a{color:var(--purple);font-weight:600;font-size:.92rem}
 
+  /* Quote */
+  .quote{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:36px 34px;max-width:680px;margin:0 auto;
+  }
+  .quote .mark{font-size:2.6rem;line-height:1;color:var(--purple);font-weight:800;margin-bottom:14px}
+  .quote p.body{font-size:1.05rem;color:var(--ink);margin-bottom:24px}
+  .quote .who{display:flex;align-items:center;gap:14px}
+  .quote .avatar{
+    width:46px;height:46px;border-radius:50%;background:var(--tint);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;color:var(--purple);font-size:.95rem;flex-shrink:0;
+  }
+  .quote .who strong{display:block;font-size:.95rem}
+  .quote .who span{font-size:.85rem;color:var(--muted)}
+
   /* Client logos */
   .client-logos-bar{text-align:center;padding:48px 0 0}
   .client-logos{display:flex;align-items:center;gap:48px;flex-wrap:wrap;justify-content:center;opacity:.75;transition:opacity .3s}
@@ -250,7 +266,7 @@
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]) nav{background:rgba(15,17,23,.92)}
-    :root:not([data-theme="light"]) .card,:root:not([data-theme="light"]) .svc-item,:root:not([data-theme="light"]) .faq details,:root:not([data-theme="light"]) .practice-item{background:#1A1C25}
+    :root:not([data-theme="light"]) .card,:root:not([data-theme="light"]) .svc-item,:root:not([data-theme="light"]) .faq details,:root:not([data-theme="light"]) .practice-item,:root:not([data-theme="light"]) .quote{background:#1A1C25}
     :root:not([data-theme="light"]) .card:hover{border-color:#3D3A4E}
     :root:not([data-theme="light"]) .btn-ghost{border-color:var(--line)}
     :root:not([data-theme="light"]) .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
@@ -262,7 +278,7 @@
     :root:not([data-theme="light"]) .client-logos img.logo-dark{display:block !important}
   }
   [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
-  [data-theme="dark"] .card,[data-theme="dark"] .svc-item,[data-theme="dark"] .faq details,[data-theme="dark"] .practice-item{background:#1A1C25}
+  [data-theme="dark"] .card,[data-theme="dark"] .svc-item,[data-theme="dark"] .faq details,[data-theme="dark"] .practice-item,[data-theme="dark"] .quote{background:#1A1C25}
   [data-theme="dark"] .card:hover{border-color:#3D3A4E}
   [data-theme="dark"] .btn-ghost{border-color:var(--line)}
   [data-theme="dark"] .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
@@ -698,6 +714,15 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
       <div class="client-logos-label">Un bufete que confió en mí</div>
       <div class="client-logos">
         <a href="/es/caso-riera-law.html"><img class="logo-light" src="/assets/client-logos/rieralaw-light.webp" alt="Riera Law Firm" loading="lazy" style="display:block"><img class="logo-dark" src="/assets/client-logos/rieralaw-dark.webp" alt="Riera Law Firm" loading="lazy" style="display:none"></a>
+      </div>
+    </div>
+
+    <div class="quote reveal" style="margin-top:36px">
+      <div class="mark" aria-hidden="true">"</div>
+      <p class="body">Sebby reconstruyó toda la presencia web de mi bufete. Trabaja rápido, explica todo en términos claros, y trata mi sitio como si fuera suyo. Le confío la cara digital de mi práctica.</p>
+      <div class="who">
+        <div class="avatar">JR</div>
+        <div><strong>Jorge L. Riera</strong><span>Socio Fundador, Riera Law Firm, Coral Gables, FL · Testimonio traducido del inglés</span></div>
       </div>
     </div>
   </div>
