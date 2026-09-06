@@ -742,6 +742,19 @@ def pair_map(html):
 # Locality/region/postal is enough to corroborate the profile.
 NAP = {
     "name": "Made by Sebby",
+    # Confirmed 2026-09-05: the bare three-word name collides with the Sebby
+    # apparel brand (Nordstrom Rack, Walmart, eBay, sebby.com all rank for it,
+    # plus an unrelated bakery account, "Sebby's Scrolls"), but the concatenated
+    # form does not, in a live search or from this machine. Only "MadeBySebby"
+    # lived here before, and only on the English homepage. Moved into NAP so
+    # every LocalBusiness/ProfessionalService node on every page carries it,
+    # not just one. Previously tried once already (disambiguatingDescription
+    # below, index.html only) and the memory on this is honest that on-site
+    # schema alone "works briefly then reverts" against an off-site footprint
+    # this much bigger; this is a wider application of the same tool, not a
+    # new one, and off-site citation-building (SD-SEO-PLAN.md section 4.6)
+    # is still the lever expected to matter more.
+    "alternateName": ["Made by Sebby Web Design", "MadeBySebby", "madebysebby"],
     "telephone": "+1-786-543-1417",
     "email": "hello@madebysebby.com",
     "address": {
@@ -806,6 +819,17 @@ NAP = {
         "https://www.reddit.com/user/MadeBySebby/",
         "https://github.com/SebbyServices",
     ],
+    # Exact string match with the SCHEMA_ES entry below is load-bearing: the
+    # Spanish tree gets this translated for free through the existing
+    # translation-memory lookup, change one and the other goes stale silently.
+    "disambiguatingDescription": (
+        "Made by Sebby is a freelance web design and website care studio in "
+        "Miami, Florida, run by Sebastian Podgaetz. It is a services business "
+        "and sells no physical products. It is NOT affiliated with Sebby "
+        "Collection, Sebby Couture, or any apparel, outerwear, jacket or "
+        "fashion brand using the name Sebby. Different company, different "
+        "industry, no shared ownership."
+    ),
 }
 
 
@@ -1402,6 +1426,30 @@ def rewrite_jsonld(html, source, lang, memory):
                     node["@id"] = BUSINESS_ID
                     for key, value in NAP.items():
                         node[key] = json.loads(json.dumps(value))
+                    # NAP is asserted in English above, unconditionally, which is
+                    # correct for name/address/phone but wrong for any NAP field
+                    # that is prose ("disambiguatingDescription"): those need the
+                    # same translation pass the rest of the page already got,
+                    # above this block, before NAP had a chance to overwrite them
+                    # back to English. Found 2026-09-05 when disambiguatingDescription
+                    # moved into NAP for site-wide coverage and shipped in English
+                    # on all 26 Spanish pages, caught by check_spanish_schema.
+                    #
+                    # No `not spanish_source` guard here, unlike the page-content
+                    # translation pass above: that guard exists because a
+                    # spanish_source page's OWN body is already written in
+                    # Spanish, nothing to translate. NAP's value is always
+                    # sourced in English regardless of which page it lands on,
+                    # so it always needs this swap on Spanish output. Missing
+                    # this distinction the first time round left the two
+                    # Spanish-only-source pages (diseno-web-santo-domingo.html,
+                    # diseno-web-abogados-santo-domingo.html) still in English.
+                    if lang == "es":
+                        for key in PROSE_KEYS:
+                            if key in node and isinstance(node[key], str):
+                                translated = SCHEMA_ES.get(html_unescape(node[key])) or resolved(node[key])
+                                if translated:
+                                    node[key] = translated
                     # Every one of these nodes IS the business, so they all share
                     # BUSINESS_ID -- which makes "url" a property of the business,
                     # not of the page carrying the block. Seven landing pages had

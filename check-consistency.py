@@ -474,6 +474,7 @@ def check_translated_attributes():
 # ---------------------------------------------------------------------------
 def check_nap():
     seen = 0
+    es_pages = set(spanish_pages())
     for page in pages():
         for m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>',
                              read(page), re.S):
@@ -489,6 +490,17 @@ def check_nap():
                     if node.get("@type") in build.LOCAL_TYPES:
                         for key, want in build.NAP.items():
                             got = node.get(key)
+                            # Most NAP fields (name, address, phone) must be
+                            # byte-identical everywhere, that IS the point.
+                            # A NAP field that is also prose (only
+                            # disambiguatingDescription today) is the one
+                            # deliberate exception: on a Spanish page it is
+                            # expected to be the SCHEMA_ES translation of
+                            # `want`, not `want` itself, added 2026-09-05 when
+                            # moving it into NAP for site-wide coverage first
+                            # shipped it in English on every Spanish page.
+                            if page in es_pages and key in build.PROSE_KEYS:
+                                want = build.SCHEMA_ES.get(want, want)
                             if got != want:
                                 fail("nap", page,
                                      "%s is %r but build.NAP says %r -- the canonical "
