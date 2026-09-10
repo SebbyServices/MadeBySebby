@@ -809,13 +809,16 @@ NAP = {
     #
     # Only URLs that have been verified to resolve belong here. A dead sameAs is
     # worse than a short one, since it is a claim Google can check and fail.
-    # Facebook and The Manifest were deliberately NOT added: neither is listed in
-    # the ops BUSINESS-INFO-TRACKER and neither could be confirmed.
+    # Facebook was deliberately NOT added: not listed in ops BUSINESS-INFO-TRACKER
+    # and could not be confirmed. The Manifest added 2026-09-10 after confirming
+    # https://themanifest.com/company/made-sebby resolves and appears in branded
+    # Google search results (strengthens entity graph).
     "sameAs": [
         "https://g.page/r/CRmCP0Hp1prPEAI",
         "https://www.linkedin.com/company/made-by-sebby/",
         "https://instagram.com/madebysebby",
         "https://clutch.co/profile/made-sebby",
+        "https://themanifest.com/company/made-sebby",
         "https://www.reddit.com/user/MadeBySebby/",
         "https://github.com/SebbyServices",
     ],
