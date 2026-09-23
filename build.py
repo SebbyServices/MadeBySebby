@@ -213,6 +213,17 @@ PAGES = {
             tw_desc="Cómo Sebby construyó un sitio web de salud para una empresa de recuperación ortopédica en el sur de Florida.",
         ),
     ),
+    "case-study-orthoflow.html": dict(
+        es="caso-ortho-flow.html",
+        meta=dict(
+            title="Caso de Éxito: Ortho Flow Recovery | Made by Sebby",
+            desc="Cómo Sebby construyó un sitio web bilingüe para una nueva empresa de recuperación postoperatoria en Miami, con rutas para pacientes y cirujanos.",
+            og_title="Caso de Éxito: Ortho Flow Recovery | Made by Sebby",
+            og_desc="Un sitio bilingüe desde el primer día para una empresa de recuperación postoperatoria en Miami-Dade y Broward, con páginas para pacientes y para cirujanos que refieren.",
+            tw_title="Caso de Éxito: Ortho Flow Recovery | Made by Sebby",
+            tw_desc="Cómo Sebby construyó un sitio web bilingüe para una empresa de recuperación postoperatoria en Miami.",
+        ),
+    ),
     "web-design-for-law-firms.html": dict(
         es="diseno-web-para-abogados.html",
         meta=dict(
@@ -1263,6 +1274,8 @@ CRUMBS = {
     "terms.html": {"en": "Terms of Service", "es": "Términos de Servicio"},
     "case-study-rieralaw.html": {"en": "Riera Law Firm Case Study",
                                  "es": "Caso de Éxito: Riera Law Firm"},
+    "case-study-orthoflow.html": {"en": "Ortho Flow Recovery Case Study",
+                                  "es": "Caso de Éxito: Ortho Flow Recovery"},
     "case-study-elitecare.html": {"en": "Elite Care Recovery Case Study",
                                   "es": "Caso de Éxito: Elite Care Recovery"},
     "web-design-for-law-firms.html": {"en": "Web Design for Law Firms",
