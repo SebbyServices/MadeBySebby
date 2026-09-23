@@ -894,6 +894,7 @@ FOOTER_LINKS = {
         ("/services.html", "What I do", "Qué hago"),
         ("/pricing.html", "Pricing", "Precios"),
         ("/website-care.html", "Website Care", "Cuidado Web"),
+        ("/website-audit.html", "Website Audit", "Auditoría Web"),
         # Deliberately NOT a vertical link. The footer appears on all 52 pages,
         # so naming one industry there tells every other industry the site is
         # not for them, and the target vertical is not settled. The calculator
@@ -1083,7 +1084,13 @@ PRICES = {
     # instructions). The audit is the "fix what you have" option beside the
     # build tiers; content production is a monthly retainer scoped per client,
     # so it publishes a range rather than one figure.
-    "{{PRICE_AUDIT}}": "$2,500",
+    # Lowered 2026-09-22 from $2,500: at the Starter build price the audit
+    # read as "a report that costs as much as a new site". Credited in full
+    # toward a build or care plan within {{AUDIT_CREDIT_DAYS}} days.
+    "{{PRICE_AUDIT}}": "$750",
+    "{{AUDIT_CREDIT_DAYS}}": "60",
+    "{{AUDIT_DAYS}}": "7",
+    "{{AUDIT_MIN_FIXES}}": "10",
     "{{CONTENT_LOW}}": "$1,500",
     "{{CONTENT_HIGH}}": "$3,000",
 
@@ -1133,7 +1140,7 @@ PRICES = {
     "{{N_CARE_GROWTH}}": "549",
     "{{N_SPANISH_STRATEGY}}": "750",
     "{{N_EXTRA_PAGE}}": "150",
-    "{{N_AUDIT}}": "2500",
+    "{{N_AUDIT}}": "750",
     "{{N_CONTENT_LOW}}": "1500",
     "{{N_CONTENT_HIGH}}": "3000",
 }

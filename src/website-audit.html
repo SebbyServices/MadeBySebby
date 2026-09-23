@@ -489,6 +489,14 @@
     img{max-width:100%!important;filter:none!important}
     .reveal{opacity:1!important;transform:none!important}
   }
+  /* Sample findings table stacks into cards on phones instead of scrolling sideways */
+  @media (max-width:640px){
+    .find-tbl thead{display:none}
+    .find-tbl tr,.find-tbl td{display:block}
+    .find-tbl td{border-top:none!important;padding:3px 18px!important}
+    .find-tbl tr{padding:14px 0}
+    .find-tbl tbody tr+tr{border-top:1px solid var(--line)}
+  }
 </style>
 
 <!-- seo:start -->
@@ -641,8 +649,8 @@
   <div class="wrap">
     <div class="care reveal">
       <div>
-        <h2><span lang="en">One fixed price. No rebuild required.</span><span lang="es">Un precio fijo. Sin rediseñar nada.</span></h2>
-        <p><span lang="en">The Website Audit and 90-Day Growth Plan is {{PRICE_AUDIT}} {{USD}}, one time. The plan is yours to keep, whether I make the fixes, you make them, or someone else does.</span><span lang="es">La Auditoría Web y Plan de Crecimiento de 90 Días cuesta {{PRICE_AUDIT}} {{USD}}, un solo pago. El plan es tuyo, ya sea que yo haga los arreglos, los hagas tú, o los haga otra persona.</span></p>
+        <h2><span lang="en">One fixed price. Credited if you keep going.</span><span lang="es">Un precio fijo. Acreditado si sigues adelante.</span></h2>
+        <p><span lang="en">The Website Audit and 90-Day Growth Plan is {{PRICE_AUDIT}} {{USD}}, one time, delivered within {{AUDIT_DAYS}} business days. Start a build or a Website Care plan within {{AUDIT_CREDIT_DAYS}} days and the full {{PRICE_AUDIT}} is credited toward it. And if I don't find at least {{AUDIT_MIN_FIXES}} specific fixes worth making, you get a full refund.</span><span lang="es">La Auditoría Web y Plan de Crecimiento de 90 Días cuesta {{PRICE_AUDIT}} {{USD}}, un solo pago, entregada en {{AUDIT_DAYS}} días hábiles. Si empiezas un sitio nuevo o un plan de Cuidado Web dentro de {{AUDIT_CREDIT_DAYS}} días, los {{PRICE_AUDIT}} completos se acreditan. Y si no encuentro al menos {{AUDIT_MIN_FIXES}} arreglos concretos que valga la pena hacer, te devuelvo todo tu dinero.</span></p>
         <a class="btn" href="book.html"><span lang="en">Book a free call first</span><span lang="es">Agenda primero una llamada gratis</span>&nbsp;&#8594;</a>
       </div>
       <ul>
@@ -651,6 +659,27 @@
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Competitors show up on Google and you don't</span><span lang="es">Tu competencia aparece en Google y tú no</span></li>
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">You serve Spanish speakers but your site only speaks English</span><span lang="es">Atiendes a hispanohablantes pero tu sitio solo habla inglés</span></li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">What a finding looks like.</span><span lang="es">Cómo se ve un hallazgo.</span></h2>
+      <p><span lang="en">An illustrative excerpt, not from a real client. Every finding says what is wrong, why it costs you, and the fix, ranked so you know where to start.</span><span lang="es">Un ejemplo ilustrativo, no de un cliente real. Cada hallazgo dice qué está mal, por qué te cuesta, y cómo se arregla, en orden para que sepas por dónde empezar.</span></p>
+    </div>
+    <div class="reveal" style="overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius-sm)">
+      <table class="find-tbl" style="width:100%;border-collapse:collapse;font-size:.95rem">
+        <thead><tr style="text-align:left;color:var(--muted);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase"><th style="padding:14px 12px"><span lang="en">Priority</span><span lang="es">Prioridad</span></th><th style="padding:14px 12px"><span lang="en">Finding</span><span lang="es">Hallazgo</span></th><th style="padding:14px 12px"><span lang="en">Fix</span><span lang="es">Arreglo</span></th></tr></thead>
+        <tbody>
+        <tr><td style="padding:14px 12px;border-top:1px solid var(--line);font-weight:700;white-space:nowrap;vertical-align:top"><span lang="en">High · Mobile</span><span lang="es">Alta · Móvil</span></td><td style="padding:14px 12px;border-top:1px solid var(--line);vertical-align:top"><span lang="en">The phone number in the header is plain text, so mobile visitors can't tap to call.</span><span lang="es">El teléfono del encabezado es texto simple, así que en el móvil no se puede tocar para llamar.</span></td><td style="padding:14px 12px;border-top:1px solid var(--line);color:var(--ink-soft);vertical-align:top"><span lang="en">Make it a tap-to-call link and repeat it beside the contact form.</span><span lang="es">Convertirlo en enlace para llamar y repetirlo junto al formulario de contacto.</span></td></tr>
+        <tr><td style="padding:14px 12px;border-top:1px solid var(--line);font-weight:700;white-space:nowrap;vertical-align:top"><span lang="en">High · Speed</span><span lang="es">Alta · Velocidad</span></td><td style="padding:14px 12px;border-top:1px solid var(--line);vertical-align:top"><span lang="en">The homepage photo is a full-size camera file, the heaviest thing on the page.</span><span lang="es">La foto de la página principal es el archivo original de la cámara, lo más pesado de la página.</span></td><td style="padding:14px 12px;border-top:1px solid var(--line);color:var(--ink-soft);vertical-align:top"><span lang="en">Resize and compress it and serve a modern image format.</span><span lang="es">Reducirla y comprimirla, y servirla en un formato de imagen moderno.</span></td></tr>
+        <tr><td style="padding:14px 12px;border-top:1px solid var(--line);font-weight:700;white-space:nowrap;vertical-align:top"><span lang="en">Medium · SEO</span><span lang="es">Media · SEO</span></td><td style="padding:14px 12px;border-top:1px solid var(--line);vertical-align:top"><span lang="en">Every page shares the same title, so Google can't tell your services apart.</span><span lang="es">Todas las páginas tienen el mismo título, así que Google no distingue tus servicios.</span></td><td style="padding:14px 12px;border-top:1px solid var(--line);color:var(--ink-soft);vertical-align:top"><span lang="en">Write a unique title and description for each page.</span><span lang="es">Escribir un título y una descripción únicos para cada página.</span></td></tr>
+        <tr><td style="padding:14px 12px;border-top:1px solid var(--line);font-weight:700;white-space:nowrap;vertical-align:top"><span lang="en">Medium · Bilingual</span><span lang="es">Media · Bilingüe</span></td><td style="padding:14px 12px;border-top:1px solid var(--line);vertical-align:top"><span lang="en">Spanish-speaking visitors land on English-only service pages.</span><span lang="es">Los visitantes que hablan español llegan a páginas de servicios solo en inglés.</span></td><td style="padding:14px 12px;border-top:1px solid var(--line);color:var(--ink-soft);vertical-align:top"><span lang="en">Add Spanish versions of the three most-visited service pages.</span><span lang="es">Agregar versiones en español de las tres páginas de servicios más visitadas.</span></td></tr>
+        <tr><td style="padding:14px 12px;border-top:1px solid var(--line);font-weight:700;white-space:nowrap;vertical-align:top"><span lang="en">Low · Trust</span><span lang="es">Baja · Confianza</span></td><td style="padding:14px 12px;border-top:1px solid var(--line);vertical-align:top"><span lang="en">Your Google reviews don't appear anywhere on the site.</span><span lang="es">Tus reseñas de Google no aparecen en ninguna parte del sitio.</span></td><td style="padding:14px 12px;border-top:1px solid var(--line);color:var(--ink-soft);vertical-align:top"><span lang="en">Add a short reviews section near the contact form.</span><span lang="es">Agregar una sección breve de reseñas cerca del formulario de contacto.</span></td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -671,7 +700,7 @@
       </div>
       <div class="step reveal">
         <h3><span lang="en">Your plan</span><span lang="es">Tu plan</span></h3>
-        <p><span lang="en">You get the written audit and the 90-day plan, and we walk through it together so every item makes sense.</span><span lang="es">Recibes la auditoría escrita y el plan de 90 días, y lo repasamos juntos para que cada punto tenga sentido.</span></p>
+        <p><span lang="en">Within {{AUDIT_DAYS}} business days you get the written audit and the 90-day plan, and we walk through it together so every item makes sense.</span><span lang="es">En {{AUDIT_DAYS}} días hábiles recibes la auditoría escrita y el plan de 90 días, y lo repasamos juntos para que cada punto tenga sentido.</span></p>
       </div>
     </div>
   </div>
@@ -693,7 +722,15 @@
       </details>
       <details>
         <summary><span lang="en">Do you make the fixes too?</span><span lang="es">¿También haces los arreglos?</span></summary>
-        <p><span lang="en">I can. The plan works whoever carries it out. If you want me to handle the fixes, we scope that separately once you have the plan in hand.</span><span lang="es">Puedo hacerlos. El plan funciona sin importar quién lo ejecute. Si quieres que yo me encargue, lo definimos aparte una vez que tengas el plan.</span></p>
+        <p><span lang="en">I can. The 90-day plan is built to run on a <a href="website-care.html" style="color:var(--purple);font-weight:600;text-decoration:underline">Growth care plan</a> ({{CARE_GROWTH}}/month), which includes monthly edit time, on-page SEO work and a quarterly strategy call, and your audit fee is credited toward it. The plan also works if you or your own developer carry it out.</span><span lang="es">Puedo hacerlos. El plan de 90 días está pensado para ejecutarse con un <a href="website-care.html" style="color:var(--purple);font-weight:600;text-decoration:underline">plan de Cuidado Growth</a> ({{CARE_GROWTH}}/mes), que incluye horas mensuales de edición, trabajo de SEO en la página y una llamada de estrategia trimestral, y el costo de la auditoría se acredita. El plan también funciona si lo ejecutas tú o tu propio desarrollador.</span></p>
+      </details>
+      <details>
+        <summary><span lang="en">What if my site is already in good shape?</span><span lang="es">¿Y si mi sitio ya está en buena forma?</span></summary>
+        <p><span lang="en">Then you get your money back. If I can't find at least {{AUDIT_MIN_FIXES}} specific fixes worth making, the audit is refunded in full, and you still keep the report.</span><span lang="es">Entonces te devuelvo tu dinero. Si no encuentro al menos {{AUDIT_MIN_FIXES}} arreglos concretos que valga la pena hacer, la auditoría se reembolsa completa, y te quedas con el informe.</span></p>
+      </details>
+      <details>
+        <summary><span lang="en">How does the credit work?</span><span lang="es">¿Cómo funciona el crédito?</span></summary>
+        <p><span lang="en">If you start a new build or any Website Care plan within {{AUDIT_CREDIT_DAYS}} days of receiving the audit, the full {{PRICE_AUDIT}} comes off the first invoice. You never pay twice for the same diagnosis.</span><span lang="es">Si empiezas un sitio nuevo o cualquier plan de Cuidado Web dentro de {{AUDIT_CREDIT_DAYS}} días después de recibir la auditoría, los {{PRICE_AUDIT}} completos se descuentan de la primera factura. Nunca pagas dos veces por el mismo diagnóstico.</span></p>
       </details>
       <details>
         <summary><span lang="en">What platforms do you audit?</span><span lang="es">¿Qué plataformas auditas?</span></summary>
