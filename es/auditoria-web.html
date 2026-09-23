@@ -6,10 +6,10 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DV4L5CZRML');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diseño Web y Páginas Web para Negocios | Made by Sebby</title>
+<title>Auditoría Web y Plan de Crecimiento de 90 Días</title>
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Sebby. Made by Sebby">
-<meta name="description" content="Diseño web y cuidado mensual para pequeños negocios en Miami, el sur de Florida y República Dominicana. Bilingüe, móvil primero. Consulta gratis.">
+<meta name="description" content="Auditoría técnica, de experiencia y SEO de tu sitio web actual, más un plan escrito de 90 días para arreglar primero lo que más importa. Bilingüe.">
 <link rel="preload" as="image" href="/assets/logo/sebby-nav.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,10 +56,10 @@
   .logo .sebby{color:var(--ink)}
   .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
   .nav-links>a{color:var(--ink-soft);transition:color .15s}
-  .nav-links>a:hover{color:var(--purple)}
   .nav-links>a.btn{color:#fff}
   .nav-links>a.btn:hover{color:#fff}
   .nav-controls{display:contents}
+  .nav-links>a:hover{color:var(--purple)}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
     background:var(--purple-cta);color:#fff;font-weight:600;font-size:.98rem;
@@ -133,7 +133,6 @@
   /* Services */
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   .card{
-    display:block;
     background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
     padding:34px 30px;transition:transform .18s, box-shadow .18s, border-color .18s;
   }
@@ -169,19 +168,15 @@
 
   /* Work */
   .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .work-duo{grid-template-columns:repeat(2,minmax(0,420px))}
   .tile{
     border-radius:var(--radius);border:1px solid var(--line);overflow:hidden;
-    background:var(--white);transition:transform .18s, box-shadow .18s, border-color .18s;
-    cursor:pointer;
+    background:var(--white);transition:transform .18s, box-shadow .18s;
   }
-  .tile:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(108,60,233,.15);border-color:var(--purple)}
+  .tile:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08)}
   .tile .shot{
     aspect-ratio:16/10.5;background:linear-gradient(150deg,#EFEAFB,#E2D9F8);
-    display:flex;align-items:center;justify-content:center;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
   }
-  .tile .shot img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .3s ease}
-  .tile:hover .shot img{transform:scale(1.03)}
   .tile .shot span{
     font-size:.8rem;font-weight:600;color:var(--purple);
     background:#fff;border:1px dashed var(--purple);padding:7px 14px;border-radius:999px;
@@ -247,15 +242,66 @@
   @media (max-width:900px){
     .hero-grid{grid-template-columns:1fr;gap:44px}
     .portrait{max-width:420px;margin:0 auto}
-    .cards,.steps,.work-grid,.work-duo{grid-template-columns:1fr 1fr}
+    .cards,.steps,.work-grid{grid-template-columns:1fr 1fr}
     .care{grid-template-columns:1fr;padding:52px 36px}
   }
   @media (max-width:640px){
-    .cards,.steps,.work-grid,.work-duo,.quotes{grid-template-columns:1fr}
+    .cards,.steps,.work-grid,.quotes{grid-template-columns:1fr}
     section{padding:68px 0}
     .hero{padding:56px 0 48px}
     .trust-inner{justify-content:flex-start}
-    .tile .shot{aspect-ratio:16/8}
+  }
+
+  /* Interior pages */
+  .page-hero{padding:76px 0 52px}
+  .page-hero h1{font-size:clamp(2rem,4vw,3rem)}
+  .page-hero p.lede{font-size:1.14rem;color:var(--ink-soft);max-width:36em;margin-top:18px}
+  .two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+  .checklist{list-style:none;display:grid;gap:14px;margin-top:22px}
+  .checklist li{display:flex;gap:12px;align-items:flex-start;font-size:.99rem;color:var(--ink-soft)}
+  .checklist li svg{width:20px;height:20px;stroke:var(--purple);flex-shrink:0;margin-top:3px;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .svc-block{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:64px 0;border-top:1px solid var(--line)}
+  .svc-block:first-of-type{border-top:none}
+  .svc-visual{border-radius:var(--radius);background:linear-gradient(150deg,#EFEAFB,#E2D9F8);aspect-ratio:16/11;display:flex;align-items:center;justify-content:center;border:1px solid var(--line)}
+  .svc-visual span{font-size:.8rem;font-weight:600;color:var(--purple);background:#fff;border:1px dashed var(--purple);padding:7px 14px;border-radius:999px}
+  .svc-block h2{margin-bottom:6px}
+  .svc-block .tag{display:inline-block;margin-bottom:14px;font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--purple)}
+  .svc-block p.body{color:var(--ink-soft);font-size:1.02rem}
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+  .plan{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:36px 30px;display:flex;flex-direction:column;transition:transform .18s, box-shadow .18s}
+  .plan:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08)}
+  .plan.featured{border:2px solid var(--purple);position:relative}
+  .plan.featured::before{content:"Most popular";position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--purple-cta);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 16px;border-radius:999px}
+  .plan h3{font-size:1.2rem;font-weight:800;margin-bottom:4px}
+  .plan .for{font-size:.88rem;color:var(--muted);margin-bottom:18px}
+  .plan .price{font-size:2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:4px}
+  .plan .price em{font-style:normal;font-size:.95rem;font-weight:500;color:var(--muted)}
+  .plan .checklist{margin:22px 0 28px;flex:1}
+  .faq{display:grid;gap:14px;max-width:44em}
+  .faq details{border:1px solid var(--line);border-radius:var(--radius-sm);padding:20px 24px;background:#fff}
+  .faq summary{font-weight:700;cursor:pointer;font-size:1rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq summary::after{content:"+";color:var(--purple);font-size:1.4rem;font-weight:600;line-height:1}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{margin-top:12px;color:var(--ink-soft);font-size:.97rem}
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}
+  .about-grid .portrait{aspect-ratio:4/4.7;position:sticky;top:104px}
+  .prose p{color:var(--ink-soft);font-size:1.05rem;margin-bottom:20px;max-width:38em}
+  .prose p strong{color:var(--ink)}
+  .promise{background:var(--tint);border-radius:var(--radius);padding:32px 34px;margin:28px 0;border-left:4px solid var(--purple)}
+  .promise p{font-size:1.08rem;font-weight:600;color:var(--ink);margin:0}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .contact-card{background:var(--tint);border-radius:var(--radius);padding:40px 36px}
+  .contact-card h3{font-size:1.1rem;font-weight:800;margin-bottom:16px}
+  .contact-line{display:flex;align-items:center;gap:13px;padding:14px 0;border-bottom:1px solid #E3DDF6;font-weight:600}
+  .contact-line:last-child{border-bottom:none}
+  .contact-line svg{width:21px;height:21px;stroke:var(--purple);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+  .contact-line a:hover{color:var(--purple)}
+  .breadcrumb{font-size:.85rem;color:var(--muted);margin-bottom:22px}
+  .breadcrumb a:hover{color:var(--purple)}
+  @media (max-width:900px){
+    .two-col,.svc-block,.about-grid,.contact-grid{grid-template-columns:1fr;gap:36px}
+    .plans{grid-template-columns:1fr}
+    .about-grid .portrait{position:static;max-width:420px}
   }
 
   /* Final brand lockup */
@@ -265,9 +311,8 @@
   .sebbymark{font-size:1.02rem;font-weight:700;letter-spacing:.24em;color:var(--ink)}
   .credit .lockup-inline strong{letter-spacing:.02em}
 
-  .portrait{padding:0}
-  .portrait img{width:100%;height:100%;object-fit:cover;object-position:top center}
-
+  .svc-visual{padding:0;overflow:hidden}
+  .svc-visual img{width:100%;height:100%;object-fit:cover;display:block}
 
 
 
@@ -317,26 +362,6 @@
   @media (max-width:640px){
     .sticky-cta{font-size:.88rem;padding:12px 20px}
   }
-
-  /* FAQ */
-  .faq{display:grid;gap:14px;max-width:44em}
-  .faq details{border:1px solid var(--line);border-radius:var(--radius-sm);padding:20px 24px;background:#fff;transition:border-color .15s}
-  .faq details[open]{border-color:var(--purple)}
-  .faq summary{font-weight:700;cursor:pointer;font-size:1rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
-  .faq summary::after{content:"+";color:var(--purple);font-size:1.4rem;font-weight:600;line-height:1}
-  .faq details[open] summary::after{content:"\2013"}
-  .faq details p{margin-top:12px;color:var(--ink-soft);font-size:.97rem}
-
-
-  /* Client logos */
-  .client-logos-bar{text-align:center;padding:28px 0 0}
-  .client-logos{display:flex;align-items:center;gap:48px;flex-wrap:wrap;justify-content:center;opacity:.75;transition:opacity .3s}
-  .client-logos:hover{opacity:1}
-  .client-logos a{display:inline-block;transition:transform .25s ease,opacity .25s ease}
-  .client-logos a:hover{transform:scale(1.06);opacity:.9}
-  .client-logos img{height:44px;width:auto}
-  .client-logos-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-
   /* ---------- Language Toggle ---------- */
   .lang-toggle{
     display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;
@@ -371,7 +396,6 @@
     :root:not([data-theme="light"]) .portrait{background:linear-gradient(160deg,#1D192D 0%,#1A1530 100%)}
     :root:not([data-theme="light"]) .process{background:#1A1C25}
     :root:not([data-theme="light"]) .tile .shot{background:linear-gradient(150deg,#1D192D,#1A1530)}
-    :root:not([data-theme="light"]) .tile .shot img{filter:brightness(.85) saturate(.9)}
     :root:not([data-theme="light"]) .svc-visual{background:linear-gradient(150deg,#1D192D,#1A1530);border-color:#2A2838}
     :root:not([data-theme="light"]) .svc-visual img{filter:brightness(.82) saturate(.9)}
     :root:not([data-theme="light"]) .care{background:#1A1C25}
@@ -393,8 +417,6 @@
     :root:not([data-theme="light"]) .logo-dark{display:block !important}
     :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
     :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
-    :root:not([data-theme="light"]) .client-logos img.logo-light{display:none !important}
-    :root:not([data-theme="light"]) .client-logos img.logo-dark{display:block !important}
   }
   [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
   [data-theme="dark"] .chip{background:rgba(30,32,42,.95);border-color:var(--line)}
@@ -403,7 +425,6 @@
   [data-theme="dark"] .portrait{background:linear-gradient(160deg,#1D192D 0%,#1A1530 100%)}
   [data-theme="dark"] .process{background:#1A1C25}
   [data-theme="dark"] .tile .shot{background:linear-gradient(150deg,#1D192D,#1A1530)}
-  [data-theme="dark"] .tile .shot img{filter:brightness(.85) saturate(.9)}
   [data-theme="dark"] .svc-visual{background:linear-gradient(150deg,#1D192D,#1A1530);border-color:#2A2838}
   [data-theme="dark"] .svc-visual img{filter:brightness(.82) saturate(.9)}
   [data-theme="dark"] .care{background:#1A1C25}
@@ -425,8 +446,6 @@
   [data-theme="dark"] .logo-dark{display:block !important}
   [data-theme="dark"] .foot-logo-light{display:none !important}
   [data-theme="dark"] .foot-logo-dark{display:block !important}
-  [data-theme="dark"] .client-logos img.logo-light{display:none !important}
-  [data-theme="dark"] .client-logos img.logo-dark{display:block !important}
 
 
   /* Theme transition (only applied during toggle, not page load) */
@@ -514,10 +533,10 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 
 <!-- seo:start -->
 <link rel="alternate" type="text/plain" title="LLM instructions" href="/llms.txt">
-<link rel="canonical" href="https://madebysebby.com/es/">
-<link rel="alternate" hreflang="en" href="https://madebysebby.com/">
-<link rel="alternate" hreflang="es" href="https://madebysebby.com/es/">
-<link rel="alternate" hreflang="x-default" href="https://madebysebby.com/">
+<link rel="canonical" href="https://madebysebby.com/es/auditoria-web.html">
+<link rel="alternate" hreflang="en" href="https://madebysebby.com/website-audit.html">
+<link rel="alternate" hreflang="es" href="https://madebysebby.com/es/auditoria-web.html">
+<link rel="alternate" hreflang="x-default" href="https://madebysebby.com/website-audit.html">
 <meta name="theme-color" content="#6C3CE9">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -527,75 +546,28 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Made by Sebby">
-<meta property="og:title" content="Diseño Web y Páginas Web para Negocios | Made by Sebby">
-<meta property="og:description" content="Diseño, desarrollo y cuidado de páginas web para pequeños negocios en Miami, el sur de Florida y República Dominicana. Sitios bilingües que generan confianza y convierten visitantes.">
+<meta property="og:title" content="Auditoría Web y Plan de Crecimiento de 90 Días">
+<meta property="og:description" content="Para negocios con un sitio web que rinde por debajo de lo que debería. Diagnóstico completo y un plan de 90 días, en inglés y español. Precio fijo.">
 <meta property="og:locale" content="es_ES">
-<meta property="og:url" content="https://madebysebby.com/es/">
+<meta property="og:url" content="https://madebysebby.com/es/auditoria-web.html">
 <meta property="og:image" content="https://madebysebby.com/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Diseño Web y Páginas Web para Negocios | Made by Sebby">
-<meta name="twitter:description" content="Diseño, desarrollo y cuidado mensual de páginas web para pequeños negocios. Sitios que generan confianza, convierten visitantes y crecen con tu negocio.">
+<meta name="twitter:title" content="Auditoría Web y Plan de Crecimiento de 90 Días">
+<meta name="twitter:description" content="Diagnóstico completo de tu sitio web actual y un plan de 90 días para arreglar primero lo que más importa. Precio fijo.">
 <meta name="twitter:image" content="https://madebysebby.com/assets/og-image.jpg">
+<!-- seo:end -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Made by Sebby",
-  "url": "https://madebysebby.com/es/",
-  "image": "https://madebysebby.com/assets/og-image.jpg",
-  "logo": {
-    "@type": "ImageObject",
-    "url": "https://madebysebby.com/assets/icons/icon-512.png",
-    "width": 512,
-    "height": 512
-  },
-  "description": "Diseño web y cuidado mensual para pequeños negocios en Miami, el sur de Florida y República Dominicana. Bilingüe, móvil primero. Consulta gratis.",
-  "email": "hello@madebysebby.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Miami",
-    "addressRegion": "FL",
-    "postalCode": "33175",
-    "addressCountry": "US"
-  },
-  "founder": {
-    "@type": "Person",
-    "name": "Sebastian Podgaetz",
-    "alternateName": "Sebby",
-    "jobTitle": "Freelance Web Designer & Developer",
-    "url": "https://madebysebby.com/es/sobre-mi.html"
+  "@type": "Service",
+  "name": "Auditoría Web y Plan de Crecimiento de 90 Días",
+  "description": "Para negocios que ya tienen un sitio web que no es un desastre, pero que rinde por debajo de lo que debería. No es un rediseño. Un diagnóstico completo de lo que frena tu sitio, y un plan de 90 días para arreglar primero lo que más importa.",
+  "provider": {
+    "@id": "https://madebysebby.com/#business"
   },
   "areaServed": [
-    {
-      "@type": "City",
-      "name": "Miami",
-      "containedInPlace": {
-        "@type": "State",
-        "name": "Florida",
-        "containedInPlace": {
-          "@type": "Country",
-          "name": "United States"
-        }
-      }
-    },
-    {
-      "@type": "City",
-      "name": "Coral Gables",
-      "containedInPlace": {
-        "@type": "State",
-        "name": "Florida"
-      }
-    },
-    {
-      "@type": "City",
-      "name": "Santo Domingo",
-      "containedInPlace": {
-        "@type": "Country",
-        "name": "Dominican Republic"
-      }
-    },
     {
       "@type": "Country",
       "name": "United States"
@@ -605,265 +577,32 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
       "name": "Dominican Republic"
     }
   ],
-  "serviceType": [
-    "Web Design",
-    "Web Development",
-    "Website Maintenance",
-    "SEO"
-  ],
-  "slogan": "Sitios web que generan confianza.",
-  "knowsAbout": [
-    "Web Design",
-    "Web Development",
-    "Website Maintenance",
-    "SEO",
-    "WordPress",
-    "Elementor",
-    "Custom Websites",
-    "Small Business Websites"
-  ],
-  "priceRange": "$$",
-  "sameAs": [
-    "https://g.page/r/CRmCP0Hp1prPEAI",
-    "https://www.linkedin.com/company/made-by-sebby/",
-    "https://instagram.com/madebysebby",
-    "https://clutch.co/profile/made-sebby",
-    "https://themanifest.com/company/made-sebby",
-    "https://cal.com/madebysebby",
-    "https://www.reddit.com/user/MadeBySebby/",
-    "https://github.com/SebbyServices"
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Web Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Diseño y desarrollo web",
-          "description": "Diseño y desarrollo web personalizado para pequeños negocios. Móvil primero, carga rápida, hecho para convertir."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Cuidado Web",
-          "description": "Mantenimiento mensual de sitios web: actualizaciones, respaldos, seguridad, optimización de velocidad y ediciones pequeñas."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "SEO. Aparece en Google",
-          "description": "SEO local, configuración del Perfil de Empresa de Google y optimización de búsqueda honesta que se acumula con el tiempo."
-        }
-      }
-    ]
-  },
-  "@id": "https://madebysebby.com/#business",
-  "alternateName": [
-    "Made by Sebby Web Design",
-    "MadeBySebby",
-    "madebysebby"
-  ],
-  "telephone": "+1-786-543-1417",
-  "openingHoursSpecification": [
+  "url": "https://madebysebby.com/es/auditoria-web.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "2500",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "09:00",
-      "closes": "18:00"
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://madebysebby.com/es/"
     },
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Saturday"
-      ],
-      "opens": "10:00",
-      "closes": "14:00"
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Auditoría Web",
+      "item": "https://madebysebby.com/es/auditoria-web.html"
     }
-  ],
-  "knowsLanguage": [
-    "en",
-    "es"
-  ],
-  "availableLanguage": [
-    "English",
-    "Spanish"
-  ],
-  "disambiguatingDescription": "Made by Sebby es un estudio de diseño web y cuidado de sitios en Miami, Florida, dirigido por Sebastian Podgaetz. Es un negocio de servicios y no vende ningún producto físico. NO tiene relación con Sebby Collection, Sebby Couture, ni con ninguna marca de ropa, abrigos, chaquetas o moda que use el nombre Sebby. Empresa distinta, industria distinta, sin propietarios en común.",
-  "inLanguage": "es"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Made by Sebby",
-  "url": "https://madebysebby.com/es/",
-  "description": "Diseño web y cuidado mensual para pequeños negocios en Miami, el sur de Florida y República Dominicana. Bilingüe, móvil primero. Consulta gratis.",
-  "publisher": {
-    "@type": "ProfessionalService",
-    "name": "Made by Sebby",
-    "url": "https://madebysebby.com/es/",
-    "@id": "https://madebysebby.com/#business",
-    "alternateName": [
-      "Made by Sebby Web Design",
-      "MadeBySebby",
-      "madebysebby"
-    ],
-    "telephone": "+1-786-543-1417",
-    "email": "hello@madebysebby.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Miami",
-      "addressRegion": "FL",
-      "postalCode": "33175",
-      "addressCountry": "US"
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Saturday"
-        ],
-        "opens": "10:00",
-        "closes": "14:00"
-      }
-    ],
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://madebysebby.com/assets/icons/icon-512.png",
-      "width": 512,
-      "height": 512
-    },
-    "knowsLanguage": [
-      "en",
-      "es"
-    ],
-    "availableLanguage": [
-      "English",
-      "Spanish"
-    ],
-    "sameAs": [
-      "https://g.page/r/CRmCP0Hp1prPEAI",
-      "https://www.linkedin.com/company/made-by-sebby/",
-      "https://instagram.com/madebysebby",
-      "https://clutch.co/profile/made-sebby",
-      "https://themanifest.com/company/made-sebby",
-      "https://cal.com/madebysebby",
-      "https://www.reddit.com/user/MadeBySebby/",
-      "https://github.com/SebbyServices"
-    ],
-    "disambiguatingDescription": "Made by Sebby es un estudio de diseño web y cuidado de sitios en Miami, Florida, dirigido por Sebastian Podgaetz. Es un negocio de servicios y no vende ningún producto físico. NO tiene relación con Sebby Collection, Sebby Couture, ni con ninguna marca de ropa, abrigos, chaquetas o moda que use el nombre Sebby. Empresa distinta, industria distinta, sin propietarios en común.",
-    "inLanguage": "es"
-  },
-  "inLanguage": "es"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Review",
-  "itemReviewed": {
-    "@type": "ProfessionalService",
-    "name": "Made by Sebby",
-    "url": "https://madebysebby.com/es/",
-    "@id": "https://madebysebby.com/#business",
-    "alternateName": [
-      "Made by Sebby Web Design",
-      "MadeBySebby",
-      "madebysebby"
-    ],
-    "telephone": "+1-786-543-1417",
-    "email": "hello@madebysebby.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Miami",
-      "addressRegion": "FL",
-      "postalCode": "33175",
-      "addressCountry": "US"
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Saturday"
-        ],
-        "opens": "10:00",
-        "closes": "14:00"
-      }
-    ],
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://madebysebby.com/assets/icons/icon-512.png",
-      "width": 512,
-      "height": 512
-    },
-    "knowsLanguage": [
-      "en",
-      "es"
-    ],
-    "availableLanguage": [
-      "English",
-      "Spanish"
-    ],
-    "sameAs": [
-      "https://g.page/r/CRmCP0Hp1prPEAI",
-      "https://www.linkedin.com/company/made-by-sebby/",
-      "https://instagram.com/madebysebby",
-      "https://clutch.co/profile/made-sebby",
-      "https://themanifest.com/company/made-sebby",
-      "https://cal.com/madebysebby",
-      "https://www.reddit.com/user/MadeBySebby/",
-      "https://github.com/SebbyServices"
-    ],
-    "disambiguatingDescription": "Made by Sebby es un estudio de diseño web y cuidado de sitios en Miami, Florida, dirigido por Sebastian Podgaetz. Es un negocio de servicios y no vende ningún producto físico. NO tiene relación con Sebby Collection, Sebby Couture, ni con ninguna marca de ropa, abrigos, chaquetas o moda que use el nombre Sebby. Empresa distinta, industria distinta, sin propietarios en común.",
-    "inLanguage": "es"
-  },
-  "author": {
-    "@type": "Person",
-    "name": "Jorge L. Riera"
-  },
-  "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": "5",
-    "bestRating": "5"
-  },
-  "reviewBody": "Sebby reconstruyó toda la presencia web de mi bufete. Trabaja rápido, explica todo en términos claros, y trata mi sitio como si fuera suyo. Le confío la cara digital de mi práctica."
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -873,50 +612,34 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Cuánto cuesta un sitio web?",
+      "name": "¿En qué se diferencia de la revisión gratuita?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cada proyecto es diferente, pero la mayoría de los sitios web para pequeños negocios están entre $2,500 y $9,000 USD. Te daré un número exacto después de nuestra primera conversación, sin sorpresas, sin cobros por hora que se acumulan."
+        "text": "La revisión gratuita es un vistazo rápido que te dice si algo anda mal. La auditoría es el diagnóstico completo: cada problema, por qué importa, y en qué orden arreglarlo."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cuánto tarda construir un sitio web?",
+      "name": "¿No sería mejor rehacer mi sitio?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Depende del tamaño. Un sitio pequeño toma 2–3 semanas desde el inicio hasta el lanzamiento, uno personalizado 4–6, y los proyectos más grandes 6–10. Verás el diseño en la primera semana y recibirás actualizaciones durante todo el proceso. No desapareceré por un mes para volver con algo que no pediste."
+        "text": "A veces sí, y te lo diré en la llamada gratuita. Si tu sitio está roto de raíz, un sitio nuevo es mejor inversión. La auditoría es para sitios que vale la pena conservar."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Soy dueño de mi sitio web?",
+      "name": "¿También haces los arreglos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí, 100%. Tu dominio, tu cuenta de hosting, tu contenido, tu código, todo es tuyo. Si algún día quieres seguir por otro lado, te entrego todo limpiamente. Sin situaciones de rehén."
+        "text": "Puedo hacerlos. El plan funciona sin importar quién lo ejecute. Si quieres que yo me encargue, lo definimos aparte una vez que tengas el plan."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Y si ya tengo un sitio web?",
+      "name": "¿Qué plataformas auditas?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Puedo rediseñarlo, reconstruirlo con mejor tecnología, o simplemente hacerme cargo de su cuidado. Hablaremos sobre qué funciona, qué no, y si una renovación o una reconstrucción completa tiene más sentido para tu negocio."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Trabajas con negocios fuera de EE.UU.?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Trabajo con clientes en EE.UU., República Dominicana y cualquier lugar donde se hable inglés o español. Todo se hace remotamente, las diferencias de zona horaria nunca han sido un problema."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Tienen relación con la marca de ropa Sebby?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Made by Sebby es un estudio de diseño web en Miami, dirigido por Sebastian Podgaetz. Existe una empresa de ropa llamada Sebby Collection que vende chaquetas y abrigos para mujer. No tenemos ninguna relación con ellos, no vendemos ropa, y ninguna de las dos empresas tiene que ver con la otra. Si buscas una chaqueta, es a ellos. Si quieres un sitio web, estás en el lugar correcto."
+        "text": "Cualquiera: WordPress, Wix, Squarespace, GoDaddy, Shopify o código a mano. Los problemas que te cuestan clientes se ven igual en todas."
       }
     }
   ]
@@ -924,12 +647,10 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 </script>
 </head>
 <body>
-<a class="skip-link" href="#top">Ir al contenido</a>
-
-<!-- ============ NAV ============ -->
+<a class="skip-link" href="#main">Ir al contenido</a>
 <nav>
   <div class="wrap nav-inner">
-    <a class="logo" href="#top" aria-label="Inicio de Made by Sebby"><img class="logo-light" src="/assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="/assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
+    <a class="logo" href="/es/" aria-label="Inicio de Made by Sebby"><img class="logo-light" src="/assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="/assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
     <button class="menu-btn" aria-label="Menú" onclick="document.querySelector('nav').classList.toggle('nav-open')">
           <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
           <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
@@ -942,7 +663,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
       <a href="/es/sobre-mi.html">Sobre mí</a>
       <div class="nav-controls">
         <div class="lang-toggle">
-          <a href="/" hreflang="en" lang="en" aria-label="View this page in English">EN</a>
+          <a href="/website-audit.html" hreflang="en" lang="en" aria-label="View this page in English">EN</a>
           <span class="active">ES</span>
         </div>
           <button class="theme-toggle" aria-label="Alternar modo oscuro" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
@@ -956,245 +677,114 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 </nav>
 
 <main>
-<!-- ============ HERO ============ -->
-<header class="hero" id="top">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow rise">Diseño web · Desarrollo · Cuidado web</div>
-      <h1 class="rise d1">Sitios web que <span class="accent">generan confianza.</span></h1>
-      <p class="lede rise d2">Diseño, construyo y cuido sitios web que ayudan a tu negocio a verse profesional, generar confianza y crecer con seguridad. Sin rodeos, sin jerga. Hablas conmigo, y lo construyo como si fuera mío.</p>
-      <div class="hero-ctas rise d3">
-        <a class="btn" href="/es/agendar.html">Trabaja con Sebby&nbsp;→</a>
-        <a class="btn btn-ghost" href="#work">Ver mi trabajo</a>
-      </div>
-      <p class="hero-note rise d3">Llamada gratuita de 15 minutos. Sin presión, respuestas claras.</p>
-    </div>
-    <div class="portrait rise d2">
-      <picture><source srcset="/assets/sebby.webp" type="image/webp"><img src="/assets/sebby.jpg" alt="Sebby, diseñador y desarrollador web, sonriendo en su estación de trabajo"></picture>
-      <div class="chip">
-        <span class="dot" aria-hidden="true"></span>
-        <span>Sebby está aceptando nuevos proyectos &nbsp;<em>· Responde en menos de un día</em></span>
-      </div>
-    </div>
+<header class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Auditoría Web</div>
+    <h1>Tu sitio funciona. Solo que no <span class="accent">trabaja lo suficiente</span>.</h1>
+    <p class="lede">Para negocios que ya tienen un sitio web que no es un desastre, pero que rinde por debajo de lo que debería. No es un rediseño. Un diagnóstico completo de lo que frena tu sitio, y un plan de 90 días para arreglar primero lo que más importa.</p>
   </div>
 </header>
 
-<!-- ============ TRUST BAR ============ -->
-<div class="trust">
-  <div class="wrap trust-inner">
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M5 21c1-4 3.5-6 7-6s6 2 7 6"/></svg>
-      Atención personal
-    </div>
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 12L2 9l4-6z"/><path d="M2 9h20M12 21 8 9l4-6 4 6-4 12"/></svg>
-      Calidad artesanal
-    </div>
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg>
-      Soporte confiable
-    </div>
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16M6 16l4-4 3 3 5-6"/><path d="M14 9h4v4"/></svg>
-      Diseñado para crecer
-    </div>
-  </div>
-  <div class="client-logos-bar">
-    <div class="client-logos-label">Confían en mí</div>
-    <div class="client-logos">
-      <a href="/es/caso-riera-law.html"><img class="logo-light" src="/assets/client-logos/rieralaw-light.webp" alt="Riera Law Firm" loading="lazy" style="display:block"><img class="logo-dark" src="/assets/client-logos/rieralaw-dark.webp" alt="Riera Law Firm" loading="lazy" style="display:none"></a>
-      <a href="/es/portafolio.html#ortho-flow"><img class="logo-light" src="/assets/client-logos/orthoflow-light.webp" alt="Ortho Flow Recovery" loading="lazy" style="display:block"><img class="logo-dark" src="/assets/client-logos/orthoflow-dark.webp" alt="Ortho Flow Recovery" loading="lazy" style="display:none"></a>
-      <a href="/es/caso-elite-care.html"><img class="logo-light" src="/assets/client-logos/elitecare-light.webp" alt="Elite Care Recovery" loading="lazy" style="display:block"><img class="logo-dark" src="/assets/client-logos/elitecare-dark.webp" alt="Elite Care Recovery" loading="lazy" style="display:none"></a>
-    </div>
-  </div>
-</div>
-
-<!-- ============ SERVICES ============ -->
-<section id="services">
+<section id="main" style="padding-top:24px">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>Tú manejas tu negocio. Yo me encargo de tu sitio web.</h2>
-      <p>Tres formas en que ayudo, todo en términos claros. Cada proyecto comienza con una conversación sobre lo que realmente necesitas, no un paquete que intento vender.</p>
+      <h2>Tres entregables. Un plan claro.</h2>
+      <p>Todo está escrito en lenguaje claro, para que puedas actuar sin necesitar que un desarrollador te lo traduzca.</p>
     </div>
     <div class="cards">
-      <a class="card reveal" href="/es/servicios.html">
-        <span class="tag">Hecho para convertir</span>
-        <div class="glyph">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8M12 18v3"/></svg>
-        </div>
-        <h3>Diseño y desarrollo web</h3>
-        <p>Diseño y construyo un sitio web del que estarás orgulloso, uno que hace que desconocidos confíen en ti lo suficiente para llamar, reservar o comprar.</p>
-      </a>
-      <a class="card reveal" href="/es/cuidado-web.html">
-        <span class="tag">Hecho para durar</span>
-        <div class="glyph">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg>
-        </div>
-        <h3>Cuidado Web</h3>
-        <p>Mantengo tu sitio rápido, seguro y actualizado mes tras mes, para que nunca tengas que preocuparte por él.</p>
-      </a>
-      <a class="card reveal" href="/es/servicios.html">
-        <span class="tag">Hecho para ser encontrado</span>
-        <div class="glyph">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-        </div>
-        <h3>Aparece en Google</h3>
-        <p>Ayudo a que la gente encuentre tu negocio cuando busca, con SEO honesto que crece con el tiempo.</p>
-      </a>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+        <h3>Auditoría técnica y de experiencia</h3>
+        <p>Velocidad, experiencia en móviles, bases de SEO, y los puntos débiles que hacen que los visitantes se vayan en vez de llamar, reservar o comprar.</p>
+      </div>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <h3>Plan de crecimiento de 90 días</h3>
+        <p>Un plan escrito con cada arreglo ordenado por impacto, para que el primer mes se dedique a los cambios que rinden primero.</p>
+      </div>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h10M9 4v4M7 8c0 4 3 7 7 8M13 8c-1 4-4 7-8 8"/><path d="m13 21 4-9 4 9M14.5 18h5"/></svg></div>
+        <h3>Recomendaciones bilingües de contenido y SEO</h3>
+        <p>Qué decir y dónde, en inglés y en español, para que los clientes te encuentren en el idioma en que buscan.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ PROCESS ============ -->
 <section style="padding-top:0">
-  <div class="wrap">
-    <div class="process">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <h2>Simple de principio a fin.</h2>
-          <p>Siempre sabes qué está pasando, cuánto cuesta y qué sigue.</p>
-        </div>
-        <div class="steps">
-          <div class="step reveal">
-            <h3>Hablamos</h3>
-            <p>Una llamada gratuita de 15 minutos sobre tu negocio y lo que necesita tu sitio web. Si no soy la persona indicada, te lo digo.</p>
-          </div>
-          <div class="step reveal">
-            <h3>Diseño y construyo</h3>
-            <p>Ves el diseño antes de que se construya nada, y recibes actualizaciones claras mientras lo armo.</p>
-          </div>
-          <div class="step reveal">
-            <h3>Lanzas, yo me quedo</h3>
-            <p>Tu sitio sale al aire, y yo lo mantengo rápido, seguro y actualizado. Cuando necesites un cambio, me escribes.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ WORK ============ -->
-<section id="work" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>Trabajo reciente.</h2>
-      <p>Negocios reales, resultados reales. Cada uno de estos dueños puede contarte cómo es trabajar conmigo.</p>
-    </div>
-    <div class="work-grid work-duo">
-      <a class="tile reveal" href="/es/caso-riera-law.html">
-        <div class="shot"><picture><source srcset="/assets/hero-rieralaw.webp" type="image/webp"><img src="/assets/hero-rieralaw.jpg" alt="Página de inicio de Riera Law Firm: abogado de arbitraje de valores con fondo de tribunal" loading="lazy"></picture></div>
-        <div class="meta"><h3>Riera Law Firm</h3><p>Derecho de valores · Sitio bilingüe completo, 70+ páginas, cuidado continuo</p></div>
-      </a>
-      <a class="tile reveal" href="/es/caso-elite-care.html">
-        <div class="shot"><picture><source srcset="/assets/hero-elitecare.webp" type="image/webp"><img src="/assets/hero-elitecare.jpg" alt="Página de inicio de Elite Care Recovery: terapia premium de frío y compresión para pacientes postoperatorios" loading="lazy"></picture></div>
-        <div class="meta"><h3>Elite Care Recovery</h3><p>Equipo médico · Sitio completo, GitHub Pages</p></div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TESTIMONIALS ============ -->
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>Lo que dicen mis clientes.</h2>
-    </div>
-    <div class="quotes">
-      <div class="quote reveal">
-        <div class="mark" aria-hidden="true">"</div>
-        <p class="body">Sebby reconstruyó toda la presencia web de mi bufete. Trabaja rápido, explica todo en términos claros, y trata mi sitio como si fuera suyo. Le confío la cara digital de mi práctica.</p>
-        <div class="who">
-          <div class="avatar">JR</div>
-          <div><strong>Jorge L. Riera</strong><span>Socio Fundador, Riera Law Firm</span></div>
-        </div>
-      </div>
-      <div class="quote reveal">
-        <div class="mark" aria-hidden="true">"</div>
-        <p class="body">Trabajar con Sebastian ha sido una experiencia fantástica. Tomó nuestra visión para Elite Care Recovery y construyó un sitio web profesional que superó nuestras expectativas, desde mostrar nuestro equipo de recuperación NICE1 hasta facilitar que los pacientes reserven en línea. Su comunicación y tiempo de entrega fueron excepcionales durante todo el proceso. Lo recomiendo ampliamente a cualquiera que busque un desarrollador web talentoso y confiable que realmente se preocupa por entregar un gran resultado.</p>
-        <div class="who">
-          <div class="avatar">JP</div>
-          <div><strong>John Pierce</strong><span>Cofundador, Elite Care Recovery</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CARE CALLOUT ============ -->
-<section id="care" style="padding-top:0">
   <div class="wrap">
     <div class="care reveal">
       <div>
-        <h2>Tu sitio web no debería ser otro trabajo en tu lista.</h2>
-        <p>La mayoría de los sitios web se deterioran lentamente. Los plugins se desactualizan, las páginas se vuelven lentas, se abren brechas de seguridad, y nadie se da cuenta hasta que un cliente lo nota. Con Cuidado Web, yo lo noto primero.</p>
-        <a class="btn" href="/es/cuidado-web.html">Ver Cuidado Web&nbsp;→</a>
+        <h2>Un precio fijo. Sin rediseñar nada.</h2>
+        <p>La Auditoría Web y Plan de Crecimiento de 90 Días cuesta $2,500 USD, un solo pago. El plan es tuyo, ya sea que yo haga los arreglos, los hagas tú, o los haga otra persona.</p>
+        <a class="btn" href="/es/agendar.html">Agenda primero una llamada gratis&nbsp;&#8594;</a>
       </div>
       <ul>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Actualizaciones, respaldos y seguridad manejados cada mes</li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Revisiones de velocidad para que tu sitio cargue rápido en cualquier teléfono</li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Cambios pequeños cuando los necesites, solo escríbeme</li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Una persona real que ya conoce tu sitio</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tu sitio recibe visitas pero pocas llamadas o reservas</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Se ve bien en la computadora y torpe en el teléfono</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tu competencia aparece en Google y tú no</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Atiendes a hispanohablantes pero tu sitio solo habla inglés</li>
       </ul>
     </div>
   </div>
 </section>
 
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Cómo funciona.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <h3>Llamada gratis</h3>
+        <p>Quince minutos para confirmar que la auditoría es lo correcto. Si tu sitio necesita un rediseño, te lo diré antes de que pagues nada.</p>
+      </div>
+      <div class="step reveal">
+        <h3>La auditoría</h3>
+        <p>Reviso tu sitio como lo haría un cliente y como lo haría un buscador, en teléfonos reales y en computadora.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Tu plan</h3>
+        <p>Recibes la auditoría escrita y el plan de 90 días, y lo repasamos juntos para que cada punto tenga sentido.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- ============ FAQ ============ -->
 <section style="padding-top:0">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>Preguntas frecuentes.</h2>
+      <h2>Preguntas justas.</h2>
     </div>
     <div class="faq">
-      <details class="reveal">
-        <summary>¿Cuánto cuesta un sitio web?</summary>
-        <p>Cada proyecto es diferente, pero la mayoría de los sitios web para pequeños negocios están entre $2,500 y $9,000 USD. Te daré un número exacto después de nuestra primera conversación, sin sorpresas, sin cobros por hora que se acumulan.</p>
+      <details>
+        <summary>¿En qué se diferencia de la revisión gratuita?</summary>
+        <p>La revisión gratuita es un vistazo rápido que te dice si algo anda mal. La auditoría es el diagnóstico completo: cada problema, por qué importa, y en qué orden arreglarlo.</p>
       </details>
-      <details class="reveal">
-        <summary>¿Cuánto tarda construir un sitio web?</summary>
-        <p>Depende del tamaño. Un sitio pequeño toma 2–3 semanas desde el inicio hasta el lanzamiento, uno personalizado 4–6, y los proyectos más grandes 6–10. Verás el diseño en la primera semana y recibirás actualizaciones durante todo el proceso. No desapareceré por un mes para volver con algo que no pediste.</p>
+      <details>
+        <summary>¿No sería mejor rehacer mi sitio?</summary>
+        <p>A veces sí, y te lo diré en la llamada gratuita. Si tu sitio está roto de raíz, un sitio nuevo es mejor inversión. La auditoría es para sitios que vale la pena conservar.</p>
       </details>
-      <details class="reveal">
-        <summary>¿Soy dueño de mi sitio web?</summary>
-        <p>Sí, 100%. Tu dominio, tu cuenta de hosting, tu contenido, tu código, todo es tuyo. Si algún día quieres seguir por otro lado, te entrego todo limpiamente. Sin situaciones de rehén.</p>
+      <details>
+        <summary>¿También haces los arreglos?</summary>
+        <p>Puedo hacerlos. El plan funciona sin importar quién lo ejecute. Si quieres que yo me encargue, lo definimos aparte una vez que tengas el plan.</p>
       </details>
-      <details class="reveal">
-        <summary>¿Y si ya tengo un sitio web?</summary>
-        <p>Puedo rediseñarlo, reconstruirlo con mejor tecnología, o simplemente hacerme cargo de su cuidado. Hablaremos sobre qué funciona, qué no, y si una renovación o una reconstrucción completa tiene más sentido para tu negocio.</p>
-      </details>
-      <details class="reveal">
-        <summary>¿Trabajas con negocios fuera de EE.UU.?</summary>
-        <p>Sí. Trabajo con clientes en EE.UU., República Dominicana y cualquier lugar donde se hable inglés o español. Todo se hace remotamente, las diferencias de zona horaria nunca han sido un problema.</p>
-      </details>
-      <details class="reveal">
-        <summary>¿Tienen relación con la marca de ropa Sebby?</summary>
-        <p>No. Made by Sebby es un estudio de diseño web en Miami, dirigido por Sebastian Podgaetz. Existe una empresa de ropa llamada Sebby Collection que vende chaquetas y abrigos para mujer. No tenemos ninguna relación con ellos, no vendemos ropa, y ninguna de las dos empresas tiene que ver con la otra. Si buscas una chaqueta, es a ellos. Si quieres un sitio web, estás en el lugar correcto.</p>
+      <details>
+        <summary>¿Qué plataformas auditas?</summary>
+        <p>Cualquiera: WordPress, Wix, Squarespace, GoDaddy, Shopify o código a mano. Los problemas que te cuestan clientes se ven igual en todas.</p>
       </details>
     </div>
   </div>
 </section>
 
-<section style="padding:40px 0 0">
-  <div class="wrap" style="text-align:center">
-    <p style="font-size:.95rem;color:var(--muted)">Sirviendo <a href="/es/diseno-web-miami.html" style="color:var(--purple);text-decoration:underline">Miami</a>, <a href="/es/diseno-web-fort-lauderdale.html" style="color:var(--purple);text-decoration:underline">Fort Lauderdale</a>, Coral Gables, Doral, Hialeah, y todo el sur de la Florida. También en <a href="/es/diseno-web-santo-domingo.html" style="color:var(--purple);text-decoration:underline">Santo Domingo</a> y República Dominicana.</p>
-  </div>
-</section>
-
-<!-- ============ FINAL CTA ============ -->
-<section class="final" id="contact" style="padding-top:20px">
+<section class="final" style="padding-top:30px">
   <div class="wrap">
-    <h2>Hagamos que tu negocio se vea tan bien en línea como en persona.</h2>
-    <p>Cuéntame sobre tu negocio. Te diré exactamente qué construiría y cuánto cuesta.</p>
-    <a class="btn" href="/es/agendar.html">Trabaja con Sebby&nbsp;→</a>
+    <h2>¿No sabes si necesitas una auditoría o un sitio nuevo?</h2>
+    <p>Cuéntame de tu sitio en una llamada gratis y te diré cuál elegiría yo. ¿Empiezas desde cero? <a href="/es/precios.html" style="color:var(--purple);font-weight:600;text-decoration:underline">Mira los precios de proyectos</a>.</p>
+    <a class="btn" href="/es/agendar.html">Reserva una llamada gratuita de 15 minutos&nbsp;→</a>
   </div>
 </section>
 
-<div class="sticky-cta" id="stickyCta">
-  <a href="/es/agendar.html">¿Listo para hablar? Agenda una llamada gratis&nbsp;→</a>
-</div>
-
-<!-- ============ FOOTER ============ -->
 </main>
 
 <footer>
@@ -1253,7 +843,6 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
     </div>
   </div>
 </footer>
-
 <script>!function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})}()</script>
 <script>!function(){var cta=document.getElementById('stickyCta');if(!cta)return;var footer=document.querySelector('footer');var shown=false;window.addEventListener('scroll',function(){var y=window.scrollY;var fTop=footer?footer.getBoundingClientRect().top+y-window.innerHeight:Infinity;if(y>400&&y<fTop){if(!shown){cta.classList.add('show');shown=true}}else{if(shown){cta.classList.remove('show');shown=false}}},{passive:true})}()</script>
 

@@ -368,6 +368,7 @@ def check_links():
 NON_TRANSLATABLE = {
     "Blog", "Made by Sebby", "hello@madebysebby.com", "EN", "ES", "Sebby",
     "Riera Law Firm", "Elite Care Recovery", "rieralaw.com", "elitecarerecovery.net",
+    "Ortho Flow Recovery", "orthoflowrecovery.com", "orthoflowrecovery.com →",
     "rieralaw.com →", "elitecarerecovery.net →", "madebysebby.com",
     "Jorge L. Riera", "John Pierce", "JP", "JR", "EC",
     "WhatsApp", "Cal.com", "Google", "Instagram", "LinkedIn", "SEO",
@@ -431,6 +432,7 @@ def check_bilingual_coverage():
 # ---------------------------------------------------------------------------
 BRAND_ALT = {
     "Made by Sebby", "Riera Law Firm", "Elite Care Recovery",
+    "Ortho Flow Recovery", "Ortho Flow Recovery: Miami, Florida",
     "Riera Law Firm, Coral Gables, Florida", "Riera Law Firm: Coral Gables, Florida",
 }
 

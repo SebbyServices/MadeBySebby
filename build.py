@@ -158,6 +158,28 @@ PAGES = {
             tw_desc="Planes accesibles de mantenimiento mensual. Actualizaciones, respaldos diarios, seguridad, velocidad y ediciones incluidas.",
         ),
     ),
+    "website-audit.html": dict(
+        es="auditoria-web.html",
+        meta=dict(
+            title="Auditoría Web y Plan de Crecimiento de 90 Días",
+            desc="Auditoría técnica, de experiencia y SEO de tu sitio web actual, más un plan escrito de 90 días para arreglar primero lo que más importa. Bilingüe.",
+            og_title="Auditoría Web y Plan de Crecimiento de 90 Días",
+            og_desc="Para negocios con un sitio web que rinde por debajo de lo que debería. Diagnóstico completo y un plan de 90 días, en inglés y español. Precio fijo.",
+            tw_title="Auditoría Web y Plan de Crecimiento de 90 Días",
+            tw_desc="Diagnóstico completo de tu sitio web actual y un plan de 90 días para arreglar primero lo que más importa. Precio fijo.",
+        ),
+    ),
+    "content-production.html": dict(
+        es="produccion-de-contenido.html",
+        meta=dict(
+            title="Producción de Contenido para Redes | Made by Sebby",
+            desc="Edición mensual de video corto, programación de publicaciones y textos para redes sociales de pequeños negocios en Miami y el sur de Florida.",
+            og_title="Producción de Contenido para Redes | Made by Sebby",
+            og_desc="Edición de video corto, programación de publicaciones y textos ligeros cada mes. En inglés, español o ambos. A la medida de tu negocio.",
+            tw_title="Producción de Contenido para Redes | Made by Sebby",
+            tw_desc="Edición de video corto, programación de publicaciones y textos ligeros cada mes, en inglés y español.",
+        ),
+    ),
     "blog.html": dict(
         es="blog.html",
         meta=dict(
@@ -457,6 +479,8 @@ ALT_ES = {
         "Página de inicio de Elite Care Recovery: terapia premium de frío y compresión para pacientes postoperatorios",
     "Riera Law Firm homepage hero": "Portada del sitio de Riera Law Firm",
     "Elite Care Recovery homepage hero": "Portada del sitio de Elite Care Recovery",
+    "Ortho Flow Recovery homepage hero": "Portada del sitio de Ortho Flow Recovery",
+    "Ortho Flow Recovery: Miami, Florida": "Ortho Flow Recovery: Miami, Florida",
     "Elite Care Recovery, South Florida": "Elite Care Recovery, sur de Florida",
     "Elite Care Recovery: South Florida": "Elite Care Recovery: sur de Florida",
 }
@@ -950,6 +974,7 @@ FOOTER_TEMPLATE = '''<footer>
   </div>
   <div class="wrap ft-bottom">
     <p class="ft-copy">&copy; %(year)s Made by Sebby. <span lang="en">Web design and website care for small businesses in Miami and South Florida.</span><span lang="es">Diseño web y cuidado de sitios para pequeños negocios en Miami, el sur de Florida y Santo Domingo.</span></p>
+    <p class="ft-copy"><span lang="en">Need tech support instead? <a href="https://sebbyservices.com/" rel="noopener">Sebby IT</a> covers computers, networks and security.</span><span lang="es">¿Necesitas soporte técnico? <a href="https://sebbyservices.com/" rel="noopener">Sebby IT</a> cubre computadoras, redes y seguridad.</span></p>
     <div class="ft-legal">
       <a href="/privacy.html"><span lang="en">Privacy</span><span lang="es">Privacidad</span></a>
       <a href="/terms.html"><span lang="en">Terms</span><span lang="es">Términos</span></a>
@@ -1041,6 +1066,13 @@ PRICES = {
     "{{CARE_OVERAGE}}": "$125",
     "{{PRICE_SPANISH_STRATEGY}}": "$750",
     "{{PRICE_EXTRA_PAGE}}": "$150",
+    # Two offers moved over from Sebby IT on 2026-09-22 (see the Claude Project
+    # instructions). The audit is the "fix what you have" option beside the
+    # build tiers; content production is a monthly retainer scoped per client,
+    # so it publishes a range rather than one figure.
+    "{{PRICE_AUDIT}}": "$2,500",
+    "{{CONTENT_LOW}}": "$1,500",
+    "{{CONTENT_HIGH}}": "$3,000",
 
     # Delivery windows and post-launch support. Tokenized 2026-08-15 because
     # precios.html promised the DR a faster build than pricing.html sold in
@@ -1088,6 +1120,9 @@ PRICES = {
     "{{N_CARE_GROWTH}}": "549",
     "{{N_SPANISH_STRATEGY}}": "750",
     "{{N_EXTRA_PAGE}}": "150",
+    "{{N_AUDIT}}": "2500",
+    "{{N_CONTENT_LOW}}": "1500",
+    "{{N_CONTENT_HIGH}}": "3000",
 }
 
 
@@ -1218,6 +1253,9 @@ CRUMBS = {
     "book.html": {"en": "Book a Call", "es": "Reservar Llamada"},
     "pricing.html": {"en": "Pricing", "es": "Precios"},
     "website-care.html": {"en": "Website Care", "es": "Cuidado Web"},
+    "website-audit.html": {"en": "Website Audit", "es": "Auditoría Web"},
+    "content-production.html": {"en": "Content Production",
+                                "es": "Producción de Contenido"},
     "blog.html": {"en": "Blog", "es": "Blog"},
     "privacy.html": {"en": "Privacy Policy", "es": "Política de Privacidad"},
     "terms.html": {"en": "Terms of Service", "es": "Términos de Servicio"},
@@ -1284,6 +1322,7 @@ def breadcrumbs_for(source, lang):
 # Jorge's testimonial is the Spanish text already published on the portfolio page,
 # not a re-translation, so the schema quotes him exactly as the site does.
 SCHEMA_ES = {
+    "Website Audit and 90-Day Growth Plan": "Auditoría Web y Plan de Crecimiento de 90 Días",
     "Custom website design and development for small businesses. Mobile-first, fast-loading, built to convert.": "Diseño y desarrollo web personalizado para pequeños negocios. Móvil primero, carga rápida, hecho para convertir.",
     "Custom web design and development for small businesses. Mobile-first, fast-loading websites built to convert visitors into customers.": "Diseño y desarrollo web personalizado para pequeños negocios. Sitios rápidos, móvil primero, hechos para convertir visitantes en clientes.",
     "Custom Web Design & Development": "Diseño y Desarrollo Web Personalizado",

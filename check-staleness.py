@@ -66,6 +66,8 @@ VALUE = [
     (r"^/(es/)?diseno-web-abogados-santo-domingo\.html$", 62, "the DR law-firm vertical, added 2026-09-05 after confirming the site was absent from this exact query"),
     (r"^/(es/)?diseno-web-santo-domingo\.html$", 60, "the DR market"),
     (r"(services|servicios)\.html$",       55, "the service list"),
+    (r"(website-audit|auditoria-web)\.html$", 58, "the audit offer, added 2026-09-22"),
+    (r"(content-production|produccion-de-contenido)\.html$", 52, "the content retainer, added 2026-09-22"),
     (r"^/(es/)?(case-study|caso)-", 50, "proof, cited by AI answers"),
     (r"(work|portafolio)\.html$",          45, "portfolio"),
     (r"(about|sobre-mi)\.html$",           40, "entity and location signals"),

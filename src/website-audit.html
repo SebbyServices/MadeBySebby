@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DV4L5CZRML"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DV4L5CZRML');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portafolio. Proyectos y Resultados | Made by Sebby</title>
+<title>Website Audit & 90-Day Growth Plan | Made by Sebby</title>
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Sebby. Made by Sebby">
-<meta name="description" content="Sitios web diseñados por Sebby para pequeños negocios en Miami y el sur de Florida. Casos reales de clientes, testimonios y resultados.">
-<link rel="preload" as="image" href="/assets/logo/sebby-nav.svg">
+<meta name="description" content="A full technical, UX and SEO audit of your existing website, plus a written 90-day plan to fix what matters first. Bilingual EN/ES. {{PRICE_AUDIT}} flat.">
+<link rel="preload" as="image" href="assets/logo/sebby-nav.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Fonts load without blocking first paint. The URL already carries display=swap,
@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" media="print" onload="this.onload=null;this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"></noscript>
 <script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
+<script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
 <style>
   :root{
     --ink:#1A1D29;
@@ -55,11 +56,11 @@
   .logo .made{font-weight:500;color:var(--muted)}
   .logo .sebby{color:var(--ink)}
   .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
-  .nav-links>a{color:var(--ink-soft);transition:color .15s}
-  .nav-links>a.btn{color:#fff}
-  .nav-links>a.btn:hover{color:#fff}
+  .nav-links a{color:var(--ink-soft);transition:color .15s}
+  .nav-links a.btn{color:#fff}
+  .nav-links a.btn:hover{color:#fff}
   .nav-controls{display:contents}
-  .nav-links>a:hover{color:var(--purple)}
+  .nav-links a:hover{color:var(--purple)}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
     background:var(--purple-cta);color:#fff;font-weight:600;font-size:.98rem;
@@ -170,16 +171,13 @@
   .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   .tile{
     border-radius:var(--radius);border:1px solid var(--line);overflow:hidden;
-    background:var(--white);transition:transform .18s, box-shadow .18s, border-color .18s;
-    cursor:pointer;
+    background:var(--white);transition:transform .18s, box-shadow .18s;
   }
-  .tile:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(108,60,233,.15);border-color:var(--purple)}
+  .tile:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08)}
   .tile .shot{
     aspect-ratio:16/10.5;background:linear-gradient(150deg,#EFEAFB,#E2D9F8);
-    display:flex;align-items:center;justify-content:center;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
   }
-  .tile .shot img{transition:transform .3s ease}
-  .tile:hover .shot img{transform:scale(1.03)}
   .tile .shot span{
     font-size:.8rem;font-weight:600;color:var(--purple);
     background:#fff;border:1px dashed var(--purple);padding:7px 14px;border-radius:999px;
@@ -275,7 +273,6 @@
   .plan:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08)}
   .plan.featured{border:2px solid var(--purple);position:relative}
   .plan.featured::before{content:"Most popular";position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--purple-cta);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 16px;border-radius:999px}
-  .plan.featured::before{content:"Más popular"}
   .plan h3{font-size:1.2rem;font-weight:800;margin-bottom:4px}
   .plan .for{font-size:.88rem;color:var(--muted);margin-bottom:18px}
   .plan .price{font-size:2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:4px}
@@ -315,14 +312,8 @@
   .sebbymark{font-size:1.02rem;font-weight:700;letter-spacing:.24em;color:var(--ink)}
   .credit .lockup-inline strong{letter-spacing:.02em}
 
-  /* Site preview card */
-  .sitecard{display:block;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(26,29,41,.10);transition:transform .18s, box-shadow .18s;background:#fff}
-  a.sitecard:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(26,29,41,.16)}
-  .sitecard .bar{background:#EDEDF2;padding:9px 14px;display:flex;align-items:center;gap:8px}
-  .sitecard .dot{width:9px;height:9px;border-radius:50%}
-  .sitecard .url{margin-left:8px;background:#fff;border-radius:999px;padding:3px 14px;font-size:.72rem;color:#5a5e6b;font-weight:500}
-  .sitecard-hero{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;object-position:top center}
-  .sitecard .visit{background:#fff;padding:13px 18px;font-size:.88rem;font-weight:700;color:var(--purple);display:flex;justify-content:space-between;align-items:center}
+  .svc-visual{padding:0;overflow:hidden}
+  .svc-visual img{width:100%;height:100%;object-fit:cover;display:block}
 
 
 
@@ -343,9 +334,9 @@
     }
     .nav-open{backdrop-filter:none;overflow:visible}
     .nav-open .nav-links{display:flex}
-    .nav-links>a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
-    .nav-links>a:last-child{border-bottom:none}
-    .nav-links>a.btn{margin-top:12px;justify-content:center;border-bottom:none}
+    .nav-links a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
+    .nav-links a:last-child{border-bottom:none}
+    .nav-links a.btn{margin-top:12px;justify-content:center;border-bottom:none}
     /* language + theme sit on one row, theme to the right of the pill */
     .nav-links .nav-controls{display:flex;align-items:center;gap:14px;margin-top:8px;align-self:flex-start}
   }
@@ -373,16 +364,17 @@
     .sticky-cta{font-size:.88rem;padding:12px 20px}
   }
   /* ---------- Language Toggle ---------- */
+  :root:not([data-lang="es"]) [lang="es"]{display:none}
+  [data-lang="es"] [lang="en"]{display:none}
   .lang-toggle{
     display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;
     font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0;
   }
-  .lang-toggle>*{
+  .lang-toggle button{
     background:none;border:none;padding:7px 12px;cursor:pointer;
     color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em;
-    text-decoration:none;display:flex;align-items:center;
   }
-  .lang-toggle>*:hover{color:var(--purple)}
+  .lang-toggle button:hover{color:var(--purple)}
   .lang-toggle button.active{background:var(--purple-cta);color:#fff}
 
   /* ---------- Dark Mode ---------- */
@@ -416,7 +408,6 @@
     :root:not([data-theme="light"]) .care .btn{background:var(--purple-cta);color:#fff}
     :root:not([data-theme="light"]) .care .btn:hover{background:var(--purple-cta-deep)}
     :root:not([data-theme="light"]) .sitecard{background:#1A1C25}
-    :root:not([data-theme="light"]) .sitecard-hero{filter:brightness(.85) saturate(.9)}
     :root:not([data-theme="light"]) .sitecard .bar{background:#222430}
     :root:not([data-theme="light"]) .sitecard .url{background:#1A1C25;color:#717580}
     :root:not([data-theme="light"]) .sitecard .visit{background:#1A1C25}
@@ -446,7 +437,6 @@
   [data-theme="dark"] .care .btn{background:var(--purple-cta);color:#fff}
   [data-theme="dark"] .care .btn:hover{background:var(--purple-cta-deep)}
   [data-theme="dark"] .sitecard{background:#1A1C25}
-  [data-theme="dark"] .sitecard-hero{filter:brightness(.85) saturate(.9)}
   [data-theme="dark"] .sitecard .bar{background:#222430}
   [data-theme="dark"] .sitecard .url{background:#1A1C25;color:#717580}
   [data-theme="dark"] .sitecard .visit{background:#1A1C25}
@@ -499,56 +489,14 @@
     img{max-width:100%!important;filter:none!important}
     .reveal{opacity:1!important;transform:none!important}
   }
-
-/* Footer: generated by build.py. Do not edit here, edit FOOTER_TEMPLATE. */
-footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
-.foot-inner{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.1fr;gap:40px;align-items:start;justify-content:normal}
-.ft-brand{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
-.ft-brand img{height:44px;width:auto;display:block}
-.foot-logo-dark{display:none}
-.ft-tag{font-size:.92rem;color:var(--muted);line-height:1.6;max-width:32ch;margin:0}
-.ft-tag strong{color:var(--ink);font-weight:700}
-.ft-nap{display:flex;flex-direction:column;gap:5px;font-size:.88rem;color:var(--muted);font-style:normal;line-height:1.5}
-.ft-nap a{color:var(--muted)}
-.ft-nap a:hover{color:var(--purple)}
-/* No opacity here. --muted on --white is 4.94:1, which passes AA, but fading it
-   to 85% blended it to roughly 3.9:1 and was the ONLY accessibility failure
-   Lighthouse reported, on all 52 pages. The smaller font already carries the
-   visual hierarchy this was reaching for. */
-.ft-hours{font-size:.82rem}
-.ft-head{font-size:.74rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink);margin:0 0 14px}
-.ft-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
-.ft-col a{font-size:.9rem;color:var(--muted)}
-.ft-col a:hover{color:var(--purple)}
-.ft-col-cta{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
-.ft-col-cta a.ft-cta{display:inline-block;padding:11px 20px;border-radius:var(--radius-sm);background:var(--purple);color:#fff;font-size:.88rem;font-weight:600;line-height:1}
-.ft-col-cta a.ft-cta:hover{background:var(--purple-deep);color:#fff}
-.ft-bottom{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:44px;padding-top:22px;padding-bottom:26px;border-top:1px solid var(--line)}
-.ft-copy{font-size:.82rem;color:var(--muted);margin:0;flex:1 1 320px;line-height:1.6}
-.ft-legal{display:flex;gap:20px;font-size:.82rem}
-.ft-legal a{color:var(--muted)}
-.ft-legal a:hover{color:var(--purple)}
-.ft-social{display:flex;gap:10px;margin-left:auto}
-.ft-social a{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--muted)}
-.ft-social a:hover{color:var(--purple);border-color:var(--purple)}
-.ft-social svg{width:15px;height:15px;fill:currentColor}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-@media(max-width:900px){.foot-inner{grid-template-columns:1fr 1fr;gap:34px}.ft-brand{grid-column:1/-1}}
-@media(max-width:560px){.foot-inner{grid-template-columns:1fr;gap:30px}.ft-bottom{margin-top:34px}.ft-social{margin-left:0}}
-:root:not([data-theme="light"]) .foot-logo-light{display:none}
-:root:not([data-theme="light"]) .foot-logo-dark{display:block}
-[data-theme="dark"] .foot-logo-light{display:none}
-[data-theme="dark"] .foot-logo-dark{display:block}
-[data-theme="light"] .foot-logo-light{display:block}
-[data-theme="light"] .foot-logo-dark{display:none}
 </style>
 
 <!-- seo:start -->
 <link rel="alternate" type="text/plain" title="LLM instructions" href="/llms.txt">
-<link rel="canonical" href="https://madebysebby.com/es/portafolio.html">
-<link rel="alternate" hreflang="en" href="https://madebysebby.com/work.html">
-<link rel="alternate" hreflang="es" href="https://madebysebby.com/es/portafolio.html">
-<link rel="alternate" hreflang="x-default" href="https://madebysebby.com/work.html">
+<link rel="canonical" href="https://madebysebby.com/website-audit.html">
+<link rel="alternate" hreflang="en" href="https://madebysebby.com/website-audit.html">
+<link rel="alternate" hreflang="es" href="https://madebysebby.com/website-audit.html">
+<link rel="alternate" hreflang="x-default" href="https://madebysebby.com/website-audit.html">
 <meta name="theme-color" content="#6C3CE9">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -558,132 +506,42 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Made by Sebby">
-<meta property="og:title" content="Portafolio. Proyectos y Resultados | Made by Sebby">
-<meta property="og:description" content="Mira sitios web diseñados y construidos por Sebby para negocios reales, bufetes de abogados, empresas de equipo médico y más. Con testimonios reales de clientes.">
-<meta property="og:locale" content="es_ES">
-<meta property="og:url" content="https://madebysebby.com/es/portafolio.html">
+<meta property="og:title" content="Website Audit & 90-Day Growth Plan | Made by Sebby">
+<meta property="og:description" content="A full technical, UX and SEO audit of your existing website, plus a written 90-day plan to fix what matters first. Bilingual EN/ES. {{PRICE_AUDIT}} flat.">
+<meta property="og:url" content="https://madebysebby.com/website-audit.html">
 <meta property="og:image" content="https://madebysebby.com/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Portafolio. Proyectos y Resultados | Made by Sebby">
-<meta name="twitter:description" content="Mira sitios web diseñados y construidos por Sebby para negocios reales, bufetes de abogados, empresas de equipo médico y más.">
+<meta name="twitter:title" content="Website Audit & 90-Day Growth Plan | Made by Sebby">
+<meta name="twitter:description" content="A full technical, UX and SEO audit of your existing website, plus a written 90-day plan to fix what matters first. Bilingual EN/ES. {{PRICE_AUDIT}} flat.">
 <meta name="twitter:image" content="https://madebysebby.com/assets/og-image.jpg">
 <!-- seo:end -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Portafolio. Proyectos y Resultados | Made by Sebby",
-  "url": "https://madebysebby.com/es/portafolio.html",
-  "description": "Sitios web diseñados por Sebby para pequeños negocios en Miami y el sur de Florida. Casos reales de clientes, testimonios y resultados.",
-  "publisher": {
-    "@type": "ProfessionalService",
-    "name": "Made by Sebby",
-    "url": "https://madebysebby.com/es/",
-    "@id": "https://madebysebby.com/#business",
-    "alternateName": [
-      "Made by Sebby Web Design",
-      "MadeBySebby",
-      "madebysebby"
-    ],
-    "telephone": "+1-786-543-1417",
-    "email": "hello@madebysebby.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Miami",
-      "addressRegion": "FL",
-      "postalCode": "33175",
-      "addressCountry": "US"
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Saturday"
-        ],
-        "opens": "10:00",
-        "closes": "14:00"
-      }
-    ],
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://madebysebby.com/assets/icons/icon-512.png",
-      "width": 512,
-      "height": 512
-    },
-    "knowsLanguage": [
-      "en",
-      "es"
-    ],
-    "availableLanguage": [
-      "English",
-      "Spanish"
-    ],
-    "sameAs": [
-      "https://g.page/r/CRmCP0Hp1prPEAI",
-      "https://www.linkedin.com/company/made-by-sebby/",
-      "https://instagram.com/madebysebby",
-      "https://clutch.co/profile/made-sebby",
-      "https://themanifest.com/company/made-sebby",
-      "https://cal.com/madebysebby",
-      "https://www.reddit.com/user/MadeBySebby/",
-      "https://github.com/SebbyServices"
-    ],
-    "disambiguatingDescription": "Made by Sebby es un estudio de diseño web y cuidado de sitios en Miami, Florida, dirigido por Sebastian Podgaetz. Es un negocio de servicios y no vende ningún producto físico. NO tiene relación con Sebby Collection, Sebby Couture, ni con ninguna marca de ropa, abrigos, chaquetas o moda que use el nombre Sebby. Empresa distinta, industria distinta, sin propietarios en común.",
-    "inLanguage": "es"
+  "@type": "Service",
+  "name": "Website Audit and 90-Day Growth Plan",
+  "description": "For businesses that already have a website that isn't a disaster, just underperforming. Not a rebuild. A full diagnosis of what is holding your site back, and a 90-day plan to fix what matters first.",
+  "provider": {
+    "@id": "https://madebysebby.com/#business"
   },
-  "mainEntity": {
-    "@type": "ItemList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@type": "WebSite",
-          "name": "Portafolio. Proyectos y Resultados | Made by Sebby",
-          "url": "https://rieralaw.com",
-          "description": "Sitios web diseñados por Sebby para pequeños negocios en Miami y el sur de Florida. Casos reales de clientes, testimonios y resultados.",
-          "inLanguage": "es"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
-          "@type": "WebSite",
-          "name": "Portafolio. Proyectos y Resultados | Made by Sebby",
-          "url": "https://orthoflowrecovery.com",
-          "description": "Sitios web diseñados por Sebby para pequeños negocios en Miami y el sur de Florida. Casos reales de clientes, testimonios y resultados.",
-          "inLanguage": "es"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@type": "WebSite",
-          "name": "Portafolio. Proyectos y Resultados | Made by Sebby",
-          "url": "https://www.elitecarerecovery.net",
-          "description": "Sitios web diseñados por Sebby para pequeños negocios en Miami y el sur de Florida. Casos reales de clientes, testimonios y resultados.",
-          "inLanguage": "es"
-        }
-      }
-    ]
-  },
-  "inLanguage": "es"
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "United States"
+    },
+    {
+      "@type": "Country",
+      "name": "Dominican Republic"
+    }
+  ],
+  "url": "https://madebysebby.com/website-audit.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "{{N_AUDIT}}",
+    "priceCurrency": "USD"
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -694,45 +552,52 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Inicio",
-      "item": "https://madebysebby.com/es/"
+      "name": "Home",
+      "item": "https://madebysebby.com/"
     },
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Portafolio",
-      "item": "https://madebysebby.com/es/portafolio.html"
+      "name": "Website Audit and 90-Day Growth Plan",
+      "item": "https://madebysebby.com/website-audit.html"
     }
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": []
+}
+</script>
 </head>
 <body>
-<a class="skip-link" href="#main">Ir al contenido</a>
+<a class="skip-link" href="#main"><span lang="en">Skip to content</span><span lang="es">Ir al contenido</span></a>
 <nav>
   <div class="wrap nav-inner">
-    <a class="logo" href="/es/" aria-label="Inicio de Made by Sebby"><img class="logo-light" src="/assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="/assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
-    <button class="menu-btn" aria-label="Menú" onclick="document.querySelector('nav').classList.toggle('nav-open')">
+    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('nav-open')">
           <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
           <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
       <div class="nav-links">
-      <a href="/es/servicios.html">Qué hago</a>
-      <a href="/es/portafolio.html" style="color:var(--purple)">Trabajo</a>
-      <a href="/es/precios.html">Precios</a>
-      <a href="/es/cuidado-web.html">Cuidado Web</a>
-      <a href="/es/sobre-mi.html">Sobre mí</a>
+      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
+      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
+      <a href="pricing.html"><span lang="en">Pricing</span><span lang="es">Precios</span></a>
+      <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
       <div class="nav-controls">
         <div class="lang-toggle">
-          <a href="/work.html" hreflang="en" lang="en" aria-label="View this page in English">EN</a>
-          <span class="active">ES</span>
-        </div>
-          <button class="theme-toggle" aria-label="Alternar modo oscuro" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
+            <button onclick="document.documentElement.removeAttribute('data-lang');localStorage.setItem('lang','en');this.classList.add('active');this.nextElementSibling.classList.remove('active')" class="active">EN</button>
+            <button onclick="document.documentElement.setAttribute('data-lang','es');localStorage.setItem('lang','es');this.classList.add('active');this.previousElementSibling.classList.remove('active')">ES</button>
+          </div>
+          <button class="theme-toggle" aria-label="Toggle dark mode" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
             <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
             <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
           </button>
       </div>
-        <a href="/es/agendar.html" class="btn btn-nav">Trabaja con Sebby</a>
+        <a href="book.html" class="btn btn-nav"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span></a>
     </div>
   </div>
 </nav>
@@ -740,171 +605,116 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <main>
 <header class="page-hero">
   <div class="wrap">
-    <div class="eyebrow">Trabajo</div>
-    <h1>Negocios reales. <span class="accent">Resultados reales.</span></h1>
-    <p class="lede">Cada proyecto pertenece a un dueño de negocio real que puede contarte cómo es trabajar conmigo. Esa es la única prueba que vale la pena mostrar.</p>
+    <div class="eyebrow"><span lang="en">Website Audit</span><span lang="es">Auditoría Web</span></div>
+    <h1><span lang="en">Your site works. It just isn't <span class="accent">working hard enough</span>.</span><span lang="es">Tu sitio funciona. Solo que no <span class="accent">trabaja lo suficiente</span>.</span></h1>
+    <p class="lede"><span lang="en">For businesses that already have a website that isn't a disaster, just underperforming. Not a rebuild. A full diagnosis of what is holding your site back, and a 90-day plan to fix what matters first.</span><span lang="es">Para negocios que ya tienen un sitio web que no es un desastre, pero que rinde por debajo de lo que debería. No es un rediseño. Un diagnóstico completo de lo que frena tu sitio, y un plan de 90 días para arreglar primero lo que más importa.</span></p>
   </div>
 </header>
 
-<section id="main" style="padding-top:24px;padding-bottom:0">
+<section id="main" style="padding-top:24px">
   <div class="wrap">
-    <div class="svc-block reveal" style="border-top:none;padding-top:0">
-      <div>
-        <span class="tag">Proyecto destacado</span>
-        <h2>Riera Law Firm</h2>
-        <p class="body" style="margin-bottom:6px"><a href="https://rieralaw.com" target="_blank" rel="noopener" style="color:var(--purple);font-weight:600">rieralaw.com</a> · Bufete de arbitraje de valores, Coral Gables, FL</p>
-        <p class="body">Un sitio completo en WordPress y Elementor para una práctica nacional de arbitraje de valores liderada por un ex abogado de la División de Cumplimiento de la SEC. Más de setenta páginas en inglés y español, un sistema de diseño completo, y el trabajo de infraestructura que la mayoría de visitantes no ven.</p>
-        <ul class="checklist">
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Construí el sitio bilingüe completo en WordPress y Elementor, 70+ páginas</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Resolví un conflicto DNS de dos sitios que tenían dos páginas web compitiendo en un solo dominio</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Restauré el correo del bufete y corregí la configuración de entrega de correo</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Resolví conflictos de plugins y licencias sin tiempo de inactividad para una práctica activa</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Proveo Cuidado Web continuo para un sitio del que dependen los clientes</li>
-        </ul>
-        <p style="margin-top:18px"><a href="/es/caso-riera-law.html" style="color:var(--purple);font-weight:600;font-size:.95rem">Leer el caso de estudio completo →</a></p>
-        <p style="margin-top:6px;font-size:.95rem">¿Tienes tu propia práctica? Mira cómo enfoco el <a href="/es/diseno-web-para-abogados.html" style="color:var(--purple);font-weight:600">diseño web para bufetes de abogados</a>.</p>
-      </div>
-      <a class="sitecard" href="https://rieralaw.com" target="_blank" rel="noopener">
-        <div class="bar" aria-hidden="true">
-          <span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span>
-          <span class="url">rieralaw.com</span>
-        </div>
-        <picture><source srcset="/assets/hero-rieralaw.webp" type="image/webp"><img class="sitecard-hero" src="/assets/hero-rieralaw.jpg" alt="Portada del sitio de Riera Law Firm" loading="lazy"></picture>
-        <div class="visit"><span>Visitar el sitio</span><span>rieralaw.com&nbsp;→</span></div>
-      </a>
+    <div class="sec-head reveal">
+      <h2><span lang="en">Three deliverables. One clear plan.</span><span lang="es">Tres entregables. Un plan claro.</span></h2>
+      <p><span lang="en">Everything is written in plain language, so you can act on it without a developer translating it for you.</span><span lang="es">Todo está escrito en lenguaje claro, para que puedas actuar sin necesitar que un desarrollador te lo traduzca.</span></p>
     </div>
-    <div class="quote reveal" style="max-width:680px;margin:0 auto 48px">
-      <div class="mark" aria-hidden="true">"</div>
-      <p class="body">Sebby reconstruyó toda la presencia web de mi bufete. Trabaja rápido, explica todo en términos claros, y trata mi sitio como si fuera suyo. Le confío la cara digital de mi práctica.</p>
-      <div class="who">
-        <div class="avatar">JR</div>
-        <div><strong>Jorge L. Riera</strong><span>Socio Fundador, Riera Law Firm · Testimonio traducido del inglés</span></div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+        <h3><span lang="en">Technical and UX audit</span><span lang="es">Auditoría técnica y de experiencia</span></h3>
+        <p><span lang="en">Speed, mobile experience, SEO foundations, and the conversion gaps that make visitors leave instead of calling, booking, or buying.</span><span lang="es">Velocidad, experiencia en móviles, bases de SEO, y los puntos débiles que hacen que los visitantes se vayan en vez de llamar, reservar o comprar.</span></p>
+      </div>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <h3><span lang="en">90-day growth plan</span><span lang="es">Plan de crecimiento de 90 días</span></h3>
+        <p><span lang="en">A written plan with every fix ranked by impact, so the first month goes to the changes that pay off first.</span><span lang="es">Un plan escrito con cada arreglo ordenado por impacto, para que el primer mes se dedique a los cambios que rinden primero.</span></p>
+      </div>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h10M9 4v4M7 8c0 4 3 7 7 8M13 8c-1 4-4 7-8 8"/><path d="m13 21 4-9 4 9M14.5 18h5"/></svg></div>
+        <h3><span lang="en">Bilingual content and SEO recommendations</span><span lang="es">Recomendaciones bilingües de contenido y SEO</span></h3>
+        <p><span lang="en">What to say and where, in English and Spanish, so customers find you in whichever language they search.</span><span lang="es">Qué decir y dónde, en inglés y en español, para que los clientes te encuentren en el idioma en que buscan.</span></p>
       </div>
     </div>
-    <div class="svc-block reveal" id="ortho-flow">
-      <div>
-        <span class="tag">Proyecto de cliente</span>
-        <h2>Ortho Flow Recovery</h2>
-        <p class="body" style="margin-bottom:6px"><a href="https://orthoflowrecovery.com" target="_blank" rel="noopener" style="color:var(--purple);font-weight:600">orthoflowrecovery.com</a> · Equipo de recuperación postoperatoria, Miami-Dade y Broward</p>
-        <p class="body">Un sitio bilingüe para una empresa de recuperación que lleva equipos de terapia de frío y compresión NICE1 a casa de los pacientes, con instalación personalizada y apoyo durante toda la recuperación.</p>
-        <ul class="checklist">
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Diseñé y construí el sitio completo en inglés y español, programado a mano y alojado en GitHub Pages</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Páginas separadas para pacientes y para cirujanos que refieren</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Un formulario de reserva que los pacientes pueden llenar antes de su cirugía</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Precios de alquiler y tipos de cobertura publicados desde el inicio, para que los pacientes sepan el costo antes de llamar</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Con un plan de Cuidado Web Estándar para actualizaciones, respaldos y ediciones continuas</li>
-        </ul>
-      </div>
-      <a class="sitecard" href="https://orthoflowrecovery.com" target="_blank" rel="noopener">
-        <div class="bar" aria-hidden="true">
-          <span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span>
-          <span class="url">orthoflowrecovery.com</span>
-        </div>
-        <picture><source srcset="/assets/hero-orthoflow.webp" type="image/webp"><img class="sitecard-hero" src="/assets/hero-orthoflow.jpg" alt="Portada del sitio de Ortho Flow Recovery" loading="lazy"></picture>
-        <div class="visit"><span>Visitar el sitio</span><span>orthoflowrecovery.com&nbsp;→</span></div>
-      </a>
-    </div>
-    <div class="svc-block reveal">
-      <div>
-        <span class="tag">Proyecto de cliente</span>
-        <h2>Elite Care Recovery</h2>
-        <p class="body" style="margin-bottom:6px"><a href="https://www.elitecarerecovery.net" target="_blank" rel="noopener" style="color:var(--purple);font-weight:600">elitecarerecovery.net</a> · Equipo de recuperación ortopédica, Sur de Florida</p>
-        <p class="body">Un sitio web completo para una empresa familiar de recuperación ortopédica fundada por dos hermanos con 23 años combinados en el campo. El sitio presenta su servicio premium de alquiler de equipos de terapia de frío y compresión NICE1 con entrega personalizada en todo el Sur de Florida.</p>
-        <ul class="checklist">
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Diseñé y construí el sitio completo desde cero, alojado en GitHub Pages</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Páginas de Inicio, Nosotros, Cultura y Reservas con identidad de marca cohesiva</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Exhibición del sistema de recuperación NICE1 con especificaciones y características</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Integración de contacto con teléfono, correo y horario comercial</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Diseño responsivo optimizado para pacientes reservando desde el móvil</li>
-        </ul>
-      </div>
-      <a class="sitecard" href="https://www.elitecarerecovery.net" target="_blank" rel="noopener">
-        <div class="bar" aria-hidden="true">
-          <span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span>
-          <span class="url">elitecarerecovery.net</span>
-        </div>
-        <picture><source srcset="/assets/hero-elitecare.webp" type="image/webp"><img class="sitecard-hero" src="/assets/hero-elitecare.jpg" alt="Portada del sitio de Elite Care Recovery" loading="lazy"></picture>
-        <div class="visit"><span>Visitar el sitio</span><span>elitecarerecovery.net&nbsp;→</span></div>
-      </a>
-    </div>
-    <div class="quote reveal" style="max-width:680px;margin:0 auto 48px">
-      <div class="mark" aria-hidden="true">"</div>
-      <p class="body">Trabajar con Sebastian ha sido una experiencia fantástica. Tomó nuestra visión para Elite Care Recovery y construyó un sitio web profesional que superó nuestras expectativas, desde mostrar nuestro equipo de recuperación NICE1 hasta facilitar que los pacientes reserven en línea. Su comunicación y tiempo de entrega fueron excepcionales durante todo el proceso. Lo recomiendo ampliamente a cualquiera que busque un desarrollador web talentoso y confiable que realmente se preocupa por entregar un gran resultado.</p>
-      <div class="who">
-        <div class="avatar">JP</div>
-        <div><strong>John Pierce</strong><span>Cofundador, Elite Care Recovery · Testimonio traducido del inglés</span></div>
-      </div>
-    </div>
-    <p style="text-align:center;margin-bottom:48px"><a href="/es/caso-elite-care.html" style="color:var(--purple);font-weight:600;font-size:.95rem">Leer el caso de estudio completo →</a></p>
   </div>
 </section>
 
-<section class="final" style="padding-top:10px">
+<section style="padding-top:0">
   <div class="wrap">
-    <h2>¿Quieres que tu negocio aparezca aquí?</h2>
-    <p>Cuéntame a qué te dedicas y te diré exactamente qué construiría.</p>
-    <a class="btn" href="/es/agendar.html">Trabaja con Sebby&nbsp;→</a>
+    <div class="care reveal">
+      <div>
+        <h2><span lang="en">One fixed price. No rebuild required.</span><span lang="es">Un precio fijo. Sin rediseñar nada.</span></h2>
+        <p><span lang="en">The Website Audit and 90-Day Growth Plan is {{PRICE_AUDIT}} {{USD}}, one time. The plan is yours to keep, whether I make the fixes, you make them, or someone else does.</span><span lang="es">La Auditoría Web y Plan de Crecimiento de 90 Días cuesta {{PRICE_AUDIT}} {{USD}}, un solo pago. El plan es tuyo, ya sea que yo haga los arreglos, los hagas tú, o los haga otra persona.</span></p>
+        <a class="btn" href="book.html"><span lang="en">Book a free call first</span><span lang="es">Agenda primero una llamada gratis</span>&nbsp;&#8594;</a>
+      </div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Your site gets traffic but few calls or bookings</span><span lang="es">Tu sitio recibe visitas pero pocas llamadas o reservas</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">It looks fine on a laptop and clumsy on a phone</span><span lang="es">Se ve bien en la computadora y torpe en el teléfono</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Competitors show up on Google and you don't</span><span lang="es">Tu competencia aparece en Google y tú no</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">You serve Spanish speakers but your site only speaks English</span><span lang="es">Atiendes a hispanohablantes pero tu sitio solo habla inglés</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">How it works.</span><span lang="es">Cómo funciona.</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <h3><span lang="en">Free call</span><span lang="es">Llamada gratis</span></h3>
+        <p><span lang="en">Fifteen minutes to confirm an audit is the right move. If your site needs a rebuild instead, I'll say so before you pay anything.</span><span lang="es">Quince minutos para confirmar que la auditoría es lo correcto. Si tu sitio necesita un rediseño, te lo diré antes de que pagues nada.</span></p>
+      </div>
+      <div class="step reveal">
+        <h3><span lang="en">The audit</span><span lang="es">La auditoría</span></h3>
+        <p><span lang="en">I go through your site the way a customer and a search engine would, on real phones and on desktop.</span><span lang="es">Reviso tu sitio como lo haría un cliente y como lo haría un buscador, en teléfonos reales y en computadora.</span></p>
+      </div>
+      <div class="step reveal">
+        <h3><span lang="en">Your plan</span><span lang="es">Tu plan</span></h3>
+        <p><span lang="en">You get the written audit and the 90-day plan, and we walk through it together so every item makes sense.</span><span lang="es">Recibes la auditoría escrita y el plan de 90 días, y lo repasamos juntos para que cada punto tenga sentido.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">Fair questions.</span><span lang="es">Preguntas justas.</span></h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary><span lang="en">How is this different from the free health check?</span><span lang="es">¿En qué se diferencia de la revisión gratuita?</span></summary>
+        <p><span lang="en">The free health check is a quick look that tells you whether something is wrong. The audit is the full diagnosis: every issue, why it matters, and the order to fix it in.</span><span lang="es">La revisión gratuita es un vistazo rápido que te dice si algo anda mal. La auditoría es el diagnóstico completo: cada problema, por qué importa, y en qué orden arreglarlo.</span></p>
+      </details>
+      <details>
+        <summary><span lang="en">Should I just rebuild my site instead?</span><span lang="es">¿No sería mejor rehacer mi sitio?</span></summary>
+        <p><span lang="en">Sometimes, and I'll tell you on the free call. If your site is fundamentally broken, a new build is the better use of your money. The audit is for sites worth keeping.</span><span lang="es">A veces sí, y te lo diré en la llamada gratuita. Si tu sitio está roto de raíz, un sitio nuevo es mejor inversión. La auditoría es para sitios que vale la pena conservar.</span></p>
+      </details>
+      <details>
+        <summary><span lang="en">Do you make the fixes too?</span><span lang="es">¿También haces los arreglos?</span></summary>
+        <p><span lang="en">I can. The plan works whoever carries it out. If you want me to handle the fixes, we scope that separately once you have the plan in hand.</span><span lang="es">Puedo hacerlos. El plan funciona sin importar quién lo ejecute. Si quieres que yo me encargue, lo definimos aparte una vez que tengas el plan.</span></p>
+      </details>
+      <details>
+        <summary><span lang="en">What platforms do you audit?</span><span lang="es">¿Qué plataformas auditas?</span></summary>
+        <p><span lang="en">Any of them: WordPress, Wix, Squarespace, GoDaddy, Shopify, or hand-coded. The problems that cost you customers look the same on every platform.</span><span lang="es">Cualquiera: WordPress, Wix, Squarespace, GoDaddy, Shopify o código a mano. Los problemas que te cuestan clientes se ven igual en todas.</span></p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final" style="padding-top:30px">
+  <div class="wrap">
+    <h2><span lang="en">Not sure if you need an audit or a new site?</span><span lang="es">¿No sabes si necesitas una auditoría o un sitio nuevo?</span></h2>
+    <p><span lang="en">Tell me about your site on a free call and I'll tell you which one I'd pick. Starting from scratch? <a href="pricing.html" style="color:var(--purple);font-weight:600;text-decoration:underline">See build pricing</a>.</span><span lang="es">Cuéntame de tu sitio en una llamada gratis y te diré cuál elegiría yo. ¿Empiezas desde cero? <a href="pricing.html" style="color:var(--purple);font-weight:600;text-decoration:underline">Mira los precios de proyectos</a>.</span></p>
+    <a class="btn" href="book.html"><span lang="en">Book a free 15-minute call</span><span lang="es">Reserva una llamada gratuita de 15 minutos</span>&nbsp;→</a>
   </div>
 </section>
 
 </main>
 
-<footer>
-  <div class="wrap foot-inner">
-      <div class="ft-brand">
-        <img class="foot-logo-light" src="/assets/logo/sebby-horizontal.svg" alt="Made by Sebby: Diseño Web, Desarrollo, Cuidado Web" width="200" height="52">
-        <img class="foot-logo-dark" src="/assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby: Diseño Web, Desarrollo, Cuidado Web" width="200" height="52">
-        <p class="ft-tag">Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</p>
-        <address class="ft-nap">
-          <span>Miami, Florida 33175, Estados Unidos</span>
-          <a href="tel:+17865431417">(786) 543-1417</a>
-          <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a>
-          <span class="ft-hours">Lun a Vie, 9am a 6pm ET. Sáb, 10am a 2pm.</span>
-        </address>
-      </div>
-      <div class="ft-col">
-        <p class="ft-head" id="ft-services">Qué hago</p>
-        <ul aria-labelledby="ft-services">
-        <li><a href="/es/servicios.html">Qué hago</a></li>
-        <li><a href="/es/precios.html">Precios</a></li>
-        <li><a href="/es/cuidado-web.html">Cuidado Web</a></li>
-        <li><a href="/es/precios.html#calculator">Calculadora de precios</a></li>
-        </ul>
-      </div>
-      <div class="ft-col">
-        <p class="ft-head" id="ft-studio">Estudio</p>
-        <ul aria-labelledby="ft-studio">
-        <li><a href="/es/portafolio.html">Trabajo</a></li>
-        <li><a href="/es/sobre-mi.html">Sobre mí</a></li>
-        <li><a href="/es/blog.html">Blog</a></li>
-        <li><a href="/es/contacto.html">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="ft-col ft-col-cta">
-      <div class="ft-col">
-        <p class="ft-head" id="ft-areas">Dónde trabajo</p>
-        <ul aria-labelledby="ft-areas">
-        <li><a href="/es/diseno-web-miami.html">Miami</a></li>
-        <li><a href="/es/diseno-web-fort-lauderdale.html">Fort Lauderdale</a></li>
-        <li><a href="/es/diseno-web-santo-domingo.html">Santo Domingo</a></li>
-        </ul>
-      </div>
-        <a class="ft-cta" href="/es/agendar.html">Agenda una llamada gratis</a>
-      </div>
-  </div>
-  <div class="wrap ft-bottom">
-    <p class="ft-copy">&copy; 2026 Made by Sebby. Diseño web y cuidado de sitios para pequeños negocios en Miami, el sur de Florida y Santo Domingo.</p>
-    <p class="ft-copy">¿Necesitas soporte técnico? <a href="https://sebbyservices.com/" rel="noopener">Sebby IT</a> cubre computadoras, redes y seguridad.</p>
-    <div class="ft-legal">
-      <a href="/es/privacidad.html">Privacidad</a>
-      <a href="/es/terminos.html">Términos</a>
-    </div>
-    <div class="ft-social">
-        <a href="https://www.linkedin.com/company/made-by-sebby/" rel="me noopener" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.04c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg><span class="sr-only">LinkedIn</span></a>
-        <a href="https://instagram.com/madebysebby" rel="me noopener" target="_blank" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9c-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38C1.35 2.68.94 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.67.67 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.67-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.94 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg><span class="sr-only">Instagram</span></a>
-    </div>
-  </div>
-</footer>
+{{FOOTER}}
+<script>!function(){var l=document.documentElement.getAttribute('data-lang');if(l==='es'){var b=document.querySelectorAll('.lang-toggle button');if(b.length===2){b[0].classList.remove('active');b[1].classList.add('active')}}}()</script>
 <script>!function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})}()</script>
 <script>!function(){var cta=document.getElementById('stickyCta');if(!cta)return;var footer=document.querySelector('footer');var shown=false;window.addEventListener('scroll',function(){var y=window.scrollY;var fTop=footer?footer.getBoundingClientRect().top+y-window.innerHeight:Infinity;if(y>400&&y<fTop){if(!shown){cta.classList.add('show');shown=true}}else{if(shown){cta.classList.remove('show');shown=false}}},{passive:true})}()</script>
 

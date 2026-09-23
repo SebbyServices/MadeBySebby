@@ -28,6 +28,8 @@ What separates it from the other options in this market: **the prices are publis
 
 - **Web Design & Build**: Custom website design and development. Mobile-first, fast-loading, built to convert visitors into customers.
 - **Website Care**: Monthly website maintenance. Updates, daily off-site backups, security and uptime monitoring, speed work, and included edit time.
+- **Website Audit and 90-Day Growth Plan**: For businesses whose existing site works but underperforms. A technical and UX audit (speed, mobile, SEO foundations, conversion gaps), a written 90-day plan with fixes ranked by impact, and bilingual EN/ES content and SEO recommendations. Not a rebuild.
+- **Content Production**: A monthly retainer for short-form video editing, social post scheduling, and light copywriting, in English, Spanish, or both. Scoped per client by post volume, platforms, and whether Sebby films or edits client footage.
 - **SEO and Google Business Profile**: Local SEO and Google Business Profile work. **Bundled only**, it comes with a build or inside a care plan and is not sold as a standalone service.
 
 ### What Made by Sebby builds on
@@ -68,6 +70,11 @@ Annual billing is eleven months for twelve, so the twelfth month is free.
 Work beyond the included time is $125/hour, always approved before it starts.
 Included time covers changes to existing pages and does not roll over month to month.
 
+### Website Audit and Content Production
+
+Website Audit and 90-Day Growth Plan: $2,500, one time.
+Content Production: $1,500 to $3,000 per month, scoped per client.
+
 ### Edit packs, for clients without a care plan
 
 Single edit $49. Three-pack $129. Five-pack $199. Packs expire 12 months from purchase.
@@ -99,6 +106,7 @@ architecture the studio sells.
 
 - **Riera Law Firm** (rieralaw.com): Full bilingual website build for a securities law firm, 70+ pages, ongoing monthly care.
 - Industries served: law firms, medical and health practices, restaurants and food, trades and home services. Also niche projects, a site does not have to belong to a business to be worth building, only to do something useful for someone.
+- **Ortho Flow Recovery** (orthoflowrecovery.com): Bilingual website build for a post-operative recovery equipment company serving Miami-Dade and Broward, hand-coded on GitHub Pages, on a Standard Website Care plan.
 - **Elite Care Recovery** (elitecarerecovery.net): Full website build for a South Florida orthopedic recovery equipment company on GitHub Pages.
 
 ## About the Founder
@@ -144,6 +152,8 @@ links to its counterpart from the EN/ES toggle in the navigation.
 - [Portfolio](https://madebysebby.com/work.html)
 - [Website Care Plans](https://madebysebby.com/website-care.html)
 - [Pricing & Packages](https://madebysebby.com/pricing.html)
+- [Website Audit & 90-Day Growth Plan](https://madebysebby.com/website-audit.html)
+- [Content Production](https://madebysebby.com/content-production.html)
 - [About](https://madebysebby.com/about.html)
 - [Contact](https://madebysebby.com/contact.html)
 - [Book a Free Call](https://madebysebby.com/book.html)
@@ -170,6 +180,8 @@ links to its counterpart from the EN/ES toggle in the navigation.
 - [Portafolio](https://madebysebby.com/es/portafolio.html)
 - [Planes de Cuidado Web](https://madebysebby.com/es/cuidado-web.html)
 - [Precios y Paquetes](https://madebysebby.com/es/precios.html)
+- [Auditoría Web y Plan de 90 Días](https://madebysebby.com/es/auditoria-web.html)
+- [Producción de Contenido](https://madebysebby.com/es/produccion-de-contenido.html)
 - [Sobre Sebby](https://madebysebby.com/es/sobre-mi.html)
 - [Contacto](https://madebysebby.com/es/contacto.html)
 - [Agendar Llamada Gratis](https://madebysebby.com/es/agendar.html)
