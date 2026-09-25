@@ -799,7 +799,7 @@
 
       <!-- Custom (featured) -->
       <div class="plan reveal featured">
-        <span class="badge"><span lang="en">Most popular</span><span lang="es">Más popular</span></span>
+        <span class="badge"><span lang="en">Best fit for most</span><span lang="es">El más indicado</span></span>
         <h3><span lang="en">Custom</span><span lang="es">Personalizado</span></h3>
         <p class="for"><span lang="en">A site designed around your specific goals</span><span lang="es">Un sitio diseñado alrededor de tus objetivos específicos</span></p>
         <div class="price-label"><span lang="en">Starting at</span><span lang="es">Desde</span></div>
@@ -848,7 +848,33 @@
     </div>
 
     <p class="plans-note reveal"><span lang="en">Every project includes a free 15-minute call to scope your needs. No pressure, honest answers.</span><span lang="es">Cada proyecto incluye una llamada gratuita de 15 minutos para definir tus necesidades. Sin presión, respuestas honestas.</span></p>
-    <p class="plans-note reveal"><span lang="en">Already have a website that just isn't performing? You may not need a new one. <a href="website-audit.html" style="color:var(--purple);font-weight:600;text-decoration:underline">See the Website Audit</a>.</span><span lang="es">¿Ya tienes un sitio web que simplemente no rinde? Puede que no necesites uno nuevo. <a href="website-audit.html" style="color:var(--purple);font-weight:600;text-decoration:underline">Mira la Auditoría Web</a>.</span></p>
+    <p class="plans-note reveal"><span lang="en">Already have a website that just isn't performing? You may not need a new one. <a href="website-audit.html" style="color:var(--purple);font-weight:600;text-decoration:underline">Start with a Website Audit</a>, {{PRICE_AUDIT}}, credited in full toward a build or care plan within {{AUDIT_CREDIT_DAYS}} days.</span><span lang="es">¿Ya tienes un sitio web que simplemente no rinde? Puede que no necesites uno nuevo. <a href="website-audit.html" style="color:var(--purple);font-weight:600;text-decoration:underline">Empieza con una Auditoría Web</a>, {{PRICE_AUDIT}}, acreditados por completo a un proyecto o plan de cuidado dentro de {{AUDIT_CREDIT_DAYS}} días.</span></p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">What clients say.</span><span lang="es">Lo que dicen mis clientes.</span></h2>
+    </div>
+    <div class="quotes">
+      <div class="quote reveal">
+        <div class="mark" aria-hidden="true">“</div>
+        <p class="body"><span lang="en">Sebby rebuilt my law firm's entire web presence. He works fast, explains everything in plain English, and treats my site like it's his own. I trust him with the online face of my practice.</span><span lang="es">Sebby reconstruyó toda la presencia web de mi bufete. Trabaja rápido, explica todo en términos claros, y trata mi sitio como si fuera suyo. Le confío la cara digital de mi práctica.</span></p>
+        <div class="who">
+          <div class="avatar">JR</div>
+          <div><strong>Jorge L. Riera</strong><span><span lang="en">Founding Principal, Riera Law Firm</span><span lang="es">Socio Fundador, Riera Law Firm</span></span></div>
+        </div>
+      </div>
+      <div class="quote reveal">
+        <div class="mark" aria-hidden="true">“</div>
+        <p class="body"><span lang="en">Working with Sebastian has been a fantastic experience. He took our vision for Elite Care Recovery and built a professional website that exceeded our expectations. His communication and turnaround time were exceptional throughout the entire process.</span><span lang="es">Trabajar con Sebastian ha sido una experiencia fantástica. Tomó nuestra visión para Elite Care Recovery y construyó un sitio web profesional que superó nuestras expectativas. Su comunicación y tiempo de entrega fueron excepcionales durante todo el proceso.</span></p>
+        <div class="who">
+          <div class="avatar">JP</div>
+          <div><strong>John Pierce</strong><span><span lang="en">Co-Founder, Elite Care Recovery</span><span lang="es">Cofundador, Elite Care Recovery</span></span></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -858,15 +884,15 @@
   <div class="wrap">
     <div class="sec-head" style="text-align:center;margin:0 auto 40px">
       <h2><span lang="en">Get a number before you call.</span><span lang="es">Obtén un número antes de llamar.</span></h2>
-      <p><span lang="en">Four questions, a real range, no email required. Every other calculator in this market asks for your details and promises a quote later.</span><span lang="es">Cuatro preguntas, un rango real, sin pedir tu correo. Todos los demás calculadores de este mercado piden tus datos y prometen una cotización después.</span></p>
+      <p><span lang="en">Four questions, a real range, no email required. Most calculators in this market ask for your details and promise a quote later.</span><span lang="es">Cuatro preguntas, un rango real, sin pedir tu correo. La mayoría de los calculadores de este mercado piden tus datos y prometen una cotización después.</span></p>
     </div>
     <div class="calc">
       <div class="calc-q">
         <p><span lang="en">How many pages do you need?</span><span lang="es">¿Cuántas páginas necesitas?</span></p>
         <div class="calc-opts">
-          <label><input type="radio" name="pages" value="s" checked><span class="opt"><span lang="en">Up to 5</span><span lang="es">Hasta 5</span></span></label>
-          <label><input type="radio" name="pages" value="c"><span class="opt"><span lang="en">6 to 12</span><span lang="es">De 6 a 12</span></span></label>
-          <label><input type="radio" name="pages" value="p"><span class="opt"><span lang="en">More than 12</span><span lang="es">Más de 12</span></span></label>
+          <label><input type="radio" name="pages" value="s" checked><span class="opt"><span lang="en">Up to {{PAGES_STARTER}}</span><span lang="es">Hasta {{PAGES_STARTER}}</span></span></label>
+          <label><input type="radio" name="pages" value="c"><span class="opt"><span lang="en">6 to {{PAGES_CUSTOM}}</span><span lang="es">De 6 a {{PAGES_CUSTOM}}</span></span></label>
+          <label><input type="radio" name="pages" value="p"><span class="opt"><span lang="en">More than {{PAGES_CUSTOM}}</span><span lang="es">Más de {{PAGES_CUSTOM}}</span></span></label>
         </div>
       </div>
       <div class="calc-q">
@@ -982,7 +1008,7 @@
       <div class="addon">
         <span class="addon-name"><span lang="en">Changes after launch</span><span lang="es">Cambios después del lanzamiento</span></span>
         <span class="addon-price"><span lang="en">Edit packs, from</span><span lang="es">Paquetes de ediciones, desde</span> {{EDIT_SINGLE}} {{USD}}</span>
-        <p><span lang="en">Small changes are included in every Website Care plan. Beyond that, buy an edit pack or add care. Nothing is billed without your approval first.</span><span lang="es">Los cambios pequeños están incluidos en cada plan de Cuidado Web. Más allá de eso, compra un paquete de ediciones o añade cuidado. Nada se cobra sin tu aprobación primero.</span></p>
+        <p><span lang="en">Monthly edit time is included in the Standard and Growth care plans. Otherwise, buy an edit pack or add care. Nothing is billed without your approval first.</span><span lang="es">El tiempo de ediciones mensual está incluido en los planes Estándar y Crecimiento. Si no, compra un paquete de ediciones o añade cuidado. Nada se cobra sin tu aprobación primero.</span></p>
       </div>
     </div>
   </div>
@@ -992,7 +1018,7 @@
 <section style="padding-top:0">
   <div class="wrap">
     <div class="promise reveal">
-      <p><span lang="en"><strong>How payments work:</strong> 50% upfront to start, 50% on launch. That's standard for the industry, and it keeps both sides invested in the result. For Premium projects, we can discuss milestone-based payments.</span><span lang="es"><strong>Cómo funcionan los pagos:</strong> 50% por adelantado para comenzar, 50% al lanzamiento. Esto es estándar en la industria, y mantiene a ambas partes comprometidas con el resultado. Para proyectos Premium, podemos discutir pagos por hitos.</span></p>
+      <p><span lang="en"><strong>How it works, so there are no surprises:</strong> 50% to start, 50% at launch. You see the design before anything is built, and two rounds of revisions are included after the first draft. The price we agree on the call does not go up afterwards. Premium projects can be paid by milestone.</span><span lang="es"><strong>Cómo funciona, para que no haya sorpresas:</strong> 50% para comenzar, 50% al lanzamiento. Ves el diseño antes de que se construya nada, y se incluyen dos rondas de revisiones después del primer borrador. El precio que acordamos en la llamada no sube después. Los proyectos Premium se pueden pagar por hitos.</span></p>
     </div>
   </div>
 </section>
@@ -1003,15 +1029,15 @@
     <div class="care reveal">
       <div>
         <h2><span lang="en">After launch, keep it running right.</span><span lang="es">Después del lanzamiento, mantenlo funcionando bien.</span></h2>
-        <p><span lang="en">A website needs ongoing care. Updates, security, backups, speed. Website Care plans start at {{CARE_ESSENTIALS}}/month and cover everything so you never have to think about it.</span><span lang="es">Un sitio web necesita cuidado continuo. Actualizaciones, seguridad, respaldos, velocidad. Los planes de Cuidado Web comienzan en {{CARE_ESSENTIALS}}/mes y cubren todo para que nunca tengas que pensar en ello.</span></p>
+        <p><span lang="en">A website needs ongoing care. Updates, security, backups, speed. Website Care plans start at {{CARE_ESSENTIALS}}/month and cover the upkeep so you never have to think about it.</span><span lang="es">Un sitio web necesita cuidado continuo. Actualizaciones, seguridad, respaldos, velocidad. Los planes de Cuidado Web comienzan en {{CARE_ESSENTIALS}}/mes y cubren el mantenimiento para que nunca tengas que pensar en ello.</span></p>
         <a class="btn" href="website-care.html"><span lang="en">See Website Care plans</span><span lang="es">Ver planes de Cuidado Web</span>&nbsp;&#8594;</a>
       </div>
       <ul>
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Weekly software + security updates</span><span lang="es">Actualizaciones semanales de software y seguridad</span></li>
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Daily off-site backups</span><span lang="es">Respaldos diarios fuera del sitio</span></li>
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">24/7 uptime monitoring</span><span lang="es">Monitoreo de disponibilidad 24/7</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Speed optimization</span><span lang="es">Optimización de velocidad</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Small edits included</span><span lang="es">Ediciones pequeñas incluidas</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Monthly health report in plain English</span><span lang="es">Informe mensual de salud en términos claros</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span lang="en">Edit time and speed tuning from Standard up</span><span lang="es">Tiempo de ediciones y ajustes de velocidad desde Estándar</span></li>
       </ul>
     </div>
   </div>
@@ -1039,6 +1065,10 @@
       <details>
         <summary><span lang="en">How do payments work?</span><span lang="es">¿Cómo funcionan los pagos?</span></summary>
         <p><span lang="en">50% upfront to start, 50% on launch. This is standard across the industry and keeps both sides invested in the result. For Premium projects, we can discuss milestone-based payments.</span><span lang="es">50% por adelantado para comenzar, 50% al lanzamiento. Esto es estándar en la industria y mantiene a ambas partes comprometidas con el resultado. Para proyectos Premium, podemos discutir pagos por hitos.</span></p>
+      </details>
+      <details>
+        <summary><span lang="en">What if I don't like the design?</span><span lang="es">¿Y si no me gusta el diseño?</span></summary>
+        <p><span lang="en">You see the design before anything is built, and two rounds of revisions are included after the first draft. Rounds beyond that are quoted at {{CARE_OVERAGE}}/hour before any work starts, so nothing is billed without your approval.</span><span lang="es">Ves el diseño antes de que se construya nada, y se incluyen dos rondas de revisiones después del primer borrador. Las rondas adicionales se cotizan a {{CARE_OVERAGE}}/hora antes de empezar, así que nada se cobra sin tu aprobación.</span></p>
       </details>
       <details>
         <summary><span lang="en">What if I already have a website?</span><span lang="es">¿Qué pasa si ya tengo un sitio web?</span></summary>
