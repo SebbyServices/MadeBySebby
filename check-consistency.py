@@ -578,8 +578,9 @@ MARKET_FIGURES = {
     # $240 is an AI builder's annual subscription -- a competitor's price, cited
     # to compare against ours, which is the whole point of that post.
     "blog/should-i-use-ai-to-build-my-website.html": {"$240"},
-    # RD$ agency comparison figures are pesos, explicitly marked, not our prices
-    "diseno-web-santo-domingo.html": {"$2,500", "$10,000"},
+    # RD$ agency comparison figures are pesos, explicitly marked, not our prices.
+    # $2,500 removed 2026-09-24: now a token ({{PRICE_STARTER}}) in that page.
+    "diseno-web-santo-domingo.html": {"$10,000"},
     # Only the cost of a security breach survives here. Everything else that used
     # to sit in this set was OUR pricing, allow-listed as though it described the
     # market: edit packs, the hourly overage, annual totals, per-edit costs. That
