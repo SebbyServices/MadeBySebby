@@ -1,3 +1,7 @@
+# Private ops folder: its own git repo (SebbyServices/madebysebby-ops).
+# Never part of this public site repo or GitHub Pages.
+ops/
+
 # Local-only files
 BUSINESS-INFO-TRACKER.md
 BUSINESS-PLAN.md
@@ -21,12 +25,14 @@ CLAUDE.md
 __pycache__/
 
 # Local-only working docs (research, decisions, plans). Never committed —
-# this repo is public. Ops docs proper live in ../madebysebby-ops/
+# this repo is public. Ops docs proper live in ops/ (its own private repo)
 PRICING-DECISION.md
 *-DECISION.md
 *-PLAN.md
 *-RESEARCH.md
 *-AUDIT.md
+*-RESEARCH-*.md
+*-AUDIT-*.md
 *-REQUESTS.md
 SESSION-STATE.md
 CLAUDE-PROJECT-*.md
