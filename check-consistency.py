@@ -380,9 +380,9 @@ NUMERIC_ONLY = re.compile(r"^[\W\d]*$")
 # A price renders the same in both trees by design -- $2,500 USD is not
 # untranslated copy, it is a number.
 PRICE_ONLY = re.compile(r"^[\$\d,.\s\u2013\u2014-]*(USD)?[\$\d,.\s\u2013\u2014-]*$")
-# The copyright line is a brand name and a year. Both are identical in Spanish;
-# the sentence that follows it in the footer IS a lang pair and is checked.
-COPYRIGHT_ONLY = re.compile(r"^\u00a9 \d{4} Made by Sebby\.$")
+# The copyright line is the legal entity and a year. Both are identical in
+# Spanish; the sentence that follows it in the footer IS a lang pair and is checked.
+COPYRIGHT_ONLY = re.compile(r"^\u00a9 \d{4} Sebby IT Consulting, Corp\.$")
 
 
 def check_bilingual_coverage():
@@ -733,7 +733,7 @@ def check_copyright_year():
     # The template writes the entity, not the literal character. Matching only
     # U+00A9 made this check silently match nothing at all, which is worse than
     # not having it: a green run that proves nothing.
-    pattern = re.compile(r"(?:&copy;|\u00a9)\s*(\d{4})\s+Made by Sebby")
+    pattern = re.compile(r"(?:&copy;|\u00a9)\s*(\d{4})\s+Sebby IT Consulting, Corp\.")
     stale = []
     for p in pages():
         if p in EXEMPT:

@@ -792,6 +792,8 @@ NAP = {
     # new one, and off-site citation-building (SD-SEO-PLAN.md section 4.6)
     # is still the lever expected to matter more.
     "alternateName": ["Made by Sebby Web Design", "MadeBySebby", "madebysebby"],
+    # The company that owns and operates the brand, named publicly from 2026-10-02.
+    "legalName": "Sebby IT Consulting, Corp.",
     "telephone": "+1-786-543-1417",
     "email": "hello@madebysebby.com",
     "address": {
@@ -987,7 +989,7 @@ FOOTER_TEMPLATE = '''<footer>
       </div>
   </div>
   <div class="wrap ft-bottom">
-    <p class="ft-copy">&copy; %(year)s Made by Sebby. <span lang="en">Web design and website care for small businesses in Miami and South Florida.</span><span lang="es">Diseño web y cuidado de sitios para pequeños negocios en Miami, el sur de Florida y Santo Domingo.</span></p>
+    <p class="ft-copy">&copy; %(year)s Sebby IT Consulting, Corp. <span lang="en">Made by Sebby is its web design and website care brand for small businesses in Miami and South Florida.</span><span lang="es">Made by Sebby es su marca de diseño web y cuidado de sitios para pequeños negocios en Miami, el sur de Florida y Santo Domingo.</span></p>
     <p class="ft-copy"><span lang="en">Need tech support instead? <a href="https://sebbyservices.com/" rel="noopener">Sebby IT</a> covers computers, networks and security.</span><span lang="es">¿Necesitas soporte técnico? <a href="https://sebbyservices.com/" rel="noopener">Sebby IT</a> cubre computadoras, redes y seguridad.</span></p>
     <div class="ft-legal">
       <a href="/privacy.html"><span lang="en">Privacy</span><span lang="es">Privacidad</span></a>
