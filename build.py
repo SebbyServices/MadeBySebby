@@ -448,6 +448,14 @@ SHORTLINKS = {
     "card/index.html": "/?utm_source=print&utm_medium=card",
 }
 
+# Private bookmarks: typed by Sebby, never linked from the site. They redirect
+# off-site to pages that sit behind his own login (the HQ dashboard is a private
+# claude.ai artifact), so the URL being readable in this public repo exposes
+# nothing. Kept apart from SHORTLINKS, which point at the site and carry UTM tags.
+PRIVATE_LINKS = {
+    "hq/index.html": "https://claude.ai/artifact/9kKpfvMpR6JDQfBD6cAVip",
+}
+
 # aria-label is never inside a <span lang> pair -- it is an attribute, so the
 # bilingual sibling trick cannot reach it. Under the old single-URL model that
 # was invisible; now a Spanish page would announce "Toggle dark mode" to a
@@ -1690,6 +1698,21 @@ SHORTLINK_STUB = """<!DOCTYPE html>
 </html>
 """
 
+PRIVATE_STUB = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Redirecting</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="refresh" content="0; url={target}">
+</head>
+<body>
+<p><a href="{target}" rel="nofollow">Continue</a></p>
+</body>
+</html>
+"""
+
 REDIRECT_STUB = """<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -1768,6 +1791,9 @@ def build(src_dir, out_dir):
         # validator does not, and one day a parser will read &utm as an entity.
         written[path] = SHORTLINK_STUB.format(
             domain=DOMAIN, target=target.replace("&", "&amp;"), clean=clean)
+
+    for path, target in PRIVATE_LINKS.items():
+        written[path] = PRIVATE_STUB.format(target=target)
 
     for rel, content in written.items():
         path = os.path.join(out_dir, rel)

@@ -1121,6 +1121,36 @@ def check_shortlinks():
             fail("shortlink", path, "points at %s, which does not exist" % target)
 
 
+def check_private_links():
+    """Private bookmarks (/hq) must redirect, stay unindexed, and never be linked.
+
+    The protection is the login on the destination, not secrecy, but a link from
+    the site, the sitemap or llms.txt would hand the path to every crawler and
+    AI answer engine for no benefit.
+    """
+    for path, target in build.PRIVATE_LINKS.items():
+        if not os.path.exists(path):
+            fail("private link", path, "declared in build.PRIVATE_LINKS but not generated")
+            continue
+        html = read(path)
+        if "noindex" not in html or "nofollow" not in html:
+            fail("private link", path, "must carry noindex, nofollow")
+        if 'http-equiv="refresh"' not in html or target not in html:
+            fail("private link", path, "does not redirect to %s" % target)
+        if not target.startswith("https://claude.ai/"):
+            fail("private link", path,
+                 "points at %s. Private links are for login-protected destinations only." % target)
+        slug = "/" + path.split("/")[0]
+        artifact_id = target.rstrip("/").rsplit("/", 1)[-1]
+        candidates = (glob.glob("src/**/*.html", recursive=True) + pages()
+                      + [p for p in ("sitemap.xml", "llms.txt", "robots.txt", "sw.js") if os.path.exists(p)])
+        for p in candidates:
+            body = read(p)
+            if artifact_id in body or re.search(r'["\'(]' + re.escape(slug) + r'/?["\')?#]', body) \
+                    or "madebysebby.com" + slug + "/" in body or body.rstrip().endswith("madebysebby.com" + slug):
+                fail("private link", p, "mentions %s. It must stay typed-only." % slug)
+
+
 def check_primary_buttons_go_somewhere():
     """A primary button must navigate, not scroll.
 
@@ -1650,6 +1680,7 @@ def main():
     check_primary_buttons_go_somewhere()
     check_reachable_from_home()
     check_shortlinks()
+    check_private_links()
     check_schema_prices()
     check_spanish_schema_is_spanish()
     check_spanish_diacritics()
