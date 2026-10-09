@@ -74,9 +74,9 @@ PAGES = {
         es="index.html",
         meta=dict(
             title="Diseño Web y Páginas Web para Negocios | Made by Sebby",
-            desc="Diseño web y cuidado mensual para pequeños negocios en Miami, el sur de Florida y República Dominicana. Bilingüe, móvil primero. Consulta gratis.",
+            desc="Diseño web y cuidado mensual para pequeños negocios en Miami y el sur de Florida. Bilingüe, móvil primero. Consulta gratis.",
             og_title="Diseño Web y Páginas Web para Negocios | Made by Sebby",
-            og_desc="Diseño, desarrollo y cuidado de páginas web para pequeños negocios en Miami, el sur de Florida y República Dominicana. Sitios bilingües que generan confianza y convierten visitantes.",
+            og_desc="Diseño, desarrollo y cuidado de páginas web para pequeños negocios en Miami y el sur de Florida. Sitios bilingües que generan confianza y convierten visitantes.",
             tw_title="Diseño Web y Páginas Web para Negocios | Made by Sebby",
             tw_desc="Diseño, desarrollo y cuidado mensual de páginas web para pequeños negocios. Sitios que generan confianza, convierten visitantes y crecen con tu negocio.",
         ),
@@ -87,7 +87,7 @@ PAGES = {
             title="Diseño Web, Cuidado Web y SEO Local | Made by Sebby",
             desc="Diseño web personalizado, mantenimiento mensual y SEO local para pequeños negocios en Miami y el sur de Florida. Sitios bilingües, móvil primero.",
             og_title="Diseño Web, Cuidado Web y SEO Local | Made by Sebby",
-            og_desc="Diseño web personalizado, mantenimiento mensual y SEO local para pequeños negocios en Miami, el sur de Florida y República Dominicana. Sitios bilingües hechos para convertir.",
+            og_desc="Diseño web personalizado, mantenimiento mensual y SEO local para pequeños negocios en Miami y el sur de Florida. Sitios bilingües hechos para convertir.",
             tw_title="Diseño Web, Cuidado Web y SEO Local | Made by Sebby",
             tw_desc="Diseño web personalizado, mantenimiento mensual y SEO local para pequeños negocios. Sitios bilingües, móvil primero, hechos para convertir.",
         ),
@@ -107,20 +107,20 @@ PAGES = {
         es="sobre-mi.html",
         meta=dict(
             title="Sobre Sebby. Diseñador Web Independiente",
-            desc="Diseñador web independiente para pequeños negocios en Miami y República Dominicana. Bilingüe, atención personal, y sitios cuidados como propios.",
+            desc="Diseñador web independiente para pequeños negocios en Miami y el sur de Florida. Bilingüe, atención personal, y sitios cuidados como propios.",
             og_title="Sobre Sebby. Diseñador Web Independiente",
-            og_desc="Diseñador web independiente para pequeños negocios en Miami y República Dominicana. Bilingüe, atención personal, y sitios cuidados como propios.",
+            og_desc="Diseñador web independiente para pequeños negocios en Miami y el sur de Florida. Bilingüe, atención personal, y sitios cuidados como propios.",
             tw_title="Sobre Sebby. Diseñador Web Independiente",
-            tw_desc="Diseñador web independiente para pequeños negocios en Miami y República Dominicana. Bilingüe y con atención personal.",
+            tw_desc="Diseñador web independiente para pequeños negocios en Miami y el sur de Florida. Bilingüe y con atención personal.",
         ),
     ),
     "contact.html": dict(
         es="contacto.html",
         meta=dict(
             title="Contacto. Consulta Gratis de Diseño Web",
-            desc="Agenda una consulta gratuita de 15 minutos en Miami o República Dominicana. Respuestas honestas sobre qué necesita tu sitio web y cuánto cuesta.",
+            desc="Agenda una consulta gratuita de 15 minutos en Miami y el sur de Florida. Respuestas honestas sobre qué necesita tu sitio web y cuánto cuesta.",
             og_title="Contacto. Consulta Gratis de Diseño Web",
-            og_desc="Agenda una consulta gratuita de 15 minutos en Miami o República Dominicana. Respuestas honestas sobre qué necesita tu sitio web y cuánto cuesta.",
+            og_desc="Agenda una consulta gratuita de 15 minutos en Miami y el sur de Florida. Respuestas honestas sobre qué necesita tu sitio web y cuánto cuesta.",
             tw_title="Contacto. Consulta Gratis de Diseño Web",
             tw_desc="Agenda una consulta gratuita de 15 minutos. Respuestas honestas sobre qué necesita tu sitio web y cuánto cuesta.",
         ),
@@ -257,42 +257,6 @@ PAGES = {
             tw_desc="Diseño web en Fort Lauderdale para pequeños negocios. Sitios que generan confianza y convierten. Bilingüe y móvil primero.",
         ),
     ),
-    # Spanish-only. This page exists to rank for "diseño web santo domingo" in a
-    # Spanish-speaking market -- an English twin would serve nobody. It used to
-    # live at the ROOT with a Spanish title and an English indexed body, which is
-    # precisely the defect this whole build exists to remove. Its old root path
-    # now emits a redirect stub (see REDIRECTS).
-    "diseno-web-santo-domingo.html": dict(
-        es="diseno-web-santo-domingo.html",
-        en=None,
-        meta=dict(
-            title="Diseño Web Santo Domingo. Páginas Web | Made by Sebby",
-            desc="Diseño web profesional en Santo Domingo y República Dominicana. Sitios personalizados, rápidos, modernos y optimizados para móvil.",
-            og_title="Diseño Web Santo Domingo. Páginas Web para Negocios",
-            og_desc="Diseño web profesional en Santo Domingo y República Dominicana. Sitios personalizados, rápidos, modernos y optimizados para móvil.",
-            tw_title="Diseño Web Santo Domingo. Páginas Web para Negocios",
-            tw_desc="Diseño web profesional en Santo Domingo y República Dominicana. Sitios web personalizados para negocios, rápidos, modernos y optimizados para móvil.",
-        ),
-    ),
-    # Spanish-only, same reasoning as diseno-web-santo-domingo.html above, one
-    # vertical down. Added 2026-09-05 after a Santo Domingo business owner
-    # searched for the service and this site did not appear for either the
-    # generic query or "diseñador web para abogados Santo Domingo" -- see
-    # SD-SEO-PLAN.md. The generic DR page stayed generic on purpose; this one
-    # exists so a law-firm-specific search has a page built for it instead of
-    # a page built for everyone.
-    "diseno-web-abogados-santo-domingo.html": dict(
-        es="diseno-web-abogados-santo-domingo.html",
-        en=None,
-        meta=dict(
-            title="Diseño Web para Abogados en Santo Domingo | Made by Sebby",
-            desc="Diseño web para bufetes de abogados en Santo Domingo. Páginas por área de práctica, biografías que generan confianza, y un proceso ya probado en un bufete de 70+ páginas.",
-            og_title="Diseño Web para Abogados en Santo Domingo",
-            og_desc="Diseño web para bufetes de abogados en Santo Domingo. Páginas por área de práctica, biografías que generan confianza, y un proceso ya probado en un bufete de 70+ páginas.",
-            tw_title="Diseño Web para Abogados en Santo Domingo",
-            tw_desc="Diseño web para bufetes de abogados en Santo Domingo. Páginas por área de práctica y biografías que generan confianza.",
-        ),
-    ),
     "privacy.html": dict(
         es="privacidad.html",
         meta=dict(
@@ -408,18 +372,24 @@ PAGES = {
     ),
 }
 
-# Copied to the root byte-for-byte. Neither is part of the two-tree model.
+# Copied to the root byte-for-byte. Not part of the two-tree model.
 #   404.html    GitHub Pages serves ONE 404 for the whole site, /es/ included,
 #               so it has to keep both languages inline to work for either.
-#   precios.html  Spanish-only DR one-pager shared over WhatsApp. Deliberately
-#               noindex, deliberately not in the nav, and NOT the same page as
-#               /es/precios.html (which is the Spanish twin of pricing.html).
-PASSTHROUGH = ["404.html", "precios.html"]
+PASSTHROUGH = ["404.html"]
 
 # old root path -> new URL. GitHub Pages cannot serve a 301, so these are
 # meta-refresh stubs carrying a canonical to the destination.
+#
+# The DR pages were retired 2026-10-08 (US market only for now, DR on hold; see
+# ops/DECISIONS.md). Each old URL forwards rather than 404s, because the DR
+# one-pager (precios.html) was shared by WhatsApp and those links are still in
+# people's chats. The one-pager forwards to the Spanish pricing page, the two
+# DR landing pages to the Spanish home.
 REDIRECTS = {
-    "diseno-web-santo-domingo.html": "/es/diseno-web-santo-domingo.html",
+    "precios.html": "/es/precios.html",
+    "diseno-web-santo-domingo.html": "/es/",
+    "es/diseno-web-santo-domingo.html": "/es/",
+    "es/diseno-web-abogados-santo-domingo.html": "/es/",
 }
 
 # Vanity short links for places where a URL is read by a human rather than
@@ -918,13 +888,9 @@ FOOTER_LINKS = {
         ("/blog.html", "Blog", "Blog"),
         ("/contact.html", "Contact", "Contacto"),
     ),
-    # Santo Domingo exists only in the Spanish tree, so the English footer must
-    # not link it. This is the one place the two footers legitimately differ,
-    # and check-consistency.py knows about it by name.
     "areas": (
         ("/web-design-miami.html", "Miami", "Miami"),
         ("/web-design-fort-lauderdale.html", "Fort Lauderdale", "Fort Lauderdale"),
-        ("/diseno-web-santo-domingo.html", None, "Santo Domingo"),
     ),
 }
 
@@ -997,7 +963,7 @@ FOOTER_TEMPLATE = '''<footer>
       </div>
   </div>
   <div class="wrap ft-bottom">
-    <p class="ft-copy">&copy; %(year)s Sebby IT Consulting, Corp. <span lang="en">Made by Sebby is its web design and website care brand for small businesses in Miami and South Florida.</span><span lang="es">Made by Sebby es su marca de diseño web y cuidado de sitios para pequeños negocios en Miami, el sur de Florida y Santo Domingo.</span></p>
+    <p class="ft-copy">&copy; %(year)s Sebby IT Consulting, Corp. <span lang="en">Made by Sebby is its web design and website care brand for small businesses in Miami and South Florida.</span><span lang="es">Made by Sebby es su marca de diseño web y cuidado de sitios para pequeños negocios en Miami y el sur de Florida.</span></p>
     <p class="ft-copy"><span lang="en">Need tech support instead? <a href="https://sebbyservices.com/" rel="noopener">Sebby IT</a> covers computers, networks and security.</span><span lang="es">¿Necesitas soporte técnico? <a href="https://sebbyservices.com/" rel="noopener">Sebby IT</a> cubre computadoras, redes y seguridad.</span></p>
     <div class="ft-legal">
       <a href="/privacy.html"><span lang="en">Privacy</span><span lang="es">Privacidad</span></a>
@@ -1300,11 +1266,6 @@ CRUMBS = {
     "web-design-miami.html": {"en": "Web Design Miami", "es": "Diseño Web Miami"},
     "web-design-fort-lauderdale.html": {"en": "Web Design Fort Lauderdale",
                                         "es": "Diseño Web Fort Lauderdale"},
-    "diseno-web-santo-domingo.html": {"en": "Web Design Santo Domingo",
-                                      "es": "Diseño Web Santo Domingo"},
-    "diseno-web-abogados-santo-domingo.html": {
-        "en": "Web Design for Law Firms, Santo Domingo",
-        "es": "Diseño Web para Abogados en Santo Domingo"},
     "blog/5-signs-your-website-is-losing-clients.html": {
         "en": "5 Signs Your Website Is Losing You Clients",
         "es": "5 Señales de Que Tu Sitio Web Pierde Clientes"},
@@ -1533,18 +1494,17 @@ def rewrite_jsonld(html, source, lang, memory):
                     node["url"] = DOMAIN + url_for("index.html", lang)
                     node.pop("geo", None)
 
-                # The English tree claims South Florida and nothing else. Leaving
-                # Santo Domingo and the Dominican Republic in areaServed splits the
-                # location signal on precisely the pages trying to rank in Miami,
-                # and Google was already giving two different answers about where
-                # this business is. The Spanish tree keeps both: it genuinely
-                # serves the DR, and /es/diseno-web-santo-domingo.html is live.
+                # Both trees claim South Florida and nothing else. Leaving Santo
+                # Domingo and the Dominican Republic in areaServed splits the
+                # location signal on precisely the pages trying to rank in Miami.
+                # The Spanish tree kept the DR until 2026-10-08, when the DR
+                # pages were retired (US market only for now).
                 #
                 # Deliberately OUTSIDE the LOCAL_TYPES block above. areaServed also
                 # sits on Service and Offer nodes (pricing.html, website-care.html,
                 # services.html all carry one), and scoping this to the business
                 # node would have left those three untouched while reading as done.
-                if lang == "en" and isinstance(node.get("areaServed"), list):
+                if isinstance(node.get("areaServed"), list):
                     node["areaServed"] = [
                         area for area in node["areaServed"]
                         if not DR_AREA.search(json.dumps(area))

@@ -44,15 +44,14 @@ MINIMAL_PAGES = {
     "thank-you.html": "post-form confirmation - noindex, no nav/footer/canonical",
     "es/gracias.html": "Spanish post-form confirmation - noindex",
 }
-STANDALONE_PAGES = {
-    "precios.html": "Spanish-only DR one-pager - own nav/footer, WhatsApp CTA, "
-                    "noindex. NOT the same page as es/precios.html, which is the "
-                    "Spanish twin of pricing.html",
-}
+STANDALONE_PAGES = {}
+# The DR pages were retired 2026-10-08 (US market only for now). Their URLs
+# forward instead of 404ing because precios.html was shared over WhatsApp.
 REDIRECT_STUBS = {
-    "diseno-web-santo-domingo.html": "meta-refresh stub - the page moved to "
-                                     "/es/diseno-web-santo-domingo.html when the "
-                                     "site split into two language trees",
+    "precios.html": "retired DR one-pager, forwards to /es/precios.html",
+    "diseno-web-santo-domingo.html": "old root URL of the retired DR landing page",
+    "es/diseno-web-santo-domingo.html": "retired DR landing page, forwards to /es/",
+    "es/diseno-web-abogados-santo-domingo.html": "retired DR law-firm page, forwards to /es/",
 }
 EXEMPT = set(MINIMAL_PAGES) | set(STANDALONE_PAGES) | set(REDIRECT_STUBS)
 NO_SW = EXEMPT
@@ -60,11 +59,11 @@ NOINDEX = EXEMPT
 # Both tree roots link their own logo to "#top" rather than "/". Deliberate.
 NAV_SELF_LINK = {"index.html": "#top", "es/index.html": "#top"}
 # The footer is generated from a single template, so every page carries the
-# same links including a link to itself. The one real asymmetry: the Santo
-# Domingo landing page exists ONLY in Spanish, so the English footer cannot
-# link it. Anything else differing between the two trees is a bug.
+# same links including a link to itself. Anything differing between the two
+# trees is a bug. (The Spanish-only Santo Domingo link was the one exception
+# until the DR pages were retired on 2026-10-08.)
 FOOTER_SELF_OMIT = {}
-FOOTER_ES_ONLY = {"diseno-web-santo-domingo.html"}
+FOOTER_ES_ONLY = set()
 
 BASE = "https://madebysebby.com"
 
@@ -578,9 +577,6 @@ MARKET_FIGURES = {
     # $240 is an AI builder's annual subscription -- a competitor's price, cited
     # to compare against ours, which is the whole point of that post.
     "blog/should-i-use-ai-to-build-my-website.html": {"$240"},
-    # RD$ agency comparison figures are pesos, explicitly marked, not our prices.
-    # $2,500 removed 2026-09-24: now a token ({{PRICE_STARTER}}) in that page.
-    "diseno-web-santo-domingo.html": {"$10,000"},
     # Only the cost of a security breach survives here. Everything else that used
     # to sit in this set was OUR pricing, allow-listed as though it described the
     # market: edit packs, the hourly overage, annual totals, per-edit costs. That
@@ -747,67 +743,6 @@ def check_copyright_year():
              % (len(stale), " shows" if len(stale) == 1 else "s show", year))
 
 
-def check_precios_stays_spanish():
-    """precios.html is Spanish-only, so every link it makes must stay Spanish.
-
-    It is a passthrough page: rewrite_paths never runs on it, so its links are
-    hand-written absolute URLs and nothing was retargeting them. All four pointed
-    into the English tree, which meant a Dominican prospect who tapped "ver
-    planes de mantenimiento" from a WhatsApp share landed on an English page.
-    """
-    page = "precios.html"
-    if not os.path.exists(page):
-        return
-    for href in sorted(set(re.findall(r'href="([^"]+)"', read(page)))):
-        if not href.startswith(BASE):
-            continue
-        path = href[len(BASE):] or "/"
-        if path.startswith("/es/"):
-            continue
-        fail("precios language", page,
-             "links to %s, which is in the English tree. This page is Spanish "
-             "only and shared over WhatsApp, so every link has to land in /es/."
-             % (path or "/"))
-
-
-def check_dr_price_parity():
-    """The DR one-pager must quote exactly the tier prices the main page does.
-
-    This is the invariant the whole "no regional discount" position rests on. If
-    precios.html and pricing.html ever disagree on a number, a prospect who finds
-    both has a real argument, and the answer to "price by scope, not by country"
-    stops being true.
-
-    Worth stating what actually went wrong, because it was not the prices. Those
-    matched. The two pages disagreed on what the price BOUGHT: $2,500 was "up to
-    5 pages" on the main page and "1-3 paginas" on the DR one, so the page built
-    for the Dominican market was the stingier of the two. Page counts are tokens
-    now, which is the structural fix; this check covers the prices.
-    """
-    dr, main = "precios.html", "es/precios.html"
-    if not (os.path.exists(dr) and os.path.exists(main)):
-        return
-    tiers = {build.PRICES[k] for k in
-             ("{{PRICE_STARTER}}", "{{PRICE_CUSTOM}}", "{{PRICE_PREMIUM}}")}
-    dr_text = unescape(re.sub(r"<[^>]+>", " ", read(dr)))
-    missing = sorted(t for t in tiers if t not in dr_text)
-    if missing:
-        fail("DR price parity", dr,
-             "does not quote %s, which the main Spanish pricing page does. The "
-             "two pages have to agree on every tier price or the no-regional-"
-             "discount position is not true." % ", ".join(missing))
-
-    # Anything the DR page quotes that is NOT a sanctioned price is the shape a
-    # regional discount would actually take.
-    ours = set(build.PRICES.values()) | MARKET_FIGURES.get(dr, set())
-    for literal in sorted({m.rstrip(",") for m in PRICE_LITERAL.findall(dr_text)}):
-        if literal not in ours:
-            fail("DR price parity", dr,
-                 "quotes %s, which is not a canonical price. A number that "
-                 "exists only on the DR page is exactly what a regional discount "
-                 "looks like." % literal)
-
-
 # ---------------------------------------------------------------------------
 # 7. Nav and footer link sets, compared by logical page across BOTH trees
 # ---------------------------------------------------------------------------
@@ -927,8 +862,10 @@ UNLINKED_BY_DESIGN = {
     "404.html":                      "served by GitHub Pages on a bad URL, never linked",
     "thank-you.html":                "reached only by submitting the contact form",
     "es/gracias.html":               "same, Spanish",
-    "precios.html":                  "DR one-pager, shared over WhatsApp, deliberately not in nav",
-    "diseno-web-santo-domingo.html": "meta-refresh stub for the old English URL",
+    "precios.html":                  "forwarding stub for the retired DR one-pager",
+    "diseno-web-santo-domingo.html": "forwarding stub for the retired DR landing page",
+    "es/diseno-web-santo-domingo.html": "forwarding stub for the retired DR landing page",
+    "es/diseno-web-abogados-santo-domingo.html": "forwarding stub for the retired DR law-firm page",
 }
 
 
@@ -1315,9 +1252,6 @@ def spanish_pages():
     the exemptions that exist for structure must not extend to the copy.
     """
     found = glob.glob("es/*.html") + glob.glob("es/blog/*.html")
-    for extra in ("precios.html", "diseno-web-santo-domingo.html"):
-        if os.path.isfile(extra):
-            found.append(extra)
     return sorted(found)
 
 
@@ -1673,8 +1607,6 @@ def main():
     check_em_dashes()
     check_em_dash_escapes()
     check_copyright_year()
-    check_precios_stays_spanish()
-    check_dr_price_parity()
     check_lang_toggle()
     check_cta_routing()
     check_primary_buttons_go_somewhere()
