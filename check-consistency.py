@@ -45,13 +45,13 @@ MINIMAL_PAGES = {
     "es/gracias.html": "Spanish post-form confirmation - noindex",
 }
 STANDALONE_PAGES = {}
-# The DR pages were retired 2026-10-08 (US market only for now). Their URLs
-# forward instead of 404ing because precios.html was shared over WhatsApp.
+# Pages retired 2026-10-08. Their URLs forward instead of 404ing because links
+# to them were shared and still circulate.
 REDIRECT_STUBS = {
-    "precios.html": "retired DR one-pager, forwards to /es/precios.html",
-    "diseno-web-santo-domingo.html": "old root URL of the retired DR landing page",
-    "es/diseno-web-santo-domingo.html": "retired DR landing page, forwards to /es/",
-    "es/diseno-web-abogados-santo-domingo.html": "retired DR law-firm page, forwards to /es/",
+    "precios.html": "retired price one-pager, forwards to /es/precios.html",
+    "diseno-web-santo-domingo.html": "old root URL of a retired landing page",
+    "es/diseno-web-santo-domingo.html": "retired landing page, forwards to /es/",
+    "es/diseno-web-abogados-santo-domingo.html": "retired landing page, forwards to /es/",
 }
 EXEMPT = set(MINIMAL_PAGES) | set(STANDALONE_PAGES) | set(REDIRECT_STUBS)
 NO_SW = EXEMPT
@@ -60,8 +60,7 @@ NOINDEX = EXEMPT
 NAV_SELF_LINK = {"index.html": "#top", "es/index.html": "#top"}
 # The footer is generated from a single template, so every page carries the
 # same links including a link to itself. Anything differing between the two
-# trees is a bug. (The Spanish-only Santo Domingo link was the one exception
-# until the DR pages were retired on 2026-10-08.)
+# trees is a bug.
 FOOTER_SELF_OMIT = {}
 FOOTER_ES_ONLY = set()
 
@@ -316,7 +315,7 @@ def check_hreflang():
 # ---------------------------------------------------------------------------
 def check_links():
     for page in pages():
-        # 404.html and precios.html are copied to the root verbatim rather than
+        # Passthrough pages (404.html) are copied to the root verbatim rather than
         # generated, and both sit at depth 0, so their relative paths resolve.
         passthrough = page in set(build.PASSTHROUGH)
         # srcset is included because leaving it out is how 11 broken hero images
@@ -372,7 +371,7 @@ NON_TRANSLATABLE = {
     "Jorge L. Riera", "John Pierce", "JP", "JR", "EC",
     "WhatsApp", "Cal.com", "Google", "Instagram", "LinkedIn", "SEO",
     "GitHub Pages", "Wave",
-    "Ir al contenido",   # diseno-web-santo-domingo is Spanish-only by design
+    "Ir al contenido",
     "<1s", "$3K+",       # a load-time metric and a price figure -- same in both
 }
 NUMERIC_ONLY = re.compile(r"^[\W\d]*$")
@@ -388,7 +387,7 @@ def check_bilingual_coverage():
     for src_path in sorted(glob.glob("src/*.html") + glob.glob("src/blog/*.html")):
         name = os.path.relpath(src_path, "src")
         if name in build.PASSTHROUGH:
-            continue        # precios.html is Spanish-only; 404.html stays inline
+            continue        # 404.html stays inline, both languages
         html = read(src_path)
         # Expand the footer before checking, rather than ignoring the token:
         # the footer is real user-facing copy and has to be bilingual too. It is
@@ -466,7 +465,7 @@ def check_translated_attributes():
 # Local ranking depends on the site and the Google Business Profile agreeing on
 # Name/Address/Phone; Google cross-references them. They did not agree -- the
 # verified profile is a Miami address with a (786) number while the site's only
-# structured address said Santo Domingo, DO with no phone.
+# structured address named a different city, with no phone.
 #
 # build.py injects build.NAP into every LocalBusiness node, so this verifies the
 # injection actually reached every page and that no source snuck a second
@@ -548,7 +547,7 @@ def check_nap():
 #
 # The site published FOUR different answers to "what does a website cost" --
 # $2,000-$8,000 on the home page, $1,500/$3,500/$7,000 on pricing, $3,000-$5,000
-# on the local landing pages, $500-$2,500 on the DR one-pager. Read the Miami
+# on the local landing pages, $500-$2,500 on a price one-pager. Read the Miami
 # page then click Pricing and the number halved. Prices now come from
 # build.PRICES, and this fails on any literal typed back into a source file.
 #
@@ -862,10 +861,10 @@ UNLINKED_BY_DESIGN = {
     "404.html":                      "served by GitHub Pages on a bad URL, never linked",
     "thank-you.html":                "reached only by submitting the contact form",
     "es/gracias.html":               "same, Spanish",
-    "precios.html":                  "forwarding stub for the retired DR one-pager",
-    "diseno-web-santo-domingo.html": "forwarding stub for the retired DR landing page",
-    "es/diseno-web-santo-domingo.html": "forwarding stub for the retired DR landing page",
-    "es/diseno-web-abogados-santo-domingo.html": "forwarding stub for the retired DR law-firm page",
+    "precios.html":                  "forwarding stub for a retired price one-pager",
+    "diseno-web-santo-domingo.html": "forwarding stub for a retired landing page",
+    "es/diseno-web-santo-domingo.html": "forwarding stub for a retired landing page",
+    "es/diseno-web-abogados-santo-domingo.html": "forwarding stub for a retired landing page",
 }
 
 
@@ -935,13 +934,29 @@ def check_schema_prices():
                      "or the two drift apart silently." % m.group(1))
 
 
+# The site serves Miami and South Florida. These place names belong to a market
+# that was dropped on 2026-10-08; none of them may appear on a live page.
+OUTSIDE_SERVICE_AREA = ("Santo Domingo", "Dominican Republic", "República Dominicana",
+                        "Punta Cana")
+
+
+def check_service_area():
+    for page in pages():
+        if page in REDIRECT_STUBS:
+            continue
+        text = unescape(read(page))
+        for term in OUTSIDE_SERVICE_AREA:
+            if term.lower() in text.lower():
+                fail("service area", page,
+                     "mentions %r. The site serves Miami and South Florida only." % term)
+
+
 def check_llms_txt():
     """llms.txt is the file written specifically for AI assistants.
 
     It sits outside src/, so the em dash gate and every other content check
-    ignored it completely. It spent an unknown period stating the business was
-    based in the Dominican Republic, three days after that exact claim was
-    removed from all 52 pages for contradicting the Miami NAP.
+    ignored it completely. It once stated a location that contradicted the
+    Miami NAP, days after the pages themselves had been corrected.
     """
     if not os.path.exists("llms.txt"):
         return
@@ -951,12 +966,10 @@ def check_llms_txt():
         fail("llms.txt", "llms.txt",
              "%d em dash%s. Rule 1 applies here too, and this is the file AI "
              "assistants read." % (hits, "" if hits == 1 else "es"))
-    for claim in ("based in the Dominican Republic", "based in Santo Domingo",
-                  "based in the DR"):
-        if claim.lower() in text.lower():
-            fail("llms.txt", "llms.txt",
-                 "says %r, which contradicts the Miami NAP every page declares."
-                 % claim)
+    for term in OUTSIDE_SERVICE_AREA:
+        if term.lower() in text.lower():
+            fail("service area", "llms.txt",
+                 "mentions %r. The site serves Miami and South Florida only." % term)
     digits = re.sub(r"\D", "", build.NAP["telephone"])
     if digits and digits[-10:] not in re.sub(r"\D", "", text):
         notes.append("llms.txt does not carry the canonical phone number")
@@ -1213,7 +1226,7 @@ esto eso aquello sino
 """.split())
 
 WORD = re.compile(r"[0-9A-Za-zÀ-ɏ]+")
-# Slugs are deliberately unaccented (/es/diseno-web-santo-domingo.html), so any
+# Slugs are deliberately unaccented (/es/diseno-web-miami.html), so any
 # token that is part of a path or a domain is not copy and is not checked.
 URLISH = re.compile(r"https?://\S+|\S*/\S*|\b[\w.-]+\.(?:html|com|net|org|dev|io)\b")
 PROSE_META = re.compile(
@@ -1607,6 +1620,7 @@ def main():
     check_em_dashes()
     check_em_dash_escapes()
     check_copyright_year()
+    check_service_area()
     check_lang_toggle()
     check_cta_routing()
     check_primary_buttons_go_somewhere()

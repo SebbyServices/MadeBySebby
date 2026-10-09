@@ -10,8 +10,8 @@ one. That works for humans and fails completely for search engines: the language
 is chosen by a localStorage read that Googlebot never performs, so every crawl
 saw `data-lang` absent and every Spanish string as display:none. 22,033 words of
 Spanish were invisible to Google, while every page simultaneously declared
-hreflang="es" pointing at itself. The Santo Domingo landing page was the sharpest
-case -- a Spanish <title> wrapped around an English body.
+hreflang="es" pointing at itself. One landing page was the sharpest case -- a
+Spanish <title> wrapped around an English body.
 
 You cannot fix that inside one URL. Google indexes one language per URL. So the
 bilingual file is now a SOURCE, not a deliverable, and this script splits it into
@@ -380,11 +380,10 @@ PASSTHROUGH = ["404.html"]
 # old root path -> new URL. GitHub Pages cannot serve a 301, so these are
 # meta-refresh stubs carrying a canonical to the destination.
 #
-# The DR pages were retired 2026-10-08 (US market only for now, DR on hold; see
-# ops/DECISIONS.md). Each old URL forwards rather than 404s, because the DR
-# one-pager (precios.html) was shared by WhatsApp and those links are still in
-# people's chats. The one-pager forwards to the Spanish pricing page, the two
-# DR landing pages to the Spanish home.
+# Retired pages (2026-10-08). Each old URL forwards rather than 404s, because
+# links to them were shared and still circulate. The old price one-pager
+# forwards to the Spanish pricing page, the two retired landing pages to the
+# Spanish home.
 REDIRECTS = {
     "precios.html": "/es/precios.html",
     "diseno-web-santo-domingo.html": "/es/",
@@ -745,7 +744,7 @@ def pair_map(html):
 # Local ranking depends on these matching EXACTLY between the site and the
 # Google Business Profile; Google cross-references them. They did not match: the
 # profile is verified at a Miami address with a (786) number, while the site's
-# only structured address said Santo Domingo, DO with no phone at all.
+# only structured address named a different city with no phone at all.
 #
 # Kept here, in one place, and injected into every LocalBusiness/ProfessionalService
 # node at build time. Hand-copying an address into six schema blocks is precisely
@@ -1026,7 +1025,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 #
 # The site was telling prospects FOUR different things a website costs: the home
 # page said $2,000-$8,000, the pricing page $1,500/$3,500/$7,000, the Miami and
-# Fort Lauderdale pages $3,000-$5,000, and the DR one-pager $500-$2,500. Read the
+# Fort Lauderdale pages $3,000-$5,000, and a price one-pager $500-$2,500. Read the
 # Miami page then click Pricing and the number halved. Transparent pricing is the
 # stated differentiator against every agency that answers "it depends", so a
 # contradiction here costs more than it would anywhere else.
@@ -1040,8 +1039,8 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 # they are substituted from here rather than hand-edited. check-consistency.py
 # fails on any bare price literal left in src/.
 #
-# USD is explicit because Sebby bills in USD and Dominican cards work: without
-# it a DR reader may reasonably assume pesos and read a number 58x off.
+# USD is explicit because Sebby bills in USD: a reader outside the US should
+# never have to guess the currency.
 PRICES = {
     "{{PRICE_STARTER}}": "$2,500",
     "{{PRICE_CUSTOM}}": "$5,000",
@@ -1071,8 +1070,8 @@ PRICES = {
     "{{CONTENT_HIGH}}": "$3,000",
 
     # Delivery windows and post-launch support. Tokenized 2026-08-15 because
-    # precios.html promised the DR a faster build than pricing.html sold in
-    # Miami (3-4 vs 4-6, 4-6 vs 6-10) on the same page that says the terms are
+    # a since-retired price one-pager promised a faster build than pricing.html
+    # sold (3-4 vs 4-6, 4-6 vs 6-10) on the same page that says the terms are
     # identical everywhere, and the Premium support period read 90 days on the
     # tier card and 30 days in the FAQ four hundred lines below it.
     "{{WEEKS_STARTER}}": "2\u20133",
@@ -1089,11 +1088,10 @@ PRICES = {
     "{{EDIT_SINGLE}}": "$49",
     "{{EDIT_3PACK}}": "$129",
     "{{EDIT_5PACK}}": "$199",
-    # Page counts per tier. Tokenised because pricing.html and the DR one-pager
-    # had drifted apart on exactly this: the same $2,500 bought "up to 5 pages"
-    # on one and "1-3 paginas" on the other. Prices matching is not enough if
-    # what the price BUYS disagrees, and the DR page was the stingier of the two,
-    # which is the opposite of the intent.
+    # Page counts per tier. Tokenised because pricing.html and a since-retired
+    # one-pager had drifted apart on exactly this: the same $2,500 bought "up to
+    # 5 pages" on one and "1-3 paginas" on the other. Prices matching is not
+    # enough if what the price BUYS disagrees.
     "{{PAGES_STARTER}}": "5",
     "{{PAGES_CUSTOM}}": "10",
     # What competing agencies charge. A claim about others, not a price of ours.
@@ -1216,9 +1214,9 @@ def substitute_prices(html):
 # Stable identity so every page's block is understood as ONE business rather
 # than a separate branch per landing page.
 BUSINESS_ID = DOMAIN + "/#business"
-# Matches an areaServed entry that belongs to the Dominican Republic, in any
-# nesting. Used to keep the DR out of the English tree's service area only.
-DR_AREA = re.compile(r"Santo Domingo|Dominican Republic")
+# The service area is South Florida. Any areaServed entry that names a country
+# other than the United States is dropped at build time, in any nesting.
+OUTSIDE_AREA = re.compile(r'"@type": "Country", "name": "(?!United States)')
 
 LOCAL_TYPES = ("ProfessionalService", "LocalBusiness")
 
@@ -1416,8 +1414,8 @@ def rewrite_jsonld(html, source, lang, memory):
                      "WebSite", "Blog", "Article")
 
         # A string that is already one of the Spanish sides needs no translation.
-        # diseno-web-santo-domingo.html authored its schema in Spanish from the
-        # start; without this it would fail every EN->ES lookup and lose its
+        # A Spanish-only page that authored its schema in Spanish from the
+        # start would, without this, fail every EN->ES lookup and lose its
         # entire FAQ, which is the opposite of the intended outcome.
         already_spanish = set(memory.values())
 
@@ -1477,8 +1475,7 @@ def rewrite_jsonld(html, source, lang, memory):
                     # sourced in English regardless of which page it lands on,
                     # so it always needs this swap on Spanish output. Missing
                     # this distinction the first time round left the two
-                    # Spanish-only-source pages (diseno-web-santo-domingo.html,
-                    # diseno-web-abogados-santo-domingo.html) still in English.
+                    # Spanish-only-source pages of the time still in English.
                     if lang == "es":
                         for key in PROSE_KEYS:
                             if key in node and isinstance(node[key], str):
@@ -1494,11 +1491,9 @@ def rewrite_jsonld(html, source, lang, memory):
                     node["url"] = DOMAIN + url_for("index.html", lang)
                     node.pop("geo", None)
 
-                # Both trees claim South Florida and nothing else. Leaving Santo
-                # Domingo and the Dominican Republic in areaServed splits the
-                # location signal on precisely the pages trying to rank in Miami.
-                # The Spanish tree kept the DR until 2026-10-08, when the DR
-                # pages were retired (US market only for now).
+                # Both trees claim South Florida and nothing else. A service
+                # area outside the US splits the location signal on precisely
+                # the pages trying to rank in Miami.
                 #
                 # Deliberately OUTSIDE the LOCAL_TYPES block above. areaServed also
                 # sits on Service and Offer nodes (pricing.html, website-care.html,
@@ -1507,7 +1502,7 @@ def rewrite_jsonld(html, source, lang, memory):
                 if isinstance(node.get("areaServed"), list):
                     node["areaServed"] = [
                         area for area in node["areaServed"]
-                        if not DR_AREA.search(json.dumps(area))
+                        if not OUTSIDE_AREA.search(json.dumps(area))
                     ]
 
                 # Both were absent from every BlogPosting on the site. image is
@@ -1561,8 +1556,8 @@ def rewrite_jsonld(html, source, lang, memory):
 
         # A Spanish-only page authored its schema in Spanish to begin with, so
         # there is nothing to translate. Deciding that from the page table is
-        # reliable; inferring it by string-matching the body is not, and cost
-        # Santo Domingo its entire FAQ.
+        # reliable; inferring it by string-matching the body is not, and once
+        # cost a page its entire FAQ.
         spanish_source = PAGES[source].get("en", source) is None
 
         if not regenerate_faq(data):
@@ -1733,9 +1728,9 @@ def build(src_dir, out_dir):
             written[rel] = render(source, raw, lang)
 
     for name in PASSTHROUGH:
-        # Passthrough pages skip the language split, but NOT price substitution --
-        # precios.html is the DR one-pager and quoting stale prices there is
-        # exactly the contradiction this table exists to prevent.
+        # Passthrough pages skip the language split, but NOT price substitution:
+        # a stale price on any page is exactly the contradiction PRICES exists
+        # to prevent.
         written[name] = substitute_prices(
             open(os.path.join(src_dir, name), encoding="utf-8").read())
 

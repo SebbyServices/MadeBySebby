@@ -63,8 +63,6 @@ VALUE = [
     (r"^/(es/)?(web-design-miami|diseno-web-miami)\.html$", 80, "primary local landing page"),
     (r"^/(es/)?(website-care|cuidado-web)\.html$", 75, "the recurring revenue offer"),
     (r"^/(es/)?(web-design|diseno-web)-fort-lauderdale\.html$", 65, "secondary local landing page"),
-    (r"^/(es/)?diseno-web-abogados-santo-domingo\.html$", 62, "the DR law-firm vertical, added 2026-09-05 after confirming the site was absent from this exact query"),
-    (r"^/(es/)?diseno-web-santo-domingo\.html$", 60, "the DR market"),
     (r"(services|servicios)\.html$",       55, "the service list"),
     (r"(website-audit|auditoria-web)\.html$", 58, "the audit offer, added 2026-09-22"),
     (r"(content-production|produccion-de-contenido)\.html$", 52, "the content retainer, added 2026-09-22"),

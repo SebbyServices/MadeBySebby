@@ -37,22 +37,16 @@ jobs:
           # indexable duplicates serving both languages at one URL -- precisely
           # the defect the split exists to remove.
           #
-          # Two exclusions are by -path, not -name, and the difference matters:
-          # precios.html at the root is the Spanish DR one-pager (noindex), but
-          # es/precios.html is the real Spanish pricing page; and
-          # diseno-web-santo-domingo.html at the root is now a redirect stub,
-          # while the /es/ one is the live page. -name would silently drop two
-          # indexable Spanish pages and nobody would notice for months.
+          # Pages marked noindex (forwarding stubs for retired URLs, the
+          # form confirmations) are skipped by reading the page itself, so a
+          # new stub can never slip into the sitemap by being missed here.
           find . -name '*.html' \
             -not -path './src/*' \
             -not -name 'index.html' \
             -not -name '404.html' \
-            -not -name 'thank-you.html' \
-            -not -name 'gracias.html' \
-            -not -path './precios.html' \
-            -not -path './diseno-web-santo-domingo.html' \
             | sed 's|^\./||' | sort \
             | while read f; do
+                grep -q 'name="robots" content="noindex' "$f" && continue
                 FDATE=$(git log -1 --format=%aI -- "$f" | cut -d'T' -f1)
                 echo "  <url><loc>${DOMAIN}/${f}</loc><lastmod>${FDATE}</lastmod></url>" >> sitemap.xml
               done

@@ -1,0 +1,11 @@
+# GitHub Pages runs Jekyll over this repo and serves every file it finds.
+# Only the generated site should be public: the bilingual sources in src/ are
+# not pages (each one would be a duplicate of two real URLs), and the build
+# tooling and work files are not for visitors.
+exclude:
+  - src/
+  - build.py
+  - check-consistency.py
+  - check-staleness.py
+  - reindex-queue.json
+  - __pycache__/
