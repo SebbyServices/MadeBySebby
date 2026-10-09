@@ -128,7 +128,7 @@
   .sitecard .bar{background:#EDEDF2;padding:9px 14px;display:flex;align-items:center;gap:8px}
   .sitecard .dot{width:9px;height:9px;border-radius:50%}
   .sitecard .url{margin-left:8px;background:#fff;border-radius:999px;padding:3px 14px;font-size:.72rem;color:#5a5e6b;font-weight:500}
-  .sitecard-hero{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;object-position:top center}
+  .sitecard-hero{width:100%;height:auto;display:block;aspect-ratio:16/10;object-fit:cover;object-position:top center}
   .sitecard .visit{background:#fff;padding:13px 18px;font-size:.88rem;font-weight:700;color:var(--purple);display:flex;justify-content:space-between;align-items:center}
 
   /* ---------- Testimonial ---------- */
@@ -161,7 +161,7 @@
   .foot-links a:hover{color:var(--purple)}
 
   /* ---------- Motion ---------- */
-  .rise{opacity:0;transform:translateY(16px);animation:rise .7s ease forwards}
+  .rise{opacity:1}
   .d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}
   @keyframes rise{to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){
@@ -394,7 +394,7 @@
 <a class="skip-link" href="#main"><span lang="en">Skip to content</span><span lang="es">Ir al contenido</span></a>
 <nav>
   <div class="wrap nav-inner">
-    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
+    <a class="logo" href="/" aria-label="Made by Sebby home"><img width="416" height="120" class="logo-light" src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block;width:auto"><img width="416" height="120" class="logo-dark" src="assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none;width:auto"></a>
     <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('nav-open')">
           <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
           <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
@@ -465,7 +465,7 @@
           <span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span>
           <span class="url">elitecarerecovery.net</span>
         </div>
-        <picture><source srcset="assets/hero-elitecare.webp" type="image/webp"><img class="sitecard-hero" src="assets/hero-elitecare.jpg" alt="Elite Care Recovery homepage hero" loading="lazy"></picture>
+        <picture><source srcset="assets/hero-elitecare.webp" type="image/webp"><img width="1200" height="750" class="sitecard-hero" src="assets/hero-elitecare.jpg" alt="Elite Care Recovery homepage hero" loading="lazy"></picture>
         <div class="visit"><span><span lang="en">Visit the live site</span><span lang="es">Visitar el sitio</span></span><span>elitecarerecovery.net&nbsp;&rarr;</span></div>
       </a>
     </div>

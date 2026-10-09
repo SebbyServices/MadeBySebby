@@ -230,7 +230,7 @@
   .foot-links a:hover{color:var(--purple)}
 
   /* Motion */
-  .rise{opacity:0;transform:translateY(16px);animation:rise .7s ease forwards}
+  .rise{opacity:1}
   .d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}
   @keyframes rise{to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){
@@ -509,8 +509,8 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 .ft-col a{font-size:.9rem;color:var(--muted)}
 .ft-col a:hover{color:var(--purple)}
 .ft-col-cta{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
-.ft-col-cta a.ft-cta{display:inline-block;padding:11px 20px;border-radius:var(--radius-sm);background:var(--purple);color:#fff;font-size:.88rem;font-weight:600;line-height:1}
-.ft-col-cta a.ft-cta:hover{background:var(--purple-deep);color:#fff}
+.ft-col-cta a.ft-cta{display:inline-block;padding:11px 20px;border-radius:var(--radius-sm);background:#6C3CE9;color:#fff;font-size:.88rem;font-weight:600;line-height:1}
+.ft-col-cta a.ft-cta:hover{background:#5A2FD0;color:#fff}
 .ft-bottom{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:44px;padding-top:22px;padding-bottom:26px;border-top:1px solid var(--line)}
 .ft-copy{font-size:.82rem;color:var(--muted);margin:0;flex:1 1 320px;line-height:1.6}
 .ft-legal{display:flex;gap:20px;font-size:.82rem}
@@ -676,7 +676,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <a class="skip-link" href="#main">Ir al contenido</a>
 <nav>
   <div class="wrap nav-inner">
-    <a class="logo" href="/es/" aria-label="Inicio de Made by Sebby"><img class="logo-light" src="/assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="/assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
+    <a class="logo" href="/es/" aria-label="Inicio de Made by Sebby"><img width="416" height="120" class="logo-light" src="/assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block;width:auto"><img width="416" height="120" class="logo-dark" src="/assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none;width:auto"></a>
     <button class="menu-btn" aria-label="Menú" onclick="document.querySelector('nav').classList.toggle('nav-open')">
           <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
           <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
@@ -713,7 +713,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 
 <section id="main" style="padding-top:24px;padding-bottom:48px">
   <div class="wrap about-grid">
-    <div class="portrait"><picture><source srcset="/assets/sebby.webp" type="image/webp"><img src="/assets/sebby.jpg" alt="Sebby, diseñador y desarrollador web"></picture></div>
+    <div class="portrait"><picture><source srcset="/assets/sebby.webp" type="image/webp"><img width="960" height="1200" src="/assets/sebby.jpg" alt="Sebby, diseñador y desarrollador web"></picture></div>
     <div class="prose reveal">
       <p><strong>Construyo sitios web por una razón simple.</strong> Cada dueño de negocio que he conocido es mejor en lo que hace de lo que su sitio web refleja. Un contratista con veinte años de experiencia es juzgado por una página que carga lento en el teléfono. Esa brecha me molesta, y cerrarla es el trabajo.</p>
       <p>Atendiendo clientes en Miami y el sur de Florida, mi trabajo ha crecido de la manera que creo que crece el mejor trabajo, una recomendación a la vez. Alguien me confía su sitio web, lo cuido como si fuera mío, y pasan mi nombre. Ese es todo el modelo de negocio, y solo funciona si cada cliente me recomendaría.</p>

@@ -80,7 +80,7 @@
   .foot-links{display:flex;gap:26px;font-size:.9rem;color:var(--muted)}
   .foot-links a:hover{color:var(--purple)}
 
-  .rise{opacity:0;transform:translateY(16px);animation:rise .7s ease forwards}
+  .rise{opacity:1}
   .d1{animation-delay:.08s}.d2{animation-delay:.16s}
   @keyframes rise{to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){.rise{opacity:1;transform:none;animation:none}*{transition:none !important;scroll-behavior:auto}}
@@ -227,7 +227,7 @@
 <a class="skip-link" href="#main"><span lang="en">Skip to content</span><span lang="es">Ir al contenido</span></a>
 <nav>
   <div class="wrap nav-inner">
-    <a class="logo" href="/" aria-label="Made by Sebby home"><img class="logo-light" src="../assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="../assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
+    <a class="logo" href="/" aria-label="Made by Sebby home"><img width="416" height="120" class="logo-light" src="../assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block;width:auto"><img width="416" height="120" class="logo-dark" src="../assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none;width:auto"></a>
     <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('nav-open')">
       <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>

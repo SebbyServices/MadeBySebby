@@ -228,7 +228,7 @@ PAGES = {
         es="diseno-web-para-abogados.html",
         meta=dict(
             title="Diseño Web para Abogados en Miami",
-            desc="Diseño web bilingüe para bufetes en Miami y el sur de Florida. Páginas de áreas de práctica que posicionan, biografías que convierten, y un sitio ya probado en un bufete de 70 páginas.",
+            desc="Diseño web bilingüe para bufetes en Miami y el sur de Florida. Páginas por área de práctica que posicionan y biografías que convierten.",
             og_title="Diseño Web para Abogados en Miami",
             og_desc="Sitios web bilingües para bufetes que responden lo que un cliente preocupado realmente pregunta. Áreas de práctica, biografías y formularios que funcionan.",
             tw_title="Diseño Web para Abogados en Miami",
@@ -352,7 +352,7 @@ PAGES = {
         es="blog/deberia-usar-ia-para-crear-mi-sitio-web.html",
         meta=dict(
             title="¿Deberías Usar IA para Crear Tu Sitio Web?",
-            desc="Puedes crear un sitio web con IA, y a veces deberías. Una mirada honesta a lo que hacen bien, dónde se detienen, y 12 cosas que revisar en cualquier sitio hecho con IA.",
+            desc="Puedes crear un sitio web con IA, y a veces deberías. Lo que hace bien, dónde se queda corta y 12 cosas que revisar en cualquier sitio hecho con IA.",
             og_title="¿Deberías Usar IA para Crear Tu Sitio Web?",
             og_desc="Puedes crear un sitio web con IA, y a veces deberías. Qué hacen bien los constructores con IA, dónde se detienen, y la capa invisible que suelen pasar por alto.",
             tw_title="¿Deberías Usar IA para Crear Tu Sitio Web?",
@@ -998,8 +998,8 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 .ft-col a{font-size:.9rem;color:var(--muted)}
 .ft-col a:hover{color:var(--purple)}
 .ft-col-cta{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
-.ft-col-cta a.ft-cta{display:inline-block;padding:11px 20px;border-radius:var(--radius-sm);background:var(--purple);color:#fff;font-size:.88rem;font-weight:600;line-height:1}
-.ft-col-cta a.ft-cta:hover{background:var(--purple-deep);color:#fff}
+.ft-col-cta a.ft-cta{display:inline-block;padding:11px 20px;border-radius:var(--radius-sm);background:#6C3CE9;color:#fff;font-size:.88rem;font-weight:600;line-height:1}
+.ft-col-cta a.ft-cta:hover{background:#5A2FD0;color:#fff}
 .ft-bottom{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:44px;padding-top:22px;padding-bottom:26px;border-top:1px solid var(--line)}
 .ft-copy{font-size:.82rem;color:var(--muted);margin:0;flex:1 1 320px;line-height:1.6}
 .ft-legal{display:flex;gap:20px;font-size:.82rem}

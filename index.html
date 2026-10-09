@@ -235,7 +235,7 @@
   .foot-links a:hover{color:var(--purple)}
 
   /* Motion */
-  .rise{opacity:0;transform:translateY(16px);animation:rise .7s ease forwards}
+  .rise{opacity:1}
   .d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}
   @keyframes rise{to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){
@@ -490,8 +490,8 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 .ft-col a{font-size:.9rem;color:var(--muted)}
 .ft-col a:hover{color:var(--purple)}
 .ft-col-cta{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
-.ft-col-cta a.ft-cta{display:inline-block;padding:11px 20px;border-radius:var(--radius-sm);background:var(--purple);color:#fff;font-size:.88rem;font-weight:600;line-height:1}
-.ft-col-cta a.ft-cta:hover{background:var(--purple-deep);color:#fff}
+.ft-col-cta a.ft-cta{display:inline-block;padding:11px 20px;border-radius:var(--radius-sm);background:#6C3CE9;color:#fff;font-size:.88rem;font-weight:600;line-height:1}
+.ft-col-cta a.ft-cta:hover{background:#5A2FD0;color:#fff}
 .ft-bottom{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:44px;padding-top:22px;padding-bottom:26px;border-top:1px solid var(--line)}
 .ft-copy{font-size:.82rem;color:var(--muted);margin:0;flex:1 1 320px;line-height:1.6}
 .ft-legal{display:flex;gap:20px;font-size:.82rem}
@@ -920,7 +920,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <!-- ============ NAV ============ -->
 <nav>
   <div class="wrap nav-inner">
-    <a class="logo" href="#top" aria-label="Made by Sebby home"><img class="logo-light" src="/assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block"><img class="logo-dark" src="/assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none"></a>
+    <a class="logo" href="#top" aria-label="Made by Sebby home"><img width="416" height="120" class="logo-light" src="/assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block;width:auto"><img width="416" height="120" class="logo-dark" src="/assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none;width:auto"></a>
     <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('nav-open')">
           <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
           <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
@@ -961,7 +961,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
       <p class="hero-note rise d3">Free 15-minute call. No pressure, plain answers.</p>
     </div>
     <div class="portrait rise d2">
-      <picture><source srcset="/assets/sebby.webp" type="image/webp"><img src="/assets/sebby.jpg" alt="Sebby, web designer and developer, smiling at his workstation"></picture>
+      <picture><source srcset="/assets/sebby.webp" type="image/webp"><img width="960" height="1200" src="/assets/sebby.jpg" alt="Sebby, web designer and developer, smiling at his workstation"></picture>
       <div class="chip">
         <span class="dot" aria-hidden="true"></span>
         <span>Sebby is taking new projects &nbsp;<em>· Typically replies within a day</em></span>
@@ -993,9 +993,9 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
   <div class="client-logos-bar">
     <div class="client-logos-label">Trusted by</div>
     <div class="client-logos">
-      <a href="/case-study-rieralaw.html"><img class="logo-light" src="/assets/client-logos/rieralaw-light.webp" alt="Riera Law Firm" loading="lazy" style="display:block"><img class="logo-dark" src="/assets/client-logos/rieralaw-dark.webp" alt="Riera Law Firm" loading="lazy" style="display:none"></a>
-      <a href="/case-study-orthoflow.html"><img class="logo-light" src="/assets/client-logos/orthoflow-light.webp" alt="Ortho Flow Recovery" loading="lazy" style="display:block"><img class="logo-dark" src="/assets/client-logos/orthoflow-dark.webp" alt="Ortho Flow Recovery" loading="lazy" style="display:none"></a>
-      <a href="/case-study-elitecare.html"><img class="logo-light" src="/assets/client-logos/elitecare-light.webp" alt="Elite Care Recovery" loading="lazy" style="display:block"><img class="logo-dark" src="/assets/client-logos/elitecare-dark.webp" alt="Elite Care Recovery" loading="lazy" style="display:none"></a>
+      <a href="/case-study-rieralaw.html"><img width="600" height="128" class="logo-light" src="/assets/client-logos/rieralaw-light.webp" alt="Riera Law Firm" loading="lazy" style="display:block"><img width="600" height="128" class="logo-dark" src="/assets/client-logos/rieralaw-dark.webp" alt="Riera Law Firm" loading="lazy" style="display:none"></a>
+      <a href="/case-study-orthoflow.html"><img width="512" height="128" class="logo-light" src="/assets/client-logos/orthoflow-light.webp" alt="Ortho Flow Recovery" loading="lazy" style="display:block"><img width="535" height="128" class="logo-dark" src="/assets/client-logos/orthoflow-dark.webp" alt="Ortho Flow Recovery" loading="lazy" style="display:none"></a>
+      <a href="/case-study-elitecare.html"><img width="523" height="145" class="logo-light" src="/assets/client-logos/elitecare-light.webp" alt="Elite Care Recovery" loading="lazy" style="display:block"><img width="523" height="145" class="logo-dark" src="/assets/client-logos/elitecare-dark.webp" alt="Elite Care Recovery" loading="lazy" style="display:none"></a>
     </div>
   </div>
 </div>
@@ -1074,15 +1074,15 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
     </div>
     <div class="work-grid">
       <a class="tile reveal" href="/case-study-rieralaw.html">
-        <div class="shot"><picture><source srcset="/assets/hero-rieralaw.webp" type="image/webp"><img src="/assets/hero-rieralaw.jpg" alt="Riera Law Firm homepage: securities arbitration attorney with courthouse background" loading="lazy"></picture></div>
+        <div class="shot"><picture><source srcset="/assets/hero-rieralaw.webp" type="image/webp"><img width="1200" height="750" src="/assets/hero-rieralaw.jpg" alt="Riera Law Firm homepage: securities arbitration attorney with courthouse background" loading="lazy"></picture></div>
         <div class="meta"><h3>Riera Law Firm</h3><p>Securities law · Full bilingual build, 70+ pages, ongoing care</p></div>
       </a>
       <a class="tile reveal" href="/case-study-orthoflow.html">
-        <div class="shot"><picture><source srcset="/assets/hero-orthoflow.webp" type="image/webp"><img src="/assets/hero-orthoflow.jpg" alt="Ortho Flow Recovery homepage: cold and compression therapy delivered for post-operative recovery" loading="lazy"></picture></div>
+        <div class="shot"><picture><source srcset="/assets/hero-orthoflow.webp" type="image/webp"><img width="1476" height="1029" src="/assets/hero-orthoflow.jpg" alt="Ortho Flow Recovery homepage: cold and compression therapy delivered for post-operative recovery" loading="lazy"></picture></div>
         <div class="meta"><h3>Ortho Flow Recovery</h3><p>Recovery equipment · Bilingual build, GitHub Pages, ongoing care</p></div>
       </a>
       <a class="tile reveal" href="/case-study-elitecare.html">
-        <div class="shot"><picture><source srcset="/assets/hero-elitecare.webp" type="image/webp"><img src="/assets/hero-elitecare.jpg" alt="Elite Care Recovery homepage: premium cold and compression therapy for post-operative patients" loading="lazy"></picture></div>
+        <div class="shot"><picture><source srcset="/assets/hero-elitecare.webp" type="image/webp"><img width="1200" height="750" src="/assets/hero-elitecare.jpg" alt="Elite Care Recovery homepage: premium cold and compression therapy for post-operative patients" loading="lazy"></picture></div>
         <div class="meta"><h3>Elite Care Recovery</h3><p>Medical equipment · Full site build, GitHub Pages</p></div>
       </a>
     </div>
