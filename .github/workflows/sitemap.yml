@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
     paths: ['*.html', 'blog/*.html', 'es/**/*.html']
+  # Run by hand (gh workflow run sitemap.yml) when the rules here change but no
+  # page did, so the sitemap catches up without a dummy page edit.
+  workflow_dispatch:
 
 jobs:
   sitemap:
