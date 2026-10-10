@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DV4L5CZRML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DV4L5CZRML');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Design in Hialeah: Spanish-First Sites for Clinics</title>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="Sebby. Made by Sebby">
+<meta name="description" content="Web design in Hialeah for clinics, factories and contractors. Spanish-first websites, written by a native speaker. Free 15-minute call.">
+<link rel="preload" as="image" href="assets/logo/sebby-nav.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Fonts load without blocking first paint. The URL already carries display=swap,
+     so fallback text was always going to show first; this stops the stylesheet
+     itself from holding up FCP. -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" media="print" onload="this.onload=null;this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"></noscript>
+<script>!function(){var t=localStorage.getItem("theme");t&&document.documentElement.setAttribute("data-theme",t)}()</script>
+<script>!function(){var l=localStorage.getItem("lang");if(!l){var n=navigator.language||navigator.userLanguage||"en";l=n.substring(0,2)==="es"?"es":"en"}if(l==="es")document.documentElement.setAttribute("data-lang","es")}()</script>
+<style>
+  :root{
+    --ink:#1A1D29;
+    --ink-soft:#4A4E5C;
+    --muted:#6B7080;
+    --purple:#6C3CE9;
+    --purple-deep:#5A2FD0;--purple-cta:#6C3CE9;--purple-cta-deep:#5A2FD0;
+    --blue:#2D6FFF;
+    --tint:#F4F1FD;
+    --line:#E8E6F2;
+    --white:#FFFFFF;
+    --radius:20px;
+    --radius-sm:12px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+  img{max-width:100%;display:block}
+
+  /* ---------- Nav ---------- */
+  nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:50}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.06rem;letter-spacing:-.01em}
+  .nav-links{display:flex;gap:34px;align-items:center;font-size:.95rem;font-weight:500}
+  .nav-links a{color:var(--ink-soft);transition:color .15s}
+  .nav-links a.btn{color:#fff}
+  .nav-links a.btn:hover{color:#fff}
+  .nav-controls{display:contents}
+  .nav-links a:hover{color:var(--purple)}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--purple-cta);color:#fff;font-weight:600;font-size:.98rem;
+    padding:13px 26px;border-radius:999px;border:none;cursor:pointer;
+    transition:background .15s, transform .15s;
+  }
+  .btn:hover{background:var(--purple-cta-deep);transform:translateY(-1px)}
+  .btn:focus-visible{outline-color:var(--ink)}
+  .btn-ghost{
+    background:transparent;color:var(--ink);border:1.5px solid var(--line);
+  }
+  .btn-ghost:hover{background:var(--tint);border-color:var(--purple);color:var(--purple)}
+  .btn-nav{padding:10px 22px;font-size:.92rem}
+
+  /* ---------- Page Hero ---------- */
+  .page-hero{padding:76px 0 52px}
+  .page-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.09;letter-spacing:-.028em;margin-bottom:24px}
+  .page-hero h1 .accent{color:var(--purple)}
+  .page-hero p.lede{font-size:1.14rem;color:var(--ink-soft);max-width:36em;margin-top:18px}
+  .eyebrow{
+    font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--purple);margin-bottom:20px;display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2.5px;background:var(--purple);border-radius:2px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
+  .breadcrumb{font-size:.85rem;color:var(--muted);margin-bottom:22px}
+  .breadcrumb a:hover{color:var(--purple)}
+
+  /* ---------- Sections ---------- */
+  section{padding:96px 0}
+  .sec-head{max-width:38em;margin-bottom:56px}
+  h2{font-size:clamp(1.7rem,3vw,2.35rem);font-weight:800;letter-spacing:-.022em;line-height:1.16;margin-bottom:16px}
+  .sec-head p{font-size:1.08rem;color:var(--ink-soft)}
+
+  /* Cards */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:34px 30px;transition:transform .18s, box-shadow .18s, border-color .18s;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08);border-color:#D8CFF6}
+  .card .glyph{
+    width:48px;height:48px;border-radius:14px;background:var(--tint);
+    display:flex;align-items:center;justify-content:center;margin-bottom:22px;
+  }
+  .card .glyph svg{width:23px;height:23px;stroke:var(--purple);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font-size:1.16rem;font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .card p{font-size:.97rem;color:var(--ink-soft)}
+
+  /* Services list */
+  .svc-list{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .svc-item{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px;transition:transform .18s,box-shadow .18s}
+  .svc-item:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,29,41,.08)}
+  .svc-item h3{font-size:1.1rem;font-weight:700;margin-bottom:9px}
+  .svc-item p{font-size:.95rem;color:var(--ink-soft);margin-bottom:16px}
+  .svc-item a{color:var(--purple);font-weight:600;font-size:.92rem}
+
+  /* Two-panel comparison */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .split-panel{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px}
+  .split-panel.good{background:var(--tint);border-color:#D8CFF6}
+  .split-panel h3{font-size:1.06rem;font-weight:700;margin-bottom:18px;letter-spacing:-.01em}
+  .split-panel ul{list-style:none;display:grid;gap:13px}
+  .split-panel li{font-size:.95rem;color:var(--ink-soft);padding-left:26px;position:relative}
+  .split-panel li::before{content:"";position:absolute;left:0;top:.62em;width:13px;height:2px;background:var(--muted);border-radius:2px}
+  .split-panel.good li::before{background:var(--purple);height:3px}
+  .note{margin-top:30px;font-size:.97rem;color:var(--ink-soft);max-width:46em}
+
+  /* Client logos */
+  .client-logos-bar{text-align:center;padding:28px 0 0}
+  .client-logos{display:flex;align-items:center;gap:48px;flex-wrap:wrap;justify-content:center;opacity:.75;transition:opacity .3s}
+  .client-logos:hover{opacity:1}
+  .client-logos a{display:inline-block;transition:transform .25s ease,opacity .25s ease}
+  .client-logos a:hover{transform:scale(1.06);opacity:.9}
+  .client-logos img{height:44px;width:auto}
+  .client-logos-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+
+  /* Credibility */
+  .credibility{background:var(--tint);border-radius:32px;padding:64px}
+  .credibility h2{margin-bottom:12px}
+  .credibility .body{color:var(--ink-soft);font-size:1.04rem;margin-bottom:24px;max-width:36em}
+  .credibility .cta-link{color:var(--purple);font-weight:600;font-size:.95rem}
+
+  /* FAQ */
+  .faq{display:grid;gap:14px;max-width:44em}
+  .faq details{border:1px solid var(--line);border-radius:var(--radius-sm);padding:20px 24px;background:var(--white)}
+  .faq summary{font-weight:700;cursor:pointer;font-size:1rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq summary::after{content:"+";color:var(--purple);font-size:1.4rem;font-weight:600;line-height:1}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{margin-top:12px;color:var(--ink-soft);font-size:.97rem}
+
+  /* Final CTA */
+  .final{text-align:center;padding:110px 0}
+  .final h2{max-width:18em;margin:0 auto 18px}
+  .final p{color:var(--ink-soft);font-size:1.1rem;margin-bottom:36px}
+
+  /* Footer */
+  footer{border-top:1px solid var(--line);padding:44px 0}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .credit{display:flex;align-items:center;gap:10px;font-size:.92rem;color:var(--muted)}
+  .credit strong{color:var(--ink);font-weight:700}
+  .foot-links{display:flex;gap:26px;font-size:.9rem;color:var(--muted)}
+  .foot-links a:hover{color:var(--purple)}
+
+  /* Motion */
+  .rise{opacity:1}
+  .d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    .rise{opacity:1;transform:none;animation:none}
+    *{transition:none !important;scroll-behavior:auto}
+  }
+
+  /* Responsive */
+  @media (max-width:900px){
+    .cards{grid-template-columns:1fr}
+    .split{grid-template-columns:1fr}
+    .svc-list{grid-template-columns:1fr 1fr}
+    .credibility{padding:48px 32px}
+  }
+  @media (max-width:640px){
+    .svc-list{grid-template-columns:1fr}
+    section{padding:68px 0}
+    .page-hero{padding:56px 0 40px}
+    .credibility{padding:36px 24px;border-radius:var(--radius)}
+  }
+
+  /* ---------- Hamburger Menu ---------- */
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;z-index:51}
+  .menu-btn svg{width:26px;height:26px;stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round}
+  .menu-btn .close{display:none}
+  .nav-open .menu-btn .open{display:none}
+  .nav-open .menu-btn .close{display:block}
+  @media (max-width:640px){
+    .menu-btn{display:block}
+    .nav-links{
+      display:none;position:fixed;top:76px;left:0;right:0;bottom:0;
+      background:var(--white);flex-direction:column;gap:0;padding:20px 28px;
+      border-top:1px solid var(--line);z-index:49;
+      overflow-y:auto;
+    }
+    .nav-open{backdrop-filter:none;overflow:visible}
+    .nav-open .nav-links{display:flex}
+    .nav-links a{padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;width:100%}
+    .nav-links a:last-child{border-bottom:none}
+    .nav-links a.btn{margin-top:12px;justify-content:center;border-bottom:none}
+    /* language + theme sit on one row, theme to the right of the pill */
+    .nav-links .nav-controls{display:flex;align-items:center;gap:14px;margin-top:8px;align-self:flex-start}
+  }
+
+  /* ---------- Scroll Animations ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+
+  /* ---------- Sticky CTA ---------- */
+  .sticky-cta{
+    position:fixed;bottom:0;left:0;right:0;z-index:40;
+    background:var(--purple-cta);color:#fff;
+    padding:14px 28px;text-align:center;
+    transform:translateY(100%);transition:transform .35s ease;
+    font-weight:600;font-size:.95rem;
+  }
+  .sticky-cta.show{transform:translateY(0)}
+  .sticky-cta a{color:#fff;text-decoration:none}
+  .sticky-cta a:hover{text-decoration:underline}
+  @media (max-width:640px){
+    .sticky-cta{font-size:.88rem;padding:12px 20px}
+  }
+
+  /* ---------- Language Toggle ---------- */
+  :root:not([data-lang="es"]) [lang="es"]{display:none}
+  [data-lang="es"] [lang="en"]{display:none}
+  .lang-toggle{
+    display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;
+    font-size:.76rem;font-weight:600;letter-spacing:.04em;flex-shrink:0;
+  }
+  .lang-toggle button{
+    background:none;border:none;padding:7px 12px;cursor:pointer;
+    color:var(--muted);transition:background .15s,color .15s;font-weight:700;font-size:.76rem;letter-spacing:.04em;
+  }
+  .lang-toggle button:hover{color:var(--purple)}
+  .lang-toggle button.active{background:var(--purple-cta);color:#fff}
+
+  /* ---------- Dark Mode ---------- */
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;--purple-cta:#6B4EC2;--purple-cta-deep:#5C41B0;
+      --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E4E5EA;--ink-soft:#A0A3AD;--muted:#808490;
+      --purple:#8B6CEF;--purple-deep:#7B5FDB;--purple-cta:#6B4EC2;--purple-cta-deep:#5C41B0;
+      --tint:#1D192D;--line:#2A2838;--white:#0F1117;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) nav{background:rgba(15,17,23,.92)}
+    :root:not([data-theme="light"]) .card,:root:not([data-theme="light"]) .svc-item,:root:not([data-theme="light"]) .split-panel,:root:not([data-theme="light"]) .faq details{background:#1A1C25}
+    :root:not([data-theme="light"]) .split-panel.good{background:#221E33;border-color:#3D3A4E}
+    :root:not([data-theme="light"]) .card:hover{border-color:#3D3A4E}
+    :root:not([data-theme="light"]) .credibility{background:#1A1C25}
+    :root:not([data-theme="light"]) .btn-ghost{border-color:var(--line)}
+    :root:not([data-theme="light"]) .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+    :root:not([data-theme="light"]) .logo-light{display:none !important}
+    :root:not([data-theme="light"]) .logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .foot-logo-light{display:none !important}
+    :root:not([data-theme="light"]) .foot-logo-dark{display:block !important}
+    :root:not([data-theme="light"]) .client-logos img.logo-light{display:none !important}
+    :root:not([data-theme="light"]) .client-logos img.logo-dark{display:block !important}
+  }
+  [data-theme="dark"] nav{background:rgba(15,17,23,.92)}
+  [data-theme="dark"] .card,[data-theme="dark"] .svc-item,[data-theme="dark"] .split-panel,[data-theme="dark"] .faq details{background:#1A1C25}
+    [data-theme="dark"] .split-panel.good{background:#221E33;border-color:#3D3A4E}
+  [data-theme="dark"] .card:hover{border-color:#3D3A4E}
+  [data-theme="dark"] .credibility{background:#1A1C25}
+  [data-theme="dark"] .btn-ghost{border-color:var(--line)}
+  [data-theme="dark"] .btn-ghost:hover{background:var(--tint);border-color:var(--purple)}
+  [data-theme="dark"] .logo-light{display:none !important}
+  [data-theme="dark"] .logo-dark{display:block !important}
+  [data-theme="dark"] .foot-logo-light{display:none !important}
+  [data-theme="dark"] .foot-logo-dark{display:block !important}
+  [data-theme="dark"] .client-logos img.logo-light{display:none !important}
+  [data-theme="dark"] .client-logos img.logo-dark{display:block !important}
+
+  /* Theme transition */
+  .theme-trans,.theme-trans *,.theme-trans *::before,.theme-trans *::after{
+    transition:background .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease,fill .35s ease,stroke .35s ease !important;
+  }
+  .theme-toggle{
+    background:none;border:1.5px solid var(--line);border-radius:50%;
+    width:38px;height:38px;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;transition:border-color .15s,background .15s;flex-shrink:0;
+  }
+  .theme-toggle:hover{border-color:var(--purple);background:var(--tint)}
+  .theme-toggle svg{width:18px;height:18px;stroke:var(--muted);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .theme-toggle:hover svg{stroke:var(--purple)}
+  .theme-toggle .icon-sun{display:none}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon{display:none}
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun{display:block}
+  }
+  [data-theme="dark"] .theme-toggle .icon-moon{display:none}
+  [data-theme="dark"] .theme-toggle .icon-sun{display:block !important}
+  [data-theme="light"] .theme-toggle .icon-sun{display:none !important}
+  [data-theme="light"] .theme-toggle .icon-moon{display:block}
+
+  /* ---------- Skip link ---------- */
+  .skip-link{position:absolute;top:-100%;left:16px;background:var(--purple-cta);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;z-index:100;transition:top .2s}
+  .skip-link:focus{top:12px}
+
+  /* ---------- Print ---------- */
+  @media print{
+    nav,.menu-btn,.sticky-cta,#stickyCta,.theme-toggle,.lang-toggle,footer,.hero-ctas,.btn,.cta-row,.foot-cta{display:none!important}
+    body{color:#000;background:#fff;-webkit-print-color-adjust:exact}
+    .wrap{max-width:100%;padding:0 12px}
+    a{color:#000}
+    a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em;color:#555}
+    a[href^="mailto"]::after{content:" (" attr(href) ")";font-size:.8em;color:#555}
+    img{max-width:100%!important;filter:none!important}
+    .reveal{opacity:1!important;transform:none!important}
+  }
+</style>
+
+<!-- seo:start -->
+<link rel="alternate" type="text/plain" title="LLM instructions" href="/llms.txt">
+<link rel="canonical" href="https://madebysebby.com/web-design-hialeah.html">
+<link rel="alternate" hreflang="en" href="https://madebysebby.com/web-design-hialeah.html">
+<link rel="alternate" hreflang="es" href="https://madebysebby.com/web-design-hialeah.html">
+<link rel="alternate" hreflang="x-default" href="https://madebysebby.com/web-design-hialeah.html">
+<meta name="theme-color" content="#6C3CE9">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Made by Sebby">
+<meta property="og:title" content="Web Design in Hialeah: Spanish-First Sites for Clinics">
+<meta property="og:description" content="Web design in Hialeah for clinics, factories and contractors. Spanish-first websites, written by a native speaker. Free 15-minute call.">
+<meta property="og:url" content="https://madebysebby.com/web-design-hialeah.html">
+<meta property="og:image" content="https://madebysebby.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Web Design in Hialeah: Spanish-First Sites for Clinics">
+<meta name="twitter:description" content="Web design in Hialeah for clinics, factories and contractors. Spanish-first websites, written by a native speaker. Free 15-minute call.">
+<meta name="twitter:image" content="https://madebysebby.com/assets/og-image.jpg">
+<!-- seo:end -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Made by Sebby | Web Design Hialeah",
+  "url": "https://madebysebby.com/web-design-hialeah.html",
+  "image": "https://madebysebby.com/assets/og-image.jpg",
+  "logo": "https://madebysebby.com/assets/icons/icon-512.png",
+  "description": "Web design in Hialeah for clinics, factories and contractors. Spanish-first websites, written by a native speaker. Free 15-minute call.",
+  "email": "hello@madebysebby.com",
+  "founder": {
+    "@type": "Person",
+    "name": "Sebastian Podgaetz",
+    "alternateName": "Sebby",
+    "jobTitle": "Web Designer & Developer"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Hialeah", "containedInPlace": {"@type": "State", "name": "Florida"}}
+  ],
+  "serviceType": ["Web Design", "Web Development", "Website Maintenance", "SEO", "Bilingual Website Design"],
+  "knowsAbout": ["Web Design", "WordPress", "Custom Websites", "Small Business Websites", "Bilingual Web Design", "Hialeah Clinics, Factories and Contractors"],
+  "priceRange": "$$",
+  "slogan": "Websites that build trust."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://madebysebby.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Web Design Hialeah", "item": "https://madebysebby.com/web-design-hialeah.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you write the Spanish, or do I have to supply it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I write it. Spanish is my first language, so what goes on the page is written in Spanish rather than translated out of English, which is why it does not have the stiff, slightly wrong feel that machine output has. If you already have Spanish copy you like, I will use it. If you have Spanish copy that came out of a plugin, I will tell you honestly what it reads like."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will Google actually show my Spanish pages to people searching in Spanish?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That is what the two-address structure is for. Each Spanish page has its own URL, its own Spanish title and description, and an hreflang tag naming its English twin. Google can then treat it as a Spanish page rather than as a hidden layer of an English one. What nobody can promise you is a position: hreflang decides which version is shown, not how high up it appears."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My customers all speak English. Do I still need Spanish?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Maybe not, and I would rather say so than sell you something. The question I ask on the call is who you lose, not who you have. A dental office whose patients all arrive by referral from one English-speaking network is a different case from a roofer who wants the phone to ring from search. If the honest answer is that English is enough for you, we build in English and put the money into the pages that earn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you add Spanish to the website I already have?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sometimes, and it depends on how the current site is put together. If it can produce a second set of URLs, adding a properly indexed Spanish side is a content and configuration job rather than a rebuild. If it is a page builder that only knows how to swap words in place, you would be paying to bolt a translate widget onto it, and that is the thing this page is arguing against. I will look and tell you which one you have before quoting anything."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who keeps it running after it launches?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Me, if you want that. A bilingual site is two sets of pages to keep in step, and the usual way it decays is that the English side gets a new service page and the Spanish side quietly does not. A monthly care plan covers updates, backups, monitoring and small edits, and it treats both languages as one site. You can also take the keys and run it yourself, which is a perfectly reasonable choice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a website cost in Miami?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mine start at {{PRICE_STARTER}} {{USD}} and the tiers are listed above, with the full breakdown on the pricing page. You will also find offers around town at a few hundred dollars, and they are usually a template with your logo dropped into it and your text poured into someone else's layout. That is a real option and occasionally the right one. It is not what this is."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main"><span lang="en">Skip to content</span><span lang="es">Ir al contenido</span></a>
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="/" aria-label="Made by Sebby home"><img width="416" height="120" class="logo-light" src="assets/logo/sebby-nav.svg" alt="Made by Sebby" style="height:42px;display:block;width:auto"><img width="416" height="120" class="logo-dark" src="assets/logo/sebby-nav-white.svg" alt="Made by Sebby" style="height:42px;display:none;width:auto"></a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('nav-open')">
+          <svg class="open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <svg class="close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      <div class="nav-links">
+      <a href="services.html"><span lang="en">What I do</span><span lang="es">Qué hago</span></a>
+      <a href="work.html"><span lang="en">Work</span><span lang="es">Trabajo</span></a>
+      <a href="pricing.html"><span lang="en">Pricing</span><span lang="es">Precios</span></a>
+      <a href="website-care.html"><span lang="en">Website Care</span><span lang="es">Cuidado Web</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <div class="nav-controls">
+        <div class="lang-toggle">
+            <button onclick="document.documentElement.removeAttribute('data-lang');localStorage.setItem('lang','en');this.classList.add('active');this.nextElementSibling.classList.remove('active')" class="active">EN</button>
+            <button onclick="document.documentElement.setAttribute('data-lang','es');localStorage.setItem('lang','es');this.classList.add('active');this.previousElementSibling.classList.remove('active')">ES</button>
+          </div>
+          <button class="theme-toggle" aria-label="Toggle dark mode" onclick="(function(){var h=document.documentElement;h.classList.add('theme-trans');var t=h.getAttribute('data-theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches,n=t==='dark'||(s&&t!=='light')?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);setTimeout(function(){h.classList.remove('theme-trans')},400)})()">
+            <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+      </div>
+        <a href="book.html" class="btn btn-nav"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span></a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<header class="page-hero">
+  <div class="wrap">
+    <div class="breadcrumb rise"><a href="/"><span lang="en">Home</span><span lang="es">Inicio</span></a> / <span lang="en">Web Design Hialeah</span><span lang="es">Diseño Web Hialeah</span></div>
+    <div class="eyebrow rise d1"><span lang="en">Web Design · Hialeah</span><span lang="es">Diseño Web · Hialeah</span></div>
+    <h1 class="rise d2"><span lang="en">Web Design in <span class="accent">Hialeah</span>, Spanish First</span><span lang="es">Diseño Web en <span class="accent">Hialeah</span>, Primero en Español</span></h1>
+    <p class="lede rise d3"><span lang="en">Nine in ten people in Hialeah speak Spanish at home. For a clinic, a factory or a contractor here, the Spanish version of the website is not the extra one. It is the one most of your customers read, and I write it myself.</span><span lang="es">Nueve de cada diez personas en Hialeah hablan español en casa. Para una clínica, una fábrica o un contratista de aquí, la versión en español del sitio no es la extra. Es la que lee la mayoría de tus clientes, y la escribo yo mismo.</span></p>
+    <div class="hero-ctas rise d3">
+      <a class="btn" href="book.html"><span lang="en">Free 15-minute call</span><span lang="es">Llamada gratuita de 15 minutos</span>&nbsp;&rarr;</a>
+      <a class="btn btn-ghost" href="#clinics"><span lang="en">What a clinic site needs</span><span lang="es">Lo que necesita el sitio de una clínica</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ SPANISH FIRST ============ -->
+<section id="main">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">Spanish first, not Spanish too.</span><span lang="es">Primero en español, no también en español.</span></h2>
+      <p><span lang="en">Hialeah is Florida's sixth-largest city, with more than 224,000 residents by the city's own count. Of residents age five and up, 91.9% speak Spanish at home, and 59.5% are Spanish speakers who speak English less than "very well", in the Census Bureau's words (US Census Bureau, American Community Survey, 2020 to 2024). That is about six in ten. Here, a site written only in English is a site most of the neighborhood reads with effort, if it reads it at all.</span><span lang="es">Hialeah es la sexta ciudad más grande de Florida, con más de 224,000 residentes según la propia ciudad. De los residentes de cinco años o más, el 91.9% habla español en casa, y el 59.5% son hispanohablantes que hablan inglés menos que "muy bien", en palabras de la Oficina del Censo (Oficina del Censo de EE. UU., American Community Survey, 2020 a 2024). Son unos seis de cada diez. Aquí, un sitio escrito solo en inglés es un sitio que la mayoría del barrio lee con esfuerzo, si es que lo lee.</span></p>
+      <p><span lang="en">Spanish first means more than a translated homepage. It means four places where Spanish leads.</span><span lang="es">Primero en español significa más que una página de inicio traducida. Significa cuatro lugares donde el español va delante.</span></p>
+    </div>
+    <div class="svc-list">
+      <div class="svc-item reveal">
+        <h3><span lang="en">What Google shows</span><span lang="es">Lo que muestra Google</span></h3>
+        <p><span lang="en">The title and the short description under it in the search results, written in Spanish, so the listing reads like it was meant for the person searching.</span><span lang="es">El título y la descripción corta que aparecen en los resultados de búsqueda, escritos en español, para que el resultado se lea como si fuera para quien busca.</span></p>
+      </div>
+      <div class="svc-item reveal">
+        <h3><span lang="en">The form, and the email after it</span><span lang="es">El formulario, y el correo que llega después</span></h3>
+        <p><span lang="en">Labels, error messages and the confirmation email, all in Spanish. A form that suddenly answers in English loses people halfway through.</span><span lang="es">Etiquetas, mensajes de error y el correo de confirmación, todo en español. Un formulario que de pronto responde en inglés pierde a la gente a mitad de camino.</span></p>
+      </div>
+      <div class="svc-item reveal">
+        <h3><span lang="en">Your Google Business Profile</span><span lang="es">Tu perfil de empresa en Google</span></h3>
+        <p><span lang="en">The description, services and posts in Spanish, saying the same thing as the site. Many people see the profile before they ever see the site.</span><span lang="es">La descripción, los servicios y las publicaciones en español, diciendo lo mismo que el sitio. Mucha gente ve el perfil antes de ver el sitio.</span></p>
+      </div>
+      <div class="svc-item reveal">
+        <h3><span lang="en">English, at its own address</span><span lang="es">El inglés, en su propia dirección</span></h3>
+        <p><span lang="en">The English version still exists, for insurers, referring offices and the son or daughter who books for a parent. It just isn't the one in charge.</span><span lang="es">La versión en inglés sigue existiendo, para las aseguradoras, las oficinas que refieren y el hijo o la hija que hace la cita por su papá o su mamá. Solo que no es la que manda.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLINICS ============ -->
+<section id="clinics" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">Clinics, and patients who search by ZIP code.</span><span lang="es">Clínicas, y pacientes que buscan por código postal.</span></h2>
+      <p><span lang="en">Health care is the largest sector in the ZIP codes that cover Hialeah: 1,375 establishments, 15.4% of the total, against 11.8% across Miami-Dade (US Census Bureau, County Business Patterns, 2023). Patients search in Spanish and close to home. Type "dentista en hialeah" into Google and it suggests 33010, 33012 and 33016, and even "49 st".</span><span lang="es">La salud es el sector más grande en los códigos postales que cubren Hialeah: 1,375 establecimientos, el 15.4% del total, frente al 11.8% en todo Miami-Dade (Oficina del Censo de EE. UU., County Business Patterns, 2023). Los pacientes buscan en español y cerca de casa. Escribe "dentista en hialeah" en Google y te sugiere 33010, 33012 y 33016, y hasta "49 st".</span></p>
+      <p><span lang="en">A clinic site that wins that search answers five things, in Spanish, on a phone.</span><span lang="es">El sitio de una clínica que gana esa búsqueda responde cinco cosas, en español, en el teléfono.</span></p>
+    </div>
+    <div class="svc-list">
+      <div class="svc-item reveal">
+        <h3><span lang="en">The plans you accept, by name</span><span lang="es">Los planes que aceptas, por nombre</span></h3>
+        <p><span lang="en">It is the first question most patients have, and the reason many of them call. Answer it on the page and the calls you get are from people you can see.</span><span lang="es">Es la primera pregunta de la mayoría de los pacientes, y la razón por la que muchos llaman. Respóndela en la página y las llamadas que recibas serán de gente que sí puedes atender.</span></p>
+      </div>
+      <div class="svc-item reveal">
+        <h3><span lang="en">Hours, Saturdays included</span><span lang="es">El horario, sábados incluidos</span></h3>
+        <p><span lang="en">If you open evenings or Saturdays, say so near the top. For someone who works all week, it decides the appointment.</span><span lang="es">Si abres por la tarde o los sábados, dilo cerca del principio. Para quien trabaja toda la semana, eso decide la cita.</span></p>
+      </div>
+      <div class="svc-item reveal">
+        <h3><span lang="en">Where you are, the way people say it</span><span lang="es">Dónde estás, como lo dice la gente</span></h3>
+        <p><span lang="en">The street and the nearest cross street, whether you are on West 49th Street or Palm Springs Mile, plus parking and the ZIP code people search by.</span><span lang="es">La calle y la esquina más cercana, ya sea en la calle 49 o en Palm Springs Mile, además del parqueo y el código postal con el que la gente busca.</span></p>
+      </div>
+      <div class="svc-item reveal">
+        <h3><span lang="en">Who they will see</span><span lang="es">A quién van a ver</span></h3>
+        <p><span lang="en">Doctors and staff by name, with a real photo and the languages each one speaks.</span><span lang="es">Los médicos y el personal por nombre, con una foto real y los idiomas que habla cada uno.</span></p>
+      </div>
+      <div class="svc-item reveal">
+        <h3><span lang="en">An appointment request with no medical details</span><span lang="es">Una solicitud de cita sin datos médicos</span></h3>
+        <p><span lang="en">Name, phone and a good time to call. Diagnoses and insurance numbers stay out of a website form; clinical details belong in your practice's patient portal, linked from the site.</span><span lang="es">Nombre, teléfono y una buena hora para llamar. Los diagnósticos y los números de seguro no van en un formulario web; los datos clínicos van en el portal de pacientes de tu consulta, enlazado desde el sitio.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FACTORIES ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">Factories that sell to the public.</span><span lang="es">Fábricas que le venden al público.</span></h2>
+      <p><span lang="en">Hialeah still makes things. Manufacturing is 5.5% of establishments in its ZIP codes, two and a half times the county's 2.2% (County Business Patterns, 2023). People look for those factories by product, in Spanish: Google suggests "fábrica de cortinas", "de colchones", "de ventanas" and "de puertas en hialeah". A factory-direct site needs a catalog with starting prices, showroom hours, directions to a door that may sit in a row of warehouses, and a way to send measurements for a custom order. That matters more than a polished homepage.</span><span lang="es">En Hialeah todavía se fabrican cosas. La manufactura es el 5.5% de los establecimientos en sus códigos postales, dos veces y media el 2.2% del condado (County Business Patterns, 2023). La gente busca esas fábricas por producto, en español: Google sugiere "fábrica de cortinas", "de colchones", "de ventanas" y "de puertas en hialeah". El sitio de una fábrica que vende directo necesita un catálogo con precios desde, el horario del showroom, cómo llegar a una puerta que puede estar en una fila de almacenes, y una forma de enviar medidas para un pedido a la medida. Eso importa más que una página de inicio pulida.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTRACTORS ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">Contractors, and the number the law says to show.</span><span lang="es">Contratistas, y el número que la ley pide mostrar.</span></h2>
+      <p><span lang="en">Construction is 10.3% of establishments in Hialeah's ZIP codes, against 6.9% county-wide (County Business Patterns, 2023). For a Florida contractor the license number is not decoration: state law requires the registration or certification number in each advertisement, "regardless of medium" (Florida Statutes, section 489.119). Around it, the site needs photos of jobs you actually did, the neighborhoods you work in, and a quote form that asks what the job is before anyone drives out.</span><span lang="es">La construcción es el 10.3% de los establecimientos en los códigos postales de Hialeah, frente al 6.9% en el condado (County Business Patterns, 2023). Para un contratista en Florida, el número de licencia no es adorno: la ley estatal exige el número de registro o certificación en cada anuncio, "regardless of medium", es decir, sin importar el medio (Estatutos de Florida, sección 489.119). Alrededor de eso, el sitio necesita fotos de trabajos que de verdad hiciste, los barrios donde trabajas, y un formulario de cotización que pregunte cuál es el trabajo antes de que alguien maneje hasta allá.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PATIENT-FACING BUILDS ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="credibility reveal">
+      <h2><span lang="en">Two builds for patients, in two languages.</span><span lang="es">Dos proyectos para pacientes, en dos idiomas.</span></h2>
+      <p class="body"><span lang="en">I haven't built a Hialeah clinic's site yet. The closest work is two recovery-equipment companies whose readers are patients just out of surgery, and the surgeons' offices that refer them. Elite Care Recovery came first. Ortho Flow Recovery launched in English and Spanish on the same day, with the Spanish written for patients rather than run through a translator, reservations planned around the surgery date, and a referral form that asks for contact details only, never medical information. A clinic's site needs the same discipline.</span><span lang="es">Todavía no he construido el sitio de una clínica de Hialeah. Lo más cercano son dos empresas de equipos de recuperación cuyos lectores son pacientes recién operados, y las oficinas de los cirujanos que los refieren. Elite Care Recovery fue la primera. Ortho Flow Recovery salió en inglés y en español el mismo día, con el español escrito para pacientes y no pasado por un traductor, reservas pensadas alrededor de la fecha de la cirugía, y un formulario de referidos que pide solo datos de contacto, nunca información médica. El sitio de una clínica necesita la misma disciplina.</span> <a href="case-study-orthoflow.html" style="color:var(--purple);font-weight:600"><span lang="en">Read the Ortho Flow case study &rarr;</span><span lang="es">Leer el caso de Ortho Flow &rarr;</span></a></p>
+      <div class="client-logos-bar">
+        <div class="client-logos-label"><span lang="en">Recent clients</span><span lang="es">Clientes recientes</span></div>
+        <div class="client-logos">
+          <a href="case-study-orthoflow.html"><img class="logo-light" src="assets/client-logos/orthoflow-light.webp" alt="Ortho Flow Recovery: Miami, Florida" loading="lazy" style="display:block"><img class="logo-dark" src="assets/client-logos/orthoflow-dark.webp" alt="Ortho Flow Recovery: Miami, Florida" loading="lazy" style="display:none"></a>
+          <a href="case-study-elitecare.html"><img class="logo-light" src="assets/client-logos/elitecare-light.webp" alt="Elite Care Recovery: South Florida" loading="lazy" style="display:block"><img class="logo-dark" src="assets/client-logos/elitecare-dark.webp" alt="Elite Care Recovery: South Florida" loading="lazy" style="display:none"></a>
+          <a href="case-study-rieralaw.html"><img class="logo-light" src="assets/client-logos/rieralaw-light.webp" alt="Riera Law Firm: Coral Gables, Florida" loading="lazy" style="display:block"><img class="logo-dark" src="assets/client-logos/rieralaw-dark.webp" alt="Riera Law Firm: Coral Gables, Florida" loading="lazy" style="display:none"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT IT COSTS ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">What it costs, and when it isn't worth it.</span><span lang="es">Lo que cuesta, y cuándo no vale la pena.</span></h2>
+      <p><span lang="en">A clinic with one location and a handful of services usually fits Starter, from {{PRICE_STARTER}} {{USD}}, with up to {{PAGES_STARTER}} pages in both languages. A practice with several doctors, or a factory with a real catalog, is usually Custom, from {{PRICE_CUSTOM}} {{USD}}. The <a href="pricing.html" style="color:var(--purple);font-weight:600">pricing page</a> has every detail.</span><span lang="es">Una clínica con un solo local y pocos servicios suele caber en el nivel Inicial, desde {{PRICE_STARTER}} {{USD}}, con hasta {{PAGES_STARTER}} páginas en los dos idiomas. Una consulta con varios médicos, o una fábrica con un catálogo de verdad, suele ser Personalizado, desde {{PRICE_CUSTOM}} {{USD}}. La <a href="pricing.html" style="color:var(--purple);font-weight:600">página de precios</a> tiene todos los detalles.</span></p>
+      <p><span lang="en">And honestly, not every business here needs either. If your customers come from walk-ins and word of mouth, and your Google profile already brings the calls, keep the money for now. A complete profile written in Spanish may be all you need this year, and I'll tell you so on the call.</span><span lang="es">Y con honestidad: no todos los negocios de aquí necesitan alguno de los dos. Si tus clientes llegan caminando o por recomendación, y tu perfil de Google ya trae las llamadas, guarda el dinero por ahora. Un perfil completo escrito en español puede ser todo lo que necesitas este año, y te lo digo en la llamada.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">Questions Hialeah businesses ask.</span><span lang="es">Preguntas que hacen los negocios de Hialeah.</span></h2>
+    </div>
+    <div class="faq">
+      <details class="reveal">
+        <summary><span lang="en">Can patients request an appointment online without putting their privacy at risk?</span><span lang="es">¿Los pacientes pueden pedir una cita en línea sin poner en riesgo su privacidad?</span></summary>
+        <p><span lang="en">Yes, if the form asks only for what it needs: a name, a phone number and a good time to call. I build appointment forms that way on purpose. Anything clinical, like symptoms, diagnoses or insurance member numbers, belongs in the patient portal your practice software provides, and the site links to it.</span><span lang="es">Sí, si el formulario pide solo lo necesario: un nombre, un teléfono y una buena hora para llamar. Construyo los formularios de citas así a propósito. Todo lo clínico, como síntomas, diagnósticos o números de afiliado del seguro, va en el portal de pacientes que trae el software de tu consulta, y el sitio enlaza a él.</span></p>
+      </details>
+      <details class="reveal">
+        <summary><span lang="en">We sell straight from the factory. Do we need online checkout?</span><span lang="es">Vendemos directo de fábrica. ¿Necesitamos pago en línea?</span></summary>
+        <p><span lang="en">Usually not. Curtains, mattresses, windows and doors are mostly measured, quoted or seen in person first. A catalog with starting prices, a quote request and showroom hours do more. Checkout makes sense once you ship standard products to people who never visit.</span><span lang="es">Normalmente no. Las cortinas, los colchones, las ventanas y las puertas casi siempre se miden, se cotizan o se ven en persona primero. Un catálogo con precios desde, una solicitud de cotización y el horario del showroom hacen más. El pago en línea tiene sentido cuando envías productos estándar a gente que nunca te visita.</span></p>
+      </details>
+      <details class="reveal">
+        <summary><span lang="en">Where should my contractor license number go on the site?</span><span lang="es">¿Dónde va mi número de licencia de contratista en el sitio?</span></summary>
+        <p><span lang="en">In the footer, so it appears on every page, and again on the quote page. Write it exactly as it appears on your license, and link it to the state's public license lookup so a customer can check it in one tap. That builds more trust than any badge.</span><span lang="es">En el pie de página, para que salga en todas las páginas, y otra vez en la página de cotización. Escríbelo exactamente como aparece en tu licencia, y enlázalo a la búsqueda pública de licencias del estado para que un cliente lo pueda verificar con un toque. Eso da más confianza que cualquier sello.</span></p>
+      </details>
+      <details class="reveal">
+        <summary><span lang="en">Many of our customers are older. Does that change the design?</span><span lang="es">Muchos de nuestros clientes son mayores. ¿Eso cambia el diseño?</span></summary>
+        <p><span lang="en">It should. Hialeah's median age is 45.8, and one resident in five is 65 or older (American Community Survey, 2020 to 2024). That means larger text, strong contrast, a phone number you can tap at the top of every page, and no menus hidden behind tiny icons.</span><span lang="es">Debería. La edad mediana en Hialeah es de 45.8 años, y uno de cada cinco residentes tiene 65 años o más (American Community Survey, 2020 a 2024). Eso significa letra más grande, buen contraste, un teléfono que se pueda tocar arriba en cada página, y nada de menús escondidos detrás de iconos diminutos.</span></p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOURCES ============ -->
+<section style="padding:30px 0 0">
+  <div class="wrap">
+    <p class="note reveal" style="font-size:.85rem"><span lang="en">Sources: City of Hialeah, <a href="https://www.hialeahfl.gov/467/About-Hialeah" rel="noopener" style="color:var(--purple)">About Hialeah</a>; US Census Bureau, American Community Survey 2020 to 2024 (<a href="https://data.census.gov/table/ACSDP5Y2024.DP02?g=160XX00US1230000" rel="noopener" style="color:var(--purple)">language</a>, <a href="https://data.census.gov/table/ACSDP5Y2024.DP05?g=160XX00US1230000" rel="noopener" style="color:var(--purple)">age</a>) and <a href="https://data.census.gov/table/CBP2023.CB2300CBP?g=860XX00US33012" rel="noopener" style="color:var(--purple)">County Business Patterns 2023</a> (ZIP codes 33010, 33012, 33013, 33014, 33016 and 33018, which also reach into Hialeah Gardens and Miami Lakes); <a href="https://www.flsenate.gov/Laws/Statutes/2025/489.119" rel="noopener" style="color:var(--purple)">Florida Statutes, section 489.119</a>; Google search suggestions, October 2026.</span><span lang="es">Fuentes: Ciudad de Hialeah, <a href="https://www.hialeahfl.gov/467/About-Hialeah" rel="noopener" style="color:var(--purple)">About Hialeah</a>; Oficina del Censo de EE. UU., American Community Survey 2020 a 2024 (<a href="https://data.census.gov/table/ACSDP5Y2024.DP02?g=160XX00US1230000" rel="noopener" style="color:var(--purple)">idioma</a>, <a href="https://data.census.gov/table/ACSDP5Y2024.DP05?g=160XX00US1230000" rel="noopener" style="color:var(--purple)">edad</a>) y <a href="https://data.census.gov/table/CBP2023.CB2300CBP?g=860XX00US33012" rel="noopener" style="color:var(--purple)">County Business Patterns 2023</a> (códigos postales 33010, 33012, 33013, 33014, 33016 y 33018, que también llegan a Hialeah Gardens y Miami Lakes); <a href="https://www.flsenate.gov/Laws/Statutes/2025/489.119" rel="noopener" style="color:var(--purple)">Estatutos de Florida, sección 489.119</a>; sugerencias de búsqueda de Google, octubre de 2026.</span></p>
+  </div>
+</section>
+
+<!-- ============ ALSO SERVING ============ -->
+<section style="padding:30px 0 0">
+  <div class="wrap" style="text-align:center">
+    <p style="font-size:.95rem;color:var(--muted)"><span lang="en">Also working across <a href="web-design-miami.html" style="color:var(--purple);text-decoration:underline">Miami</a>, <a href="web-design-coral-gables.html" style="color:var(--purple);text-decoration:underline">Coral Gables</a>, <a href="web-design-doral.html" style="color:var(--purple);text-decoration:underline">Doral</a> and <a href="web-design-fort-lauderdale.html" style="color:var(--purple);text-decoration:underline">Fort Lauderdale</a>.</span><span lang="es">También trabajo en <a href="web-design-miami.html" style="color:var(--purple);text-decoration:underline">Miami</a>, <a href="web-design-coral-gables.html" style="color:var(--purple);text-decoration:underline">Coral Gables</a>, <a href="web-design-doral.html" style="color:var(--purple);text-decoration:underline">Doral</a> y <a href="web-design-fort-lauderdale.html" style="color:var(--purple);text-decoration:underline">Fort Lauderdale</a>.</span></p>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final" style="padding-top:30px">
+  <div class="wrap">
+    <h2><span lang="en">Let's read your site the way Hialeah reads it.</span><span lang="es">Leamos tu sitio como lo lee Hialeah.</span></h2>
+    <p><span lang="en">Fifteen minutes, free. We open your current site in Spanish, on a phone, and I tell you plainly what a patient or customer here would see.</span><span lang="es">Quince minutos, gratis. Abrimos tu sitio actual en español, en un teléfono, y te digo con claridad lo que vería un paciente o un cliente de aquí.</span></p>
+    <a class="btn" href="book.html"><span lang="en">Book a free call</span><span lang="es">Reserva una llamada gratuita</span>&nbsp;&rarr;</a>
+  </div>
+</section>
+
+</main>
+
+<div class="sticky-cta" id="stickyCta">
+  <a href="book.html"><span lang="en">Free 15-minute call, no pressure, plain answers →</span><span lang="es">Llamada gratuita de 15 minutos, sin presión, respuestas claras →</span></a>
+</div>
+
+{{FOOTER}}
+<script>!function(){var l=document.documentElement.getAttribute('data-lang');if(l==='es'){var b=document.querySelectorAll('.lang-toggle button');if(b.length===2){b[0].classList.remove('active');b[1].classList.add('active')}}}()</script>
+<script>!function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})}()</script>
+<script>!function(){var cta=document.getElementById('stickyCta');if(!cta)return;var footer=document.querySelector('footer');var shown=false;window.addEventListener('scroll',function(){var y=window.scrollY;var fTop=footer?footer.getBoundingClientRect().top+y-window.innerHeight:Infinity;if(y>400&&y<fTop){if(!shown){cta.classList.add('show');shown=true}}else{if(shown){cta.classList.remove('show');shown=false}}},{passive:true})}()</script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>
+</body>
+</html>

@@ -276,6 +276,22 @@ PAGES = {
             tw_desc="Diseño web en Doral para agentes de carga, importadores, distribuidores y showrooms. Sitios bilingües para compradores en el extranjero.",
         ),
     ),
+    # Hialeah, added 2026-10-10. 91.9% speak Spanish at home and 59.5% are
+    # Spanish speakers who speak English less than "very well" (ACS 2020-2024),
+    # so the angle is Spanish first. Health care is the largest sector in its
+    # ZIPs (CBP 2023): clinics lead, then factories and contractors. No Hialeah
+    # client yet; proof is the two recovery-equipment builds.
+    "web-design-hialeah.html": dict(
+        es="diseno-web-hialeah.html",
+        meta=dict(
+            title="Diseño Web en Hialeah: Sitios en Español para Clínicas",
+            desc="Diseño web en Hialeah para clínicas, fábricas y contratistas. Sitios en español primero, escritos por un hablante nativo. Llamada gratis.",
+            og_title="Diseño Web en Hialeah: Sitios en Español para Clínicas",
+            og_desc="Diseño web en Hialeah para clínicas, fábricas y contratistas. Sitios en español primero, escritos por un hablante nativo. Llamada gratis.",
+            tw_title="Diseño Web en Hialeah: Sitios en Español para Clínicas",
+            tw_desc="Diseño web en Hialeah para clínicas, fábricas y contratistas. Sitios en español primero, escritos por un hablante nativo.",
+        ),
+    ),
     "web-design-fort-lauderdale.html": dict(
         es="diseno-web-fort-lauderdale.html",
         meta=dict(
@@ -921,6 +937,7 @@ FOOTER_LINKS = {
         ("/web-design-miami.html", "Miami", "Miami"),
         ("/web-design-coral-gables.html", "Coral Gables", "Coral Gables"),
         ("/web-design-doral.html", "Doral", "Doral"),
+        ("/web-design-hialeah.html", "Hialeah", "Hialeah"),
         ("/web-design-fort-lauderdale.html", "Fort Lauderdale", "Fort Lauderdale"),
     ),
 }
@@ -1297,6 +1314,7 @@ CRUMBS = {
     "web-design-coral-gables.html": {"en": "Web Design Coral Gables",
                                      "es": "Diseño Web Coral Gables"},
     "web-design-doral.html": {"en": "Web Design Doral", "es": "Diseño Web Doral"},
+    "web-design-hialeah.html": {"en": "Web Design Hialeah", "es": "Diseño Web Hialeah"},
     "web-design-fort-lauderdale.html": {"en": "Web Design Fort Lauderdale",
                                         "es": "Diseño Web Fort Lauderdale"},
     "blog/5-signs-your-website-is-losing-clients.html": {
