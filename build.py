@@ -246,6 +246,21 @@ PAGES = {
             tw_desc="Diseño web en Miami para pequeños negocios, sitios personalizados que generan confianza y convierten. Bilingüe y móvil primero.",
         ),
     ),
+    # Coral Gables, added 2026-10-10. Search Console showed ~75 impressions for
+    # Coral Gables web design searches with no page to land on, and Riera Law
+    # is a real client there. Angle and every figure on the page are sourced:
+    # ops/site-notes/CITY-PAGES-RESEARCH.md.
+    "web-design-coral-gables.html": dict(
+        es="diseno-web-coral-gables.html",
+        meta=dict(
+            title="Diseño Web Coral Gables: Sitios para Firmas Profesionales",
+            desc="Diseño web en Coral Gables para bufetes, contadores y consultoras. Sitios bilingües a la altura de la City Beautiful. Llamada gratis de 15 minutos.",
+            og_title="Diseño Web Coral Gables: Sitios para Firmas Profesionales",
+            og_desc="Diseño web en Coral Gables para bufetes, contadores y consultoras. Sitios bilingües a la altura de la City Beautiful. Llamada gratis de 15 minutos.",
+            tw_title="Diseño Web Coral Gables: Sitios para Firmas Profesionales",
+            tw_desc="Diseño web en Coral Gables para bufetes, contadores y consultoras. Sitios bilingües a la altura de la City Beautiful.",
+        ),
+    ),
     "web-design-fort-lauderdale.html": dict(
         es="diseno-web-fort-lauderdale.html",
         meta=dict(
@@ -889,6 +904,7 @@ FOOTER_LINKS = {
     ),
     "areas": (
         ("/web-design-miami.html", "Miami", "Miami"),
+        ("/web-design-coral-gables.html", "Coral Gables", "Coral Gables"),
         ("/web-design-fort-lauderdale.html", "Fort Lauderdale", "Fort Lauderdale"),
     ),
 }
@@ -1262,6 +1278,8 @@ CRUMBS = {
     "web-design-for-law-firms.html": {"en": "Web Design for Law Firms",
                                       "es": "Diseño Web para Bufetes"},
     "web-design-miami.html": {"en": "Web Design Miami", "es": "Diseño Web Miami"},
+    "web-design-coral-gables.html": {"en": "Web Design Coral Gables",
+                                     "es": "Diseño Web Coral Gables"},
     "web-design-fort-lauderdale.html": {"en": "Web Design Fort Lauderdale",
                                         "es": "Diseño Web Fort Lauderdale"},
     "blog/5-signs-your-website-is-losing-clients.html": {
