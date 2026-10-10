@@ -261,6 +261,21 @@ PAGES = {
             tw_desc="Diseño web en Coral Gables para bufetes, contadores y consultoras. Sitios bilingües a la altura de la City Beautiful.",
         ),
     ),
+    # Doral, added 2026-10-10. A trade and logistics city a mile from MIA:
+    # wholesale plus transport/warehousing is over a third of establishments
+    # (CBP 2023). No Doral client yet, so the proof section is Ortho Flow,
+    # framed as the closest build. Research: ops/site-notes/CITY-PAGES-RESEARCH.md.
+    "web-design-doral.html": dict(
+        es="diseno-web-doral.html",
+        meta=dict(
+            title="Diseño Web Doral: Sitios para Comercio y Logística",
+            desc="Diseño web en Doral para agentes de carga, importadores, distribuidores y showrooms. Sitios bilingües para compradores en el extranjero. Llamada gratis.",
+            og_title="Diseño Web Doral: Sitios para Comercio y Logística",
+            og_desc="Diseño web en Doral para agentes de carga, importadores, distribuidores y showrooms. Sitios bilingües para compradores en el extranjero. Llamada gratis.",
+            tw_title="Diseño Web Doral: Sitios para Comercio y Logística",
+            tw_desc="Diseño web en Doral para agentes de carga, importadores, distribuidores y showrooms. Sitios bilingües para compradores en el extranjero.",
+        ),
+    ),
     "web-design-fort-lauderdale.html": dict(
         es="diseno-web-fort-lauderdale.html",
         meta=dict(
@@ -905,6 +920,7 @@ FOOTER_LINKS = {
     "areas": (
         ("/web-design-miami.html", "Miami", "Miami"),
         ("/web-design-coral-gables.html", "Coral Gables", "Coral Gables"),
+        ("/web-design-doral.html", "Doral", "Doral"),
         ("/web-design-fort-lauderdale.html", "Fort Lauderdale", "Fort Lauderdale"),
     ),
 }
@@ -1280,6 +1296,7 @@ CRUMBS = {
     "web-design-miami.html": {"en": "Web Design Miami", "es": "Diseño Web Miami"},
     "web-design-coral-gables.html": {"en": "Web Design Coral Gables",
                                      "es": "Diseño Web Coral Gables"},
+    "web-design-doral.html": {"en": "Web Design Doral", "es": "Diseño Web Doral"},
     "web-design-fort-lauderdale.html": {"en": "Web Design Fort Lauderdale",
                                         "es": "Diseño Web Fort Lauderdale"},
     "blog/5-signs-your-website-is-losing-clients.html": {
