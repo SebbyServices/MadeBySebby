@@ -1,0 +1,91 @@
+# Tells Bing (and through IndexNow, Yandex, Seznam and Naver) which pages
+# changed on this push, so they recrawl in hours instead of waiting on the
+# sitemap. Google does not take part in IndexNow; it keeps reading sitemap.xml.
+#
+# WHY. Bing Webmaster Tools showed the Doral page "discovered but not crawled"
+# the day it went live, while older pages were indexed. Manual URL Submission
+# fixes that one batch at a time (100/day); this does it on every push.
+#
+# THE KEY. IndexNow proves ownership with a key file at the site root, named
+# <key>.txt and containing the key. It is public by design: anyone can read it,
+# and all it allows is suggesting URLs on this host for recrawl. Do not delete
+# or rename that file or every ping is rejected with 403.
+
+name: indexnow
+
+on:
+  push:
+    branches: [main]
+    paths: ['*.html', 'blog/*.html', 'es/**/*.html']
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Collect changed public pages
+        id: urls
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: |
+          DOMAIN="https://madebysebby.com"
+          # A brand-new branch or a force push has no usable "before"; fall back
+          # to the previous commit rather than pinging the whole site.
+          git cat-file -e "$BEFORE^{commit}" 2>/dev/null || BEFORE="HEAD~1"
+
+          git diff --name-only --diff-filter=AMR "$BEFORE" HEAD \
+            | grep -E '\.html$' | grep -v '^src/' | grep -v '404.html' \
+            | while read -r f; do
+                [ -f "$f" ] || continue
+                # Same rule as the sitemap: noindex pages are not for search.
+                grep -q 'name="robots" content="noindex' "$f" && continue
+                case "$f" in
+                  index.html)    echo "$DOMAIN/" ;;
+                  es/index.html) echo "$DOMAIN/es/" ;;
+                  *)             echo "$DOMAIN/$f" ;;
+                esac
+              done > urls.txt
+
+          echo "count=$(wc -l < urls.txt | tr -d ' ')" >> "$GITHUB_OUTPUT"
+          cat urls.txt
+
+      - name: Wait for GitHub Pages to serve this push
+        if: steps.urls.outputs.count != '0'
+        run: |
+          # Pinging before Pages deploys would have Bing fetch the old page.
+          # Poll the first changed URL until it serves this commit's bytes.
+          FIRST=$(head -1 urls.txt)
+          FILE=${FIRST#https://madebysebby.com/}
+          [ -z "$FILE" ] && FILE=index.html
+          [ "$FILE" = "es/" ] && FILE=es/index.html
+          WANT=$(sha256sum "$FILE" | cut -d' ' -f1)
+          for i in $(seq 1 30); do
+            GOT=$(curl -s "$FIRST" | sha256sum | cut -d' ' -f1)
+            [ "$GOT" = "$WANT" ] && echo "live after $((i*10))s" && exit 0
+            sleep 10
+          done
+          echo "Pages did not serve the new version within 5 minutes; pinging anyway"
+
+      - name: Ping IndexNow
+        if: steps.urls.outputs.count != '0'
+        run: |
+          KEY=$(ls [0-9a-f]*.txt | grep -E '^[0-9a-f]{32}\.txt$' | head -1 | sed 's/\.txt$//')
+          [ -n "$KEY" ] || { echo "IndexNow key file missing from the site root"; exit 1; }
+          python3 - "$KEY" > body.json <<'EOF'
+          import json, sys
+          urls = [u.strip() for u in open("urls.txt") if u.strip()]
+          print(json.dumps({
+              "host": "madebysebby.com",
+              "key": sys.argv[1],
+              "keyLocation": f"https://madebysebby.com/{sys.argv[1]}.txt",
+              "urlList": urls,
+          }))
+          EOF
+          # -f so a 4xx/5xx fails the job. The old Google sitemap ping ran
+          # without it and reported success for years while doing nothing.
+          curl -sf -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data @body.json -w 'HTTP %{http_code}\n'
