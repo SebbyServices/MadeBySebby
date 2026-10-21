@@ -493,6 +493,10 @@ ARIA_ES = {
 # translating a company's name would be wrong. check-consistency.py flags any
 # descriptive alt that reaches a Spanish page untranslated.
 ALT_ES = {
+    "Riera Law Firm website on a phone": "Sitio web de Riera Law Firm en un teléfono",
+    "Elite Care Recovery website on a phone": "Sitio web de Elite Care Recovery en un teléfono",
+    "Ortho Flow Recovery website in English on a phone": "Sitio web de Ortho Flow Recovery en inglés en un teléfono",
+    "Ortho Flow Recovery website in Spanish on a phone": "Sitio web de Ortho Flow Recovery en español en un teléfono",
     "Made by Sebby: Web Design, Development, Website Care":
         "Made by Sebby: Diseño Web, Desarrollo, Cuidado Web",
     "Made by Sebby | Web Design, Development, Website Care":
