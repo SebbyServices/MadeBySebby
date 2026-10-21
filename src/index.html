@@ -327,6 +327,28 @@
   .faq summary::after{content:"+";color:var(--purple);font-size:1.4rem;font-weight:600;line-height:1}
   .faq details[open] summary::after{content:"\2013"}
   .faq details p{margin-top:12px;color:var(--ink-soft);font-size:.97rem}
+  /* FAQ cards (approved in HQ 2026-10-20): the + sits in a small circle and turns into an x,
+     answers slide open where ::details-content is supported and open instantly elsewhere */
+  .faq{gap:12px}
+  .faq details{padding:0;transition:border-color .2s,box-shadow .2s;interpolate-size:allow-keywords}
+  .faq details:hover{border-color:color-mix(in srgb,var(--purple) 45%,var(--line))}
+  .faq details[open]{border-color:var(--purple);box-shadow:0 10px 30px -18px rgba(108,60,233,.35)}
+  .faq summary{padding:20px 22px 20px 24px;line-height:1.4}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"";flex:0 0 30px;width:30px;height:30px;border-radius:50%;color:var(--purple);background:linear-gradient(currentColor,currentColor) center/12px 2px no-repeat,linear-gradient(currentColor,currentColor) center/2px 12px no-repeat,var(--tint);transition:transform .25s ease,background-color .2s,color .2s}
+  .faq details[open] summary::after{content:"";transform:rotate(45deg);color:#fff;background:linear-gradient(currentColor,currentColor) center/12px 2px no-repeat,linear-gradient(currentColor,currentColor) center/2px 12px no-repeat,#6C3CE9}
+  .faq details p{margin:0;padding:0 24px 22px}
+  .faq details::details-content{block-size:0;overflow:hidden;transition:block-size .3s ease,content-visibility .3s allow-discrete}
+  .faq details[open]::details-content{block-size:auto}
+  @media (prefers-reduced-motion:reduce){.faq details::details-content,.faq summary::after{transition:none}}
+  /* Homepage FAQ: heading on the left stays put, questions fill the right (phones stack) */
+  .faq-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.75fr);gap:64px;align-items:start}
+  .faq-wrap .sec-head{position:sticky;top:110px;margin-bottom:0}
+  .faq-wrap .sec-head p{margin-top:14px}
+  .faq-ask{display:inline-flex;margin-top:22px;font-weight:600;color:var(--purple);font-size:.97rem}
+  .faq-ask:hover{text-decoration:underline}
+  .faq-wrap .faq{max-width:none}
+  @media (max-width:860px){.faq-wrap{grid-template-columns:1fr;gap:28px}.faq-wrap .sec-head{position:static}}
 
 
   /* Client logos */
@@ -870,9 +892,11 @@
 
 <!-- ============ FAQ ============ -->
 <section style="padding-top:0">
-  <div class="wrap">
+  <div class="wrap faq-wrap">
     <div class="sec-head reveal">
       <h2><span lang="en">Common questions.</span><span lang="es">Preguntas frecuentes.</span></h2>
+      <p><span lang="en">Straight answers before you book anything.</span><span lang="es">Respuestas claras antes de agendar.</span></p>
+      <a class="faq-ask" href="book.html"><span lang="en">Still wondering? Ask me on a free call</span><span lang="es">¿Otra duda? Pregúntame en una llamada gratis</span>&nbsp;→</a>
     </div>
     <div class="faq">
       <details class="reveal">
@@ -903,11 +927,6 @@
   </div>
 </section>
 
-<section style="padding:40px 0 0">
-  <div class="wrap" style="text-align:center">
-    <p style="font-size:.95rem;color:var(--muted)"><span lang="en">Serving <a href="web-design-miami.html" style="color:var(--purple);text-decoration:underline">Miami</a>, <a href="web-design-fort-lauderdale.html" style="color:var(--purple);text-decoration:underline">Fort Lauderdale</a>, <a href="web-design-coral-gables.html" style="color:var(--purple);text-decoration:underline">Coral Gables</a>, <a href="web-design-doral.html" style="color:var(--purple);text-decoration:underline">Doral</a>, <a href="web-design-hialeah.html" style="color:var(--purple);text-decoration:underline">Hialeah</a>, and all of South Florida.</span><span lang="es">Sirviendo <a href="web-design-miami.html" style="color:var(--purple);text-decoration:underline">Miami</a>, <a href="web-design-fort-lauderdale.html" style="color:var(--purple);text-decoration:underline">Fort Lauderdale</a>, <a href="web-design-coral-gables.html" style="color:var(--purple);text-decoration:underline">Coral Gables</a>, <a href="web-design-doral.html" style="color:var(--purple);text-decoration:underline">Doral</a>, <a href="web-design-hialeah.html" style="color:var(--purple);text-decoration:underline">Hialeah</a>, y todo el sur de la Florida.</span></p>
-  </div>
-</section>
 
 <!-- ============ FINAL CTA ============ -->
 <section class="final" id="contact" style="padding-top:20px">
@@ -915,6 +934,7 @@
     <h2><span lang="en">Let's make your business look as good online as it is in person.</span><span lang="es">Hagamos que tu negocio se vea tan bien en línea como en persona.</span></h2>
     <p><span lang="en">Tell me about your business. I'll tell you exactly what I'd build and what it costs.</span><span lang="es">Cuéntame sobre tu negocio. Te diré exactamente qué construiría y cuánto cuesta.</span></p>
     <a class="btn" href="book.html"><span lang="en">Work with Sebby</span><span lang="es">Trabaja con Sebby</span>&nbsp;→</a>
+    <p style="font-size:.95rem;color:var(--muted);margin:28px 0 0"><span lang="en">Serving <a href="web-design-miami.html" style="color:var(--purple);text-decoration:underline">Miami</a>, <a href="web-design-fort-lauderdale.html" style="color:var(--purple);text-decoration:underline">Fort Lauderdale</a>, <a href="web-design-coral-gables.html" style="color:var(--purple);text-decoration:underline">Coral Gables</a>, <a href="web-design-doral.html" style="color:var(--purple);text-decoration:underline">Doral</a>, <a href="web-design-hialeah.html" style="color:var(--purple);text-decoration:underline">Hialeah</a>, and all of South Florida.</span><span lang="es">Sirviendo <a href="web-design-miami.html" style="color:var(--purple);text-decoration:underline">Miami</a>, <a href="web-design-fort-lauderdale.html" style="color:var(--purple);text-decoration:underline">Fort Lauderdale</a>, <a href="web-design-coral-gables.html" style="color:var(--purple);text-decoration:underline">Coral Gables</a>, <a href="web-design-doral.html" style="color:var(--purple);text-decoration:underline">Doral</a>, <a href="web-design-hialeah.html" style="color:var(--purple);text-decoration:underline">Hialeah</a>, y todo el sur de la Florida.</span></p>
   </div>
 </section>
 

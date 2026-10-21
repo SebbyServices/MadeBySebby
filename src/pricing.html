@@ -286,6 +286,20 @@
   .faq summary::after{content:"+";color:var(--purple);font-size:1.4rem;font-weight:600;line-height:1}
   .faq details[open] summary::after{content:"\2013"}
   .faq details p{margin-top:12px;color:var(--ink-soft);font-size:.97rem}
+  /* FAQ cards (approved in HQ 2026-10-20): the + sits in a small circle and turns into an x,
+     answers slide open where ::details-content is supported and open instantly elsewhere */
+  .faq{gap:12px}
+  .faq details{padding:0;transition:border-color .2s,box-shadow .2s;interpolate-size:allow-keywords}
+  .faq details:hover{border-color:color-mix(in srgb,var(--purple) 45%,var(--line))}
+  .faq details[open]{border-color:var(--purple);box-shadow:0 10px 30px -18px rgba(108,60,233,.35)}
+  .faq summary{padding:20px 22px 20px 24px;line-height:1.4}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"";flex:0 0 30px;width:30px;height:30px;border-radius:50%;color:var(--purple);background:linear-gradient(currentColor,currentColor) center/12px 2px no-repeat,linear-gradient(currentColor,currentColor) center/2px 12px no-repeat,var(--tint);transition:transform .25s ease,background-color .2s,color .2s}
+  .faq details[open] summary::after{content:"";transform:rotate(45deg);color:#fff;background:linear-gradient(currentColor,currentColor) center/12px 2px no-repeat,linear-gradient(currentColor,currentColor) center/2px 12px no-repeat,#6C3CE9}
+  .faq details p{margin:0;padding:0 24px 22px}
+  .faq details::details-content{block-size:0;overflow:hidden;transition:block-size .3s ease,content-visibility .3s allow-discrete}
+  .faq details[open]::details-content{block-size:auto}
+  @media (prefers-reduced-motion:reduce){.faq details::details-content,.faq summary::after{transition:none}}
   .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}
   .about-grid .portrait{aspect-ratio:4/4.7;position:sticky;top:104px}
   .prose p{color:var(--ink-soft);font-size:1.05rem;margin-bottom:20px;max-width:38em}

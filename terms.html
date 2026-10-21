@@ -201,8 +201,10 @@
 footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 .foot-inner{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.1fr;gap:40px;align-items:start;justify-content:normal}
 .ft-brand{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
-.ft-brand img{height:44px;width:auto;display:block}
-.foot-logo-dark{display:none}
+.ft-brand img{height:42px;width:auto;display:block}
+/* .ft-brand img{display:block} above outranks a bare .foot-logo-dark, which is why the white
+   logo showed on white in light mode; scope it so it wins (fixed 2026-10-21). */
+.ft-brand .foot-logo-dark{display:none}
 .ft-tag{font-size:.92rem;color:var(--muted);line-height:1.6;max-width:32ch;margin:0}
 .ft-tag strong{color:var(--ink);font-weight:700}
 .ft-nap{display:flex;flex-direction:column;gap:5px;font-size:.88rem;color:var(--muted);font-style:normal;line-height:1.5}
@@ -232,8 +234,10 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:900px){.foot-inner{grid-template-columns:1fr 1fr;gap:34px}.ft-brand{grid-column:1/-1}}
 @media(max-width:560px){.foot-inner{grid-template-columns:1fr;gap:30px}.ft-bottom{margin-top:34px}.ft-social{margin-left:0}}
-:root:not([data-theme="light"]) .foot-logo-light{display:none}
-:root:not([data-theme="light"]) .foot-logo-dark{display:block}
+/* The automatic dark logo belongs inside the dark media query: outside it, these
+   two rules also matched plain light mode for anyone who never pressed the theme
+   button, and the footer showed the white logo on white (fixed 2026-10-21). */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .foot-logo-light{display:none}:root:not([data-theme="light"]) .foot-logo-dark{display:block}}
 [data-theme="dark"] .foot-logo-light{display:none}
 [data-theme="dark"] .foot-logo-dark{display:block}
 [data-theme="light"] .foot-logo-light{display:block}
@@ -495,8 +499,8 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <footer>
   <div class="wrap foot-inner">
       <div class="ft-brand">
-        <img class="foot-logo-light" src="/assets/logo/sebby-horizontal.svg" alt="Made by Sebby: Web Design, Development, Website Care" width="200" height="52">
-        <img class="foot-logo-dark" src="/assets/logo/sebby-horizontal-white.svg" alt="Made by Sebby: Web Design, Development, Website Care" width="200" height="52">
+        <img class="foot-logo-light" src="/assets/logo/sebby-nav.svg" alt="Made by Sebby: Web Design, Development, Website Care" width="416" height="120">
+        <img class="foot-logo-dark" src="/assets/logo/sebby-nav-white.svg" alt="Made by Sebby: Web Design, Development, Website Care" width="416" height="120">
         <p class="ft-tag">This site was <strong>Made by Sebby</strong>. Yours can be too.</p>
         <address class="ft-nap">
           <span>Miami, Florida 33175, United States</span>
