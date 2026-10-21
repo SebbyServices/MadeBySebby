@@ -92,6 +92,20 @@
   h2{font-size:clamp(1.7rem,3vw,2.35rem);font-weight:800;letter-spacing:-.022em;line-height:1.16;margin-bottom:16px}
   .sec-head p{font-size:1.08rem;color:var(--ink-soft)}
 
+  /* Source notes: each cited paragraph carries its sources beside it (wide) or under it (phone) */
+  .sec-head.src-head{max-width:none}
+  .src-head>h2,.src-head>p{max-width:38rem}
+  .cited{margin-bottom:14px}
+  .src-note{margin-top:12px;padding:2px 0 2px 14px;border-left:2px solid var(--purple);font-size:.8rem;line-height:1.5;color:var(--muted)}
+  .src-note .src-label{display:block;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);margin-bottom:4px}
+  .src-note ul{list-style:none;display:grid;gap:6px}
+  .src-note b{color:var(--ink);font-weight:700}
+  .src-note a{color:var(--purple);text-decoration:underline;text-underline-offset:2px}
+  @media (min-width:1000px){
+    .cited{display:grid;grid-template-columns:minmax(0,38rem) 240px;column-gap:48px;align-items:start}
+    .src-note{margin-top:4px}
+  }
+
   /* Cards */
   .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
   .card{
@@ -624,9 +638,12 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <!-- ============ SPANISH FIRST ============ -->
 <section id="main">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sec-head src-head reveal">
       <h2>Spanish first, not Spanish too.</h2>
-      <p>Hialeah is Florida's sixth-largest city, with more than 224,000 residents by the city's own count. Of residents age five and up, 91.9% speak Spanish at home, and 59.5% are Spanish speakers who speak English less than "very well", in the Census Bureau's words (US Census Bureau, American Community Survey, 2020 to 2024). That is about six in ten. Here, a site written only in English is a site most of the neighborhood reads with effort, if it reads it at all.</p>
+      <div class="cited">
+        <p>Hialeah is Florida's sixth-largest city, with more than 224,000 residents by the city's own count. Of residents age five and up, 91.9% speak Spanish at home, and 59.5% are Spanish speakers who speak English less than "very well", in the Census Bureau's words (US Census Bureau, American Community Survey, 2020 to 2024). That is about six in ten. Here, a site written only in English is a site most of the neighborhood reads with effort, if it reads it at all.</p>
+        <aside class="src-note"><span class="src-label">Sources</span><ul><li><b>224,000</b> residents: City of Hialeah, <a href="https://www.hialeahfl.gov/467/About-Hialeah" rel="noopener">About Hialeah</a></li><li><b>91.9%</b>, <b>59.5%</b> US Census Bureau, <a href="https://data.census.gov/table/ACSDP5Y2024.DP02?g=160XX00US1230000" rel="noopener">American Community Survey 2020 to 2024</a>, table DP02</li></ul></aside>
+      </div>
       <p>Spanish first means more than a translated homepage. It means four places where Spanish leads.</p>
     </div>
     <div class="svc-list">
@@ -653,9 +670,12 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <!-- ============ CLINICS ============ -->
 <section id="clinics" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sec-head src-head reveal">
       <h2>Clinics, and patients who search by ZIP code.</h2>
-      <p>Health care is the largest sector in the ZIP codes that cover Hialeah: 1,375 establishments, 15.4% of the total, against 11.8% across Miami-Dade (US Census Bureau, County Business Patterns, 2023). Patients search in Spanish and close to home. Type "dentista en hialeah" into Google and it suggests 33010, 33012 and 33016, and even "49 st".</p>
+      <div class="cited">
+        <p>Health care is the largest sector in the ZIP codes that cover Hialeah: 1,375 establishments, 15.4% of the total, against 11.8% across Miami-Dade (US Census Bureau, County Business Patterns, 2023). Patients search in Spanish and close to home. Type "dentista en hialeah" into Google and it suggests 33010, 33012 and 33016, and even "49 st".</p>
+        <aside class="src-note"><span class="src-label">Sources</span><ul><li><b>1,375</b>, <b>15.4%</b>, <b>11.8%</b> US Census Bureau, <a href="https://data.census.gov/table/CBP2023.CB2300CBP?g=860XX00US33012" rel="noopener">County Business Patterns 2023</a>, six Hialeah ZIP codes</li><li><b>33010, 33012, 33016</b> Google search suggestions, October 2026</li></ul></aside>
+      </div>
       <p>A clinic site that wins that search answers five things, in Spanish, on a phone.</p>
     </div>
     <div class="svc-list">
@@ -686,9 +706,12 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <!-- ============ FACTORIES ============ -->
 <section style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sec-head src-head reveal">
       <h2>Factories that sell to the public.</h2>
-      <p>Hialeah still makes things. Manufacturing is 5.5% of establishments in its ZIP codes, two and a half times the county's 2.2% (County Business Patterns, 2023). People look for those factories by product, in Spanish: Google suggests "fábrica de cortinas", "de colchones", "de ventanas" and "de puertas en hialeah". A factory-direct site needs a catalog with starting prices, showroom hours, directions to a door that may sit in a row of warehouses, and a way to send measurements for a custom order. That matters more than a polished homepage.</p>
+      <div class="cited">
+        <p>Hialeah still makes things. Manufacturing is 5.5% of establishments in its ZIP codes, two and a half times the county's 2.2% (County Business Patterns, 2023). People look for those factories by product, in Spanish: Google suggests "fábrica de cortinas", "de colchones", "de ventanas" and "de puertas en hialeah". A factory-direct site needs a catalog with starting prices, showroom hours, directions to a door that may sit in a row of warehouses, and a way to send measurements for a custom order. That matters more than a polished homepage.</p>
+        <aside class="src-note"><span class="src-label">Sources</span><ul><li><b>5.5%</b>, <b>2.2%</b> US Census Bureau, <a href="https://data.census.gov/table/CBP2023.CB2300CBP?g=860XX00US33012" rel="noopener">County Business Patterns 2023</a></li><li><b>Factory searches</b> Google search suggestions, October 2026</li></ul></aside>
+      </div>
     </div>
   </div>
 </section>
@@ -696,9 +719,12 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <!-- ============ CONTRACTORS ============ -->
 <section style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sec-head src-head reveal">
       <h2>Contractors, and the number the law says to show.</h2>
-      <p>Construction is 10.3% of establishments in Hialeah's ZIP codes, against 6.9% county-wide (County Business Patterns, 2023). For a Florida contractor the license number is not decoration: state law requires the registration or certification number in each advertisement, "regardless of medium" (Florida Statutes, section 489.119). Around it, the site needs photos of jobs you actually did, the neighborhoods you work in, and a quote form that asks what the job is before anyone drives out.</p>
+      <div class="cited">
+        <p>Construction is 10.3% of establishments in Hialeah's ZIP codes, against 6.9% county-wide (County Business Patterns, 2023). For a Florida contractor the license number is not decoration: state law requires the registration or certification number in each advertisement, "regardless of medium" (Florida Statutes, section 489.119). Around it, the site needs photos of jobs you actually did, the neighborhoods you work in, and a quote form that asks what the job is before anyone drives out.</p>
+        <aside class="src-note"><span class="src-label">Sources</span><ul><li><b>10.3%</b>, <b>6.9%</b> US Census Bureau, <a href="https://data.census.gov/table/CBP2023.CB2300CBP?g=860XX00US33012" rel="noopener">County Business Patterns 2023</a></li><li><b>License number rule</b> <a href="https://www.flsenate.gov/Laws/Statutes/2025/489.119" rel="noopener">Florida Statutes, section 489.119</a></li></ul></aside>
+      </div>
     </div>
   </div>
 </section>

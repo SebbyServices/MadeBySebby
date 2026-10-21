@@ -92,6 +92,20 @@
   h2{font-size:clamp(1.7rem,3vw,2.35rem);font-weight:800;letter-spacing:-.022em;line-height:1.16;margin-bottom:16px}
   .sec-head p{font-size:1.08rem;color:var(--ink-soft)}
 
+  /* Source notes: each cited paragraph carries its sources beside it (wide) or under it (phone) */
+  .sec-head.src-head{max-width:none}
+  .src-head>h2,.src-head>p{max-width:38rem}
+  .cited{margin-bottom:14px}
+  .src-note{margin-top:12px;padding:2px 0 2px 14px;border-left:2px solid var(--purple);font-size:.8rem;line-height:1.5;color:var(--muted)}
+  .src-note .src-label{display:block;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);margin-bottom:4px}
+  .src-note ul{list-style:none;display:grid;gap:6px}
+  .src-note b{color:var(--ink);font-weight:700}
+  .src-note a{color:var(--purple);text-decoration:underline;text-underline-offset:2px}
+  @media (min-width:1000px){
+    .cited{display:grid;grid-template-columns:minmax(0,38rem) 240px;column-gap:48px;align-items:start}
+    .src-note{margin-top:4px}
+  }
+
   /* Cards */
   .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
   .card{
@@ -624,9 +638,12 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <!-- ============ SPANISH FIRST ============ -->
 <section id="main">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sec-head src-head reveal">
       <h2>Primero en español, no también en español.</h2>
-      <p>Hialeah es la sexta ciudad más grande de Florida, con más de 224,000 residentes según la propia ciudad. De los residentes de cinco años o más, el 91.9% habla español en casa, y el 59.5% son hispanohablantes que hablan inglés menos que "muy bien", en palabras de la Oficina del Censo (Oficina del Censo de EE. UU., American Community Survey, 2020 a 2024). Son unos seis de cada diez. Aquí, un sitio escrito solo en inglés es un sitio que la mayoría del barrio lee con esfuerzo, si es que lo lee.</p>
+      <div class="cited">
+        <p>Hialeah es la sexta ciudad más grande de Florida, con más de 224,000 residentes según la propia ciudad. De los residentes de cinco años o más, el 91.9% habla español en casa, y el 59.5% son hispanohablantes que hablan inglés menos que "muy bien", en palabras de la Oficina del Censo (Oficina del Censo de EE. UU., American Community Survey, 2020 a 2024). Son unos seis de cada diez. Aquí, un sitio escrito solo en inglés es un sitio que la mayoría del barrio lee con esfuerzo, si es que lo lee.</p>
+        <aside class="src-note"><span class="src-label">Fuentes</span><ul><li><b>224,000</b> residentes: Ciudad de Hialeah, <a href="https://www.hialeahfl.gov/467/About-Hialeah" rel="noopener">About Hialeah</a></li><li><b>91.9%</b>, <b>59.5%</b> Oficina del Censo de EE. UU., <a href="https://data.census.gov/table/ACSDP5Y2024.DP02?g=160XX00US1230000" rel="noopener">American Community Survey 2020 a 2024</a>, tabla DP02</li></ul></aside>
+      </div>
       <p>Primero en español significa más que una página de inicio traducida. Significa cuatro lugares donde el español va delante.</p>
     </div>
     <div class="svc-list">
@@ -653,9 +670,12 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <!-- ============ CLINICS ============ -->
 <section id="clinics" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sec-head src-head reveal">
       <h2>Clínicas, y pacientes que buscan por código postal.</h2>
-      <p>La salud es el sector más grande en los códigos postales que cubren Hialeah: 1,375 establecimientos, el 15.4% del total, frente al 11.8% en todo Miami-Dade (Oficina del Censo de EE. UU., County Business Patterns, 2023). Los pacientes buscan en español y cerca de casa. Escribe "dentista en hialeah" en Google y te sugiere 33010, 33012 y 33016, y hasta "49 st".</p>
+      <div class="cited">
+        <p>La salud es el sector más grande en los códigos postales que cubren Hialeah: 1,375 establecimientos, el 15.4% del total, frente al 11.8% en todo Miami-Dade (Oficina del Censo de EE. UU., County Business Patterns, 2023). Los pacientes buscan en español y cerca de casa. Escribe "dentista en hialeah" en Google y te sugiere 33010, 33012 y 33016, y hasta "49 st".</p>
+        <aside class="src-note"><span class="src-label">Fuentes</span><ul><li><b>1,375</b>, <b>15.4%</b>, <b>11.8%</b> Oficina del Censo de EE. UU., <a href="https://data.census.gov/table/CBP2023.CB2300CBP?g=860XX00US33012" rel="noopener">County Business Patterns 2023</a>, seis códigos postales de Hialeah</li><li><b>33010, 33012, 33016</b> sugerencias de búsqueda de Google, octubre de 2026</li></ul></aside>
+      </div>
       <p>El sitio de una clínica que gana esa búsqueda responde cinco cosas, en español, en el teléfono.</p>
     </div>
     <div class="svc-list">
@@ -686,9 +706,12 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <!-- ============ FACTORIES ============ -->
 <section style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sec-head src-head reveal">
       <h2>Fábricas que le venden al público.</h2>
-      <p>En Hialeah todavía se fabrican cosas. La manufactura es el 5.5% de los establecimientos en sus códigos postales, dos veces y media el 2.2% del condado (County Business Patterns, 2023). La gente busca esas fábricas por producto, en español: Google sugiere "fábrica de cortinas", "de colchones", "de ventanas" y "de puertas en hialeah". El sitio de una fábrica que vende directo necesita un catálogo con precios desde, el horario del showroom, cómo llegar a una puerta que puede estar en una fila de almacenes, y una forma de enviar medidas para un pedido a la medida. Eso importa más que una página de inicio pulida.</p>
+      <div class="cited">
+        <p>En Hialeah todavía se fabrican cosas. La manufactura es el 5.5% de los establecimientos en sus códigos postales, dos veces y media el 2.2% del condado (County Business Patterns, 2023). La gente busca esas fábricas por producto, en español: Google sugiere "fábrica de cortinas", "de colchones", "de ventanas" y "de puertas en hialeah". El sitio de una fábrica que vende directo necesita un catálogo con precios desde, el horario del showroom, cómo llegar a una puerta que puede estar en una fila de almacenes, y una forma de enviar medidas para un pedido a la medida. Eso importa más que una página de inicio pulida.</p>
+        <aside class="src-note"><span class="src-label">Fuentes</span><ul><li><b>5.5%</b>, <b>2.2%</b> Oficina del Censo de EE. UU., <a href="https://data.census.gov/table/CBP2023.CB2300CBP?g=860XX00US33012" rel="noopener">County Business Patterns 2023</a></li><li><b>Búsquedas de fábricas</b> sugerencias de búsqueda de Google, octubre de 2026</li></ul></aside>
+      </div>
     </div>
   </div>
 </section>
@@ -696,9 +719,12 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <!-- ============ CONTRACTORS ============ -->
 <section style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sec-head src-head reveal">
       <h2>Contratistas, y el número que la ley pide mostrar.</h2>
-      <p>La construcción es el 10.3% de los establecimientos en los códigos postales de Hialeah, frente al 6.9% en el condado (County Business Patterns, 2023). Para un contratista en Florida, el número de licencia no es adorno: la ley estatal exige el número de registro o certificación en cada anuncio, "regardless of medium", es decir, sin importar el medio (Estatutos de Florida, sección 489.119). Alrededor de eso, el sitio necesita fotos de trabajos que de verdad hiciste, los barrios donde trabajas, y un formulario de cotización que pregunte cuál es el trabajo antes de que alguien maneje hasta allá.</p>
+      <div class="cited">
+        <p>La construcción es el 10.3% de los establecimientos en los códigos postales de Hialeah, frente al 6.9% en el condado (County Business Patterns, 2023). Para un contratista en Florida, el número de licencia no es adorno: la ley estatal exige el número de registro o certificación en cada anuncio, "regardless of medium", es decir, sin importar el medio (Estatutos de Florida, sección 489.119). Alrededor de eso, el sitio necesita fotos de trabajos que de verdad hiciste, los barrios donde trabajas, y un formulario de cotización que pregunte cuál es el trabajo antes de que alguien maneje hasta allá.</p>
+        <aside class="src-note"><span class="src-label">Fuentes</span><ul><li><b>10.3%</b>, <b>6.9%</b> Oficina del Censo de EE. UU., <a href="https://data.census.gov/table/CBP2023.CB2300CBP?g=860XX00US33012" rel="noopener">County Business Patterns 2023</a></li><li><b>Número de licencia</b> <a href="https://www.flsenate.gov/Laws/Statutes/2025/489.119" rel="noopener">Estatutos de Florida, sección 489.119</a></li></ul></aside>
+      </div>
     </div>
   </div>
 </section>
