@@ -603,8 +603,14 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 .ft-col-cta{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
 .ft-col-cta a.ft-cta{display:inline-block;padding:11px 20px;border-radius:var(--radius-sm);background:#6C3CE9;color:#fff;font-size:.88rem;font-weight:600;line-height:1}
 .ft-col-cta a.ft-cta:hover{background:#5A2FD0;color:#fff}
-.ft-bottom{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:44px;padding-top:22px;padding-bottom:26px;border-top:1px solid var(--line)}
+.ft-tag-2{display:block}
+/* The divider sits on an inner box, so it spans the columns above instead of the
+   wrap's side padding (it ran 28px past them on desktop, edge to edge on phones). */
+.ft-bottom{margin-top:44px;padding-bottom:26px}
+.ft-bottom-in{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;padding-top:22px;border-top:1px solid var(--line)}
 .ft-copy{font-size:.82rem;color:var(--muted);margin:0;flex:1 1 320px;line-height:1.6}
+.ft-copy a{color:var(--ink);font-weight:600;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--purple) 55%,transparent);text-underline-offset:3px}
+.ft-copy a:hover{color:var(--purple)}
 .ft-legal{display:flex;gap:20px;font-size:.82rem}
 .ft-legal a{color:var(--muted)}
 .ft-legal a:hover{color:var(--purple)}
@@ -1228,7 +1234,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
       <div class="ft-brand">
         <img class="foot-logo-light" src="/assets/logo/sebby-nav.svg" alt="Made by Sebby: Web Design, Development, Website Care" width="416" height="120">
         <img class="foot-logo-dark" src="/assets/logo/sebby-nav-white.svg" alt="Made by Sebby: Web Design, Development, Website Care" width="416" height="120">
-        <p class="ft-tag">This site was <strong>Made by Sebby</strong>. Yours can be too.</p>
+        <p class="ft-tag">This site was <strong>Made by Sebby</strong>.<span class="ft-tag-2">Yours can be too.</span></p>
         <address class="ft-nap">
           <span>Miami, Florida 33175, United States</span>
           <a href="tel:+17865431417">(786) 543-1417</a>
@@ -1269,9 +1275,9 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
         <a class="ft-cta" href="/book.html">Book a free call</a>
       </div>
   </div>
-  <div class="wrap ft-bottom">
+  <div class="wrap ft-bottom"><div class="ft-bottom-in">
     <p class="ft-copy">&copy; 2026 Sebby IT Consulting, Corp. Made by Sebby is its web design and website care brand for small businesses in Miami and South Florida.</p>
-    <p class="ft-copy">Need tech support instead? <a href="https://sebbyservices.com/" rel="noopener">Sebby IT</a> covers computers, networks and security.</p>
+    <p class="ft-copy">Need tech support instead? Try <a href="https://sebbyservices.com/" rel="noopener">Sebby IT</a> for computers, networks and security.</p>
     <div class="ft-legal">
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
@@ -1280,7 +1286,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
         <a href="https://www.linkedin.com/company/made-by-sebby/" rel="me noopener" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.04c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg><span class="sr-only">LinkedIn</span></a>
         <a href="https://instagram.com/madebysebby" rel="me noopener" target="_blank" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9c-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38C1.35 2.68.94 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.67.67 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.67-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.94 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg><span class="sr-only">Instagram</span></a>
     </div>
-  </div>
+  </div></div>
 </footer>
 <script>!function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})}()</script>
 <script>!function(){var cta=document.getElementById('stickyCta');if(!cta)return;var footer=document.querySelector('footer');var shown=false;window.addEventListener('scroll',function(){var y=window.scrollY;var fTop=footer?footer.getBoundingClientRect().top+y-window.innerHeight:Infinity;if(y>400&&y<fTop){if(!shown){cta.classList.add('show');shown=true}}else{if(shown){cta.classList.remove('show');shown=false}}},{passive:true})}()</script>

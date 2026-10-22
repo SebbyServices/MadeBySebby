@@ -995,7 +995,7 @@ FOOTER_TEMPLATE = '''<footer>
       <div class="ft-brand">
         <img class="foot-logo-light" src="/assets/logo/sebby-nav.svg" alt="Made by Sebby: Web Design, Development, Website Care" width="416" height="120">
         <img class="foot-logo-dark" src="/assets/logo/sebby-nav-white.svg" alt="Made by Sebby: Web Design, Development, Website Care" width="416" height="120">
-        <p class="ft-tag"><span lang="en">This site was <strong>Made by Sebby</strong>. Yours can be too.</span><span lang="es">Este sitio fue <strong>hecho por Sebby</strong>. El tuyo también puede serlo.</span></p>
+        <p class="ft-tag"><span lang="en">This site was <strong>Made by Sebby</strong>.<span class="ft-tag-2">Yours can be too.</span></span><span lang="es">Este sitio fue <strong>hecho por Sebby</strong>.<span class="ft-tag-2">El tuyo también puede serlo.</span></span></p>
         <address class="ft-nap">
           <span><span lang="en">Miami, Florida 33175, United States</span><span lang="es">Miami, Florida 33175, Estados Unidos</span></span>
           <a href="%(tel_href)s">%(tel_display)s</a>
@@ -1010,9 +1010,9 @@ FOOTER_TEMPLATE = '''<footer>
         <a class="ft-cta" href="/book.html"><span lang="en">Book a free call</span><span lang="es">Agenda una llamada gratis</span></a>
       </div>
   </div>
-  <div class="wrap ft-bottom">
+  <div class="wrap ft-bottom"><div class="ft-bottom-in">
     <p class="ft-copy">&copy; %(year)s Sebby IT Consulting, Corp. <span lang="en">Made by Sebby is its web design and website care brand for small businesses in Miami and South Florida.</span><span lang="es">Made by Sebby es su marca de diseño web y cuidado de sitios para pequeños negocios en Miami y el sur de Florida.</span></p>
-    <p class="ft-copy"><span lang="en">Need tech support instead? <a href="https://sebbyservices.com/" rel="noopener">Sebby IT</a> covers computers, networks and security.</span><span lang="es">¿Necesitas soporte técnico? <a href="https://sebbyservices.com/" rel="noopener">Sebby IT</a> cubre computadoras, redes y seguridad.</span></p>
+    <p class="ft-copy"><span lang="en">Need tech support instead? Try <a href="https://sebbyservices.com/" rel="noopener">Sebby IT</a> for computers, networks and security.</span><span lang="es">¿Necesitas soporte técnico? Prueba <a href="https://sebbyservices.com/" rel="noopener">Sebby IT</a> para computadoras, redes y seguridad.</span></p>
     <div class="ft-legal">
       <a href="/privacy.html"><span lang="en">Privacy</span><span lang="es">Privacidad</span></a>
       <a href="/terms.html"><span lang="en">Terms</span><span lang="es">Términos</span></a>
@@ -1020,7 +1020,7 @@ FOOTER_TEMPLATE = '''<footer>
     <div class="ft-social">
 %(social)s
     </div>
-  </div>
+  </div></div>
 </footer>'''
 
 # Appended to each page's single <style> block, so it lands last and wins the
@@ -1051,8 +1051,14 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 .ft-col-cta{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
 .ft-col-cta a.ft-cta{display:inline-block;padding:11px 20px;border-radius:var(--radius-sm);background:#6C3CE9;color:#fff;font-size:.88rem;font-weight:600;line-height:1}
 .ft-col-cta a.ft-cta:hover{background:#5A2FD0;color:#fff}
-.ft-bottom{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:44px;padding-top:22px;padding-bottom:26px;border-top:1px solid var(--line)}
+.ft-tag-2{display:block}
+/* The divider sits on an inner box, so it spans the columns above instead of the
+   wrap's side padding (it ran 28px past them on desktop, edge to edge on phones). */
+.ft-bottom{margin-top:44px;padding-bottom:26px}
+.ft-bottom-in{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;padding-top:22px;border-top:1px solid var(--line)}
 .ft-copy{font-size:.82rem;color:var(--muted);margin:0;flex:1 1 320px;line-height:1.6}
+.ft-copy a{color:var(--ink);font-weight:600;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--purple) 55%,transparent);text-underline-offset:3px}
+.ft-copy a:hover{color:var(--purple)}
 .ft-legal{display:flex;gap:20px;font-size:.82rem}
 .ft-legal a{color:var(--muted)}
 .ft-legal a:hover{color:var(--purple)}
