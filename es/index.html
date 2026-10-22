@@ -489,6 +489,147 @@
     .reveal{opacity:1!important;transform:none!important}
   }
 
+  /* ---------- Home v2: objects and annotations instead of cards ----------
+     Borrowed from the v2 Instagram stories: real client sites on phones, a
+     paper receipt for prices, and a yellow highlighter layer that reads as a
+     person marking up their own work. One textured band (#work) carries the
+     loud moment; everything else stays quiet. */
+  :root{--hl:#FFE14D;--hl-ink:#1A1D29;--band:#6C3CE9;--paper:#FBFAF6}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--band:#4F2EC0}}
+  :root[data-theme="dark"]{--band:#4F2EC0}
+
+  .note{position:absolute;z-index:4;display:inline-block;background:var(--hl);color:var(--hl-ink);
+    font-weight:800;font-size:.95rem;line-height:1.25;letter-spacing:-.005em;padding:8px 12px;
+    border-radius:4px;box-shadow:0 10px 22px rgba(20,12,50,.22);max-width:15em}
+
+  /* Phone frame around a real screenshot */
+  .ph{position:relative;display:block;background:#15141B;padding:6px;border-radius:30px;
+    box-shadow:0 30px 60px rgba(20,12,50,.32),0 0 0 1px rgba(255,255,255,.06)}
+  .ph::before{content:"";position:absolute;top:13px;left:50%;width:30%;height:12px;margin-left:-15%;
+    background:#15141B;border-radius:8px;z-index:2}
+  .ph img{border-radius:24px;width:100%;height:auto}
+  .ph .url{position:absolute;left:10%;right:10%;bottom:4%;z-index:2;background:rgba(255,255,255,.94);
+    color:#2A2733;font-size:.68rem;font-weight:600;text-align:center;padding:6px 8px;border-radius:999px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+  /* Hero */
+  .hero2 h1{font-size:clamp(2.1rem,4.3vw,3.3rem)}
+  .hl{background:linear-gradient(transparent 55%,var(--hl) 55%,var(--hl) 92%,transparent 92%);
+    padding:0 .08em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+  /* On a dark page the ink is light, so a half-height marker would put light
+     letters on yellow. Dark mode switches to a full-height marker with dark ink. */
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hl{color:var(--hl-ink);
+    background:linear-gradient(transparent 8%,var(--hl) 8%,var(--hl) 94%,transparent 94%)}}
+  [data-theme="dark"] .hl{color:var(--hl-ink);
+    background:linear-gradient(transparent 8%,var(--hl) 8%,var(--hl) 94%,transparent 94%)}
+  .proof{margin-top:28px;font-size:.92rem;color:var(--muted)}
+  .proof a{color:var(--ink);font-weight:600;text-decoration:underline;text-decoration-color:var(--line);
+    text-underline-offset:3px;text-decoration-thickness:2px}
+  .proof a:hover{text-decoration-color:var(--purple)}
+  .hero-visual{position:relative;padding:0 0 46px 0}
+  .hero-visual .portrait{border:none}
+  .ph-hero{position:absolute;left:-44px;bottom:0;width:38%;transform:rotate(-6deg);z-index:3}
+  .note-hero{left:24%;bottom:6px;transform:rotate(-2deg)}
+
+  /* Services + receipt */
+  .svc-grid{display:grid;grid-template-columns:1fr minmax(0,420px);gap:72px;align-items:start}
+  .svc-list{margin-top:28px;border-top:1px solid var(--line)}
+  .svc-list a{display:grid;grid-template-columns:minmax(0,15em) 1fr;gap:6px 28px;padding:20px 0;
+    border-bottom:1px solid var(--line);transition:color .15s}
+  .svc-list strong{font-size:1.08rem;font-weight:700;letter-spacing:-.01em}
+  .svc-list a>span{color:var(--ink-soft);font-size:.98rem}
+  .svc-list a:hover strong{color:var(--purple)}
+  .svc-audit{margin-top:24px;font-size:.98rem;color:var(--ink-soft)}
+  .svc-audit a{color:var(--purple);font-weight:600;text-decoration:underline}
+
+  .receipt-wrap{filter:drop-shadow(0 22px 36px rgba(26,29,41,.16))}
+  .receipt{position:relative;background:var(--paper);color:#1A1D29;padding:30px 30px 26px;
+    transform:rotate(1.6deg);font-variant-numeric:tabular-nums;margin-bottom:18px}
+  .receipt::after{content:"";position:absolute;left:0;right:0;bottom:-11px;height:12px;
+    background:linear-gradient(-45deg,transparent 8px,var(--paper) 0) 0 0/16px 12px repeat-x,
+               linear-gradient(45deg,transparent 8px,var(--paper) 0) 0 0/16px 12px repeat-x}
+  .r-head{text-align:center;padding-bottom:16px;margin-bottom:12px;border-bottom:1.5px dashed #CFCBD9}
+  .r-head strong{display:block;font-size:.95rem;letter-spacing:.22em;text-transform:uppercase}
+  .r-head span{font-size:.8rem;color:#6B7080}
+  .r-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:10px 0}
+  .r-row b{display:block;font-size:.98rem}
+  .r-row small{display:block;font-size:.78rem;color:#6B7080}
+  .r-amt{font-weight:800;font-size:1.02rem;white-space:nowrap}
+  .r-amt>span{font-weight:500;font-size:.75rem;color:#6B7080;margin-right:4px}
+  .r-rule{border-top:1.5px dashed #CFCBD9;margin:12px 0}
+  .r-line{display:flex;justify-content:space-between;font-size:.9rem;padding:4px 6px;margin:0 -6px}
+  .r-line>span:last-child{font-weight:700}
+  .r-hl{background:linear-gradient(transparent 12%,var(--hl) 12%,var(--hl) 88%,transparent 88%)}
+  .r-foot{text-align:center;font-size:.8rem;color:#6B7080;margin-top:4px}
+  .r-link{display:inline-block;margin-top:22px;font-weight:600;color:var(--purple)}
+  .r-link:hover{text-decoration:underline}
+
+  /* Work band: the cutting mat */
+  .band{position:relative;overflow:hidden;color:#fff;background-color:var(--band);
+    background-image:
+      linear-gradient(rgba(255,255,255,.16) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.16) 1px,transparent 1px),
+      linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);
+    background-size:120px 120px,120px 120px,24px 24px,24px 24px;padding:120px 0 104px}
+  .ruler{position:absolute;top:0;left:0;right:0;height:30px;display:flex;overflow:hidden;
+    background:repeating-linear-gradient(90deg,rgba(255,255,255,.45) 0 1px,transparent 1px 24px) 0 0/100% 8px no-repeat,
+               repeating-linear-gradient(90deg,rgba(255,255,255,.7) 0 1px,transparent 1px 120px) 0 0/100% 14px no-repeat}
+  .ruler span{flex:0 0 120px;padding:13px 0 0 4px;font-size:.62rem;font-weight:600;color:rgba(255,255,255,.6)}
+  .band h2{color:#fff}
+  .kicker{font-size:.8rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--hl);margin-bottom:14px}
+  .feat{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+  .feat-copy p{color:#EDE7FF;font-size:1.08rem;max-width:30em}
+  .band-link{display:inline-block;margin-top:22px;font-weight:700;color:#fff;
+    border-bottom:2px solid var(--hl);padding-bottom:2px}
+  .stage{position:relative;height:560px}
+  .ph-en{position:absolute;left:4%;top:56px;width:40%;transform:rotate(-7deg)}
+  .ph-es{position:absolute;right:6%;top:0;width:43%;transform:rotate(5deg);z-index:2}
+  .scribble{position:absolute;left:-10%;top:19%;width:120%;height:34%;z-index:3;overflow:visible}
+  .scribble path,.arrow path{fill:none;stroke:var(--hl);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round}
+  .note-a{right:30%;top:57%;transform:rotate(-3deg)}
+  .note-b{left:0;bottom:2%;transform:rotate(2deg)}
+  .arrow{position:absolute;left:39%;bottom:5%;width:110px;height:80px;z-index:3;transform:rotate(-6deg) scaleY(-1)}
+  .minis{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:72px;padding-top:48px;
+    border-top:1px solid rgba(255,255,255,.22)}
+  .mini{display:grid;grid-template-columns:118px 1fr;gap:26px;align-items:center}
+  .ph-mini{transform:rotate(-4deg);padding:4px;border-radius:20px}
+  .ph-mini::before{top:9px;height:8px}
+  .ph-mini img{border-radius:16px}
+  .mini:nth-child(2) .ph-mini{transform:rotate(3deg)}
+  .mini h3{font-size:1.15rem;font-weight:800;color:#fff}
+  .mini p{color:#E4DCFF;font-size:.95rem;margin-top:4px}
+  .mini .band-link{margin-top:12px;font-size:.92rem}
+  .mini:hover .ph-mini{transform:rotate(0) translateY(-4px)}
+  .ph-mini{transition:transform .2s ease}
+
+  @media (max-width:900px){
+    .svc-grid,.feat{grid-template-columns:1fr;gap:48px}
+    .receipt-wrap{max-width:420px}
+    .hero-visual{max-width:420px;margin:0 auto;padding-left:36px}
+    .ph-hero{left:0}
+    .hero-visual .portrait{max-width:none}
+  }
+  @media (max-width:640px){
+    .hero-visual{padding-left:28px;padding-bottom:40px}
+    .ph-hero{width:36%}
+    .note-hero{left:30%;font-size:.82rem}
+    .svc-list a{grid-template-columns:1fr}
+    .receipt{transform:rotate(1deg);padding:24px 20px 22px}
+    .band{padding:96px 0 80px}
+    .stage{height:auto;aspect-ratio:1/1.12}
+    .ph-en{top:8%;width:44%;left:0}
+    .ph-es{width:47%;right:0}
+    .note,.note-hero{font-size:.78rem;padding:6px 9px;max-width:12em}
+    .note-a{left:0;right:auto;top:46%}
+    .note-b{left:0;bottom:0}
+    .arrow{left:47%;bottom:1%;width:76px;height:56px}
+    .minis{grid-template-columns:1fr;gap:32px;margin-top:56px;padding-top:40px}
+    .mini{grid-template-columns:92px 1fr;gap:20px}
+    .ph .url{font-size:.5rem;padding:4px 5px;left:6%;right:6%;letter-spacing:-.01em}
+  }
+  @media (prefers-reduced-motion:reduce){.mini:hover .ph-mini{transform:rotate(-4deg)}}
+
 /* Footer: generated by build.py. Do not edit here, edit FOOTER_TEMPLATE. */
 footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 .foot-inner{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.1fr;gap:40px;align-items:start;justify-content:normal}
@@ -629,7 +770,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
     "Website Maintenance",
     "SEO"
   ],
-  "slogan": "Sitios web que generan confianza.",
+  "slogan": "Websites that build trust.",
   "knowsAbout": [
     "Web Design",
     "Web Development",
@@ -659,7 +800,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Diseño y desarrollo web",
+          "name": "Web Design & Build",
           "description": "Diseño y desarrollo web personalizado para pequeños negocios. Móvil primero, carga rápida, hecho para convertir."
         }
       },
@@ -978,92 +1119,58 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 
 <main>
 <!-- ============ HERO ============ -->
-<header class="hero" id="top">
+<header class="hero hero2" id="top">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow rise">Diseño web · Desarrollo · Cuidado web</div>
-      <h1 class="rise d1">Sitios web que <span class="accent">generan confianza.</span></h1>
-      <p class="lede rise d2">Diseño, construyo y cuido sitios web que ayudan a tu negocio a verse profesional, generar confianza y crecer con seguridad. Sin rodeos, sin jerga. Hablas conmigo, y lo construyo como si fuera mío.</p>
+      <h1 class="rise d1">Sitios web para negocios del sur de Florida. <span class="hl">En inglés y en español,</span> desde el primer día.</h1>
+      <p class="lede rise d2">Soy Sebby. Diseño, construyo y cuido sitios web para pequeños negocios en Miami y el sur de Florida. Hablas conmigo, no con un gerente de cuenta, y todos los precios están publicados antes de que agendes.</p>
       <div class="hero-ctas rise d3">
         <a class="btn" href="/es/agendar.html">Trabaja con Sebby&nbsp;→</a>
         <a class="btn btn-ghost" href="#work">Ver mi trabajo</a>
       </div>
       <p class="hero-note rise d3">Llamada gratuita de 15 minutos. Sin presión, respuestas claras.</p>
+      <p class="proof rise d3">Sitios que he construido: <a href="/es/caso-riera-law.html">Riera Law Firm</a>, <a href="/es/caso-ortho-flow.html">Ortho Flow Recovery</a>, <a href="/es/caso-elite-care.html">Elite Care Recovery</a></p>
     </div>
-    <div class="portrait rise d2">
-      <picture><source srcset="/assets/sebby.webp" type="image/webp"><img width="960" height="1200" src="/assets/sebby.jpg" alt="Sebby, diseñador y desarrollador web, sonriendo en su estación de trabajo"></picture>
-      <div class="chip">
-        <span class="dot" aria-hidden="true"></span>
-        <span>Sebby está aceptando nuevos proyectos &nbsp;<em>· Responde en menos de un día</em></span>
+    <div class="hero-visual">
+      <div class="portrait">
+        <picture><source srcset="/assets/sebby.webp" type="image/webp"><img width="960" height="1200" src="/assets/sebby.jpg" alt="Sebby, diseñador y desarrollador web, sonriendo en su estación de trabajo"></picture>
       </div>
+      <a class="ph ph-hero" href="/es/sobre-mi.html">
+        <picture><source srcset="/assets/work/mbs-about-es-phone.webp" type="image/webp"><img width="540" height="983" src="/assets/work/mbs-about-es-phone.jpg" alt="La página Sobre mí de Made by Sebby en un teléfono"></picture>
+      </a>
+      <span class="note note-hero">Este sitio también, en dos idiomas</span>
     </div>
   </div>
 </header>
 
-<!-- ============ TRUST BAR ============ -->
-<div class="trust">
-  <div class="wrap trust-inner">
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M5 21c1-4 3.5-6 7-6s6 2 7 6"/></svg>
-      Atención personal
-    </div>
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 12L2 9l4-6z"/><path d="M2 9h20M12 21 8 9l4-6 4 6-4 12"/></svg>
-      Calidad artesanal
-    </div>
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg>
-      Soporte confiable
-    </div>
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16M6 16l4-4 3 3 5-6"/><path d="M14 9h4v4"/></svg>
-      Diseñado para crecer
-    </div>
-  </div>
-  <div class="client-logos-bar">
-    <div class="client-logos-label">Confían en mí</div>
-    <div class="client-logos">
-      <a href="/es/caso-riera-law.html"><img width="600" height="128" class="logo-light" src="/assets/client-logos/rieralaw-light.webp" alt="Riera Law Firm" loading="lazy" style="display:block"><img width="600" height="128" class="logo-dark" src="/assets/client-logos/rieralaw-dark.webp" alt="Riera Law Firm" loading="lazy" style="display:none"></a>
-      <a href="/es/caso-ortho-flow.html"><img width="512" height="128" class="logo-light" src="/assets/client-logos/orthoflow-light.webp" alt="Ortho Flow Recovery" loading="lazy" style="display:block"><img width="535" height="128" class="logo-dark" src="/assets/client-logos/orthoflow-dark.webp" alt="Ortho Flow Recovery" loading="lazy" style="display:none"></a>
-      <a href="/es/caso-elite-care.html"><img width="523" height="145" class="logo-light" src="/assets/client-logos/elitecare-light.webp" alt="Elite Care Recovery" loading="lazy" style="display:block"><img width="523" height="145" class="logo-dark" src="/assets/client-logos/elitecare-dark.webp" alt="Elite Care Recovery" loading="lazy" style="display:none"></a>
-    </div>
-  </div>
-</div>
-
 <!-- ============ SERVICES ============ -->
 <section id="services">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>Tú manejas tu negocio. Yo me encargo de tu sitio web.</h2>
-      <p>Tres formas en que ayudo, todo en términos claros. Cada proyecto comienza con una conversación sobre lo que realmente necesitas, no un paquete que intento vender.</p>
+  <div class="wrap svc-grid">
+    <div class="reveal">
+      <h2>Tres cosas que hago. Todos los precios son públicos.</h2>
+      <div class="svc-list">
+        <a href="/es/servicios.html"><strong>Diseño y desarrollo web</strong><span>Sitios nuevos y reconstrucciones completas, en inglés y español.</span></a>
+        <a href="/es/cuidado-web.html"><strong>Cuidado Web</strong><span>Actualizaciones, respaldos, revisiones de velocidad y cambios pequeños, cada mes.</span></a>
+        <a href="/es/servicios.html"><strong>Aparece en Google</strong><span>SEO local, para que la gente cercana te encuentre cuando busca.</span></a>
+      </div>
+      <p class="svc-audit">¿Ya tienes un sitio que no rinde? <a href="/es/auditoria-web.html">Empieza con una Auditoría Web</a>, $750 y acreditados a lo que venga después.</p>
     </div>
-    <div class="cards">
-      <a class="card reveal" href="/es/servicios.html">
-        <span class="tag">Hecho para convertir</span>
-        <div class="glyph">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8M12 18v3"/></svg>
-        </div>
-        <h3>Diseño y desarrollo web</h3>
-        <p>Diseño y construyo un sitio web del que estarás orgulloso, uno que hace que desconocidos confíen en ti lo suficiente para llamar, reservar o comprar.</p>
-      </a>
-      <a class="card reveal" href="/es/cuidado-web.html">
-        <span class="tag">Hecho para durar</span>
-        <div class="glyph">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg>
-        </div>
-        <h3>Cuidado Web</h3>
-        <p>Mantengo tu sitio rápido, seguro y actualizado mes tras mes, para que nunca tengas que preocuparte por él.</p>
-      </a>
-      <a class="card reveal" href="/es/servicios.html">
-        <span class="tag">Hecho para ser encontrado</span>
-        <div class="glyph">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-        </div>
-        <h3>Aparece en Google</h3>
-        <p>Ayudo a que la gente encuentre tu negocio cuando busca, con SEO honesto que crece con el tiempo.</p>
-      </a>
+    <div class="receipt-wrap reveal">
+      <div class="receipt">
+        <div class="r-head"><strong>Made by Sebby</strong>Sitios web · Miami, FL</div>
+        <div class="r-row"><div><b>Sitio Starter</b><small>hasta 5 páginas · 2–3 semanas</small></div><span class="r-amt">desde $2,500</span></div>
+        <div class="r-row"><div><b>Sitio Custom</b><small>hasta 10 páginas · 4–6 semanas</small></div><span class="r-amt">desde $5,000</span></div>
+        <div class="r-row"><div><b>Sitio Premium</b><small>definido juntos · 6–10 semanas</small></div><span class="r-amt">desde $9,000</span></div>
+        <div class="r-rule"></div>
+        <div class="r-line r-hl">Versión en español<span>incluida</span></div>
+        <div class="r-line r-hl">Cargos ocultos<span>ninguno</span></div>
+        <div class="r-line">Para empezar<span>50%</span></div>
+        <div class="r-line">Al lanzar<span>50%</span></div>
+        <div class="r-rule"></div>
+        <p class="r-foot">Número exacto en una llamada gratuita de 15 minutos. Sin cobros por hora.</p>
+      </div>
+      <a class="r-link" href="/es/precios.html">Precios completos y planes de cuidado&nbsp;→</a>
     </div>
-    <p class="reveal" style="text-align:center;margin-top:28px;font-size:1rem;color:var(--ink-soft)">¿Ya tienes un sitio que no rinde? <a href="/es/auditoria-web.html" style="color:var(--purple);font-weight:600;text-decoration:underline">Empieza con una Auditoría Web</a>, $750 y acreditados a lo que venga después.</p>
   </div>
 </section>
 
@@ -1096,24 +1203,39 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 </section>
 
 <!-- ============ WORK ============ -->
-<section id="work" style="padding-top:0">
+<section id="work" class="band">
+  <div class="ruler" aria-hidden="true"><span>0</span><span>5</span><span>10</span><span>15</span><span>20</span><span>25</span><span>30</span><span>35</span><span>40</span><span>45</span><span>50</span><span>55</span><span>60</span><span>65</span><span>70</span><span>75</span><span>80</span><span>85</span><span>90</span><span>95</span></div>
   <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>Trabajo reciente.</h2>
-      <p>Negocios reales, resultados reales. Cada uno de estos dueños puede contarte cómo es trabajar conmigo.</p>
+    <div class="feat">
+      <div class="feat-copy reveal">
+        <p class="kicker">Trabajo reciente · Ortho Flow Recovery</p>
+        <h2>Bilingüe desde el primer día.</h2>
+        <p>Ortho Flow salió al aire en inglés y en español, cada idioma en su propia dirección. Unas tres semanas después, alguien los contactó tras encontrarlos en ChatGPT, antes de agregar cualquier trabajo de SEO.</p>
+        <a class="band-link" href="/es/caso-ortho-flow.html">Lee la historia de Ortho Flow&nbsp;→</a>
+      </div>
+      <div class="stage reveal">
+        <div class="ph ph-en">
+          <picture><source srcset="/assets/work/orthoflow-en-phone.webp" type="image/webp"><img width="540" height="983" src="/assets/work/orthoflow-en-phone.jpg" alt="Sitio web de Ortho Flow Recovery en inglés en un teléfono" loading="lazy"></picture>
+          <span class="url">orthoflowrecovery.com</span>
+        </div>
+        <div class="ph ph-es">
+          <picture><source srcset="/assets/work/orthoflow-es-phone.webp" type="image/webp"><img width="540" height="983" src="/assets/work/orthoflow-es-phone.jpg" alt="Sitio web de Ortho Flow Recovery en español en un teléfono" loading="lazy"></picture>
+          <svg class="scribble" viewBox="0 0 200 120" preserveAspectRatio="none" aria-hidden="true"><path d="M34 74C18 40 96 10 160 22c40 8 44 52 10 72-34 20-112 22-142-6C6 66 40 30 104 26"/></svg>
+          <span class="url">orthoflowrecovery.com/es</span>
+        </div>
+        <span class="note note-a">Titular en español, no un traductor automático</span>
+        <span class="note note-b">Su propia dirección, para que Google la muestre en búsquedas en español</span>
+        <svg class="arrow" viewBox="0 0 120 90" aria-hidden="true"><path d="M8 8c40 4 74 22 92 62M100 70l-16-4M100 70l4-16"/></svg>
+      </div>
     </div>
-    <div class="work-grid">
-      <a class="tile reveal" href="/es/caso-riera-law.html">
-        <div class="shot"><picture><source srcset="/assets/hero-rieralaw.webp" type="image/webp"><img width="1200" height="750" src="/assets/hero-rieralaw.jpg" alt="Página de inicio de Riera Law Firm: abogado de arbitraje de valores con fondo de tribunal" loading="lazy"></picture></div>
-        <div class="meta"><h3>Riera Law Firm</h3><p>Derecho de valores · Sitio bilingüe completo, 70+ páginas, cuidado continuo</p></div>
+    <div class="minis">
+      <a class="mini reveal" href="/es/caso-riera-law.html">
+        <div class="ph ph-mini"><picture><source srcset="/assets/work/riera-en-phone.webp" type="image/webp"><img width="540" height="983" src="/assets/work/riera-en-phone.jpg" alt="Sitio web de Riera Law Firm en un teléfono" loading="lazy"></picture></div>
+        <div><h3>Riera Law Firm</h3><p>Derecho de valores. Rehecho desde cero: más de 70 páginas bilingües, con cuidado continuo.</p><span class="band-link">Caso de estudio&nbsp;→</span></div>
       </a>
-      <a class="tile reveal" href="/es/caso-ortho-flow.html">
-        <div class="shot"><picture><source srcset="/assets/hero-orthoflow.webp" type="image/webp"><img width="1476" height="1029" src="/assets/hero-orthoflow.jpg" alt="Página de inicio de Ortho Flow Recovery: terapia de frío y compresión a domicilio para la recuperación postoperatoria" loading="lazy"></picture></div>
-        <div class="meta"><h3>Ortho Flow Recovery</h3><p>Equipo de recuperación · Sitio bilingüe, GitHub Pages, cuidado continuo</p></div>
-      </a>
-      <a class="tile reveal" href="/es/caso-elite-care.html">
-        <div class="shot"><picture><source srcset="/assets/hero-elitecare.webp" type="image/webp"><img width="1200" height="750" src="/assets/hero-elitecare.jpg" alt="Página de inicio de Elite Care Recovery: terapia premium de frío y compresión para pacientes postoperatorios" loading="lazy"></picture></div>
-        <div class="meta"><h3>Elite Care Recovery</h3><p>Equipo médico · Sitio completo, GitHub Pages</p></div>
+      <a class="mini reveal" href="/es/caso-elite-care.html">
+        <div class="ph ph-mini"><picture><source srcset="/assets/work/elitecare-en-phone.webp" type="image/webp"><img width="540" height="983" src="/assets/work/elitecare-en-phone.jpg" alt="Sitio web de Elite Care Recovery en un teléfono" loading="lazy"></picture></div>
+        <div><h3>Elite Care Recovery</h3><p>Equipo de recuperación postoperatoria. Los pacientes reservan en línea, a cualquier hora.</p><span class="band-link">Caso de estudio&nbsp;→</span></div>
       </a>
     </div>
   </div>

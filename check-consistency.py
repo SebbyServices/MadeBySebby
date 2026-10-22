@@ -366,7 +366,7 @@ def check_links():
 NON_TRANSLATABLE = {
     "Blog", "Made by Sebby", "hello@madebysebby.com", "EN", "ES", "Sebby",
     "Riera Law Firm", "Elite Care Recovery", "rieralaw.com", "elitecarerecovery.net",
-    "Ortho Flow Recovery", "orthoflowrecovery.com", "orthoflowrecovery.com →",
+    "Ortho Flow Recovery", "orthoflowrecovery.com", "orthoflowrecovery.com/es", "orthoflowrecovery.com →",
     "rieralaw.com →", "elitecarerecovery.net →", "madebysebby.com",
     "Jorge L. Riera", "John Pierce", "JP", "JR", "EC",
     "WhatsApp", "Cal.com", "Google", "Instagram", "LinkedIn", "SEO",
