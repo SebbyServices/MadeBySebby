@@ -494,6 +494,7 @@ ARIA_ES = {
 # descriptive alt that reaches a Spanish page untranslated.
 ALT_ES = {
     "Riera Law Firm website on a phone": "Sitio web de Riera Law Firm en un teléfono",
+    "The Made by Sebby About page on a phone": "La página Sobre mí de Made by Sebby en un teléfono",
     "Elite Care Recovery website on a phone": "Sitio web de Elite Care Recovery en un teléfono",
     "Ortho Flow Recovery website in English on a phone": "Sitio web de Ortho Flow Recovery en inglés en un teléfono",
     "Ortho Flow Recovery website in Spanish on a phone": "Sitio web de Ortho Flow Recovery en español en un teléfono",
