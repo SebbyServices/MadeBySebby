@@ -74,7 +74,7 @@ PAGES = {
         es="index.html",
         meta=dict(
             title="Diseño Web y Páginas Web para Negocios | Made by Sebby",
-            desc="Diseño web y cuidado mensual para pequeños negocios en Miami y el sur de Florida. Bilingüe, móvil primero. Consulta gratis.",
+            desc="Páginas web bilingües y cuidado mensual para pequeños negocios en Miami y el sur de Florida. Pensadas para el celular. Consulta gratis.",
             og_title="Diseño Web y Páginas Web para Negocios | Made by Sebby",
             og_desc="Diseño, desarrollo y cuidado de páginas web para pequeños negocios en Miami y el sur de Florida. Sitios bilingües que generan confianza y convierten visitantes.",
             tw_title="Diseño Web y Páginas Web para Negocios | Made by Sebby",
@@ -85,11 +85,11 @@ PAGES = {
         es="servicios.html",
         meta=dict(
             title="Diseño Web, Cuidado Web y SEO Local | Made by Sebby",
-            desc="Diseño web personalizado, mantenimiento mensual y SEO local para pequeños negocios en Miami y el sur de Florida. Sitios bilingües, móvil primero.",
+            desc="Diseño web personalizado, mantenimiento mensual y SEO local para pequeños negocios en Miami y el sur de Florida. Sitios bilingües, pensados para el celular.",
             og_title="Diseño Web, Cuidado Web y SEO Local | Made by Sebby",
             og_desc="Diseño web personalizado, mantenimiento mensual y SEO local para pequeños negocios en Miami y el sur de Florida. Sitios bilingües hechos para convertir.",
             tw_title="Diseño Web, Cuidado Web y SEO Local | Made by Sebby",
-            tw_desc="Diseño web personalizado, mantenimiento mensual y SEO local para pequeños negocios. Sitios bilingües, móvil primero, hechos para convertir.",
+            tw_desc="Diseño web personalizado, mantenimiento mensual y SEO local para pequeños negocios. Sitios bilingües, pensados para el celular, hechos para conseguir clientes.",
         ),
     ),
     "work.html": dict(
@@ -139,19 +139,19 @@ PAGES = {
     "pricing.html": dict(
         es="precios.html",
         meta=dict(
-            title="Precios de Diseño Web para Negocios | Made by Sebby",
-            desc="Precios claros de diseño web para pequeños negocios. Sitios básicos desde {{PRICE_STARTER}}, personalizados desde {{PRICE_CUSTOM}}. Sin costos ocultos. Consulta gratis.",
-            og_title="Precios y Paquetes de Diseño Web | Made by Sebby",
-            og_desc="Precios claros de diseño web para pequeños negocios. Sitios básicos desde {{PRICE_STARTER}}, personalizados desde {{PRICE_CUSTOM}}, proyectos premium desde {{PRICE_PREMIUM}}. Sin costos ocultos.",
-            tw_title="Precios y Paquetes de Diseño Web | Made by Sebby",
-            tw_desc="Precios claros de diseño web para pequeños negocios. Sitios básicos desde {{PRICE_STARTER}}, personalizados desde {{PRICE_CUSTOM}}. Sin costos ocultos.",
+            title="Precios de Páginas Web para Negocios | Made by Sebby",
+            desc="Precios claros de páginas web para pequeños negocios. Básica desde {{PRICE_STARTER}}, personalizada desde {{PRICE_CUSTOM}}. Sin costos ocultos. Consulta gratis.",
+            og_title="Precios y Paquetes de Páginas Web | Made by Sebby",
+            og_desc="Precios claros de páginas web para pequeños negocios. Básica desde {{PRICE_STARTER}}, personalizada desde {{PRICE_CUSTOM}}, premium desde {{PRICE_PREMIUM}}. Sin costos ocultos.",
+            tw_title="Precios y Paquetes de Páginas Web | Made by Sebby",
+            tw_desc="Precios claros de páginas web para pequeños negocios. Básica desde {{PRICE_STARTER}}, personalizada desde {{PRICE_CUSTOM}}. Sin costos ocultos.",
         ),
     ),
     "website-care.html": dict(
         es="cuidado-web.html",
         meta=dict(
             title="Planes de Cuidado Web. Mantenimiento Mensual",
-            desc="Mantenimiento mensual de sitios web para negocios en Miami y el sur de Florida. Actualizaciones, respaldos, seguridad, velocidad y ediciones. Desde $99/mes.",
+            desc="Mantenimiento mensual de sitios web para negocios en Miami y el sur de Florida. Actualizaciones, respaldos, seguridad, velocidad y ediciones. Desde {{CARE_ESSENTIALS}}/mes.",
             og_title="Planes de Cuidado Web. Mantenimiento Mensual",
             og_desc="Planes accesibles de mantenimiento mensual. Actualizaciones de software, respaldos diarios, monitoreo de seguridad, optimización de velocidad y ediciones incluidas.",
             tw_title="Planes de Cuidado Web. Mantenimiento Mensual",
@@ -175,9 +175,9 @@ PAGES = {
             title="Producción de Contenido para Redes | Made by Sebby",
             desc="Edición mensual de video corto, programación de publicaciones y textos para redes sociales de pequeños negocios en Miami y el sur de Florida.",
             og_title="Producción de Contenido para Redes | Made by Sebby",
-            og_desc="Edición de video corto, programación de publicaciones y textos ligeros cada mes. En inglés, español o ambos. A la medida de tu negocio.",
+            og_desc="Edición de video corto, programación de publicaciones y textos breves cada mes. En inglés, español o ambos. A la medida de tu negocio.",
             tw_title="Producción de Contenido para Redes | Made by Sebby",
-            tw_desc="Edición de video corto, programación de publicaciones y textos ligeros cada mes, en inglés y español.",
+            tw_desc="Edición de video corto, programación de publicaciones y textos breves cada mes, en inglés y español.",
         ),
     ),
     "blog.html": dict(
@@ -206,9 +206,9 @@ PAGES = {
         es="caso-elite-care.html",
         meta=dict(
             title="Caso de Éxito: Elite Care Recovery | Made by Sebby",
-            desc="Cómo Sebby construyó un sitio web de salud para una empresa de recuperación ortopédica en el sur de Florida, con catálogo y diseño móvil primero.",
+            desc="Cómo Sebby construyó un sitio web de salud para una empresa de recuperación ortopédica en el sur de Florida, con catálogo y diseño pensado para el celular.",
             og_title="Caso de Éxito: Elite Care Recovery | Made by Sebby",
-            og_desc="Cómo Sebby construyó un sitio web profesional de salud para una empresa de recuperación ortopédica en el sur de Florida, con catálogo de productos, reservas en línea y diseño móvil primero.",
+            og_desc="Cómo Sebby construyó un sitio web profesional de salud para una empresa de recuperación ortopédica en el sur de Florida, con catálogo de productos, reservas en línea y diseño pensado para el celular.",
             tw_title="Caso de Éxito: Elite Care Recovery | Made by Sebby",
             tw_desc="Cómo Sebby construyó un sitio web de salud para una empresa de recuperación ortopédica en el sur de Florida.",
         ),
@@ -241,9 +241,9 @@ PAGES = {
             title="Páginas Web y Diseño Web en Miami para Negocios",
             desc="Páginas web y diseño web en Miami para pequeños negocios. Sitios bilingües que generan confianza y convierten visitantes. Consulta gratis.",
             og_title="Páginas Web y Diseño Web en Miami para Negocios",
-            og_desc="Diseño web en Miami para pequeños negocios, sitios personalizados que generan confianza y convierten visitantes. Bilingüe (español e inglés), móvil primero, con cuidado web continuo.",
+            og_desc="Diseño web en Miami para pequeños negocios, sitios personalizados que generan confianza y convierten visitantes. Bilingüe (español e inglés), pensado para el celular, con cuidado web continuo.",
             tw_title="Páginas Web y Diseño Web en Miami para Negocios",
-            tw_desc="Diseño web en Miami para pequeños negocios, sitios personalizados que generan confianza y convierten. Bilingüe y móvil primero.",
+            tw_desc="Diseño web en Miami para pequeños negocios, sitios personalizados que generan confianza y convierten. Bilingüe y pensado para el celular.",
         ),
     ),
     # Coral Gables, added 2026-10-10. Search Console showed ~75 impressions for
@@ -296,11 +296,11 @@ PAGES = {
         es="diseno-web-fort-lauderdale.html",
         meta=dict(
             title="Diseño Web en Fort Lauderdale | Made by Sebby",
-            desc="Diseño web en Fort Lauderdale para pequeños negocios. Sitios personalizados que generan confianza y convierten. Bilingüe, móvil primero. Consulta gratis.",
+            desc="Diseño web en Fort Lauderdale para pequeños negocios. Sitios personalizados que generan confianza y convierten. Bilingüe y pensado para el celular. Consulta gratis.",
             og_title="Diseño Web en Fort Lauderdale | Made by Sebby",
-            og_desc="Diseño web en Fort Lauderdale para pequeños negocios. Sitios personalizados que generan confianza y convierten visitantes. Bilingüe (español e inglés), móvil primero, con cuidado web continuo.",
+            og_desc="Diseño web en Fort Lauderdale para pequeños negocios. Sitios personalizados que generan confianza y convierten visitantes. Bilingüe (español e inglés), pensado para el celular, con cuidado web continuo.",
             tw_title="Diseño Web en Fort Lauderdale | Made by Sebby",
-            tw_desc="Diseño web en Fort Lauderdale para pequeños negocios. Sitios que generan confianza y convierten. Bilingüe y móvil primero.",
+            tw_desc="Diseño web en Fort Lauderdale para pequeños negocios. Sitios que generan confianza y convierten. Bilingüe y pensado para el celular.",
         ),
     ),
     "privacy.html": dict(
@@ -364,12 +364,12 @@ PAGES = {
     "blog/how-much-does-a-website-cost.html": dict(
         es="blog/cuanto-cuesta-un-sitio-web.html",
         meta=dict(
-            title="¿Cuánto Cuesta un Sitio Web en 2026? | Made by Sebby",
-            desc="Precios reales de sitios web para pequeños negocios en 2026. Constructores DIY, freelancers y agencias comparados. Sin ventas forzadas, solo hechos.",
-            og_title="¿Cuánto Cuesta un Sitio Web en 2026? | Made by Sebby",
-            og_desc="Precios reales de sitios web para pequeños negocios en 2026. Constructores DIY, freelancers y agencias comparados, con lo que realmente recibes en cada rango de precio.",
-            tw_title="¿Cuánto Cuesta un Sitio Web en 2026? | Made by Sebby",
-            tw_desc="Precios reales de sitios web para pequeños negocios en 2026. Constructores DIY, freelancers y agencias comparados.",
+            title="¿Cuánto Cuesta una Página Web en 2026? | Made by Sebby",
+            desc="Precios reales de páginas web para pequeños negocios en 2026. Constructores hazlo tú mismo, freelancers y agencias comparados. Sin ventas forzadas, solo hechos.",
+            og_title="¿Cuánto Cuesta una Página Web en 2026? | Made by Sebby",
+            og_desc="Precios reales de páginas web para pequeños negocios en 2026. Constructores hazlo tú mismo, freelancers y agencias comparados, con lo que realmente recibes en cada rango de precio.",
+            tw_title="¿Cuánto Cuesta una Página Web en 2026? | Made by Sebby",
+            tw_desc="Precios reales de páginas web para pequeños negocios en 2026. Constructores hazlo tú mismo, freelancers y agencias comparados.",
         ),
     ),
     "blog/why-your-competitor-gets-calls-from-google.html": dict(
@@ -503,13 +503,13 @@ ALT_ES = {
     "Made by Sebby | Web Design, Development, Website Care":
         "Made by Sebby | Diseño Web, Desarrollo, Cuidado Web",
     "Sebby, web designer and developer, smiling at his workstation":
-        "Sebby, diseñador y desarrollador web, sonriendo en su estación de trabajo",
+        "Sebby, diseñador y desarrollador web, sonriendo frente a su computadora",
     "Sebby, web designer and developer":
         "Sebby, diseñador y desarrollador web",
     "Website care dashboard with security, backups, and performance monitoring":
         "Panel de cuidado web con seguridad, respaldos y monitoreo de rendimiento",
     "Responsive website design shown across laptop, tablet, and phone":
-        "Diseño web adaptable mostrado en laptop, tableta y teléfono",
+        "Diseño web que se adapta a laptop, tableta y celular",
     "Google search result and Business Profile for a local business":
         "Resultado de búsqueda de Google y Perfil de Empresa de un negocio local",
     "Riera Law Firm homepage: securities arbitration attorney with courthouse background":
@@ -1314,7 +1314,7 @@ CRUMBS = {
     "work.html": {"en": "Portfolio", "es": "Portafolio"},
     "about.html": {"en": "About Sebby", "es": "Sobre Sebby"},
     "contact.html": {"en": "Contact", "es": "Contacto"},
-    "book.html": {"en": "Book a Call", "es": "Reservar Llamada"},
+    "book.html": {"en": "Book a Call", "es": "Agendar Llamada"},
     "pricing.html": {"en": "Pricing", "es": "Precios"},
     "website-care.html": {"en": "Website Care", "es": "Cuidado Web"},
     "website-audit.html": {"en": "Website Audit", "es": "Auditoría Web"},
@@ -1346,7 +1346,7 @@ CRUMBS = {
         "es": "Qué Significa Realmente el Cuidado Web"},
     "blog/how-much-does-a-website-cost.html": {
         "en": "How Much Does a Website Cost in 2026?",
-        "es": "¿Cuánto Cuesta un Sitio Web en 2026?"},
+        "es": "¿Cuánto Cuesta una Página Web en 2026?"},
     "blog/why-your-competitor-gets-calls-from-google.html": {
         "en": "Why Your Competitor Gets Calls From Google",
         "es": "Por Qué Tu Competencia Recibe Llamadas de Google"},
@@ -1389,7 +1389,7 @@ def breadcrumbs_for(source, lang):
 SCHEMA_ES = {
     "Website Audit and 90-Day Growth Plan": "Auditoría Web y Plan de Crecimiento de 90 Días",
     "Custom website design and development for small businesses. Mobile-first, fast-loading, built to convert.": "Diseño y desarrollo web personalizado para pequeños negocios. Móvil primero, carga rápida, hecho para convertir.",
-    "Custom web design and development for small businesses. Mobile-first, fast-loading websites built to convert visitors into customers.": "Diseño y desarrollo web personalizado para pequeños negocios. Sitios rápidos, móvil primero, hechos para convertir visitantes en clientes.",
+    "Custom web design and development for small businesses. Mobile-first, fast-loading websites built to convert visitors into customers.": "Diseño y desarrollo web personalizado para pequeños negocios. Sitios rápidos, pensados primero para el celular, hechos para convertir visitantes en clientes.",
     "Custom Web Design & Development": "Diseño y Desarrollo Web Personalizado",
     "Monthly website maintenance including updates, backups, security, speed optimization, and small edits.": "Mantenimiento mensual de sitios web: actualizaciones, respaldos, seguridad, optimización de velocidad y ediciones pequeñas.",
     "Monthly website maintenance including software updates, daily backups, security monitoring, speed optimization, and small edits.": "Mantenimiento mensual: actualizaciones de software, respaldos diarios, monitoreo de seguridad, optimización de velocidad y ediciones pequeñas.",
@@ -1399,8 +1399,8 @@ SCHEMA_ES = {
     "SEO. Get Found on Google": "SEO. Aparece en Google",
     "Weekly tested software and security updates, daily off-site backups, uptime and security monitoring around the clock, monthly health report in plain English, and response within two business days": "Actualizaciones semanales de software y seguridad verificadas, respaldos diarios fuera del sitio, monitoreo de disponibilidad y seguridad las 24 horas, informe mensual de salud en términos claros, y respuesta dentro de dos días hábiles",
     "Everything in Essentials plus 1 hour of content edits, quarterly speed and performance tuning, backup restoration if compromised, and one-business-day response": "Todo lo del plan Esencial más 1 hora de ediciones de contenido, optimización trimestral de velocidad y rendimiento, restauración desde respaldo si el sitio es comprometido, y respuesta en un día hábil",
-    "Everything in Standard plus 2 hours monthly for edits and on-page SEO, monthly Search Console and Analytics review, quarterly 30-minute strategy call, and 4-business-hour critical outage response": "Todo lo del plan Estándar más 2 horas mensuales para ediciones y SEO on-page, revisión mensual de Search Console y Analytics, llamada trimestral de estrategia de 30 minutos, y respuesta a interrupciones críticas en 4 horas hábiles",
-    "Up to {{PAGES_STARTER}} pages, mobile-responsive design, contact form, basic SEO setup, Google Analytics. Delivered in {{WEEKS_STARTER}} weeks.": "Hasta {{PAGES_STARTER}} páginas, diseño adaptable a móvil, formulario de contacto, configuración básica de SEO, Google Analytics. Entrega en {{WEEKS_STARTER}} semanas.",
+    "Everything in Standard plus 2 hours monthly for edits and on-page SEO, monthly Search Console and Analytics review, quarterly 30-minute strategy call, and 4-business-hour critical outage response": "Todo lo del plan Estándar más 2 horas mensuales para ediciones y SEO en las páginas, revisión mensual de Search Console y Analytics, llamada trimestral de estrategia de 30 minutos, y respuesta a interrupciones críticas en 4 horas hábiles",
+    "Up to {{PAGES_STARTER}} pages, mobile-responsive design, contact form, basic SEO setup, Google Analytics. Delivered in {{WEEKS_STARTER}} weeks.": "Hasta {{PAGES_STARTER}} páginas, diseño que se adapta al celular, formulario de contacto, configuración básica de SEO, Google Analytics. Entrega en {{WEEKS_STARTER}} semanas.",
     "Up to {{PAGES_CUSTOM}} pages, custom design from scratch, copywriting help, SEO optimization, speed optimization, bilingual as standard. Delivered in {{WEEKS_CUSTOM}} weeks.": "Hasta {{PAGES_CUSTOM}} páginas, diseño personalizado desde cero, ayuda con redacción, optimización SEO, optimización de velocidad, bilingüe de serie. Entrega en {{WEEKS_CUSTOM}} semanas.",
     "Unlimited pages, full custom design and strategy, professional copywriting, advanced SEO, integrations, {{SUPPORT_PREMIUM}} days post-launch optimization. Delivered in {{WEEKS_PREMIUM}} weeks.": "Páginas ilimitadas, diseño y estrategia totalmente personalizados, redacción profesional, SEO avanzado, integraciones, {{SUPPORT_PREMIUM}} días de optimización post-lanzamiento. Entrega en {{WEEKS_PREMIUM}} semanas.",
     "Made by Sebby is a freelance web design and website care studio in Miami, Florida, run by Sebastian Podgaetz. It is a services business and sells no physical products. It is NOT affiliated with Sebby Collection, Sebby Couture, or any apparel, outerwear, jacket or fashion brand using the name Sebby. Different company, different industry, no shared ownership.": "Made by Sebby es un estudio de diseño web y cuidado de sitios en Miami, Florida, dirigido por Sebastian Podgaetz. Es un negocio de servicios y no vende ningún producto físico. NO tiene relación con Sebby Collection, Sebby Couture, ni con ninguna marca de ropa, abrigos, chaquetas o moda que use el nombre Sebby. Empresa distinta, industria distinta, sin propietarios en común.",
