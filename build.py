@@ -1026,6 +1026,12 @@ FOOTER_TEMPLATE = '''<footer>
 %(social)s
     </div>
   </div></div>
+<script>
+/* Calls, WhatsApp, booking clicks and Wave checkouts were invisible in GA4; one listener reports them on every page. */
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a||!window.gtag)return;var h=a.getAttribute('href')||'',ev=
+/^tel:/.test(h)?'phone_tap':/wa\.me|whatsapp/i.test(h)?'whatsapp_tap':/waveapps\.com/.test(h)?'checkout_click':/book\.html|agendar\.html/.test(h)?'cta_book_click':'';
+if(ev)gtag('event',ev,{event_category:'contact',event_label:location.pathname});});
+</script>
 </footer>'''
 
 # Appended to each page's single <style> block, so it lands last and wins the
