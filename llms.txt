@@ -63,8 +63,8 @@ Bilingual delivery itself is **never** a surcharge, unlike most quotes in this m
 | Tier | Monthly | Annual | What it adds |
 |---|---|---|---|
 | Essentials | $99 | $1,089 | Weekly tested software and security updates, daily off-site backups, uptime and security monitoring around the clock, monthly health report in plain English, response within two business days |
-| Standard | $249 | $2,739 | Everything in Essentials, plus one hour of content edits monthly, quarterly speed and performance tuning, restoration from a clean backup if the site is compromised, response within one business day |
-| Growth | $549 | $6,039 | Everything in Standard, plus two hours monthly for edits, on-page SEO and improvements, monthly review of Search Console, Analytics and Core Web Vitals, a quarterly 30-minute strategy call, critical outages acknowledged within four business hours |
+| Standard | $249 | $2,739 | Everything in Essentials, plus two hours of content edits monthly, quarterly speed and performance tuning, restoration from a clean backup if the site is compromised, response within one business day |
+| Growth | $549 | $6,039 | Everything in Standard, plus four hours monthly for edits, on-page SEO and improvements, monthly review of Search Console, Analytics and Core Web Vitals, a quarterly 30-minute strategy call, critical outages acknowledged within four business hours |
 
 Annual billing is eleven months for twelve, so the twelfth month is free.
 Work beyond the included time is $125/hour, always approved before it starts.
