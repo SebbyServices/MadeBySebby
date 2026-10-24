@@ -471,6 +471,24 @@ PRIVATE_LINKS = {
     "hq/index.html": "https://claude.ai/artifact/9kKpfvMpR6JDQfBD6cAVip",
 }
 
+# One-off event screens: a single image filling a TV, opened by Sebby from a typed URL.
+# noindex and never linked, so they stay out of search and the sitemap.
+EVENT_SCREENS = {
+    "gr/index.html": "/assets/events/gender-reveal",
+}
+EVENT_STUB = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Welcome</title>
+<style>html,body{{margin:0;height:100%;background:#F6EEE4;overflow:hidden}}picture,img{{display:block;width:100vw;height:100vh;object-fit:contain}}</style>
+</head>
+<body><picture><source srcset="{img}.webp" type="image/webp"><img src="{img}.jpg" alt="Welcome to our gender reveal, Victoria and Sebastian, October 25, 2026"></picture></body>
+</html>
+"""
+
 # aria-label is never inside a <span lang> pair -- it is an attribute, so the
 # bilingual sibling trick cannot reach it. Under the old single-URL model that
 # was invisible; now a Spanish page would announce "Toggle dark mode" to a
@@ -1806,6 +1824,9 @@ def build(src_dir, out_dir):
 
     for path, target in PRIVATE_LINKS.items():
         written[path] = PRIVATE_STUB.format(target=target)
+
+    for path, img in EVENT_SCREENS.items():
+        written[path] = EVENT_STUB.format(img=img)
 
     for rel, content in written.items():
         path = os.path.join(out_dir, rel)
