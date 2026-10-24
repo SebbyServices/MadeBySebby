@@ -471,7 +471,7 @@ PRIVATE_LINKS = {
     "hq/index.html": "https://claude.ai/artifact/9kKpfvMpR6JDQfBD6cAVip",
 }
 
-# One-off event screens: a single image filling a TV, opened by Sebby from a typed URL.
+# One-off event screens: a single looping video (poster image first) filling a TV, opened by Sebby from a typed URL.
 # noindex and never linked, so they stay out of search and the sitemap.
 EVENT_SCREENS = {
     "gr/index.html": "/assets/events/gender-reveal",
@@ -483,9 +483,9 @@ EVENT_STUB = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Welcome</title>
-<style>html,body{{margin:0;height:100%;background:#F6EEE4;overflow:hidden}}picture,img{{display:block;width:100vw;height:100vh;object-fit:contain}}</style>
+<style>html,body{{margin:0;height:100%;background:#F6EEE4;overflow:hidden}}video{{display:block;width:100vw;height:100vh;object-fit:contain}}</style>
 </head>
-<body><picture><source srcset="{img}.webp" type="image/webp"><img src="{img}.jpg" alt="Welcome to our gender reveal, Victoria and Sebastian, October 25, 2026"></picture></body>
+<body><video autoplay muted loop playsinline poster="{img}.jpg" aria-label="Welcome to our gender reveal, Victoria and Sebastian"><source src="{img}.mp4" type="video/mp4"></video></body>
 </html>
 """
 
