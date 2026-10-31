@@ -169,6 +169,17 @@ PAGES = {
             tw_desc="Diagnóstico completo de tu sitio web actual y un plan de 90 días para arreglar primero lo que más importa. Precio fijo.",
         ),
     ),
+    "quick-fixes.html": dict(
+        es="arreglos-rapidos.html",
+        meta=dict(
+            title="Arreglos Rápidos para tu Página Web | Made by Sebby",
+            desc="Arreglos de precio fijo para negocios del sur de la Florida: hasta 3 arreglos por {{PRICE_QUICKFIX}}, o tu página principal en español por {{PRICE_SPANISH_HOME}}.",
+            og_title="Arreglos Rápidos para tu Página Web",
+            og_desc="Hasta 3 arreglos por {{PRICE_QUICKFIX}}, o tu página principal en español por {{PRICE_SPANISH_HOME}}. Cualquier plataforma, listo en días.",
+            tw_title="Arreglos Rápidos para tu Página Web",
+            tw_desc="Hasta 3 arreglos por {{PRICE_QUICKFIX}}, o tu página principal en español por {{PRICE_SPANISH_HOME}}.",
+        ),
+    ),
     "content-production.html": dict(
         es="produccion-de-contenido.html",
         meta=dict(
@@ -1151,6 +1162,10 @@ PRICES = {
     # read as "a report that costs as much as a new site". Credited in full
     # toward a build or care plan within {{AUDIT_CREDIT_DAYS}} days.
     "{{PRICE_AUDIT}}": "$750",
+    # Small first purchases (2026-10-31): a stranger can say yes to these after
+    # one cold email; builds and care plans are too big a first step.
+    "{{PRICE_QUICKFIX}}": "$149",
+    "{{PRICE_SPANISH_HOME}}": "$495",
     "{{AUDIT_CREDIT_DAYS}}": "60",
     "{{AUDIT_DAYS}}": "7",
     "{{AUDIT_MIN_FIXES}}": "10",
@@ -1203,6 +1218,7 @@ PRICES = {
     "{{N_SPANISH_STRATEGY}}": "750",
     "{{N_EXTRA_PAGE}}": "150",
     "{{N_AUDIT}}": "750",
+    "{{N_QUICKFIX}}": "149",
     "{{N_CONTENT_LOW}}": "1500",
     "{{N_CONTENT_HIGH}}": "3000",
 }
@@ -1336,6 +1352,7 @@ CRUMBS = {
     "pricing.html": {"en": "Pricing", "es": "Precios"},
     "website-care.html": {"en": "Website Care", "es": "Cuidado Web"},
     "website-audit.html": {"en": "Website Audit", "es": "Auditoría Web"},
+    "quick-fixes.html": {"en": "Quick Fixes", "es": "Arreglos Rápidos"},
     "content-production.html": {"en": "Content Production",
                                 "es": "Producción de Contenido"},
     "blog.html": {"en": "Blog", "es": "Blog"},
@@ -1405,6 +1422,8 @@ def breadcrumbs_for(source, lang):
 # Jorge's testimonial is the Spanish text already published on the portfolio page,
 # not a re-translation, so the schema quotes him exactly as the site does.
 SCHEMA_ES = {
+    "Up to three specific fixes on an existing website, done in five business days, on any platform.": "Hasta tres arreglos concretos en una página web existente, listos en cinco días hábiles, en cualquier plataforma.",
+    "Quick Website Fixes": "Arreglos Rápidos para tu Página Web",
     "Website Audit and 90-Day Growth Plan": "Auditoría Web y Plan de Crecimiento de 90 Días",
     "Custom website design and development for small businesses. Mobile-first, fast-loading, built to convert.": "Diseño y desarrollo web personalizado para pequeños negocios. Móvil primero, carga rápida, hecho para convertir.",
     "Custom web design and development for small businesses. Mobile-first, fast-loading websites built to convert visitors into customers.": "Diseño y desarrollo web personalizado para pequeños negocios. Sitios rápidos, pensados primero para el celular, hechos para convertir visitantes en clientes.",
