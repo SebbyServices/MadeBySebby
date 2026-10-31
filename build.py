@@ -361,6 +361,17 @@ PAGES = {
             tw_desc="Tu sitio web debería atraer negocio, no ahuyentarlo. Aquí hay 5 señales de que tu sitio te está costando clientes.",
         ),
     ),
+    "blog/english-only-website-south-florida.html": dict(
+        es="blog/tu-pagina-web-solo-en-ingles.html",
+        meta=dict(
+            title="¿Tu Página Web Está Solo en Inglés? Lo Que Cuesta",
+            desc="Dos de cada tres residentes de Miami-Dade hablan español en casa. Lo que le cuesta a un negocio del sur de la Florida una página solo en inglés, y el arreglo más pequeño.",
+            og_title="¿Tu Página Web Está Solo en Inglés?",
+            og_desc="Dos de cada tres residentes de Miami-Dade hablan español en casa. Lo que cuesta una página solo en inglés, y el arreglo más pequeño.",
+            tw_title="¿Tu Página Web Está Solo en Inglés?",
+            tw_desc="Lo que cuesta una página solo en inglés en el sur de la Florida, y el arreglo más pequeño.",
+        ),
+    ),
     "blog/what-is-website-care.html": dict(
         es="blog/que-es-el-cuidado-web.html",
         meta=dict(
@@ -1376,6 +1387,7 @@ CRUMBS = {
     "blog/5-signs-your-website-is-losing-clients.html": {
         "en": "5 Signs Your Website Is Losing You Clients",
         "es": "5 Señales de Que Tu Sitio Web Pierde Clientes"},
+    "blog/english-only-website-south-florida.html": {"en": "Is Your Website English Only?", "es": "¿Tu Página Web Está Solo en Inglés?"},
     "blog/what-is-website-care.html": {
         "en": "What Website Care Actually Means",
         "es": "Qué Significa Realmente el Cuidado Web"},
@@ -1422,6 +1434,8 @@ def breadcrumbs_for(source, lang):
 # Jorge's testimonial is the Spanish text already published on the portfolio page,
 # not a re-translation, so the schema quotes him exactly as the site does.
 SCHEMA_ES = {
+    "Is Your Website English Only? What It Costs in South Florida": "¿Tu Página Web Está Solo en Inglés? Lo Que Cuesta en el Sur de la Florida",
+    "Two in three Miami-Dade residents speak Spanish at home. What an English-only website costs a South Florida business, and the smallest fix.": "Dos de cada tres residentes de Miami-Dade hablan español en casa. Lo que cuesta una página solo en inglés en el sur de la Florida, y el arreglo más pequeño.",
     "Up to three specific fixes on an existing website, done in five business days, on any platform.": "Hasta tres arreglos concretos en una página web existente, listos en cinco días hábiles, en cualquier plataforma.",
     "Quick Website Fixes": "Arreglos Rápidos para tu Página Web",
     "Website Audit and 90-Day Growth Plan": "Auditoría Web y Plan de Crecimiento de 90 Días",
