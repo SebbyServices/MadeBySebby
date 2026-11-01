@@ -73,11 +73,11 @@ PAGES = {
     "index.html": dict(
         es="index.html",
         meta=dict(
-            title="Diseño Web y Páginas Web para Negocios | Made by Sebby",
+            title="Diseño Web Bilingüe en Miami | Made by Sebby",
             desc="Páginas web bilingües y cuidado mensual para pequeños negocios en Miami y el sur de Florida. Pensadas para el celular. Consulta gratis.",
-            og_title="Diseño Web y Páginas Web para Negocios | Made by Sebby",
+            og_title="Diseño Web Bilingüe en Miami | Made by Sebby",
             og_desc="Diseño, desarrollo y cuidado de páginas web para pequeños negocios en Miami y el sur de Florida. Sitios bilingües que generan confianza y convierten visitantes.",
-            tw_title="Diseño Web y Páginas Web para Negocios | Made by Sebby",
+            tw_title="Diseño Web Bilingüe en Miami | Made by Sebby",
             tw_desc="Diseño, desarrollo y cuidado mensual de páginas web para pequeños negocios. Sitios que generan confianza, convierten visitantes y crecen con tu negocio.",
         ),
     ),
@@ -150,11 +150,11 @@ PAGES = {
     "website-care.html": dict(
         es="cuidado-web.html",
         meta=dict(
-            title="Planes de Cuidado Web. Mantenimiento Mensual",
+            title="Mantenimiento de Páginas Web en Miami | Made by Sebby",
             desc="Mantenimiento mensual de sitios web para negocios en Miami y el sur de Florida. Actualizaciones, respaldos, seguridad, velocidad y ediciones. Desde {{CARE_ESSENTIALS}}/mes.",
-            og_title="Planes de Cuidado Web. Mantenimiento Mensual",
+            og_title="Mantenimiento de Páginas Web en Miami | Made by Sebby",
             og_desc="Planes accesibles de mantenimiento mensual. Actualizaciones de software, respaldos diarios, monitoreo de seguridad, optimización de velocidad y ediciones incluidas.",
-            tw_title="Planes de Cuidado Web. Mantenimiento Mensual",
+            tw_title="Mantenimiento de Páginas Web en Miami | Made by Sebby",
             tw_desc="Planes accesibles de mantenimiento mensual. Actualizaciones, respaldos diarios, seguridad, velocidad y ediciones incluidas.",
         ),
     ),
@@ -962,6 +962,7 @@ FOOTER_LINKS = {
         ("/web-design-doral.html", "Doral", "Doral"),
         ("/web-design-hialeah.html", "Hialeah", "Hialeah"),
         ("/web-design-fort-lauderdale.html", "Fort Lauderdale", "Fort Lauderdale"),
+        ("/web-design-for-law-firms.html", "Law firms", "Abogados"),
     ),
 }
 
