@@ -474,7 +474,6 @@ PRIVATE_LINKS = {
 # One-off event screens: a single looping video (poster image first) filling a TV, opened by Sebby from a typed URL.
 # noindex and never linked, so they stay out of search and the sitemap.
 EVENT_SCREENS = {
-    "gr/index.html": "/assets/events/gender-reveal",
 }
 EVENT_STUB = """<!DOCTYPE html>
 <html lang="en">
