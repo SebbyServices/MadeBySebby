@@ -173,11 +173,11 @@ PAGES = {
         es="arreglos-rapidos.html",
         meta=dict(
             title="Arreglos Rápidos para tu Página Web | Made by Sebby",
-            desc="Arreglos de precio fijo para negocios del sur de la Florida: hasta 3 arreglos por {{PRICE_QUICKFIX}}, o tu página principal en español por {{PRICE_SPANISH_HOME}}.",
+            desc="Arreglos de precio fijo para negocios del sur de la Florida: hasta 3 arreglos por {{PRICE_QUICKFIX}}, listos en cinco días hábiles.",
             og_title="Arreglos Rápidos para tu Página Web",
-            og_desc="Hasta 3 arreglos por {{PRICE_QUICKFIX}}, o tu página principal en español por {{PRICE_SPANISH_HOME}}. Cualquier plataforma, listo en días.",
+            og_desc="Hasta 3 arreglos por {{PRICE_QUICKFIX}}, listos en cinco días hábiles. Cualquier plataforma, listo en días.",
             tw_title="Arreglos Rápidos para tu Página Web",
-            tw_desc="Hasta 3 arreglos por {{PRICE_QUICKFIX}}, o tu página principal en español por {{PRICE_SPANISH_HOME}}.",
+            tw_desc="Hasta 3 arreglos por {{PRICE_QUICKFIX}}, listos en cinco días hábiles.",
         ),
     ),
     "content-production.html": dict(
