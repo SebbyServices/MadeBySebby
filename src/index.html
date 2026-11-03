@@ -95,6 +95,7 @@
   .hero p.lede{font-size:1.17rem;color:var(--ink-soft);max-width:34em;margin-bottom:36px}
   .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px}
   .hero-note{font-size:.9rem;color:var(--muted)}
+  .hero-note a{color:var(--purple);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 
   .portrait{
     position:relative;border-radius:var(--radius);overflow:hidden;
@@ -799,10 +800,10 @@
     },
     {
       "@type": "Question",
-      "name": "Do you work with businesses outside the US?",
+      "name": "Do you only work with businesses in Miami?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. I work with clients across the US and anywhere English or Spanish is spoken. Everything is done remotely."
+        "text": "No. I am based in Miami and focus on Miami-Dade and Broward, and I work with businesses anywhere in the US. Everything can be done remotely, by video call, email and text."
       }
     }
   ]
@@ -853,6 +854,7 @@
         <a class="btn btn-ghost" href="#work"><span lang="en">See my work</span><span lang="es">Ver mi trabajo</span></a>
       </div>
       <p class="hero-note rise d3"><span lang="en">Free 15-minute call. No pressure, plain answers.</span><span lang="es">Llamada gratuita de 15 minutos. Sin presión, respuestas claras.</span></p>
+      <p class="hero-note rise d3"><a href="quick-fixes.html"><span lang="en">Just a few things broken? Quick fixes for {{PRICE_QUICKFIX}}, or a free 60-second video review</span><span lang="es">¿Solo hay unas cosas rotas? Arreglos rápidos por {{PRICE_QUICKFIX}}, o un video de revisión gratis de 60 segundos</span>&nbsp;→</a></p>
       <p class="proof rise d3"><span lang="en">Sites I've built:</span><span lang="es">Sitios que he construido:</span> <a href="case-study-rieralaw.html">Riera Law Firm</a>, <a href="case-study-orthoflow.html">Ortho Flow Recovery</a>, <a href="case-study-elitecare.html">Elite Care Recovery</a></p>
     </div>
     <div class="hero-visual">
@@ -882,8 +884,8 @@
     <div class="receipt-wrap reveal">
       <div class="receipt">
         <div class="r-head"><strong>Made by Sebby</strong><span lang="en">Websites · Miami, FL</span><span lang="es">Sitios web · Miami, FL</span></div>
-        <div class="r-row"><div><b><span lang="en">Starter site</span><span lang="es">Sitio Starter</span></b><small><span lang="en">up to {{PAGES_STARTER}} pages · {{WEEKS_STARTER}} weeks</span><span lang="es">hasta {{PAGES_STARTER}} páginas · {{WEEKS_STARTER}} semanas</span></small></div><span class="r-amt"><span lang="en">from</span><span lang="es">desde</span> {{PRICE_STARTER}}</span></div>
-        <div class="r-row"><div><b><span lang="en">Custom site</span><span lang="es">Sitio Custom</span></b><small><span lang="en">up to {{PAGES_CUSTOM}} pages · {{WEEKS_CUSTOM}} weeks</span><span lang="es">hasta {{PAGES_CUSTOM}} páginas · {{WEEKS_CUSTOM}} semanas</span></small></div><span class="r-amt"><span lang="en">from</span><span lang="es">desde</span> {{PRICE_CUSTOM}}</span></div>
+        <div class="r-row"><div><b><span lang="en">Starter site</span><span lang="es">Sitio Inicial</span></b><small><span lang="en">up to {{PAGES_STARTER}} pages · {{WEEKS_STARTER}} weeks</span><span lang="es">hasta {{PAGES_STARTER}} páginas · {{WEEKS_STARTER}} semanas</span></small></div><span class="r-amt"><span lang="en">from</span><span lang="es">desde</span> {{PRICE_STARTER}}</span></div>
+        <div class="r-row"><div><b><span lang="en">Custom site</span><span lang="es">Sitio Personalizado</span></b><small><span lang="en">up to {{PAGES_CUSTOM}} pages · {{WEEKS_CUSTOM}} weeks</span><span lang="es">hasta {{PAGES_CUSTOM}} páginas · {{WEEKS_CUSTOM}} semanas</span></small></div><span class="r-amt"><span lang="en">from</span><span lang="es">desde</span> {{PRICE_CUSTOM}}</span></div>
         <div class="r-row"><div><b><span lang="en">Premium site</span><span lang="es">Sitio Premium</span></b><small><span lang="en">scoped together · {{WEEKS_PREMIUM}} weeks</span><span lang="es">definido juntos · {{WEEKS_PREMIUM}} semanas</span></small></div><span class="r-amt"><span lang="en">from</span><span lang="es">desde</span> {{PRICE_PREMIUM}}</span></div>
         <div class="r-rule"></div>
         <div class="r-line r-hl"><span lang="en">Spanish version</span><span lang="es">Versión en español</span><span><span lang="en">included</span><span lang="es">incluida</span></span></div>
@@ -955,7 +957,7 @@
     <div class="minis">
       <a class="mini reveal" href="case-study-rieralaw.html">
         <div class="ph ph-mini"><picture><source srcset="assets/work/riera-en-phone.webp" type="image/webp"><img width="540" height="983" src="assets/work/riera-en-phone.jpg" alt="Riera Law Firm website on a phone" loading="lazy"></picture></div>
-        <div><h3>Riera Law Firm</h3><p><span lang="en">Securities law. Rebuilt from scratch: 70+ bilingual pages, plus ongoing care.</span><span lang="es">Derecho de valores. Rehecho desde cero: más de 70 páginas bilingües, con cuidado continuo.</span></p><span class="band-link"><span lang="en">Case study</span><span lang="es">Caso de estudio</span>&nbsp;→</span></div>
+        <div><h3>Riera Law Firm</h3><p><span lang="en">Securities law. Rebuilt from scratch: 70+ bilingual pages, plus ongoing care.</span><span lang="es">Arbitraje de valores. Rehecho desde cero: más de 70 páginas bilingües, con cuidado continuo.</span></p><span class="band-link"><span lang="en">Case study</span><span lang="es">Caso de estudio</span>&nbsp;→</span></div>
       </a>
       <a class="mini reveal" href="case-study-elitecare.html">
         <div class="ph ph-mini"><picture><source srcset="assets/work/elitecare-en-phone.webp" type="image/webp"><img width="540" height="983" src="assets/work/elitecare-en-phone.jpg" alt="Elite Care Recovery website on a phone" loading="lazy"></picture></div>
@@ -998,7 +1000,7 @@
     <div class="care reveal">
       <div>
         <h2><span lang="en">Your website shouldn't be another job on your list.</span><span lang="es">Tu sitio web no debería ser otro trabajo en tu lista.</span></h2>
-        <p><span lang="en">Most websites break slowly. Plugins go stale, pages slow down, security holes open, and nobody notices until a customer does. With Website Care, I notice first.</span><span lang="es">La mayoría de los sitios web se deterioran lentamente. Las extensiones del sitio se desactualizan, las páginas se vuelven lentas, se abren brechas de seguridad, y nadie se da cuenta hasta que un cliente lo nota. Con Cuidado Web, yo lo noto primero.</span></p>
+        <p><span lang="en">Most websites break slowly. Plugins go stale, pages slow down, security holes open, and nobody notices until a customer does. With Website Care, I notice first.</span><span lang="es">La mayoría de los sitios web se deterioran lentamente. Los complementos (plugins) se desactualizan, las páginas se vuelven lentas, se abren brechas de seguridad, y nadie se da cuenta hasta que un cliente lo nota. Con Cuidado Web, yo lo noto primero.</span></p>
         <a class="btn" href="website-care.html"><span lang="en">See Website Care</span><span lang="es">Ver Cuidado Web</span>&nbsp;→</a>
       </div>
       <ul>
@@ -1038,8 +1040,8 @@
         <p><span lang="en">I can redesign it, rebuild it on better technology, or just take over its care. We'll talk about what's working, what isn't, and whether a refresh or a full rebuild makes more sense for your business.</span><span lang="es">Puedo rediseñarlo, reconstruirlo con mejor tecnología, o simplemente hacerme cargo de su cuidado. Hablaremos sobre qué funciona, qué no, y si una renovación o una reconstrucción completa tiene más sentido para tu negocio.</span></p>
       </details>
       <details class="reveal">
-        <summary><span lang="en">Do you work with businesses outside the US?</span><span lang="es">¿Trabajas con negocios fuera de EE.UU.?</span></summary>
-        <p><span lang="en">Yes. I work with clients across the US and anywhere English or Spanish is spoken. Everything is done remotely, and timezone differences have never been a problem.</span><span lang="es">Sí. Trabajo con clientes en todo EE.UU. y cualquier lugar donde se hable inglés o español. Todo se hace remotamente, las diferencias de zona horaria nunca han sido un problema.</span></p>
+        <summary><span lang="en">Do you only work with businesses in Miami?</span><span lang="es">¿Solo trabajas con negocios en Miami?</span></summary>
+        <p><span lang="en">No. I am based in Miami and focus on Miami-Dade and Broward, and I work with businesses anywhere in the US. Everything can be done remotely, by video call, email and text.</span><span lang="es">No. Estoy en Miami y me enfoco en Miami-Dade y Broward, pero trabajo con negocios en todo Estados Unidos. Todo se puede hacer a distancia, por videollamada, email y mensajes de texto.</span></p>
       </details>
       <details class="reveal">
         <summary><span lang="en">Are you related to the Sebby clothing brand?</span><span lang="es">¿Tienen relación con la marca de ropa Sebby?</span></summary>

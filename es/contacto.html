@@ -794,6 +794,10 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
           <input type="text" id="business" name="business">
         </div>
         <div>
+          <label for="website">Tu página web, si tienes una</label>
+          <input type="text" id="website" name="website" inputmode="url" autocomplete="url">
+        </div>
+        <div>
           <label for="message">Cuéntame sobre tu proyecto</label>
           <textarea id="message" name="message" required></textarea>
         </div>
@@ -808,7 +812,10 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
   f.addEventListener('submit',function(e){
     e.preventDefault();
     var btn=document.getElementById('formSubmit'),err=document.getElementById('formError');
-    var s='Proyecto web';
+    // ?ref= comes from the offer that sent them here (quick-fixes.html), so the
+    // email says which offer it is and GA4 can tell the offers apart.
+    var ref=(new URLSearchParams(location.search).get('ref')||'').replace(/[^a-z0-9_-]/gi,'').slice(0,30);
+    var s={quickfix:'Arreglo rápido',video:'Video de revisión'}[ref]||'Proyecto web';
     err.hidden=true;btn.disabled=true;btn.style.opacity='.55';
     fetch('https://api.web3forms.com/submit',{
       method:'POST',
@@ -818,11 +825,12 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
         subject:s+(f.business.value?', '+f.business.value:''),
         from_name:f.name.value,
         name:f.name.value,email:f.email.value,
-        business:f.business.value,message:f.message.value
+        business:f.business.value,website:f.website.value,message:f.message.value,
+        source:ref||'direct',page_lang:document.documentElement.lang,referrer:document.referrer.slice(0,200)
       })
     }).then(function(r){return r.json()}).then(function(d){
       if(!d.success)throw new Error(d.message||'send failed');
-      if(window.gtag)gtag('event','generate_lead',{event_category:'contact',event_label:'contact_form'});
+      if(window.gtag)gtag('event','generate_lead',{event_category:'contact',event_label:'contact_form',lead_source:ref||'direct'});
       window.location.href='/es/gracias.html';
     })['catch'](function(){
       err.hidden=false;btn.disabled=false;btn.style.opacity='1';
@@ -856,6 +864,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
         <li><a href="/es/precios.html">Precios</a></li>
         <li><a href="/es/cuidado-web.html">Cuidado Web</a></li>
         <li><a href="/es/auditoria-web.html">Auditoría Web</a></li>
+        <li><a href="/es/arreglos-rapidos.html">Arreglos rápidos</a></li>
         <li><a href="/es/precios.html#calculator">Calculadora de precios</a></li>
         </ul>
       </div>

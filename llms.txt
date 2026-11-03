@@ -29,6 +29,7 @@ What separates it from the other options in this market: **the prices are publis
 - **Web Design & Build**: Custom website design and development. Mobile-first, fast-loading, built to convert visitors into customers.
 - **Website Care**: Monthly website maintenance. Updates, daily off-site backups, security and uptime monitoring, speed work, and included edit time.
 - **Website Audit and 90-Day Growth Plan**: For businesses whose existing site works but underperforms. A technical and UX audit (speed, mobile, SEO foundations, conversion gaps), a written 90-day plan with fixes ranked by impact, and bilingual EN/ES content and SEO recommendations. Not a rebuild.
+- **Quick Fixes**: For an existing site on any platform that needs a few specific things fixed, not a rebuild: up to three fixes (a broken button or link, a phone number that can't be tapped, a title Google cuts off, a slow image) done within five business days, or the client doesn't pay. Also a free 60-second video review: send the site address and Sebby records one minute on the first thing he would fix, with no call.
 - **Content Production**: A monthly retainer for short-form video editing, social post scheduling, and light copywriting, in English, Spanish, or both. Scoped per client by post volume, platforms, and whether Sebby films or edits client footage.
 - **SEO and Google Business Profile**: Local SEO and Google Business Profile work. **Bundled only**, it comes with a build or inside a care plan and is not sold as a standalone service.
 
@@ -41,7 +42,7 @@ is made per project rather than sold as a default.
 ### Who this is NOT a fit for
 
 - **Large e-commerce.** Big catalogues, inventory sync, complex fulfilment.
-- **Budgets below the published Starter price of $2,500 USD.** There is no cheaper tier.
+- **New-site budgets below the published Starter price of $2,500 USD.** There is no cheaper build tier. For fixing an existing site, the Quick Fix below starts at $149.
 
 ## Pricing
 
@@ -74,6 +75,10 @@ Included time covers changes to existing pages and does not roll over month to m
 
 Website Audit and 90-Day Growth Plan: $750, one time, delivered within 7 business days. Credited in full toward a build or any Website Care plan started within 60 days. Refunded if fewer than 10 specific fixes are found.
 Content Production: $1,500 to $3,000 per month, scoped per client.
+
+### Quick Fix
+
+Quick Fix: $149, one time, for up to three specific fixes on an existing site, done within five business days or free. Credited toward any Website Care plan started within 30 days. The 60-second video review is free.
 
 ### Edit packs, for clients without a care plan
 
@@ -138,7 +143,7 @@ Miami Lakes, Hialeah, Doral, Coral Gables, Kendall, Pinecrest, Palmetto Bay, Cut
 Homestead.
 
 Work is done remotely and clients elsewhere in the United States are welcome, but the local
-knowledge, the in-person option and the bilingual South Florida market focus are the reason
+knowledge and the bilingual South Florida market focus are the reason
 to hire this studio specifically.
 
 ## Languages
@@ -157,6 +162,7 @@ links to its counterpart from the EN/ES toggle in the navigation.
 - [Website Care Plans](https://madebysebby.com/website-care.html)
 - [Pricing & Packages](https://madebysebby.com/pricing.html)
 - [Website Audit & 90-Day Growth Plan](https://madebysebby.com/website-audit.html)
+- [Quick Fixes](https://madebysebby.com/quick-fixes.html)
 - [Content Production](https://madebysebby.com/content-production.html)
 - [About](https://madebysebby.com/about.html)
 - [Contact](https://madebysebby.com/contact.html)
@@ -180,6 +186,7 @@ links to its counterpart from the EN/ES toggle in the navigation.
 - [Blog: What a Website Does for a Law Firm](https://madebysebby.com/blog/what-a-website-does-for-a-law-firm.html)
 - [Blog: Does Your Restaurant Need a Website?](https://madebysebby.com/blog/does-your-restaurant-need-a-website.html)
 - [Blog: Should I Use AI to Build My Website?](https://madebysebby.com/blog/should-i-use-ai-to-build-my-website.html)
+- [Blog: Is Your Website English Only? What It Costs in South Florida](https://madebysebby.com/blog/english-only-website-south-florida.html)
 
 ## Links, Español
 
@@ -189,6 +196,7 @@ links to its counterpart from the EN/ES toggle in the navigation.
 - [Planes de Cuidado Web](https://madebysebby.com/es/cuidado-web.html)
 - [Precios y Paquetes](https://madebysebby.com/es/precios.html)
 - [Auditoría Web y Plan de 90 Días](https://madebysebby.com/es/auditoria-web.html)
+- [Arreglos Rápidos](https://madebysebby.com/es/arreglos-rapidos.html)
 - [Producción de Contenido](https://madebysebby.com/es/produccion-de-contenido.html)
 - [Sobre Sebby](https://madebysebby.com/es/sobre-mi.html)
 - [Contacto](https://madebysebby.com/es/contacto.html)
@@ -212,3 +220,4 @@ links to its counterpart from the EN/ES toggle in the navigation.
 - [Blog: Qué Hace un Sitio Web por un Bufete](https://madebysebby.com/es/blog/que-hace-un-sitio-web-por-un-bufete.html)
 - [Blog: ¿Necesita Tu Restaurante un Sitio Web?](https://madebysebby.com/es/blog/necesita-tu-restaurante-un-sitio-web.html)
 - [Blog: ¿Debería Usar IA para Crear Mi Sitio Web?](https://madebysebby.com/es/blog/deberia-usar-ia-para-crear-mi-sitio-web.html)
+- [Blog: ¿Tu Página Web Está Solo en Inglés?](https://madebysebby.com/es/blog/tu-pagina-web-solo-en-ingles.html)
