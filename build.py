@@ -772,6 +772,15 @@ def rewrite_head(html, source, lang):
     html = re.sub(r'(<meta property="og:url" content=")[^"]*(">)',
                   lambda m: m.group(1) + self_url + m.group(2), html, count=1)
 
+    # Every page shared one og-image.jpg, so a link to pricing previewed the
+    # same as a link to a case study. A per-page card in assets/og/<lang>/
+    # (named after the English source, "/" as "__") replaces it when present.
+    card = "assets/og/%s/%s.jpg" % (lang, source[:-len(".html")].replace("/", "__"))
+    if os.path.exists(card):
+        html = re.sub(r'(<meta (?:property="og:image"|name="twitter:image") content=")'
+                      + re.escape(DOMAIN) + r'/assets/og-image\.jpg(">)',
+                      lambda m: m.group(1) + DOMAIN + "/" + card + m.group(2), html)
+
     # og:locale was never present. Both trees need it now that they are split.
     if "og:locale" not in html:
         html = html.replace(
