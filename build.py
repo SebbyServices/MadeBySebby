@@ -307,7 +307,7 @@ PAGES = {
         es="diseno-web-fort-lauderdale.html",
         meta=dict(
             title="Diseño Web en Fort Lauderdale | Made by Sebby",
-            desc="Diseño web en Fort Lauderdale para pequeños negocios. Sitios personalizados que generan confianza y convierten. Bilingüe y pensado para el celular. Consulta gratis.",
+            desc="Diseño web en Fort Lauderdale para pequeños negocios. Sitios que generan confianza y convierten. Bilingüe y pensado para el celular. Consulta gratis.",
             og_title="Diseño Web en Fort Lauderdale | Made by Sebby",
             og_desc="Diseño web en Fort Lauderdale para pequeños negocios. Sitios personalizados que generan confianza y convierten visitantes. Bilingüe (español e inglés), pensado para el celular, con cuidado web continuo.",
             tw_title="Diseño Web en Fort Lauderdale | Made by Sebby",
@@ -365,7 +365,7 @@ PAGES = {
         es="blog/tu-pagina-web-solo-en-ingles.html",
         meta=dict(
             title="¿Tu Página Web Está Solo en Inglés? Lo Que Cuesta",
-            desc="Dos de cada tres residentes de Miami-Dade hablan español en casa. Lo que le cuesta a un negocio del sur de la Florida una página solo en inglés, y el arreglo más pequeño.",
+            desc="Dos de cada tres residentes de Miami-Dade hablan español en casa. Lo que le cuesta a tu negocio una página solo en inglés, y el arreglo más pequeño.",
             og_title="¿Tu Página Web Está Solo en Inglés?",
             og_desc="Dos de cada tres residentes de Miami-Dade hablan español en casa. Lo que cuesta una página solo en inglés, y el arreglo más pequeño.",
             tw_title="¿Tu Página Web Está Solo en Inglés?",
@@ -618,6 +618,9 @@ def rewrite_paths(html, source, lang):
         if value.startswith(("http://", "https://", "//", "#", "mailto:", "tel:", "data:")):
             return value
         path, sep, frag = value.partition("#")
+        # A query string ("contact.html?ref=video") must not stop the page
+        # lookup, or /es/ pages link to the English page.
+        path, qsep, query = path.partition("?")
         if not path:
             return value
         if path.startswith("/"):
@@ -627,7 +630,7 @@ def rewrite_paths(html, source, lang):
         if resolved in ("", "."):
             resolved = "index.html"
         target = url_for(resolved, lang) if resolved in PAGES else "/" + resolved
-        return target + sep + frag
+        return target + qsep + query + sep + frag
 
     def fix(m):
         attr, value = m.group(1), m.group(2)
@@ -768,6 +771,15 @@ def rewrite_head(html, source, lang):
 
     html = re.sub(r'(<meta property="og:url" content=")[^"]*(">)',
                   lambda m: m.group(1) + self_url + m.group(2), html, count=1)
+
+    # Every page shared one og-image.jpg, so a link to pricing previewed the
+    # same as a link to a case study. A per-page card in assets/og/<lang>/
+    # (named after the English source, "/" as "__") replaces it when present.
+    card = "assets/og/%s/%s.jpg" % (lang, source[:-len(".html")].replace("/", "__"))
+    if os.path.exists(card):
+        html = re.sub(r'(<meta (?:property="og:image"|name="twitter:image") content=")'
+                      + re.escape(DOMAIN) + r'/assets/og-image\.jpg(">)',
+                      lambda m: m.group(1) + DOMAIN + "/" + card + m.group(2), html)
 
     # og:locale was never present. Both trees need it now that they are split.
     if "og:locale" not in html:
@@ -964,6 +976,7 @@ FOOTER_LINKS = {
         ("/pricing.html", "Pricing", "Precios"),
         ("/website-care.html", "Website Care", "Cuidado Web"),
         ("/website-audit.html", "Website Audit", "Auditoría Web"),
+        ("/quick-fixes.html", "Quick Fixes", "Arreglos rápidos"),
         # Deliberately NOT a vertical link. The footer appears on all 52 pages,
         # so naming one industry there tells every other industry the site is
         # not for them, and the target vertical is not settled. The calculator
@@ -1758,7 +1771,9 @@ def render(source, html, lang):
     # visitor who completed the form landed on "Message Sent" in English, while
     # es/gracias.html sat there reachable from nowhere.
     if lang == "es":
-        html = html.replace("var s='Website project'", "var s='Proyecto web'")
+        html = html.replace(
+            "{quickfix:'Quick fix',video:'Video review'}[ref]||'Website project'",
+            "{quickfix:'Arreglo rápido',video:'Video de revisión'}[ref]||'Proyecto web'")
         html = html.replace(
             "window.location.href='/thank-you.html'",
             "window.location.href='%s'" % url_for("thank-you.html", "es"))

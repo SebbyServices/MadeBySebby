@@ -585,13 +585,13 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
 <meta property="og:description" content="Book a free 15-minute web design consultation in Miami or South Florida. Honest answers about what your website needs and what it costs.">
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://madebysebby.com/contact.html">
-<meta property="og:image" content="https://madebysebby.com/assets/og-image.jpg">
+<meta property="og:image" content="https://madebysebby.com/assets/og/en/contact.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contact Sebby: Free Web Design Consultation">
 <meta name="twitter:description" content="Book a free 15-minute web design consultation in Miami or South Florida. Honest answers about what your website needs and what it costs.">
-<meta name="twitter:image" content="https://madebysebby.com/assets/og-image.jpg">
+<meta name="twitter:image" content="https://madebysebby.com/assets/og/en/contact.jpg">
 <!-- seo:end -->
 <script type="application/ld+json">
 {
@@ -794,6 +794,10 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
           <input type="text" id="business" name="business">
         </div>
         <div>
+          <label for="website">Your website, if you have one</label>
+          <input type="text" id="website" name="website" inputmode="url" autocomplete="url">
+        </div>
+        <div>
           <label for="message">Tell me about your project</label>
           <textarea id="message" name="message" required></textarea>
         </div>
@@ -808,7 +812,10 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
   f.addEventListener('submit',function(e){
     e.preventDefault();
     var btn=document.getElementById('formSubmit'),err=document.getElementById('formError');
-    var s='Website project';
+    // ?ref= comes from the offer that sent them here (quick-fixes.html), so the
+    // email says which offer it is and GA4 can tell the offers apart.
+    var ref=(new URLSearchParams(location.search).get('ref')||'').replace(/[^a-z0-9_-]/gi,'').slice(0,30);
+    var s={quickfix:'Quick fix',video:'Video review'}[ref]||'Website project';
     err.hidden=true;btn.disabled=true;btn.style.opacity='.55';
     fetch('https://api.web3forms.com/submit',{
       method:'POST',
@@ -818,11 +825,12 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
         subject:s+(f.business.value?', '+f.business.value:''),
         from_name:f.name.value,
         name:f.name.value,email:f.email.value,
-        business:f.business.value,message:f.message.value
+        business:f.business.value,website:f.website.value,message:f.message.value,
+        source:ref||'direct',page_lang:document.documentElement.lang,referrer:document.referrer.slice(0,200)
       })
     }).then(function(r){return r.json()}).then(function(d){
       if(!d.success)throw new Error(d.message||'send failed');
-      if(window.gtag)gtag('event','generate_lead',{event_category:'contact',event_label:'contact_form'});
+      if(window.gtag)gtag('event','generate_lead',{event_category:'contact',event_label:'contact_form',lead_source:ref||'direct'});
       window.location.href='/thank-you.html';
     })['catch'](function(){
       err.hidden=false;btn.disabled=false;btn.style.opacity='1';
@@ -856,6 +864,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
         <li><a href="/pricing.html">Pricing</a></li>
         <li><a href="/website-care.html">Website Care</a></li>
         <li><a href="/website-audit.html">Website Audit</a></li>
+        <li><a href="/quick-fixes.html">Quick Fixes</a></li>
         <li><a href="/pricing.html#calculator">Price calculator</a></li>
         </ul>
       </div>

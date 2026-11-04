@@ -675,6 +675,10 @@
           <input type="text" id="business" name="business">
         </div>
         <div>
+          <label for="website"><span lang="en">Your website, if you have one</span><span lang="es">Tu página web, si tienes una</span></label>
+          <input type="text" id="website" name="website" inputmode="url" autocomplete="url">
+        </div>
+        <div>
           <label for="message"><span lang="en">Tell me about your project</span><span lang="es">Cuéntame sobre tu proyecto</span></label>
           <textarea id="message" name="message" required></textarea>
         </div>
@@ -689,7 +693,10 @@
   f.addEventListener('submit',function(e){
     e.preventDefault();
     var btn=document.getElementById('formSubmit'),err=document.getElementById('formError');
-    var s='Website project';
+    // ?ref= comes from the offer that sent them here (quick-fixes.html), so the
+    // email says which offer it is and GA4 can tell the offers apart.
+    var ref=(new URLSearchParams(location.search).get('ref')||'').replace(/[^a-z0-9_-]/gi,'').slice(0,30);
+    var s={quickfix:'Quick fix',video:'Video review'}[ref]||'Website project';
     err.hidden=true;btn.disabled=true;btn.style.opacity='.55';
     fetch('https://api.web3forms.com/submit',{
       method:'POST',
@@ -699,11 +706,12 @@
         subject:s+(f.business.value?', '+f.business.value:''),
         from_name:f.name.value,
         name:f.name.value,email:f.email.value,
-        business:f.business.value,message:f.message.value
+        business:f.business.value,website:f.website.value,message:f.message.value,
+        source:ref||'direct',page_lang:document.documentElement.lang,referrer:document.referrer.slice(0,200)
       })
     }).then(function(r){return r.json()}).then(function(d){
       if(!d.success)throw new Error(d.message||'send failed');
-      if(window.gtag)gtag('event','generate_lead',{event_category:'contact',event_label:'contact_form'});
+      if(window.gtag)gtag('event','generate_lead',{event_category:'contact',event_label:'contact_form',lead_source:ref||'direct'});
       window.location.href='/thank-you.html';
     })['catch'](function(){
       err.hidden=false;btn.disabled=false;btn.style.opacity='1';
