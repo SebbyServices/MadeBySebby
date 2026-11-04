@@ -783,15 +783,15 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
       <form class="contact-form">
         <div>
           <label for="name">Your name</label>
-          <input type="text" id="name" name="name" required>
+          <input type="text" id="name" name="name" autocomplete="name" required>
         </div>
         <div>
           <label for="email">Email address</label>
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" name="email" autocomplete="email" required>
         </div>
         <div>
           <label for="business">Business name</label>
-          <input type="text" id="business" name="business">
+          <input type="text" id="business" name="business" autocomplete="organization">
         </div>
         <div>
           <label for="website">Your website, if you have one</label>
@@ -801,6 +801,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
           <label for="message">Tell me about your project</label>
           <textarea id="message" name="message" required></textarea>
         </div>
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
         <p class="form-note">I read every message myself and reply within one business day.</p>
         <p class="form-error" id="formError" role="alert" hidden>That didn't send. Please email <a href="mailto:hello@madebysebby.com">hello@madebysebby.com</a> or call <a href="tel:+17865431417">(786) 543-1417</a>.</p>
         <button type="submit" class="btn" id="formSubmit">Send message&nbsp;→</button>
@@ -826,7 +827,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 0;margin-top:0}
         from_name:f.name.value,
         name:f.name.value,email:f.email.value,
         business:f.business.value,website:f.website.value,message:f.message.value,
-        source:ref||'direct',page_lang:document.documentElement.lang,referrer:document.referrer.slice(0,200)
+        botcheck:f.botcheck.checked,source:ref||'direct',page_lang:document.documentElement.lang,referrer:document.referrer.slice(0,200)
       })
     }).then(function(r){return r.json()}).then(function(d){
       if(!d.success)throw new Error(d.message||'send failed');

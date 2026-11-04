@@ -1757,6 +1757,11 @@ def render(source, html, lang):
     head, sep, tail = html.rpartition("</style>")
     if sep:
         html = head + FOOTER_CSS + sep + tail
+    # .reveal sections start at opacity 0 and an IntersectionObserver fades them
+    # in, so with JavaScript off (some crawlers, reader modes) they stay blank.
+    # Added after FOOTER_CSS, which goes into the last </style> on the page.
+    if 'class="reveal' in html and "</head>" in html:
+        html = html.replace("</head>", "<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>\n</head>", 1)
     # Prices resolve FIRST so everything downstream -- the translation memory,
     # the FAQ schema read out of the DOM -- sees real numbers rather than tokens.
     html = substitute_prices(html)
