@@ -321,6 +321,9 @@
     img{max-width:100%!important;filter:none!important}
     .reveal{opacity:1!important;transform:none!important}
   }
+  /* Real client site on a laptop and a phone (mockup.py --layout site) */
+  .sitecard-devices{width:100%;height:auto;display:block;background:var(--tint);padding:20px 16px 6px;box-sizing:border-box}
+  .sitecard:has(.sitecard-devices){background:var(--tint)}
 </style>
 
 <!-- seo:start -->
@@ -455,11 +458,7 @@
         </ul>
       </div>
       <a class="sitecard" href="https://orthoflowrecovery.com" target="_blank" rel="noopener">
-        <div class="bar" aria-hidden="true">
-          <span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span>
-          <span class="url">orthoflowrecovery.com</span>
-        </div>
-        <picture><source srcset="assets/hero-orthoflow.webp" type="image/webp"><img width="1476" height="1029" class="sitecard-hero" src="assets/hero-orthoflow.jpg" alt="Ortho Flow Recovery homepage hero" loading="lazy"></picture>
+        <picture><source srcset="assets/work/orthoflow-devices.webp" type="image/webp"><img width="1200" height="760" class="sitecard-devices" src="assets/work/orthoflow-devices.png" alt="Ortho Flow Recovery website on a laptop and a phone" loading="lazy"></picture>
         <div class="visit"><span><span lang="en">Visit the live site</span><span lang="es">Visitar el sitio</span></span><span>orthoflowrecovery.com&nbsp;&rarr;</span></div>
       </a>
     </div>

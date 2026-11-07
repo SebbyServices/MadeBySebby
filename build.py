@@ -558,6 +558,9 @@ ALT_ES = {
     "Riera Law Firm homepage hero": "Portada del sitio de Riera Law Firm",
     "Elite Care Recovery homepage hero": "Portada del sitio de Elite Care Recovery",
     "Ortho Flow Recovery homepage hero": "Portada del sitio de Ortho Flow Recovery",
+    "Riera Law Firm website on a laptop and a phone": "Sitio web de Riera Law Firm en una laptop y un teléfono",
+    "Ortho Flow Recovery website on a laptop and a phone": "Sitio web de Ortho Flow Recovery en una laptop y un teléfono",
+    "Elite Care Recovery website on a laptop and a phone": "Sitio web de Elite Care Recovery en una laptop y un teléfono",
     "Ortho Flow Recovery homepage: cold and compression therapy delivered for post-operative recovery":
         "Página de inicio de Ortho Flow Recovery: terapia de frío y compresión a domicilio para la recuperación postoperatoria",
     "Ortho Flow Recovery: Miami, Florida": "Ortho Flow Recovery: Miami, Florida",

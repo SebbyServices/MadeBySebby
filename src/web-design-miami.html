@@ -344,6 +344,16 @@
   .alt-opt p{font-size:.95rem;color:var(--ink-soft)}
   .alt-note{margin-top:18px;font-size:.95rem;color:var(--muted);max-width:44em}
   @media (max-width:860px){.alt-compare{grid-template-columns:1fr}}
+  /* Proof: real client sites on a laptop and a phone */
+  .proof-shot{display:block;margin:28px 0 8px;max-width:760px}
+  .proof-shot img{width:100%;height:auto;display:block}
+  .proof-shot figcaption{font-size:.88rem;color:var(--muted);margin-top:6px}
+  .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .proof-grid a{display:block;background:var(--tint);border:1px solid var(--line);border-radius:var(--radius);padding:16px 14px 14px;color:var(--ink);font-weight:700;font-size:.95rem;transition:transform .18s}
+  .proof-grid a:hover{transform:translateY(-4px)}
+  .proof-grid img{width:100%;height:auto;display:block;margin-bottom:10px}
+  .proof-grid small{display:block;font-weight:500;color:var(--muted);font-size:.85rem;margin-top:2px}
+  @media (max-width:860px){.proof-grid{grid-template-columns:1fr}}
 </style>
 
 <!-- seo:start -->
@@ -551,6 +561,8 @@
       <h2><span lang="en">The build this argument comes from.</span><span lang="es">El proyecto del que sale este argumento.</span></h2>
       <p class="body"><span lang="en">The clearest example is a few minutes from downtown: Jorge Riera's securities arbitration practice in Coral Gables, rebuilt as more than 70 pages in English and Spanish, each version reaching the reader it was written for. The full story is on the <a href="web-design-coral-gables.html" style="color:var(--purple);font-weight:600">Coral Gables page</a> and in the <a href="case-study-rieralaw.html" style="color:var(--purple);font-weight:600">Riera Law case study</a>.</span><span lang="es">El ejemplo más claro está a pocos minutos del centro: la práctica de arbitraje de valores de Jorge Riera en Coral Gables, reconstruida en más de 70 páginas en inglés y en español, cada versión llegando al lector para el que fue escrita. La historia completa está en la <a href="web-design-coral-gables.html" style="color:var(--purple);font-weight:600">página de Coral Gables</a> y en el <a href="case-study-rieralaw.html" style="color:var(--purple);font-weight:600">caso de Riera Law</a>.</span></p>
       <p class="body"><span lang="en">If you run a practice yourself, the specifics of that kind of build are written up separately under <a href="web-design-for-law-firms.html" style="color:var(--purple);font-weight:600">web design for law firms</a>.</span><span lang="es">Si tú también diriges un bufete, los detalles de este tipo de proyecto están explicados aparte en <a href="web-design-for-law-firms.html" style="color:var(--purple);font-weight:600">diseño web para bufetes de abogados</a>.</span></p>
+
+      <figure class="proof-shot reveal"><a href="case-study-rieralaw.html"><picture><source srcset="assets/work/riera-devices.webp" type="image/webp"><img width="1200" height="760" src="assets/work/riera-devices.png" alt="Riera Law Firm website on a laptop and a phone" loading="lazy"></picture></a><figcaption><span lang="en">rieralaw.com, live today, on a laptop and a phone.</span><span lang="es">rieralaw.com, en línea hoy, en una laptop y un teléfono.</span></figcaption></figure>
       <div class="client-logos-bar">
         <div class="client-logos-label"><span lang="en">Recent clients</span><span lang="es">Clientes recientes</span></div>
         <div class="client-logos">

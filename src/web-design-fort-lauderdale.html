@@ -361,6 +361,16 @@
   .alt-opt p{font-size:.95rem;color:var(--ink-soft)}
   .alt-note{margin-top:18px;font-size:.95rem;color:var(--muted);max-width:44em}
   @media (max-width:860px){.alt-compare{grid-template-columns:1fr}}
+  /* Proof: real client sites on a laptop and a phone */
+  .proof-shot{display:block;margin:28px 0 8px;max-width:760px}
+  .proof-shot img{width:100%;height:auto;display:block}
+  .proof-shot figcaption{font-size:.88rem;color:var(--muted);margin-top:6px}
+  .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .proof-grid a{display:block;background:var(--tint);border:1px solid var(--line);border-radius:var(--radius);padding:16px 14px 14px;color:var(--ink);font-weight:700;font-size:.95rem;transition:transform .18s}
+  .proof-grid a:hover{transform:translateY(-4px)}
+  .proof-grid img{width:100%;height:auto;display:block;margin-bottom:10px}
+  .proof-grid small{display:block;font-weight:500;color:var(--muted);font-size:.85rem;margin-top:2px}
+  @media (max-width:860px){.proof-grid{grid-template-columns:1fr}}
 </style>
 
 <!-- seo:start -->
@@ -539,6 +549,7 @@
       <h2><span lang="en">A recent build, and the job it had to do.</span><span lang="es">Un proyecto reciente y el trabajo que tenía que hacer.</span></h2>
       <p><span lang="en">Elite Care Recovery is a family business run by two brothers with twenty-three years in orthopedic recovery between them. They rent cold and compression therapy equipment to patients coming out of surgery and deliver it to the door.</span><span lang="es">Elite Care Recovery es un negocio familiar que llevan dos hermanos con veintitrés años de experiencia en recuperación ortopédica entre los dos. Rentan equipos de terapia de frío y compresión a pacientes que salen de cirugía y los entregan en la puerta.</span></p>
     </div>
+    <figure class="proof-shot reveal"><a href="case-study-elitecare.html"><picture><source srcset="assets/work/elitecare-devices.webp" type="image/webp"><img width="1200" height="760" src="assets/work/elitecare-devices.png" alt="Elite Care Recovery website on a laptop and a phone" loading="lazy"></picture></a><figcaption><span lang="en">elitecarerecovery.net on the phone a patient checks it from, and on a laptop.</span><span lang="es">elitecarerecovery.net en el teléfono desde el que lo revisa un paciente, y en una laptop.</span></figcaption></figure>
     <div class="cards">
       <div class="card reveal">
         <div class="glyph"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>

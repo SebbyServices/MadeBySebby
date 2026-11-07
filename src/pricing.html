@@ -579,6 +579,16 @@
         background:none;font-family:inherit;font-size:.92rem;font-weight:600;color:var(--ink-soft);cursor:pointer}
   .calc-email button:hover{border-color:var(--purple);color:var(--purple)}
   @media (max-width:640px){.calc{padding:26px 22px}}
+  /* Proof: real client sites on a laptop and a phone */
+  .proof-shot{display:block;margin:28px 0 8px;max-width:760px}
+  .proof-shot img{width:100%;height:auto;display:block}
+  .proof-shot figcaption{font-size:.88rem;color:var(--muted);margin-top:6px}
+  .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .proof-grid a{display:block;background:var(--tint);border:1px solid var(--line);border-radius:var(--radius);padding:16px 14px 14px;color:var(--ink);font-weight:700;font-size:.95rem;transition:transform .18s}
+  .proof-grid a:hover{transform:translateY(-4px)}
+  .proof-grid img{width:100%;height:auto;display:block;margin-bottom:10px}
+  .proof-grid small{display:block;font-weight:500;color:var(--muted);font-size:.85rem;margin-top:2px}
+  @media (max-width:860px){.proof-grid{grid-template-columns:1fr}}
 </style>
 
 <!-- seo:start -->
@@ -860,6 +870,21 @@
 
     <p class="plans-note reveal"><span lang="en">Every project includes a free 15-minute call to scope your needs. No pressure, honest answers.</span><span lang="es">Cada proyecto incluye una llamada gratuita de 15 minutos para definir tus necesidades. Sin presión, respuestas honestas.</span></p>
     <p class="plans-note reveal"><span lang="en">Already have a website that just isn't performing? You may not need a new one. <a href="website-audit.html" style="color:var(--purple);font-weight:600;text-decoration:underline">Start with a Website Audit</a>, {{PRICE_AUDIT}}, credited in full toward a build or care plan within {{AUDIT_CREDIT_DAYS}} days. Just one thing broken? <a href="quick-fixes.html" style="color:var(--purple);font-weight:600;text-decoration:underline">Quick fixes start at {{PRICE_QUICKFIX}}</a>.</span><span lang="es">¿Ya tienes un sitio web que simplemente no rinde? Puede que no necesites uno nuevo. <a href="website-audit.html" style="color:var(--purple);font-weight:600;text-decoration:underline">Empieza con una Auditoría Web</a>, {{PRICE_AUDIT}}, acreditados por completo a un proyecto o plan de cuidado dentro de {{AUDIT_CREDIT_DAYS}} días. ¿Solo una cosa rota? <a href="quick-fixes.html" style="color:var(--purple);font-weight:600;text-decoration:underline">Los arreglos rápidos empiezan en {{PRICE_QUICKFIX}}</a>.</span></p>
+  </div>
+</section>
+
+<!-- ============ PROOF ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">What these prices have built.</span><span lang="es">Lo que han construido estos precios.</span></h2>
+      <p><span lang="en">Three live client sites, shown as they load today. Tap one for the full case study.</span><span lang="es">Tres sitios de clientes en línea, tal como cargan hoy. Toca uno para ver el caso completo.</span></p>
+    </div>
+    <div class="proof-grid">
+      <a class="reveal" href="case-study-rieralaw.html"><picture><source srcset="assets/work/riera-devices.webp" type="image/webp"><img width="1200" height="760" src="assets/work/riera-devices.png" alt="Riera Law Firm website on a laptop and a phone" loading="lazy"></picture>Riera Law Firm<small><span lang="en">Law firm, Coral Gables, English and Spanish</span><span lang="es">Bufete, Coral Gables, inglés y español</span></small></a>
+      <a class="reveal" href="case-study-orthoflow.html"><picture><source srcset="assets/work/orthoflow-devices.webp" type="image/webp"><img width="1200" height="760" src="assets/work/orthoflow-devices.png" alt="Ortho Flow Recovery website on a laptop and a phone" loading="lazy"></picture>Ortho Flow Recovery<small><span lang="en">Medical equipment, Miami, English and Spanish</span><span lang="es">Equipos médicos, Miami, inglés y español</span></small></a>
+      <a class="reveal" href="case-study-elitecare.html"><picture><source srcset="assets/work/elitecare-devices.webp" type="image/webp"><img width="1200" height="760" src="assets/work/elitecare-devices.png" alt="Elite Care Recovery website on a laptop and a phone" loading="lazy"></picture>Elite Care Recovery<small><span lang="en">Medical equipment, South Florida</span><span lang="es">Equipos médicos, sur de la Florida</span></small></a>
+    </div>
   </div>
 </section>
 
