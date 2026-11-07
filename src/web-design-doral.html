@@ -336,6 +336,14 @@
     img{max-width:100%!important;filter:none!important}
     .reveal{opacity:1!important;transform:none!important}
   }
+  /* Why not Wix or Fiverr: three honest options side by side */
+  .alt-compare{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .alt-opt{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px}
+  .alt-opt.me{border-color:var(--purple);box-shadow:0 0 0 1px var(--purple) inset}
+  .alt-opt h3{font-size:1.05rem;font-weight:700;margin-bottom:10px}
+  .alt-opt p{font-size:.95rem;color:var(--ink-soft)}
+  .alt-note{margin-top:18px;font-size:.95rem;color:var(--muted);max-width:44em}
+  @media (max-width:860px){.alt-compare{grid-template-columns:1fr}}
 </style>
 
 <!-- seo:start -->
@@ -592,6 +600,31 @@
       <h2><span lang="en">What it costs.</span><span lang="es">Lo que cuesta.</span></h2>
       <p><span lang="en">A forwarder or distributor with a handful of services usually fits the Custom tier, from {{PRICE_CUSTOM}} {{USD}}, with up to {{PAGES_CUSTOM}} pages in both languages. A showroom with a large catalog, or a company serving many countries, is a Premium build, from {{PRICE_PREMIUM}} {{USD}}. Smaller shops can start at {{PRICE_STARTER}} {{USD}}. The <a href="pricing.html" style="color:var(--purple);font-weight:600">pricing page</a> has every detail.</span><span lang="es">Un agente de carga o un distribuidor con pocos servicios suele caber en el nivel Personalizado, desde {{PRICE_CUSTOM}} {{USD}}, con hasta {{PAGES_CUSTOM}} páginas en los dos idiomas. Un showroom con un catálogo grande, o una empresa que atiende muchos países, es un proyecto Premium, desde {{PRICE_PREMIUM}} {{USD}}. Los negocios más pequeños pueden empezar en {{PRICE_STARTER}} {{USD}}. La <a href="pricing.html" style="color:var(--purple);font-weight:600">página de precios</a> tiene todos los detalles.</span></p>
     </div>
+  </div>
+</section>
+
+<!-- ============ WHY NOT WIX OR FIVERR ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">Wix, Fiverr, or a site built for buyers abroad?</span><span lang="es">¿Wix, Fiverr, o un sitio hecho para compradores en el exterior?</span></h2>
+      <p><span lang="en">A Doral trade site sells to people who will never walk in. The cheap routes are built for the opposite.</span><span lang="es">Un sitio de comercio en Doral le vende a gente que nunca va a entrar por la puerta. Las opciones baratas están hechas para lo contrario.</span></p>
+    </div>
+    <div class="alt-compare">
+      <div class="alt-opt reveal">
+        <h3><span lang="en">Wix, built by you</span><span lang="es">Wix, hecho por ti</span></h3>
+        <p><span lang="en">Fine for a storefront page. Catalogs, spec sheets and a quote form for distributors take add-ons, the monthly bill grows with them, and none of it can move off Wix.</span><span lang="es">Sirve para una página de tienda. Catálogos, fichas técnicas y un formulario de cotización para distribuidores requieren complementos, la factura mensual crece con ellos, y nada de eso se puede sacar de Wix.</span></p>
+      </div>
+      <div class="alt-opt reveal">
+        <h3><span lang="en">A Fiverr gig</span><span lang="es">Un encargo en Fiverr</span></h3>
+        <p><span lang="en">A seller can make it look international. Whether it loads quickly on a phone in Bogotá or Caracas, and who updates the catalog next quarter, are left open.</span><span lang="es">Un vendedor puede hacer que se vea internacional. Si carga rápido en un celular en Bogotá o en Caracas, y quién actualiza el catálogo el próximo trimestre, queda en el aire.</span></p>
+      </div>
+      <div class="alt-opt me reveal">
+        <h3><span lang="en">Made by Sebby</span><span lang="es">Made by Sebby</span></h3>
+        <p><span lang="en">Planned around the buyer who has never visited: products, proof and a quote request in their language. You own it after the final payment.</span><span lang="es">Pensado para el comprador que nunca ha venido: productos, pruebas y una solicitud de cotización en su idioma. Es tuyo después del pago final.</span></p>
+      </div>
+    </div>
+    <p class="alt-note reveal"><span lang="en">A showroom that sells walk-in only may not need any of this. I will say so if that is the case.</span><span lang="es">Un showroom que solo vende en persona puede no necesitar nada de esto. Te lo diré si es así.</span></p>
   </div>
 </section>
 

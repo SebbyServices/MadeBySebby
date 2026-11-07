@@ -336,6 +336,14 @@
     img{max-width:100%!important;filter:none!important}
     .reveal{opacity:1!important;transform:none!important}
   }
+  /* Why not Wix or Fiverr: three honest options side by side */
+  .alt-compare{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .alt-opt{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px}
+  .alt-opt.me{border-color:var(--purple);box-shadow:0 0 0 1px var(--purple) inset}
+  .alt-opt h3{font-size:1.05rem;font-weight:700;margin-bottom:10px}
+  .alt-opt p{font-size:.95rem;color:var(--ink-soft)}
+  .alt-note{margin-top:18px;font-size:.95rem;color:var(--muted);max-width:44em}
+  @media (max-width:860px){.alt-compare{grid-template-columns:1fr}}
 </style>
 
 <!-- seo:start -->
@@ -601,6 +609,31 @@
       <h2><span lang="en">What a firm's website costs.</span><span lang="es">Lo que cuesta el sitio de una firma.</span></h2>
       <p><span lang="en">Most professional firms land on the Custom tier, from {{PRICE_CUSTOM}} {{USD}}: up to {{PAGES_CUSTOM}} pages designed from scratch, bilingual as standard, live in {{WEEKS_CUSTOM}} weeks. Firms with many practice areas or services usually need Premium, from {{PRICE_PREMIUM}} {{USD}}, with no page limit and {{SUPPORT_PREMIUM}} days of work after launch. Every tier is listed on the <a href="pricing.html" style="color:var(--purple);font-weight:600">pricing page</a>.</span><span lang="es">La mayoría de las firmas profesionales eligen el nivel Personalizado, desde {{PRICE_CUSTOM}} {{USD}}: hasta {{PAGES_CUSTOM}} páginas diseñadas desde cero, bilingüe de serie, en línea en {{WEEKS_CUSTOM}} semanas. Las firmas con muchas áreas de práctica o servicios suelen necesitar Premium, desde {{PRICE_PREMIUM}} {{USD}}, sin límite de páginas y con {{SUPPORT_PREMIUM}} días de trabajo después del lanzamiento. Todos los niveles están en la <a href="pricing.html" style="color:var(--purple);font-weight:600">página de precios</a>.</span></p>
     </div>
+  </div>
+</section>
+
+<!-- ============ WHY NOT WIX OR FIVERR ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><span lang="en">Why a firm shouldn't start on Wix or Fiverr.</span><span lang="es">Por qué una firma no debería empezar en Wix o Fiverr.</span></h2>
+      <p><span lang="en">For a professional firm the website is checked before the first call, often by someone who has never been to the Gables. That changes the math.</span><span lang="es">Para una firma profesional el sitio web se revisa antes de la primera llamada, muchas veces por alguien que nunca ha estado en los Gables. Eso cambia las cuentas.</span></p>
+    </div>
+    <div class="alt-compare">
+      <div class="alt-opt reveal">
+        <h3><span lang="en">Wix, built by you</span><span lang="es">Wix, hecho por ti</span></h3>
+        <p><span lang="en">A builder template reads as a template to a client comparing three firms. It can be polished, but every month you pay to keep it there, and it can't leave the platform.</span><span lang="es">Una plantilla de constructor se nota como plantilla para un cliente que compara tres firmas. Se puede pulir, pero cada mes pagas por mantenerla ahí, y no puede salir de la plataforma.</span></p>
+      </div>
+      <div class="alt-opt reveal">
+        <h3><span lang="en">A Fiverr gig</span><span lang="es">Un encargo en Fiverr</span></h3>
+        <p><span lang="en">You will get something that looks finished. Bar and licensing language, credentials and the details a referral source checks usually fall to you to write and fix.</span><span lang="es">Vas a recibir algo que se ve terminado. El lenguaje de colegiatura y licencias, las credenciales y los detalles que revisa quien te refiere normalmente te toca a ti escribirlos y corregirlos.</span></p>
+      </div>
+      <div class="alt-opt me reveal">
+        <h3><span lang="en">Made by Sebby</span><span lang="es">Made by Sebby</span></h3>
+        <p><span lang="en">Built around how your clients actually choose a firm, in English and Spanish. Yours to keep after the final payment, with one person accountable for it.</span><span lang="es">Construido en torno a cómo tus clientes eligen de verdad una firma, en inglés y en español. Tuyo después del pago final, con una sola persona responsable.</span></p>
+      </div>
+    </div>
+    <p class="alt-note reveal"><span lang="en">A solo practice that only needs a contact page can do well on Wix, and I will tell you if that is you.</span><span lang="es">Un despacho de una persona que solo necesita una página de contacto puede estar bien en Wix, y te diré si es tu caso.</span></p>
   </div>
 </section>
 

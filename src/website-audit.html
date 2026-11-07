@@ -257,6 +257,12 @@
   .page-hero{padding:76px 0 52px}
   .page-hero h1{font-size:clamp(2rem,4vw,3rem)}
   .page-hero p.lede{font-size:1.14rem;color:var(--ink-soft);max-width:36em;margin-top:18px}
+  /* Audit byline: a face and a name above the fold */
+  .audit-by{display:flex;gap:16px;align-items:center;margin-top:26px;max-width:36em}
+  .audit-by picture{flex:none;display:block;width:64px;height:64px}
+  .audit-by img{width:64px;height:64px;border-radius:50%;border:2px solid var(--line);display:block}
+  .audit-by p{font-size:.95rem;color:var(--ink-soft);line-height:1.5}
+  .audit-by strong{display:block;color:var(--ink);font-size:1rem}
   .two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
   .checklist{list-style:none;display:grid;gap:14px;margin-top:22px}
   .checklist li{display:flex;gap:12px;align-items:flex-start;font-size:.99rem;color:var(--ink-soft)}
@@ -624,6 +630,10 @@
     <div class="eyebrow"><span lang="en">Website Audit</span><span lang="es">Auditoría Web</span></div>
     <h1><span lang="en">Your site works. It just isn't <span class="accent">working hard enough</span>.</span><span lang="es">Tu sitio funciona. Solo que no <span class="accent">trabaja lo suficiente</span>.</span></h1>
     <p class="lede"><span lang="en">For businesses that already have a website that isn't a disaster, just underperforming. Not a rebuild. A full diagnosis of what is holding your site back, and a 90-day plan to fix what matters first.</span><span lang="es">Para negocios que ya tienen un sitio web que no es un desastre, pero que rinde por debajo de lo que debería. No es un rediseño. Un diagnóstico completo de lo que frena tu sitio, y un plan de 90 días para arreglar primero lo que más importa.</span></p>
+    <div class="audit-by">
+      <picture><source srcset="assets/sebby-avatar.webp" type="image/webp"><img width="64" height="64" src="assets/sebby-avatar.jpg" alt="Sebby, web designer and developer"></picture>
+      <p><strong><span lang="en">Sebastian Podgaetz (Sebby)</span><span lang="es">Sebastian Podgaetz (Sebby)</span></strong><span lang="en">I run every audit myself, start to finish. If an email from me about your site brought you here, this is the full version of that check.</span><span lang="es">Hago cada auditoría yo mismo, de principio a fin. Si llegaste aquí por un correo mío sobre tu sitio, esta es la versión completa de esa revisión.</span></p>
+    </div>
   </div>
 </header>
 
