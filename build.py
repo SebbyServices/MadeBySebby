@@ -361,6 +361,28 @@ PAGES = {
             tw_desc="Tu sitio web debería atraer negocio, no ahuyentarlo. Aquí hay 5 señales de que tu sitio te está costando clientes.",
         ),
     ),
+    "blog/website-maintenance-miami.html": dict(
+        es="blog/mantenimiento-web-miami.html",
+        meta=dict(
+            title="Mantenimiento Web en Miami: Lo Que Muestran 149 Sitios",
+            desc="Revisé 149 sitios web de negocios en Miami-Dade y Broward. Lo que dicen un WordPress viejo y un pie de página desactualizado, y lo que cubre el mantenimiento.",
+            og_title="Mantenimiento Web en Miami: Lo Que Muestran 149 Sitios",
+            og_desc="Revisé 149 sitios web de negocios en Miami-Dade y Broward. Lo que dicen un WordPress viejo y un pie de página desactualizado, y lo que cubre el mantenimiento.",
+            tw_title="Mantenimiento Web en Miami: Lo Que Muestran 149 Sitios",
+            tw_desc="Revisé 149 sitios web de negocios en Miami-Dade y Broward. Lo que dicen un WordPress viejo y un pie de página desactualizado, y lo que cubre el mantenimiento.",
+        ),
+    ),
+    "blog/dental-website-design-miami.html": dict(
+        es="blog/diseno-web-para-dentistas-miami.html",
+        meta=dict(
+            title="Diseño Web para Dentistas en Miami: Lo Que Falta",
+            desc="Solo 5 de 30 sitios dentales de la zona de Miami muestran algo en español. Lo que tiene que hacer el sitio de un dentista en Miami, y el arreglo más pequeño.",
+            og_title="Diseño Web para Dentistas en Miami: Lo Que Les Falta",
+            og_desc="Solo 5 de 30 sitios dentales de la zona de Miami muestran algo en español. Lo que tiene que hacer el sitio de un dentista en Miami, y el arreglo más pequeño.",
+            tw_title="Diseño Web para Dentistas en Miami: Lo Que Les Falta",
+            tw_desc="Solo 5 de 30 sitios dentales de la zona de Miami muestran algo en español. Lo que tiene que hacer el sitio de un dentista en Miami, y el arreglo más pequeño.",
+        ),
+    ),
     "blog/english-only-website-south-florida.html": dict(
         es="blog/tu-pagina-web-solo-en-ingles.html",
         meta=dict(
@@ -1414,6 +1436,8 @@ CRUMBS = {
     "blog/5-signs-your-website-is-losing-clients.html": {
         "en": "5 Signs Your Website Is Losing You Clients",
         "es": "5 Señales de Que Tu Sitio Web Pierde Clientes"},
+    "blog/website-maintenance-miami.html": {"en": "Website Maintenance in Miami", "es": "Mantenimiento Web en Miami"},
+    "blog/dental-website-design-miami.html": {"en": "Dental Website Design in Miami", "es": "Diseño Web para Dentistas en Miami"},
     "blog/english-only-website-south-florida.html": {"en": "Is Your Website English Only?", "es": "¿Tu Página Web Está Solo en Inglés?"},
     "blog/what-is-website-care.html": {
         "en": "What Website Care Actually Means",

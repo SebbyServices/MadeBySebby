@@ -187,6 +187,8 @@ links to its counterpart from the EN/ES toggle in the navigation.
 - [Blog: Does Your Restaurant Need a Website?](https://madebysebby.com/blog/does-your-restaurant-need-a-website.html)
 - [Blog: Should I Use AI to Build My Website?](https://madebysebby.com/blog/should-i-use-ai-to-build-my-website.html)
 - [Blog: Is Your Website English Only? What It Costs in South Florida](https://madebysebby.com/blog/english-only-website-south-florida.html)
+- [Blog: Dental Website Design in Miami: What 30 Local Practices Miss](https://madebysebby.com/blog/dental-website-design-miami.html)
+- [Blog: Website Maintenance in Miami: What 149 Local Sites Show](https://madebysebby.com/blog/website-maintenance-miami.html)
 
 ## Links, Español
 
@@ -221,3 +223,5 @@ links to its counterpart from the EN/ES toggle in the navigation.
 - [Blog: ¿Necesita Tu Restaurante un Sitio Web?](https://madebysebby.com/es/blog/necesita-tu-restaurante-un-sitio-web.html)
 - [Blog: ¿Debería Usar IA para Crear Mi Sitio Web?](https://madebysebby.com/es/blog/deberia-usar-ia-para-crear-mi-sitio-web.html)
 - [Blog: ¿Tu Página Web Está Solo en Inglés?](https://madebysebby.com/es/blog/tu-pagina-web-solo-en-ingles.html)
+- [Blog: Diseño Web para Dentistas en Miami](https://madebysebby.com/es/blog/diseno-web-para-dentistas-miami.html)
+- [Blog: Mantenimiento Web en Miami](https://madebysebby.com/es/blog/mantenimiento-web-miami.html)
