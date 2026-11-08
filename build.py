@@ -964,6 +964,10 @@ NAP = {
         "https://cal.com/madebysebby",
         "https://www.reddit.com/user/MadeBySebby/",
         "https://github.com/SebbyServices",
+        # Bing Places, imported from the GBP 2026-10-10. Confirmed public on
+        # 2026-11-08, signed out. The ypid-only form is used because it opens
+        # the listing itself, with no search query attached.
+        "https://www.bing.com/maps?ss=ypid.YNDB0E6D0DCDC5CE5C",
     ],
     # Exact string match with the SCHEMA_ES entry below is load-bearing: the
     # Spanish tree gets this translated for free through the existing
