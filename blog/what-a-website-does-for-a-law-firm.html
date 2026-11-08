@@ -46,7 +46,7 @@
   .btn{display:inline-flex;align-items:center;gap:8px;background:var(--purple-cta);color:#fff;font-weight:600;font-size:.98rem;padding:13px 26px;border-radius:999px;border:none;cursor:pointer;transition:background .15s,transform .15s}
   .btn:hover{background:var(--purple-cta-deep);transform:translateY(-1px)}
   .btn:focus-visible{outline-color:var(--ink)}
-  .btn-nav{padding:10px 22px;font-size:.92rem}
+  .btn-nav{padding:10px 22px;font-size:.92rem;white-space:nowrap}
 
   .eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);margin-bottom:20px;display:flex;align-items:center;gap:10px}
   .eyebrow::before{content:"";width:26px;height:2.5px;background:var(--purple);border-radius:2px}
@@ -91,7 +91,7 @@
   .menu-btn .close{display:none}
   .nav-open .menu-btn .open{display:none}
   .nav-open .menu-btn .close{display:block}
-  @media (max-width:640px){
+  @media (max-width:1100px){
     .menu-btn{display:block}
     .nav-links{display:none;position:fixed;top:76px;left:0;right:0;bottom:0;background:var(--white);flex-direction:column;gap:0;padding:20px 28px;border-top:1px solid var(--line);z-index:49;overflow-y:auto}
     .nav-open{backdrop-filter:none;overflow:visible}

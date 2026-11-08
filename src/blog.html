@@ -51,7 +51,7 @@
   .btn:focus-visible{outline-color:var(--ink)}
   .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
   .btn-ghost:hover{background:var(--tint);border-color:var(--purple);color:var(--purple)}
-  .btn-nav{padding:10px 22px;font-size:.92rem}
+  .btn-nav{padding:10px 22px;font-size:.92rem;white-space:nowrap}
 
   /* ---------- Hero ---------- */
   .eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);margin-bottom:20px;display:flex;align-items:center;gap:10px}
@@ -101,7 +101,7 @@
   .menu-btn .close{display:none}
   .nav-open .menu-btn .open{display:none}
   .nav-open .menu-btn .close{display:block}
-  @media (max-width:640px){
+  @media (max-width:1100px){
     .menu-btn{display:block}
     .nav-links{display:none;position:fixed;top:76px;left:0;right:0;bottom:0;background:var(--white);flex-direction:column;gap:0;padding:20px 28px;border-top:1px solid var(--line);z-index:49;overflow-y:auto}
     .nav-open{backdrop-filter:none;overflow:visible}
