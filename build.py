@@ -249,11 +249,11 @@ PAGES = {
     "web-design-miami.html": dict(
         es="diseno-web-miami.html",
         meta=dict(
-            title="Páginas Web y Diseño Web en Miami para Negocios",
-            desc="Páginas web y diseño web en Miami para pequeños negocios. Sitios bilingües que generan confianza y convierten visitantes. Consulta gratis.",
-            og_title="Páginas Web y Diseño Web en Miami para Negocios",
+            title="Páginas Web en Miami y Diseño Web para Negocios",
+            desc="Páginas web en Miami para pequeños negocios, con diseño web a la medida. Sitios bilingües que generan confianza y convierten visitantes. Consulta gratis.",
+            og_title="Páginas Web en Miami y Diseño Web para Negocios",
             og_desc="Diseño web en Miami para pequeños negocios, sitios personalizados que generan confianza y convierten visitantes. Bilingüe (español e inglés), pensado para el celular, con cuidado web continuo.",
-            tw_title="Páginas Web y Diseño Web en Miami para Negocios",
+            tw_title="Páginas Web en Miami y Diseño Web para Negocios",
             tw_desc="Diseño web en Miami para pequeños negocios, sitios personalizados que generan confianza y convierten. Bilingüe y pensado para el celular.",
         ),
     ),
